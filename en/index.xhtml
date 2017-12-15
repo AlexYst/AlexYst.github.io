@@ -57,12 +57,25 @@
 		</header>
 <h2><abbr title="Transport Layer Security">TLS</abbr> certificate update</h2>
 <p>
+	I&apos;ve been evicted from Opal&apos;s server.
+	For now, this website is now on GitHub&apos;s server.
+	That means that I can&apos;t control the <abbr title="Transport Layer Security">TLS</abbr> certificate, due to the way GitHub&apos;s hosting operates.
+	Furthermore, GitHub&apos;s certificate doesn&apos;t match the host name of this website.
+	That means that there is necessarily a certificate mismatch here.
+	Even if GitHub allowed the use of custom certificates though ...
+</p>
+<p>
 	StartCom is closing down.
-	With no other viable gratis certificate authority as far as I know, I&apos;m going to have to go back to using slef-signed certificates soon.
-	If you&apos;re using a Web browser that blocks StartCom certificates, you&apos;ll soon be able to reach this website again.
-	Not that you could be reading this now though.
-	If you&apos;re using a Web browser that treats StartCom certificates properly, you&apos;ll notice a new warning show up, but you should still be able to visit the website.
-	Otherwise, you should see no change.
+	With no other viable gratis certificate authority as far as I know, I would have to go back to using self-signed certificates soon.
+	There does not seem to be a viable way for me to keep the website running on my budget and still avoid <abbr title="Transport Layer Security">TLS</abbr> certificate errors.
+	A certificate mismatch warning doesn&apos;t look any scarier in a Web browser than a self-signed certificate warning, so there&apos;s really no reason for me to even bother looking for a solution to the GitHub certificate issue for the time being.
+</p>
+<p>
+	I can&apos;t say GitHub is one of my Git host of choice or anything, but their website hosting made moving away from Opal&apos;s place quick and easy.
+	I&apos;m open to other ideas (no dependencies on individual persons, please), but this seems like the best option until I have time to look into getting a <abbr title="virtual private server">VPS</abbr>.
+	With a <abbr title="virtual private server">VPS</abbr> rented, I should be able to host more than just my website; I should have the clearnet entrance to my tiny <abbr title="Internet Relay Chat">IRC</abbr> network back, as well as (once I have time to set it up) a Minetest server.
+	For security reasons, I can&apos;t get the onion address back up on a <abbr title="virtual private server">VPS</abbr> (hosting on hardware you don&apos;t control should be considered insecure, so I can&apos;t risk my onion keys being jacked by the hosting provider), but connecting to the network from <abbr title="The Onion Router">Tor</abbr> exit nodes will be allowed.
+	(Even if I had the onion address working, connecting over the clearnet from <abbr title="The Onion Router">Tor</abbr> exit nodes would be allowed; after all, I&apos;m not a monster.)
 </p>
 <h2>Redaction</h2>
 <p>
@@ -71,29 +84,6 @@
 	Vague mentions such as &quot;in class, we studied {X}&quot; references remain intact, but unnecessary specification of which school I even attend have been corrected.
 	What school I attend is still no secret though, and can be found on any of the multitude of take-down notice pages that have replaced pages that previously contained coursework submissions.
 	Hopefully the school will be satisfied by this level of redaction.
-</p>
-<h2><abbr title="Transport Layer Security">TLS</abbr> certificate issues</h2>
-<p>
-	If your Web browser loads this page, thank your browser vendor for not being a total moron.
-</p>
-<p>
-	This website uses a certificate issued by StartCom Ltd.
-	The certificate &quot;authority&quot; system is broken though.
-	Having root certificates that are magically considered to be &quot;trusted&quot; is a stupid and flawed way of doing things.
-	StartCom broke the trust placed in them, and that trust was revoked by Mozilla and crew.
-	Now, Mozilla-based Web browsers are refusing to load this website.
-	If a certificate is &quot;untrusted&quot;, Mozilla-based browsers usually give the user the option to load the page anyway, but for certificates issued by StartCom, Mozilla isn&apos;t allowing this.
-	<em><strong>This is a clear antifeature in Mozilla-based browsers and not a bug in this website.</strong></em>
-	The problem isn&apos;t on the server end, but the browser end, so I can&apos;t fix it.
-</p>
-<p>
-	However, if you want me to swap out my certificate for one your Web browser would play nicer with, I&apos;m more than willing to do that.
-	However, there&apos;s a catch.
-	I don&apos;t have the funds to splurge on a paid certificate.
-	Likewise, I don&apos;t have the time to change out my certificate every couple months.
-	If you want me to switch certificates, you&apos;ll need to point me in the direction of a certificate provider that offers gratis certificates that last at least a year before expiring.
-	As of yet, the only such provider I&apos;ve located is StartCom.
-	If you&apos;ve found another, please reach me via any method listed on my contact page, linked to above.
 </p>
 <h2>Canary update schedule</h2>
 <p>
