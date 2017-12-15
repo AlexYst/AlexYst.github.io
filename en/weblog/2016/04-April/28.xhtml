@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/04-April/28.xhtml"/>
+		<title>My first day back on LXDE &lt;https://y.st./en/weblog/2016/04-April/28.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/04-April/28.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/04-April/27.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/04-April/29.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>My first day back on <abbr title="Lightweight X11 Desktop Environment">LXDE</abbr></h1>
+			<p>Day 00418: Thursday, 2016 April 28</p>
+		</header>
+<p>
+	I&apos;ve installed <abbr title="Lightweight X11 Desktop Environment">LXDE</abbr>, so I&apos;ll be using that for a while; just until I can remember why I don&apos;t like <abbr title="Lightweight X11 Desktop Environment">LXDE</abbr> and go crawling back to Xfce as I always do.
+	I always have problems when I install multiple desktops.
+	The problem is that I can never get the second desktop removed.
+	You can purge the initial main package that you installed, but stupidly, it doesn&apos;t remove all the packages that it pulled in.
+	To do that, you need a list of every package that you installed.
+	In case the need arises, this is what I ended up installing:
+</p>
+<blockquote><pre>yst@newdawn.hn.y.st.:~$ sudo aptitude install lxde
+[sudo] password for yst: 
+The following NEW packages will be installed:
+  alsamixergui clipit galculator gksu gnome-mplayer gnome-system-tools 
+  gpicview gtk2-engines{a} leafpad libgda-5.0-4{a} libgda-5.0-common{a} 
+  libgksu2-0{a} libgmlib1{a} libgmtk1{a} libgmtk1-data{a} libgtop2-7{a} 
+  libgtop2-common{a} libmusicbrainz3-6{a} libobrender29{a} libobt2{a} 
+  liboobs-1-5{a} libuser1{a} libxdo3{a} lxappearance lxappearance-obconf 
+  lxde lxde-common lxde-core lxde-icon-theme lxinput lxpanel{a} 
+  lxpanel-data{a} lxrandr lxsession{a} lxtask{a} lxterminal menu{a} 
+  menu-xdg mplayer2{a} obconf{a} openbox system-tools-backends{a} usermode 
+  xdotool{a} 
+0 packages upgraded, 44 newly installed, 0 to remove and 5 not upgraded.
+Need to get 16,0 MB/17,1 MB of archives.
+	After unpacking 53,7 MB will be used.
+Do you want to continue? [Y/n/?]</pre></blockquote>
+<p>
+	My &quot;guise&quot; script that I use to run alternate instances of software sandboxed from my real name quit working after switching to <abbr title="Lightweight X11 Desktop Environment">LXDE</abbr>.
+	I tracked the issue down to the <code>XDG_CONFIG_HOME</code> environmental variable, which my script was failing to set.
+	With that fixed, my script now works in <abbr title="Lightweight X11 Desktop Environment">LXDE</abbr> as well as Xfce, and presumably should work with some other applications that it was failing to work for in Xfce.
+</p>
+<p>
+	<abbr title="Lightweight X11 Desktop Environment">LXDE</abbr> keeps beeping at me.
+	I haven&apos;t figured out why yet.
+	Additionally, there seems to be no battery power level indicator in available in the main <abbr title="Lightweight X11 Desktop Environment">LXDE</abbr> install.
+	I&apos;m going to try to find an indicator to install tomorrow.
+</p>
+<p>
+	My mother came home early today, then Vanessa, Cyrus, our mother, and I all headed out to the hills to pick up bullet shells for several hours.
+	I&apos;m really lost as to what my mother&apos;s fascination is with this activity.
+</p>
+<p>
+	Wolf is offended that I used the pronoun pair &quot;he/she&quot; to refer to him in <a href="/en/weblog/2016/04-April/27.xhtml">yesterday</a>&apos;s weblog entry.
+	Not knowing what pronoun to use at the time, I tried to do the non-offensive thing by using both separated by a slash, but it seems that I can&apos;t avoid offending people even that way.
+	This whole gender-based pronoun thing is exceedingly idiotic.
+	There should be one pronoun used to refer to both genders.
+	If that were the case, things like yesterday&apos;s mishap wouldn&apos;t happen.
+	I apologize Wolf, but I don&apos;t know what else I could have done.
+</p>
+<p>
+	Pinentry is a pain in my neck.
+	I really hate the thing.
+	It refuses to allow users to paste in passwords, but <abbr title="GNU Privacy Guard">GnuPG</abbr> requires its use, most likely in an attempt to aggravate people and convince them not to encrypt things.
+	Okay, maybe that&apos;s not the real intended purpose, but it nearly got me to quit using <abbr title="GNU Privacy Guard">GnuPG</abbr> when I first started dealing with Pinentry.
+	In Xfce, Pinentry changed its behavior a bit upon activating <abbr title="GNU Network Object Model Environment">GNOME</abbr> services in the Xfce settings.
+	Pinentry was still stupidly annoying, but much less so.
+	Here in <abbr title="Lightweight X11 Desktop Environment">LXDE</abbr>, Xfce&apos;s settings obviously have no effect, so Pinentry went back to being the most painful and obnoxious piece of software installed on my system.
+	I decided to see if it was possible to uninstall it without uninstalling <abbr title="GNU Privacy Guard">GnuPG</abbr>, so I did a search to find the package name.
+	I found that there are several versions of Pinentry, so instead of uninstalling it right away, I installed the <a href="apt:pinentry-curses">curses version</a>.
+	After all, what is curses possibly going to do to aggravate me? Figuring that the new version of Pinentry would be a drop-in replacement for the one I&apos;d been dealing with, I purged the <a href="apt:pinentry-gtk2"><abbr title="GIMP Toolkit">GTK+</abbr> version</a>.
+	This required me to also remove an old <a href="apt:sylpheed">mail client</a> that I haven&apos;t used in a while, but has successfully prevented Pinentry from being even mildly annoying.
+	As an experiment, I tried to purge the curses version of Pinentry too, but as expected, several things including <abbr title="GNU Privacy Guard">GnuPG</abbr> would have ended up uninstalled as well.
+	Still, this is a major win for me.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F04-April%2F28.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F04-April%2F28.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

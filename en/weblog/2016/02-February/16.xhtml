@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/02-February/16.xhtml"/>
+		<title>HTTPS and IRCS &lt;https://y.st./en/weblog/2016/02-February/16.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/02-February/16.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/02-February/15.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/02-February/17.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1><abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr> and <abbr title="Internet Relay Chat over SSL">IRCS</abbr></h1>
+			<p>Day 00346: Tuesday, 2016 February 16</p>
+		</header>
+<p>
+	Further experimentation showed me that <a href="apt:midori">Midori</a> does not support modern styling options.
+	My <a href="/en/weblog/">weblog index</a> displays one calendar page on top of another, all the way down.
+	If a Web browser supports flex boxes, calendar pages are instead displayed one next to another, only creating multiple rows as needed to prevent a need for horizontal scrolling.
+	This is beyond the scope of my bug testing, but means that making Midori my Web browser of choice again is not really an option.
+	My fallback option, simple centering of the calendar pages, functions perfectly and the page looks as good as it can without fixed widths or flex boxes, but I need something with modern rendering features on which to develop.
+</p>
+<p>
+	Next, I tried <a href="apt:arora">Arora</a>.
+	Arora has working SOCKS5 proxy support, so I did not have to rely on torsocks.
+	Arora seems to send the incorrect <abbr title="Server Name Indication">SNI</abbr> server name like the others.
+	It displays the correct address in the address bar like Midori, but also like Midori, it does not seem to have support for <abbr title="Cascading Style Sheets">CSS</abbr> flex boxes.
+</p>
+<p>
+	After that, I tried <a href="apt:chromium">Chromium</a>.
+	I already knew that Chromium would refuse to work with torsocks and has no built-in way to set a proxy, so I would have no way to do any testing.
+	However, I thought that I had better check, just in case that this issue had been fixed.
+	As it turns out, Google still refuses to provide a graphical way to set a proxy and refuses to provide a way to set a proxy that will be used every time that the Web browser starts.
+	However, Chromium now has a command line method of setting the proxy for only a single session.
+	By running <code>chromium --proxy-server=socks5://localhost:9050</code>, you can start up the Web browser and have it use <abbr title="The Onion Router">Tor</abbr> until you close it.
+	My guess is that many people complained about not being able to set a proxy in Chromium without setting a system-wide proxy for all non-Chromium applications and/or not being able to set a proxy in Chromium on a system that does not have system-wide proxy settings, so Google sort of halfway complied.
+	They made it possible to use a proxy, though they made it highly inconvenient as you have to specify command line options every time that you start the Web browser.
+	This also means that opening Web browser from another application, such as by clicking on a link in an email, will bypass the proxy as the command line option will never be specified.
+	Like the other Web browser though, Chromium is sending malformed <abbr title="Server Name Indication">SNI</abbr> host names.
+</p>
+<p>
+	<a href="apt:epiphany-browser">Epiphany</a> seems to lack proxy settings, but at least it works with torsocks.
+	It too is sending malformed <abbr title="Server Name Indication">SNI</abbr> host names.
+	Am I seriously the only person that has run across this issue? I would have thought that at least some Web browsers would get this right.
+	<a href="apt:konqueror">Konqueror</a> also has SOCKS5 support and sends malformed <abbr title="Server Name Indication">SNI</abbr> host names.
+	<a href="apt:conkeror">Conkeror</a> will not even start, so I cannot test it.
+	<a href="apt:netsurf">NetSurf</a> has no SOCKS proxy support, but works with torsocks.
+	However, it uses invalid normalization of host names in <abbr title="Uniform Resource Identifier">URI</abbr>s, so the trailing dot is removed before making a request, not only in <abbr title="Server Name Indication">SNI</abbr> host names as it should be, but also in the address bar and Host header like it should not be.
+	<a href="apt:surf">Surf</a> does not seem to have any configuration menus with which to set a proxy, but it works with torsocks, though it still sends malformed <abbr title="Server Name Indication">SNI</abbr> host names.
+	I cannot seem to get <a href="apt:uzbl">uzbl</a> to accept work over torsocks and I cannot find any proxy settings.
+	<a href="apt:elinks">Elinks</a> does not seem to be SOCKS proxy-compatible, but it works with torsocks.
+	However, it does not seem to be able to reach onion addresses.
+	Furthermore, it does not send <abbr title="Server Name Indication">SNI</abbr> server names and incorrectly strips the trailing dot off of the Host header.
+	<a href="apt:links">Links</a> sends the correct Host header, but does not send an <abbr title="Server Name Indication">SNI</abbr> host name either.
+	<a href="apt:links2">Links2</a> seems to have the same behavior as Links.
+	<a href="apt:lynx">Lynx</a> does not seem to have proxy settings, but works through torsocks.
+	Again though, it cannot connect to onion addresses.
+	It sends valid <abbr title="Server Name Indication">SNI</abbr> indormation, but this may be because it incorrectly strips the trailing dot off of the host entirely, as it does incorrectly remove the trailing dot from the Host header.
+	Lastly, I tried <a href="apt:w3m">w3m</a>.
+	This browser has a <code>-no-proxy</code> flag that can be specified, though I cannot see any options to actually set a proxy for this flag to bypass.
+	Torsocks works, and allows access to onion addresses.
+	However, w3m does send malformed <abbr title="Server Name Indication">SNI</abbr> host names.
+</p>
+<p>
+	Work on Web browser testing got cut short.
+	I suppose that I was dune with the testing itself, but I did not get time to sort the Web browsers into bug severity level and file bug reports against the Web browsers that I felt that I might be able to have an impact on.
+	Instead, <a href="http://zdasgqu3geo7i7yj.onion/">The Unknown Man</a> started talking about <abbr title="Internet Relay Chat">IRC</abbr> servers again, so that became the more pressing issue.
+	He is already thinking about names for his network, the current consideration being &quot;V0rtex&quot;, apparently spelled with a zero.
+	This makes his server and mine unable to join together, as I had already been planning to call my network &quot;s&quot; (not that The Unknown Man knew that).
+	Due to the nature of <a href="https://tools.ietf.org/html/draft-butcher-irc-url-04#section-2.3"><abbr title="Internet Relay Chat over SSL">IRCS</abbr> <abbr title="Uniform Resource Identifier">URI</abbr>s</a>, if I could get my network, called s, to be generally recognized as being the network by that name, my network would be reachable via the <abbr title="Uniform Resource Identifier">URI</abbr>s <code>ircs://s/</code>, <code>irc://s/</code>, and <code>irc6://s/</code>, making it reachable by some of the shortest <abbr title="Internet Relay Chat">IRC</abbr> <abbr title="Uniform Resource Identifier">URI</abbr>s available.
+	The specification does seem to allow use of the empty string as a host name, though that seems like it would cause more interoperability problems than it is worth.
+	Likewise, it would make it hard to refer to the network by name.
+	Of course, I will still use the <abbr title="Uniform Resource Identifier">URI</abbr> formed using the fully-qualified domain name, as that is the most interoperable of all, even though it will be a longer <abbr title="Uniform Resource Identifier">URI</abbr>.
+	Even if we do not link servers, I want the reason to be something other than the fact that I do not have mine up yet, so I need to get mine up and running.
+</p>
+<p>
+	I wanted to use <abbr title="Next Generation IRC Daemon">ngIRCd</abbr> simply because I know that it works and is easy to set up, but I decided that the approach that would work better in the long run is to open up the channel name space as much as possible by choosing an <abbr title="Internet Relay Chat">IRC</abbr> daemon that would support the most channel types.
+	The two <abbr title="Internet Relay Chat">IRC</abbr> daemons on <a href="https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_daemons">Wikipedia&apos;s comparison list</a> said that the two daemons that support the four main channel types were <abbr title="Internet Relay Chat Daemon">IRCD</abbr> and miniircd, but the list also said that these two daemons could not link to other servers using encrypted links.
+	Encryption is much more vital than channel types, so once again, I found myself looking at daemons that support three major channel types, a class in which <abbr title="Next Generation IRC Daemon">ngIRCd</abbr> is the only member of on the list.
+	I updated <a href="/en/domains/cepo.local.xhtml">cepo</a>&apos;s repository list to use the onion address and <a href="apt:apt-transport-tor">apt-transport-tor</a>, performed an overdue system update, then installed <a href="apt:ngircd"><abbr title="Next Generation IRC Daemon">ngIRCd</abbr></a>.
+</p>
+<p>
+	Getting <abbr title="Next Generation IRC Daemon">ngIRCd</abbr> to bind to port 994, the default for <abbr title="Uniform Resource Identifier">URI</abbr>s of the <code>ircs:</code> scheme, was no easy task.
+	In the end, I found that the daemon was being started as root, but was dropping its privileged status and running as an unprivileged user <strong>*before*</strong> binding to any ports.
+	On first glance, this appears to be an oversight by the developer, but it turns out that this was done deliberately.
+	Po||ux of <a href="ircs://irc.barton.de:6697/%23ngIRCd">#ngIRCd</a> explained that he programmed <abbr title="Next Generation IRC Daemon">ngIRCd</abbr> to drop privileges first because of the rehashing feature that he built.
+	This feature allows <abbr title="Next Generation IRC Daemon">ngIRCd</abbr> to reload its configuration and adjust itself to match without actually restarting.
+	If it bound to ports before dropping root privileges, reloading the configuration would cause the daemon to inexplicably lose access to any low-numbered ports.
+	This inconsistency would be the real bug.
+	The sucky part though is that when <abbr title="Next Generation IRC Daemon">ngIRCd</abbr> drops root privileges, it seems to drop all extra privileges granted by the setcap command as well.
+	For hours, I tried using this command, showed to me by teatime of <a href="ircs://irc.oftc.net/%23Debian">#Debian</a>, to try to give the daemon access to the low-numbered ports with the <code>CAP_NET_BIND_SERVICE</code> flag.
+	However, after much effort and the help of someone that prefers not to be mentioned by name, I found that as long as the daemon was started as root, setcap had no effect.
+	It seems that if the daemon is not run as root, it is unable to shed the permissions granted by setcap.
+	Po||ux showed me that copying <a href="file:///lib/systemd/system/ngircd.service">/lib/systemd/system/ngircd.service</a> to <a href="file:///etc/systemd/system/ngircd.service">/etc/systemd/system/ngircd.service</a> and editing the copy, one can add a &quot;User={desired user}&quot; line and the daemon will be started as that user.
+	I now have <abbr title="Next Generation IRC Daemon">ngIRCd</abbr> running on the default ports used by the <code>ircs:</code> and <code>irc:</code> <abbr title="Uniform Resource Identifier">URI</abbr> schemes, ports 994 and 6667, respectively.
+	As I can only run the server over an onion for now, this learning experience could have waited, but I really did not want to set up a daemon now that I was not sure that I would be able to use once I was back on the clearnet.
+	I have forwarded the correct onion ports to their respective clearnet ports, and tomorrow, I will work on finding the default ports used by clients so that I can forward those as well.
+</p>
+<p>
+	I received a letter from the local community college by post today.
+	They asked me to go through an online orientation, but also said that they had sent me the same thing by email.
+	I checked my email inbox though, and they had sent nothing! I logged into my community college account to make sure that they had the correct email address for me.
+	As it turns out, they had decided to assign me a new email address, but as an added bonus, they told me nothing about this new inbox so I have not been receiving any emails from them even when they send them.
+	They also did not offer an option for me to change my email address to my prefered one, so I needed to set up access to the email account that they had assigned me.
+	The school email accounts are unfortunately hosted by Microsoft, so I needed to log in through them.
+	As soon as I logged in with the idiotic, insecure, and easily guessable numeric password that the school had assigned me based on my data of birth, Microsoft insisted that I change my password to something more reasonable.
+	However, they would not accept any password that I chose! They just kept insisting that my password needed to be at least eight characters long and contain characters from at least three of four character classes: upper-case letters, lower-case letters, digits, and non-alphanumeric characters.
+	Unless told to do otherwise, I always use twenty-five character passwords that contain characters from all four classes of character, so there should not have been a problem.
+	I tried several passwords and even tried dropping the non-alphanumeric characters under the premise that perhaps Microsoft was actually choking on some of those characters.
+	In the end, I ended up typing by hand the idiotic password &quot;qweRTY123$%^&quot;, checking to see if Microsoft was detecting the fact that I was pasting the passwords and did not like that.
+	That password worked! I of course went in to the settings to change the password again, but there, I got the real answer.
+	In the settings, it says that the passwords cannot be longer than sixteen characters.
+	The previous page had kept telling me about the lower bound, but did not mention anything about there even being an upper bound! Microsoft, as usual, expects users to be idiots without mentioning such, and expects users to not use passwords with any real length to them.
+</p>
+<p>
+	Speaking of email accounts assigned by schools, when I managed to get back my account at my old school, I was also able to get back my school email account there.
+	(The other school also assigned me an email account, but they both told me that that email account existed and sent most emails to my preferred email address instead of the school-assigned email address.) This account is unfortunately hosted by Google, but I logged in anyway today so that I could download my old emails for archival.
+	I tried to log in with my email client, but I was told that the password was bad.
+	I tried logging in through the Web interface to reset the password, but that did not work either.
+	The client still could not connect.
+	Finally, I noticed a new email from Google through the Web interface.
+	Google had blocked access to my account due to my client &quot;not meeting security standards&quot;.
+	Of course, Google did not mention what standards were not being met or how my client was not meeting them, so I had no way to find a client that would be considered secure.
+	The email provided a link to an article about the topic, but again, the article only mentioned that I should upgrade to a more secure client and did not provide any clues as to what Google considers to be insecure.
+	The article also explained how to disable the security feature.
+	Trying to meet Google&apos;s &quot;security standards&quot; without any clue as to what those standards are is not feasible, so I just disabled the security feature and connected my client.
+</p>
+<p>
+	I started the school&apos;s online orientation, but there was just not enough time in the day to complete it with everything else that has happened today.
+</p>
+<p>
+	<a href="http://ronsor.net/">Ronsor</a> has sstarted doing funky things with ports on his <a href="ircs://ronsor37xl7tqn7p.onion:6697/"><abbr title="Internet Relay Chat">IRC</abbr> server</a>.
+	At first, it was very confusing.
+	It seemed that users on one port could see users in the user list that connected on their own port as well as users connected on the other port, but users connected on the other port could only see users that were connected on their own port.
+	As it turns out, each port was running a different <abbr title="Internet Relay Chat">IRC</abbr> server and some sort of strange relay system was relaying messages to the other servers.
+	The messages were not coming through any sort of relay bot though, they were seeming to come directly from the server in the form of messages from users that did not exist.
+	The reason that some users appeared to be on both user lists is simply that these users were logged into both ports/servers.
+</p>
+<p>
+	<a href="https://opalrwf4mzmlfmag.onion/">Wowaname</a> told me about her new <a href="https://git.vola7ileiax4ueow.onion/">Git server</a> today.
+	As it is running Gogs, it should have a familiar interface, as NotABug.org uses Gogs as well.
+	I asked about running Git over <abbr title="The Onion Router">Tor</abbr>, and wowaname said to run Git over <abbr title="Secure Shell">SSH</abbr>, as <abbr title="Secure Shell">SSH</abbr> is SOCKS-friendly.
+	Apparently proxying is set on a per-host basis though, with wildcard support.
+	I could send everything through <abbr title="The Onion Router">Tor</abbr> by using the host <code>*</code>, but then all connections to hosts using the <code>//test.</code> and <code>//local.</code> <abbr title="Top Level Domain">TLD</abbr>s will get proxied too, so I will not be able to connect to my local server.
+	I will probably look into this and set that up as time allows.
+	If necessary, I can always proxy on a per-<abbr title="Top Level Domain">TLD</abbr> basis and add configuration for all known <abbr title="Top Level Domain">TLD</abbr>s, though if I can instead just add configuration for these two <abbr title="Top Level Domain">TLD</abbr>s that overrides the main proxy configuration, that would be the easiest and most forward-comparable way to do this.
+</p>
+<p>
+	It seems that my mother now wants me to become an aid at her school.
+	That does not sound fun, but if it worked out, it would both be a job to help pay off my school loans and a way to put off school a bit longer while I attempt to pay off those loans.
+	I am really not comfortable going back to school before I finish paying off my loans and have saved up enough money to go back to school without taking out any more loans.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F02-February%2F16.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F02-February%2F16.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

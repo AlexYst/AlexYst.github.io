@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/03-March/19.xhtml"/>
+		<title>phpDocumentor &lt;https://y.st./en/weblog/2016/03-March/19.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/03-March/19.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/03-March/18.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/03-March/20.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>phpDocumentor</h1>
+			<p>Day 00378: Saturday, 2016 March 19</p>
+		</header>
+<p>
+	On <a href="ircs://kitsune6uv4dtdve.onion:6697/%23Volatile">#Volatile</a>, ion was talking about how hard it is to get onto the <a href="ircs://sbuk7aqcxkoyipwv.onion:49202/">Anonops <abbr title="Internet Relay Chat">IRC</abbr> network</a>.
+	The problem is that they ban <abbr title="The Onion Router">Tor</abbr> users, then allow them to use an onion address to access the network if and only if the user has an account that has permission to use <abbr title="The Onion Router">Tor</abbr>.
+	Acquiring permission to use <abbr title="The Onion Router">Tor</abbr> requires being an active participant on the network for three days, then specially requesting it.
+	At that point, it&apos;s a bit too late for using <abbr title="The Onion Router">Tor</abbr> to do some of the good that it should be doing, and Anonops knows who you are.
+	For a group that is supposedly really big on being anonymous, they sure do hate anonymity! Really, they&apos;re just a lot of hypocrites.
+	I&apos;ve set up an onion port forward to make accessing the network over <abbr title="The Onion Router">Tor</abbr> possible for the requisite three days.
+</p>
+<p>
+	I figured that it was about time that I both expanded the comments in include.d and wrote up some online documentation for these classes, functions, and constants.
+	As I wanted the comments to contain everything useful from the online documentation and maybe a little more, I looked into <a href="https://phpdoc.org./">phpDocumentor</a>.
+	<abbr title="PHP: Hypertext Preprocessor">PHP</abbr> even has a <code>T_DOC_COMMENT</code> token, which kind of means that that comment style is the kind favored by the developers.
+	I got phpDocumentor running, but it seems like it has some disadvantages.
+	The main issue is that it generates a documentation file for each named construct and another one for each code file.
+	Because of the way <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>&apos;s autoloading works, the most effective way to define classes is one per file.
+	In turn, my understanding is that this autoloading behavior was decided upon because of how common it was for programmers to put one class in each file.
+	In other words, it&apos;s a very common use case that there would be no need to have separate documentation for files and classes.
+	Additionally, I use the same convention for my functions and constants to avoid having to load functions and constants that won&apos;t be used in a particular project.
+	Half of the documentation files generated aren&apos;t useful, and they can&apos;t just be removed, as the file documentation pages and the class documentation pages link to each other.
+	The documentation also shows the values of all the constants.
+	Needing to know the values of the constants kind of makes constants less valuable.
+	Looking at the source code, the source code uses capital letters in some (though not all) <abbr title="Hypertext Markup Language">HTML</abbr> tags, meaning that documentation generated would need to be cleaned up before being served as <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>.
+	The documentation generated also makes use of deprecated <abbr title="Hypertext Markup Language">HTML</abbr> attributes which would also need to be cleaned up.
+	While I can&apos;t live with the unclean code, I think I could deal with the other issues.
+	The documentation also makes heavy use of frames, but I could pass that off of being the fault of the documentation generator and call it fine.
+</p>
+<p>
+	I tried upgrading to a more recent version of phpDocumentor, and that fixed some of the issues.
+	The code was a lot cleaner, though the deprecated attribute was still used on one page.
+	This page detailed errors found during documentation generation, and I think once I go through and correct the errors, the deprecated element would disappear from the file.
+	The frame use in the new version is outright confusing and difficult to navigate though.
+	Additionally, some navigation elements don&apos;t work without JavaScript enabled and the self-closing syntax of <abbr title="Hypertext Markup Language">HTML</abbr> tags is used inconsistently.
+	Some <abbr title="Hypertext Markup Language">HTML</abbr>-only entities are also used, which don&apos;t seem to function correctly when use with <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> and the <abbr title="Hypertext Markup Language">HTML</abbr>5/<abbr title="Extensible Hypertext Markup Language">XHTML</abbr>5 <code>&lt;!DOCTYPE&gt;</code>.
+	I blame the fact that the <abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr> got all the useful information stripped from the <code>&lt;!DOCTYPE&gt;</code> declaration.
+	They thought that stripping it down would make it easier for developers.
+	However, in <abbr title="Extensible Markup Language">XML</abbr>, only the five <abbr title="Extensible Markup Language">XML</abbr>-defined entities can be used unless the <code>&lt;!DOCTYPE&gt;</code> declaration is used to pull in other entity definitions or the entities are defined within the <abbr title="Extensible Markup Language">XML</abbr> file itself.
+	With further experimentation, I came to the conclusion that I need to build my own template set for use with phpDocumentor, but the documentation on how to actually do that is <a href="https://manual.phpdoc.org./HTMLSmartyConverter/PHP/Converters/HTMLSmarty/tutorial_HTMLSmartyConverter.cls.html">missing</a>.
+</p>
+<p>
+	I applied for three jobs, found one place isn&apos;t hiring, and tried again to apply at a place that has a broken website.
+	The website is still too broken to make application possible.
+</p>
+<p>
+	I haven&apos;t been able to find my wallet all day.
+	I fear that I lost it when I was out yesterday.
+	That would really suck.
+	Hopefully I simply misplaced the wallet here at home and it turns up soon.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F03-March%2F19.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F03-March%2F19.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

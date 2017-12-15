@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2015 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2015/09-September/04.xhtml"/>
+		<title>Lots of mobile issues &lt;https://y.st./en/weblog/2015/09-September/04.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2015/09-September/04.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2015/09-September/03.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2015/09-September/05.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>Lots of mobile issues</h1>
+			<p>Day 00181: Friday, 2015 September 04</p>
+		</header>
+<p>
+	When I awoke this morning, I found that instead of still being under my bed, our cat was not on top of the bed with me.
+	Since then, she has moved around the bed a bit, and occasionally leaves it, but even when left alone, she continues to mostly gravitate towards the bed.
+</p>
+<p>
+	For quite a while, I&apos;ve wanted to disable the &quot;Phone&quot; application on my mobile, but the usual interface for disabling system applications doesn&apos;t allow this.
+	When looking at the &quot;Phone&quot; application in the system menu, the option to disable it is greyed out.
+	I&apos;ve been told that there is a way to disable any such application from the command line, but had yet to look into it until today.
+	Because I wanted to be home as much as possible while the cat gets used to her residence, I didn&apos;t really have anything productive to work on.
+	I looked up instructions telling me that to list packages, I should run <code>pm list packages</code> and to disable a package, I should run &quot;pm disable {package name}&quot; as root.
+	I tried disabling com.android.phone that way, but it did not work.
+	Instead of removing the &quot;Phone&quot; icon from the application drawer, it removed it from the system menu but left it in the application drawer, still usable.
+	After fiddling with it a bit and rebooting several times, I decided that the only way to disable the calling functionality was probably to outright delete the &quot;Phone&quot; application.
+	I decided to install &quot;/system/app mover&quot;, move the &quot;Phone&quot; application to where I could back it up and delete it, back it up, then uninstall it.
+	However, upon moving the application, complications arose.
+	First, the &quot;Phone&quot; application crashed, popping up a dialog asking for confirmation of the message.
+	That didn&apos;t seem so unexpected, as it had just gotten moved.
+	However, every time I confirmed the message, it would pop back up again! It seemed the &quot;Phone&quot; application insisted on restarting.
+	No matter how many times it crashed, it would not stay down.
+	I tried rebooting the device, as it was the only thing I could do with the device in that state.
+	After rebooting, &quot;Phone&quot; crashed once, then stayed down.
+	However, the <abbr title="Global System for Mobile Communications">GSM</abbr> signal icon had disappeared entirely! It seems the &quot;Phone&quot; application is somehow tied to the wireless capabilities of the device.
+	I find this particularly frustrating because Android tablets do not have the &quot;Phone&quot; application, yet they still connect to the network.
+	For some reason, the &quot;Phone&quot; application is necessary for connection, but only on so-called &quot;phones&quot;.
+</p>
+<p>
+	Undoing the move of the &quot;Phone&quot; application was not easy.
+	&quot;/system/app mover&quot; could not find the application to move it back, so I had to do it manually.
+	First, I verified that the two application directories were located at <a href="file:///system/app"><code>/system/app</code></a> and <a href="file:///data/app"></a><code>/data/app</code>.
+	Then, I tried using the <code>mv</code> command.
+	It shouldn&apos;t be very hard, right? Wrong.
+	<code>mv</code> failed due to the two directories existing on different partitions.
+	I tried <code>cp</code>, but that didn&apos;t work either.
+	This time, the problem was that the <code>/system</code> partition is read-only.
+	I tried running <code>mount --help</code> for a hint as to how to remount the system as writable, but the command wouldn&apos;t take the <code>--help</code> flag or the <code>-h</code> flag.
+	I couldn&apos;t look up the answer online because I had no connection; my laptop was offline due to not having an <abbr title="Internet service provider">ISP</abbr> and my mobile was offline due to this mess I caused and was trying to clean up.
+	I tried running <code>mount --help</code> on my laptop to see if instructions existed there, but the instructions there were incomplete.
+	There was no mention whatsoever about remounting.
+	I cobbled together <code>mount -o remount,rw</code> from part of the <code>--help</code> output with some broken fragments of information in my own memory, and tried running that.
+</p>
+<p>
+	When messing around with the mobile, one thing I did was turn on &quot;fixed dialing numbers&quot;.
+	I don&apos;t know what those do yet, but it seems that that feature is buggy and messes with connectivity as well.
+	If fixed dialing numbers are turned on when the device boots, connectivity will not be available until the feature is turned back off.
+	However, when the feature is first turned on, connectivity will not be lost right away.
+	Instead, no issue will be seen until the next time the device restarts.
+	The connectivity issues caused by that took much longer to solve, though I didn&apos;t actively try to figure them out the whole time because I had no way to know if the issues were caused by my device or caused by the carrier&apos;s towers.
+</p>
+<p>
+	It seems that some scammer got ahold of a bunch of my mother&apos;s personal information, including her full legal name, telephone number, and the last four digits of her Social Security number.
+	He called her up claiming to be the <abbr title="Internal Revenue Service">IRS</abbr>, saying that she had accidentally committed fraud on her taxes or something.
+	He claimed that the <abbr title="Internal Revenue Service">IRS</abbr> had audited her taxes, and she owned them money.
+	If she wouldn&apos;t pay, he said that the <abbr title="Internal Revenue Service">IRS</abbr> would take her to court.
+	When she refused to pay, not believing he was with the real <abbr title="Internal Revenue Service">IRS</abbr>, he claimed that an officer would be be at her door in forty-five minutes to <q>put her in handcuffs for a really, really long time</q>.
+	Yeah.
+	Right.
+	That sounds very legitimate.
+	Of course, the officer never showed up because there wasn&apos;t any real legal issues going on.
+</p>
+<p>
+	At our new residence, we&apos;ve got a greenhouse full of edible plants and some corn stalks growing outside it.
+	The landlord said we can take whatever vegetables we want from there, and that many of them are ready to harvest.
+	Today, we tried opening up some of the corn ears and found that they are not the generic yellow that we expected.
+	Instead, the corn is a variety of fun colors.
+	Most of it is varying shades of green and purply-grey, but there are also reds, purples, and a few standard yellow mixed in.
+	Each kernel, even on one cob, seems to be a different color, aside from the yellow ones which all matched.
+	The cobs themselves are still yellow, as are the sides of the kernels that are not directly exposed before removing kernels from the cob.
+	It&apos;s unfortunate that corn kernels are so attached to the cob that removing them seems to damage them.
+	Once I have Internet access back up on my laptop, I plan to do some research on how to safely remove corn kernels for planting.
+	It would be fun to keep this atypical corn around.
+</p>
+<p>
+	I am cut off from the Internet tonight and cannot update my <a href="/a/canary.txt">warrant canary</a>.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2015 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F09-September%2F04.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F09-September%2F04.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

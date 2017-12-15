@@ -1,0 +1,186 @@
+/*
+	<https://y.st./>
+	Copyright © 2015-2017 //y.st. <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org./licenses/>.
+*/
+
+body {
+	background-image: url("/link/CC_BY-SA_4.0/y.st./background.png");
+	background-color: #000;
+	background-attachment: fixed;
+}
+
+blockquote {
+	background-image: url("/link/CC_BY-SA_4.0/y.st./background_-_inverted.png");
+	background-color: #222;
+	background-attachment: fixed;
+}
+
+blockquote blockquote {
+	background-image: url("/link/CC_BY-SA_4.0/y.st./background.png");
+	background-color: #000;
+	background-attachment: fixed;
+}
+
+blockquote blockquote blockquote {
+	background-image: url("/link/CC_BY-SA_4.0/y.st./background_-_inverted.png");
+	background-color: #222;
+	background-attachment: fixed;
+}
+
+blockquote blockquote blockquote blockquote {
+background-image: url("/link/CC_BY-SA_4.0/y.st./background.png");
+	background-color: #000;
+	background-attachment: fixed;
+}
+
+/* The CSS spec doesn't allow `position: sticky;` ... yet?
+nav {
+	position: sticky;
+	top: 0em;
+	background: inherit;
+}
+
+nav * {
+	margin: 0rem;
+}
+
+nav p {
+	padding: 1rem;
+}
+*/
+
+ul.langselect {
+	font-size: 3rem;
+	text-align: center;
+	font-weight: bold;
+}
+
+ul.langselect span {
+	color: #888;
+}
+
+div.weblogindex {
+	display: flex;
+	justify-content: left;
+	margin: auto;
+	padding: 0rem;
+	flex-wrap: wrap;
+/* This default is for small viewports; it'll be overridden later. */
+	width: 11rem;
+/* This centres the text for any browser that does not support flex boxes: */
+	text-align: center;
+}
+
+@media (min-width: 23rem) {
+	div.weblogindex {
+		width: 22rem;
+	}
+}
+
+@media (min-width: 34rem) {
+	section[id="2015"] div.weblogindex pre:first-child {
+		width: 33rem;
+		text-align: right;
+	}
+
+	div.weblogindex {
+		width: 33rem;
+	}
+}
+
+@media (min-width: 45rem) {
+	div.weblogindex {
+		width: 44rem;
+	}
+}
+
+@media (min-width: 67rem) {
+	div.weblogindex {
+		width: 66rem;
+	}
+}
+
+@media (min-width: 133rem) {
+	div.weblogindex {
+		width: 132rem;
+	}
+}
+
+div.weblogindex pre {
+	margin: 0rem;
+}
+
+h2.tld-great, h3.tld-available, span.needed-for-bachelor {
+	color: #000;
+	background-color: #088;
+}
+
+h2.tld-decent, h3.tld-unknownavailability {
+	color: #000;
+	background-color: #880;
+}
+
+h2.tld-usable, h3.tld-unavailable, span.needed-for-associate {
+	color: #000;
+	background-color: #808;
+}
+
+a[href="https://y.st./a/canary.txt"], a[href="/a/canary.txt"] {
+	color: #ff0;
+}
+
+/* Text decorations used when no semantic value is available */
+span.underline {
+	text-decoration: underline;
+}
+
+span.redacted {
+	color: #fff;
+	background-color: #fff;
+}
+
+img.weblog-header-image, img.framed-centred-image {
+	max-width: calc(100% - 2rem - 2px);
+	display: block;
+	margin: auto;
+	padding: 1rem;
+	border: 1px dashed;
+	background-color: #000;
+}
+
+div.APA_references p {
+	margin-left: 5rem;
+	text-indent: -4rem;
+}
+
+div.APA_title_page {
+	height: 28cm;
+}
+
+div.APA_title_page p {
+	text-align: center;
+	margin-top: 50%;
+	margin-bottom: 50%;
+}
+
+span.hyperlink_unavailable {
+	color: #444;
+}
+
+a.hyperlink_unavailable {
+	color: #888;
+}
+

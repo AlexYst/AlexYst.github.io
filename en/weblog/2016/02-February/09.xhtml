@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/02-February/09.xhtml"/>
+		<title>Making better use of exceptions and an attempt at database freedom &lt;https://y.st./en/weblog/2016/02-February/09.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/02-February/09.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/02-February/08.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/02-February/10.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>Making better use of exceptions and an attempt at database freedom</h1>
+			<p>Day 00339: Tuesday, 2016 February 09</p>
+		</header>
+<p>
+	Today, I thought that it would be a good idea to clean up my use of exceptions.
+	Until today, I have been throwing exceptions of predefined types without giving my exceptions any distinguishing features.
+	Sure, I set the error messages of the exceptions, but those are not very useful when determining if you have caught the expected exception.
+	There are a few ways that I could make my exceptions stand out.
+	The easiest would be to define my own exception classes for each situation in which I need to throw an exception.
+	This seems like overkill though, as least for my current use case.
+	The second option is to set an error code and use the exception&apos;s <a href="https://secure.php.net/manual/en/exception.getcode.php"><code>getCode()</code></a> method to retrieve it and compare it against a known value.
+	The problem with this option is that the default exceptions only accept integer error codes.
+	If I could use a string, I could set the code to the name of the throwing class/function, so I could distinguish between exceptions thrown by the class/function that I am expecting an exception from and exceptions thrown because of unexpected errors.
+	Again, I could define my own exception classes in order to add the option of using string error codes, but I would either be giving up the option of using a fitting exception class for each case or I would need to define several essentially-identical exceptions, each of which extend a different predefined exception class.
+	My next option would be to choose a large integer that people are not likely to choose and use that as the exception code.
+	This has the advantage that the standard exception classes could still be used, but the disadvantage that the integers are not easily memorable or easily recognizable.
+	They could be easily tested against if thrown from within a class though, as the class could have a constant <code>self::EXCEPTION_CODE</code>, which would be visible and comparable within <code>catch()</code> blocks.
+	This would not be helpful for exceptions thrown from functions, but would work for my use case.
+	I throw exceptions from functions only when I want the calling script to die.
+	In classes though, throwing exceptions is useful for preventing instantiation, in which case the script may still need to continue.
+	My final option would be to set an unused property of the exception to the string value that I desire.
+	That has the advantage of not needing any new exceptions defined and still having recognizable values, but relies on people using include.d to recognize the fact that although the exceptions I throw are of the standard type, but that they are somehow different and may need to be treated different.
+	That just sounds like messy coding.
+</p>
+<p>
+	I decided to define the <code>self::EXCEPTION_CODE</code> constant and use integer exception codes based on the hash of the class&apos; name.
+	To fit within the bounds of the integer value type, it does need to be truncated and wrapped from unsigned signed.
+	It seems that if a float is used during class instantiation, no error will be raised, but the float will be ignored and the default error code of zero will be used.
+	To provide better cross-platform support, I will keep my error codes within the 32-bit integer range.
+	Once I had the <code>self::EXCEPTION_CODE</code> constant implemented, I found an exception method that made a lot more sense to use: <a href="https://secure.php.net/manual/en/exception.getfile.php"><code>\Exception::getFile()</code></a>.
+	This method returns the name of the file in which the exception was thrown, which is a much more logical way to determine if the error came from a particular one of my classes or functions, seeing as each class and function is in its own file.
+	Classes can implement a constant that is set using the <code>__FILE__</code> keyword for ease, but determining the origin of an exception thrown from a function can be fairly-well identified by running the output of <code>\Exception::getFile()</code> through <code>\substr()</code>.
+	That freed up the error code value to be used for more fine-tuned processing.
+	I am not sure that I have a use for the error codes myself, but I have added a different error code for each line that throws an exception so that these cases can be handled differently if needed.
+</p>
+<p>
+	After setting proper error codes, I thought about using that same hashing technique for setting the values of constants that are meant to be used as options.
+	These values are arbitrary, and I had been setting them according to alphabetical order of the constants used by a given class for options for input into functions.
+	The hashing idea seems like a good option though.
+	After all, these constants are meant to be used as-is; their values are arbitrary and should not be used directly.
+	However, I decided on something better.
+	To express both the arbitrary nature of these values and the fact that they are volatile and subject to change, I can set them using the <code>__LINE__</code> keyword.
+	It is useful to have the exception codes be unique across classes, but the option codes do not need to be.
+	There is no point in hashing anything meaningful, I just need to take advantage of the arbitrary data that exists simply because that line of code exists.
+	I checked through my classes though, and it appears that I no longer have any such option constants.
+	I must have only used them with wrapper classes so far, so when I deleted most of those, I deleted the constants with them.
+	I will use this approach for any relevant classes in the future.
+</p>
+<p>
+	Having finished my improvements to my exception-based code, I next focused on my intended task for the day: converting the spider to use the <a href="https://secure.php.net/manual/en/class.pdo.php"><code>\PDO</code> class</a> instead of the <a href="https://secure.php.net/manual/en/class.mysqli.php"><code>\mysqli</code> class</a>.
+	I had planned for a simple method swap for the most part, but the documentation for the <a href="https://secure.php.net/manual/en/pdo.quote.php"><code>\PDO::quote()</code> method</a> insisted that I should instead use <a href="https://secure.php.net/manual/en/pdo.prepare.php"><code>\PDO::prepare()</code></a> to generate prepared statements that would later be run by passing an array of values instead of a query in string form.
+	Reluctantly, I restructured all of my database logic to accommodate.
+	The <a href="https://secure.php.net/manual/en/pdostatement.execute.php"><code>\PDOStatement::execute()</code> method</a> is less than pleasant to use.
+	It can be used in two ways, one of which seems very messy and requires needless extra legwork and the other of which just requires needless extra leg work.
+	If I understand correctly, the first option requires you to set up variables that are not passed into the method, but act as both input into and output from the method, presumably in some sort of bizarre pass-by-reference move taken to the next level of strangeness.
+	Also, the output retrieved using the more sensible option returns arrays with double the needed number of elements by default.
+	One set of elements is indexed by name, the other by integer.
+	I never could find a way to make the class return arrays using only the named indexes, but there was an option for making the class return instances of another class instead of arrays.
+	These class instances had only named properties, no numbered properties.
+	This option allow any arbitrary class be used for the purpose, or presumably, any arbitrary class that allows simple instantiation and allows public access to the properties that need to be set (which vary based on the query being performed).
+	My main goal was just to get rid of the extra unneeded numeric keys, I did not need any special functionality.
+	With that in mind, I just used the generic <code>\stdClass</code>, which worked perfectly.
+	In any case, hopefully the new code will be compatible with several database options.
+</p>
+<p>
+	While working with the spider code, I found a strange error in how sitemaps were being handled.
+	Instead of adding them to the queue, the spider was setting the current-page <abbr title="Uniform Resource Identifier">URI</abbr> to that of the sitemap.
+	Before this change could have any effect, the current-page <abbr title="Uniform Resource Identifier">URI</abbr> was set to that of a page from the queue, so sitemaps were essentially being ignored.
+	I also found a section of the code that had not been updated to use the <code>\DOMDocument</code> class&apos; output, still relying on the output format of my <code>wrapper\xml</code> class.
+	The spider was two days into crawling a website that it said it had four days left to work on, but I decided to kill it prematurely anyway.
+	I will not be here when the spider finishes with that site and I do not want the data format error to kill the spider while I am away, nor do I want the spider to continue ignoring sitemaps.
+	The sitemap fix is probably just a formality though.
+	I am not sure that many people in onion space expect search engine spiders to come crawling, so they likely do not have <code>robots.txt</code> files or sitemaps set up.
+</p>
+<p>
+	While learning how to use the <code>\PDO</code> class and its related classes, I found a new exception class: <code>\PDOException</code>.
+	My understanding of the exception inheritance tree is now as follows:
+</p>
+<ul>
+	<li><a href="https://secure.php.net/manual/en/class.throwable.php"><code>\Throwable</code></a><ul>
+			<li><a href="https://secure.php.net/manual/en/class.error.php"><code>\Error</code></a><ul>
+				<li><a href="https://secure.php.net/manual/en/class.arithmeticerror.php"><code>\ArithmeticError</code></a><ul>
+					<li><a href="https://secure.php.net/manual/en/class.divisionbyzeroerror.php"><code>\DivisionByZeroError</code></a></li>
+				</ul></li>
+			<li><a href="https://secure.php.net/manual/en/class.assertionerror.php"><code>\AssertionError</code></a></li>
+			<li><a href="https://secure.php.net/manual/en/class.parseerror.php"><code>\ParseError</code></a></li>
+			<li><a href="https://secure.php.net/manual/en/class.typeerror.php"><code>\TypeError</code></a></li>
+		</ul></li>
+		<li><a href="https://secure.php.net/manual/en/class.exception.php"><code>\Exception</code></a><ul>
+			<li><a href="https://secure.php.net/manual/en/class.errorexception.php"><code>\ErrorException</code></a></li>
+			<li><a href="https://secure.php.net/manual/en/class.logicexception.php"><code>\LogicException</code></a><ul>
+				<li><a href="https://secure.php.net/manual/en/class.badfunctioncallexception.php"><code>\BadFunctionCallException</code></a><ul>
+					<li><a href="https://secure.php.net/manual/en/class.badmethodcallexception.php"><code>\BadMethodCallException</code></a></li>
+				</ul></li>
+				<li><a href="https://secure.php.net/manual/en/class.domainexception.php"><code>\DomainException</code></a></li>
+				<li><a href="https://secure.php.net/manual/en/class.invalidargumentexception.php"><code>\InvalidArgumentException</code></a></li>
+				<li><a href="https://secure.php.net/manual/en/class.lengthexception.php"><code>\LengthException</code></a></li>
+				<li><a href="https://secure.php.net/manual/en/class.outofrangeexception.php"><code>\OutOfRangeException</code></a></li>
+			</ul></li>
+			<li><a href="https://secure.php.net/manual/en/class.runtimeexception.php"><code>\RuntimeException</code></a><ul>
+				<li><a href="https://secure.php.net/manual/en/class.outofboundsexception.php"><code>\OutOfBoundsException</code></a></li>
+				<li><a href="https://secure.php.net/manual/en/class.overflowexception.php"><code>\OverflowException</code></a></li>
+				<li><a href="https://secure.php.net/manual/en/class.pdoexception.php"><code>\PDOException</code></a></li>
+				<li><a href="https://secure.php.net/manual/en/class.rangeexception.php"><code>\RangeException</code></a></li>
+				<li><a href="https://secure.php.net/manual/en/class.underflowexception.php"><code>\UnderflowException</code></a></li>
+				<li><a href="https://secure.php.net/manual/en/class.unexpectedvalueexception.php"><code>\UnexpectedValueException</code></a></li>
+			</ul></li>
+		</ul></li>
+	</ul></li>
+</ul>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F02-February%2F09.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F02-February%2F09.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

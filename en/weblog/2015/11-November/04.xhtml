@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2015 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2015/11-November/04.xhtml"/>
+		<title>Reworking the website&apos;s compile script &lt;https://y.st./en/weblog/2015/11-November/04.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2015/11-November/04.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2015/11-November/03.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2015/11-November/05.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>Reworking the website&apos;s compile script</h1>
+			<p>Day 00242: Wednesday, 2015 November 04</p>
+		</header>
+<p>
+	Thanks to Git, I found that every time I sign a file, even if the file is identical to a file I have already signed, the signature is different.
+	It seems that <abbr title="GNU Privacy Guard">GnuPG</abbr> is including information about the time the file was signed within the signature itself.
+	Every time that I&apos;ve needed to modify a page, I&apos;ve passed an argument to my compile script that has erased the whole website and built it all from scratch again, generating new signature files.
+	Additionally, certain index files relating to the weblog are regenerated every time, regardless of whether the the index is actually in need of updating or not.
+	The signatures across almost my entire website therefor include the incorrect signing date.
+	So now, on top of everything else I need to do, I need to figure out how to prevent the rebuilding of files that do not need rebuilding.
+	I tried this before and got nowhere, but it seems I will need to try harder.
+	I feel like this website is having to become ever-more complex.
+	It&apos;s only supposed to be a simple website that acts as my home on the Web.
+</p>
+<p>
+	I&apos;ve cobbled together a solution that might work, but I I will need to keep an eye on it over the next while.
+	It involves compiling the entire website every time and only writing to disk as needed, as <a href="https://wowana.me/">wowaname</a> had tried to get me to do before.
+	The main compile scripts now ignore the creation of signature files and the existence of current files, instead delegating this task to a new function specially designed for the job.
+	The function checks to see if it has been handed a <abbr title="GNU Privacy Guard">GnuPG</abbr> handle, if the file already matches what is supposed to be written in it, if the signature file exists, and if the signature file is still valid.
+	The lack of ability to delete the whole website has resulted in an inability to clear out deleted pages, so a hacky workaround has been put in place.
+	Every time that one of the main compile scripts calls the new function, it also adds one or two keys to an array.
+	One key represents the path of the file to be updated and the other represents the file&apos;s signature&apos;s path, if there is a signature.
+	At the end of compilation, the script walks the directory tree and checks each non-directory file for an entry in the array.
+	If the file is not present in the array, it is erased.
+	I fear that this solution will not work long-term.
+	The array will grow by at least two keys each day.
+	The number of pages to process will grow by at least one each day.
+	Recompiling everything and checking each file to see if we should keep it will take longer each day.
+	What happens in several years when the website has grown into a monster?
+</p>
+<p>
+	Today I applied for work at that restaurant I visited two days ago.
+	The job market sucks and I&apos;m almost certain to end up in another stupid job, if I can find employment at all.
+</p>
+<p>
+	I found an issue with how I was trying to make links to the onion half of this website invisible.
+	The <abbr title="Cascading Style Sheets">CSS</abbr> made the <code>&lt;a/&gt;</code> tag itself invisible, but I have a separator character between navigation links.
+	As a result, if you looked before, you might have noticed two separator characters in a row.
+	I&apos;ve removed the check on the <code>&lt;a/&gt;</code> tags and have switched to using manually-designated <code>&lt;span/&gt;</code> tags.
+	It is less automated, but it looks better when rendered.
+	Making this change set off the rewriting of all the pages of course, causing the signatures to be recomputed once again.
+	At least this time it was for an actual change to these documents though.
+</p>
+<p>
+	Having progressed as far as I&apos;m really going to on this website for the time being, I decided to start work on some sort of Web software project.
+	I need to get back into coding.
+	However, I could not come up with any project that would actually do the world some good while also being at my skill level.
+	So instead, I settled for returning to work on Minetyst.
+	However, my thoughts on the project have greatly changed.
+	Instead of keeping it hidden until it is usable, I&apos;ve decided to upload the code as it is and just label it as incomplete.
+	If other people have ideas and actually stumble upon the project, they are welcome to join me.
+	I&apos;ve also separated Minetyst from my name.
+	It is now called <a href="https://notabug.org/Thorn/Anarchy_game">Anarchy Game</a>.
+</p>
+<p>
+	My mother just cannot wrap her head around the fact that my mobile doesn&apos;t do text messaging and that if she wants to reach me while I&apos;m out, she&apos;ll have to use email.
+	She just text messaged four different numbers trying to reach me.
+	I have no clue who she messaged, but is sounds like nobody responded.
+</p>
+<p>
+	My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2015 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F11-November%2F04.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F11-November%2F04.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

@@ -1,0 +1,78 @@
+/*
+	CS 2205 Unit 3
+	Copyright © 2017 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org./licenses/>.
+*/
+span.colour0 {
+	color: #00f;
+}
+
+span.colour1 {
+	color: #0f0;
+}
+
+span.colour2 {
+	color: #0ff;
+}
+
+span.colour3 {
+	color: #f00;
+}
+
+span.colour4 {
+	color: #f0f;
+}
+
+span.colour5 {
+	color: #ff0;
+}
+
+span.colour6 {
+	color: #80f;
+}
+
+span.colour7 {
+	color: #8f8;
+}
+
+span.colour8 {
+	color: #f80;
+}
+
+span.colour9 {
+	color: #f8f;
+}
+
+p.centre, th, td {
+	text-align: center;
+}
+
+td:first-child, th:first-child {
+	text-align: left;
+}
+
+img.border2 {
+	border: 2px solid #000;
+}
+
+table {
+	border-collapse: collapse;
+	min-width: 80%;
+}
+
+td, th, caption {
+	border: 1px solid #000;
+}
+

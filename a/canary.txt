@@ -1,0 +1,61 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+I *may* have been served a gag order or am otherwise required by
+law not to disclose something if *any* of the following is true:
+* the signature on this file is invalid or missing
+* this file is missing or inaccessible
+* this file has not been updated in over a month
+
+Keep in mind that there could be other reasons for this canary
+to not be updated. For example, technical difficulties may
+prevent me from updating this website. If the canary is missing
+or is older than the most recent weblog entry, it's a pretty
+good sign that I am in distress and need help, but if the site
+is down or has not been updated, there is a chance that I am
+just fine.
+
+My PGP key ID is 0xE7464A03 and my PGP fingerprint is
+D135 B061 DBED 690B 479F E2E3 7D83 E1E5 E746 4A03.
+
+As of today, Wednesday, 2017 December 13,
+I have not been legally required to withhold information.
+University of the People has issued me a take-down request for
+some pages on this website, but I have not been asked to keep
+quiet about it.
+
+This file is what is known as a warrant canary. The USA PATRIOT
+Act allows the government to *defile the rights granted to us in
+the constitution* in certain ways, such as prohibiting the
+disclosure of the existence certain warrants and subpoenas. It
+is, however, legal to disclose whenever these things *have not*
+been served. As long as this file is up-to-date, it means that I
+am still legally allowed to speak freely. If this file has gone
+stale, it means that I am not able to disclose something that I
+really should be able to.
+
+For more information on warrant canaries, please see:
+ * <https://en.wikipedia.org/wiki/Warrant_canary>
+ * <https://www.eff.org/deeplinks/2014/04/warrant-canary-faq>
+
+This canary has gone down in the past due to technical issues:
+ * 2015-05-11 through 2015-05-29
+  '- My laptop died on me. I had no way to update the website.
+ * 2016-02-01 through 2016-10-09
+  '- Various life circumstances made website updates difficult.
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE0TWwYdvtaQtHn+LjfYPh5edGSgMFAlox+5UACgkQfYPh5edG
+SgNtShAAnoseamMDgqYhXMjUPci014/2yAYVLs+8KrvPzWrmx/L/TUuCmEBlBeD7
+FlnJExhzHoGqMTRkN+TrzgPh2Pv7ve13k4q/9jOaAdUhdD/ceRtVNlwqnp+ob8EE
+HS95tLhc5PG3H3TD5mL1p9PRM+zdwfV4rkgtGcQrM4346CqvEWCAMcfoV5MHA8CR
+iSqoFW4cNIV/ng0YzBh7CBKoLRR9y1ZYq9ouea5XFDC0svUi+F+qx3zl4Ys8Nju0
+LBRiYTdVhAFeM+uc7ozx0d3QJ6Cqt8V3SyNgI/wIW8tA0whymv1VSzIYXYM8zNJ1
+zeaDdJNFC+Dh+OBo+ypzw4IN262tJKiq0QKizognE6xY7euMp9kA0Zr80j/bgndL
+h0y2Hi+LiaSh7iCSOiBSGSjy7BkKnG+cRBVUXQkmOUQBgetwvo0IUF4QEFQoV3w3
+M8UNDyR+A0cLrapwHnd3+XLfXyqAzq9DSdNFAhjY5P8A9Ue/Zb63wcw7gXMvUaUE
+PJ6cFVtW7aFWccM6bKPHo/VPBP5SmNWLjJO2pP7wvlA/596PXF1E7t3wvO1lZeHP
+dOZSTr/bPM+Ip9J/XrNv5Z+xDgPkkNFP8cnhOsCr7g+tpx7Qd+E6Ty26Qs/zbrPY
+t019P1AXyfodChhKMvfDXvYLhvnJ0u6Pc2k6mTb8WNLDal+KZqw=
+=/fvP
+-----END PGP SIGNATURE-----

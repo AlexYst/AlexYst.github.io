@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/01-January/03.xhtml"/>
+		<title>Does my spider finally work? &lt;https://y.st./en/weblog/2016/01-January/03.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/01-January/03.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/01-January/02.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/01-January/04.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>Does my spider finally work?</h1>
+			<p>Day 00302: Sunday, 2016 January 03</p>
+		</header>
+<p>
+	Even after over twelve hours, my onion address-crawling spider was not moving on past another certain address.
+	I had to give up and abort the spider&apos;s process.
+	I had thought that I had written the script to abort each download after an hour of trying, but after further reading, I think that the setting that I used only pertained to the amount of time needed to initiate a server connection.
+	Once connected, the server was allowed to cause as long of a hang as it wanted to! I modified the code to use CURLOPT_TIMEOUT instead of CURLOPT_CONNECTTIMEOUT, so now, hopefully the bot will not allow any Web page to cause a hang that lasts longer than an hour.
+	When I finally went to bed, it was still running.
+	I will check on it in the morning.
+</p>
+<p>
+	<a href="https://opalrwf4mzmlfmag.onion/">Wowaname</a> has set up an onion address for her clearnet website.
+	This got me thinking.
+	When I learned that <abbr title="Internet Assigned Numbers Authority">IANA</abbr> had set aside the <code>//onion.</code> <abbr title="Top Level Domain">TLD</abbr> for official use by <abbr title="The Onion Router">Tor</abbr>, I started linking to onion addresses as I would other addresses.
+	However, until today, I have still linked to clearnet addresses ahead of onion addresses when both were available, due to the fact that these addresses can be used by <abbr title="The Onion Router">Tor</abbr> users and non-<abbr title="The Onion Router">Tor</abbr> users alike.
+	I need to stop treating onion addresses as second-class addresses.
+	Onion addresses are officially completely legitimate.
+	I need to encourage <abbr title="The Onion Router">Tor</abbr> use by linking to onion addresses whenever they are available.
+</p>
+<p>
+	Wowaname also removed services from the <a href="https://kitsune6uv4dtdve.onion/">Volatile network</a>.
+	I think that maybe she realized that she was abusing her power when she was trolling <a href="http://zdasgqu3geo7i7yj.onion/">theunknownman</a>.
+	She had been taking advantage of the fact that she runs the network and services, using more force than a regular user is able to, despite the fact that she has always been against people doing such.
+</p>
+<p>
+	People on <a href="ircs://kitsune6uv4dtdve.onion:6697/%23Volatile">#Volatile</a> were talking about how annoying it was that many users supposedly support <abbr title="The Onion Router">Tor</abbr>, but get annoyed at <abbr title="The Onion Router">Tor</abbr> users when said <abbr title="The Onion Router">Tor</abbr> users are not able to access sites that the non-<abbr title="The Onion Router">Tor</abbr> users want to show them.
+	These websites are maliciously discriminating against <abbr title="The Onion Router">Tor</abbr> users, yet it is the <abbr title="The Onion Router">Tor</abbr> users that are made out to be the bad guys.
+	In particular, paste sites that participate in such descrimination were mentioned, so I brought up the fact that I had been meaning to build a paste site that runs on an onion address.
+	Seeing that, z showed me an existing paste site: <a href="http://ypbnurlwfis7xsei.onion/">Anon PasteBin</a>.
+	While I will still use <a href="https://paste.debian.net/">Debian Pastezone</a> whenever I am working in a context that I believe is seen by more clearnet users than <abbr title="The Onion Router">Tor</abbr> users, if I think that <abbr title="The Onion Router">Tor</abbr> use is the standard in a given context, I will use Anon PasteBin instead now.
+	There are two things that I do not like about Anon PasteBin though.
+	First, using it requires solving a <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>, unlike Debian Pastezone.
+	Second, the default deletion setting is to never delete e given paste, again, unlike Debian Pastezone.
+	Anon Pastebin does allow one to set an expiration tome, however.
+</p>
+<p>
+	I went off to work with my mother in her classroom again today.
+	On the way there, we stopped at a store, so I picked up the mobile service activation card I needed to begin service on my secondary device.
+	Much to my dismay, they charged me an extra dollar for an &quot;E911 tax&quot;.
+	First of all, they should have built that into the price.
+	Instead of tacking on the tax as an extra charge, they should have just raised the price of the product to cover the tax.
+	At least that way, I would know the real price of what I was buying before I bought it.
+</p>
+<p>
+	After we left the store, we spent most of the day working in her classroom.
+	While there, I got a couple of leads on jobs though.
+	First, one of the teachers said that the school is always in need of aids and that perhaps I could apply.
+	She did not know the details of what qualifications I would need in order to become an aid, but it is worth looking into.
+	A second teacher  said that she thought that becoming an aid required specific collage courses be taken first.
+	She recommended looking for work at a computer repair store run by a couple she trusts though.
+	She said that she had no idea if they were hiring though, so there is no guarantee that a job is even available there.
+</p>
+<p>
+	Speaking of computer repair, Vanessa and Cyrus returned home today.
+	While away, Cyrus made the mistake of letting his friends pressure him into trying to install Skype.
+	Somehow, the attempt borked his whole system.
+	The most obvious issue was that his display managed was broken.
+	He though that he had &quot;uninstalled his <abbr title="graphical user interface">GUI</abbr>&quot;, but the <code>startx</code> command brought Xfce up.
+	I found that the <code>lightdm</code> package was still present, but in some sort of half-installed limbo state.
+	I could not fully install it though because it required missing dependencies be installed and we could not get the machine to connect to the network, neither via Wi-Fi nor Ethernet.
+	I tried to take a look at the network manager, but I found that that too was in some sort of half-installed limbo state and dealing with unresolved dependencies.
+	After much struggle, We decided to back up his personal files and reinstall the system from scratch.
+	Fixing the current system installation would require a network connection, but acquiring a network connection would require first fixing the system.
+	We backed up his files tonight, but we will have to work on reinstalling the system tomorrow.
+</p>
+<p>
+	I honestly tried to get my <abbr title="Internet Relay Chat">IRC</abbr> server set up today, but there simply was not time.
+	I uninstalled both <abbr title="Next Generation IRC Daemon">ngIRCd</abbr> and Atheme services, then installed Ratbox.
+	That was as far as I got though.
+	When I get a chance, I need to configure Ratbox, then look into Ratbox services.
+</p>
+<p>
+	My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F01-January%2F03.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F01-January%2F03.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/03-March/10.xhtml"/>
+		<title>Beginning to file bug reports against Web browsers &lt;https://y.st./en/weblog/2016/03-March/10.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/03-March/10.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/03-March/09.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/03-March/11.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>Beginning to file bug reports against Web browsers</h1>
+			<p>Day 00369: Thursday, 2016 March 10</p>
+		</header>
+<p>
+	I broke down and tried using <a href="apt:uzbl">uzbl</a> without <a href="apt:tor"><abbr title="The Onion Router">Tor</abbr></a>.
+	However, as it won&apos;t accept &quot;bad&quot; certificates, I can&apos;t test its handling of <abbr title="Server Name Indication">SNI</abbr> host names.
+	I sorted the rest of the Web browser I tried into categories debending on the nature of the bugs that they display in relation to Host headers and <abbr title="Server Name Indication">SNI</abbr> host names.
+	I found that <a href="apt:links">Links</a> and <a href="apt:links2">Links2</a> were the only two without bugs! Those two don&apos;t support <abbr title="Server Name Indication">SNI</abbr> host names, but that means that they are at least not sending malformed <abbr title="Server Name Indication">SNI</abbr> host names.
+</p>
+<p>
+	I tried to report the bug in <a href="apt:iceweasel">Firefox</a> to Mozilla, but I when attempting to register an account, I was greeted with this error message:
+</p>
+<blockquote><p>
+	User account creation has been restricted.
+	Contact your administrator or the maintainer (bugzilla-admin@mozilla.org) for information about creating an account.
+</p></blockquote>
+<p>
+	I need this bug fixed though, so I wrote to the email address provided in hopes of getting help.
+</p>
+<p>
+	Next, I went to report the bug in <a href="apt:midori">Midori</a>.
+	That seemed simple enough at first, but they wanted me to include information on what version of Midori I&apos;m running.
+	Seeing as every Web browser I&apos;ve tested either has this bug, one of two others, doesn&apos;t support <abbr title="Server Name Indication">SNI</abbr>, or won&apos;t start, the chances that this is fixed in recent versions is very slim.
+	However, I didn&apos;t want my report dismissed on the grounds that I&apos;m using an outdated software, so I looked into upgrading.
+	The Midori team provides a <a href="http://midori-browser.org/download/debian/">package</a>, but they also warn that installing it can lead to complications due to dependency on more recent versions of libraries than are available in the repository, so I downloaded the <a href="http://midori-browser.org/download/source/">source</a> instead.
+	Before compiling it though, I decided to check the version number of my installed copy to see how far behind the most recent version it is.
+	As it turns out, I already had the most recent version! Because Debian dropped Midori from their repository in Debian 8, I had gotten Midori from the unofficial backports repository, and the backports repository has an up-to-date copy of Midori.
+</p>
+<p>
+	Next, I tried to report the bug in <a href="apt:arora">Arora</a>, but I can&apos;t find a place to do so.
+	The main website redirects to the <a href="https://github.com/Arora/arora">Github repository</a>, but that repository seems to have its &quot;issues&quot; feature disabled.
+	I ended up sending an email to the developer.
+	He responded saying that the functionality in question is actually a part of the Qt networking library, so that is where the bug lies.
+	I&apos;ll probably submit a bug report on Qt tomorrow.
+</p>
+<p>
+	I tried to report the bug in <a href="apt:chromium">Chromium</a>, but a Google account is required and Google will not allow me to register without a telephone number.
+	I went to <a href="ircs://sbuk7aqcxkoyipwv.onion:49152/%23Chromium">#Chromium</a> for help, and found a URI mentioned in their topic about reporting bugs, so I followed it.
+	It redirected to a page that throws 500 errors if you don&apos;t have a User-Agent string set.
+	After I set my User-Agent string, it redirected to another Google log in page.
+	I still couldn&apos;t report the bug without a telephone number, which is both obnoxious and counterproductive.
+	If people want to report bugs, you should be happy to have testers, especially when you aren&apos;t even paying them, and should not demand pieces of information that they may not have or may not want to give you.
+	I pasted my bug report <a href="https://paste.debian.net/413999/">somewhere where it&apos;ll be accessible for the next ninety days</a>, then asked someone in-channel to file it on my behalf.
+	Thankfully, ellyjones stepped up and said she&apos;d submit the <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=593952">bug report</a> for me, though she also told me something I already knew: it&apos;s unlikely that the developers will even care.
+	However, it seems that the Chromium developers think that the bug is yet another symptom of a <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=496472">known bug</a>.
+	Looking over the details, it does indeed mention the <abbr title="Server Name Indication">SNI</abbr> host name issue.
+	My interference wasn&apos;t needed.
+</p>
+<p>
+	I still haven&apos;t heard back from my old school about the check.
+	I&apos;ll likely need to write to them again on Monday.
+</p>
+<p>
+	Tonight, my mother freaked out again.
+	She invited me to a trivia challenge event.
+	Not wanting to deal with her and her name issues, I thought that the safest option was to decline.
+	However, I made the mistake of trying to justify my declining of the offer.
+	If I had simply said that I didn&apos;t want to go with no explanation, everything would have probably been fine.
+	I said that it didn&apos;t seem like something I would enjoy, as it sounds like competition and I&apos;m not a fan of the necessity of there being winners and losers.
+	She replied that that it&apos;s similar to how things work in life.
+	I continued that not everything in life is enjoyable, and competition is one of those things in life that I don&apos;t enjoy.
+	That really set her off.
+	It was as if she thinks that everything that&apos;s mandatory in life must somehow be fun and should be craved.
+	It&apos;s utter nonsense.
+</p>
+<p>
+	With mother in such a mood, I really wanted to stay home and not go to the family science night.
+	I didn&apos;t know how to tell her this without pissing her off further though, so I went anyway.
+	As it turned out, we ended up manning different stations, so it all worked out.
+	Vanessa and I worked a balloon booth with a stranger, while our mother worked a booth on the other side of the room.
+	Cyrus ended up volunteering as well instead of participating as he had planned, and worked a booth near the center of the room.
+</p>
+<p>
+	Before heading off to bed, I noticed that my my hidden service port-listing function had failed to alphabetize the known port forward destinations.
+	I fixed the function, then updated the port listing online.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F03-March%2F10.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F03-March%2F10.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

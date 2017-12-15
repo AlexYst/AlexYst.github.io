@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2015 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2015/04-April/03.xhtml"/>
+		<title>An ownCloud instance installed &lt;https://y.st./en/weblog/2015/04-April/03.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2015/04-April/03.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2015/04-April/02.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2015/04-April/04.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>An ownCloud instance installed</h1>
+			<p>Day 00027: Friday, 2015 April 03</p>
+		</header>
+<p>
+	I finally set up my ownCloud instance.
+	I had one before, but it was lost when my hard drive died on me.
+	I was going to download the archive and set it up manually, as I feel this offers the most flexibility in terms of allowing multiple instances and prevents the installation of the configuration file that automatically makes the ownCloud instance available at <code>/owncloud/</code> on every website hosted by the machine.
+	I mean, honestly, ownCloud should only be present at one location if it is a single instance, not present once for every site hosted.
+	I decided that I don&apos;t really need multiple instances of ownCloud and the ownCloud site <a href="https://owncloud.org/install/#instructions-server">recommends installation by package</a>.
+</p>
+<p>
+	Since I was going to be installing from a package, I figured I might as well get the most benefit possible from doing that.
+	Updating ownCloud would be easiest if I added the <a href="http://software.opensuse.org/download/package?project=isv:ownCloud:community&amp;package=owncloud">ownCloud repository</a> to Aptitude, so that&apos;s what I did.
+	As expected, installing the ownCloud packages caused a configuration file adding ownCloud access to all hosts on the machine, so I removed the symbolic link pointing to that.
+	The <a href="https://doc.owncloud.org/server/7.0/admin_manual/configuration/database_configuration.html">ownCloud documentation</a> was helpful for setting up the needed MySQL database.
+	Once installed, I found that the calendar and contacts modules, which had been the reason I installed ownCloud, were seemingly missing.
+	As it turned out, they weren&apos;t actually missing though, just disabled by default.
+	Last time I installed ownCloud, it had been from a different repository (the Debian 7 backport repository), so it makes sense that this time it would have different default configuration.
+	Enabling these modules was easy, and everything appears to be in working order.
+</p>
+<p>
+	The obvious places for me to put my ownCloud instance were <code>o.y.st</code> and <code>c.y.st</code>, either way over <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr>.
+	I decided to use <code>o.y.st</code>, as &quot;oyst&quot; might be short for &quot;oyster&quot; or something, but a cyst is a negative medical condition.
+	<code>c.y.st</code> is still one of my more valuable host names due to its short length, but I will avoid using it for now.
+	With <code>o.y.st</code> taken, it won&apos;t be usable for my OpenID server if I ever get around to setting that up, but I might put that at the unpronounceable <code>i.y.st</code>.
+</p>
+<p>
+	My mother asked me about logging that one Geocache event that her friend is trying to get people to log that they will attend.
+	I explained that the Geocaching website is refusing to allow me to log, but tried again with the same results.
+	I have now posted in the Geocaching forum asking for help, but it&apos;s doubtful help will arrive.
+	Once the post leaves the moderation queue, I&apos;ll likely get bogus responses about how I need to take down my proxy.
+	That is not happening.
+</p>
+<p>
+	I was trying to find PehJota&apos;s Jamaldo script, which I would then have to figure out the dependencies to.
+	There are no instructions for set up, and by default, it throws errors due to missing software.
+	The problem is that while PehJota is quite helpful and will tell you what you need if you ask, I keep losing the list of dependencies for one reason or another.
+	I&apos;m getting a bit embarrassed that I have to keep asking.
+	This time, while looking for his script, I instead found a <a href="https://addons.mozilla.org/en-us/firefox/addon/jamendo-album-downloader/">Jamendo album downloader Firefox add-on</a>.
+	For my particular use case (I don&apos;t disable JavaScript like I honestly should), this add-on is a bit easier to use.
+	Unfortunately, the source code is hosted on Gitorious, which is disappearing in May.
+	No one has touched the source code since August, and I fear it will get deleted without anyone noticing.
+	I have downloaded the source for safe keeping, and if needed, I will upload it to my Git host once I manage to find a suitable Git host to keep my stuff on.
+	I still recommend <a href="http://git.pehjota.net/jamaldo/jamaldo.git/">Jamaldo</a> if you prefer a command line tool and want your Vorbis comments normalized.
+</p>
+<p>
+	I need to get together a &quot;to do&quot; list at some point.
+	For now, I&apos;ve jotted down a few things I need to make happen, and I&apos;ll add to it as I come up with more.
+</p>
+<p>
+	As of tonight, I am still <a href="/a/canary.txt">not being oppressively censored</a>.
+</p>
+<p>
+	<strong>*EDIT (2015-12-10)*:</strong> This page once held a hyperlink to the &quot;to do&quot; list, but when I moved this website from <a href="/en/domains/quystystxtvdgyst.onion.xhtml">quystystxtvdgyst.onion.</a> to <a href="/en/domains/authorednansyxlu.onion.xhtml">authorednansyxlu.onion.</a>, I did not keep the list public.
+	As such, the link has been removed from this page.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2015 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F04-April%2F03.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F04-April%2F03.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

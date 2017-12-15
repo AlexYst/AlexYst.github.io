@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/02-February/19.xhtml"/>
+		<title>More spider enhancements &lt;https://y.st./en/weblog/2016/02-February/19.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/02-February/19.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/02-February/18.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/02-February/20.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>More spider enhancements</h1>
+			<p>Day 00349: Friday, 2016 February 19</p>
+		</header>
+<p>
+	I finished my school orientation today.
+	I will probably send in the feedback tomorrow.
+</p>
+<p>
+	I looked into becoming a school aid as my mother wanted me to, but the school had no such job openings listed.
+</p>
+<p>
+	I received the first of my two tax refund checks in the mail today.
+	I will probably go to the bank on Monday.
+	As my current bank appears to order marked bills to be destroyed, I will look into getting an account at another bank in the area.
+	I&apos;ve had an account with them in the past though, and last time, they charged a ridiculous fee for using my debit card in one of the local stores.
+	This time, I will ask more specifically about fees, though I don&apos;t use a debit card any more, especially in person.
+	I much prefer cash.
+	Online, I use my credit card, though that has my real name on it.
+	Unless the bank is willing to issue me a card under my real name instead of my legal name, I won&apos;t be using a card from that bank at any time.
+</p>
+<p>
+	I made a couple enhancements to the spider today.
+	First, I accounted for an issue that I have been worried about lately because of all the crashing.
+	Namely, it has been over a month since I first started the spider, the spider is configured to recrawl sites after a month has passed, and the spider was programmed to crawl sites in alphabetical order.
+	The first sites to be crawled before were starting to be recrawled before some sites had been crawled at all! I&apos;ve changed the order in which crawling occurs.
+	Now, the spider crawls sites in an order based on the last time that the site has been crawled.
+	The later the latest crawl was, the later that site ends up in the queue.
+	Sites that have never been crawled are now first in the queue.
+	Second, I fixed a bug in <abbr title="Transport Layer Security">TLS</abbr>-handling.
+	Previously, the spider would allow &quot;untrusted&quot; certificates, but only if those certificates were issued to that site.
+	Whether &quot;trusted&quot; or &quot;untrusted&quot;, certificates would be rejected if used on a different website than the one listed in the certificate.
+	That means that if a certificate was self-signed, it would be accepted, but if it was issued to <code>example23example.onion</code> but used on <code>subdomain.example23example.onion</code>, the certificate would be rejected, whether the certificate was self-signed or signed by a known &quot;authority&quot;.
+	Until we have a mechanism for enabling encryption without implying an identity, I cannot honestly say that there is any value is paying attention to any identifying information on unknown sites, especially when doing something that does not involve trust, such as Web crawling.
+	Besides, the onion addresses themselves are proof of site ownership.
+	If you have the onion key, you own that onion address and that is all the identity information that we need.
+	I have fixed this, and <abbr title="Transport Layer Security">TLS</abbr> is now used by the spider only for encryption, so any certificate will work.
+	I also found <code>&lt;javascript:/&gt;</code> in the spider&apos;s database, despite the fact that that <abbr title="Uniform Resource Identifier">URI</abbr> doesn&apos;t include a domain, let alone an onion-based domain.
+	I&apos;m not sure how that address ended up in the database, as the spider is supposed to filter away all <abbr title="Uniform Resource Identifier">URI</abbr>s that do not relate to onion space.
+	Furthermore, I have been unable to replicate the error.
+	My guess is that it had something to do with a bug I ran into on the <a href="/en/weblog/2016/02-February/05.xhtml">fifth</a>, though I must have fixed the bug without knowing at some point.
+</p>
+<p>
+	I found that the <code>\DOMDocument</code> class is exhibiting strange behavior in regards to dealing with the <code>&lt;base/&gt;</code> tag.
+	I&apos;m not sure if it handles absolute <code>href</code> values correctly, but it handles a value of <code>/</code> in an inconsistent manor.
+	If the value is <code>/</code>, used, the parser considers the base <abbr title="Uniform Resource Identifier">URI</abbr> of the document to be not a valid <abbr title="Uniform Resource Identifier">URI</abbr>, but instead the system file path of the directory from which the script was run.
+	It doesn&apos;t even use the directory that the script is in, but the script that the working directory that you were in when you started the script, so the results are different depending on what you have been doing.
+	I decided to make sure that only absolute <abbr title="Uniform Resource Identifier">URI</abbr>s may be legally used in the <code>&lt;base/&gt;</code> tag, but I actually found the reverse.
+	The <abbr title="Uniform Resource Identifier">URI</abbr> specified in the <code>&lt;base/&gt;</code> tag is <a href="https://www.w3.org/TR/html5/document-metadata.html#frozen-base-url">normalized against the document&apos;s retrieval <abbr title="Uniform Resource Identifier">URI</abbr></a>.
+	As the <code>\DOMDocument</code> class had no way to know what the retrieval <abbr title="Uniform Resource Identifier">URI</abbr> was, it was doing the best that it could.
+	All that I have to do to fix the issue is inform <code>\DOMDocument</code> of the document&apos;s <abbr title="Uniform Resource Identifier">URI</abbr>.
+	I tried setting <code>$DOMDocument-&gt;documentURI</code> before parsing the document, but that didn&apos;t work.
+	I thought that this value would be used durring parsing, but instead, it is set during parsing.
+	To get the desired effect, you must set this value after parsing but before using the parsed data.
+</p>
+<p>
+	Lastly, I did some experimentation with retrieving information on <abbr title="Client for URLs/Client URL Request Library/Curl URL Request Library">cURL</abbr> errors.
+	Information on file transfers cannot be reliably retrieved, as any information that does not pertain to a given transfer <a href="https://secure.php.net/manual/en/function.curl-getinfo.php">will be returned with values from a previous transfer</a>.
+	Thankfully, testing shows that error handling is much more reliable.
+	When the last transfer was a success, the error code is reset to zero and the error message is reset to an empty string.
+	It could be that error handling was actually designed better than transfer information retrieval.
+	However, I suspect that the more consistent behavior might be caused by something else.
+	Success quite literally has an error code of zero, and the error strings are probably set by <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> based on error codes returned by <abbr title="Client for URLs/Client URL Request Library/Curl URL Request Library">cURL</abbr>, not by <abbr title="Client for URLs/Client URL Request Library/Curl URL Request Library">cURL</abbr> itself.
+	It could very well be that success is implemented as an error case, so the new error overwrites the old error.
+	However this works though, the important part to me is that it <strong>*does*</strong> work.
+	Updating the spider to account for different types of errors should be trivial.
+	I plan to groups the error codes into three categories.
+	The first category will represent success, and will be handled as it is currently being handled.
+	This includes both cases that <abbr title="Client for URLs/Client URL Request Library/Curl URL Request Library">cURL</abbr> considers to be a success and cases in which an actual website was reached, but the page is considered bad, such as <code>404</code> and <code>500</code> <abbr title="Hypertext Transfer Protocol">HTTP</abbr> errors.
+	The second category will be that of failures, such as not receiving any response from the server.
+	The third will just be a fallback group for errors that I failed to account for, and will kill the spider so that I can notice and fix the problem.
+	In fact, perhaps this (mostly-)binary checking of errors should be added directly to my remote_files class.
+</p>
+<p>
+	My mother and I went out to collect bullet shells again, though most of the shells that we found were made of a metal that she doesn&apos;t care about, so we mostly gathered bullets instead.
+	On the way there, she noticed that some movie that she hasn&apos;t seen in a long time is playing in a theater, so now she wants us to go see it on Sunday.
+	The movie is older than I am, but it&apos;s proprietary and still under copyright.
+	I&apos;ll probably spend the time contemplating what else needs to be done to improve the spider.
+	We&apos;re going to spend tomorrow working in her classroom and doing some house cleaning so that her friend can come over on a later date.
+</p>
+<p>
+	I wrote to my carrier today about unlocking the device that they sold me.
+	I only got that device because with the way that their system is set up, I&apos;m paying for the device whether I actually get it or not.
+	I might as well make them give me what I&apos;m paying for, even if it&apos;s not the most useful thing ever.
+	With the device unlocked, I&apos;m now eligible for a new device, which supposedly will be here in two days.
+	Of course, my Replicant is the device that I&apos;ll actually be using for anything that actually needs to be done.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F02-February%2F19.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F02-February%2F19.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2015 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2015/03-March/25.xhtml"/>
+		<title>Debugging Minetyst &lt;https://y.st./en/weblog/2015/03-March/25.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2015/03-March/25.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2015/03-March/24.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2015/03-March/26.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>Debugging Minetyst</h1>
+			<p>Day 00018: Wednesday, 2015 March 25</p>
+		</header>
+</p>
+	I spent a lot of time yesterday and today experimenting with the <code>minetest.register_biome()</code> function.
+	For the time being, I&apos;m assuming the temperature and humidity ranges to be 0 - 100, though evidence points to this not being the case.
+	I&apos;ve asked about it in the <a href="https://forum.minetest.net/viewtopic.php?f=47&amp;t=11603&amp;sid=87934c7f4a426d9ab0131c7a303f2195">Minetest forum</a> in hopes that someone, <strong>*anyone*</strong>, knows what they&apos;re doing with this undocumented function.
+	The minetest comunity in general, and in particular certain active members, is known for being very helpful to people trying to learn the ins and outs of the game.
+	If someone knows something about this function, it is very likely I will get a response.
+</p>
+</p>
+	Some of my first experimentation went oddly due to a mistake in my code.
+	Mossy cobble was showing up scattered in all the stone in my world! It turns out I had accidentally aliased both <code>mapgen_stone</code> and <code>mapgen_cobble</code> to the <code>basic:stone</code> node.
+	It seems that the dungeons are built out of cobble first, then all cobble on the map is given a chance to possibly be swapped out for mossy cobble.
+	As I already know from a previous world where I intentionally mapped <strong>*all*</strong> the map generator alias aliases to the same node, having multiple map generator aliases mapped to the same node causes odd results.
+	Last time, I ended up with trees growing out of trees endlessly upward.
+	My guess is that because the leaves at the tops of the trees were the same node as the ground, they were interpreted as the ground and it was assumed that the jungle there had not actually generated yet.
+	The map generator algorithm called for a jungle at those coordinates, so it built the jungle repeatedly at this ever-upward-rising land.
+</p>
+</p>
+	Once I got the mossy cobble issue debugged, I moved on to actually defining some biomes.
+	My six biomes for the time being are based on the nodes in the <code>default</code> module, both in minetest_game and in minimal.
+	From the nodes in minetest_game&apos;s default, I have set up the grassland, forest, jungle, alpine, and desert biomes.
+	Most of these are based on nodes asked for by the v6 map generator, but the alpine biome is thrown in as a way to acquire the pine trees from default.
+	It doesn&apos;t make a bad place for placing snow, either.
+	The final biome is the retro biome, a biome dedicated to nodes in minetyst_game&apos;s default module.
+	Minetyst_game&apos;s default represents the legacy code in the Minetest engine.
+	Code that translates old maps to work with the current engine, but does so in a hacky way.
+	Specifically, it causes the engine to ask for nodes in the default module, instead of using aliases as it should.
+	This makes it a pain to set your game up to handle legacy maps unless you either employ a default module that holds everything the engine needs for legacy maps or you avoid setting up a default module and instead use the names from default as aliases.
+	The proper way to do this would be to rely on the mapgen_* aliases for this job, or perhaps set up new legacy_* aliases.
+	In any case, minetyst_game&apos;s default holds all the &quot;default:*&quot; nodes the engine asks for and no other nodes.
+</p>
+</p>
+	My initial biome layout yesterday wasn&apos;t working out well.
+	I had four biomes set in the assumed corner cases, one dead center in the heat/humidity layout, and one slightly off from dead center.
+	I tried a few different similar layouts, but every time, there was at least one biome that was so rare that it took forever to find an example of it.
+	Eventually, I decided on a more even layout, where heat for each biome was set to 100/6, 50, or 500/6 and humidity was set to either 100/6 or 500/6.
+	If the biome generation works as I think it does, which is via a least squares function involving the heat and humidity, this should make every biome appear equally as often (assuming that the heat and humidity ranges are both 0 - 100, which I do not believe to actually be the case).
+	As predicted, this makes every biome show up fairly often, though some seem to be more likely to appear than others.
+</p>
+</p>
+	I still <a href="/a/canary.txt">am able to speak freely</a>.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2015 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F03-March%2F25.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F03-March%2F25.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

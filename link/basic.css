@@ -1,0 +1,351 @@
+/*
+	<https://y.st./>
+	Copyright © 2015-2016 //y.st. <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org./licenses/>.
+*/
+
+* {
+/* CSS 2.1 */
+	margin: 0rem;
+	padding: 0rem;
+	border-width: 0rem;
+	border-color: #fff;
+	border-style: none;
+	display: inline;
+	position: static;
+	top: auto;
+	right: auto;
+	bottom: auto;
+	left: auto;
+	float: none;
+	clear: none;
+	z-index: auto;
+	direction: inherit;
+	unicode-bidi: normal;
+/*	width: auto; Setting this overrides the "width" property in the XHTML. */
+	min-width: 0rem;
+	max-width: none;
+/*	height: auto; Setting this overrides the "height" property in the XHTML. */
+	min-height: 0rem;
+	max-height: none;
+	line-height: inherit;
+	vertical-align: baseline;
+	overflow: visible;
+	clip: auto;
+	visibility: inherit;
+	content: normal;
+	quotes: inherit;
+	counter-reset: none;
+	counter-increment: none;
+	list-style-type: inherit;
+	list-style-image: inherit;
+	list-style-position: inherit;
+	page-break-before: auto;
+	page-break-after: auto;
+	page-break-inside: auto;
+	orphans: inherit;
+	widows: inherit;
+	color: inherit;
+	background-color: none;
+	background-image: none;
+	background-repeat: repeat;
+	background-attachment: scroll;
+	background-position: 0% 0%;
+	font-family: inherit;
+	font-style: inherit;
+	font-variant: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+	text-indent: inherit;
+	text-align: inherit;
+	text-decoration: none;
+	letter-spacing: inherit;
+	word-spacing: inherit;
+	text-transform: inherit;
+	white-space: inherit;
+	caption-side: inherit;
+	table-layout: auto;
+	border-collapse: inherit;
+	border-spacing: inherit;
+	empty-cells: inherit;
+	cursor: inherit;
+	outline-width: inherit;
+	outline-style: inherit;
+	outline-color: inherit;
+	speak: inherit;
+	pause-before: 0;
+	pause-after: 0;
+	cue-before: none;
+	cue-after: none;
+	voice-family: inherit;
+
+	justify-content: center;
+	text-decoration-style: solid;
+}
+
+body {
+/* CSS 2.1 */
+	direction: ltr;
+	line-height: normal;
+	visibility: visible;
+	quotes: '"' '"' "'" "'";
+	list-style-type: disc;
+	list-style-image: none;
+	list-style-position: outside;
+	orphans: 2;
+	widows: 2;
+	color: white;
+	background-color: black;
+	font-family: monospace;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	font-size: large;
+	text-indent: 0rem;
+	text-align: left; /* This should be set to "auto", but no such option exists. */
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-transform: none;
+	white-space: normal;
+	caption-side: top;
+	border-collapse: separate;
+	border-spacing: 0rem;
+	empty-cells: show;
+	cursor: auto;
+	outline-width: medium;
+	outline-style: none;
+	outline-color: invert;
+	speak: normal;
+	voice-family: neutral;
+}
+
+head, script {
+	display: none;
+}
+
+html, body, article, section, nav, aside, h1, h2, h3, h4, h5, h6, header, footer, address, p, hr, pre, blockquote, ol, ul, dl, dt, dd, figure, figcaption, div, main, form, noscript, marquee, meter, progress {
+	display: block;
+}
+
+li {
+	display: list-item;
+}
+
+a, em, strong, small, s, cite, q, dfn, abbr, data, time, code, var, samp, kbd, sub, sup, i, b, u, mark, ruby, rb, rt, rtc, rp, bdi, bdo, span, br, wbr, ins, del {
+	display: inline;
+}
+
+img, iframe, embed, object, param, video, audio, source, track, map, area, label, input, button, select, datalist, optgroup, option, textarea, keygen, output, progress, meter, fieldset, legend, template, canvas, applet {
+	display: inline-block;
+}
+
+table {
+	display: table;
+	margin: 1rem;
+}
+
+caption {
+	display: table-caption;
+}
+
+colgroup {
+	display: table-column-group;
+}
+
+col {
+	display: table-column;
+}
+
+tbody {
+	display: table-row-group;
+}
+
+thead {
+	display: table-header-group
+}
+
+tfoot {
+	display: table-footer-group
+}
+
+tr {
+	display: table-row;
+}
+
+td, th {
+	display: table-cell;
+	border: 1px solid #fff;
+	padding: 0.5rem;
+}
+
+q:before {
+	content: open-quote;
+}
+
+q:after {
+	content: close-quote;
+}
+
+a {
+	text-decoration: underline;
+}
+
+a:link {
+	text-decoration-color: #008;
+}
+
+a:visited {
+	text-decoration-color: #800;
+}
+
+a:hover {
+	text-decoration-color: #080;
+	cursor: pointer;
+}
+
+a:active {
+	text-decoration-color: #088;
+}
+
+hr {
+	border-bottom: 1px solid;
+	margin: 0.5rem;
+}
+
+p {
+	margin: 1rem;
+	line-height: 1.5;
+}
+
+pre {
+	margin: 1rem;
+}
+
+ol, ul {
+	padding: 1rem 3rem 1rem 3rem;
+	margin: 1rem 3rem 1rem 3rem;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+ul ul {
+	list-style-type: circle;
+}
+
+ul ul ul {
+	list-style-type: square;
+}
+
+li ol, li ul {
+	padding: 0rem 1rem 0rem 1rem;
+	margin: 0rem 1rem 0rem 1rem;
+}
+
+em, i {
+	font-style: italic;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+ins {
+	text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6, strong, b {
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 2rem;
+	margin: 1em 1rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin: 1em 1rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin: 1em 1rem;
+}
+
+h4 {
+	font-size: 1.125rem;
+	margin: 1em 1rem;
+}
+
+h5 {
+	font-size: 1.0625rem;
+	margin: 1em 1rem;
+}
+
+h6 {
+	font-size: 1.03125rem;
+	margin: 1em 1rem;
+}
+
+[title] {
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	cursor: help;
+}
+
+blockquote {
+	margin: 2rem;
+	padding: 1rem;
+	border: 1px dashed;
+}
+
+pre {
+	white-space: pre;
+}
+
+code {
+	background-color: #111;
+	border: 1px #333;
+	white-space: pre-wrap;
+}
+
+header {
+	margin: 1rem;
+}
+
+sup {
+	vertical-align: super;
+	font-size: 0.75em;
+}
+
+sub {
+	vertical-align: sub;
+	font-size: 0.75em;
+}
+
+section:target {
+	background-color: rgba(0, 255, 255, 0.15);
+}
+
+/* This *MUST* be one of the last styles listed in this style sheet. */
+header * {
+	margin: 0rem;
+}

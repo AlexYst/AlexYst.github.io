@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2015 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2015/11-November/25.xhtml"/>
+		<title>Unreserved special-use domains &lt;https://y.st./en/weblog/2015/11-November/25.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2015/11-November/25.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2015/11-November/24.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2015/11-November/26.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>Unreserved special-use domains</h1>
+			<p>Day 00263: Wednesday, 2015 November 25</p>
+		</header>
+<p>
+	I stumbled upon a draft proposal that was to make several encryption-based <abbr title="Top Level Domain">TLD</abbr>s official by setting them aside as special cases.
+	This proposal, if accepted, would have set aside the <a href="https://datatracker.ietf.org/doc/draft-grothoff-iesg-special-use-p2p-names/"><code>//gnu.</code>, <code>//zkey.</code>, <code>//onion.</code>, <code>//exit.</code>, <code>//i2p.</code>, and <code>//bit.</code></a> <abbr title="Top Level Domain">TLD</abbr>s.
+	However, the draft was instead allowed to expire, leaving these <abbr title="Top Level Domain">TLD</abbr>s unofficial and at risk for future clashes with the global name space, at least until a later draft set aside <a href="https://tools.ietf.org/html/rfc7686"><code>//onion.</code></a> and only <code>//onion.</code>.
+	It is still only a draft though as far as I can tell, so I do not know why the <abbr title="Internet Assigned Numbers Authority">IANA</abbr> has already <a href="https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml">set aside</a> that <abbr title="Top Level Domain">TLD</abbr>.
+	If the draft expires before completion, it seems likely that <abbr title="Internet Assigned Numbers Authority">IANA</abbr> would need to de-reserve the domain, which having already been reserved, people were counting on being reserved.
+</p>
+<p>
+	Speaking of special-use domains, I did some further reading about the proper way to handle <a href="http://tools.ietf.org/html/rfc6761">local <abbr title="Internet Protocol">IP</abbr> address <abbr title="reverse Domain Name System">rDNS</abbr> domains</a>.
+	I wondered why my system was not handling them properly.
+	Instead of resolving them based on the local network&apos;s infrastructure, the domains were being said to not have records associated with them.
+	As it turns out, this is the proper behavior.
+	I thought that hosts on the network responded to these record requests in a manor similar to <abbr title="multicast Domain Name System">mDNS</abbr>, except that the <abbr title="Internet Protocol">IP</abbr> address of the machine was already known, so all you would have to do is ask it for its preferred host name, which would likely be its host name in the <code>//local.</code> name space.
+	However, this is not the case at all.
+	In fact, the proper action to take with these domains is to not treat them special in any way, and perform lookups as usual.
+	They really do not seem like special cases at all, aside from the fact that a local name server is allowed to intercept them and resolve them according to a local database if desired.
+	THis is no different from any other domain though.
+</p>
+<p>
+	Yesterday, I saw a post on the Floraverse website that mentioned the poster being sad about the removal of one of the then-official videos.
+	Due to software issues, I thought that YouTube was blocking the use of <abbr title="The Onion Router">Tor</abbr> to view their hosted videos, so I used a third-party website that downloads videos from YouTube, then allows you to download the videos from their site.
+	I later found the software issue on my end thanks to some help, but not before the video was taken down.
+	Seeing as the video was under a free license and was no longer available from the source, I made sure to keep my copy.
+	Though I fear it might not be as high-quality as the original, it was better than allowing the video to disappear completely.
+	Seeing the post yesterday about someone being sad that the video was gone, I tried to contact them privately to give a copy to them, but the platform used for the discussion does not seem to offer that option.
+	So I posted the video publicly.
+	Glitchedpuppet, one of the main contributors to the official cannon and probably the owner of the website and domain, has already censored my post.
+	He/she then politely requested that I not post the video around, stating that it had been removed in the first place for several reasons.
+	I suppose the only decent course of action is to comply.
+	Glitchedpuppet is working to create freely-licensed media, something that this world is sorely lacking, so it would be best if he/she did not feel like he/she needed to think twice before posting media in the future.
+	I will hold onto my copy though, and now I think that I will probably download the full comic as it comes out in an effort to preserve anything that is later redacted (even though I will likely not be posting it publicly).
+</p>
+<p>
+	<a href="https://marcwithac.bandcamp.com/">Marc With a C</a> seems to follow his fans on Twitter, so he saw my post about the record he sent me being inspected.
+	I had said that I thought that the postal service was trying to combat the shipping of illegal music, but he said that as best he can tell, that is not their goal.
+	Rather, so-called &quot;media mail&quot; costs less to ship than packages of similar size.
+	He says the postal service is likely checking to make sure that people do not send non-media as media mail, as the postal service makes less money if people do that.
+	I suppose that is fine then.
+	If you hire the postal service to deliver media, their job is to deliver media, not something else.
+	At least the (probably) are not trying to censor media as I had thought that they were.
+</p>
+<p>
+	Devnull of <a href="ircs://irc.volatile.ch/%23Volatile">#Volatile</a> helped me get spell check working in WeeChat.
+	Slowly, this client becomes more usable.
+	I still find the awkwardness of following <abbr title="Uniform Resource Identifier">URI</abbr>s to be a pain, but I might be able to get used to that.
+</p>
+<p>
+	My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2015 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F11-November%2F25.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F11-November%2F25.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

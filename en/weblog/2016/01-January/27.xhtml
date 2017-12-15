@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/01-January/27.xhtml"/>
+		<title>Default port numbers &lt;https://y.st./en/weblog/2016/01-January/27.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/01-January/27.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/01-January/26.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/01-January/28.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>Default port numbers</h1>
+			<p>Day 00326: Wednesday, 2016 January 27</p>
+		</header>
+<p>
+	My <a href="https://marcwithac.bandcamp.com/album/unicorns-get-more-bacon"><abbr title="compact disc">CD</abbr> from Marc With a C</a> came in the mail today.
+	The large envelope read <q><span class="underline">DO</span> <span class="underline">NOT</span> <span class="underline">BEND</span>!!!</q> in full capital letters and underlines, but the postal service had managed to let it get bent anyway, damaging the contents.
+	As it turns out, I did not need to order the vinyl version of the album to get the bonus for early adopters that had been hinted at, but I would need a record player to make use of the bonus.
+	It is a two-song forty-five <abbr title="revolutions per minute">RPM</abbr> vinyl record.
+	Though the postal service had damaged the record&apos;s sheath, I found the record to be quite amusing.
+	I do not recognize either of the songs on the record, but at some point when I have more time, I might look them up.
+</p>
+<p>
+	I received the letter from the local community college saying that I have been accepted.
+	The school told me to hold off a bit before asking for an appointment to review my credits and decide what courses I need to take, but I forget how long that they said that I should wait.
+	I will be in the area on Monday as the clinic is very close to there, so I will probably drop by then, despite it probably being earlier than they wanted.
+	If they have a problem with it, they can simply tell me again what the best date for me to drop by is.
+	I will likely only be able to schedule a meeting anyway, so scheduling early sounds like a good thing.
+</p>
+<p>
+	As the generic <abbr title="Uniform Resource Identifier">URI</abbr> normalization process includes removing the port from the <abbr title="Uniform Resource Identifier">URI</abbr> if it matches the scheme-specific default port, I need a list of default ports on hand just to perform generic <abbr title="Uniform Resource Identifier">URI</abbr> normalization.
+	I decided to implement the list of <abbr title="Uniform Resource Identifier">URI</abbr> scheme default port numbers as a constant, but I quickly found that the constant&apos;s array was huge.
+	I think that separating constants into their own files might be a better option than I had originally thought.
+	In the past, constants could not hold arrays and holding a single value in each file seems like a waste.
+	With arrays though, like values, or rather, values related to the same topic, can be implemented as arrays instead of scalar values.
+	Not only does this allow single-constant files to make more sense, it also provides a much better grouping mechanism for related information that the previously-used constant name prefixes.
+</p>
+<p>
+	I found a couple interesting schemes today.
+	The first is the <a href="https://www.iana.org/assignments/uri-schemes/prov/adiumxtra">adiumxtra</a> scheme.
+	No real information is available about how it works, but my best guess when looking at their website is that it works exactly like the <abbr title="Hypertext Transfer Protocol">HTTP</abbr> scheme, but because it is technically a different scheme, Adium is able to set itself as the handler of <abbr title="Uniform Resource Identifier">URI</abbr>s using it, so hyperlinks can be set up that facilitate easy installation of plugins.
+	I would try some experimenting, but <a href="https://adium.im/about/">Adium is only available for OS X</a>.
+	Another interesting scheme that I ran across is the <a href="https://www.iana.org/assignments/uri-schemes/prov/apt">apt</a> scheme.
+	Allegedly, this allows one to link to a package in a Debian repository.
+	It does not seem to work on my machine, but it is worth using whenever I talk about Debian packages.
+</p>
+<p>
+	On the topic of <abbr title="Uniform Resource Identifier">URI</abbr>s, I have something that I should really get out there.
+	A while ago, I said that <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr> and <abbr title="Hypertext Transfer Protocol">HTTP</abbr> <abbr title="Uniform Resource Identifier">URI</abbr>s that lack a path are technically invalid.
+	By that, I meant that <code>https://example.com</code> is an invalid <abbr title="Uniform Resource Identifier">URI</abbr>, as it did not even include the <code>/</code> path.
+	However, a few days ago, I found new information.
+	That <abbr title="Uniform Resource Identifier">URI</abbr>, as well as other <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr> and <abbr title="Hypertext Transfer Protocol">HTTP</abbr> <abbr title="Uniform Resource Identifier">URI</abbr>s that lack a trailing slash, are still valid.
+	And why is this? Well, while it is true that every <abbr title="Uniform Resource Identifier">URI</abbr> <strong>*must*</strong> contain a path, that path can be blank.
+	In the case of <abbr title="Uniform Resource Identifier">URI</abbr>s that contain an authority, the path must either be blank or begin with a slash, but blank paths are always acceptable unless the scheme defines otherwise.
+	Many schemes seem to define a blank path as being equivalent to the a path consisting of a single slash, and that is the case with the <code>https:</code> and <code>http:</code> schemes.
+	With my new <abbr title="Uniform Resource Identifier">URI</abbr>-parsing tools that I am working on, I may store blank-path <abbr title="Uniform Resource Identifier">URI</abbr>s in my database instead of single-slash path <abbr title="Uniform Resource Identifier">URI</abbr>s.
+</p>
+<p>
+	It seems that on Saturday, I will be volunteering to be a pretend victim for an emergency preparedness educational meeting.
+	On Sunday, I will likely be headed back to Springfield to do more cleaning and sorting.
+</p>
+<p>
+	My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F01-January%2F27.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F01-January%2F27.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

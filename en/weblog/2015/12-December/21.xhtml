@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2015 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2015/12-December/21.xhtml"/>
+		<title>Flash proxies &lt;https://y.st./en/weblog/2015/12-December/21.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2015/12-December/21.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2015/12-December/20.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2015/12-December/22.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>Flash proxies</h1>
+			<p>Day 00289: Monday, 2015 December 21</p>
+		</header>
+<p>
+	While I sorted <a href="http://professorshyguy.com/">Professor Shyguy</a>&apos;s music yesterday as far as license is concerned, it took a bit more time to prepare the tracks for use on my mobile.
+	Specifically, I needed to rename and sort the files based on the respective track titles and album titles.
+	I took care of that today, but found that most of the <abbr title="Waveform Audio File Format">WAVE</abbr> files included on the <abbr title="Universal Serial Bus">USB</abbr> drive are missing their meta data.
+	Additionally, when moving them to my mobile, I ran into a particular Replicant anti-feature again.
+	Replicant can handle having working with case-sensitive file systems, but it fights against the intended case sensitivity of the file systems, preventing the user from actually taking advantage of it.
+	From what I understand, Replicant inherits this abomination from Android.
+	I never have found a way around it, besides pulling the <abbr title="Secure Digital">SD</abbr> card out and directly changing the file names to what they should be from my laptop.
+	Once the files exist with their correct and case-sensitive names, Replicant reads them correctly, the only issue is getting those files in place to begin with.
+	Furthermore, Replicant always messes with the file permissions of files on my <abbr title="Secure Digital">SD</abbr> card, so I always have to work with the file names on my laptop using root permissions.
+</p>
+<p>
+	I realized today that my new directory tree to <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> unordered list translator had a fatal flaw.
+	Specifically, a file name can contain characters that have specific meaning in <abbr title="Extensible Markup Language">XML</abbr> files, but my function treated them as regular characters, allowing them to end up in the list and break the validity of the <abbr title="Extensible Markup Language">XML</abbr> returned.
+	This was an easy thing to fix though.
+</p>
+<p>
+	My mother found one of those passive mobile device signal amplifiers in her stuff, but seeing as she uses an iPhone, she was unable to make use of it.
+	This is because the iPhones are so locked down that you cannot even open the battery compartment.
+	In any case, she gave the thing to me.
+</p>
+<p>
+	I learned about a different sort of bridge system for <abbr title="The Onion Router">Tor</abbr>.
+	Instead of using unpublished <abbr title="The Onion Router">Tor</abbr> relay servers, this system instead uses random peoples&apos; Web browsers as proxies.
+	They call this system <a href="https://crypto.stanford.edu/flashproxy/">flash proxies</a>, and your Web browser acts as one as long as your Web browser is compatible with the system and you have a Web page loaded that contains a special flash proxy badge.
+	Additionally, there is a <a href="https://addons.mozilla.org/en-us/firefox/addon/tor-flashproxy-badge/">Web browser plugin</a> that allows your browser to function as a flash proxy even when no such page is loaded.
+	I both added the flash proxy badge to <a href="/">my main website</a> and installed the Web browser plugin, though adding the badge to my website was not straightforward.
+	The problem is that the default embed code uses the obsoleted <code>&lt;iframe/&gt;</code> tag, which is not valid in <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 1.1.
+	With some modification, I think that I got it working though.
+	For anyone interested in doing the same, the code I used is below:
+</p>
+<pre><code>&lt;object data=&quot;//crypto.stanford.edu/flashproxy/embed.html&quot;
+					type=&quot;text/html&quot; width=&quot;80&quot; height=&quot;15&quot;&gt;
+	&lt;a href=&quot;https://crypto.stanford.edu/flashproxy/options.html&quot;&gt;flash proxy&lt;/a&gt;
+&lt;/object&gt;</code></pre>
+<p>
+	My original plan was to write back to the school if they had not responded by yesterday, but I decided not to do that.
+	I think that the school is closed for winter vacation, so I will write back to them when I think that they have opened once more.
+</p>
+<p>
+	I forgot to mention that Alyssa, Cyrus, Vanessa, ans I started playing the role-playing game that Cyrus wanted to play with us.
+	I do not want to hurt Cyrus&apos; feelings or anything, but it really was not my cup of tea.
+	I do much better with rules that are set in stone with no room for interpretation, such as with a computer-based game.
+</p>
+<p>
+	It seems that we are going to Springfield tomorrow.
+	Come to think of it, I thought that the plan was to go today, but I am glad that that did not happen.
+	I did not sleep well last night, so staying home was nice.
+</p>
+<p>
+	I have begun even more work to clean up this website in preparation for January.
+	When I had this website tangled with my clearnet site, I used a lot of protocol-relative <abbr title="Uniform Resource Identifier">URI</abbr>s.
+	In fact, I modified every page on this site and the clearnet site to contain them.
+	I think that I have removed them all from the clearnet site, but this website is much bigger.
+	I have begun clearing them out of this place now too.
+	To be clear, these hyperlinks are perfectly valid and point to real Web pages, they just do not fit the style of my work and should not be present on a website run by me.
+</p>
+<p>
+	My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2015 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F12-December%2F21.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F12-December%2F21.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/03-March/31.xhtml"/>
+		<title>Strange DNS server and IRC server issues &lt;https://y.st./en/weblog/2016/03-March/31.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/03-March/31.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/03-March/30.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/04-April/01.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>Strange <abbr title="Domain Name System">DNS</abbr> server and <abbr title="Internet Relay Chat">IRC</abbr> server issues</h1>
+			<p>Day 00390: Thursday, 2016 March 31</p>
+		</header>
+<p>
+	When I awoke today, I found that the power had gone out and come back up.
+	It took my <abbr title="The Onion Router">Tor</abbr> relay down with it, and for some reason, <abbr title="The Onion Router">Tor</abbr> didn&apos;t come back up when the machine did.
+	Looking into the issue, <code>irc.freenode.net</code> wasn&apos;t resolving, so <abbr title="The Onion Router">Tor</abbr> was claiming that the domain couldn&apos;t be parsed.
+	Again, this had noting to do with parsing and everything to do with resolution.
+	It&apos;d be nice if there was some sort of way to tell <abbr title="The Onion Router">Tor</abbr> to ignore certain addresses if they can&apos;t resolve instead of refusing to start at all, but even if that feature isn&apos;t added, <abbr title="The Onion Router">Tor</abbr> should be fixed to give an appropriate error message.
+	In any case, my instance of <a href="apt:bind9">Bind9</a> was somehow failing to resolve <code>irc.freenode.net</code>.
+	I have no idea what the problem was.
+	The failed resolution message was distinct from a missing record response.
+	While requests for <code>ircs.freenode.net</code> resulted in an NXDOMAIN response, requests for <code>irc.freenode.net</code> instead mentioned something about truncation.
+	The problem hadn&apos;t resolved itself by the time that I went to bed, so I tried restarting Bind9.
+	That fixed the issue right away.
+	It&apos;s odd that that solution would have worked though.
+	After all, I didn&apos;t notice the problem until right after the server had restarted, meaning that Bind9 had <strong>*just*</strong> restarted.
+	If that didn&apos;t fix it, why did a second restart work? Speaking of unexplainable issues, the server losing power also took down <abbr title="Next Generation IRC Daemon">ngIRCd</abbr>.
+	<abbr title="Next Generation IRC Daemon">ngIRCd</abbr> didn&apos;t come back up with the server as it was supposed to, so I assumed that there was some sort of configuration issue.
+	Most likely, I had modified the configuration and forgotten to restart the software, so I didn&apos;t notice that the new configuration was bad until the whole machine restarted.
+	However, that wasn&apos;t the case at all.
+	Without making any configuration changes, simply telling the machine to start <abbr title="Next Generation IRC Daemon">ngIRCd</abbr> back up worked.
+	I&apos;m at a loss as to why it didn&apos;t bring <abbr title="Next Generation IRC Daemon">ngIRCd</abbr> back up of its own accord.
+</p>
+<p>
+	Yesterday, I forgot to set up the parts on my known_scheme class that enforce the presence or lack of presence of <abbr title="Uniform Resource Identifier">URI</abbr> components based on whether a given scheme requires or disallows said components, so I set that up today.
+	While dealing with that, I found that phpDocumentor is unable to parse files that reference values within a constant array.
+	It&apos;s totally fine with such arrays being defined, but it acts up if you try to actually make use of the defined arrays.
+	I ended up separating the class constant arrays into five separate class constants, which is probably a better design anyway.
+	Constant arrays are most useful outside of classes, where there&apos;s nothing else to bind the values together.
+	I also set up an exception code registry to make sure that I only use each exception code in one place.
+	Using unique exception codes doesn&apos;t hurt and it could be useful for debugging.
+	As sort of a way to document why <a href="https://git.vola7ileiax4ueow.onion/y.st./include.d">include.d</a> doesn&apos;t define an autoloading function, I added an implementation of <a href="https://secure.php.net./manual/en/function.autoload.php"><code>\__autoload()</code></a> that checks for things that would prevent the <a href="https://secure.php.net./manual/en/function.spl-autoload.php"><code>\spl_autoload()</code></a> from loading classes from include.d, fixes them, then makes sure that <code>\spl_autoload()</code> has been registered as an autoload function.
+	It additionally calls <code>\spl_autoload()</code> or <a href="https://secure.php.net./manual/en/function.spl-autoload-call.php"><code>\spl_autoload_call()</code></a> if necessary.
+	Using default settings, aside from a modified path that includes include.d, calling <a href="https://secure.php.net./manual/en/function.spl-autoload-register.php"><code>\spl_autoload_register()</code></a> with no arguments is all that&apos;s necessary for setting up the default autoloader to load classes from include.d.
+	I thought that I could finish with the <code>gopher:</code>-scheme <abbr title="Uniform Resource Identifier">URI</abbr> class today as well, but I ended up entirely scrapping the previous work that I&apos;d done on that class from when I first started building scheme-specific <abbr title="Uniform Resource Identifier">URI</abbr> classes.
+	I might end up scrapping my <code>https:</code>- and <code>http:</code>-scheme classes as well.
+	I&apos;ve made major improvements to the parent classes, and the child classes might not be salvageable.
+</p>
+<p>
+	While continuing with the job hunt today, I found a couple of oddities.
+	First, the theater was closed, so I couldn&apos;t drop off that particular application.
+	Why would they be closed during normal business hours? Even stranger though, I found that for a dog grooming position listed online, a year of dog grooming was required.
+	However, for a position involving care of people, experience is only preferred, not required.
+	So ...
+	people are pickier about who grooms their dogs than who takes care of the elderly or otherwise incapacitated? If I were in need of care, I&apos;d find that a bit insulting.
+	I wouldn&apos;t be demanding people with experience or anything, but it seems like the dogs are being given priority.
+</p>
+<p>
+	My mother asked about when my dental appointment was, which I was really hoping that she wouldn&apos;t do.
+	I had to admit that while I had tried to get an earlier appointment, it wasn&apos;t a possibility and my appointment was on May 23 as I had originally told her.
+	She said that I shouldn&apos;t lie to the dentists and tell them that I&apos;m not in major pain.
+	She said that it doesn&apos;t accomplish anything for me to try to tough out the pain.
+	Okay, it seems that she doesn&apos;t actually thing that I killed my tooth after all, as she thinks that it&apos;s in excruciating pain.
+	I&apos;m a bit less frustrated with her now though.
+	She hadn&apos;t been trying to get me to recklessly lie to the dentists in an attempt to rush my care.
+	Instead, she was just failing to listen, as always, and didn&apos;t realize that when I said that I&apos;m not in major pain, that it meant that I&apos;m not in major pain.
+	In fact, unless I bump that spot on my face hard enough or I get something in the hole in my tooth, I can barely feel that there&apos;s a problem.
+	It certainly isn&apos;t painful most of the time.
+	I explained that to her, and she finds it strange that a hole that big doesn&apos;t hurt more, but she dropped the subject.
+	When she drops things, she often doesn&apos;t drop them for long though, so I may not have heard the end of this.
+</p>
+<p>
+	My mother says that she&apos;s taking a <abbr title="cardiopulmonary resuscitation">CPR</abbr> class soon, and offered to take me with her.
+	I&apos;m reluctant to go into such a public setting with her, but I agreed to go.
+	While the chances of knowing <abbr title="cardiopulmonary resuscitation">CPR</abbr> coming in handy are exceedingly small, the possibility of potentially saving even one life would be worth it.
+	While the knowledge will be valuable, I&apos;m less interested in the certification that the course allegedly offers if it requires use of my legal name.
+	Because my mother is a pain about me using my real name instead of my legal name, I think that my best bet is to leave my state-issued <abbr title="identification">ID</abbr> at home.
+	Hopefully, it won&apos;t be needed, but if it is, leaving it behind prevents my legal identity from being tied to it.
+	I&apos;m kind of hoping that the certifications don&apos;t come with names though.
+	However, to be honest, the chances of that don&apos;t look good.
+	The certificates that I see online do have a name field.
+	This training will likely be this Sunday, but we don&apos;t have the exact date right now.
+</p>
+<p>
+	I received a letter from Brad of <a href="http://www.bradsucks.net./">Brad Sucks</a>.
+	Apparently, it&apos;s been about a year and a half since he&apos;s sent anything to people on his mailing list.
+	In fact, I had forgotten that I was even on the guy&apos;s mailing list because he never sends anything.
+	This is a guy that won&apos;t fill your inbox! Anyway, it seems that he&apos;s quit his non-music jobs and is focusing only on music now.
+	It sounds like he&apos;s been hard at work on his next album, so that might be coming out at some point in the near future.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F03-March%2F31.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F03-March%2F31.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

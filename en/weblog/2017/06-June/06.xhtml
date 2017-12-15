@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2017 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2017/06-June/06.xhtml"/>
+		<title>minestats enhancements &lt;https://y.st./en/weblog/2017/06-June/06.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2017/06-June/06.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2017/06-June/05.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2017/06-June/07.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1><code>minestats</code> enhancements</h1>
+			<p>Day 00822: Tuesday, 2017 June 06</p>
+		</header>
+<section id="advertisements">
+	<h2>Unsponsored advertisements</h2>
+	<p>
+		Marc With a C is releasing a new album, <a href="https://marcwithac.bandcamp.com/album/half-serious-half-kidding-ep">Half Serious, Half Kidding EP</a>!
+		It&apos;s currently on pre-order, but you can listen to the first song now.
+	</p>
+</section>
+<section id="general">
+	<h2>General news</h2>
+	<p>
+		Someone came onto <a href="ircs://freenodeok2gncmy.onion:6697/%23Minetest">#Minetest</a> advertising a <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>-development gig, then left.
+		I inquired, but it turns out the job is to write proprietary code based on the permissively-licensed <a href="https://en.wikipedia.org./wiki/Laravel">Laravel</a>.
+		So why were they advertising in a free software channel!?
+		I laughed and said #Minetest might not be the best place to find someone, and that most of the peopel with skills there are free software geeks.
+		As it turns out though, the person advertising is a Minetest developer themself!
+		They&apos;re not one of the core developers, but they&apos;re a contributor; they knew exactly what the channel is.
+		That was a little embarrassing on my part.
+		I&apos;m glad I wasn&apos;t rude about it.
+	</p>
+	<p>
+		The on-site manager&apos;s parent brought me to the laundry room again to look at bread that someone left.
+		It was a sweet gesture, but I still don&apos;t know if it&apos;s safe to eat.
+		Apparently, they know the person that left it, but without an ingredient list, I could very well give myself a headache if I ate it.
+	</p>
+	<p>
+		<code>minestats</code> development hit a bit of a wall today.
+		First, I ran into the nodes that drop <code>default:dirt</code>.
+		I was a little disappointed that those nodes made it onto the stats page, but it was tolerable.
+		It takes time for grass, snow, or whatever to spread on dirt, so players still can&apos;t place and dig back up the same node in quick succession to raise their stats.
+		If they want to uselessly farm <code>default:dirt_with_grass</code>, they can feel free.
+		<code>farming:soil</code> can be farmed a bit quicker, but it&apos;s still more than just placing and digging that they&apos;d have to do.
+		But then I noticed <code>default:dirt_with_grass_footsteps</code>, a node that was sort of dummied out, but never actually removed from the game.
+		It can never be found, so it can never be mined, resulting in a stat that just sits there taunting players.
+		Joy.
+		I wasn&apos;t sure how to get around that, but as it&apos;s a flaw in Minetest game, not in <code>minestats</code>, I was willing to simply point out the problem to users of my mod, then otherwise leave it alone for the time being.
+	</p>
+	<p>
+		But then, a bigger problem arose.
+		Some nodes should be removed from consideration because they only exist as technical implementations.
+		I don&apos;t recall exactly which node made me throw in the towel, but for some nodes, the only obvious way to remove them from the consideration pool is to check for the presence of an <code>on_place()</code> method.
+		Nodes such as grass define this to allow all five lengths of grass to be one item type in inventory, but five lengths in the field.
+		When you place one, a random one of the five nodes is used.
+		Beds use this to place the second node of the bed.
+		Doors use this poorly to place both nodes of the door.
+		Anyway, it turns out seeds and saplings use this too.
+		Seeds prevent their own placement if they don&apos;t like the node beneath their now location.
+		Saplings use this to prevent themselves from being placed in places that would allow you to commit vandalism-by-tree by growing trees into other people&apos;s protected areas.
+		By ruling out items with an <code>on_place()</code> method, I rule out the main two types of non-mineral nodes I&apos;m actually trying to count!
+		I give up for now.
+		I&apos;m not up to this task.
+	</p>
+	<p>
+		I did get some other stuff completed successfully in that mod though.
+		It doesn&apos;t help my personal use case, as I play mostly with the default game, but my mod now supports more minerals than before!
+		Legacy item strings are handled with ease, as are any other unnormalised item strings.
+		Nodes that drop several of the same item are counted as well.
+		Nodes that can be crafted are exempt now though, preventing <code>default:clay</code> from being considered a minable mineral.
+		This check was originally coded to prevent <code>default:stone</code>/<code>default:cobble</code> from being considered a mineral, but I&apos;m happy with the clay-blocking too.
+		I couldn&apos;t find a way to block the various forms of dirt from being counted as minables, but normally, you shouldn&apos;t be able to mine the exact same node repeatedly and get points for it.
+	</p>
+	<p>
+		I emailed my mother to see if tonight was a good night to visit them.
+		I got no response, so I worked on another project.
+	</p>
+	<p>
+		I was going to work on <code>minequest</code> finally next, but instead, I was set on another mission.
+		Someone asked me to add player kills to <code>minestats</code>.
+		Obviously, that&apos;s a bad idea and I refuse to do it.
+		It&apos;s outside the scope of what <code>minestats</code> is meant for.
+		However, as a <strong>*separate*</strong> mod, it&apos;s an interesting idea.
+		It took some time, but I coded what I think will do what the requester wanted.
+		I don&apos;t very well have the resources to test it though, as my machine&apos;s weak and shouldn&apos;t be running multiple Minetest clients at once.
+		I left it to the requester to test it, and said I&apos;d be happy to fix any bugs they found.
+	</p>
+	<p>
+		My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
+	</p>
+</section>
+<section id="dreams">
+	<h2>Dream journal</h2>
+	<p>
+		I had a bizarre dream last night.
+		I saw a mouse, though I quickly forgot it was there.
+		After getting distracted by other things, I rested my hand near the mouse, about twenty centimetres away.
+		It should&apos;ve run away.
+		That&apos;s what any other mouse would do.
+		However, it instead ran at my hand and latched on with its long, rodent front teeth.
+		It should&apos;ve hurt quite a bit, as I do feel pain in dreams unlike some people, but I guess that&apos;s not where my brain wanted to take the dream.
+		I expected a strong, sharp pain, but instead, the pain was rather minimal.
+		After I got over the shock, I became more annoyed with the mouse than afraid of it, and decided to confine it while I decided what o do with it.
+		I didn&apos;t want to kill it, but I also didn&apos;t want it roaming free in the building.
+		The mouse was still latched onto me, but when I got up to get a marinara cup (like the ones we have at work) to put the mouse in, it released its vice grip on my hand and dropped to the floor.
+		I manager to catch it while it was still dazed from the fall; I worried I wouldn&apos;t catch it at all though, as mice are too quick.
+		It bit me again; though I tried to hold it in a position in which it was in no position to bite, the fact is that mice are incredibly flexible.
+		Or at least, I assume they are, as rats are incredibly flexible, to the point where they can even shift around their bones and organs to squeeze through tight spaces.
+		I found the marinara cup wasn&apos;t going to contain the mouse.
+		The cup was certainly enough to hold the mouse if it held still, but as it was quickly trying to escape, I needed a larger container so I could keep the mouse away from the opening long enough to seal it in.
+		The mouse escaped again, and once more, I quickly caught it before it could further act.
+		At this point, I gave up trying to avoid the mouse&apos;s bite.
+		It was like the bite of a strong garter snake; painful and, if you&apos;re not expecting it, startling.
+		However, if you know it&apos;s coming, it&apos;s really no big deal.
+		I found a bigger container, though I&apos;m not sure for the life of me what.
+		I guess it was some sort of resealable plastic wrapping from something, though the top flap had somehow shrunk, so it wasn&apos;t fitting over the harder, plastic bottom any more.
+		I barely got the mouse to stay in that, but I kept thinking it had escaped, due to how poorly the container was even closed.
+		Somehow though, a second mouse had gotten in.
+		I be later, the container was more of a large tent with large windows in the side.
+		I&apos;m not sure how that happened, but at this point, there were three mice in it.
+		At first, I thought they might be breeding.
+		It was still a mystery as to where the second mouse had come from, but the third could be a product of the other two.
+		I quickly realised though that the third mouse was as large as the other two; tiny, but not a baby.
+		Furthermore, the mice had no food in there to build a baby out of.
+		(Now that I&apos;m awake, I realise one of the mice could&apos;ve been pregnant before being confined, so lack of materials to build a baby from wasn&apos;t an issue, though the size of the third mouse still was.)
+	</p>
+	<p>
+		I&apos;m not sure where this dream took place, really.
+		It didn&apos;t feel like my home, but it also didn&apos;t seem like a workplace.
+		I was alone, and with apparently no other task to accomplish besides confining a mouse on a whim.
+	</p>
+</section>
+		<hr/>
+		<p>
+			Copyright © 2017 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2017%2F06-June%2F06.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2017%2F06-June%2F06.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2017 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/a/CSS_test.xhtml"/>
+		<title>CSS test &lt;https://y.st./en/a/CSS_test.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/a/CSS_test.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1><abbr title="Cascading Style Sheets">CSS</abbr> test</h1>
+			<p>A page for demonstration and testing purposes only</p>
+		</header>
+<p>
+	Strangely, if I put an <code>&lt;h1/&gt;</code> element within a <code>&lt;section/&gt;</code> or <code>&lt;article/&gt;</code> element, the W3C validator complains.
+	I imagine that the same would happen if the <code>&lt;h1/&gt;</code> tag were put within a <code>&lt;blockquote/&gt;</code> element, but I have yet to test that.
+</p>
+<h1><code>&lt;h1/&gt;</code> element</h1>
+<h2><code>&lt;h2/&gt;</code> element</h2>
+<h3><code>&lt;h3/&gt;</code> element</h3>
+<h4><code>&lt;h4/&gt;</code> element</h4>
+<h5><code>&lt;h5/&gt;</code> element</h5>
+<h6><code>&lt;h6/&gt;</code> element</h6>
+<hr/>
+<blockquote id="blockquote">
+	<p>
+		This is contained in a <code>&lt;blockquote/&gt;</code> tag.
+		This tag has no <code>&lt;blockquote/&gt;</code> tags as parents.
+	</p>
+	<blockquote>
+		<p>
+			This <code>&lt;blockquote/&gt;</code> tag is nested within another <code>&lt;blockquote/&gt;</code> tag.
+		</p>
+		<blockquote>
+			<p>
+				This <code>&lt;blockquote/&gt;</code> tag is within two other <code>&lt;blockquote/&gt;</code> tags.
+			</p>
+			<blockquote>
+				<blockquote>
+					<p>
+						Once <code>&lt;blockquote/&gt;</code> tags are nested five deep, the alternating pattern is broken.
+						I need to find a way to continue the pattern when these elements are nested to an arbitrarily-deep level.
+					</p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+</blockquote>
+<hr/>
+<p>
+	This paragraph has several formatted strings in it.
+	<kbd>For example, this sentence represents typed input.</kbd>
+</p>
+<ul>
+	<li>
+		<code>display: none;</code>
+		<ul>
+			<li>
+				<code>&lt;head/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;script/&gt;</code>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<code>display: block;</code>
+		<ul>
+			<li>
+				<code>&lt;html/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;body/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;article/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;section/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;nav/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;aside/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;h1/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;h2/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;h3/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;h4/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;h5/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;h6/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;header/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;footer/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;address/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;p/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;hr/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;pre/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;blockquote/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;ol/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;ul/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;dl/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;dt/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;dd/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;figure/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;figcaption/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;div/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;main/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;form/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;noscript/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;marquee/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;meter/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;progress/&gt;</code>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<code>display: list-item;</code>
+		<ul>
+			<li>
+				<code>&lt;li/&gt;</code>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<code>display: inline;</code>
+		<ul>
+			<li>
+				<code>&lt;a/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;em/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;strong/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;small/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;s/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;cite/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;q/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;dfn/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;abbr/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;data/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;time/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;code/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;var/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;samp/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;kbd/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;sub/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;sup/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;i/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;b/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;u/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;mark/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;ruby/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;rb/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;rt/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;rtc/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;rp/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;bdi/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;bdo/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;span/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;br/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;wbr/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;ins/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;del/&gt;</code>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<code>display: inline-block;</code>
+		<ul>
+			<li>
+				<code>&lt;img/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;iframe/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;embed/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;object/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;param/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;video/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;audio/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;source/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;track/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;map/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;area/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;label/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;input/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;button/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;select/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;datalist/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;optgroup/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;option/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;textarea/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;keygen/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;output/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;progress/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;meter/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;fieldset/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;legend/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;template/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;canvas/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;applet/&gt;</code>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<code>display: table;</code>
+		<ul>
+			<li>
+				<code>&lt;table/&gt;</code>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<code>display: table-caption;</code>
+		<ul>
+			<li>
+				<code>&lt;caption/&gt;</code>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<code>display: table-column-group;</code>
+		<ul>
+			<li>
+				<code>&lt;colgroup/&gt;</code>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<code>display: table-column;</code>
+		<ul>
+			<li>
+				<code>&lt;col/&gt;</code>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<code>display: table-row-group;</code>
+		<ul>
+			<li>
+				<code>&lt;tboby/&gt;</code>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<code>display: table-header-group;</code>
+		<ul>
+			<li>
+				<code>&lt;thead/&gt;</code>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<code>display: table-footer-group;</code>
+		<ul>
+			<li>
+				<code>&lt;tfoot/&gt;</code>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<code>display: table-row;</code>
+		<ul>
+			<li>
+				<code>&lt;tr/&gt;</code>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<code>display: table-cell;</code>
+		<ul>
+			<li>
+				<code>&lt;td/&gt;</code>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<code>&lt;th/&gt;</code>
+			</li>
+		</ul>
+	</li>
+</ul>
+		<hr/>
+		<p>
+			Copyright © 2017 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fa%2FCSS_test.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fa%2FCSS_test.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+
