@@ -18,7 +18,7 @@ just fine.
 My PGP key ID is 0xE7464A03 and my PGP fingerprint is
 D135 B061 DBED 690B 479F E2E3 7D83 E1E5 E746 4A03.
 
-As of today, Wednesday, 2017 December 13,
+As of today, Wednesday, 2017 December 20,
 I have not been legally required to withhold information.
 University of the People has issued me a take-down request for
 some pages on this website, but I have not been asked to keep
@@ -45,17 +45,17 @@ This canary has gone down in the past due to technical issues:
   '- Various life circumstances made website updates difficult.
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEE0TWwYdvtaQtHn+LjfYPh5edGSgMFAlox+5UACgkQfYPh5edG
-SgNtShAAnoseamMDgqYhXMjUPci014/2yAYVLs+8KrvPzWrmx/L/TUuCmEBlBeD7
-FlnJExhzHoGqMTRkN+TrzgPh2Pv7ve13k4q/9jOaAdUhdD/ceRtVNlwqnp+ob8EE
-HS95tLhc5PG3H3TD5mL1p9PRM+zdwfV4rkgtGcQrM4346CqvEWCAMcfoV5MHA8CR
-iSqoFW4cNIV/ng0YzBh7CBKoLRR9y1ZYq9ouea5XFDC0svUi+F+qx3zl4Ys8Nju0
-LBRiYTdVhAFeM+uc7ozx0d3QJ6Cqt8V3SyNgI/wIW8tA0whymv1VSzIYXYM8zNJ1
-zeaDdJNFC+Dh+OBo+ypzw4IN262tJKiq0QKizognE6xY7euMp9kA0Zr80j/bgndL
-h0y2Hi+LiaSh7iCSOiBSGSjy7BkKnG+cRBVUXQkmOUQBgetwvo0IUF4QEFQoV3w3
-M8UNDyR+A0cLrapwHnd3+XLfXyqAzq9DSdNFAhjY5P8A9Ue/Zb63wcw7gXMvUaUE
-PJ6cFVtW7aFWccM6bKPHo/VPBP5SmNWLjJO2pP7wvlA/596PXF1E7t3wvO1lZeHP
-dOZSTr/bPM+Ip9J/XrNv5Z+xDgPkkNFP8cnhOsCr7g+tpx7Qd+E6Ty26Qs/zbrPY
-t019P1AXyfodChhKMvfDXvYLhvnJ0u6Pc2k6mTb8WNLDal+KZqw=
-=/fvP
+iQIzBAEBCAAdFiEE0TWwYdvtaQtHn+LjfYPh5edGSgMFAlo7PW0ACgkQfYPh5edG
+SgO7eQ//fZ9zYi603bc/ZvXGc7OZ9+iOCcTInO/7LvygN8dLwuLCTIVELc/ELEG3
+PwoW1jmjWrKBsNYrpnQdq40p3C/oDIpe09Xd8/+b261S2OkIKyvyKwNLdcTomSLN
+49pBbJHwMA0XXGqARnOW30UO3i3HAEPDpZOOus4AKcNeIpVWkD5gXmX4nKBK+zjL
+bcJ0FbolY2VkDpV/q7CC5KiIDqz7O8SHLpM+9U++kJtdXDBWouFPyFeIDNYvPrGK
+l12QOcqSw/LnHPK7+1io0SAQXo5Od6UL3BRsoyCln6cLP9hTIO7a1vYrNkp/Rs9Z
+eBgmRF7SNnl/xwO7svUDsatNPOx8e+2CLw0FJxlRqmbouF+d9FfjC/sPHYK6vFts
+NK5U7kRz8mrO8mBKf+Wu9c/WHrDSF9regpbxESXLoFjLefKxgMdA4cBwMZf1pZHs
+KiC7S7VSOz9+pJbmy+xw3mEfCrxGGcbUA4gefk4p0lEu3DveCD8bCuZY4/CMkYa/
+XIKh33f5hk8VenKWU52aPvZDidwz4lOkblaePSDP9wtbeaRiwMdF3JmJJgyhzeKM
+hNfWqzMsqIvU6SC5SZ0u6GIPLGt+PDL86gWYXlnBEpi9DC23t9yOYCb7P913WEfT
+N2vWLMXdkHgJ+g1mVlVvc6P6mFrOU11yGTaqWR1a04FnAAW79JY=
+=taOA
 -----END PGP SIGNATURE-----
