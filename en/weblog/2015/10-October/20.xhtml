@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2015 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2015/10-October/20.xhtml"/>
+		<title>Coursera is creepy &lt;https://y.st./en/weblog/2015/10-October/20.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2015/10-October/20.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2015/10-October/19.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2015/10-October/21.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>Coursera is creepy</h1>
+			<p>Day 00227: Tuesday, 2015 October 20</p>
+		</header>
+<p>
+	I decided to create an index file for my domain directory last night, but that quickly became complicated.
+	The file name format for the page on a particular domain is &quot;{domain}xhtml&quot;, so there was no way to differentiate between the <code>index.xhtml</code> file that was in place to act as the index of the directory and the <code>index.xhtml</code> file that held information on the <code>index.</code> <abbr title="Top Level Domain">TLD</abbr> if I were somehow able to acquire it.
+	As unlikely as that would be, I can&apos;t stand such ambiguity.
+	Next, I considered moving the domain pages to <code>/en/domains/{domain}/index.xhtml</code>, but that would cause a directory name clash between the <code>.</code> directory that is itself the directory that contains it and the <code>//.</code> root domain.
+	Another possibility would be to move the domain files from &quot;{domain}xhtml&quot; to &quot;{domain}<strong>.</strong>xhtml&quot;, which would clear up any meaningful ambiguity.
+	File names would look silly with the double dot, but the <code>//index.</code> <abbr title="Top Level Domain">TLD</abbr> would be documented in the <code>index..xhtml</code> file and the root domain would be documented in the <code>..xhtml</code> file, leaving <code>index.xhtml</code> as the index file.
+	At this point though, I realized that I wasn&apos;t going to be happy with any sort of regular index file.
+	Technically, the <code>index.xhtml</code> file could then refer to some <code>//index</code> domain that was not fully-qualified.
+	As stupid as this is, I would be happier leaving the file names without the double dot and just putting the index file outside the directory.
+	Navigating to the directory won&apos;t get you anywhere on the current server, so if you want a domain list, it&apos;s at <a href="/en/a/domains.xhtml"><code>/en/a/domains.xhtml</code></a>.
+</p>
+<p>
+	I was looking into <a href="https://en.wikipedia.org/wiki/Zero-configuration_networking">zero-configuration networking</a> again, and found something interesting on Wikipedia.
+	Apple&apos;s implementation became an <abbr title="Internet Engineering Task Force">IETF</abbr> standard while Microsoft&apos;s implementation never did and is rarely used.
+	I already knew Windows was performing <abbr title="multicast Domain Name System">mDNS</abbr> queries incorrectly because most of these queries were hitting the <abbr title="Internet service provider">ISP</abbr>&apos;s corrupt <abbr title="Domain Name System">DNS</abbr> servers, but this further backs up that knowledge.
+</p>
+<p>
+	I managed to get help with the broken Coursera videos.
+	I don&apos;t know why they won&apos;t play in-browser, but it seems that on the video page, there is a download option so the videos can be played locally.
+	I probably missed it because the video pages tries to auto-play the videos.
+	If there is a download option, it does not make sense to automatically start the streaming version because the user might not be choosing to view the videos in-browser.
+	When it came time to take the quiz and submit the homework, the Coursera website was pretty insistent that I give it access to my webcam.
+	Even if I <strong>*had*</strong> a webcam, I wouldn&apos;t give Coursera access.
+	That would just be creepy.
+	Coursera said that if I did not give it access to my webcam, it could not verify that I was the one doing the work, but I don&apos;t need that verification anyway.
+	The other thing you have to do for verification is pay them a large sum.
+	If the courses and coursework were under a free license, I would have no problem handing that money over, but as it is, I&apos;m just going to learn what I can without paying for proprietary work.
+</p>
+<p>
+	One of my credit unions in Springfield sent me a new debit card that I did not ask for.
+	As usual, it has my legal name on it, and as a result, I will not be spending with it.
+	Merchants do not need to know who I am, that is just creepy as well.
+	But if they are going to have a name down for me, it will be my real name, not my legal name, so when I have to spend from a card (such as over the Internet), the only card I will use is my Yst Dawson Discover card.
+	As usual though, I will activate the card when I get a chance.
+	I&apos;ll be headed back to Springfield on Friday, so I can walk into the credit union at that time.
+	This will give me a chance to assert the fact that I do not live in the area and it would have been very nice to have some sort of Web-based activation system like Discover has.
+	Not everyone has a telephone and there should be other options besides using a telephone to activate their cards from a distance.
+</p>
+<p>
+	My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2015 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F10-October%2F20.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F10-October%2F20.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

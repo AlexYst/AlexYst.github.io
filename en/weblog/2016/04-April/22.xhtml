@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/04-April/22.xhtml"/>
+		<title>Vacuuming and and dealing with a cURL developer &lt;https://y.st./en/weblog/2016/04-April/22.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/04-April/22.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/04-April/21.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/04-April/23.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>Vacuuming and and dealing with a <abbr title="Client for URLs/Client URL Request Library/Curl URL Request Library">cURL</abbr> developer</h1>
+			<p>Day 00412: Friday, 2016 April 22</p>
+		</header>
+<p>
+	My father left fairly early today, so I got to work on vacuuming right away.
+	While my mother was convinced that four hours would be enough time to get all the vacuuming done, it wasn&apos;t even close.
+	He ended up away most of the day, so I had a lot more time than expected, and I still barely got most of the vacuuming done that I planned to.
+	I did have to leave half of my mother&apos;s closet unvacuumed because of all the shoes, the uncarpeted floors (figuring that I could sweep those floors later), and my sisters&apos; room (as I still haven&apos;t had time to clean that room).
+	I&apos;ll work on sweeping and cleaning the final room tomorrow.
+</p>
+<p>
+	Discussion about <a href="https://github.com/curl/curl/issues/716#issuecomment-213392196"><abbr title="Client for URLs/Client URL Request Library/Curl URL Request Library">cURL</abbr>&apos;s bug</a> began again today when one of the <abbr title="Client for URLs/Client URL Request Library/Curl URL Request Library">cURL</abbr> developers said that he planned to document the behavior instead of fixing it, also saying that Web browsers don&apos;t follow the standard either.
+	I think that our conversation speaks for itself, which for the record, went as follows:
+</p>
+<p>
+	badger:
+</p>
+<blockquote>
+<p>
+	I&apos;m aiming for just documenting the situation as the discussion in httpbis didn&apos;t go anywhere, the browsers don&apos;t follow the specs (as mentioned) and I don&apos;t see any benefit in changing curl to start doing so.
+</p>
+</blockquote>
+<p>
+	Y-st:
+</p>
+<blockquote>
+<p>
+	If you want to document it and leave the code in cURL alone, that&apos;s fine.
+	It&apos;s a bit misleading to say that Web browsers aren&apos;t following the standard though.
+</p>
+<p>
+	Most Web browsers aren&apos;t *currently* following the standard, but I did manage to get the Qt developers to fix the bug in their networking code, so any Web browser that relies on Qt for this sort of thing will be fixed upon the next Qt release (Qt might have even released a new version by now, I&apos;m not sure).
+	The GNOME developers have acknowledged the bug as well, believing it to be in glib.
+	They aren&apos;t acting as quickly as the Qt developers, but a fix is likely coming at some point, so Web browsers dependent on glib will likely also end up fixed.
+	Likewise, Google&apos;s known about this issue for a while as part of a larger issue in their code, and it sounds like a patch for that problem is in the works for Chromium/Chrome too.
+	From the sounds of it, Firefox might not fix the problem (despite already having a patch for it) and I&apos;m not sure that Microsoft knows that Internet Explorer has the problem, but many Web browsers are likely going to be following the standard in the nearish future.
+</p>
+</blockquote>
+<p>
+	badger:
+</p>
+<blockquote>
+<p>
+	I was referring to the major browsers.
+	Chrome, IE, Safari, Firefox.
+	The Qt HTTP stack is not used in any of those.
+</p>
+<p>
+	As mentioned already, I opened a discussion about this on the httpbis mailing list and there was no particular interest in the HTTP community to work on this.
+</p>
+<blockquote><p>
+	Google&apos;s known about this issue for a while as part of a larger issue in their code, and it sounds like a patch for that problem is in the works for Chromium
+</p></blockquote>
+<p>
+	Link?
+</p>
+<p>
+	Finally, you&apos;re working very hard to &quot;fix&quot; this with no particular use case that shouts for a fix.
+	If you would be able to show a few different places where this causes a problem in real life right now, I think I and others would be more inclined to work on changing things.
+</p>
+</blockquote>
+<p>
+	Y-st:
+</p>
+<blockquote>
+<p>
+	&lt;https://bugs.chromium.org./p/chromium/issues/detail?id=496472&gt; says:
+</p>
+<blockquote><p>
+	This is a tracking bug for the clean-up tasks, in case anyone wants to grab it / yell at me:
+</p></blockquote>
+<p>
+	That means that it&apos;s not a bug report, but rather a note from one of the developers saying that this needs to be fixed.
+	It also says:
+</p>
+<blockquote><p>
+	The only usage of this is for validating that the QUIC SNI information is well-formed.
+	QUIC SNI follows the rules of TLS&apos;s SNI (RFC 6066), which dictates the use of IDNA A-Labels without the trailing &apos;.&apos;
+</p></blockquote>
+<p>
+	...
+	and:
+</p>
+<blockquote><p>
+	4) Ensure it&apos;s normalized to strip off any trailing &apos;.&apos; that may have been in the URL host as a DNS resolver hint (if sending) or that it doesn&apos;t have a trailing &apos;.&apos; if handling as a server (this is handled by #3)
+</p></blockquote>
+<p>
+	It sounds to me like they have admitted a need to fix the bug, but some parts of that bug page are too technical for me to understand, so I could be wrong.
+</p>
+<p>
+	I think that a lot of places don&apos;t use the dotted host name for one of three reasons: they don&apos;t think that their users are tech-savvy enough to add a dot, they don&apos;t realize that the dot is even an option, or because Web clients aren&apos;t handling it properly, so it can&apos;t be reliably used yet.
+	(There&apos;s also the personal preference crowd.
+	Some people begin their domains with &quot;www.&quot;, some don&apos;t.
+	The same applies to the trailing dot.) Website owners shouldn&apos;t be forced to choose the undotted version of their domain for canonization just because Web clients are too buggy to handle it.
+	I think that this is part of why the XHTML Content-Type header still hasn&apos;t seen the adoption that it deserves: Most versions of Internet Explorer can&apos;t handle it.
+</p>
+<p>
+	I&apos;m going to be setting up my canonization to use the dotted version of the domain, as it is the absolute form, the fully-qualified domain name.
+	To redirect from the dotted version to the non-dotted version seems incorrect, as a non-dotted domain can and in some cases is resolved against a local domain.
+	While I respect the decision of some websites to canonize to the undotted form, it seems like this should be the decision of the website owner, not the decision of faulty Web clients that choose to be buggy.
+	I doubt that cURL will be an issue on my website, as my site&apos;s too small for cURL use to be likely.
+</p>
+<p>
+	However, choosing not to follow standards seems like a bad idea.
+	You say that you don&apos;t want to follow the standards because most clients don&apos;t follow it, but that very inertia is the problem.
+	Many of them might also not be fixing their bugs because none of the other clients follow the standard.
+	&quot;Why should we follow the standards if no one else does?&quot; Instead of choosing to be part of the solution, you choose to be part of what prevents standards from being, well, standard.
+</p>
+</blockquote>
+<p>
+	badger:
+</p>
+<blockquote>
+<p>
+	Standards aren&apos;t there to be followed blindly.
+	They should be there for a purpose.
+	Right now, following the standards break more things than holding off.
+	Compatibility with &quot;the browsers&quot; and &quot;not breaking stuff&quot; is more important to me than basically anything else.
+</p>
+</blockquote>
+<p>
+	Y-st:
+</p>
+<blockquote>
+<p>
+	You think that I&apos;m trying to blindly follow standards, and I get that, but I think that you&apos;re blindly following what other Web client developers are doing.
+	If you want to leave the bug in place, I have no problem with that.
+	It&apos;s your software, not mine.
+</p>
+<p>
+	However, you&apos;ve yet to mention even one use case that this fix would break.
+	You mentioned Yahoo! and sites like it that are hosted on servers that can&apos;t handle the trailing dot, but those same sites aren&apos;t redirecting to a trailing-dot domain, linking to their trailing-dot version, or interacting with trailing dots in any way.
+	Websites that don&apos;t use the trailing dot can continue not using the trailing dot and cURL will continue to successfully download pages from them.
+</p>
+<p>
+	By all means, if you think that cURL should strip the trailing dot, have it continue doing that.
+	Just please don&apos;t blame other Web clients or Web servers for your decision.
+	It is your decision and your decision alone.
+	(Well, and the decision of any other cURL developers, but not the decision of developers of other projects.) If other developers were adding DRM that prevented their Web clients from being copied, would you do that too?
+</p>
+</blockquote>
+<p>
+	I think that badger&apos;s logic on this is very flawed.
+	I don&apos;t think that I can actually make any progress with this, but at least when people complain about <abbr title="Client for URLs/Client URL Request Library/Curl URL Request Library">cURL</abbr> not working to retrieve pages from my website, I can point to documented evidence that not only is this a <abbr title="Client for URLs/Client URL Request Library/Curl URL Request Library">cURL</abbr> bug, not a bug in my website, but that I tried my best to get the bug fixed to no avail.
+</p>
+<p>
+	Someone wanted to talk to me over <abbr title="Off-the-Record">OTR</abbr> on <abbr title="Internet Relay Chat">IRC</abbr> today, though I hadn&apos;t set that up yet.
+	The problem was that on <a href="apt:hexchat">HexChat</a>, setting up <abbr title="Off-the-Record">OTR</abbr> was too much of a pain to do.
+	I forget the exact issue, but it involved doing something that I am unwilling to do; perhaps compile from source then install the compiled software in a system directory? I only use software that I&apos;ve compiled from source in my own directories, reserving system directories for use by packaged software.
+	I&apos;m no longer on HexChat though, I&apos;m on <a href="apt:weechat">WeeChat</a>.
+	I simply hadn&apos;t gotten around to installing <abbr title="Off-the-Record">OTR</abbr> software for WeeChat.
+	I responded that it would take me a bit to get the <abbr title="Off-the-Record">OTR</abbr> software installed, but he/she kept sending <abbr title="Off-the-Record">OTR</abbr> session-starting requests anyway.
+	Installing <code>otr.py</code> was easy enough, but it didn&apos;t work.
+	Installing <a href="apt:python-potr">python-potr</a> from my package manager got <code>otr.py</code> to start functioning though, so I was able to get the <abbr title="Off-the-Record">OTR</abbr> session started myself.
+	After doing so, I found out that the other user was on Tails, and that Tails&apos; default configuration prevents users from sending messages without first establishing a secure channel.
+	Those repeated attempts to initiate an <abbr title="Off-the-Record">OTR</abbr> session were made by the client each time that the user tried to send an unencrypted message to me.
+	Who knew?
+</p>
+<p>
+	The user and I spoke for quite a while, and one thing that came up was <a href="https://copperhead.co/android/">CopperheadOS</a>, a free mobile operating system based on Android.
+	It&apos;s code is more up-to-date than Replicant&apos;s, but like Replicant, only runs on a select few devices, none of which are my Samsung GT-I9300.
+	Supposedly, all the code is free, but it&apos;s said that Google integration is optional.
+	If it&apos;s optional, that means it&apos;s possible, but Google service integration requires proprietary software.
+	That means that either the user must install the Google proprietary components separately from the system (in which case saying that integration is an option is misleading) or the system contains those proprietary components, but they aren&apos;t active unless the user turns them on (in which case the system isn&apos;t fully free, as it contains proprietary components).
+	As it doesn&apos;t run on my device, I&apos;m going to give the project time to mature until my device breaks down, at which point I&apos;ll look more into the freedom of this system and make a choice between it and Replicant for my next device.
+</p>
+<p>
+	The lack of spam and political email in my inbox has been nice.
+	It needs a bit of fine-tuning still and even then there will be things that the filters cannot catch, but once I&apos;m caught up on everything else that I need to get done, I think that I stand a chance of actually catching up with email processing.
+</p>
+<p>
+	<a href="https://opalrwf4mzmlfmag.onion/">Wowaname</a> was speaking in Arabic characters and mentioned <a href="apt:unifont">Unifont</a> to someone that wasn&apos;t able to see those glyphs.
+	I could see the Arabic characters, but there&apos;s a lot of glyphs that I can&apos;t see, so I installed it myself.
+	Unfortunately, it&apos;s not a fixed-width font, so esoteric characters now disrupt the gridlike arrangement of characters on my screen, but at least I can actually see those characters! &quot;𐅯&quot;, &quot;🔮&quot;, and &quot;🕹&quot; now display as they should.
+</p>
+<p>
+	Our modem has gone down again, and this time, only my mother is around to fix it.
+	I like the odds better when Vanessa and Cyrus are around as well.
+	Not only are there then three people that might notice the downed connection, but our mother doesn&apos;t spend as much time online as those two do, so she&apos;s less likely to notice it and it&apos;ll take longer before the connectivity is restored.
+</p>
+<p>
+	Cyrus reported to me that our father knows that I&apos;m around.
+	He did see me yesterday.
+	Also though, he&apos;s asked Cyrus to give me his Wi-Fi password.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F04-April%2F22.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F04-April%2F22.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

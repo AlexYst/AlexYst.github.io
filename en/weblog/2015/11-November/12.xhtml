@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2015 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2015/11-November/12.xhtml"/>
+		<title>nfcbk2sgyblvdnq3.onion. &lt;https://y.st./en/weblog/2015/11-November/12.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2015/11-November/12.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2015/11-November/11.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2015/11-November/13.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>nfcbk2sgyblvdnq3.onion.</h1>
+			<p>Day 00250: Thursday, 2015 November 12</p>
+		</header>
+<p>
+	I searched the case of my laptop to find the hard drive slot, but it seems that there is not one.
+	Accessing the hard drive may be possible though the large panel on the bottom of the machine, but I do not have a scerwdrivers small enough to remove it at the moment.
+	And if the hard drive is not one of the things directly under the panel, I might need to remove the whole bottom of the laptop anyway.
+	For now, I have put aside my plan from yesterday to swap the hard drive out for testing Debian Unstable.
+</p>
+<p>
+	Previously, I tried using a standalone copy of Ricochet with the Internet connection disabled to prevent Ricochet from accessing the network and registering a new random onion address on my behalf.
+	Once it start up, the theory was that it would generate the configuration files and scripts so I could rummage through them and figure out how to tweak them to use the main instance of <abbr title="The Onion Router">Tor</abbr> and main onion address.
+	However, without an Internet connection, Ricochet had refused to start up.
+	I decided to do some further experimentation with it today.
+	First, I removed the file labeled <code>tor</code>, thinking that it was the copy of <abbr title="The Onion Router">Tor</abbr> that Ricochet would try to run.
+	Then, I started Ricochet, half expecting it to fail and crash.
+	However, it started successfully and somehow registered an onion address for use as an instant message handle: <a href="/en/domains/nfcbk2sgyblvdnq3.onion.xhtml"><code>//nfcbk2sgyblvdnq3.onion.</code></a>.
+	The <code>tor</code> file does seem to be some sort of executable, but it is not needed.
+	When run, it alone, it just complains about the port already being in use because the main instance of <abbr title="The Onion Router">Tor</abbr> is already using it.
+	My guess is that Ricochet checks to see if <abbr title="The Onion Router">Tor</abbr> is already running, and if not, starts the standalone <abbr title="The Onion Router">Tor</abbr> executable that it comes with.
+	The generated configuration files were of no help though.
+	Ricochet&apos;s <code>torrc</code> file is blank and there are no executable scripts to be seen, leaving me without any clues as to how to jury rig Ricochet to use my main onion address.
+	In fact, I cannot even figure out how Ricochet is adding an onion address to the network.
+	The onion key file exists, but I cannot find any files that suggest that a new instance of <abbr title="The Onion Router">Tor</abbr> is being started or that any new instructions are being somehow injected into the main instance&apos;s configuration.
+	I am not convinced that the Debian Unstable packaged version of the software would make things any easier.
+</p>
+<p>
+	I have found an option in my mail client that should allow me to sort and process mail faster.
+	I might be able to keep up with email better from now on.
+	It&apos;s not as good as what I was looking for, but it will do for now.
+	Sylpheed has an advanced search option that allows searching by any of several criteria that the basic search option does not take into account, but the advanced search option does not allow one to select, read, delete, or do anything else with mail found using the advanced search option.
+	It&apos;s pretty useless, actually.
+	However, I just located an option that creates pseudo-directories that display only emails fitting your specified criteria.
+	It is a bit of a mess, to be honest, and heavily reminds me of Windows&apos; idiotic &quot;libraries&quot; feature, but it&apos;s better than having no way to sort by even basic criteria such as the &quot;to&quot; field on emails.
+</p>
+<p>
+	My mother is being moody again.
+	She interrupted a conversation between Vanessa, Cyrus, and me, then got weird when we did not all drop our conversation and switch to her topic.
+	Yet if she was in on the conversation and one of us had interrupted to try to change the topic, she would have gotten pissed off.
+	She quite honestly cannot see that the two situations are the same thing.
+	This makes me question her sanity.
+	I also learned today that she does not understand that in most cases, she uses the word &quot;literally&quot; to mean &quot;figuratively&quot;.
+	As my brother often points out, the English language has become so broken that &quot;figuratively&quot; is a valid dictionary definition of the word &quot;literally&quot;, but that is beside the point.
+	When it was commented that she often uses the word &quot;literally&quot; to mean &quot;figuratively&quot;, she honestly believed that she never did such.
+	I am not even sure she understood what was going on once she was given an example sentence that she often uses in conversation and had it explained how the use of the phrase was not actually literal.
+	This makes me question her intellect.
+	I need to get my feet back on the ground.
+	I need to find a job soon, before anything bad happens.
+	I cannot be at the mercy of someone that has some wires loose without a backup plan.
+	Tomorrow needs to be a day strictly of business, looking into job options and maybe looking into school.
+	Nothing else.
+</p>
+<p>
+	I have been thinking a lot about onions today, seeing as I messed up and registered a third one.
+	I think that I have been looking at them the wrong way.
+	When I started out with them, I thought of them as novelty hostnames and did not take them seriously.
+	Once I found out that <abbr title="The Onion Router">Tor</abbr>&apos;s use of the <code>//onion.</code> <abbr title="Top Level Domain">TLD</abbr> had become technically legitimate by <abbr title="Internet Assigned Numbers Authority">IANA</abbr> standard, I started treating them the same as I treat any valid domain.
+	It makes no sense to me to go out wildly registering as many domains as one can without purpose, onion domains have different properties than clearnet domains.
+	A clearnet domain can be used to specify any host on the network.
+	A clearnet domain&apos;s subdomains can be used to specify any other host on the network, whether these other hosts are related or not.
+	However, an onion address instead refers to an onion router, a host that does not actually provide any service.
+	Instead, the onion router accepts a connection and forwards it to a specified other host based on what port was accessed.
+	(It is possible, and common, for the onion router to double as a service provider by redirecting traffic to the loopback <abbr title="Internet Protocol">IP</abbr> address.) While different ports can be forwarded to different hosts, all subdomains always refer to the exact same onion router as the main onion domain.
+	The subdomains are inseparable from the main domain and cannot be used for other hosts.
+	Currently, my laptop is acting also as my server, so it makes sense to use the same onion address for both server activities, such as serving webpages, and client activities, such as instant messaging.
+	However, this is not at all future-proof.
+	It might be a better idea to single out services as much as possible by giving them each an onion address even if they exist on the same machine.
+	That way, they can drift freely between physical machines as needed.
+	Another possibility would be to give each machine a single onion address and have the <abbr title="Uniform Resource Identifier">URI</abbr>s change as services drift.
+	One more option would be to use a client onion address for services such as TorChat and a server onion address for services such as Apache.
+	There are many possibilities, and I will need to put more thought into this.
+</p>
+<p>
+	My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2015 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F11-November%2F12.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F11-November%2F12.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

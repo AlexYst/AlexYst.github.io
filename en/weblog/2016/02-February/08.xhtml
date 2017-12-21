@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/02-February/08.xhtml"/>
+		<title>I wish that the SQL standard was actually adhered to &lt;https://y.st./en/weblog/2016/02-February/08.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/02-February/08.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/02-February/07.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/02-February/09.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>I wish that the <abbr title="Structured Query Language">SQL</abbr> standard was actually adhered to</h1>
+			<p>Day 00338: Monday, 2016 February 08</p>
+		</header>
+<p>
+	After cleaning up the configuration and use of name spaces in the spider, I started work on abstracting the database interactions.
+	That way, it would be possible to build a class for each type of database and use whichever class was needed for a given type of database.
+	As classes, new database types could be added easily and database-specific logic would not need to be messily strewn about throughout the spider&apos;s main logic.
+	I started by trying to build a class to abstract away the <code>\mysqli</code> class&apos; methods, keeping a copy of an actual <code>\mysqli</code> class instance as a property of my class.
+	I quickly realized that this was the wrong way to build my class though.
+	My class should extend the <code>\mysqli</code> class, allowing instances to to have the full range of functionality available to both <code>\mysqli</code> objects and object of classes implementing my database interface.
+</p>
+<p>
+	While working on the MySQL implementation of my database interface, I quickly ran into an issue that I had not before: MySQL does not have support for boolean data.
+	A database should reasonably be able to store a boolean value, so I had added that to the interface, but now it was being problematic.
+	It seems that MySQL does not have basic boolean support! I could implement the feature using a single-digit unsigned integer, a string, or even as a single bit itself, but that does not fix the issue.
+	When retrieving the data later, how can I tell the difference between a boolean and data that is actually meant to be whatever type of data I have implemented the boolean as? I could implement all data types as strings, use the first character as a flag to tell what type of data is being used, and perform my own processing, but that would remove much of the database-specific optimization that MySQL (and later database applications that I work with) probably has.
+	I could rely on the script making use of the abstraction classes to know that certain data types are not properly implemented and perform needed conversions, but that removes part of the abstraction, as which types function correctly is database-specific.
+	I could also implement only strings, so the calling script would know that everything going into or coming out of the database is a string, but that too would remove helpful database-specific internals optimizations.
+	Another option would be to rely on the calling script to know what type it was expecting and call appropriate methods such as <code>database::get_bool()</code>, but that would only allow looking data up one grid square at a time.
+	Full and partial rows would require performing several lookups, which would cause a serious performance drop.
+	I though that this would be a simple subproject, but it might turn into a full-blown project of its own.
+</p>
+<p>
+	I have heard that <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>&apos;s <a href="https://secure.php.net/manual/en/class.pdo.php"><code>\PDO</code> class</a> does not provide abstraction; it only provides a consistent interface.
+	I also hear that most <abbr title="Structured Query Language">SQL</abbr> database software applications do not correctly implement standard <abbr title="Structured Query Language">SQL</abbr>.
+	Perhaps using some subset of features, I can use standard <abbr title="Structured Query Language">SQL</abbr> statements in combination with the <code>\PDO</code> class and actually make progress.
+	The catch is, of course, that even if this works, it would only allow use of multiple types of database software back ends to be used; it would not allow a way to use a flat file database structure if desired.
+	I think that I will switch to <code>\PDO</code> tomorrow for the time being.
+	If I come up with a better option, I would be happy to switch, but I should not wait around for an idea in the mean time.
+	If anyone reports problems in compatibility, I can set up some arrays of database-specific <abbr title="Structured Query Language">SQL</abbr> queries that can be referenced as needed.
+	Even better, I could set up separate files for each database application containing only the queries needed by each specific database application, and one can be <code>require()</code>d based on some configuration value.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F02-February%2F08.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F02-February%2F08.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

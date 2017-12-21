@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/07-July/29.xhtml"/>
+		<title>ADB on Windows &lt;https://y.st./en/weblog/2016/07-July/29.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/07-July/29.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/07-July/28.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/07-July/30.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1><abbr title="Android Debug Bridge">ADB</abbr> on Windows</h1>
+			<p>Day 00510: Friday, 2016 July 29</p>
+		</header>
+<p>
+	Cyrus is leaving for Gresham tomorrow.
+</p>
+<p>
+	I bought another used GT-i9100 today.
+	This one&apos;s a bit more expensive than the last one, but hopefully it&apos;ll actually be what it&apos;s advertised to be.
+	It&apos;s scheduled to arrive somewhere from August 24 to September 12.
+	In the mean time though, my mothe rhas no Internet connection.
+	I have three carrier-provided devices, but they&apos;re too locked down to allow tethering, unlike a Replicant device.
+	I found an interesting application online though: <a href="https://code.google.com./archive/p/proxoid/">Proxiod</a>.
+	It bypasses tethering restrictions by forwarding traffic instead of technically tethering it.
+	It only works for <abbr title="Hypertext Transfer Protocol">HTTP</abbr> traffic, but works in any Web browser that has <abbr title="Hypertext Transfer Protocol">HTTP</abbr> proxy capabilities.
+	It even automatically routes traffic through <abbr title="The Onion Router">Tor</abbr> because it obeys the <abbr title="Access Point Name">APN</abbr> <abbr title="Hypertext Transfer Protocol">HTTP</abbr> proxy settings, which I have set to point traffic at Orbot&apos;s <abbr title="Hypertext Transfer Protocol">HTTP</abbr> proxy port.
+	Proxoid requires $[ADB] to use.
+	I already had <abbr title="Android Debug Bridge">ADB</abbr> installed on my machine, but I had to install it on mother&apos;s machine.
+</p>
+<p>
+	<abbr title="Android Debug Bridge">ADB</abbr> requires Java and my mother didn&apos;t have Java installed, so I went online on my machine to find a download of OpenJDK for my mother&apos;s Windows machine.
+	Strangely, there isn&apos;t any official Windows build of OpenJDK! I tried using an <a href="https://github.com/ojdkbuild/ojdkbuild">unofficial build</a>, but that didn&apos;t work out well.
+	The <abbr title="Android Debug Bridge">ADB</abbr> installer kept failing.
+	A copy of <abbr title="Android Debug Bridge">ADB</abbr> extracted from a ZIP file wouldn&apos;t run.
+	I needed a new solution.
+	I kept looking for options for quite a while, but I eventually gave up and installed proprietary Java.
+	My mother already installs proprietary software all the time and runs a proprietary operating system.
+	Their computer is already a lost cause.
+	That doesn&apos;t even touch the fact that my mother has in the past claimed that Java is one of the applications that is &quot;required for basic computer use&quot; and should always be installed on a new computer, so they would have installed it themself at some point as well.
+</p>
+<p>
+	It turns out that the Windows Android <abbr title="software development kit">SDK</abbr> does not include <abbr title="Android Debug Bridge">ADB</abbr>.
+	<abbr title="Android Debug Bridge">ADB</abbr> must be installed using the <abbr title="software development kit">SDK</abbr> manager, but the <abbr title="software development kit">SDK</abbr> manager can&apos;t access the Internet to download <abbr title="Android Debug Bridge">ADB</abbr> until <strong>*after*</strong> <abbr title="Android Debug Bridge">ADB</abbr> is downloaded and installed, as <abbr title="Android Debug Bridge">ADB</abbr> is necessary to connect to the Internet through Proxdroid and we have no other Internet access at our disposal.
+	Thankfully, someone on <abbr title="Internet Relay Chat">IRC</abbr> gave me a <a href="https://dl.google.com./android/repository/platform-tools_r24-windows.zip">direct <abbr title="Uniform Resource Identifier">URI</abbr> for the download</a>.
+	Why does Google have to complicate things by hiding the download link so that the only easy way to download things is through their silly <abbr title="software development kit">SDK</abbr> manager? To be clear, I&apos;m not arguing against the <abbr title="software development kit">SDK</abbr> manager&apos;s existence or use, I&apos;m just saying that there should be an obvious way to download things without it.
+	For example, <a href="apt:aptitude">Aptitude</a> on Debian is a great package manager ad I use it all the time.
+	However, if I were to go directly to the Debian website and look up a package, there&apos;s a download link for ever package on the page about that package.
+	Likewise, F-Droid is great in most cases.
+	However, when I for some reason can&apos;t connect to the Internet directly on my mobile, F-Droid includes basic Web links to their packages for download without their application manager.
+	It doesn&apos;t even require much effort to set up, as all of these package and software managers use basic <abbr title="Hypertext Transfer Protocol">HTTP</abbr> to retrieve packages anyway.
+	The only change that Google would need to make is to show the download <abbr title="Uniform Resource Identifier">URI</abbr> to the users on their website.
+</p>
+<p>
+	Having finally gotten <abbr title="Android Debug Bridge">ADB</abbr> running on my mother&apos;s machine, I of course hit another snag.
+	It was inevitable, seeing as the blasted machine&apos;s running Windows.
+	<abbr title="Android Debug Bridge">ADB</abbr> doesn&apos;t recognize the device.
+	I tried installing a driver that I found online, but that didn&apos;t help.
+	I found the user manual online, and it suggested putting the device into a mode in which it&apos;ll send the required driver from the device, as a copy is stored there, to the desktop machine, but that driver didn&apos;t work either.
+	I&apos;d love to try rebooting my mother&apos;s machine, but my mother always keeps no less than twenty tabs open in the Web browser along with about seven other applications running, so I can&apos;t reboot without causing my mother to lose all of their open work, which they may or may not actually need.
+	I give up for tonight.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F07-July%2F29.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F07-July%2F29.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

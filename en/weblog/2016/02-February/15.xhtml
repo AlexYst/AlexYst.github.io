@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/02-February/15.xhtml"/>
+		<title>SNI &lt;https://y.st./en/weblog/2016/02-February/15.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/02-February/15.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/02-February/14.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/02-February/16.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1><abbr title="Server Name Indication">SNI</abbr></h1>
+			<p>Day 00345: Monday, 2016 February 15</p>
+		</header>
+<p>
+	Ronsor and company are back! I have not seen them since Ronsor split his <abbr title="Internet Relay Chat">IRC</abbr> network away from Volatile.
+	It seems that he is now setting up <a href="ircs://ronsor37xl7tqn7p.onion:6697/%23Ronsor">his own <abbr title="Internet Relay Chat">IRC</abbr> network</a>.
+	Soon though, he insisted that I turn of <abbr title="Transport Layer Security">TLS</abbr> and use the unencrypted port.
+	I complied, though I will try using the encrypted port again next time that I connect.
+	Multi-layer (<abbr title="The Onion Router">Tor</abbr> and <abbr title="Transport Layer Security">TLS</abbr>) encryption should not be discouraged.
+</p>
+<p>
+	One of the thoughts that kept me someone centered yesterday was the thought that my mother had to be home last night because she had to teach school this morning.
+	She could not just take an extended trip without warning.
+	However, it seems that there is no school today because of some holiday.
+	That is disconcerting.
+	I could have ended up at the old house for another day at least.
+	I need to be more prepared next time.
+</p>
+<p>
+	I have been considering normalizing the spider&apos;s results using scheme-specific methods before displaying them, so I started reading the <abbr title="Request for Comments">RFC</abbr>s to learn how to do that.
+	I found that contrary to what I had learned before, <a href="https://tools.ietf.org/html/rfc7230#section-2.7.2"><abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr> scheme</a> is defined identically to the <a href="https://tools.ietf.org/html/rfc7230#section-2.7.1"><abbr title="Hypertext Transfer Protocol">HTTP</abbr> scheme</a>, with the exception of the default port.
+	This means that <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr> <abbr title="Uniform Resource Identifier">URI</abbr>s should allow trailing dots in their domains while still being valid! A while back, I ran into a problem with the Apache Web Server throwing errors when asked to display an <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr> website that used a trailing dot in the domain name.
+	Asking for help, I was told that this is the correct behavior and that Web servers that do not do this are actually accepting invalid values.
+	I was shown some sort of standards document that backed up this claim, too.
+	I do not seem to be able to find such a document now though.
+	My best guess is that I was actually shown a document relating to <abbr title="Server Name Indication">SNI</abbr>.
+	In <abbr title="Server Name Indication">SNI</abbr>, <a href="https://tools.ietf.org/html/rfc6066#section-3">trailing dots are not allowed</a>.
+	However, in <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr>, <abbr title="Uniform Resource Identifier">URI</abbr>s, the trailing dot is very much allowed.
+	Furthermore, the <a href="https://tools.ietf.org/html/rfc7230#section-5.4"><abbr title="Hypertext Transfer Protocol">HTTP</abbr> Host header <strong>*must*</strong> match the authority component of the <abbr title="Uniform Resource Identifier">URI</abbr></a>, including a trailing dot in the host if present, but not including the userinfo subcomponent or its <code>@</code> delimiter.
+	This means that if someone tries to access the <abbr title="Uniform Resource Identifier">URI</abbr> <code>https://example.com./</code>, they Web browser is supposed to set the <abbr title="Server Name Indication">SNI</abbr> name to <code>example.com</code>, but set the Host header to <code>example.com.</code>.
+	These two values are not required to match one another, and in some cases such as this one, are required <strong>*not*</strong> to match one another.
+</p>
+<p>
+	Trying to insure that the error was most definitely client-side, not server side, I tried connecting using command line tools, both over localhost on <a href="/en/domains/cepo.local.xhtml">cepo</a> and remotely from <a href="/en/domains/newdawn.local.xhtml">newdawn</a>.
+	I found that <abbr title="Client for URLs/Client URL Request Library/Curl URL Request Library">cURL</abbr> strips the trailing dot, both in the Host header and in the <abbr title="Server Name Indication">SNI</abbr> name.
+	On the other hand, Wget leaves the trailing dot in the Host header, but also mistakingly leaves it in the <abbr title="Server Name Indication">SNI</abbr> hostname.
+	With a bit of work, I was able to coax <abbr title="Client for URLs/Client URL Request Library/Curl URL Request Library">cURL</abbr> into sending the correct Host header without making it send a malformed <abbr title="Server Name Indication">SNI</abbr> hostname, allowing me to complete my test on Apache.
+	Apache accepted the Host header with a trailing dot and the <abbr title="Server Name Indication">SNI</abbr> hostname without one, and reported them correctly to the <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> instance running on that machine.
+	I have modified my remote_files class to take a uri object instead of a string so that it may more easily access the host component, which it now uses to correctly set the Host header.
+</p>
+<p>
+	After fixing the remote_files class, I decided to test onion addresses with it on a whim.
+	It worked! I was able to connect to connect to onion addresses with trailing dots in their host names.
+	At first, I thought that the issue with <abbr title="The Onion Router">Tor</abbr> not allowing onion addresses to be fully-qualified was not an issue in <abbr title="The Onion Router">Tor</abbr> at all, but in the applications that run over <abbr title="The Onion Router">Tor</abbr>.
+	I thought that the issue was related to <abbr title="Server Name Indication">SNI</abbr>.
+	I quickly realized that that was probably not the case, and that <abbr title="Client for URLs/Client URL Request Library/Curl URL Request Library">cURL</abbr> was probably stripping the dot of the end of the host name before passing it to <abbr title="The Onion Router">Tor</abbr>, but by the time I had come to that realization, I had already asked on <a href="ircs://irc.oftc.net/%23Tor">#Tor</a> about it.
+	There, they accused me of intentionally asking stupid questing in attempt to waste their time, citing my connections to <a href="https://opalrwf4mzmlfmag.onion/">wowaname</a> as the reason for these accusations.
+	In the past, I had heard that there are two ways to to tell your applications how to reach onion addresses over <abbr title="The Onion Router">Tor</abbr>.
+	The correct way is to is to have the application use the SOCKS proxy to resolve names.
+	The incorrect way, though it works, is to map individual onion addresses to a particular local <abbr title="Internet Protocol">IP</abbr> address so that they are resolved by the machine outside of <abbr title="The Onion Router">Tor</abbr>.
+	I forget what onion address is used, but I thought that <abbr title="The Onion Router">Tor</abbr> was resolving onion addresses to this same <abbr title="Internet Protocol">IP</abbr> address on the fly.
+	I tried resolving onion addresses with <a href="http://linux.die.net/man/1/tor-resolve">tor-resolve</a>, hoping to try both the trailing-dot and no trailing-dot versions of addresses, but tor-resolve does not seem to be able to actually resolve onion addresses.
+	Instead, it resolves standard <abbr title="Domain Name System">DNS</abbr> addresses <abbr title="The Onion Router">Tor</abbr>.
+	Again, I asked about this in #Tor, and found that that SOCKS5 does not work that way.
+	When using SOCKS5, applications do not try to resolve names before making connections.
+	Instead, applications just pass the name to the proxy and the proxy does whatever it wants with the name.
+	Onion addresses do not get &quot;resolved&quot; at all! Mapping onion addresses to a local <abbr title="Internet Protocol">IP</abbr> address is instead used for <a href="https://trac.torproject.org/projects/tor/wiki/doc/TransparentProxy">transparent proxying</a>.
+</p>
+<p>
+	Armed with my new understanding of <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr> <abbr title="Uniform Resource Identifier">URI</abbr>s and <abbr title="Server Name Indication">SNI</abbr>, the next step is clear.
+	I need to test several Web browsers and file bug reports against them, Wget, and <abbr title="Client for URLs/Client URL Request Library/Curl URL Request Library">cURL</abbr>.
+	I looked up a <a href="https://wiki.debian.org/WebBrowsers">list of Web browsers for Debian</a>, and noticed Midori on the list.
+	The version of <a href="https://packages.debian.org/search?keywords=midori">Midori</a> that was in the Debian 7 repository was outdated and Midori was dropped entirely from Debian 8.
+	It was honestly my favorite Web browser though, and it appears to be in the Debian 8 backports repository! Normally, I would be reluctant to add the backports repository to my source list, but this is the perfect opportunity to install Midori and use testing and bug report filing as an excuse to do so.
+</p>
+<p>
+	Before updating my source list to point to more sources, I thought that it would be a better idea to update my source list to use the onion address mirror of the sources that I already use.
+	I ran into two issues.
+	First, while the onion mirror is a drop-in &quot;http://ftp.*.debian.org/debian/&quot;, there does not seem to be an onion-based replacement for the <code>http://security.debian.org/</code> source.
+	Second, when using torsocks, several error lines are output at the end of any call to aptitude that involves remote file retrieval.
+	All identical, these error messages tell the current time, then say <q>WARNING torsocks[13498]: [syscall] Unsupported syscall number 202.
+	Denying the call (in tsocks_syscall() at syscall.c:165)</q>.
+	From the looks of it, some system call is being blocked, potentially to prevent a data leak.
+	While I do not want my package manager leaking data, the Debian group probably is not doing anything malicious.
+	Likewise, if these system calls are being blocked, I do not know if it causes damage to the system, as it is not completeing every task that it has tried to when making system changes.
+	I tried installing <a href="apt:apt-transport-tor">apt-transport-tor</a>, and that seems to work, although it required changing all sources on my source list to use the unregistered <code>tor:</code> scheme in their <abbr title="Uniform Resource Identifier">URI</abbr>s.
+	No doubt, these system calls are still being made, but now successfully, so data may be being leaked.
+	It is suboptimal, but it sounds like better integration with <abbr title="The Onion Router">Tor</abbr> is being worked on.
+	As for the issue of an onion-based replacement for <code>http://security.debian.org/</code>, that will have to wait as well.
+	I was going to make a comment on the <a href="http://richardhartmann.de/blog/posts/2015/08/24-Tor-enabled_Debian_mirror/">article about the mirror</a> asking if there is currently a replacement for <code>http://security.debian.org/</code>, but posting a comment requires an OpenID account, which I have not yet set up.
+	Dealing with reporting Web browser bugs is more important to me right now.
+	Web browsers failing to send correct <abbr title="Server Name Indication">SNI</abbr> host names is hindering my ability to use the fully-qualified version of my domain and still expect to be visible on the Internet.
+</p>
+<p>
+	With that out of the way, I added the backports repository.
+	There was not time tonight to test out a ton of Web browsers, but I was excited to get to try Midori again, so I installed that.
+	Unfortunately, Midori does not support SOCKS proxies, so I have to use torsocks with it, but I was not able to get any definitive results, at least at first.
+	Midori was unable to store &quot;pinned certificates&quot;, so it was unable to ignore the certificate mismatch caused by the trailing dot on the domain I was testing with.
+	Because the error message mentioned the <abbr title="GNU Network Object Model Environment">GNOME</abbr> keyring, I decided to try setting Xfce to start <abbr title="GNU Network Object Model Environment">GNOME</abbr>-compatibility services at startup, then restarted my Xfce session.
+	This worked, but resulted in the server throwing an error, indicating that Midori is sending invalid <abbr title="Server Name Indication">SNI</abbr> host names.
+</p>
+<p>
+	I love Midori because of its clean interface and the fact that it displays the correct <abbr title="Uniform Resource Identifier">URI</abbr> in the address bar, unlike most modern Web browsers.
+	However, it seems that the updates have not prevented Midori from crashing as it when I last used it.
+</p>
+<p>
+	Turning on <abbr title="GNU Network Object Model Environment">GNOME</abbr>-compatibility services seems to have messed up <abbr title="Secure Shell">SSH</abbr> key decryption pass phrase entry.
+	SSH no longer asks for the pass phrase on the command line.
+	Instead, it pops up an annoying pinentry-like prompt for pass phrase entry.
+	Annoyingly, this box does not allow autotyping.
+	However, it does allow pasting, so it is still usable.
+	This same prompt seems to have replaced the pinentry prompt used to input <abbr title="Pretty Good Privacy">PGP</abbr> key pass phrases as well, and might actually be some alternate mode of pinentry.
+	If it is though, it does not explain why pinentry is not intercepting the <abbr title="Secure Shell">SSH</abbr> pass phrase entry prompt.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F02-February%2F15.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F02-February%2F15.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

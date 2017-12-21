@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/01-January/07.xhtml"/>
+		<title>It is alive! &lt;https://y.st./en/weblog/2016/01-January/07.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/01-January/07.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/01-January/06.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/01-January/08.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>It is alive!</h1>
+			<p>Day 00306: Thursday, 2016 January 07</p>
+		</header>
+<p>
+	It seems that I finally found an email address at my old school that people actually respond to.
+	They told me how to buy a copy of my transcript, but it requires logging into my old university account.
+	However, due to my <a href="/en/weblog/2015/03-March/07.xhtml">data loss about a year ago</a>, I do not have my old password.
+	I cannot perform a password reset either, due to having lost the passwords to my old email address and the password for the domain registrar account under which the domain of my old email address had registered.
+	My old domain has expired too, so that email address is permanently out of reach for me.
+	I wrote back, but as soon as I got up this morning and saw the email from them, but I did not receive another answer today.
+	I will have to hope that they respond again tomorrow.
+</p>
+<p>
+	It turns out that the answer to my problem with the spider yesterday is a <a href="https://dev.mysql.com/doc/refman/5.7/en/join.html">join query</a>.
+	After getting past that snag, development went mostly well, though a few other issues did pop up.
+	I feel like I got a lot of work done on the spider today, but somehow, I do not have a lot to say about it.
+	Mostly, I am just thinking about where to go from here.
+	In any case, the spider is now storing its data completely in a MySQL database instead of a flat file.
+	Not much data is stored in <abbr title="random-access memory">RAM</abbr> either, so if the spider is interrupted, not much data is lost.
+	The spider keeps track of when the last time it crawled a page though, so it will not re-request the page that it was interrupted when crawling.
+	I think that I came up with a fix for that while writing this entry, but it is too late to implement it for this particular crawl.
+	The issue is that the data for the page itself is written to the database before the hyperlinks are found and recorded.
+	I can fix this, but if I interrupt the spider to do so, the data will have already been written to the database and the damage done.
+	I need to let the spider finish before trying to do anything to the running instance.
+	Knowing that it will take several days to finish its work, there is no rush, so I will work on the fix for the issue tomorrow and test it on <a href="/en/domains/newdawn.local.xhtml">newdawn</a>.
+	(The main instance is now running on <a href="/en/domains/cepo.local.xhtml">cepo</a>.) This time will also give me a chance to plan how I want to make the search interface even work.
+	Until I have a plan in regards to how to perform searches, I cannot have the spider gather any data that is actually useful outside of finding more pages to crawl.
+	For now, the data it gathers is fairly useless because all it knows is that pages have been linked to.
+</p>
+<p>
+	My mother was given a chance to apply to switch which grade level she is teaching at her school.
+	I asked her if she was going to take that opportunity, but she decided to be very vague, so I do not know what she plans to do.
+</p>
+<p>
+	Cyrus&apos; Boy Scout project plan involving a clothing drive was declined due to the fact that it was not flashy enough.
+	It would not draw attention to the Boy Scout brand much.
+	Instead, he was asked to plan some sort of park cleanup instead.
+	While the clothing drive would do more good for the community, the park cleanup will draw more attention.
+	I think that this really shows that the Boy Scouts are not as good of an organization as people think that they are.
+</p>
+<p>
+	My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F01-January%2F07.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F01-January%2F07.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

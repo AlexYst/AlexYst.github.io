@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/03-March/11.xhtml"/>
+		<title>I thought that this website would need to come down for a while &lt;https://y.st./en/weblog/2016/03-March/11.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/03-March/11.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/03-March/10.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/03-March/12.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>I thought that this website would need to come down for a while</h1>
+			<p>Day 00370: Friday, 2016 March 11</p>
+		</header>
+<p>
+	Looking through the Qt bug database to see if the <abbr title="Server Name Indication">SNI</abbr> bug had already been reported, I found that while it hadn&apos;t been reported yet, other bugs related to <abbr title="Server Name Indication">SNI</abbr> were already in the database.
+	That&apos;s a good sign for me, as it tells me that I&apos;m indeed in the right place.
+	The Qt account signup process involved a form that requested a telephone number, so I was worried I wouldn&apos;t be able to create an account, but it turned out to be optional and I filed my <a href="https://bugreports.qt.io/browse/QTBUG-51821">report</a>.
+</p>
+<p>
+	Someone from Mozilla wrote back about the creation of my account.
+	He claimed that the website blocks registration based on a blacklist of known temporary email address providers.
+	but <code>y.st</code> isn&apos;t a temporary email address provider! I highly doubt that this blacklist would happen to contain my domain that hardly anyone knows of.
+	My guess is that it&apos;s either blocking me because of my <abbr title="The Onion Router">Tor</abbr> use, my use of an uncommon <abbr title="Top Level Domain">TLD</abbr>, or my use of a single-character <abbr title="Second Level Domain">SLD</abbr>.
+	In any case, the person from Mozilla created the account for me manually, so I was able to submit the <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1255854">bug report</a>.
+</p>
+<p>
+	The <abbr title="GNU Network Object Model Environment">GNOME</abbr> bug tracker also uses the Bugzilla software, but they don&apos;t seem to have any blocks in place, so account creation was simple.
+	I submitted my <a href="https://bugzilla.gnome.org/show_bug.cgi?id=763510">bug report</a> against <a href="apt:epiphany-browser">Epiphany</a> and was on my way.
+	Filing a <a href="https://bugs.kde.org/show_bug.cgi?id=360423">bug report</a> against <a href="apt:konqueror">Konqueror</a> was just as easy, though I kind of wonder if Konqueror&apos;s issue is inherited from Qt like Arora&apos;s is.
+</p>
+<p>
+	I couldn&apos;t find a bug tracker on the <a href="apt:surf">Surf</a> <a href="http://surf.suckless.org/">website</a>, but they did mention a <a href="ircs://irc.oftc.org:6697/%23suckless">channel on <abbr title="Open and Free Technology Community">OFTC</abbr></a>.
+	The channel topic requests that people test against the Git repository before submitting bug reports, so I did that.
+	In-channel, quinq said that they don&apos;t have a bug tracker, but that I could post in-channel or use the mailing list, then asked about the nature of the bug.
+	Upon explaining, quinq said that the bug was probably actually in Webkit.
+	I went to the <a href="https://webkit.org/reporting-bugs/">Webkit website</a>, and it said to download the latest nightly build before reporting bugs.
+	However, the nightly build page would only show me the build for OS X.
+	I submitted a <a href="https://bugs.webkit.org/show_bug.cgi?id=155378">bug report</a> anyway though, and if it comes up, I&apos;ll tell them about how their nightly download page only provides an OS X version.
+</p>
+<p>
+	I tried to find an official website for the <a href="apt:w3m">w3m</a> Web browser, but the closest thing that I could find was their SourceForge repository.
+	To report a bug there, I&apos;d need a SourceForge account, but they claim that my registration violates their antispam policy.
+	As they detected &quot;Anonymous Proxy&quot; as my country of origin, their &quot;antispam&quot; policy no doubt is anti-<abbr title="The Onion Router">Tor</abbr>.
+	I&apos;ve sent an email to SourceForge in hopes of getting help, or at the very least, some clarity on why my registrations are being rejected.
+	I located their <a href="ircs://sbuk7aqcxkoyipwv.onion:49152/%23w3m">channel on <abbr title="Internet Relay Chat">IRC</abbr></a> to ask there, and their topic confirms that their main presence is at SourceForge.
+	The response they gave asked for my IP address, confirming that they are likely maliciously discriminating against <abbr title="The Onion Router">Tor</abbr> users.
+</p>
+<p>
+	I received some information via paper mail about my new dental coverage provided by the state.
+	They assigned <a href="https://secure.advantagedental.com/">Advantage Dental</a> as my dental care provider.
+	They have a location very close to my house, but instead of assigning me to that location, they assigned me to one that will take all day to walk to.
+	I don&apos;t see an option to contact them online either.
+	I was going to walk into the local location when I got a chance and ask them about it, but events later in the day changed that.
+</p>
+<p>
+	It seems that I&apos;ve allowed myself to become distracted again.
+	I should have been making preparations to move out.
+	My mother continues to act strange today and said that she wants me to move in with my father on Sunday.
+	She started out by saying that she was headed over to her school to help with their school carnival, so I offered to help out.
+	She then went on about how I don&apos;t like competition and so she doesn&apos;t think I like anything that she likes.
+	Somehow, this equates to me not being a good candidate for volunteering.
+	She then went on about how she thinks that I intentionally gravitate toward anything strange.
+	She specifically mentioned my preferred hair style (shaved very short), my asexuality, my veganism, and my not being a driver.
+	When I confronted her with the fact that I couldn&apos;t have chosen to be asexual, she practically told me that I should at least be in the closet about it.
+	When I confronted her with that but using my own blunt phrasing, she amended her stance to be that I should be in the closet about it except with people I know very well, as if it&apos;s something I should be ashamed of.
+	She also claims that the reason I don&apos;t want to drive is out of fear.
+	If I&apos;m afraid of driving, if it&apos;s not an environmental stance, then why am I vegan? Am I afraid of eating animal products too? She then tried to blame me for part of her own carbon footprint, claiming that if I was a driver and could have run her errands, hers would be smaller.
+	Speaking of my veganism, she claims that it infringes on her right to have a family meal with her.
+	However, it seems like she wants to infringe on my right not to consume animal products and not be involved in a meal that requires such consumption.
+	When mentioning my hair, she seemed to think that I&apos;d seen my preferred haircut on other people and tried to use it myself, but that that haircut doesn&apos;t work on me because I&apos;m overweight.
+	This is a huge change from her older stated stance, which is that the haircut doesn&apos;t look good at all.
+	It&apos;s true, I&apos;m overweight and I need to work on that.
+	But it&apos;s not true that I tried to copy that haircut from others.
+	What happened is that she used to cut my hair, but she got too busy to cut it for a long time a while back.
+	I finally got desperate and bought a trimmer.
+	After using it on myself, I found I liked the haircut a lot better than my old one.
+	I suppose that&apos;s of little consequence though.
+	She also said that speaking with me is like speaking to a retarded person.
+	In any case, she said that I should go live with my father on Sunday.
+	I don&apos;t know how to reach him about this, seeing as his old email address has recently been presumably lost due to us ending our service with our old <abbr title="Internet service provider">ISP</abbr>.
+	I was going try writing to my sister to get his email new address tonight.
+	Once in Springfield, I&apos;d try to get my old job back, then work on getting an apartment and moving out.
+	My mother said once I move in with him, she&apos;ll consider me a traitor and never want me to come back, though moving in with him at all is her idea.
+	I feel devastated, though if I did manage to get my old job back, it might have been be a new ray of hope in my life.
+	Here in Coos Bay, all I am is trapped.
+</p>
+<p>
+	I might have needed to leave my server here in Coos Bay, so I did some light planning for such.
+	It&apos;d be a shame, but if it came down to that, at least I&apos;d be ready.
+	I&apos;d remotely wipe my onion keys from Springfield over <abbr title="Secure Shell">SSH</abbr>.
+	After deleting the keys, I&apos;d probably try to find a way to wipe all the data on the machine securely.
+	Whether I needed to leave the server behind or not, my onion addressed website would need to go down for a time.
+	I wouldn&apos;t have another place to hook up the server until I found my own place to live.
+	This also means that my <a href="/en/domains/sbuk7aqcxkoyipwv.onion.xhtml">censorship-bypassing onion address</a> would need to come down.
+	I wouldn&apos;t be able to help people anonymously access <abbr title="Internet Relay Chat">IRC</abbr> networks that maliciously discriminate against <abbr title="The Onion Router">Tor</abbr> users for a while.
+</p>
+<p>
+	My mother left for a while to work at that carnival, but when she came back, it sounded like the carnival had actually been an auction.
+	Or maybe there was an auction at the carnival? I wasn&apos;t going to take the risk of trying to understand the situation.
+	She changed her story, and now seems to be more on the side of helping me get an apartment than having me move in with my father.
+	That said, she seems to have decided to potentially not have me move out yet at all.
+	This buys me more time, but I still need to get busy and find a job and move out.
+	Staying here is not an option, this is in no way a healthy environment for me.
+</p>
+<p>
+	I seem to be quite shaken up tonight.
+	A friend had to fix several typographical errors in the latter half of this entry for me.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F03-March%2F11.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F03-March%2F11.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

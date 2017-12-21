@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2015 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2015/09-September/17.xhtml"/>
+		<title>The website might be coming back up &lt;https://y.st./en/weblog/2015/09-September/17.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2015/09-September/17.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2015/09-September/16.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2015/09-September/18.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>The website might be coming back up</h1>
+			<p>Day 00194: Thursday, 2015 September 17</p>
+		</header>
+<p>
+	I found another website that claims to redirect traffic from your domain to any website of your choosing, but it claims my email address is invalid.
+	The website also offers gratis email accounts (where was this website when I needed it?), but after registering an email account, the new email address was also rejected as invalid.
+	If the website is claiming that even email addresses on their own servers at their own domain are invalid, it&apos;s probably going to claim all email addresses are invalid.
+</p>
+<p>
+	Next, I tried crawling back to Namecheap.
+	I left them because they started serving Tor users Cloudflare <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr> pages, but their gratis <abbr title="Domain Name System">DNS</abbr> service also provides <abbr title="Hypertext Transfer Protocol">HTTP</abbr> (and maybe <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr>) redirects.
+	I begrudgingly filled out the <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>, but when I went to register an account, Namecheap refused to allow me to set up an account on the grounds that I am using an anonymous proxy.
+	I was willing to meet them half-way by filling out the <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr> that they serve only to proxy users, but I refuse to let down my proxy to deal with these people.
+	Requiring someone to reach you without an anonymous proxy is a direct attack on security, anonymity, and privacy.
+</p>
+<p>
+	Next, I registered an account at freedns.ws.
+	They claim to have &quot;domain name redirection&quot;, which I was hoping meant <abbr title="Hypertext Transfer Protocol">HTTP</abbr> redirection.
+	However, when I tried to add records for my domain, I found that their system had no support for the <code>//st.</code> <abbr title="Top Level Domain">TLD</abbr>.
+	They blocked the records, claiming that they were incomplete unless I added a &quot;.com&quot; to the end of the domain name, which would obviously specified the wrong domain.
+</p>
+<p>
+	Though it has disadvantages, I set up an account at afraid.org.
+	They provide <abbr title="Hypertext Transfer Protocol">HTTP</abbr> redirects, but they do not provide redirects over <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr> and they allow other people to register a subdomain under your domain.
+	It&apos;s a price I&apos;m willing to pay for the time being though.
+	If they offered redirects over <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr>, I would probably use the paid version though to prevent random usage of my subdomains.
+</p>
+<p>
+	Lastly, I tried to set up a Wordpress weblog.
+	They allow use of your own domain (I think even complete with <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr>), for a fee.
+	However, Wordpress.com claims that the y.st domain is not currently registered, which is untrue.
+	Wordpress.com must just not be compatible with domains under the <code>//st.</code> <abbr title="Top Level Domain">TLD</abbr>.
+</p>
+<p>
+	Lastly for the day, I updated my Credit Union accounts from Springfield to use my new postal address.
+	The First Tech Federal Credit Union was slow as usual, and it was difficult to find the log in page (I had to do a Web search for it, it doesn&apos;t seem to be accessible from the home page), but once logged in, everything went smoothly.
+	The Oregon Community Credit Union website on the other hand kept giving me trouble.
+	In some places, it was refusing to accept my password, then locking up my account for twenty minutes at a time due to an &quot;incorrect password&quot;.
+	After much frustration, I found that while the Oregon Community Credit Union website puts a thirty-two character cap on password length, one part of the website uses a different cap.
+	If your password is over thirty characters, it is not accepted on that one page.
+</p>
+<p>
+	I received notice that I owe Josh Woodward another ten dollars for music, as he has just put out a new post on Patreon.
+	This time, instead of paying $10 <abbr title="United States Dollars">USD</abbr> for a single song, it seems I&apos;m paying only $10 <abbr title="United States Dollars">USD</abbr> for a set of thirty short preludes.
+	But here&apos;s the catch: these songs are proprietary! They are under the <abbr title="Creative Commons Attribution-NonCommercial">CC BY-NC</abbr> license, meaning that I am funding evilly-licensed music that I don&apos;t even get to listen to.
+	I am very disappointed with Woodward on this one.
+	If he wants to release his music as proprietary, that&apos;s bad enough, but to charge his Patreon supporters for it is a new level of bad.
+	I&apos;ll bite my tongue on this one though.
+</p>
+<p>
+	At the end of the day, <a href="http://wowana.me/">wowaname</a> offered to set up a place for my website on her server, complete with <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr>.
+	If she does that, I can keep links I&apos;ve paid Josh Woodward for from breaking, as well as keep the <abbr title="Uniform Resource Identifier">URI</abbr> I stamp on dollar bills valid.
+	If this doesn&apos;t work out though, I might just give up.
+	I&apos;m under too much stress as it is, and I don&apos;t need to keep the search for a Web host in my burden.
+	As usual, being paranoid, I dread the worst outcome even when it appears the solution to my problem is just around the corner.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2015 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F09-September%2F17.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2015%2F09-September%2F17.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/05-May/04.xhtml"/>
+		<title>Cyrus is being booted from our home &lt;https://y.st./en/weblog/2016/05-May/04.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/05-May/04.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/05-May/03.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/05-May/05.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>Cyrus is being booted from our home</h1>
+			<p>Day 00424: Wednesday, 2016 May 04</p>
+		</header>
+<p>
+	I made some progress in my class that converts <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> files into plain text files, but I still have a long way to go.
+	Lists are one thing that are in vital need of implementation.
+	Without special instructions, lists are probably formatted as just blobs of text with all list items run together.
+	I haven&apos;t tested this, but it seems like what my current instructions to the computer would do.
+	Additionally, I need to make the navigation disappear from the plain text files, as it&apos;s just an ugly mess and as the links are unclickable, it&apos;s not even helpful to have the navigation displayed.
+	I think that if I implement <code>&lt;nav/&gt;</code> tags in my <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>, I can easily strip out the navigation in the plain text copy of the pages, but I&apos;ll need to look into how <code>&lt;nav/&gt;</code> tags are even used to make sure that I use them properly.
+	I&apos;ll also need to make sure that everything within the <code>&lt;head/&gt;</code> tag that isn&apos;t within the <code>&lt;title/&gt;</code> tag is stripped out.
+	It won&apos;t make a difference on my pages, but if embedded JavaScript or an embedded stylesheet is used, it should be stripped out.
+	Then again, embedded JavaScript should be stripped from the body too, so I should also add parsing instructions that remove <code>&lt;script/&gt;</code> tags as well.
+	Additionally, my <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> page footer seems problematic.
+	When rendered in text files, if comes through as:
+</p>
+<blockquote><pre>W3C standards are important.
+	This document conforms to the XHTML5
+specification and uses a stylesheet that conforms the CSS
+specification.</pre></blockquote>
+<p>
+	My plain text files do not conform to the <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> specification and do not use any <abbr title="Cascading Style Sheets">CSS</abbr>.
+	I&apos;m not sure how to remove this footer, but I should look for a way when time allows.
+	Lastly, I&apos;m going to need to write some code to deal with the updating of plain text files on my website.
+	My <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> files aren&apos;t clearsigned because clearsigning <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> invalidates it, so I use external signatures.
+	Plain text files have no such problem, so they&apos;ll be clearsigned.
+	Signatures seem to contain the signing time in some way though, so I can&apos;t sign files and check to see if they match the old files.
+	I&apos;ll need to instead strip off the signatures, compare them to the new file contents, then if the two differ, sign the new contents and update the file.
+</p>
+<p>
+	It strikes me that this new <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> class works a bit like reverse Markdown.
+	Instead of somehow making a plain text file somehow parsible, sacrificing the ability to use certain characters in the process and adding strange characters to the &quot;plain text&quot; version of a document where they don&apos;t belong, I can use actual markup with actual escape sequences where needed.
+	This is what markup was <strong>*designed*</strong> for: to be parsed.
+	If I want my output to be plain text, that makes no difference.
+	Plain text on the other hand was not meant to be parsed.
+	Any attempt to make plain text parsible will likely result in one of two cases: an essentially-new file format that&apos;s fairly readable while still clearly not being simple text in a file, such as the <abbr title="comma-separated values">CSV</abbr> format, or an utter abomination that makes trouble where there needn&apos;t be any, such as Markdown.
+	If you want a file to be parsed by a machine, it&apos;s vital that you include escape sequences in your language, or at least use non-printing characters to provide the parsing instructions.
+	Of course, non-printing characters make the file too difficult to work with.
+	It can be argued that using provided escape sequences makes the document appear less readable without parsing, but it&apos;s far better than not having any escape sequences at all.
+</p>
+<p>
+	It has been brought to my attention that potentially-revealing server information has been accessible via <a href="https://authorednansyxlu.onion/server-status"><code>https://authorednansyxlu.onion/server-status</code></a>.
+	The problem isn&apos;t that it reveals information about where I am, as I&apos;m already on the clearnet, but that it reveals information about my other visitors and what parts of the website that they&apos;re looking at.
+	With a bit of research, I found that the culprit was <a href="https://httpd.apache.org/docs/current/mod/mod_status.html">mod_status</a>.
+	Disabling that was as easy as deleting a particular <a href="file:///etc/apache2/mods-enabled/status.conf">configuration file</a> and restarting <a href="apt:apache2">Apache</a>.
+</p>
+<p>
+	The <abbr title="GNU Network Object Model Environment">GNOME</abbr> team seem to be closer to to figuring out where their <a href="https://y.st./en/URI_research/SNI_bug.xhtml"><abbr title="Server Name Indication">SNI</abbr> bug</a> is located in their code.
+	They now believe that the bug is in <a href="apt:glib-networking">glib-networking</a>.
+	They&apos;re slow to act, but at least they aren&apos;t trying to claim that the bug is a feature and justify keeping it in their code.
+	If they get this bug fixed in time for the fix to make it into Debian 9, I&apos;ll be ecstatic.
+	I&apos;ll hopefully have a variety of Web browsers using Qt or <abbr title="GIMP Toolkit">GTK+</abbr> that I can recommend to people.
+</p>
+<p>
+	Cyrus broke one of my pairs of headphones today.
+	Unfortunately, that pair was of one of those uncommon headphone types that have a jack that fits in my mobile protector&apos;s stupidly-tiny jack opening without being such a low-quality pair that they aren&apos;t even worth using.
+	It&apos;ll take quite a while to find a replacement for them.
+</p>
+<p>
+	Much of the day was spent cleaning dishes and counters, along with general house cleaning and working on job hunting and code in the in-between spaces.
+	However, this wasn&apos;t good enough for my mother.
+	She&apos;s having another of her bipolar fits, set off by Vanessa this time, and freaked out at all of us.
+	She told me to get out, though she didn&apos;t seem to be serious, and of the three of us, I&apos;m by far the one that she yelled at the least.
+	She did get angry with me for continuing my job hunt, claiming that she&apos;d told me that she wants me to stop looking for a job and work on getting us ready to move instead.
+	She did say that she wanted help getting us ready to move, but I don&apos;t recall her saying anything about ceasing the job hunt.
+	Her mind is so frayed that she often has a warped view of past events, so I&apos;m almost certain that she said no such thing to me.
+</p>
+<p>
+	Cyrus took most of our mother&apos;s wrath today.
+	She&apos;s behaving much like many divorced parents, trying to force Cyrus and Vanessa to choose one parent and abandon the other.
+	Cyrus will do no such thing, so she&apos;s booting him from our household.
+	At first, she was saying that he needed to be ready to leave for Springfield by the weekend and he&apos;d need to transfer back to his old school.
+	By the end of the day, she&apos;d changed her mind, saying that he could stay long enough to finish school here, but that he should refrain from interacting with her in the mean time.
+</p>
+<p>
+	I&apos;ve decided that I need to be more mobile.
+	I need to be ready to leave with very little notice.
+	I&apos;ll be sticking around until we move, I suppose, but then I need to get back on the job hunt, as well as hunt for apartments.
+	Once I find something, I need to move out as quickly as possible, so having a bunch of stuff to move isn&apos;t ideal.
+	I&apos;m thinning down even more than before, and will group everything that I&apos;m keeping into two categories.
+	The first category is things that fit in a single box.
+	I can put whatever I want in the box, as long as it fits.
+	A lot of it will be frivolous, but I deserve to have at least <strong>*some*</strong> personal items.
+	The second category is things that I can strongly justify keeping without being able to fit them in the box.
+	There&apos;s no room for frivolousness in that category.
+	I&apos;ll keep my files, many of which are needed for legal reasons.
+	I&apos;ll keep my clothing for obvious reasons.
+	Lastly, at least for now, I&apos;ll keep my laptop and server, also with a keyboard and monitor for when I need to work on the server directly.
+	The rest of my computer parts that I have collected will either need to be fit into the box or let go of.
+</p>
+<p>
+	I had a couple choices in boxes.
+	The first was bigger, but the dimensions didn&apos;t allow for my records to fit.
+	I&apos;m not quite ready to part with those unless I can sell them for at least ten dollars each, so I went with the smaller box.
+	I&apos;ve found that I have six audio <abbr title="compact disc">CD</abbr>s, six of which are freely-licensed and can actually be listened to.
+	The nonfree one isn&apos;t my fault, it was given to me without my requesting it.
+	I cannot justify keeping my broken ThinkPad X60s, but I&apos;m also not ready to part with it, so that took up a chunk of my box space.
+	I haven&apos;t located the cord to it yet though, so that might be either in one of the larger computer part storage bins that I need to go through, or it might just be lost.
+	I&apos;ve also gotten rid of three of the four buttons that I purchased from the <abbr title="Free Software Foundation">FSF</abbr> long ago.
+	One just has a <abbr title="GNU&apos;s Not Unix">GNU</abbr> head and mentions the domain name of the website.
+	One says to fight for your right to play <abbr title="compact disc">CD</abbr>s, the issue being that some <abbr title="compact disc">CD</abbr>s are <abbr title="digital restrictions management">DRM</abbr>ed.
+	I don&apos;t think that many companies produce <abbr title="digital restrictions management">DRM</abbr>ed <abbr title="compact disc">CD</abbr>s though, and I think that fighting <abbr title="compact disc">CD</abbr> <abbr title="digital restrictions management">DRM</abbr> misses the point anyway.
+	The thing with <abbr title="digital restrictions management">DRM</abbr>ed media is that it tends to be nonfree.
+	Why should one fight to play nonfree media instead of buying free media instead? The last button mentions &quot;SaaS&quot; (instead of calling it &quot;<abbr title="Service as a Software Substitute">SaaSS</abbr>&quot;), but I don&apos;t know.
+	I guess that that was never really my thing.
+	The one that I&apos;m keeping, if I even remember where it is correctly, is the rusty one that has the <abbr title="GNU&apos;s Not Unix">GNU</abbr>, Linux, and FreeBSD logos on it and says to ask the wearer about free software.
+	I&apos;d love it if more people actually wanted to talk about free software and learn about why it&apos;s important.
+	I&apos;ve finally decided to get rid of those old <abbr title="Free Software Foundation">FSF</abbr> propaganda booklets.
+	There&apos;s no room in my box of frivolousness for too much nostalgia, and I&apos;ve already decided to keep several other things.
+	I can&apos;t in any way justify keeping them outside of the box either, as they&apos;re released under a nonfree license.
+	I cannot share them, I cannot show people what the <abbr title="Free Software Foundation">FSF</abbr> has to say.
+	To subject people to such nonfree media would be unethical of me, and I can&apos;t really read them myself either.
+	All that they are is baggage.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F05-May%2F04.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F05-May%2F04.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

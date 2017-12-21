@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/10-October/30.xhtml"/>
+		<title>ErrorDocument pages &lt;https://y.st./en/weblog/2016/10-October/30.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/10-October/30.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/10-October/29.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/10-October/31.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1><code>ErrorDocument</code> pages</h1>
+			<p>Day 00603: Sunday, 2016 October 30</p>
+		</header>
+<img src="/img/CC_BY-SA_4.0/y.st./weblog/2016/10/30.jpg" alt="A cat and a chicken hanging out in a driveway" class="weblog-header-image" width="811" height="480" />
+<p>
+	Current countdowns:
+</p>
+<ul>
+	<li>249 scheme-specific <abbr title="Uniform Resource Identifier">URI</abbr>-parsing classes to write and add to <a href="https://git.vola7ileiax4ueow.onion/y.st./include.d/releases">include.d</a></li>
+	<li>1 free elective left in my associate degree program</li>
+	<li>4 free electives left in my bachelor degree program</li>
+</ul>
+<p>
+	Topics for essays that I want to write outside of school:
+</p>
+<ul>
+<li>How the <abbr title="GNU &quot;Free&quot; Documentation License">GFDL</abbr> isn&apos;t a free license, and is effectively nonfree even when invariant sections aren&apos;t used</li>
+<li>How the telephone number system is screwy</li>
+<li>How postpaid mobile plans are bad for customers</li>
+<li>How connections using &quot;untrusted&quot; <abbr title="Transport Layer Security">TLS</abbr> certificates are more trustworthy than connections without any <abbr title="Transport Layer Security">TLS</abbr> certificate at all</li>
+<li>The importance of free software</li>
+<li>The importance of free media</li>
+</ul>
+<p>
+	I printed my resume, then walked it in to my former place of employment.
+	Hopefully I can get a temporary job there.
+</p>
+<p>
+	I made it today&apos;s project to complete the <code>ErrorDocument</code> pages for this website, but I quickly ran into issues.
+	To better explain what the Web browser did wrong to cause the <abbr title="Hypertext Transfer Protocol">HTTP</abbr> <code>400</code> error, I mentioned that the most probable cause was the <abbr title="Server Name Indication">SNI</abbr> bug present in most Web browsers, then included the full article on the error page.
+	I obviously couldn&apos;t link to the actual page that the article appears on, after all, because broken Web clients will cause the <code>400</code> error to appear there as well.
+	The next issue was the <abbr title="Cascading Style Sheets">CSS</abbr>.
+	To make the line between the error message and the optional article clear, <abbr title="Cascading Style Sheets">CSS</abbr> is a must, but if a Web client that has the <abbr title="Server Name Indication">SNI</abbr> bug reaches that error page, it&apos;ll trigger the error again with each of the style sheets.
+	I could try to hack in a way to include the style sheets as part of the page, just like how I included the article in the page, but doing that is a bit complicated.
+	I could put a toggle in the webpage template, despite only needing this feature for one page.
+	If active, the <abbr title="Cascading Style Sheets">CSS</abbr> would be sanitized and included directly in the <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>.
+	Otherwise, it would be included as external style sheets.
+	It seems very hacky to use such a toggle though when it&apos;s only needed on one page.
+	The other option though is to set up a conditional in the template that specifically treats the <code>400</code> page as special.
+	That seems even <strong>*more*</strong> hacky though.
+	That said, the <code>400</code> page in many ways <strong>*is*</strong> special, so it makes some sense to treat it like that.
+	In the end, that&apos;s what I decided to do.
+</p>
+<p>
+	I&apos;ve attempted to place Vanessa&apos;s order again.
+	This time, I tried to use the email address that I have on file with Discover during the order process, but the order form rejected that email address.
+	There&apos;s nothing that I can do about that, so I just used the same email address that I used last time.
+	I have little doubt that this order will fail just like the last one did.
+</p>
+<p>
+	My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F10-October%2F30.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F10-October%2F30.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

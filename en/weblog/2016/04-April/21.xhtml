@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2016/04-April/21.xhtml"/>
+		<title>PCMan File Manager &lt;https://y.st./en/weblog/2016/04-April/21.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<nav>
+			<p>
+				<a href="/en/">Home</a> |
+				<a href="/en/a/about.xhtml">About</a> |
+				<a href="/en/a/contact.xhtml">Contact</a> |
+				<a href="/a/canary.txt">Canary</a> |
+				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+				<a href="/en/opinion/">Opinions</a> |
+				<a href="/en/take-down/">Take-down requests</a> |
+				<a href="/en/law/">Law</a> |
+				<a href="/en/a/links.xhtml">Links</a> |
+				<a href="/en/weblog/2016/04-April/21.xhtml.asc">{this page}.asc</a>
+			</p>
+			<hr/>
+			<p>
+				Weblog index:
+				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+			</p>
+			<hr/>
+			<p>
+				Jump to entry:
+				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+				<a rel="prev" href="/en/weblog/2016/04-April/20.xhtml">&lt;Previous</a>
+				<a rel="next" href="/en/weblog/2016/04-April/22.xhtml">Next&gt;</a>
+				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+		</nav>
+		<header>
+			<h1>PCMan File Manager</h1>
+			<p>Day 00411: Thursday, 2016 April 21</p>
+		</header>
+<p>
+	Boxing work continues today as I wait for Friday to arrive.
+</p>
+<p>
+	I&apos;ve had this problem with file managers.
+	For as long as I can remember, seemingly every graphical file manager I&apos;ve used has been unable to sort files in a reasonable order.
+	I define a &quot;reasonable order&quot; as having two characteristics.
+	First, every character in the file name is considered individually.
+	The sorting of files is done in such a way that the order is predictable when looking at one character at a time, not groups of characters.
+	Second, each possible character is treated as a different character than every other possible character.
+	If a file manager sorts three files into the order <code>1.txt</code>, <code>2.txt</code>, <code>10.txt</code>, it is violating the first rule, as it&apos;s grouping numeric characters and sorting based on the perceived numeric value.
+	Note that I don&apos;t even care what order the file manager sorts characters into; <code>2.txt</code> can come first or last in the list.
+	It just can&apos;t come between two files that begin with the same character.
+	File managers that ignore non-alphanumeric characters when sorting also violate this rule.
+	Case insensitivity breaks the second rule.
+	I don&apos;t care if the sorting order is &quot;A, B, a, b&quot; or &quot;A, a, B, b&quot;, but upper-case and lower-case letters must not be mixed.
+	Every few months, I try again to get <a href="apt:thunar">Thunar</a> to sort files reasonably and I try to find other graphical file managers that can be made to sort files reasonably.
+</p>
+<p>
+	I set aside a bit of time to work with this problem today.
+	As always, my first attempts to resolve the problem were put towards trying to get Thunar to behave.
+	By setting the bash environmental variable <code>LC_COLLATE</code> to <code>C</code>, you can get Thunar to sort in a case-sensitive manor.
+	Note though that Thunar&apos;s actual setting for enabling case sensitivity doesn&apos;t work though! As usual, I couldn&apos;t find a way to get Thunar to quit grouping numeric characters, so I moved on and tried other file managers.
+	I kind of skipped over the common file managers used as default by other desktop environments, as I&apos;ve tried them so many times before and gotten nowhere.
+	The first file manager that I came across today was <a href="apt:gentoo">Gentoo</a>, a file manager that shares its name with an operating system distribution.
+	Gentoo does the annoying digit-grouping thing, but this can be disabled by setting the sorting algorithm to &quot;<abbr title="Uniform Resource Identifier">URI</abbr>&quot;.
+	The problem with this sorting algorithm is that it treats characters that aren&apos;t <abbr title="Uniform Resource Identifier">URI</abbr>-compatible as three characters: a percent sign and two hexadecimal digits.
+	As it should be encoding the percent signs in the same way, this is only a problem in theory though; it&apos;s just a method of implementation as far as my purposes go.
+	In practice, this just means that all <abbr title="Uniform Resource Identifier">URI</abbr>-incompatible characters will be sorted to similar locations.
+</p>
+<p>
+	While I did find a working file manager on the first try this time, I decided to keep looking.
+	Gentoo sorts files reasonably, but that&apos;s not all that a file manager can do.
+	Gentoo is a two-pane file manager, which gives me the impression that I can&apos;t open an arbitrary number of windows and have them interact.
+	Even if I can, it&apos;d be a bit clunky.
+	Furthermore, Thunar can integrate with <abbr title="Media Transfer Protocol">MTP</abbr> so I can use it to manage files on my mobile as well, but Gentoo lacks this option.
+	Next, I tried <a href="apt:gnome-commander"><abbr title="GNU Network Object Model Environment">GNOME</abbr> commander</a>, but it has the usual problem where it groups digits in file names.
+	<a href="apt:konqueror">Konqueror</a> not only mishandles digits by grouping them, but also ignores <code>LC_COLLATE</code> and offers no way to enable case sensitivity.
+	<a href="apt:xfe">Xfe</a> seems slightly clunky, but it&apos;s nicer than Gentoo! If <code>LC_COLLATE</code> is set to <code>C</code>, files are displayed in a reasonable order, including files with digits in their names.
+	It too lacks <abbr title="Media Transfer Protocol">MTP</abbr> support though.
+	<a href="apt:worker">Worker</a> can&apos;t correctly display non-<abbr title="American Standard Code for Information Interchange">ASCII</abbr> characters in file names correctly, so the names of my <a href="file:///home/yst/El%C5%9Dutoj"><code>~/Elŝutoj</code></a> and <a href="file:///home/yst/%C5%9Cablonoj">~/Ŝablonoj</a> directories are displayed mangled.
+	Needing to get back to work, I set up my system to use Xfe and called it good for now.
+</p>
+<p>
+	A bit later though, I mentioned trying a bunch of file managers in <a href="ircs://kitsune6uv4dtdve.onion:6697/%23Volatile">#Volatile</a>.
+	Somenub said that I should give <a href="apt:pcmanfm">PCMan File Manager</a> a try.
+	I&apos;d skipped that file manager today because it&apos;s the one from <abbr title="Lightweight X11 Desktop Environment">LXDE</abbr> and <abbr title="Lightweight X11 Desktop Environment">LXDE</abbr> is a bit light on features.
+	I gave it a try upon recommendation though, and PCMan File Manager might just be the perfect file manager for me.
+	By default, PCMan File Manager doesn&apos;t sort files correctly, but after setting <code>LC_COLLATE</code> to <code>C</code> and turning off the &quot;Ignore Name Case&quot; option, everything falls into place.
+	PCMan File Manager looks and act a lot like Thunar, though it will take some time to get used to the subtle differences.
+	This file manager even handles <abbr title="Media Transfer Protocol">MTP</abbr>! Unlike Thunar though, PCMan File Manager doesn&apos;t use a consistent order for displaying files available over <abbr title="Media Transfer Protocol">MTP</abbr>.
+	Simply refreshing the directory listing can result in an entirely different file order.
+	My best guess is that PCMan File Manager displays files in whatever order Replicant provides and that Replicant inherited a bug from Android that prevents there from being a consistent order.
+	Thunar on the other hand ignores the order provided over <abbr title="Media Transfer Protocol">MTP</abbr> to keep files displayed in an organized fashion.
+	I can deal with seeing my mobiles files in an inconsistent order if it means that my local files are displayed in a reasonable order.
+	This new file manager opens new tabs instead of new windows when opening files from the directory menu on Xfce&apos;s panel, but this is easily fixable by telling Xfce to use PCMan File Manager&apos;s <code>--new-win</code> flag.
+	PCMan File Manager can run the desktop too if you run <code>pcmanfm --desktop</code>, though you then need to set your wallpaper again, as it has no way to know what wallpaper you used with your old desktop manager.
+	I went through my file system and found what I think is my old <a href="file:///usr/share/wallpapers/Lines/contents/images/1920x1080.png">wallpaper</a>.
+</p>
+<p>
+	I added <code>export LC_COLLATE=C</code> and <code>pcmanfm --desktop</code> to my <a href="file:///home/yst/.xsession">X session file</a> (and removed <code>/home/yst/i2p/i2prouter start</code> while I was at it because I no longer use <abbr title="Invisible Internet Project">I2P</abbr>), but that royally messed things up.
+	With that configuration, Xfce doesn&apos;t start until PCMan File Manager finishes running.
+	Of course, it doesn&apos;t finish running on its own as it&apos;s supposed to last until the end of the session, and with only a desktop manager running, there&apos;s no clear way to log out.
+	Opening up a command prompt is difficult, and I&apos;m not actually sure how I made it work, as the option is usually greyed out in this state.
+	I commented that line out from <abbr title="text terminal">TTY</abbr>1, removed it once I got to my desktop, and added <code>pcmanfm --desktop</code> instead to the list of software that Xfce starts at the beginning of the session.
+	Now it&apos;s involved in a race condition with Xfdesktop, where whichever one executes last wins.
+	I can&apos;t prevent Xfce from starting Xfdesktop, either.
+	I&apos;ll figure something out when I have time.
+</p>
+<p>
+	When I went to get groceries for today, my father unexpectedly rode by on his motorcycle as I turned a corner.
+	By the time I realized that he was there, it might have been too late, but I turned around and went back to try to minimize the risk.
+</p>
+<p>
+	The modem has gone down again at home.
+	It&apos;s aggravating knowing that it&apos;s down and that there&apos;s nothing that I can do to bring it back up.
+</p>
+<p>
+	My thumb is healing up better now that it&apos;s not constantly wet.
+	Being wet all the time before seems to have led to too much clotting material being used.
+	The scab&apos;s way too thick and doesn&apos;t bend enough for me to easily use my thumb.
+	I&apos;ve peeled it off to let a more regular scab form.
+	My shin is also sore for some reason, though I have no idea what I&apos;ve done to it.
+</p>
+		<hr/>
+		<p>
+			Copyright © 2016 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F04-April%2F21.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2016%2F04-April%2F21.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+
