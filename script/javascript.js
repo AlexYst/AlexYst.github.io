@@ -36,11 +36,3 @@ function document__onkeyup(event) {
 	}
 }
 document.onkeyup = document__onkeyup;
-
-// If JavaScript is enabled, users will be forced to use the canonical
-// URI scheme and host name. This should really be done with a
-// server-side redirect, but I don't always have my website hosted
-// somewhere where that's a possibility.
-if (location.protocol !== "https:") {
-	location.protocol = "https:";
-}
