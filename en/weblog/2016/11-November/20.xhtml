@@ -74,95 +74,105 @@
 <p>
 	<strong>Current countdown:</strong> 8 days to find a place to live
 </p>
-<h2 id="general">General news</h2>
-<p>
-	On my way to work, I saw and heard a mariachi band playing in front of someone&apos;s house! At first, I thought hat someone was playing a recording of them loudly, but as I neared the house, I actually got to see them playing.
-	A couple of the band members even waved at me between songs! I&apos;m not sure why they were singing outside someone&apos;s house, but it was really cool to see it.
-</p>
-<p>
-	The man-hour-to-profit ratio at work has been bad this week, so today, the shift leaders were trying to send employees home as soon as possible to improve that ratio.
-	My hours started during the morning shift and ended during the evening shift.
-	I was given a choice by the morning shift leaders: I could either go home very early, or they would call off one of the other employees scheduled to work during the night shift.
-	I chose to stay.
-	Apparently, that was the wrong decision.
-	One of the night shift leaders got ticked off that one of their favorite and hardest-working employees had gotten called off.
-	They later apologized to me, admitting that they don&apos;t know me or my work ethic.
-	They also gave the morning shift leaders a list of people that they&apos;d rather see called off in the future if such a situation arises again.
-	They cited reasons such as these people weren&apos;t able to handle simple tasks on their own or didn&apos;t work very hard.
-	Ouch.
-	I&apos;d hate to be on one of those sorts of lists.
-	I ended up working a bit harder and faster than I normally do to try to prove to the night shift leader that having me around isn&apos;t so bad.
-</p>
-<p>
-	Today, I picked up my first paycheck.
-	It&apos;s not as high as I would have hoped, but I did come in partway through the pay period.
-	Anything helps, and I hope to see several more paychecks before I leave this company again.
-</p>
-<p>
-	My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
-</p>
-<h2 id="include.d">include.d</h2>
-<p>
-	I shouldn&apos;t have, but I did a little work on <a href="https://git.volatile.ch./y.st./include.d/releases">include.d</a>.
-	I added the <code>__set_state()</code> method to the exception classes.
-	I plan to add this method to most of include.d&apos;s classes.
-	The notable exception to this will be that wrapper classes won&apos;t have this method, as there&apos;s no clean way to implement the serialization of resource handles, especially without warning.
-	If <code>\var_export()</code> would simply serialize objects using something similar to the <code>\serialize()</code> function, then wrap the serialized data in a call to <code>\unserialize()</code> instead of <code>self::__set_state()</code>, it might be more feasible to attempt to allow serialization.
-	Exporting the object as an array without giving the class any way to clean up the data before doing so wasn&apos;t the best design decision on the part of the <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> developers.
-	That said, the wrapper classes aren&apos;t really meant to be serialized in <strong>*any*</strong> way.
-	They simply make calling functions on resource handles easier by grouping the resource handle and it&apos;s related functions into a single variable: an object.
-	In reality, object such as these should have been used instead of resource handles, but I don&apos;t think that classes had been programmed into <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> yet at the time that the resource-handle-using functions were added.
-</p>
-<p>
-	While i was writing some code, I came to a realization: the <code>__set_state()</code> method basically allows you to cast an array into an object of a given class, if the method is set up correctly! Is this useful? I argue that it isn&apos;t, but it&apos;s interesting to think about.
-	Normally, when you cast any non-objects as objects, they become objects of the <code>\stdClass</code>.
-</p>
-<h2 id="university">University life</h2>
-<p>
-	I don&apos;t remember where I found the link to the course textbook that I downloaded for <span title="Principles of Business Management">BUS 1101</span>, but I can&apos;t find it any more.
-	Furthermore, I found two new links that I hadn&apos;t seen before.
-	One offers the textbook in <strong>*basic <abbr title="Hypertext Markup Language">HTML</abbr>*</strong>, witch, if you don&apos;t take into account that good webpages are written in <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>, not <abbr title="Hypertext Markup Language">HTML</abbr>, is the format that all online textbooks should be offered in.
-	This version seems to be the right version for the course even, and has the required reading sections that weren&apos;t present in the other textbook that they offered me.
-	Additionally, there&apos;s a <abbr title="Portable Document Format">PDF</abbr> textbook that I&apos;m going to assume is the correct one as well, but in another file format.
-	This will be easier to work with on my mobile when reading at work, most likely.
-</p>
-<p>
-	I also just found information that our initial discussion posts are due on Sunday.
-	This information was <strong>*not*</strong> available in the syllabus.
-	In any case, my initial discussion post last week was late.
-</p>
-<p>
-	I graded the essays from last week that I was assigned this week, and the results were very disappointing.
-	Nobody seems to have even read the assignment directions.
-	We were supposed to review the definitions of leadership, entrepreneurship, and strategy.
-	It wasn&apos;t stated clearly whether this review was supposed to be just us rereading the definitions or if we were supposed to write about them.
-	Then, we were to find an example of each on the Internet, then compare and contrast our examples.
-	The first two essays that I read didn&apos;t provide examples at all.
-	The first of these then compared and contrasted the concepts themselves, though it didn&apos;t really compare strategy to anything.
-	The second of these essays then went on to compare the definitions of these three concepts from the textbook to definitions of the same concepts found online.
-	I can&apos;t even imagine what they must have been thinking.
-	Not only that though, but their essay didn&apos;t meet the length requirements.
-	Lastly, the final essay actually provided the three examples asked for! Sort of.
-	Instead of finding examples online, the author instead gave generic examples: schoolteacher, inventor, and study plan.
-	Still, that was better than the first two authors had done.
-	That&apos;s where the good qualities of their essay ran out though, from a requirement-meeting perspective.
-	Instead of comparing and contrasting the examples to one another, the author decided come up with three new examples, and compare and contrast to those instead.
-	A leader was compared to a leader, an entrepreneur was compared to an entrepreneur, and a strategy was compared to a strategy.
-	As much as I wanted to, I couldn&apos;t give anyone a decent grade on that assignment.
-</p>
-<p>
-	Once I got home from work, I found that the textbook had been switched out on us.
-	The reason that I found the new textbook today was because the textbook had been swapped on us! There had indeed been an error, but they found and corrected it.
-</p>
-<h2 id="apartment">Apartment hunting</h2>
-<p>
-	I still have an account at Bank of the Cascades, and I&apos;m required to disclose all my financial account balances on my apartment application.
-	I tried to log into the bank&apos;s website, only to find that I don&apos;t have login credentials in my KeePassX database.
-	I never set up my online account! I tried to set up my account, but the stupid website is demanding that I verify the telephone number that they already have on file for me! I&apos;m not sure what number they have on file for me, but I was very clear with them when I set up the account that I didn&apos;t have telephone service.
-	The number that they have on file ends in &quot;1212&quot;, which for some reason, makes me think that it&apos;s the number for one of the <a href="https://en.wikipedia.org./wiki/Directory_assistance#North_America">directory assistance</a> numbers; most likely, it&apos;s <a href="tel:+18005551212">+1 800 555 1212</a>.
-	I have no way to clear this up but to go see them in person.
-	I guess that that&apos;s how I&apos;m going to be spending my day tomorrow.
-</p>
+<section id="general">
+	<h2>General news</h2>
+	<p>
+		On my way to work, I saw and heard a mariachi band playing in front of someone&apos;s house! At first, I thought hat someone was playing a recording of them loudly, but as I neared the house, I actually got to see them playing.
+		A couple of the band members even waved at me between songs! I&apos;m not sure why they were singing outside someone&apos;s house, but it was really cool to see it.
+	</p>
+	<p>
+		The man-hour-to-profit ratio at work has been bad this week, so today, the shift leaders were trying to send employees home as soon as possible to improve that ratio.
+		My hours started during the morning shift and ended during the evening shift.
+		I was given a choice by the morning shift leaders: I could either go home very early, or they would call off one of the other employees scheduled to work during the night shift.
+		I chose to stay.
+		Apparently, that was the wrong decision.
+		One of the night shift leaders got ticked off that one of their favorite and hardest-working employees had gotten called off.
+		They later apologized to me, admitting that they don&apos;t know me or my work ethic.
+		They also gave the morning shift leaders a list of people that they&apos;d rather see called off in the future if such a situation arises again.
+		They cited reasons such as these people weren&apos;t able to handle simple tasks on their own or didn&apos;t work very hard.
+		Ouch.
+		I&apos;d hate to be on one of those sorts of lists.
+		I ended up working a bit harder and faster than I normally do to try to prove to the night shift leader that having me around isn&apos;t so bad.
+	</p>
+	<p>
+		Today, I picked up my first paycheck.
+		It&apos;s not as high as I would have hoped, but I did come in partway through the pay period.
+		Anything helps, and I hope to see several more paychecks before I leave this company again.
+	</p>
+	<p>
+		My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
+	</p>
+</section>
+<section id="include.d">
+	<h2>include.d</h2>
+	<p>
+		I shouldn&apos;t have, but I did a little work on <a href="https://git.volatile.ch./y.st./include.d/releases">include.d</a>.
+		I added the <code>__set_state()</code> method to the exception classes.
+		I plan to add this method to most of include.d&apos;s classes.
+		The notable exception to this will be that wrapper classes won&apos;t have this method, as there&apos;s no clean way to implement the serialization of resource handles, especially without warning.
+		If <code>\var_export()</code> would simply serialize objects using something similar to the <code>\serialize()</code> function, then wrap the serialized data in a call to <code>\unserialize()</code> instead of <code>self::__set_state()</code>, it might be more feasible to attempt to allow serialization.
+		Exporting the object as an array without giving the class any way to clean up the data before doing so wasn&apos;t the best design decision on the part of the <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> developers.
+		That said, the wrapper classes aren&apos;t really meant to be serialized in <strong>*any*</strong> way.
+		They simply make calling functions on resource handles easier by grouping the resource handle and it&apos;s related functions into a single variable: an object.
+		In reality, object such as these should have been used instead of resource handles, but I don&apos;t think that classes had been programmed into <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> yet at the time that the resource-handle-using functions were added.
+	</p>
+	<p>
+		While i was writing some code, I came to a realization: the <code>__set_state()</code> method basically allows you to cast an array into an object of a given class, if the method is set up correctly! Is this useful? I argue that it isn&apos;t, but it&apos;s interesting to think about.
+		Normally, when you cast any non-objects as objects, they become objects of the <code>\stdClass</code>.
+	</p>
+</section>
+<section id="university">
+	<h2>University life</h2>
+	<p>
+		I don&apos;t remember where I found the link to the course textbook that I downloaded for <span title="Principles of Business Management">BUS 1101</span>, but I can&apos;t find it any more.
+		Furthermore, I found two new links that I hadn&apos;t seen before.
+		One offers the textbook in <strong>*basic <abbr title="Hypertext Markup Language">HTML</abbr>*</strong>, witch, if you don&apos;t take into account that good webpages are written in <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>, not <abbr title="Hypertext Markup Language">HTML</abbr>, is the format that all online textbooks should be offered in.
+		This version seems to be the right version for the course even, and has the required reading sections that weren&apos;t present in the other textbook that they offered me.
+		Additionally, there&apos;s a <abbr title="Portable Document Format">PDF</abbr> textbook that I&apos;m going to assume is the correct one as well, but in another file format.
+		This will be easier to work with on my mobile when reading at work, most likely.
+	</p>
+	<p>
+		I also just found information that our initial discussion posts are due on Sunday.
+		This information was <strong>*not*</strong> available in the syllabus.
+		In any case, my initial discussion post last week was late.
+	</p>
+	<p>
+		I graded the essays from last week that I was assigned this week, and the results were very disappointing.
+		Nobody seems to have even read the assignment directions.
+		We were supposed to review the definitions of leadership, entrepreneurship, and strategy.
+		It wasn&apos;t stated clearly whether this review was supposed to be just us rereading the definitions or if we were supposed to write about them.
+		Then, we were to find an example of each on the Internet, then compare and contrast our examples.
+		The first two essays that I read didn&apos;t provide examples at all.
+		The first of these then compared and contrasted the concepts themselves, though it didn&apos;t really compare strategy to anything.
+		The second of these essays then went on to compare the definitions of these three concepts from the textbook to definitions of the same concepts found online.
+		I can&apos;t even imagine what they must have been thinking.
+		Not only that though, but their essay didn&apos;t meet the length requirements.
+		Lastly, the final essay actually provided the three examples asked for! Sort of.
+		Instead of finding examples online, the author instead gave generic examples: schoolteacher, inventor, and study plan.
+		Still, that was better than the first two authors had done.
+		That&apos;s where the good qualities of their essay ran out though, from a requirement-meeting perspective.
+		Instead of comparing and contrasting the examples to one another, the author decided come up with three new examples, and compare and contrast to those instead.
+		A leader was compared to a leader, an entrepreneur was compared to an entrepreneur, and a strategy was compared to a strategy.
+		As much as I wanted to, I couldn&apos;t give anyone a decent grade on that assignment.
+	</p>
+	<p>
+		Once I got home from work, I found that the textbook had been switched out on us.
+		The reason that I found the new textbook today was <strong>*because*</strong> the textbook had been swapped on us!
+		There had indeed been an error, but they found and corrected it.
+	</p>
+</section>
+<section id="apartment">
+	<h2>Apartment hunting</h2>
+	<p>
+		I still have an account at Bank of the Cascades, and I&apos;m required to disclose all my financial account balances on my apartment application.
+		I tried to log into the bank&apos;s website, only to find that I don&apos;t have login credentials in my KeePassX database.
+		I never set up my online account!
+		I tried to set up my account, but the stupid website is demanding that I verify the telephone number that they already have on file for me! I&apos;m not sure what number they have on file for me, but I was very clear with them when I set up the account that I didn&apos;t have telephone service.
+		The number that they have on file ends in &quot;1212&quot;, which for some reason, makes me think that it&apos;s the number for one of the <a href="https://en.wikipedia.org./wiki/Directory_assistance#North_America">directory assistance</a> numbers; most likely, it&apos;s <a href="tel:+18005551212">+1 800 555 1212</a>.
+		I have no way to clear this up but to go see them in person.
+		I guess that that&apos;s how I&apos;m going to be spending my day tomorrow.
+	</p>
+</section>
 		<hr/>
 		<p>
 			Copyright © 2016 Alex Yst;

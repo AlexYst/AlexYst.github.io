@@ -71,59 +71,67 @@
 			<p>Day 00631: Sunday, 2016 November 27</p>
 		</header>
 <img src="/img/CC_BY-SA_4.0/y.st./weblog/2016/11/27.jpg" alt="A small, flowered plant with an interesting leaf pattern" class="weblog-header-image" width="811" height="480" />
-<h2 id="general">General news</h2>
-<p>
-	Vanessa&apos;s package arrived.
-	While I can&apos;t say that I&apos;m a fan of Amazon and their business practices, I can say this: unlike the Blair Candy Company, Amazon delivers what you order.
-</p>
-<p>
-	One of the shift leaders tried to get me to cover a closing shift tomorrow, which because I already have an opening shift, would have meant that I would be working from open to close.
-	I agreed to take the shift, despite not wanting such long hours, because I can&apos;t really afford to turn down hours when they come my way.
-	However, the shift that needed to be covered had come from a shift leader.
-	The other closing shift leader didn&apos;t want to replace that shift leader with a lower-ranking crew member, so I am off the hook.
-</p>
-<p>
-	My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
-</p>
-<h2 id="dreams">Dream journal</h2>
-<p>
-	I woke up in the middle of the night from a dream about horrific situations in emergency rooms and ambulances.
-	Critical medical supplies were depleted, and patients had no hope of survival.
-	However, due to quick thinking and improvisation, paramedics and other medical professionals were able to save these people anyway and prevent permanent damage to them.
-</p>
-<p>
-	I went back to bed, and my alarm woke me from another dream.
-	This time, President-elect Donald Trump was &quot;down-voting&quot; negative comments about themself online.
-	However, it was heavily implied that by &quot;down-voting&quot;, what was really meant was censoring and outright deleting.
-</p>
-<h2 id="include.d"><a href="https://git.volatile.ch./y.st./include.d/releases">include.d</a></h2>
-<p>
-	I figured out what I needed to do with include.d&apos;s <abbr title="Uniform Resource Identifier">URI</abbr>-handling <abbr title="application programming interface">API</abbr>.
-	Mostly, at least.
-	I needed to have the constructor method set the properties directly instead of relying on other methods to do that.
-	I also needed to replace those methods with normalization/validation methods that return the normalized value (or throw an exception if the string is invalid) instead of setting the value.
-	I then needed to have child classes rely on the parent&apos;s constructor to set the properties.
-	The tricky part was be getting the child class to perform its scheme-specific normalizations and validations while still allowing the parent class&apos;s constructor to do its thing.
-	The child class&apos;s constructor needs to have already parsed the data to normalize it before allowing the parent class to touch it.
-	Converting the data back to a string and passing it to the parent class to reparse it seems counterproductive.
-	Likewise, I cannot simply have the child class overwrite the normalization/validation methods.
-	After all, the parent class must <strong>*always*</strong> verify that the data conforms to <abbr title="Request for Comments">RFC</abbr> 3986.
-	That functionality must not be allowed to be overwritten.
-	I could have the parent class call both the child&apos;s normalization method and its own, but that means either always checking to see if a second normalizer exists or normalizing twice using the same method when using the parent class directly.
-	I ended up setting up dummy normalization methods that do nothing, calling them every time, and allowing child classes to overwrite <strong>*those*</strong> without actually touching the parent&apos;s own normalization methods.
-</p>
-<p>
-	I was planning to work on include.d tomorrow and work exclusively on my course essay today, but I couldn&apos;t resist trying to flesh out my new ideas for <code>\st\y\uri</code>&apos;s <abbr title="application programming interface">API</abbr> to see if they were even feasible.
-	I still have the <code>\st\y\uri\gopher</code> class to rewrite though.
-	The rest of the rewrite was a success, and I don&apos;t anticipate any problems with this class.
-</p>
-<h2 id="apartment">Apartment hunting</h2>
-<p>
-	I finally tested my cellular telephone&apos;s voice mailbox using a telephone at work, to make sure that messages can be left.
-	No voicemail setup was necessary.
-	Now, I can safely use this number while apartment hunting to avoid using the Google Voice number that might be disappearing on me next month.
-	Tomorrow, I should try to update my application with the apartments that I&apos;ve already submitted an application to.
-</p>
+<section id="general">
+	<h2>General news</h2>
+	<p>
+		Vanessa&apos;s package arrived.
+		While I can&apos;t say that I&apos;m a fan of Amazon and their business practices, I can say this: unlike the Blair Candy Company, Amazon delivers what you order.
+	</p>
+	<p>
+		One of the shift leaders tried to get me to cover a closing shift tomorrow, which because I already have an opening shift, would have meant that I would be working from open to close.
+		I agreed to take the shift, despite not wanting such long hours, because I can&apos;t really afford to turn down hours when they come my way.
+		However, the shift that needed to be covered had come from a shift leader.
+		The other closing shift leader didn&apos;t want to replace that shift leader with a lower-ranking crew member, so I am off the hook.
+	</p>
+	<p>
+		My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
+	</p>
+</section>
+<section id="dreams">
+	<h2>Dream journal</h2>
+	<p>
+		I woke up in the middle of the night from a dream about horrific situations in emergency rooms and ambulances.
+		Critical medical supplies were depleted, and patients had no hope of survival.
+		However, due to quick thinking and improvisation, paramedics and other medical professionals were able to save these people anyway and prevent permanent damage to them.
+	</p>
+	<p>
+		I went back to bed, and my alarm woke me from another dream.
+		This time, President-elect Donald Trump was &quot;down-voting&quot; negative comments about themself online.
+		However, it was heavily implied that by &quot;down-voting&quot;, what was really meant was censoring and outright deleting.
+	</p>
+</section>
+<section id="include.d">
+	<h2><a href="https://git.volatile.ch./y.st./include.d/releases">include.d</a></h2>
+	<p>
+		I figured out what I needed to do with include.d&apos;s <abbr title="Uniform Resource Identifier">URI</abbr>-handling <abbr title="application programming interface">API</abbr>.
+		Mostly, at least.
+		I needed to have the constructor method set the properties directly instead of relying on other methods to do that.
+		I also needed to replace those methods with normalization/validation methods that return the normalized value (or throw an exception if the string is invalid) instead of setting the value.
+		I then needed to have child classes rely on the parent&apos;s constructor to set the properties.
+		The tricky part was be getting the child class to perform its scheme-specific normalizations and validations while still allowing the parent class&apos;s constructor to do its thing.
+		The child class&apos;s constructor needs to have already parsed the data to normalize it before allowing the parent class to touch it.
+		Converting the data back to a string and passing it to the parent class to reparse it seems counterproductive.
+		Likewise, I cannot simply have the child class overwrite the normalization/validation methods.
+		After all, the parent class must <strong>*always*</strong> verify that the data conforms to <abbr title="Request for Comments">RFC</abbr> 3986.
+		That functionality must not be allowed to be overwritten.
+		I could have the parent class call both the child&apos;s normalization method and its own, but that means either always checking to see if a second normalizer exists or normalizing twice using the same method when using the parent class directly.
+		I ended up setting up dummy normalization methods that do nothing, calling them every time, and allowing child classes to overwrite <strong>*those*</strong> without actually touching the parent&apos;s own normalization methods.
+	</p>
+	<p>
+		I was planning to work on include.d tomorrow and work exclusively on my course essay today, but I couldn&apos;t resist trying to flesh out my new ideas for <code>\st\y\uri</code>&apos;s <abbr title="application programming interface">API</abbr> to see if they were even feasible.
+		I still have the <code>\st\y\uri\gopher</code> class to rewrite though.
+		The rest of the rewrite was a success, and I don&apos;t anticipate any problems with this class.
+	</p>
+</section>
+<section id="apartment">
+	<h2>Apartment hunting</h2>
+	<p>
+		I finally tested my cellular telephone&apos;s voice mailbox using a telephone at work, to make sure that messages can be left.
+		No voicemail setup was necessary.
+		Now, I can safely use this number while apartment hunting to avoid using the Google Voice number that might be disappearing on me next month.
+		Tomorrow, I should try to update my application with the apartments that I&apos;ve already submitted an application to.
+	</p>
+</section>
 		<hr/>
 		<p>
 			Copyright © 2016 Alex Yst;

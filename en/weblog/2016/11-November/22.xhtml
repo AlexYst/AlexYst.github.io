@@ -71,88 +71,96 @@
 			<p>Day 00626: Tuesday, 2016 November 22</p>
 		</header>
 <img src="/img/CC_BY-SA_4.0/y.st./weblog/2016/11/22.jpg" alt="A smashed-up minivan" class="weblog-header-image" width="811" height="480" />
-<h2 id="general">General news</h2>
-<p>
-	I awoke to find an awful letter.
-	My student loan payments are coming due now.
-	The timing couldn&apos;t be worse.
-	I&apos;m trying to find a place to live, and now, about $81 <abbr title="United States Dollars">USD</abbr> is going to be siphoned away each month.
-	This sucks.
-	It&apos;s already going to be a struggle to pay the rent.
-	I logged into the loan repayment website to make a payment, and it seems that the website no longer likes my email address and wouldn&apos;t allow me to send a payment until I changed it.
-	That&apos;s idiotic.
-</p>
-<p>
-	As I was headed to out to go to work, my mother got toed home.
-	They had hit a deer, mangling the front of their car! Later in the day, someone sent by the insurance agency came by to haul the vehicle away for examination.
-	Making sure that my mother was okay and discussing the event with them took some time, and I thought that I was going to be late to work.
-	However, I still had fifteen minutes to spare! The shift leaders were nearly late though, only showing up a few minutes before everyone needed to be ready to clock in.
-</p>
-<p>
-	I think that I better understand the decision in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> not to have <code>\var_export()</code> simply serialize any objects that it comes across and wrap them in calls to <code>class::__set_state()</code>.
-	If you wanted the object serialized, you&apos;d simply use the <code>\serialize()</code> function instead! As a bonus, that function can even serialize multidimensional arrays nested objects, and combinations of the two.
-	However, that doesn&apos;t mean that I agree with the decision to implement <code>\var_export()</code> this way.
-	Simply put, <code>\var_export()</code> attempts to output a string representing the declaration of a variable&apos;s value.
-	However, objects aren&apos;t like other variable values and, at least as the syntax of <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> currently exists, objects cannot simply be &quot;declared&quot;.
-	The concept of declaring an object doesn&apos;t make any sense, given the way that objects and classes work.
-	Any attempts to &quot;declare&quot; an object is going to come out messy, as it does with <code>class::__set_state()</code>.
-	The most important issue with <code>\var_export()</code> is probably that while it serializes objects in a way, it doesn&apos;t have a <strong>*pre-serialization*</strong> method acting as a counterpart to <code>class::__set_state()</code>; a <code>class::__get_state()</code> method, as it were.
-	This method should be part of a pair, like <code>class::__sleep()</code> and <code>class::__wakeup()</code> are.
-	In other words, the way that <code>\var_export()</code> works is a bit incomplete.
-	Adding to this incompleteness is the way in which <code>\var_export()</code> names its array keys.
-	Inherited properties overwrite child properties, potentially causing information loss.
-	If <code>\var_export()</code> used the same array key structure that <code>\serialize()</code> uses, property names from multiple classes would have unique names when need be.
-	Also though, <code>\var_export()</code> assumes that every class has a <code>class::__get_state()</code> method.
-	This isn&apos;t always the case, and shouldn&apos;t be assumed.
-</p>
-<p>
-	My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
-</p>
-<h2 id="include.d"><a href="https://git.volatile.ch./y.st./include.d/releases">include.d</a></h2>
-<p>
-	I took a look at my <code>\st\y\uri</code> class, and I think that most of it, if not all of it, will need to be entirely written from scratch.
-	What a pain.
-	This will be the second major overhaul of that class.
-	If it weren&apos;t for the fact that the built-in <code>\Closure</code> class bypasses the protections offered by the <code>protected</code> and especially the <code>private</code> key word, this rewrite wouldn&apos;t be necessary.
-	However, as it is, I don&apos;t think that I can get out of it.
-	Furthermore, this rewrite will make a big difference for the <code>\var_export()</code> function, causing it to produce a better array from objects of the <abbr title="Uniform Resource Identifier">URI</abbr> classes.
-	In all honesty though, I&apos;d ignore the <code>\var_export()</code> optimization if I wasn&apos;t dealing with the <code>\Closure</code> class.
-</p>
-<p>
-	I don&apos;t have the time, the energy, or the patience to deal with rewriting my most complex class.
-	You know what? I give up.
-	<code>\Closure::bind()</code> and <code>\Closure::bindTo()</code> break <abbr title="application programming interface">API</abbr>s.
-	There is nothing that I can code that will fix that, as anything that I build can be broken again with these two methods.
-	As for <code>\var_export()</code>, attempting to optimize my class for that one use case pretty much <strong>*de*</strong>-optimizes it for every other use case that I can come up with.
-	If rewrite my class, I&apos;ll get cleaner output from that one function, but that function is entirely messy.
-	I should instead keep my code working as best I can with mostly the same <abbr title="application programming interface">API</abbr> that I&apos;ve already built; there&apos;s not much to fix about it.
-	I am going to need to make some key design decisions in for the <abbr title="Uniform Resource Identifier">URI</abbr> classes before I move on with include.d development in the <abbr title="Uniform Resource Identifier">URI</abbr> branch though.
-</p>
-<p>
-	While trying to get everything working in the branch relating to the <code>__set_state()</code> method, I tried to create an abstract static method.
-	Apparently, that&apos;s not allowed, which is pretty stupid.
-	Stupider still, there actually <strong>*is*</strong> a way to get the desired result, it just involves splitting the abstract class into both an abstract class and an interface.
-	The interface can declare as many methods as you want it to, be they instance methods or static methods.
-	If a class implements the interface, any methods defined by the interface are considered to be abstract.
-	Voilà! The abstract class can define any non-abstract methods that it needs to, relying on the interface to define the abstract static methods.
-	Either the interface or the abstract class can define any abstract instance methods that are needed.
-	Why isn&apos;t there a structure that can define full methods <strong>*and*</strong> abstract static methods? This seems like a big oversight.
-	According to someone on Stack Overflow not only explained the reason for the problem, but also says that it&apos;s been <a href="https://stackoverflow.com./questions/999066/why-does-php-5-2-disallow-abstract-static-class-methods#answer-31235907">fixed in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>7</a>.
-	All that I have to do is wait, then this will work itself out.
-</p>
-<h2 id="university">University life</h2>
-<p>
-	I think that I&apos;ve about finished my <a href="/en/coursework/BUS1101/Behavior_management_at_the_SAS_Institute.xhtml">essay</a> for the week, but I should check it over again tomorrow if there&apos;s time before I head into work.
-	By the time that I get home from work, the essay will have already been due.
-</p>
-<h2 id="apartment">Apartment hunting</h2>
-<p>
-	I spoke with the property manager today, and it seems that the local property has washer/dryer hookups in each unit, but I&apos;d need to find a way to get a washer and dryer home to install.
-	This seems like an almost insurmountable feat.
-	They also seem to think that the properties in Eugine have similar setups, though they don&apos;t seem to know for sure.
-	They gave me a list of the property names, but they didn&apos;t have addresses for them.
-	I&apos;m not sure if I&apos;ll be able to look them up online by name or not.
-</p>
+<section id="general">
+	<h2>General news</h2>
+	<p>
+		I awoke to find an awful letter.
+		My student loan payments are coming due now.
+		The timing couldn&apos;t be worse.
+		I&apos;m trying to find a place to live, and now, about $81 <abbr title="United States Dollars">USD</abbr> is going to be siphoned away each month.
+		This sucks.
+		It&apos;s already going to be a struggle to pay the rent.
+		I logged into the loan repayment website to make a payment, and it seems that the website no longer likes my email address and wouldn&apos;t allow me to send a payment until I changed it.
+		That&apos;s idiotic.
+	</p>
+	<p>
+		As I was headed to out to go to work, my mother got toed home.
+		They had hit a deer, mangling the front of their car! Later in the day, someone sent by the insurance agency came by to haul the vehicle away for examination.
+		Making sure that my mother was okay and discussing the event with them took some time, and I thought that I was going to be late to work.
+		However, I still had fifteen minutes to spare! The shift leaders were nearly late though, only showing up a few minutes before everyone needed to be ready to clock in.
+	</p>
+	<p>
+		I think that I better understand the decision in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> not to have <code>\var_export()</code> simply serialize any objects that it comes across and wrap them in calls to <code>class::__set_state()</code>.
+		If you wanted the object serialized, you&apos;d simply use the <code>\serialize()</code> function instead! As a bonus, that function can even serialize multidimensional arrays nested objects, and combinations of the two.
+		However, that doesn&apos;t mean that I agree with the decision to implement <code>\var_export()</code> this way.
+		Simply put, <code>\var_export()</code> attempts to output a string representing the declaration of a variable&apos;s value.
+		However, objects aren&apos;t like other variable values and, at least as the syntax of <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> currently exists, objects cannot simply be &quot;declared&quot;.
+		The concept of declaring an object doesn&apos;t make any sense, given the way that objects and classes work.
+		Any attempts to &quot;declare&quot; an object is going to come out messy, as it does with <code>class::__set_state()</code>.
+		The most important issue with <code>\var_export()</code> is probably that while it serializes objects in a way, it doesn&apos;t have a <strong>*pre-serialization*</strong> method acting as a counterpart to <code>class::__set_state()</code>; a <code>class::__get_state()</code> method, as it were.
+		This method should be part of a pair, like <code>class::__sleep()</code> and <code>class::__wakeup()</code> are.
+		In other words, the way that <code>\var_export()</code> works is a bit incomplete.
+		Adding to this incompleteness is the way in which <code>\var_export()</code> names its array keys.
+		Inherited properties overwrite child properties, potentially causing information loss.
+		If <code>\var_export()</code> used the same array key structure that <code>\serialize()</code> uses, property names from multiple classes would have unique names when need be.
+		Also though, <code>\var_export()</code> assumes that every class has a <code>class::__get_state()</code> method.
+		This isn&apos;t always the case, and shouldn&apos;t be assumed.
+	</p>
+	<p>
+		My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
+	</p>
+</section>
+<section id="include.d">
+	<h2><a href="https://git.volatile.ch./y.st./include.d/releases">include.d</a></h2>
+	<p>
+		I took a look at my <code>\st\y\uri</code> class, and I think that most of it, if not all of it, will need to be entirely written from scratch.
+		What a pain.
+		This will be the second major overhaul of that class.
+		If it weren&apos;t for the fact that the built-in <code>\Closure</code> class bypasses the protections offered by the <code>protected</code> and especially the <code>private</code> key word, this rewrite wouldn&apos;t be necessary.
+		However, as it is, I don&apos;t think that I can get out of it.
+		Furthermore, this rewrite will make a big difference for the <code>\var_export()</code> function, causing it to produce a better array from objects of the <abbr title="Uniform Resource Identifier">URI</abbr> classes.
+		In all honesty though, I&apos;d ignore the <code>\var_export()</code> optimization if I wasn&apos;t dealing with the <code>\Closure</code> class.
+	</p>
+	<p>
+		I don&apos;t have the time, the energy, or the patience to deal with rewriting my most complex class.
+		You know what? I give up.
+		<code>\Closure::bind()</code> and <code>\Closure::bindTo()</code> break <abbr title="application programming interface">API</abbr>s.
+		There is nothing that I can code that will fix that, as anything that I build can be broken again with these two methods.
+		As for <code>\var_export()</code>, attempting to optimize my class for that one use case pretty much <strong>*de*</strong>-optimizes it for every other use case that I can come up with.
+		If rewrite my class, I&apos;ll get cleaner output from that one function, but that function is entirely messy.
+		I should instead keep my code working as best I can with mostly the same <abbr title="application programming interface">API</abbr> that I&apos;ve already built; there&apos;s not much to fix about it.
+		I am going to need to make some key design decisions in for the <abbr title="Uniform Resource Identifier">URI</abbr> classes before I move on with include.d development in the <abbr title="Uniform Resource Identifier">URI</abbr> branch though.
+	</p>
+	<p>
+		While trying to get everything working in the branch relating to the <code>__set_state()</code> method, I tried to create an abstract static method.
+		Apparently, that&apos;s not allowed, which is pretty stupid.
+		Stupider still, there actually <strong>*is*</strong> a way to get the desired result, it just involves splitting the abstract class into both an abstract class and an interface.
+		The interface can declare as many methods as you want it to, be they instance methods or static methods.
+		If a class implements the interface, any methods defined by the interface are considered to be abstract.
+		Voilà! The abstract class can define any non-abstract methods that it needs to, relying on the interface to define the abstract static methods.
+		Either the interface or the abstract class can define any abstract instance methods that are needed.
+		Why isn&apos;t there a structure that can define full methods <strong>*and*</strong> abstract static methods? This seems like a big oversight.
+		According to someone on Stack Overflow not only explained the reason for the problem, but also says that it&apos;s been <a href="https://stackoverflow.com./questions/999066/why-does-php-5-2-disallow-abstract-static-class-methods#answer-31235907">fixed in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>7</a>.
+		All that I have to do is wait, then this will work itself out.
+	</p>
+</section>
+<section id="university">
+	<h2>University life</h2>
+	<p>
+		I think that I&apos;ve about finished my <a href="/en/coursework/BUS1101/Behavior_management_at_the_SAS_Institute.xhtml">essay</a> for the week, but I should check it over again tomorrow if there&apos;s time before I head into work.
+		By the time that I get home from work, the essay will have already been due.
+	</p>
+</section>
+<section id="apartment">
+</section>
+	<h2>Apartment hunting</h2>
+	<p>
+		I spoke with the property manager today, and it seems that the local property has washer/dryer hookups in each unit, but I&apos;d need to find a way to get a washer and dryer home to install.
+		This seems like an almost insurmountable feat.
+		They also seem to think that the properties in Eugine have similar setups, though they don&apos;t seem to know for sure.
+		They gave me a list of the property names, but they didn&apos;t have addresses for them.
+		I&apos;m not sure if I&apos;ll be able to look them up online by name or not.
+	</p>
 		<hr/>
 		<p>
 			Copyright © 2016 Alex Yst;

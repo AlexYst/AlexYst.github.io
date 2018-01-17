@@ -10,7 +10,7 @@
  h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
                                                                                      
 	<https://y.st./>
-	Copyright © 2016 Alex Yst <mailto:copyright@y.st>
+	Copyright © 2016, 2018 Alex Yst <mailto:copyright@y.st>
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -55,14 +55,25 @@
 			<h1>Non-conformant scheme-specific syntax</h1>
 			<p>Non-standard standards</p>
 		</header>
-<p>Some allocated <a href="https://www.iana.org./assignments/uri-schemes/uri-schemes.xml"><abbr title="Uniform Resource Identifier">URI</abbr> schemes</a> are paired with syntax specifications that don&apos;t conform to <a href="https://tools.ietf.org./html/rfc3986"><abbr title="Request for Comments">RFC</abbr> 3986</a>. I suspect that some of these schemes were defined before <abbr title="Request for Comments">RFC</abbr> 3986 was written and never updated to comply, but others specifically claim to comply with <abbr title="Request for Comments">RFC</abbr> 3986, only to disregard what <abbr title="Request for Comments">RFC</abbr> 3986 actually says.</p>
-<h2 id="aaas">The <code>aaa:</code> and <code>aaas:</code> schemes</h2>
-<p><a href="https://tools.ietf.org./html/rfc6733#section-4.3.1"><abbr title="Request for Comments">RFC</abbr> 6733</a> specifically claims to conform to <abbr title="Request for Comments">RFC</abbr> 3986, but then defines two schemes that don&apos;t actually conform to it. <abbr title="Request for Comments">RFC</abbr> 3986 requires that if a host component is present, the path component be either be empty or begin with a slash. However, <abbr title="Request for Comments">RFC</abbr> 6733 defines a scheme in which there is always a host component and the path is either empty or begins with a <strong>*semicolon*</strong>.</p>
+<p>
+	Some allocated <a href="https://www.iana.org./assignments/uri-schemes/uri-schemes.xml"><abbr title="Uniform Resource Identifier">URI</abbr> schemes</a> are paired with syntax specifications that don&apos;t conform to <a href="https://tools.ietf.org./html/rfc3986"><abbr title="Request for Comments">RFC</abbr> 3986</a>.
+	I suspect that some of these schemes were defined before <abbr title="Request for Comments">RFC</abbr> 3986 was written and never updated to comply, but others specifically claim to comply with <abbr title="Request for Comments">RFC</abbr> 3986, only to disregard what <abbr title="Request for Comments">RFC</abbr> 3986 actually says.
+</p>
+<section id="aaas">
+<h2>The <code>aaa:</code> and <code>aaas:</code> schemes</h2>
+<p>
+	<a href="https://tools.ietf.org./html/rfc6733#section-4.3.1"><abbr title="Request for Comments">RFC</abbr> 6733</a> specifically claims to conform to <abbr title="Request for Comments">RFC</abbr> 3986, but then defines two schemes that don&apos;t actually conform to it.
+	<abbr title="Request for Comments">RFC</abbr> 3986 requires that if a host component is present, the path component be either be empty or begin with a slash.
+	However, <abbr title="Request for Comments">RFC</abbr> 6733 defines a scheme in which there is always a host component and the path is either empty or begins with a <strong>*semicolon*</strong>.
+</p>
+</section>
 <h2>Other schemes</h2>
-<p>This page is yet incomplete and other non-conformant schemes will be added.</p>
+<p>
+	This page is yet incomplete and other non-conformant schemes will be added.
+</p>
 		<hr/>
 		<p>
-			Copyright © 2016 Alex Yst;
+			Copyright © 2016, 2018 Alex Yst;
 			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
 			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
 			My address is in the source comments near the top of this document.

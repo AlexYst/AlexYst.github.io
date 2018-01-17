@@ -71,58 +71,64 @@
 			<p>Day 00629: Friday, 2016 November 25</p>
 		</header>
 <img src="/img/CC_BY-SA_4.0/y.st./weblog/2016/11/25.jpg" alt="More apartments" class="weblog-header-image" width="811" height="480" />
-<h2 id="general">General news</h2>
-<p>
-	A coworker explained to me the importance of holidays today.
-	I&apos;ve never understood why people celebrate such arbitrary calendar dates until today.
-	Holidays, as they put it, are for people with nothing to look forward to.
-	If you don&apos;t have anything else to look forward to, you look forward to holidays.
-	How sad.
-	At the same time though, it explains so much.
-	My mother seems to look forward to holidays more than anyone I know, and at the same time, their life really isn&apos;t the greatest.
-	They&apos;re unhappy with their living situation, their life is a dead end, and their children will never be like them.
-	For some reason, my mother&apos;s offended that we are our own people instead of little clones of themself.
-	My mother has nothing to look forward to, so they rely on holidays to give their time meaning.
-	I&apos;m not sure how I can possibly help with my mother&apos;s situation though.
-</p>
-<p>
-	My boss finally got in the shipment of double extra large work uniform shits that they were waiting on, so they were going to give some of them to me two days ago.
-	They forgot though, and in my rush to get home, so did I.
-	Today though, I confronted them and asked them about it.
-	Starting tomorrow, I&apos;ll no longer be wearing a manager uniform; I never was a manager, I only wore that uniform because it was the only one that fit me.
-</p>
-<p>
-	I was scheduled to be on standby at work tomorrow, so I was counting on having the day off, as we usually don&apos;t get called in.
-	However, my boss wrote to me tonight asking me to pick up a closing shift.
-	I&apos;ll need to hurry and get as much schoolwork done in the morning as I can before I head in.
-</p>
-<p>
-	My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
-</p>
-<h2 id="include.d"><a href="https://git.volatile.ch./y.st./include.d/releases">include.d</a></h2>
-<p>
-	I came up with a cross-platform way to make use of 64-bit exception codes! Storage-wise, a 64-bit integer is just two 32-bit integers concatenated together.
-	Why not make use of that fact by using <strong>*two*</strong> integers when working on 32-bit platforms? I&apos;ve also decided to use the <a href="https://secure.php.net./manual/en/function.pack.php"><code>\pack()</code></a> and <a href="https://secure.php.net./manual/en/function.unpack.php"><code>\unpack()</code></a> functions to do the conversion between strings and integers.
-	This makes it exceedingly easy to cram an eight-byte string into one or two integers.
-	The unintuitive part though is that these functions store and retrieve values from strings, not integers.
-	I&apos;m storing a string in an integer, not an integer in a string.
-	By flipping them, we can store a string in any type of value instead of storing any type of value in a string, but it means using <code>\unpack()</code> to do the packing and <code>\pack()</code> to do the unpacking.
-	The one problem with these functions though is that <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>&apos;s implementation of them can&apos;t handle signed integers without using a platform-specific byte order.
-	Using a specific byte order, for example, big-endian, requires using <strong>*unsigned*</strong> integers.
-	Because <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> doesn&apos;t support unsigned integers, using the unsigned (un)packing would probably require not using the most-significant bit of the number for storage.
-	Until a time when <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> fixes this issue or I find a better built-in function for this task, it seems that exception codes will be platform-specific.
-	As a side note, it seems that my machine uses a small-endian implementation.
-	That&apos;s kind of a downer; big-endian makes more sense to me.
-</p>
-<p>
-	I&apos;ve built the implementation, so now the main thing to do is to finish updating include.d&apos;s thrown exceptions to use the new exception codes.
-	I already updated the <code>\st\y\abbr</code> class, as some of the test cases relied on that class throwing reasonable exceptions.
-	As the debug code outputs a list of used exception codes, all that I have to do now is go down the list and fix the ones that aren&apos;t eight characters long.
-</p>
-<h2 id="university">University life</h2>
-<p>
-	I got another chunk of the reading assignment done, though not as much as I&apos;d hoped to finish.
-</p>
+<section id="general">
+	<h2>General news</h2>
+	<p>
+		A coworker explained to me the importance of holidays today.
+		I&apos;ve never understood why people celebrate such arbitrary calendar dates until today.
+		Holidays, as they put it, are for people with nothing to look forward to.
+		If you don&apos;t have anything else to look forward to, you look forward to holidays.
+		How sad.
+		At the same time though, it explains so much.
+		My mother seems to look forward to holidays more than anyone I know, and at the same time, their life really isn&apos;t the greatest.
+		They&apos;re unhappy with their living situation, their life is a dead end, and their children will never be like them.
+		For some reason, my mother&apos;s offended that we are our own people instead of little clones of themself.
+		My mother has nothing to look forward to, so they rely on holidays to give their time meaning.
+		I&apos;m not sure how I can possibly help with my mother&apos;s situation though.
+	</p>
+	<p>
+		My boss finally got in the shipment of double extra large work uniform shits that they were waiting on, so they were going to give some of them to me two days ago.
+		They forgot though, and in my rush to get home, so did I.
+		Today though, I confronted them and asked them about it.
+		Starting tomorrow, I&apos;ll no longer be wearing a manager uniform; I never was a manager, I only wore that uniform because it was the only one that fit me.
+	</p>
+	<p>
+		I was scheduled to be on standby at work tomorrow, so I was counting on having the day off, as we usually don&apos;t get called in.
+		However, my boss wrote to me tonight asking me to pick up a closing shift.
+		I&apos;ll need to hurry and get as much schoolwork done in the morning as I can before I head in.
+	</p>
+	<p>
+		My <a href="/a/canary.txt">canary</a> still sings the tune of freedom and transparency.
+	</p>
+</section>
+<section id="include.d">
+	<h2><a href="https://git.volatile.ch./y.st./include.d/releases">include.d</a></h2>
+	<p>
+		I came up with a cross-platform way to make use of 64-bit exception codes! Storage-wise, a 64-bit integer is just two 32-bit integers concatenated together.
+		Why not make use of that fact by using <strong>*two*</strong> integers when working on 32-bit platforms? I&apos;ve also decided to use the <a href="https://secure.php.net./manual/en/function.pack.php"><code>\pack()</code></a> and <a href="https://secure.php.net./manual/en/function.unpack.php"><code>\unpack()</code></a> functions to do the conversion between strings and integers.
+		This makes it exceedingly easy to cram an eight-byte string into one or two integers.
+		The unintuitive part though is that these functions store and retrieve values from strings, not integers.
+		I&apos;m storing a string in an integer, not an integer in a string.
+		By flipping them, we can store a string in any type of value instead of storing any type of value in a string, but it means using <code>\unpack()</code> to do the packing and <code>\pack()</code> to do the unpacking.
+		The one problem with these functions though is that <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>&apos;s implementation of them can&apos;t handle signed integers without using a platform-specific byte order.
+		Using a specific byte order, for example, big-endian, requires using <strong>*unsigned*</strong> integers.
+		Because <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> doesn&apos;t support unsigned integers, using the unsigned (un)packing would probably require not using the most-significant bit of the number for storage.
+		Until a time when <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> fixes this issue or I find a better built-in function for this task, it seems that exception codes will be platform-specific.
+		As a side note, it seems that my machine uses a small-endian implementation.
+		That&apos;s kind of a downer; big-endian makes more sense to me.
+	</p>
+	<p>
+		I&apos;ve built the implementation, so now the main thing to do is to finish updating include.d&apos;s thrown exceptions to use the new exception codes.
+		I already updated the <code>\st\y\abbr</code> class, as some of the test cases relied on that class throwing reasonable exceptions.
+		As the debug code outputs a list of used exception codes, all that I have to do now is go down the list and fix the ones that aren&apos;t eight characters long.
+	</p>
+</section>
+<section id="university">
+	<h2>University life</h2>
+	<p>
+		I got another chunk of the reading assignment done, though not as much as I&apos;d hoped to finish.
+	</p>
+</section>
 		<hr/>
 		<p>
 			Copyright © 2016 Alex Yst;
