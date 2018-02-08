@@ -29,51 +29,226 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./en/weblog/2018/01-January/29.xhtml"/>
-		<title>[MISSING JOURNAL ENTRY] &lt;https://y.st./en/weblog/2018/01-January/29.xhtml&gt;</title>
+		<title>Shaving &lt;https://y.st./en/weblog/2018/01-January/29.xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
 		<meta name="viewport" content="width=device-width"/>
 	</head>
 	<body>
-		<nav>
-			<p>
-				<a href="/en/">Home</a> |
-				<a href="/en/a/about.xhtml">About</a> |
-				<a href="/en/a/contact.xhtml">Contact</a> |
-				<a href="/a/canary.txt">Canary</a> |
-				<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
-				<a href="/en/opinion/">Opinions</a> |
-				<a href="/en/take-down/">Take-down requests</a> |
-				<a href="/en/law/">Law</a> |
-				<a href="/en/a/links.xhtml">Links</a> |
-				<a href="/en/weblog/2018/01-January/29.xhtml.asc">{this page}.asc</a>
+<nav>
+	<p>
+		<a href="/en/">Home</a> |
+		<a href="/en/a/about.xhtml">About</a> |
+		<a href="/en/a/contact.xhtml">Contact</a> |
+		<a href="/a/canary.txt">Canary</a> |
+		<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+		<a href="/en/opinion/">Opinions</a> |
+		<a href="/en/take-down/">Take-down requests</a> |
+		<a href="/en/law/">Law</a> |
+		<a href="/en/a/links.xhtml">Links</a> |
+		<a href="/en/weblog/2018/01-January/29.xhtml.asc">{this page}.asc</a>
+	</p>
+	<hr/>
+	<p>
+		Weblog index:
+		<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+		<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+		<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+	</p>
+	<hr/>
+	<p>
+		Jump to entry:
+		<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+		<a rel="prev" href="/en/weblog/2018/01-January/28.xhtml">&lt;Previous</a>
+		<a rel="next" href="/en/weblog/2018/01-January/30.xhtml">Next&gt;</a>
+		<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
 			</p>
 			<hr/>
-			<p>
-				Weblog index:
-				<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
-				<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
-				<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
-			</p>
-			<hr/>
-			<p>
-				Jump to entry:
-				<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
-				<a rel="prev" href="/en/weblog/2018/01-January/28.xhtml">&lt;Previous</a>
-				<a rel="next" href="/en/weblog/2018/01-January/30.xhtml">Next&gt;</a>
-				<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
-			</p>
-			<hr/>
-		</nav>
+</nav>
 		<header>
-			<h1>[MISSING JOURNAL ENTRY]</h1>
+			<h1>Shaving</h1>
 			<p>Day 01059: Monday, 2018 January 29</p>
 		</header>
-<p>
-	This entry will be added on 2018-02-07.
-	I apologise for any inconvenience.
-</p>
+<section id="dreams">
+	<h2>Dream journal</h2>
+	<p>
+		I dreamed I was cleaning out a huge motor home I&apos;d acquired and was setting it up for my personal use.
+		The inside seemed bigger than the outsides, and there were several unexpected things in there, such as filing cabinets and computer systems.
+	</p>
+</section>
+<section id="dental">
+	<h2>Dental work</h2>
+	<p>
+		It seems when the dentist was talking about the filling in front being temporary and needing to revisit that tooth, they were referring to a lot longer out than I was expecting.
+		They want to check that tooth out again in half a year; I was thinking of just a couple months.
+	</p>
+	<p>
+		The work today went smoothly, but it seems I have a couple more visits to go before they finish drilling and filling.
+		I&apos;m unsure why that can&apos;t be done all at once, but at least this isn&apos;t as traumatic as the extractions, so it&apos;s not really a bother.
+		My only concern is that putting off the drilling/filling until the next appointment raises the risk of further erosion.
+		My next appointment is on February sixth.
+		I guess that&apos;ll be before this journal entry even goes live.
+	</p>
+</section>
+<section id="makeshift">
+	<h2>Makeshift music player</h2>
+	<p>
+		I&apos;ve decided that for my more-sophisticated music player, I only even want to rename specific files and directories that are problematic.
+		I&apos;d been considering including a hash of all original names and appending it to the file names, but when no characters need to be stripped, this isn&apos;t exactly necessary.
+		When I went to implement this, the easiest way I found was to use <code>\str_replace()</code> to replace unsupported characters with an empty string.
+		If I&apos;m using <code>\str_replace()</code> anyway, I might as well replace the characters with some sort of escape-sequence-like string, so that&apos;s what I did.
+		In theory, I should&apos;ve encoded my escape character if I was going to do that, but I didn&apos;t.
+		Doing so would either require an extra pass of name-alteration or would potentially cause filenames that needn&apos;t be modified to be modified anyway.
+		It just wasn&apos;t worth the bother.
+		As I said before, the name-alterations don&apos;t even need to be reversible.
+		I just need to reduce the likelihood of name clashes caused when renaming while at the same time keeping the filenames recognisable enough that I can find what I&apos;m looking for.
+	</p>
+	<p>
+		I also learned something about <abbr title="Virtual File Allocation Table">VFAT</abbr>, the version of <abbr title="File Allocation Table">FAT</abbr> used by Android for the <abbr title="Secure Digital">SD</abbr> card filesystem.
+		<a href="https://superuser.com/questions/896946/why-mounted-vfat-volume-is-case-sensitive-partially">When filenames are too long to meet the 8.3 criteria, they&apos;re case <strong>*sensitive*</strong>.</a>
+		Sweet!
+		Windows covers this up by performing extra checks to ensure new files created don&apos;t have similarly-named counterparts with differing cases.
+		However, Linux currently does not.
+		That means that as long as moderate- to long-sized filenames are used, Linux allows users to take advantage of the case-sensitivity of this filesystem format.
+		The person asking about it on the linked page considers it to be a bug in the Linux <abbr title="value-added tax">VAT</abbr> driver, but if it acted any differently, I&apos;d consider it to be an anti-feature in the driver.
+		It&apos;s not the driver&apos;s job to prevent the user from using perfectly-valid file names to mimic a poorly-thought-out feature in a more-popular operating system.
+		Seriously.
+		Case-insensitivity is stupid.
+	</p>
+</section>
+<section id="shaving">
+	<h2>The experiment</h2>
+	<p>
+		I&apos;ve been meaning to try an experiment for a while: shaving.
+		Why do girls shave their legs?
+		Just enjoy your natural form!
+		Shaving is stupid, right?
+	</p>
+	<p>
+		I haven&apos;t had time to try it myself really, but with school starting back up soon, I&apos;m running out of time to just relax and wind down from last term.
+		I think I&apos;ll mostly take the next couple days off.
+		After my dental appointment, I took a relaxing bath, and during it, I decided to try out shaving.
+		I decided to only shave one leg though, so I could more easily see the difference.
+		And wow, what a difference it makes.
+		My leg looks ... younger, I guess?
+		And certainly more refined; less rugged.
+		It&apos;s the same as with my face.
+		It feels nicer too, aside from when I rub the upward against the stubble.
+		I think I like this.
+		I might change my mind in the next while, so I&apos;ll leave the other leg alone for now, but I&apos;ll likely make shaving them both a regular thing.
+		And probably my arms as well.
+		I wonder though if there&apos;s a way to reduce the stubble issue.
+	</p>
+</section>
+<section id="errands">
+	<h2>Errands</h2>
+	<p>
+		It&apos;s true I think I&apos;m going to mostly relax for a couple days, but I do need to get a few things done.
+		Tomorrow is Tuesday.
+		That means I have my weekly trip to Bi-Mart.
+		I should start keeping track of the winning digit each week to see if there&apos;s a pattern.
+		I&apos;m obviously not going to win the big prizes, so if there&apos;s a pattern to the single-digit prize numbers, I&apos;ll be able to predict whether it&apos;s even worth making the trip.
+		On busy weeks I&apos;m not going to win, I can stay home ans study.
+		On slow weeks, I can head in whether I&apos;ll win or not just for the exercise.
+	</p>
+	<p>
+		I forgot to pick up my rent cheque last week too, so I need to pick one up while I&apos;m out.
+		I&apos;d also like to talk with a representative at the mobile store that sells the model I&apos;m using as a music player.
+		(They probably quit carrying this model, but it still bears their logo, so maybe they&apos;ll help.)
+		The device refuses to allow me to specify just a single song to play.
+		I can specify an album, or I can add single songs and albums to the currently-playing list, but to even <strong>*start*</strong> the currently-playing list, I have to specify an entire album or artist&apos;s collection to use.
+		That&apos;s just idiotic.
+		I&apos;m doubting there&apos;s a way around it, but it doesn&apos;t hurt to ask.
+		After that, I should get my laundry washed for the coming week.
+	</p>
+	<p>
+		I feel like there are other errands I need to run tomorrow in that trip, but I can&apos;t for the life of me recall what they are.
+		I&apos;d love to avoid needing to make a second trip later.
+	</p>
+</section>
+<section id="drudgery">
+	<h2>University drudgery</h2>
+	<p>
+		Okay, so I&apos;ve been dealing with a couple people at the school about the continued ambassador group issue.
+		I haven&apos;t been discussing it here in my journal for a couple reasons though.
+		First of all, I recently went back through my journal and found old pages oozing with toxicity.
+		I don&apos;t want to be toxifying more new pages than I have to.
+		Second, I don&apos;t have much need to detox, or vent to the journal.
+		Discussing these school issues is actually causing me more stress than it resolves.
+		Anyway ...
+	</p>
+	<p>
+		It seems the school&apos;s walled garden within the Microsoft social network allows students in using their own email addresses once they&apos;ve been sent an invitation, but it doesn&apos;t give them as much access as they need.
+		Some groups, such as the ambassador group, only allow students in when they&apos;re using the secondary accounts associated with their school-assigned email addresses.
+		I may or may not have written about that already.
+		I don&apos;t recall, so I figured I&apos;d write about it again here just to be safe.
+		And why do schools assign their own email addresses to students?
+		This is stupid.
+		Is it just a way to get students to spread the word about the school by spreading the school&apos;s domain?
+	</p>
+	<p>
+		Okay, so having learned of this situation from the first person I was dealing with, I proceeded to tell them about the name change and how, being a gender issue, using my then-current university email address wasn&apos;t an option, as the address contained my birth name instead of my real (and also legal) name.
+		I continued, asking how to get my university email address updated to correct the problem.
+		So what do they do?
+		They explain how to update my main email address on file with the university; the one they won&apos;t let me use to join the ambassador group with.
+		Um.
+		Really?
+		I guess they thought this was what I was asking about, but you&apos;d have to be a complete and total moron to think that.
+		Why would I suddenly jump ship on the topic at hand, to ask about an unrelated issue that happens to also involve email addresses?
+		Clearly, they weren&apos;t following the fact that the university-assigned email address was the one I had to use, despite being the one to tell me I had to use it.
+		If the person in charge of the ambassador program can&apos;t even follow their own bouncing ball, it&apos;s no wonder I lost touch with the program so quickly.
+		I thought maybe I&apos;d somehow missed the fact that most communications would be via this social network, but it likely wasn&apos;t made clear at all.
+		Anyway, once they understood the problem, they redirected me, asking me to ask my academic advisor to help.
+	</p>
+	<p>
+		My academic advisor is usually pretty good, so I&apos;ll give them the benefit of the doubt this time.
+		They didn&apos;t seem to listen to the problem as I described it, and came to the wrong conclusion.
+		After reiterating and re-emphasising, they appeared to have a firm grasp on the issue at hand.
+		They pretty much backed up what the first person had told me, that I couldn&apos;t use my primary account, and said they&apos;d try to get the university-assigned email address fixed.
+		It took a few days, as they ostensibly had to delegate to other people who manage the email accounts, but they got back to me today saying the email address was fixed.
+		They gave me a new email address and new temporary password, so I assumed it was a new account.
+		I entered it into my KeePassX database as such, though upon logging in, I found it was the same account, updated.
+		That&apos;s exactly what they should have done, for a multitude of reasons.
+		When I went to delete the old entry for the account, I found something interesting though: a note about the password length being capped at sixteen characters.
+		When password lengths are capped or passwords appear to be unhashed, I make a note of it.
+		Over a year ago, when I first was given the account, Microsoft was capping password lengths there to sixteen characters.
+		Ouch.
+		My new password is sixty-four characters long though, the maximum the Debian 9 version of KeePassX will do.
+		(Debian 8&apos;s version had no limit, if I recall.)
+		That was a major security issue, in my opinion, but at least Microsoft fixed it at some point.
+	</p>
+</section>
+<section id="domains">
+	<h2>The domain name search has ended</h2>
+	<p>
+		I decided not to experiment with the domain name.
+		I want a fairly stable name to use with shared and potentially-shared services that might last, such as <abbr title="Internet Relay Chat">IRC</abbr> and public projects.
+		I tried out some partly-random names before work, mostly combining words that sounded good with the word &quot;project&quot; or &quot;collective&quot;.
+		Nothing was really panning out though.
+		At work, I decided on a cool domain name that wasn&apos;t at all random, but was likely taken.
+		Thankfully, when I got home, I found the exact match I wanted was available!
+		The <code>//com.</code> variant is registered, but doesn&apos;t seem to be in use.
+		It doesn&apos;t even have a parking website attached to it, though it might be used for non-Web services.
+		In any case, it seems unlikely a domain squatter has it.
+		I was leaning toward an <code>//org.</code> domain though, and given the <abbr title="Second Level Domain">SLD</abbr> I came up with, I think <code>//net.</code> would be more appropriate.
+		The name under both <abbr title="Top Level Domain">TLD</abbr>s is available.
+		I tried a shorter variant as well; not that I wanted it, but I thought I&apos;d see if the name was in use and I should choose another instead.
+		It seems the <code>//net.</code> version of the short domain has a squatter, while the <code>//com.</code> and <code>//org.</code> versions are registered, but with no website.
+		In any case, I don&apos;t think the name&apos;s seeing any major use, so I shouldn&apos;t run into problems using the name myself.
+	</p>
+	<p>
+		I considered purchasing the domain at the start of the coming term.
+		That&apos;d give me a couple days to mull it over, and maybe begin setting up a website for it.
+		I need a <abbr title="virtual private server">VPS</abbr>, which will host the website, but also other services such as <abbr title="Internet Relay Chat">IRC</abbr> and, if I ever get around to it, Minetest.
+		After thinking on it most of the day at work, I realised I don&apos;t want the date of registration aligned with the start of the term though.
+		If I register it then, that date will forever be etched into the domain&apos;s whois record.
+		Any random date would be better than one based on the school.
+		Instead, I think I&apos;ll wait a little over a month, and register on the renewal date for my personal domain.
+		It&apos;s an anniversary, and anniversaries are stupid to base things off of, but it&apos;ll allow me to only have one renewal date to remember to pay by.
+		Maybe it&apos;s stupid to wait and potentially lose the domain, but I&apos;m not comfortable committing with less than even a day to decide for sure.
+	</p>
+</section>
 		<hr/>
 		<p>
 			Copyright © 2018 Alex Yst;
@@ -85,7 +260,7 @@
 		</p>
 		<p>
 			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
-			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2018%2F01-January%2F29.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.1</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2018%2F01-January%2F29.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2018%2F01-January%2F29.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.2</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2018%2F01-January%2F29.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
 		</p>
 	</body>
 </html>
