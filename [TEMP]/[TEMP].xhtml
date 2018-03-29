@@ -42,27 +42,167 @@
 			<h1>Abstracts</h1>
 			<p>Written in <span title="English Composition 2">ENGL 1102</span> by <a href="https://y.st./">Alex Yst</a>, finalised on 2018-03-21</p>
 		</header>
-<p>
-	The abstract is the first thing people see when they look at your paper.
-	Often times, it&apos;s the only part of your paper they read.
-	People read the abstract to find out if reading your paper will even be beneficial to them.
-	For example, your paper may be on a different topic than the one they&apos;re wanting to read about.
-	For that reason, an abstract should be very clear in conveying what your paper will be about.
-	Making sure to go over the methodology (briefly) is also vital.
-	You need to make it clear what your methods were so readers will know your methodology was valid.
-	Why read a paper based on invalid methodology?
-	The conclusions found would be next to meaningless, so it would be a waste of the reader&apos;s time.
-	My next point is one many people disagree with.
-	People want to have their papers read, after all, for various reasons.
-	For some, this validates their effort in having written it.
-	For others, it makes them more money because they put their paper behind a pay wall and show only the abstract gratis to lure in customers.
-	However, I believe an abstract should convey what is expected readers would want to know from your paper.
-	Time is valuable, and as a busy person, I don&apos;t want to be reading through entire papers to find very basic information that should be given up front.
-	If I&apos;m doing research for something important, fine, I&apos;ll read your paper to find exactly what you have to say.
-	However, if I&apos;m just looking something up really quickly for my own personal use, I&apos;m not interested.
-	An abstract shouldn&apos;t be overly long, but it should still convey the vital facts uncovered, even if that results in less people reading the rest of the paper.
-	As both a reader and as a writer, I strongly believe the purpose of the paper should be to be useful to the reader, not to accumulate a read count.
-</p>
+<section id="Unit8">
+	<h2>Unit 8</h2>
+	<h3>Problem 0</h3>
+	<p>
+		The sin() function has a range of [-1, 1].
+		If we&apos;re adding two to the result of it to get one, logically, we&apos;re actually looking for where sin() is returning the value at the opposite end of its range, negative one.
+		To make better sense of the equation, let&apos;s subtract two from both sides:
+	</p>
+	<p>
+		sin(x - π) + 2 = 1<br/>
+		sin(x - π) = -1
+	</p>
+	<p>
+		Next, if we imagine the sin() function as reporting values on the unit circle at a given arc length, subtracting pi flips our answers halfway around the circle.
+		I&apos;m honestly not sure how to express that concept directly in a mathematical way, but thankfully, I don&apos;t have to.
+		There&apos;s another way.
+		We can use the sin() subtraction identity.
+	</p>
+	<p>
+		sin(x - π) = sin(x)cos(π) - cos(x)sin(π) and sin(x - π) = -1
+	</p>
+	<p>
+		So:
+	</p>
+	<p>
+		sin(x)cos(π) - cos(x)sin(π) = -1
+	</p>
+	<p>
+		Going back to our unit circle visualisation, the sin() function reports y values while the cos() function reports x values.
+		An arc length of π puts our terminal edge halfway around the unit circle, at the point (-1, 0), so:
+	</p>
+	<p>
+		sin(π) = 0 and cos(π) = -1
+	</p>
+	<p>
+		Using that information, we can reduce our equation.
+		We don&apos;t even need to deal with cos(x), as it gets multiplied by zero.
+		We thus get:
+	</p>
+	<p>
+		sin(x)cos(π) - cos(x)sin(π) = -1<br/>
+		-1sin(x) - 0cos(x) = -1<br/>
+		-sin(x) = -1<br/>
+		sin(x) = 1
+	</p>
+	<p>
+		We&apos;re pretty much right back where we began.
+		Subtracting pi from sin()&apos;s input flipped us halfway around the circle, while adding two to the output flipped us the rest of the way, putting us at the beginning.
+		We&apos;ve just found that:
+	</p>
+	<p>
+		sin(x - π) + 2 = sin(x)
+	</p>
+	<p>
+		With that in mind, all we need to do now is look at our unit circle once more to determine where in the range specified by the problem, [0, 2π), sin(x) is equal to one.
+		If we remember that sin() is reporting y values on the unit circle, the answer becomes obvious.
+		At only one point does the unit circle&apos;s y value ever get as high as one, and that&apos;s the point one quarter of the way from the beginning. Because the perimeter is 2π, we divide that value by four and find that the only answer within the specified range is <strong>0.5π</strong>, which can alternatively be written as <strong>π÷2</strong> (pi over two).
+	</p>
+	<h3>Problem 1</h3>
+	<p>
+		The arcsin() function is designed to be the inverse of the sin() function.
+		However, the sin() function, when graphed, produces a wave-like form, oscillating up and down.
+		As it&apos;s continuous, what this tells us is that the same y value can be produced from multiple x values.
+		In other words, because sin() is a cycle, it doesn&apos;t pass the horizontal line test, meaning that the sin() function is <strong>*not*</strong> invertible.
+		Arcsin() is the &quot;inverse&quot; of an irreversible function.
+		To accomplish its task, it looks at only a small section of the sin() function&apos;s domain and uses that as its own range.
+		If our original number, before using sin() and arcsin(), is outside this small section of sin()&apos;s domain, we&apos;ll get back a different value from arcsin() than we passed to sin().
+		It can&apos;t be helped.
+	</p>
+	<p>
+		A good way to think of this is that it&apos;s similar to lossy compression.
+		If you take a <abbr title="Portable Network Graphic">PNG</abbr> file and convert it into a <abbr title="Joint Photographic Experts Group">JPEG</abbr>, data is lost.
+		The same happens when you find the sine of a number.
+		Taking the arcus sine of the returned value is like trying to convert the <abbr title="Joint Photographic Experts Group">JPEG</abbr> back into a <abbr title="Portable Network Graphic">PNG</abbr>.
+		The data&apos;s already been lost.
+		You can&apos;t get it back.
+		Instead, you get something that shares qualities with the original, but it&apos;s not (necessarily) quite the original itself.
+	</p>
+	<h3>Problem 2</h3>
+	<p>
+		This problem asks what the four values x can be in the following equation:
+	</p>
+	<p>
+		x<sup>4</sup> = 1
+	</p>
+	<p>
+		I have no idea at all how to show work on this; all I can do is report what intuitively works and explain a little why they make the equation true.
+		<strong>Our possible x values are 1, -1, i, and -i.</strong>
+	</p>
+	<h4>One</h4>
+	<p>
+		One to any power should go without explanation as being equal to one.
+		One is the multiplication identity, so it doesn&apos;t matter how many times you multiply it by itself, it&apos;ll always remain just one.
+	</p>
+	<h4>Negative one</h4>
+	<p>
+		For negative one, we rely on the fact that multiplying a negative by a negative results in a positive number.
+		We can split the problem up a bit.
+		Instead of looking at -1*-1*-1*-1, we&apos;ll look at (-1*-1)(-1*-1):
+	</p>
+	<p>
+		-1<sup>4</sup> = 1<br/>
+		(-1<sup>2</sup>)<sup>2</sup> = 1<br/>
+		1<sup>2</sup> = 1
+	</p>
+	<p>
+		After breaking it up and multiplying away our negative, we&apos;re left with 1<sup>2</sup>.
+		Like with the last solution, we&apos;re left with an identity multiplied by itself, which will always equal itself.
+	</p>
+	<h4>The square root of negative one</h4>
+	<p>
+		This solution is a bit strange, but we can break it down like in our last solution, multiplying (i*i)(i*i).
+		By definition, i multiplied by itself equals negative one.
+		From there, we have negative one multiplied by negative one, which yields one:
+	</p>
+	<p>
+		i<sup>4</sup> = 1<br/>
+		(i<sup>2</sup>)<sup>2</sup> = 1<br/>
+		-1<sup>2</sup> = 1<br/>
+		1 = 1
+	</p>
+	<h4>The negative square root of negative one</h4>
+	<p>
+		This is our most complicated solution.
+		(Or should I say that it&apos;s our &quot;most complex&quot; solution?)
+		For clarity, let&apos;s not work with -i, but instead -1i.
+		That lets us better see that the negative sign itself can be multiplied by itself in the form of -1.
+		So basically, we begin working like this:
+	</p>
+	<p>
+		-i<sup>4</sup> = 1<br/>
+		(-1i)<sup>4</sup> = 1<br/>
+		((-1i)<sup>2</sup>)<sup>2</sup> = 1<br/>
+		((-1i)(-1i))<sup>2</sup> = 1<br/>
+		(-1 * i * -1 * i)<sup>2</sup> = 1
+	</p>
+	<p>
+		Here, we see our inner expression involves two instances of i and two instances of negative one being multiplied together.
+		When dealing with several numbers being multiplied together, it doesn&apos;t matter which order we perform the multiplication; it&apos;ll come out the same every time.
+		Additionally, we can even multiply terms that aren&apos;t next to each other in the problem, so long as they&apos;re part of the same multiplication chain.
+		For that reason, we can rearrange the terms:
+	</p>
+	<p>
+		(-1 * i * -1 * i)<sup>2</sup> = 1<br/>
+		(-1 * -1 * i * i))<sup>2</sup> = 1<br/>
+		(-1<sup>2</sup> * i<sup>2</sup>))<sup>2</sup> = 1
+	</p>
+	<p>
+		Squaring negative one results in one, while by definition, squaring i results in negative one.
+		With one being the multiplication identity, it basically just dissolves on us, cancelling itself out, leaving us with negative one squared, which we just said is equal to one:
+	</p>
+	<p>
+		(-1<sup>2</sup> * i<sup>2</sup>))<sup>2</sup> = 1<br/>
+		(1 * -1)<sup>2</sup> = 1<br/>
+		-1<sup>2</sup> = 1<br/>
+		1 = 1
+	</p>
+	<p>
+		There&apos;s probably a <strong>*way*</strong> easier way to justify -i being a solution to the problem, but I don&apos;t currently know how to go about that.
+	</p>
+</section>
 		<hr/>
 		<p>
 			Copyright © 2018 Alex Yst;
