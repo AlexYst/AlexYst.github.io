@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2018 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2018/03-March/30.xhtml"/>
+		<title>No driving instructor after all &lt;https://y.st./en/weblog/2018/03-March/30.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+<nav>
+	<p>
+		<a href="/en/">Home</a> |
+		<a href="/en/a/about.xhtml">About</a> |
+		<a href="/en/a/contact.xhtml">Contact</a> |
+		<a href="/a/canary.txt">Canary</a> |
+		<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+		<a href="/en/opinion/">Opinions</a> |
+		<a href="/en/take-down/">Take-down requests</a> |
+		<a href="/en/law/">Law</a> |
+		<a href="/en/a/links.xhtml">Links</a> |
+		<a href="/en/weblog/2018/03-March/30.xhtml.asc">{this page}.asc</a>
+	</p>
+	<hr/>
+	<p>
+		Weblog index:
+		<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+		<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+		<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+	</p>
+	<hr/>
+	<p>
+		Jump to entry:
+		<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+		<a rel="prev" href="/en/weblog/2018/03-March/29.xhtml">&lt;Previous</a>
+		<a rel="next" href="/en/weblog/2018/03-March/31.xhtml">Next&gt;</a>
+		<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+</nav>
+		<header>
+			<h1>No driving instructor after all</h1>
+			<p>Day 01119: Friday, 2018 March 30</p>
+		</header>
+<section id="Minetest">
+	<h2>Minetest log</h2>
+	<p>
+		I&apos;ve now gotten enough of the <code>minequest_doors</code> code written to make the wooden door the first item with a usable bonus ability.
+		The interface is still too clunky, but with time, I can fix that.
+	</p>
+	<p>
+		I&apos;ve come up with a new idea though, one that emulates a feature from the original <code>minequest</code> plan and emulates a similar feature of one of the later drafts.
+		First, stat affinity can be automatically detected instead of hard-coded.
+		Second, when activating a new bonus with an item that has multiple affinities, a dialogue can be presented to the user letting them choose which to use.
+		Third, each affinity can be used only for one bonus ability at a time.
+		This won&apos;t affect the <code>minequest_doors</code> code, aside from the fact I&apos;ll be able to remove the stat affinity specification.
+		However, it&apos;ll be a rewrite of a large chunk of the <code>minequest</code> code.
+		Even if I were still starting from scratch, it&apos;d be a big undertaking and I&apos;m not sure I&apos;m up for it.
+		Then again, I&apos;d love to have this working from the beginning; from the proof-of-concept stage, and I&apos;d love not to have unintuitive affinities with the wooden items.
+		With the current setup, each wooden item has to choose a single sapling stat to be bound to, even though most wooden items can be crafted from any sort of wood.
+		Players have no way to guess which sapling powers which wooden items until they mess up their bonus decks by overdrawing the power of a particular star.
+		For example, they may accidentally lose half their warp points in such a blunder that they had no way to know would happen without reading the code of every item.
+		It&apos;s just not a good system.
+		<em>*sigh*</em>
+		I guess I need to go back to the code and make this new system a reality.
+		If Minetest can handle it, that is.
+		Actually, never mind.
+		I just realised that what I was trying to do is possible in JavaScript, but the dialogue boxes sent in Minetest don&apos;t wait for a response; the code just continues.
+		Maybe I&apos;ll need to implement a double-slot system, where players have to use two items to get a bonus: one of the preferred drop and one of the item.
+		No drop means no stat affinity is used, which either means statless bonuses can&apos;t be used or bonuses that&apos;d normally have an attached stat can be used without a stat.
+		Or I could write some rejection code for such cases ... or eliminate statless bonuses altogether ...
+		I don&apos;t know.
+		I guess I have more planning to do here.
+		The current system is flawed though, it needs to be fixed with <strong>*something*</strong>.
+	</p>
+	<p>
+		Oh, wait.
+		I keep forgetting that automatic affinity detection isn&apos;t a possibility any more.
+		At all.
+		The problem is the saplings.
+		They can&apos;t be crafted into anything, but the trees they grow into can.
+		Wooden items should still be usable with the sapling stats, as they&apos;re they only things that sapling stats <strong>*can*</strong> be used for, aside from the saplings themselves.
+		Having a third of the stats only usable with one item each when they logically relate to so many more items is stupid.
+	</p>
+	<p>
+		By the end of the day, I came up with most of a plan, but it&apos;ll require gutting the code I have so far and, to account for saplings, some hacky stuff.
+		I came up with the plan at work though, and I got home late, so I won&apos;t go into details until later.
+		Maybe not tomorrow or the next day, as I have stuff going then.
+	</p>
+</section>
+<section id="driving">
+	<h2>Driving</h2>
+	<p>
+		I told my driving instructor that with April coming up, to let me know when they&apos;re available to help me.
+		As I thought, they&apos;d forgotten.
+		They say they&apos;ll get back to me last week, but they didn&apos;t last time they said that.
+		I don&apos;t think they&apos;re going to help me after all.
+		They certainly mean to, but they&apos;re too busy.
+		It&apos;s not going to work out.
+		I might as well accept that now.
+		I won&apos;t give up on them until April&apos;s over, but I&apos;m certainly giving up all actual hope right now.
+		By the end of April, they start school again.
+		That&apos;s when I&apos;ll know for sure I was right.
+		I might start the job hunt soon if I find the time, but just tell potential employers I can&apos;t start until May.
+	</p>
+</section>
+<section id="cowardice">
+	<h2>Cowardice</h2>
+	<p>
+		My head manager has once again showed their cowardice in refusing to deal with customers that ask for a manager.
+		I&apos;m so done with this.
+		I can&apos;t wait until I can escape to a better job.
+	</p>
+</section>
+		<hr/>
+		<p>
+			Copyright © 2018 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2018%2F03-March%2F30.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.2</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2018%2F03-March%2F30.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

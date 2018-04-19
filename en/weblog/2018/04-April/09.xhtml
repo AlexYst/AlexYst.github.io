@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2018 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2018/04-April/09.xhtml"/>
+		<title>Found a bug without even looking at the code or seeing it in action &lt;https://y.st./en/weblog/2018/04-April/09.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+<nav>
+	<p>
+		<a href="/en/">Home</a> |
+		<a href="/en/a/about.xhtml">About</a> |
+		<a href="/en/a/contact.xhtml">Contact</a> |
+		<a href="/a/canary.txt">Canary</a> |
+		<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+		<a href="/en/opinion/">Opinions</a> |
+		<a href="/en/take-down/">Take-down requests</a> |
+		<a href="/en/law/">Law</a> |
+		<a href="/en/a/links.xhtml">Links</a> |
+		<a href="/en/weblog/2018/04-April/09.xhtml.asc">{this page}.asc</a>
+	</p>
+	<hr/>
+	<p>
+		Weblog index:
+		<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+		<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+		<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+	</p>
+	<hr/>
+	<p>
+		Jump to entry:
+		<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+		<a rel="prev" href="/en/weblog/2018/04-April/08.xhtml">&lt;Previous</a>
+		<a rel="next" href="/en/weblog/2018/04-April/10.xhtml">Next&gt;</a>
+		<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+</nav>
+		<header>
+			<h1>Found a bug without even looking at the code or seeing it in action</h1>
+			<p>Day 01129: Monday, 2018 April 09</p>
+		</header>
+<section id="hat">
+	<h2>A red Red Hat hat</h2>
+	<p>
+		A customer came in near the end of the night wearing a red hat bearing the <a href="https://www.redhat.com/en">Red Hat</a> name and logo.
+		I got excited to run into another Linux user, but it turns out the wearer didn&apos;t even know what they were wearing.
+		They&apos;d found the hat outside on the ground and thought it referred to as they put it,&quot;some women&apos;s thing.
+		I&apos;m guessing they were talking about the <a href="https://www.redhatsociety.com/">Red Hat Society</a>.
+		There&apos;s no mistaking that logo though.
+		It was definitely referring to the operating system.
+	</p>
+</section>
+<section id="Minetest">
+	<h2>Minetest log</h2>
+	<p>
+		I was trying to figure out how to provide post-count drop modifications in a <code>minequest</code>-related mod, when I realised that the inability to do it cleanly could be traced directly back to the underlying <code>minestats</code> counter.
+		Perhaps I should add a new callback?
+		Or extend the existing callback?
+		I could require registered callbacks using the <code>register_update_function()</code> function to return a drop table, which would replace the original drop table.
+		It&apos;d be overhead though, and most registered update functions won&apos;t need the capacity.
+		Still, this would be the cleanest way to achieve my current goal ...
+	</p>
+	<p>
+		After mulling it over a while though, I remembered that Lua tables are passed by reference.
+		An update callback can simply modify the drop table passed to it and the modification should take effect!
+		That means I introduced a bug last time I modified the code around that, which I think was yesterday.
+		I figured I&apos;d test when I got home to see if it behaved as expected, and if so, I&apos;d document it and relabel it as a feature.
+		If I was wrong and the bug hadn&apos;t been introduced, it&apos;d be because of the order in which things were processed; I&apos;d just rearrange the code a bit to introduce the capacity as a new feature.
+		Literally, not a single character would likely need to be added or removed, just moved.
+		The test showed the bug was in fact present though, so I started trying to make use of it.
+	</p>
+	<p>
+		As I looked at some code I needed to clean up to make use of this, before I could change a thing, I realised that this wouldn&apos;t work the way I&apos;d planned.
+		The particular issue I&apos;m dealing with is that I&apos;ve added an ability to sometimes automatically smelt the items you mine, but once the item&apos;s been smelted, it&apos;s not the countable drop any more.
+		Players are penalised for using that bonus, as their stats won&apos;t go up while it&apos;s in effect.
+		The update callback is only called when a counted drop is encountered though.
+		Non-counted drops should be auto-smelted as well.
+	</p>
+	<p>
+		I&apos;ve come up with a new plan though, one that makes use of the implementation details of <code>minestats</code>.
+		<code>minestats</code> holds off on overriding the drop handler to account for mods such as <code>creative</code> that override it without ever calling the original version.
+		<code>minequest</code>, or maybe one of the mods from the Minequest Modpack, can grab the original function, squirl it away for later use, and replace it with a dummy function for <code>minestats</code> to call.
+		After <code>minestats</code> has replaced the function, this other mod can grab the <code>minestats</code> version, then replace the function with a version that calls the <code>minestats</code> version first, then does what needs to be done, and finally calls the original version.
+		It all sounds convoluted, but it&apos;s not as bad as it seems.
+		I hope.
+		As I don&apos;t see a clear way this bug can actually be beneficial, I&apos;ve fixed it.
+		It is a bug after all, even though I only found it because I was trying to implement something similar in effect as a feature.
+	</p>
+</section>
+		<hr/>
+		<p>
+			Copyright © 2018 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2018%2F04-April%2F09.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.2</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2018%2F04-April%2F09.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+
