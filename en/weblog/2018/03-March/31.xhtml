@@ -10,7 +10,7 @@
  h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
                                                                                      
 	<https://y.st./>
-	Copyright © 2017 Alex Yst <mailto:copyright@y.st>
+	Copyright © 2018 Alex Yst <mailto:copyright@y.st>
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./en/weblog/2018/03-March/31.xhtml"/>
-		<title>Take-down notice 2017-11-01 &lt;https://y.st./en/weblog/2018/03-March/31.xhtml&gt;</title>
+		<title>minequest improves &lt;https://y.st./en/weblog/2018/03-March/31.xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
@@ -67,140 +67,120 @@
 			<hr/>
 </nav>
 		<header>
-			<h1>Take-down notice 2017-11-01</h1>
+			<h1><code>minequest</code> improves</h1>
 			<p>Day 01120: Saturday, 2018 March 31</p>
 		</header>
-<p>
-	A student was found plagiarising my work at the university.
-	Citing me as a source is one thing, but submitting my work and claiming it to be your own is cheating.
-	This is not something I appreciate or condone, and I had written to the school to try to get the issue resolved.
-	However, it seems that now <strong>*I&apos;m*</strong> the one in trouble.
-	The university has issued me this take-down request, which I have abided by:
-</p>
-<blockquote>
+<section id="Minetest">
+	<h2>Minetest log</h2>
 	<p>
-		Dear Alex,<br/>
-		It has been brought to our attention that you are sharing course materials, responses, and other components of your online studies at https://y.st/. Although your intentions may have been to simply archive your studies, it is a significant violation of our Academic Code of Integrity, which is cited below.
+		I apologise for being vague yesterday about the plan.
+		A coworker was supposed to contact me last night about a thing (personal, don&apos;t worry about it) that they wanted me to help with today, but they never did.
+		I needed to rush my journal entry to get some sleep, but it looks like that wasn&apos;t necessary.
+		They didn&apos;t even call it off, they just left me hanging.
 	</p>
 	<p>
-		All references to course content at UoPeople must be removed immediately from this and any other online site.
+		Anyway, the plan for <code>minequest</code> was to set up a two-step process for choosing your bonus abilities.
+		In the first step, you put a countable item into a slot; the copuntable item is then referred to as an &quot;element&quot;.
+		Next, you put something that has been crafted from that element (or another of the element itself) into a freshly-opened deck slot to get the bonus ability.
+		A mechanism for allowing items to specify that they&apos;re an alternate form of another item was to be implemented, and this was to be used in addition to crafting recipes to figure out the elemental composition of all defined items.
+		Items with an elemental composition but no defined bonus ability were to now be allowed in the deck slots, but instead of showing that item&apos;s non-existent ability icon, a question mark icon was to be displayed.
+		All of this has now been implemented.
+		The main thing that <strong>*hasn&apos;t*</strong> been implemented is the movement of items between the deck and elemental slots.
+		Items can be moved in from the player&apos;s main inventory or back out to the inventory, but they can&apos;t be directly transferred between slots used by this mod.
+		The problem is that the movement rules are complex and I keep having to gut the code.
+		I&apos;m going to be <strong>*so*</strong> frustrated if I encode the rules in a form the game can understand and I end up having to gut the code again and scrap the rule-encoding.
+		So I&apos;m just disallowing all movement between slots for now.
+		All legal moves can still be achieved using only one extra step, and when I&apos;ve had time to stabilise the code better, I&apos;ll write up the rules properly.
 	</p>
 	<p>
-		Please confirm that you have removed all materials and posts from these sites within 7 days from the date of this email. We would like to resolve this as quickly as possible but please note that this is a serious matter which requires your immediate attention and cannot occur again without additional consequences,  which may include retroactive failure of coursework and possibly expulsion.
+		Okay.
+		So.
+		As I kind of touched upon that as a possibility yesterday, this plan of action just removed my option to have bonus abilities that aren&apos;t tied to a particular stat.
+		This removes some of the items I need to define abilities for, but also removes some ability ideas I&apos;d come up with, as they&apos;re more binary in nature.
+		You either have them or you don&apos;t; there&apos;s no concept of &quot;levelling&quot; them.
+		For example, I wanted an item to provide access to a sort of shared inventory between all players that used that item in their decks.
+		That is no longer a possibility.
+		Some easy bonuses aren&apos;t available now either, such as the portable furnace when using a furnace in your deck.
 	</p>
 	<p>
-		Code of Academic Integrity
+		Of particular frustration to me are a couple of my own mods that define items.
+		<code>renew</code> defines the grinder and compost.
+		What kind of bonus do I provide for <strong>*compost*</strong>?
+		The grinder&apos;s ability should obviously be a portable form of what it does when placed into the world.
+		How do I provide level-up benefits for <strong>*that*</strong>!?
+		Most frustrating is my <code>blockprotectnodes</code> mod.
+		The nodes deal with anti-vandalism, so obviously the bonus should in some way.
+		However, anti-vandalism is a serious matter and should not in any way have any of its features be dependant on level-up mechanisms; all players should have equal opportunity to have their stuff protected once they craft the nodes.
+		These two ideals are at <strong>*direct odds*</strong> with each other.
+		How can I possibly satisfy both?!?
+		So anyway, supporting my mod within my own mods is going to be a challenge, as I don&apos;t tend to take node definition lightly; I don&apos;t define nodes without good reason, so the node I <strong>*do*</strong> define tend to either important or have strange qualities.
+		I&apos;m not yet at the stage where I need to deal with supporting these nodes yet, as I don&apos;t even have my proof-of-concept built, but by the time this thing releases as stable, I&apos;ll need to have solved this problem.
 	</p>
 	<p>
-		University of the People fosters a spirit of honesty and integrity fundamental to a university community. As an academic community whose fundamental purpose is learning and the pursuit of knowledge, every individual at UoPeople is responsible for following accepted standards of academic integrity and for sharing a commitment to upholding these values in all academic pursuits.
+		I&apos;ve also revisited my decisions in how to renew materials using <code>renew</code>, with an emphasis this time on what items it allows me to add support for in <code>minequest</code>-related mods.
+		Before, I was trying to turn clay into something countable for <code>minequest</code>.
+		I don&apos;t recall the exact reason why it was going to help.
+		This time though, I&apos;m just looking at what items can even be placed into the ability deck at all after I&apos;ve added renewability.
+		Clay, for example, can be used with iron or any sapling, so I&apos;m leaving it as I had it before.
+		I didn&apos;t do an in-depth search, but in particular, I noticed that sand (all varieties), desert stone, and water lilies were given renewability, but not an element.
+		I don&apos;t see a way to associate water lilies with an element.
+		It&apos;s just not going to happen.
+		Desert stone would be a challenge.
+		I&apos;m not sure I could find a clean way, but in the future, maybe I will.
+		As for sand ... I&apos;ve tried numerous times to come up with something, and I&apos;ve had all sorts of crazy ideas, but I didn&apos;t have anything solid until today.
+		Now I don&apos;t need to have the grinder in <code>renew</code>.
+		It was there because it needed to be, but it doesn&apos;t really fit in.
 	</p>
 	<p>
-		University of the People students are expected to work diligently to ensure that all assignments, exams or other coursework submitted represents the student&apos;s original work and follows acceptable academic practices. Students are encouraged to work together, as group efforts and study groups are a wonderful tool to facilitate learning and foster a deeper understanding of material in a course.
+		I had a lot of time to think today while away from my computer, unable to work on actually implementing anything.
+		I came up with three distinct plans for changing sand into a countable item, each more refined than the last.
+		In my final draft for the day, lava is no longer able to harden into desert stone; it always cools into stone or a mineral.
+		Cobble already drops gravel in <code>renew</code>, but in this new version, it&apos;ll additionally drop silver sand whenever it does.
+		I guess the sand accounts for the missing stone to allow for air between the rocks in the gravel.
+		Four silver sand can be crafted with one iron lump to give all four that reddish desert sand colour.
+		If eight sand are crafted with the iron lump, eight mid-tone sand are gotten instead.
+		Silver sand and desert sand can likewise be crafted together to get the mid-tone sand.
+		Finally, desert sandstone can be smelted into desert stone, and for consistency, silver sandstone can be cooked into grey stone.
+		The main benefit of all this, of course, is the removal of that grinder.
+		It doesn&apos;t belong in that simple renewal mod.
+		However, this also pulls everything made of sand and stone of any type into the list of items I can support in <code>minequest</code>.
+		I do have two complaints still though.
+		This necessarily ties the silver sand stat to the gravel stat.
+		The twinned stats are redundant, strictly speaking.
+		Also, again because of the twinning, this makes the automated background chooser will chose the same node to use as a background for both drops.
+		The issue of the redundant stat is something I can live with.
+		As for the duplicated background, all I have to do is override the autochooser&apos;s choice, which I&apos;m already doing for cotton, wheat, cotton seed, and wheat seed.
 	</p>
 	<p>
-		However, students must submit their own individual work at all times unless instructed to participate in group work as part of a course requirement. In the rare instance of a very advanced class that is cumulative in nature, there may be occasions when the Course Instructor may assign work that requires students to submit pieces of their own work that had been previously submitted in this or another UoPeople course; unless specifically so advised by one&apos;s Course Instructor, students should assume that the practice is prohibited.
+		I think the only thing left that I&apos;ve given renewability to without making tied to at least one element is the water lilies I mentioned.
+		As said before, I&apos;m firmly of the opinion that those can&apos;t be tied to an element in a non-hacky way, so I&apos;m done.
+		This could be the final version of <code>renew</code> until a new stable version of Minetest Game brings more items to add renewability to.
 	</p>
 	<p>
-		Sources must be documented through acceptable scholarly references and citations, and the extent to which the sources have been used must be apparent to the reader. Even indirect quotations, paraphrasing, etc., can be considered plagiarism unless sources are properly cited. Plagiarism will not be tolerated at any time; students are required to learn and be personally responsible for educating themselves about plagiarism and the appropriate forms of citation and referencing sources. Students who need assistance and/or have questions concerning use of outside resources or collaboration on assignments should contact their Course Instructors and/or the Office of Academic Affairs at academic.affairs@uopeople.edu&lt;mailto:academic.affairs@uopeople.edu&gt;.
+		I still need to write up the code for all this though.
+		It&apos;s late and I&apos;ve got to get up in the morning.
+		This&apos;ll have to wait for another day.
 	</p>
+</section>
+<section id="work">
+	<h2>Work</h2>
 	<p>
-		Under no circumstances are students allowed to publicly share (for example on blogs, websites, social media, databases) their work completed at or for University of the People until two calendar years from the end of the student’s final term of study.
+		The boss was needlessly being a jerk again today.
+		I really do need to get out of there.
+		The funny thing is that nearly everyone that&apos;s been there thinks the head manager is a jerk, but most of the time, I&apos;m oblivious to it myself.
+		He just usually can&apos;t get under my skin so easily.
+		A number of factors are likely making me more receptive to it than usual though; some good, some bad.
+		And as far as I can predict, none of the likely factors are going away any time soon.
+		I need somewhere I can be happier.
+		I guess ... I&apos;d rather have the Minequest Modpack done than have a new job.
+		I&apos;ve wanted <code>minequest</code> for ages, and the fact that it&apos;s been broken into several mods doesn&apos;t change that.
+		I&apos;ll probably get to job-hunting if there&apos;s time after I have the stuff I know to do in the code done.
+		I&apos;ll hit creative block at some point, and that&apos;s when I&apos;ll job hunt if school isn&apos;t taking too much of my energy.
 	</p>
-	<p>
-		All student work and scholarship must be free of fraud and deception including:
-	</p>
-	<p>
-		&#160;&#160;*&#160;&#160;&#160;Plagiarism—the unintentional or intentional representation of the words or ideas of another as one’s own work in any academic exercise. This includes failing to properly identify direct quotations with both a proper citation and with quotation marks, submitting a paper that was the result of someone else’s efforts but is represented as one’s own work, paraphrasing bodies of work without proper citation, and copying so many words or ideas from a source that it makes up majority significant portion of one’s own work even while attempting to paraphrase and change the text. Plagiarism also includes giving incorrect information about the source of a quotation and submitting academic work multiple times without informing the Course Instructor and receiving approval.
-	</p>
-	<p>
-		When Course Instructors or University personnel suspect plagiarism, both special programs and the Internet will be used to identify the sources of intellectual property suspected of being used or cited inappropriately.
-	</p>
-	<p>
-		&#160;&#160;*&#160;&#160;&#160;Fabrication—falsifying documents, changing or inventing data, citing sources not consulted, and misrepresenting citations.
-	</p>
-	<p>
-		&#160;&#160;*&#160;&#160;&#160;Unauthorized Assistance—completion of an academic exercise or exam by someone other than the student, using or receiving copies of the work of someone who had previously taken the UoPeople course, or collaborating without acknowledging the collaboration. While collaboration is a key element to a positive University of the People learning experience, it is critical that students acknowledge any collaboration and its extent in all submitted course work.
-	</p>
-	<p>
-		&#160;&#160;*&#160;&#160;&#160;Misrepresentation—lying or misrepresenting a student’s personal situation to a University member in an attempt to receive special circumstances, permissions, quiz and/or exam resets, or extensions.
-	</p>
-	<p>
-		&#160;&#160;*&#160;&#160;&#160;Collusion—assisting another student in committing an act of academic dishonesty, including providing information about or copies of one’s own work from a course that had been previously taken at UoPeople.
-	</p>
-	<p>
-		All members of the academic community, including instructional personnel, students, and University administrators are expected to assist in maintaining the highest level of integrity and to report all incidents that violate academic honesty. Students encountering suspected cases of cheating should discreetly report the violator to their Course Instructor. Specifically, if academic misconduct is suspected in a Discussion Forum posting or any other work product, students should contact their Course Instructor and should not assign the student a grade as part of the peer assessment process.
-	</p>
-	<p>
-		Disciplinary Process
-	</p>
-	<p>
-		All violations are reported by the Office of Academic Affairs to the Office of Student Services. Breaches of the Code of Academic Integrity and the General Code of Conduct are grounds for disciplinary action and are permanently noted in a student’s academic record. All violations are cumulative and may accumulate throughout a student’s studies at University of the People, regardless of which course the violations take place in. All Code of Conduct violations will be defined as severe violations (see below), unless the Office of Academic Affairs decides otherwise. Therefore, the process for a student’s first three violations as described below will typically apply only to Code of Academic Integrity violations.
-	</p>
-	<p>
-		Violations are normally subject to the following sanctions by the University:
-	</p>
-	<p>
-		First violation: Warning is issued by the course instructor, the student is issued a zero by the Office of Academic Affairs on the assignment, and a permanent note is added to the student’s record.
-	</p>
-	<p>
-		Second violation: Student is issued a zero on the assignment or exam in question. The student may also receive a failing grade in the course as determined by the Office of Academic Affairs.
-	</p>
-	<p>
-		Third violation: Student is issued a failing grade in the course.
-	</p>
-	<p>
-		Fourth violation and up will be treated as severe violations (see below).
-	</p>
-	<p>
-		Sanctions, however, may vary based on past disciplinary records, and the University retains the absolute discretion to determine the appropriate sanction to be imposed for any infraction, depending on the severity of the violation. Sanctions may also be cumulative; no sanction must necessarily be exhausted before another sanction is imposed.
-	</p>
-	<p>
-		In cases where an act of academic misconduct remains undiscovered until after credits have been issued or a degree is awarded, University of the People reserves the right to revoke any credits or degree based on new revelations about academic issues including, but not restricted to, admission credentials, coursework, research, theses, or other final projects.
-	</p>
-	<p>
-		Once a student has accumulated more than three violations, or when a violation was defined as severe at the discretion of the Office of Academic Affairs, the following violations will all constitute severe violations.
-	</p>
-	<p>
-		In cases where a student is determined to have committed a severe violation:
-	</p>
-	<p>
-		The Office of Academic Affairs may decide to suspend the student’s access to University services such as Moodle and Yammer, even if such suspension affects the student’s ability to complete his or her courses.
-	</p>
-	<p>
-		The student will be contacted by a University official to advise the student of his or her alleged violation and to describe the investigation and disciplinary process, including the possible sanctions that may be imposed. The student will be given seven calendar days within which to submit a written response to the Office of Student Services at student.services@uopeople.edu&lt;mailto:student.services@uopeople.edu&gt;.
-	</p>
-	<p>
-		If a student does not respond to the allegations found against them the student forfeits the right to a decision by the Student Affairs Committee and may receive a failing grade in the course and be subject to dismissal from the University, depending on the severity of the violation as recommended by the Office of Academic Affairs.
-	</p>
-	<p>
-		However, if a response is submitted, his or her case is referred to the Student Affairs Committee. Following receipt of the student’s written response, the Student Affairs Committee will conclude whether the student violated the General Code of Conduct or Code of Academic Integrity and, if so, will determine what disciplinary sanctions will be imposed on the student in respect to such violation.
-	</p>
-	<p>
-		Such sanctions may include censure and a warning to avoid future violations, immediate removal of the student from his or her course(s) that term, suspension from the University, or permanent dismissal from the University. The Office of Student Services will communicate with the student regarding the investigation and determinations of the Student Affairs Committee.
-	</p>
-	<p>
-		Sincerely,
-	</p>
-	<p>
-		Office of Academic Affairs<br/>
-		University of the People<br/>
-		academic.affairs@uopeople.edu&lt;mailto:academic.affairs@uopeople.edu&gt;
-	</p>
-</blockquote>
-<p>
-	Instead of telling me what part of the code of conduct they were accusing me of violating, they just spewed the full code of conduct at me, but I found what they were talking about.
-	Specifically, public posting of coursework submissions is prohibited until after two calendar years have passed since departing from the school.
-	Also as you can see, they jumped right to the threats instead of first trying to be reasonable, point out the issue, and nicely ask me to take down the content they didn&apos;t like.
-	Clearly, they&apos;re a great, student-friendly school, right?
-	In compliance with this take-down request, all material that I&apos;ve submitted to the school has been removed from this website.
-	In the case of the <code>/en/coursework/</code> directory, every page has been removed.
-	In the case of the <code>/en/weblog/</code> directory, only pages that contain material submitted to the school for grading have been removed.
-	These would be pages containing submissions for discussion assignments; no other material submitted to the school for grading is present in the <code>/en/weblog/</code> directory.
-	If you have an interest in the missing journal pages, you&apos;ll need to wait until this take-down request has expired, which if all goes well, will be 2023-01-01 (just past two calendar years from when I graduate).
-</p>
+</section>
 		<hr/>
 		<p>
-			Copyright © 2017 Alex Yst;
+			Copyright © 2018 Alex Yst;
 			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
 			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
 			My address is in the source comments near the top of this document.
