@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./[TEMP]/[TEMP].xhtml"/>
-		<title>Connection-oriented and connectionless transmissions &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
+		<title>Transmission issues, encoding, and checksums &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
@@ -39,76 +39,55 @@
 <nav>
 </nav>
 		<header>
-			<h1>Connection-oriented and connectionless transmissions</h1>
-			<p>Written in <span title="Communications and Networking">CS 2204</span> by <a href="https://y.st./">Alex Yst</a>, finalised on 2018-04-18</p>
+			<h1>Transmission issues, encoding, and checksums</h1>
+			<p>Written in <span title="Communications and Networking">CS 2204</span> by <a href="https://y.st./">Alex Yst</a>, finalised on 2018-05-02</p>
 		</header>
-<section id="Unit1">
-	<h2>Unit 1</h2>
+<section id="Unit3">
+	<h2>Unit 3</h2>
 	<p>
-		Hello!
-		My name is Alexand(er|ra) Yst.
-		(The wye in &quot;Yst&quot; is pronounced as a vowel as it would be in the words &quot;cr<strong>yst</strong>al&quot; or &quot;catal<strong>yst</strong>&quot;, though my name often gets mispronounced by others as &quot;Yyst&quot;, with the wye acting as both a consonant and a vowel.)
-		I&apos;m a vegan, though I don&apos;t typically bring it up except when it&apos;s relevant, such as this introduction in a course on environmental science.
-		I&apos;m vegan purely for sustainability reasons, not because I think that a human eating a cow is magically any less ethical than a fox eating a hare; we all do what we need to to survive.
-		I&apos;m a computer science student and a Debian user.
-		As of the time of writing this, I&apos;m currently completing my coursework on a Debian 9 laptop known as <a href="https://y.st./en/domains/bailey.local.xhtml"><code>bailey</code></a>.
-		I keep a daily journal on <a href="https://y.st./">my website</a>, though at present, the link to it&apos;s a bit hidden; not that it matters much, due to the current censorship imposed on me and the site resulting in most of my journal pages being redacted until 2023.
-		When I&apos;m not doing coursework, I&apos;m often programming mods for a game I enjoy called <a href="https://www.minetest.net/">Minetest</a>.
-		It&apos;s an open-ended sandbox building game that, as of the last major revision, gets the entirety of its content through mods, allowing for a variety of gameplay styles.
-		Even the default content is just added via bundled mods and can be removed by any player looking for something different.
-		I&apos;ve hit a bit of a creative block at the moment though, due to the enormous size of my current project; I&apos;ve had to discontinue this project four times in the past because it&apos;s been too much for me, but this time I hope my new strategy will let me incrementally reach the goal.
-		I&apos;m nonbinary in gender, making me a queer; hence why I&apos;m Alex or Alexand(er|ra), and not Alexander or Alexandra.
-		I enjoy music, with my current favourite artists being <a href="https://professorshyguy.bandcamp.com/">Professor Shyguy</a> and <a href="https://www.lorenzosmusic.com/">Lorenzo&apos;s Music</a>.
-		I&apos;ll give anything a listen though as long as it&apos;s covered by a <abbr title="Creative Commons Attribution">CC BY</abbr> or <abbr title="Creative Commons Attribution-ShareAlike">CC BY-SA</abbr> license.
-		I like to draw pixel art sometimes, though I&apos;m not particularly good at it.
-		While I tend to be a very happy person, I always seem to have an <strong>*extremely morbid*</strong> view of things.
-		For example, while it&apos;s true that one reason I&apos;ll never have children is because there&apos;s already such an overpopulation problem as it is without my adding to it, that&apos;s only one of a multitude of reasons.
-		Another is that everyone dies.
-		By creating a life, I&apos;d be sentencing that life to one day die, and once dead, everything they are is just gone forever.
-		So what&apos;s the point in even coming to life?
-		How could I do that to someone I&apos;m supposed to grow to <strong>*love*</strong>?
-		That&apos;s not a burden I care to take on; the most loving thing I could do for my children is to not create them.
-		(And yes, while I very much don&apos;t want my life to end, I find it extremely selfish of my parents for having created me in the first place, especially given their genetic issues that now I&apos;ve got to deal with.
-		Again, I won&apos;t make the same mistake.
-		I won&apos;t pass on my genetic flaws.)
+		The original setup of the telephone network isn&apos;t at all what I expected.
+		Each telephone needing a direct line to each other telephone a person wanted to call ... wires draped over buildings by private citizens ...
+		I&apos;ve known the modern telephone system is a mess for over a decade, but I didn&apos;t realise just how much worse it was in the past.
+		What if you wanted to be in touch with someone across town?
+		You&apos;d need to get permission from everyone in between to drape your wire over their property, and I&apos;m not even sure what you&apos;d do to get your wire across streets.
+		Maybe with less regulation in those days (with telephones being so new, I imagine regulations on them hadn&apos;t been established as much yet), makeshift telephone poles owned by private citizens propped wires up enough to let cars pass beneath.
 	</p>
 	<p>
-		Why did I take this course?
-		The short answer is that we&apos;re required to take <span title="Biology 1 for Health Studies Majors">BIOL 1121</span>, <span title="Introduction to Biology">BIOL 1301</span>, or <span title="Introduction to Environmental Science">ENVS 1301</span>.
-		I had to pick one.
-		To be honest, these questions of why we chose to take a given course make no sense in required courses, though I&apos;ve seen the question in several courses and so far have taken nothing but that which has been required of me.
-		I&apos;ll complete my chosen courses, the electives, dead last.
-		It was actually a tough decision though for this course, as I think I&apos;d be quite interested to take one of the biology courses and learn a bit more about how I myself function.
-		However, in the end, I had to choose the course on environmental science, this course, as understanding how to better care for our planet is much more important than fulfilling some idle curiosity about how I personally operate.
-		Compared to the planet, I&apos;m not really going to last very long, am I?
-		(And there I go with the morbidity again.)
-		Hopefully, I&apos;ll learn something helpful in reducing my personal negative impact on the planet, or even something to help have a positive impact.
-		If I learn something of that nature, and I think I likely will, I won&apos;t regret having chosen this course over a biology one.
+		The book mentions that people want to check their email and surf the Web on the go, and explains that thus, there&apos;s a growing interest in wireless telephony.
+		Telephony though, by definition, does only voice.
+		You can&apos;t check your email or surf the Web using telephony.
+		In reality, this explains a growing interest in wireless networking, but not a growing interest in wireless telephony.
+		There&apos;s a <strong>*huge*</strong> difference.
+		It was also interesting to see that the United States, who frequently does things the wrong way, started out doing wireless telephony in a sane way.
+		To be specific, we set up a single standard for 1G mobile communication.
+		But then, we had to go and allow nonstandardisation in later generations.
+		It just goes to show that even on the rare occasion we don&apos;t get things wrong the first time, we try again and make sure to mess things up.
+		We&apos;re such a terrible country.
+		The fact that most United States citizens settle for noxious postpaid service is pretty stupid too.
+		Elsewhere in the world, people don&apos;t take that, and go with better, prepaid options.
+		At least the United States <strong>*has*</strong> prepaid options.
+		If we didn&apos;t, I&apos;d&apos;ve never even started using a mobile device.
+		It was interesting too to learn the meaning of the term &quot;cellular device&quot;.
+		The term always seemed strange to me, as I wasn&apos;t sure how mobile devices related to cells.
+		I&apos;d previously thought that perhaps it had to do with the structure of the batteries or something.
+		Most of the important stuff on technical aspects of mobile device networks aside from directional antennas and <abbr title="Global System for Mobile Communications">GSM</abbr> multiframes were just review for me though.
+		I learned most of it when I was trying to figure out how to get an inherently-<abbr title="Global System for Mobile Communications">GSM</abbr> model of device onto a <abbr title="code division multiple access">CDMA</abbr> network.
+		Long story short, you can&apos;t do it.
+		Back then though, I wasn&apos;t even aware of the competing standards yet.
 	</p>
 	<p>
-		In my area, we have too much formaldehyde in our air, which is toxic.
-		I don&apos;t know of any major efforts to fix this, but we do have a &quot;smoke-free Oregon&quot; campaign going on here.
-		The formaldehyde likely comes from people smoking cigarettes, so if successful, this should reduce the amount of formaldehyde in the air.
-		The people in my area also don&apos;t handle waste properly.
-		I don&apos;t know of anything going on to fix this, and in fact, it&apos;s getting worse.
-		Our recycling centres aren&apos;t taking as many recyclables as they used to, resulting in more types of plastics being simply sent to landfills.
-		My understanding is that we used to sell our recyclables to China, who is no longer taking them, and we don&apos;t have the local facilities we need to do it ourselves.
-		Our rivers are also polluted, and I know of no efforts being made to correct this.
-	</p>
-	<p>
-		Choosing a small project to implement is difficult.
-		We need proper recycling facilities in the area, but that definitely constitutes a large project.
-		I suppose the best small project for my area would be one of education.
-		If we can get the locals to understand (and care about) the environmental issues in the area, we can more easily work toward change.
-	</p>
-	<p>
-		Most of this week&apos;s reading material was review for me.
-		However, one thing I did learn about is buffers.
-		Sadly, these weren&apos;t covered in-depth, so I&apos;m probably going to look into them further on my own when I have time.
-		They balance <abbr title="potential of hydrogen">pH</abbr> by combining with excess H+ or OH-, but it looks like each buffer is only able to combine with one or the other.
-		So how does it differ from an acid or a base (alkaline)?
-		Why does it not throw off the balance by combining with too much of the H+ or OH- like an acid or base would?
-		These are things I want to look into later.
+		Hidden nodes and collisions that only affect receivers within range of both transmitters was a new concept to me.
+		It makes perfect sense, but isn&apos;t something I&apos;d thought about before.
+		Multipath interference is something I hadn&apos;t thought about either.
+		The book mentions the need for Wi-Fi transmissions to be encrypted, but there&apos;s a fatal flaw in the encryption system used in modern Wi-Fi.
+		Namely, there&apos;s no way to encrypt transmissions without preventing outsiders from using the access point.
+		Open Wi-Fi is a valuable resource.
+		There should be a way for the Wi-Fi central node to use a different, dynamic encryption key for each user for security, without blocking users that don&apos;t have an initial password.
+		Until this problem is solved, my Wi-Fi network will <strong>*always*</strong> remain unencrypted.
+		That said though, I&apos;m a <abbr title="The Onion Router">Tor</abbr> user.
+		That means all my traffic is behind three (four when using <abbr title="Transport Layer Security">TLS</abbr>) layers of encryption anyway.
+		Wi-Fi level encryption would be a fourth (or fifth) encryption layer, which one could argue is unneeded.
+		Perhaps some sort of open Wi-Fi access point with encrypted connections could be set up using the Extensible Authentication Protocol; this would be a hacky workaround for a missing feature though, and not an actual solution.
 	</p>
 </section>
 		<hr/>
