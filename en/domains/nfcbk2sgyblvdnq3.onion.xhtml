@@ -56,14 +56,35 @@
 			<p>Ricochet&apos; onion address</p>
 		</header>
 <ul>
-<li>Record created on <a href="/en/weblog/2015/11-November/12.xhtml">Day 00250: Thursday, 2015 November 12</a></li>
-<li>Record removed on <a href="/en/weblog/2015/11-November/12.xhtml">Day 00250: Thursday, 2015 November 12</a></li>
-<li>Record recreated on <a href="/en/weblog/2016/03-March/04.xhtml">Day 00363: Friday, 2016 March 04</a></li>
-<li>Record removed on <a href="/en/weblog/2016/03-March/04.xhtml">Day 00363: Friday, 2016 March 04</a></li>
+	<li>
+		Record created on <a href="/en/weblog/2015/11-November/12.xhtml">Day 00250: Thursday, 2015 November 12</a>
+	</li>
+	<li>
+		Record removed on <a href="/en/weblog/2015/11-November/12.xhtml">Day 00250: Thursday, 2015 November 12</a>
+	</li>
+	<li>
+		Record recreated on <a href="/en/weblog/2016/03-March/04.xhtml">Day 00363: Friday, 2016 March 04</a>
+	</li>
+	<li>
+		Record removed on <a href="/en/weblog/2016/03-March/04.xhtml">Day 00363: Friday, 2016 March 04</a>
+	</li>
 </ul>
-<p>Ricochet refused to operate without an Internet connection, so I tried to disable its ability to reach <abbr title="The Onion Router">Tor</abbr>, then turned my Wi-Fi card back on. Long story short, Ricochet did not operate the way I thought that it did, so this onion address slipped through and was registered to the <abbr title="The Onion Router">Tor</abbr> network. I can now set Ricochet to use an alternative onion key of my choosing, allowing the preservation of one&apos;s chat handle past a system re-installation or the use of an onion key of one&apos;s choosing, but I am no closer to finding a way to have Ricochet share a hidden service (and therefor an share an onion address) with other network services. While Ricochet may have a protocol prefix making it linkable to from Web and other documents (or it might not, I am still unclear on this), it seems that it does not like to share and currently requires a dedicated hidden service for itself.</p>
-<p>I now know that the standalone version of Ricochet downloaded from the main website generates a hidden service directory at &quot;{Ricochet directory}/config/data-0/&quot;.</p>
-<p><strong>*UPDATE*:</strong> I&apos;ve done a bit more testing and research and have come to new conclusions. I couldn&apos;t find the <abbr title="The Onion Router">Tor</abbr> configuration file before because the <abbr title="The Onion Router">Tor</abbr> configuration for the Ricochet onion address is actually hard-coded into the Ricochet executable. I&apos;ve found some of the relevant lines in the source code, though I don&apos;t know how to modify the source code to allow Ricochet to use the system <abbr title="The Onion Router">Tor</abbr> daemon, so I cannot get it to use the system onion address. Furthermore, it seems that getting Ricochet to share its onion address with other services (allowing Ricochet to keep control of starting and starting the onion) requires source code modifications and I don&apos;t know how to modify it. Changing the permissions on the hidden service directory prevents Ricochet from activating the onion address, but also cuts it off from the Ricochet network with seemingly no way to connect it.</p>
+<p>
+	Ricochet refused to operate without an Internet connection, so I tried to disable its ability to reach <abbr title="The Onion Router">Tor</abbr>, then turned my Wi-Fi card back on.
+	Long story short, Ricochet did not operate the way I thought that it did, so this onion address slipped through and was registered to the <abbr title="The Onion Router">Tor</abbr> network.
+	I can now set Ricochet to use an alternative onion key of my choosing, allowing the preservation of one&apos;s chat handle past a system re-installation or the use of an onion key of one&apos;s choosing, but I am no closer to finding a way to have Ricochet share a hidden service (and therefore an share an onion address) with other network services.
+	While Ricochet may have a protocol prefix making it linkable to from Web and other documents (or it might not, I am still unclear on this), it seems that it does not like to share and currently requires a dedicated hidden service for itself.
+</p>
+<p>
+	I now know that the standalone version of Ricochet downloaded from the main website generates a hidden service directory at &quot;{Ricochet directory}/config/data-0/&quot;.
+</p>
+<p>
+	<strong>*UPDATE*:</strong> I&apos;ve done a bit more testing and research and have come to new conclusions.
+	I couldn&apos;t find the <abbr title="The Onion Router">Tor</abbr> configuration file before because the <abbr title="The Onion Router">Tor</abbr> configuration for the Ricochet onion address is actually hard-coded into the Ricochet executable.
+	I&apos;ve found some of the relevant lines in the source code, though I don&apos;t know how to modify the source code to allow Ricochet to use the system <abbr title="The Onion Router">Tor</abbr> daemon, so I cannot get it to use the system onion address.
+	Furthermore, it seems that getting Ricochet to share its onion address with other services (allowing Ricochet to keep control of starting and starting the onion) requires source code modifications and I don&apos;t know how to modify it.
+	Changing the permissions on the hidden service directory prevents Ricochet from activating the onion address, but also cuts it off from the Ricochet network with seemingly no way to connect it.
+</p>
 		<hr/>
 		<p>
 			Copyright © 2015-2016 Alex Yst;
