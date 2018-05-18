@@ -345,6 +345,10 @@ section:target {
 	background-color: rgba(0, 255, 255, 0.15);
 }
 
+img {
+	image-rendering: pixelated;
+}
+
 /* This *MUST* be one of the last styles listed in this style sheet. */
 header * {
 	margin: 0rem;
