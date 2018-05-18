@@ -161,6 +161,14 @@ img.weblog-header-image, img.framed-centred-image {
 	background-color: #000;
 }
 
+img.centred-image {
+	max-width: calc(100% - 2rem - 2px);
+	display: block;
+	margin: auto;
+	padding: 1rem;
+	background-color: #000;
+}
+
 div.APA_references p {
 	margin-left: 5rem;
 	text-indent: -4rem;

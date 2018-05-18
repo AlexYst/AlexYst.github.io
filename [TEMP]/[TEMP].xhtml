@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./[TEMP]/[TEMP].xhtml"/>
-		<title>Addressing and packet lengths &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
+		<title>Routing &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
@@ -39,125 +39,447 @@
 <nav>
 </nav>
 		<header>
-			<h1>Addressing and packet lengths</h1>
-			<p>Written in <span title="Communications and Networking">CS 2204</span> by <a href="https://y.st./">Alex Yst</a>, finalised on 2018-05-09</p>
+			<h1>Routing</h1>
+			<p>Written in <span title="Communications and Networking">CS 2204</span> by <a href="https://y.st./">Alex Yst</a>, finalised on 2018-05-16</p>
 		</header>
-<h2>Subnets</h2>
-<h3><code>10.0.130.0/23</code>: <code>10.0.130.23</code>, <code>10.0.129.1</code>, <code>10.0.131.12</code>, <code>10.0.132.7</code></h3>
+<h2><abbr title="Classless Internet Domain Routing">CIDR</abbr>: Classless Internet Domain Routing</h2>
 <p>
-	The first thing we need to do to determine which of the given <abbr title="Internet Protocol">IP</abbr> addresses are a part of the given subnet is to figure out how much of the given subnet <abbr title="Internet Protocol">IP</abbr> is the prefix.
-	The number after the slash is the number of bits that identify the subnet, with the remaining bits identifying the host (Dordal, 2014).
-	Each of the four numbers in an <abbr title="Internet Protocol version Four">IPv4</abbr> address represent eight bits, so using the <code>/23</code> subnet mask, the separation point is in the third number, with seven bits being part of the network portion of the address and one bit being part of the host portion of the address.
-	<code>130</code> in binary is <code>0b10000010</code>, so the third number of any <abbr title="Internet Protocol version Four">IPv4</abbr> address within the subnet will have it&apos;s first seven bits be <code>0b1000001</code>.
-	The final bit can be flipped, so the number needs to be <code>130</code> or <code>131</code>.
-	All <abbr title="Internet Protocol version Four">IPv4</abbr> addresses in the form &quot;10.0.x.*&quot; where x is <code>130</code> or <code>131</code> are a part of the subnet and all other addresses are not.
-	<strong>That means that <code>10.0.130.23</code> and <code>10.0.131.12</code> are within the <code>10.0.130.0/23</code> subnet, but <code>10.0.129.1</code> and <code>10.0.132.7</code> are not.</strong>
+	We are given the following <abbr title="Classless Internet Domain Routing">CIDR</abbr> table and asked how packets meant for several <abbr title="Internet Protocol">IP</abbr> addresses would be routed:
 </p>
-<h3><code>10.0.132.0/22</code>: <code>10.0.130.23</code>, <code>10.0.135.1</code>, <code>10.0.134.12</code>, <code>10.0.136.7</code></h3>
+<table>
+	<thead>
+		<tr>
+			<td>
+				Address/Mask
+			</td>
+			<td>
+				Next Hop
+			</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<code>135.46.56.0/22</code>
+			</td>
+			<td>
+				Interface 0
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>135.46.60.0/22</code>
+			</td>
+			<td>
+				Interface 1
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<code>192.53.40.0/23</code>
+			</td>
+			<td>
+				Router 1
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Default
+			</td>
+			<td>
+				Router 2
+			</td>
+		</tr>
+	</tbody>
+</table>
 <p>
-	We can apply the same process as last time.
-	This time, one less bit is a part of the subnet portion of the address.
-	<code>132</code> in binary is <code>0b10000100</code>.
-	With two flippable bits instead of one, we add three to the range instead of one.
-	Addresses within this subnet are in the form &quot;10.0.x.*&quot; where x is an integer from <code>132</code> (<code>0b10000100</code>) to <code>135</code> (<code>0b10000111</code>).
-	<strong><code>10.0.135.1</code> and <code>10.0.134.12</code> are a part of the <code>10.0.132.0/22</code> subnet, but <code>10.0.130.23</code> and <code>10.0.136.7</code> are not.</strong>
+	Before we get started with specific destinations, it&apos;s worth taking a moment to look at what this table tells us and translating it into something we can use to determine the appropriate interface to transmit on or router to send to at a glance.
+	The dividing line for <code>/22</code> is six bits into the third octet.
+	<code>56</code> in binary is <code>0b00111000</code>.
+	Taking the first six bits of that and allowing variance for the remaining two bits, we have a range of <code>0b00111000</code> to <code>0b00111011</code>, or <code>56</code> to <code>59</code>.
+	From this, we see that <code>135.46.56.0/22</code> represents the <abbr title="Internet Protocol">IP</abbr> addresses from <code>135.46.56.0</code> to <code>135.46.59.255</code>.
+	<code>60</code> is <code>0b00111100</code> in binary.
+	Again, the second address uses the same <code>/22</code> subnet size, so the last two bits may differ.
+	Once more, that means the third octet may be up to three higher.
+	<code>135.46.60.0/22</code> represents a range of <code>135.46.60.0</code> to <code>135.46.63.255</code>.
+	Our last subnet has a network prefix of size <code>/23</code>, which leads seven bits into the third octet.
+	Only the final bit of that octet is allowed to change without leaving the subnet.
+	<code>40</code> in binary is <code>0b0010100</code>.
+	Allowing that final bit to flip lets us use <code>41</code> as our third octet as well as <code>40</code>, so <code>192.53.40.0/23</code> represents the addresses from <code>192.53.40.0</code> to <code>192.53.41.255</code>.
 </p>
-<h3><code>10.0.64.0/18</code>: <code>10.0.65.13</code>, <code>10.0.32.4</code>, <code>10.0.127.3</code>, <code>10.0.128.4</code></h3>
 <p>
-	This time, the network portion is eighteen bits long, which extends two bits into the third number.
-	<code>64</code> in binary is <code>0b01000000</code>, so any third number in the <code>64</code> (<code>0b01000000</code>) to <code>127</code> (<code>0b1111111</code>) range is acceptable as x in the pattern &quot;10.0.x.*&quot;.
-	<strong><code>10.0.65.13</code> and <code>10.0.127.3</code> are part of the <code>10.0.64.0/18</code> subnet, but <code>10.0.32.4</code> and <code>10.0.128.4</code> are not.</strong>
+	Before we build our new table, it&apos;s worth performing a quick sanity check.
+	<abbr title="Classless Internet Domain Routing">CIDR</abbr> uses a longest-match method of disambiguation.
+	If our longest prefix (which represents the smallest subnet) is within one of the larger subnets, we should note that in our human-readable lookup table.
+	Taking a quick look though, we can see there&apos;s no overlap.
+	Each range is entirely distinct.
+	That leaves us with this table with which to perform lookups by hand:
 </p>
-<h3><code>10.0.168.0/21</code>: <code>10.0.166.1</code>, <code>10.0.170.3</code>, <code>10.0.174.5</code>, <code>10.0.177.7</code></h3>
+<table>
+	<thead>
+		<tr>
+			<td>
+				Address/Mask
+			</td>
+			<td>
+				Next Hop
+			</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				from <code>135.46.56.0</code> to <code>135.46.59.255</code>
+			</td>
+			<td>
+				Interface 0
+			</td>
+		</tr>
+		<tr>
+			<td>
+				from <code>135.46.60.0</code> to <code>135.46.63.255</code>
+			</td>
+			<td>
+				Interface 1
+			</td>
+		</tr>
+		<tr>
+			<td>
+				from <code>192.53.40.0</code> to <code>192.53.41.255</code>
+			</td>
+			<td>
+				Router 1
+			</td>
+		</tr>
+		<tr>
+			<td>
+				everything else
+			</td>
+			<td>
+				Router 2
+			</td>
+		</tr>
+	</tbody>
+</table>
 <p>
-	With the network portion of the address being twenty-on bits long, it extends five bits into the third number.
-	<code>168</code> in binary is <code>0b10101000</code>, so the third number of an address within this subnet can be anywhere from <code>168</code> (<code>0b10101000</code>) to <code>175</code> (<code>0b10101111</code>).
-	<strong><code>10.0.170.3</code> and <code>10.0.174.5</code> are within this subnet, but <code>10.0.166.1</code> and <code>10.0.177.7</code> are not.</strong>
+	<code>135.46.57.14</code>, <code>135.46.63.10</code>, and <code>192.53.40.7</code> are all within ranges in the table, and will be sent to their respective interfaces or routers.
+	<strong><code>135.46.57.14</code> will be sent on Interface 0, <code>135.46.63.10</code> will be sent on Interface 1, and <code>192.53.40.7</code> will be sent to Router 1.
+	<code>135.46.52.2</code> and <code>192.53.56.7</code> will instead be sent to the default location, Router 2.</strong>
 </p>
-<h3><code>10.0.0.64/26</code>: <code>10.0.0.125</code>, <code>10.0.0.66</code>, <code>10.0.0.130</code>, <code>10.0.0.62</code></h3>
+<h2>Assigning addresses</h2>
 <p>
-	This time, the network portion of the address is twenty-six bits long, which extends two bits into the final number.
-	<code>64</code> in binary is <code>0b01000000</code>.
-	For this subnet, addresses match the pattern &quot;10.0.0.x&quot;, where x is an integer from <code>64</code> (<code>0b01000000</code>) to <code>127</code> (<code>0b01111111</code>).
-	<strong><code>10.0.0.125</code> and <code>10.0.0.66</code> are a part of this subnet, but <code>10.0.0.130</code> and <code>10.0.0.62</code> are not.</strong>
+	The problem proposed by the assignment says that we have a block of many consecutive <abbr title="Internet Protocol">IP</abbr> addresses, starting with <code>198.16.0.0</code>.
+	Organisation B wants 2000 of them, organisation D wants 8000, and companies A and C want 4000 each.
+	We are to tell how the addresses are to be divided up by specifying the starting address, ending address, and subnet mask for each organisation.
+	The first thing that comes to mind though is that there are multiple solutions.
+	We could put the blocks held by these companies in any order.
+	Secondly, because we&apos;re specifying a mask, we can&apos;t assign addresses in a group of 10<sup>x</sup>; instead, we have to use groups of 2<sup>x</sup>.
+	We&apos;re going to need to give each organisation more addresses than they&apos;ve requested.
+	Organisation B will get 2048 (2<sup>11</sup>) addresses, companies A and C will get 4096 (2<sup>12</sup>) addresses, and organisation D will get 8192 (2<sup>13</sup>) addresses.
 </p>
-<h2>Notation conversions</h2>
-<h3><code>255.255.240.0</code></h3>
 <p>
-	To convert a subnet mask to /k notation, we just need to count the number of <code>0b1</code> bits before the <code>0b0</code> bits begin.
-	<code>255</code> is <code>0b11111111</code> and <code>0</code> is <code>0b00000000</code>, so if those are the only two numbers in the <abbr title="Internet Protocol version Four">IPv4</abbr> subnet mask, we just multiply the number of instances of <code>255</code> by eight and we&apos;re done.
-	If there&apos;s a third number though, we need to count the number of <code>0b1</code> bits and add those in as well.
-	<code>240</code> in binary is <code>0b11110000</code> so we have two times eight plus four.
-	<strong>This subnet mask is the same as <code>/20</code>.</strong>
+	First, let&apos;s make sure we have enough addresses to hand out.
+	The assignment says we have &quot;A Large number of consecutive IP address are available starting at 198.16.0.0.&quot;.
+	It doesn&apos;t say exactly how many we have, so let&apos;s assume we have the largest <abbr title="Internet Protocol">IP</abbr> address block that could start at that address, and no further smaller blocks after it.
+	<code>16</code> in binary is <code>0b00010000</code>, so we probably have the <code>198.16.0.0/12</code> block at our disposal.
+	That will be far more than enough, but I like to consolidate.
+	By placing our largest subnets first, we can squeeze the wasted space out from between the four needed subnets.
+	This means not assigning the subnets in A, B, C, D order.
+	A&apos;s and C&apos;s blocks add up to be the same size as D&apos;s block, so they can go before or after.
+	Let&apos;s put them before, to keep things in mostly alphabetical order.
+	B&apos;s block needs to come dead last though; otherwise, extra space between the blocks will be introduced, which would break up unused space that we might later want for larger blocks.
+	Our blocks will be in the order A, C, D, B.
 </p>
-<h3><code>255.255.248.0</code></h3>
 <p>
-	<code>248</code> in binary is <code>0b11111000</code>, so we have five <code>0b1</code> bits in the third number.
-	<strong>This subnet mask is the same as <code>/21</code>.</strong>
+	A needs a block of 2<sup>12</sup> addresses.
+	That means we need twelve bits for the host part of the address, leaving twenty bits for the subnet prefix.
+	A will get the block at <code>198.16.0.0/20</code>.
+	This is the range <code>198.16.0.0</code> to <code>198.16.15.255</code>.
+	C will need to start their block at the next address, <code>198.16.16.0</code>.
+	Again, their block is the same size, so they get the subnet <code>198.16.16.0/20</code>: the address range <code>198.16.16.0</code> to <code>198.16.31.255</code>.
+	D&apos;s address begins at the next address, <code>198.16.32.0</code>.
+	They need a block twice the size, 2<sup>13</sup> addresses, which means we need one more bit in the host portion of the address and one less in the subnet portion.
+	That gives us the mask <code>198.16.32.0/19</code>, which corresponds to the range <code>198.16.32.0</code> to <code>198.16.63.255</code>.
+	B&apos;s block doesn&apos;t fit nicely with the others, being the only block that small (2<sup>11</sup> addresses), so we just tack it on at the end.
+	They can have <code>198.16.64.0/21</code>, the addresses from <code>198.16.64.0</code> to <code>198.16.71.255</code>.
+	Formatting that as a table and putting the companies back in alphabetical order, we are left with this:
 </p>
-<h3><code>255.255.255.192</code></h3>
+<table>
+	<thead>
+		<tr>
+			<th>
+				Organisation
+			</th>
+			<th>
+				Starting address
+			</th>
+			<th>
+				Ending address
+			</th>
+			<th>
+				Subnet mask
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				A
+			</td>
+			<td>
+				<code>198.16.0.0</code>
+			</td>
+			<td>
+				<code>198.16.15.255</code>
+			</td>
+			<td>
+				<code>198.16.0.0/20</code>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				B
+			</td>
+			<td>
+				<code>198.16.64.0</code>
+			</td>
+			<td>
+				<code>198.16.71.255</code>
+			</td>
+			<td>
+				<code>198.16.64.0/21</code>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				C
+			</td>
+			<td>
+				<code>198.16.16.0</code>
+			</td>
+			<td>
+				<code>198.16.31.255</code>
+			</td>
+			<td>
+				<code>198.16.16.0/20</code>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				D
+			</td>
+			<td>
+				<code>198.16.32.0</code>
+			</td>
+			<td>
+				<code>198.16.63.255</code>
+			</td>
+			<td>
+				<code>198.16.32.0/19</code>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<h2>Distance-vector table updates</h2>
 <p>
-	This time, the cut-off point is in the fourth number.
-	<code>192</code> is <code>0b11000000</code> in binary, so we have two bits that are part of the network portion, as well as the three times eight bits from the first three numbers.
-	<strong>That means that this subnet mask is the same as <code>/26</code>.</strong>
+	We are given a distance-vector table for router R0 and an updated list of cost sent from router R1 to R0, and asked to apply this update.
+	The cost of the R0 to R1 link is itself said to be <code>1</code>.
+	This is the previous distance-vector table for R0:
 </p>
-<h3><code>/20</code></h3>
+<table>
+	<thead>
+		<tr>
+			<th>
+				Destination
+			</th>
+			<th>
+				Cost
+			</th>
+			<th>
+				Next hop
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				A
+			</td>
+			<td>
+				<code>2</code>
+			</td>
+			<td>
+				R1
+			</td>
+		</tr>
+		<tr>
+			<td>
+				B
+			</td>
+			<td>
+				<code>3</code>
+			</td>
+			<td>
+				R2
+			</td>
+		</tr>
+		<tr>
+			<td>
+				C
+			</td>
+			<td>
+				<code>4</code>
+			</td>
+			<td>
+				R1
+			</td>
+		</tr>
+		<tr>
+			<td>
+				D
+			</td>
+			<td>
+				<code>5</code>
+			</td>
+			<td>
+				R3
+			</td>
+		</tr>
+	</tbody>
+</table>
 <p>
-	We converted <code>255.255.240.0</code> to <code>/20</code>, so as there&apos;s a one-to-one matching between these two notations, it stands to reason that if we want to convert <code>/20</code> into a subnet mask, we&apos;ll get back <code>255.255.240.0</code>.
-	If we hadn&apos;t just converted the other way though, we&apos;d look at the number of bits specified as the prefix and convert from binary to decimal.
-	First, we look at the number of multiples of eight.
-	We&apos;re basically performing integer division.
-	Two eights will fit into twenty, so we start the mask with two instances of <code>255</code>.
-	Next, we perform modulo division.
-	twenty modulo eight is four, so the next number in the mask begins with four <code>0b1</code> bits, with the remaining bits of the mask being set to <code>0b0</code>.
-	<code>0b11110000</code> in binary is <code>240</code> in decimal, so <strong><code>/20</code> is equal to the <code>255.255.240.0</code> subnet mask.</strong>
+	The updated costs as seen by R1 are as follows:
 </p>
-<h3><code>/22</code></h3>
+<table>
+	<thead>
+		<tr>
+			<th>
+				Destination
+			</th>
+			<th>
+				Cost
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				A
+			</td>
+			<td>
+				<code>1</code>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				B
+			</td>
+			<td>
+				<code>1</code>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				C
+			</td>
+			<td>
+				<code>4</code>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				D
+			</td>
+			<td>
+				<code>4</code>
+			</td>
+		</tr>
+	</tbody>
+</table>
 <p>
-	Again, we need to perform integer division and modulo division.
-	<code>22</code> divided by eight, restricted to an integer is two.
-	<code>22</code> modulo eight is six.
-	<code>0b11111100</code> in binary is <code>252</code> in decimal.
-	<strong>Therefore, <code>/22</code> is equal to the <code>255.255.252.0</code> subnet mask.</strong>
+	For destination A, the entry stays the same. The previously-known cost was <code>2</code>.
+	The R0 to R1 cost and the reported R1 to A cost also add up to <code>2</code>.
+	Destination B&apos;s entry in the table gets updated to reflect a new cost and path.
+	The previously-known path had a cost of <code>3</code>, but R1 is reporting the presence of a less-costly path.
+	R0 to R1 has a cost of <code>1</code> and the reported cost of R1 to B is <code>1</code>, so the total cost of the new path is <code>2</code>.
+	R1&apos;s report shows an increased cost for reaching destination C.
+	We only keep one route in the table to get to each node, so we can&apos;t bring back information on shorter paths.
+	We have no choice but to continue using the same path, but use the higher cost value.
+	We add the R0 to R1 cost and the R1 to C cost to get the new cost value, <code>5</code>.
+	Next time another node sends information on a less-costly path, we can switch to using that path instead.
+	We add the cost of the R0 to R1 link to the reported cost of the R1 to D link to get <code>5</code>, the same value held in our table already.
+	This is a different path than we&apos;ve been using, but according to the book, the router will ignore the report if the cost is identical (Dordal, 2014).
+	In other words, R0 will favour the older-known path over the new path, given that there isn&apos;t a cost difference.
+	The changes made result in the following new distance-vector table, held by R0:
 </p>
-<h3><code>/27</code></h3>
-<p>
-	<code>27</code> divided by eight, restricted to an integer is three.
-	<code>27</code> modulo eight is three.
-	<code>0b11100000</code> in binary is <code>224</code> in decimal.
-	<strong>Therefore, <code>/27</code> represents the <code>255.255.255.244</code> subnet mask.</strong>
-</p>
-<h2>Packets within packets, and minimum lengths</h2>
-<p>
-	The book tells us that the minimum packet size in Ethernet is sixty-four bytes.
-	That number includes the Ethernet headers though; the book goes on to tell us that the payload portion (which is what will carry the <abbr title="Transmission Control Protocol">TCP</abbr> packet) of a minimum-length Ethernet packet is only forty-six bytes long (Dordal, 2014).
-	Additionally, the book informs us that an <abbr title="Internet Protocol version Six">IPv6</abbr> header is forty bits long, mentioning that it&apos;s double the size of an <abbr title="Internet Protocol version Four">IPv4</abbr> header (Dordal, 2014).
-	That makes an <abbr title="Internet Protocol version Four">IPv4</abbr> header twenty bytes long, which matches the length implied by the diagram of another section of the book.
-	As the assignment states, a <abbr title="Transmission Control Protocol">TCP</abbr> header is included as well, which takes up another twenty bytes.
-	<strong>Putting this all together, we see that an <abbr title="Internet Protocol version Four">IPv4</abbr> acknowledgement packet is six bytes short of the Ethernet minimum, and must be padded.
-	An <abbr title="Internet Protocol version Four">IPv4</abbr> acknowledgement packet is sixty bytes long though (including the <abbr title="Transmission Control Protocol">TCP</abbr> header, which isn&apos;t technically a part of the <abbr title="Internet Protocol version Six">IPv6</abbr> packet but still adds to the size of the Ethernet packet payload), which meets the minimum Ethernet packet length requirements.</strong>
-</p>
-<h2>Retrying addresses in <abbr title="Address Resolution Protocol">ARP</abbr> caches</h2>
-<p>
-	<abbr title="Address Resolution Protocol">ARP</abbr> is designed to take an <abbr title="Internet Protocol">IP</abbr> address and find the associated <abbr title="local area network">LAN</abbr> address (Dordal, 2014).
-	(In Ethernet, this would be the <abbr title="media access control">MAC</abbr> address.)
-	When retrying an expired address from the cache, the host is first supposed to try a unicast transmission to the last-known <abbr title="local area network">LAN</abbr> address associated with that <abbr title="Internet Protocol">IP</abbr> address.
-	If the receiver isn&apos;t present or doesn&apos;t hold that address any longer, it&apos;ll ignore the request, at which point the querying host will try a broadcast request.
-	<strong>If the <abbr title="Internet Protocol">IP</abbr> address has changed hands and now refers to a different machine, any number of unicast requests (which would be sent to the former holder of the address) will fail, but a broadcast request should succeed (as the request will make it to all machines, including the newly-correct one).</strong>
-</p>
+<table>
+	<thead>
+		<tr>
+			<th>
+				Destination
+			</th>
+			<th>
+				Cost
+			</th>
+			<th>
+				Next hop
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				A
+			</td>
+			<td>
+				<code>2</code>
+			</td>
+			<td>
+				R1
+			</td>
+		</tr>
+		<tr>
+			<td>
+				B
+			</td>
+			<td>
+				<code>2</code>
+			</td>
+			<td>
+				R1
+			</td>
+		</tr>
+		<tr>
+			<td>
+				C
+			</td>
+			<td>
+				<code>5</code>
+			</td>
+			<td>
+				R1
+			</td>
+		</tr>
+		<tr>
+			<td>
+				D
+			</td>
+			<td>
+				<code>5</code>
+			</td>
+			<td>
+				R3
+			</td>
+		</tr>
+	</tbody>
+</table>
 <div class="APA_references">
 	<h2>References:</h2>
 	<p>
-		Dordal, P. (2014). 1.10 IP - Internet Protocol. Retrieved from <a href="https://intronetworks.cs.luc.edu/current/html/intro.html#ip-internet-protocol"><code>https://intronetworks.cs.luc.edu/current/html/intro.html#ip-internet-protocol</code></a>
+		Dordal, P. (2014). 9 Routing-Update Algorithms - An Introduction to Computer Networks, edition 1.9.10. Retrieved from <a href="https://intronetworks.cs.luc.edu/current/html/routing.html"><code>https://intronetworks.cs.luc.edu/current/html/routing.html</code></a>
 	</p>
 	<p>
-		Dordal, P. (2014). 2.1.5 The Slot Time and Collisions. Retrieved from <a href="https://intronetworks.cs.luc.edu/current/html/ethernet.html#the-slot-time-and-collisions"><code>https://intronetworks.cs.luc.edu/current/html/ethernet.html#the-slot-time-and-collisions</code></a>
-	</p>
-	<p>
-		Dordal, P. (2014). 8.1 The IPv6 Header. Retrieved from <a href="https://intronetworks.cs.luc.edu/current/html/ipv6.html#the-ipv6-header"><code>https://intronetworks.cs.luc.edu/current/html/ipv6.html#the-ipv6-header</code></a>
-	</p>
-	<p>
-		Dordal, P. (2014). 7.9 Address Resolution Protocol: ARP. Retrieved from <a href="https://intronetworks.cs.luc.edu/current/html/ipv4.html#address-resolution-protocol-arp"><code>https://intronetworks.cs.luc.edu/current/html/ipv4.html#address-resolution-protocol-arp</code></a>
+		Dordal, P. (2014). 10 Large-Scale IP Routing - An Introduction to Computer Networks, edition 1.9.10. Retrieved from <a href="https://intronetworks.cs.luc.edu/current/html/bigrouting.html"><code>https://intronetworks.cs.luc.edu/current/html/bigrouting.html</code></a>
 	</p>
 </div>
 		<hr/>
