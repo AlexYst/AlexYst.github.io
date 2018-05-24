@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./[TEMP]/[TEMP].xhtml"/>
-		<title>Routing &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
+		<title>UDP &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
@@ -39,447 +39,88 @@
 <nav>
 </nav>
 		<header>
-			<h1>Routing</h1>
-			<p>Written in <span title="Communications and Networking">CS 2204</span> by <a href="https://y.st./">Alex Yst</a>, finalised on 2018-05-16</p>
+			<h1><abbr title="User Datagram Protocol">UDP</abbr></h1>
+			<p>Written in <span title="Communications and Networking">CS 2204</span> by <a href="https://y.st./">Alex Yst</a>, finalised on 2018-05-23</p>
 		</header>
-<h2><abbr title="Classless Internet Domain Routing">CIDR</abbr>: Classless Internet Domain Routing</h2>
+<h2>Fragmentation</h2>
 <p>
-	We are given the following <abbr title="Classless Internet Domain Routing">CIDR</abbr> table and asked how packets meant for several <abbr title="Internet Protocol">IP</abbr> addresses would be routed:
-</p>
-<table>
-	<thead>
-		<tr>
-			<td>
-				Address/Mask
-			</td>
-			<td>
-				Next Hop
-			</td>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				<code>135.46.56.0/22</code>
-			</td>
-			<td>
-				Interface 0
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<code>135.46.60.0/22</code>
-			</td>
-			<td>
-				Interface 1
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<code>192.53.40.0/23</code>
-			</td>
-			<td>
-				Router 1
-			</td>
-		</tr>
-		<tr>
-			<td>
-				Default
-			</td>
-			<td>
-				Router 2
-			</td>
-		</tr>
-	</tbody>
-</table>
-<p>
-	Before we get started with specific destinations, it&apos;s worth taking a moment to look at what this table tells us and translating it into something we can use to determine the appropriate interface to transmit on or router to send to at a glance.
-	The dividing line for <code>/22</code> is six bits into the third octet.
-	<code>56</code> in binary is <code>0b00111000</code>.
-	Taking the first six bits of that and allowing variance for the remaining two bits, we have a range of <code>0b00111000</code> to <code>0b00111011</code>, or <code>56</code> to <code>59</code>.
-	From this, we see that <code>135.46.56.0/22</code> represents the <abbr title="Internet Protocol">IP</abbr> addresses from <code>135.46.56.0</code> to <code>135.46.59.255</code>.
-	<code>60</code> is <code>0b00111100</code> in binary.
-	Again, the second address uses the same <code>/22</code> subnet size, so the last two bits may differ.
-	Once more, that means the third octet may be up to three higher.
-	<code>135.46.60.0/22</code> represents a range of <code>135.46.60.0</code> to <code>135.46.63.255</code>.
-	Our last subnet has a network prefix of size <code>/23</code>, which leads seven bits into the third octet.
-	Only the final bit of that octet is allowed to change without leaving the subnet.
-	<code>40</code> in binary is <code>0b0010100</code>.
-	Allowing that final bit to flip lets us use <code>41</code> as our third octet as well as <code>40</code>, so <code>192.53.40.0/23</code> represents the addresses from <code>192.53.40.0</code> to <code>192.53.41.255</code>.
+	According to <abbr title="Request for Comments">RFC</abbr> 791, <abbr title="Internet Protocol">IP</abbr> packets may be fragmented, but the data contained in the payload can only be split on an eight-byte (sixty-four-bit) boundary (Information Sciences Institute, 1981).
+	Headers from the initial packet are duplicated and included in all fragments, and sequence numbers (for reassembly) are added along with an identification field (to distinguish fragments of this packet from fragments of another).
 </p>
 <p>
-	Before we build our new table, it&apos;s worth performing a quick sanity check.
-	<abbr title="Classless Internet Domain Routing">CIDR</abbr> uses a longest-match method of disambiguation.
-	If our longest prefix (which represents the smallest subnet) is within one of the larger subnets, we should note that in our human-readable lookup table.
-	Taking a quick look though, we can see there&apos;s no overlap.
-	Each range is entirely distinct.
-	That leaves us with this table with which to perform lookups by hand:
+	<abbr title="User Datagram Protocol">UDP</abbr> headers are eight bytes long (Dordal, 2014), and are part of the payload data as seen by <abbr title="Internet Protocol version Four">IPv4</abbr>.
+	That makes our <abbr title="Internet Protocol version Four">IPv4</abbr> payload length 2008 bytes long.
+	We&apos;re not given the size of the <abbr title="Internet Protocol version Four">IPv4</abbr> header used, and <abbr title="Internet Protocol version Four">IPv4</abbr> uses variable-width headers, unlike <abbr title="Internet Protocol version Six">IPv6</abbr>.
+	Ignoring <abbr title="Internet Protocol version Four">IPv4</abbr> headers, a minimum of two fragments should be necessary; including maximum size headers, only two fragments should be needed as well.
+	We can thus assume that a well-written implementation will fragment this packet into only two parts, but this is not strictly required; as many as 251 (2008 divided by 8) fragments are in fact possible.
+	<abbr title="Request for Comments">RFC</abbr> 791 also makes no specification about along what lines fragmentation must occur, beyond specifying that it must be on an eight-byte boundary, making it implementation-dependant.
+	It&apos;s also worth noting that packet reassembly doesn&apos;t occur at the other end of the Ethernet link, but rather, at the original packet&apos;s destination.
 </p>
-<table>
-	<thead>
-		<tr>
-			<td>
-				Address/Mask
-			</td>
-			<td>
-				Next Hop
-			</td>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				from <code>135.46.56.0</code> to <code>135.46.59.255</code>
-			</td>
-			<td>
-				Interface 0
-			</td>
-		</tr>
-		<tr>
-			<td>
-				from <code>135.46.60.0</code> to <code>135.46.63.255</code>
-			</td>
-			<td>
-				Interface 1
-			</td>
-		</tr>
-		<tr>
-			<td>
-				from <code>192.53.40.0</code> to <code>192.53.41.255</code>
-			</td>
-			<td>
-				Router 1
-			</td>
-		</tr>
-		<tr>
-			<td>
-				everything else
-			</td>
-			<td>
-				Router 2
-			</td>
-		</tr>
-	</tbody>
-</table>
+<h2>Problems with <abbr title="remote procedure call">RPC</abbr></h2>
 <p>
-	<code>135.46.57.14</code>, <code>135.46.63.10</code>, and <code>192.53.40.7</code> are all within ranges in the table, and will be sent to their respective interfaces or routers.
-	<strong><code>135.46.57.14</code> will be sent on Interface 0, <code>135.46.63.10</code> will be sent on Interface 1, and <code>192.53.40.7</code> will be sent to Router 1.
-	<code>135.46.52.2</code> and <code>192.53.56.7</code> will instead be sent to the default location, Router 2.</strong>
-</p>
-<h2>Assigning addresses</h2>
-<p>
-	The problem proposed by the assignment says that we have a block of many consecutive <abbr title="Internet Protocol">IP</abbr> addresses, starting with <code>198.16.0.0</code>.
-	Organisation B wants 2000 of them, organisation D wants 8000, and companies A and C want 4000 each.
-	We are to tell how the addresses are to be divided up by specifying the starting address, ending address, and subnet mask for each organisation.
-	The first thing that comes to mind though is that there are multiple solutions.
-	We could put the blocks held by these companies in any order.
-	Secondly, because we&apos;re specifying a mask, we can&apos;t assign addresses in a group of 10<sup>x</sup>; instead, we have to use groups of 2<sup>x</sup>.
-	We&apos;re going to need to give each organisation more addresses than they&apos;ve requested.
-	Organisation B will get 2048 (2<sup>11</sup>) addresses, companies A and C will get 4096 (2<sup>12</sup>) addresses, and organisation D will get 8192 (2<sup>13</sup>) addresses.
+	The first issue with <abbr title="remote procedure call">RPC</abbr> is that it must cache results on the server side in case they don&apos;t make it to the client.
+	If the results make it, but the acknowledgement doesn&apos;t make it back to the server, the server may end up resending the results thinking the client never got them.
+	If the client is no longer listening to for the reply, as it&apos;s already received it, this could lead to the server retransmitting repeatedly and will likely result in the results being cached indefinitely.
+	This was such a big problem that Sun Microsystems went and developed an alternative version of <abbr title="remote procedure call">RPC</abbr> to get around the problem (Dordal, 2014).
 </p>
 <p>
-	First, let&apos;s make sure we have enough addresses to hand out.
-	The assignment says we have &quot;A Large number of consecutive IP address are available starting at 198.16.0.0.&quot;.
-	It doesn&apos;t say exactly how many we have, so let&apos;s assume we have the largest <abbr title="Internet Protocol">IP</abbr> address block that could start at that address, and no further smaller blocks after it.
-	<code>16</code> in binary is <code>0b00010000</code>, so we probably have the <code>198.16.0.0/12</code> block at our disposal.
-	That will be far more than enough, but I like to consolidate.
-	By placing our largest subnets first, we can squeeze the wasted space out from between the four needed subnets.
-	This means not assigning the subnets in A, B, C, D order.
-	A&apos;s and C&apos;s blocks add up to be the same size as D&apos;s block, so they can go before or after.
-	Let&apos;s put them before, to keep things in mostly alphabetical order.
-	B&apos;s block needs to come dead last though; otherwise, extra space between the blocks will be introduced, which would break up unused space that we might later want for larger blocks.
-	Our blocks will be in the order A, C, D, B.
+	Another problem is <abbr title="remote procedure call">RPC</abbr> has no sense of sessions; it only has a single request, a single reply, and a single acknowledgement.
+	While this is in fact it&apos;s strength, it&apos;s a big weakness as well.
+	It means that neither the request nor the reply can exceed the limits of a single packet in length.
+	For some applications, such as <abbr title="Domain Name System">DNS</abbr>, this is perfectly acceptable.
+	That&apos;s more than enough space to get the job done.
+	For other applications though, it makes <abbr title="remote procedure call">RPC</abbr> an invalid choice of transfer protocols.
+	Imagine trying to download a live disk image for your favourite Linux distribution.
+	With so much software and other data packed into it, the file size would exceed the limits of a single packet, probably by over a million fold.
+	<abbr title="remote procedure call">RPC</abbr> simply can&apos;t handle that type of usage.
+	Transfer of files, including multi-packet files, has been implemented.
+	However, it&apos;s done by breaking the file into pieces and having the client request not the file, but a <strong>*specific chunk*</strong> of the file.
+	Some types of long requests or replies can be broken down in a sensible way such as this, but not all can.
+	Even for fragmented file transfer such as this, it doesn&apos;t allow for disk-level optimisations to be made, as each segment is transferred individually, and not within the context of the file as a whole.
 </p>
 <p>
-	A needs a block of 2<sup>12</sup> addresses.
-	That means we need twelve bits for the host part of the address, leaving twenty bits for the subnet prefix.
-	A will get the block at <code>198.16.0.0/20</code>.
-	This is the range <code>198.16.0.0</code> to <code>198.16.15.255</code>.
-	C will need to start their block at the next address, <code>198.16.16.0</code>.
-	Again, their block is the same size, so they get the subnet <code>198.16.16.0/20</code>: the address range <code>198.16.16.0</code> to <code>198.16.31.255</code>.
-	D&apos;s address begins at the next address, <code>198.16.32.0</code>.
-	They need a block twice the size, 2<sup>13</sup> addresses, which means we need one more bit in the host portion of the address and one less in the subnet portion.
-	That gives us the mask <code>198.16.32.0/19</code>, which corresponds to the range <code>198.16.32.0</code> to <code>198.16.63.255</code>.
-	B&apos;s block doesn&apos;t fit nicely with the others, being the only block that small (2<sup>11</sup> addresses), so we just tack it on at the end.
-	They can have <code>198.16.64.0/21</code>, the addresses from <code>198.16.64.0</code> to <code>198.16.71.255</code>.
-	Formatting that as a table and putting the companies back in alphabetical order, we are left with this:
+	Lastly, <abbr title="remote procedure call">RPC</abbr> doesn&apos;t handle network congestion well.
+	As a result, it works fine over a single <abbr title="local area network">LAN</abbr> and in a few other cases, but it for the most part doesn&apos;t function well over the greater Internet.
+	That said, this problem hasn&apos;t stopped people from finding uses for it&apos;s use over the Internet.
+	<abbr title="Domain Name System">DNS</abbr>, one of the most widely-used Internet services, even by people that have never even heard of <abbr title="Domain Name System">DNS</abbr>, is built on top of <abbr title="remote procedure call">RPC</abbr>.
 </p>
-<table>
-	<thead>
-		<tr>
-			<th>
-				Organisation
-			</th>
-			<th>
-				Starting address
-			</th>
-			<th>
-				Ending address
-			</th>
-			<th>
-				Subnet mask
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				A
-			</td>
-			<td>
-				<code>198.16.0.0</code>
-			</td>
-			<td>
-				<code>198.16.15.255</code>
-			</td>
-			<td>
-				<code>198.16.0.0/20</code>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				B
-			</td>
-			<td>
-				<code>198.16.64.0</code>
-			</td>
-			<td>
-				<code>198.16.71.255</code>
-			</td>
-			<td>
-				<code>198.16.64.0/21</code>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				C
-			</td>
-			<td>
-				<code>198.16.16.0</code>
-			</td>
-			<td>
-				<code>198.16.31.255</code>
-			</td>
-			<td>
-				<code>198.16.16.0/20</code>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				D
-			</td>
-			<td>
-				<code>198.16.32.0</code>
-			</td>
-			<td>
-				<code>198.16.63.255</code>
-			</td>
-			<td>
-				<code>198.16.32.0/19</code>
-			</td>
-		</tr>
-	</tbody>
-</table>
-<h2>Distance-vector table updates</h2>
+<h2>Timestamping</h2>
 <p>
-	We are given a distance-vector table for router R0 and an updated list of cost sent from router R1 to R0, and asked to apply this update.
-	The cost of the R0 to R1 link is itself said to be <code>1</code>.
-	This is the previous distance-vector table for R0:
+	Timestamping is used by real-time applications so the receiver of the timestamped packet can determine the current relevancy of said packet.
+	As the book says (Dordal, 2014), a packet that arrives late to a real-time application is the same as a packet that never arrived.
+	There&apos;s a very short window in which the packet can be used, and data loss (such as would be caused by dropping the late-arriving packet) is more tolerable than late use of the packet&apos;s payload.
 </p>
-<table>
-	<thead>
-		<tr>
-			<th>
-				Destination
-			</th>
-			<th>
-				Cost
-			</th>
-			<th>
-				Next hop
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				A
-			</td>
-			<td>
-				<code>2</code>
-			</td>
-			<td>
-				R1
-			</td>
-		</tr>
-		<tr>
-			<td>
-				B
-			</td>
-			<td>
-				<code>3</code>
-			</td>
-			<td>
-				R2
-			</td>
-		</tr>
-		<tr>
-			<td>
-				C
-			</td>
-			<td>
-				<code>4</code>
-			</td>
-			<td>
-				R1
-			</td>
-		</tr>
-		<tr>
-			<td>
-				D
-			</td>
-			<td>
-				<code>5</code>
-			</td>
-			<td>
-				R3
-			</td>
-		</tr>
-	</tbody>
-</table>
+<h2><abbr title="User Datagram Protocol">UDP</abbr> versus raw <abbr title="Internet Protocol">IP</abbr> packets</h2>
 <p>
-	The updated costs as seen by R1 are as follows:
+	The main reason <abbr title="User Datagram Protocol">UDP</abbr> should be preferred over crafting raw <abbr title="Internet Protocol">IP</abbr> packets is the use of ports.
+	If we were to build a hypothetical protocol which used raw <abbr title="Internet Protocol">IP</abbr> packets as its mode of communication, that protocol would tie up the machine&apos;s entire line.
+	<abbr title="Transmission Control Protocol">TCP</abbr> wouldn&apos;t get through.
+	<abbr title="User Datagram Protocol">UDP</abbr> wouldn&apos;t get through.
+	Only one application could listen to incoming traffic, and that application would be getting <strong>*all*</strong> the traffic, trying to make sense of it.
+	<abbr title="Transmission Control Protocol">TCP</abbr> and <abbr title="User Datagram Protocol">UDP</abbr> both include the concept of ports though.
+	The operating system (or a process controlled by it) then acts as the single application able to listen on the line, intercepting all packets.
+	From there, the <abbr title="operating system">OS</abbr> is able to determine which application (if any) should receive each packet based on whether <abbr title="Transmission Control Protocol">TCP</abbr> or <abbr title="User Datagram Protocol">UDP</abbr> was used, and what port the packet was sent to.
+	Without this concept of ports, network communication becomes limited to only one process, so raw <abbr title="Internet Protocol">IP</abbr> should never be used by userland applications.
 </p>
-<table>
-	<thead>
-		<tr>
-			<th>
-				Destination
-			</th>
-			<th>
-				Cost
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				A
-			</td>
-			<td>
-				<code>1</code>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				B
-			</td>
-			<td>
-				<code>1</code>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				C
-			</td>
-			<td>
-				<code>4</code>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				D
-			</td>
-			<td>
-				<code>4</code>
-			</td>
-		</tr>
-	</tbody>
-</table>
+<h2>Cutting out round-trip delays</h2>
 <p>
-	For destination A, the entry stays the same. The previously-known cost was <code>2</code>.
-	The R0 to R1 cost and the reported R1 to A cost also add up to <code>2</code>.
-	Destination B&apos;s entry in the table gets updated to reflect a new cost and path.
-	The previously-known path had a cost of <code>3</code>, but R1 is reporting the presence of a less-costly path.
-	R0 to R1 has a cost of <code>1</code> and the reported cost of R1 to B is <code>1</code>, so the total cost of the new path is <code>2</code>.
-	R1&apos;s report shows an increased cost for reaching destination C.
-	We only keep one route in the table to get to each node, so we can&apos;t bring back information on shorter paths.
-	We have no choice but to continue using the same path, but use the higher cost value.
-	We add the R0 to R1 cost and the R1 to C cost to get the new cost value, <code>5</code>.
-	Next time another node sends information on a less-costly path, we can switch to using that path instead.
-	We add the cost of the R0 to R1 link to the reported cost of the R1 to D link to get <code>5</code>, the same value held in our table already.
-	This is a different path than we&apos;ve been using, but according to the book, the router will ignore the report if the cost is identical (Dordal, 2014).
-	In other words, R0 will favour the older-known path over the new path, given that there isn&apos;t a cost difference.
-	The changes made result in the following new distance-vector table, held by R0:
+	The book doesn&apos;t seem to cover this question, but how does <abbr title="Quick User Datagram Protocol Internet Connections">QUIC</abbr> eliminate round trips and save time on <abbr title="Transport Layer Security">TLS</abbr> handshakes?
+	It turns out that <abbr title="Quick User Datagram Protocol Internet Connections">QUIC</abbr> is able to make use of pre-shared keys for encryption (Thompson &amp; Hamilton, 2016).
+	The first time <abbr title="Quick User Datagram Protocol Internet Connections">QUIC</abbr> is used to connect to a given server, no round trips can be eliminated.
+	Everything must be done similarly to how it&apos;s done with <abbr title="Transport Layer Security">TLS</abbr> over <abbr title="Transmission Control Protocol">TCP</abbr>.
+	However, when a <abbr title="Transport Layer Security">TLS</abbr> connection is torn down, the <abbr title="Transport Layer Security">TLS</abbr> connection is torn down with it.
+	In <abbr title="Quick User Datagram Protocol Internet Connections">QUIC</abbr>, this is not the case, and future communications with that server may use the same keys obtained during the first connection, so round trips are saved because the handshake doesn&apos;t need to be performed this time.
 </p>
-<table>
-	<thead>
-		<tr>
-			<th>
-				Destination
-			</th>
-			<th>
-				Cost
-			</th>
-			<th>
-				Next hop
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>
-				A
-			</td>
-			<td>
-				<code>2</code>
-			</td>
-			<td>
-				R1
-			</td>
-		</tr>
-		<tr>
-			<td>
-				B
-			</td>
-			<td>
-				<code>2</code>
-			</td>
-			<td>
-				R1
-			</td>
-		</tr>
-		<tr>
-			<td>
-				C
-			</td>
-			<td>
-				<code>5</code>
-			</td>
-			<td>
-				R1
-			</td>
-		</tr>
-		<tr>
-			<td>
-				D
-			</td>
-			<td>
-				<code>5</code>
-			</td>
-			<td>
-				R3
-			</td>
-		</tr>
-	</tbody>
-</table>
 <div class="APA_references">
 	<h2>References:</h2>
 	<p>
-		Dordal, P. (2014). 9 Routing-Update Algorithms - An Introduction to Computer Networks, edition 1.9.10. Retrieved from <a href="https://intronetworks.cs.luc.edu/current/html/routing.html"><code>https://intronetworks.cs.luc.edu/current/html/routing.html</code></a>
+		Dordal, P. (2014). 11 UDP Transport - An Introduction to Computer Networks, edition 1.9.10. Retrieved from <a href="https://intronetworks.cs.luc.edu/current/html/udp.html"><code>https://intronetworks.cs.luc.edu/current/html/udp.html</code></a>
 	</p>
 	<p>
-		Dordal, P. (2014). 10 Large-Scale IP Routing - An Introduction to Computer Networks, edition 1.9.10. Retrieved from <a href="https://intronetworks.cs.luc.edu/current/html/bigrouting.html"><code>https://intronetworks.cs.luc.edu/current/html/bigrouting.html</code></a>
+		Information Sciences Institute. (1981, September). RFC 791 - Internet Protocol. Retrieved from <a href="https://tools.ietf.org/html/rfc791#page-8"><code>https://tools.ietf.org/html/rfc791#page-8</code></a>
+	</p>
+	<p>
+		Thompson, M., &amp; Hamilton, R. (2016, October 25). 2.1. Handshake Overview. Retrieved from <a href="https://tools.ietf.org/id/draft-thomson-quic-tls-01.html#rfc.section.2.1"><code>https://tools.ietf.org/id/draft-thomson-quic-tls-01.html#rfc.section.2.1</code></a>
 	</p>
 </div>
 		<hr/>
