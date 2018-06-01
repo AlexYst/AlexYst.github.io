@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./[TEMP]/[TEMP].xhtml"/>
-		<title>UDP &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
+		<title>Packets &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
@@ -39,88 +39,79 @@
 <nav>
 </nav>
 		<header>
-			<h1><abbr title="User Datagram Protocol">UDP</abbr></h1>
-			<p>Written in <span title="Communications and Networking">CS 2204</span> by <a href="https://y.st./">Alex Yst</a>, finalised on 2018-05-23</p>
+			<h1>Packets</h1>
+			<p>Written in <span title="Communications and Networking">CS 2204</span> by <a href="https://y.st./">Alex Yst</a>, finalised on 2018-05-30</p>
 		</header>
-<h2>Fragmentation</h2>
+<h2>Maximum packet lifetime</h2>
 <p>
-	According to <abbr title="Request for Comments">RFC</abbr> 791, <abbr title="Internet Protocol">IP</abbr> packets may be fragmented, but the data contained in the payload can only be split on an eight-byte (sixty-four-bit) boundary (Information Sciences Institute, 1981).
-	Headers from the initial packet are duplicated and included in all fragments, and sequence numbers (for reassembly) are added along with an identification field (to distinguish fragments of this packet from fragments of another).
+	The assignment asks us this:
+</p>
+<blockquote>
+	<p>
+		Why does the maximum packet lifetime have to be large enough to ensure that not only the packet but also its acknowledgments (sic) have disappeared?
+	</p>
+</blockquote>
+<p>
+	This question makes no sense.
+	The maximum packet lifetime <strong>*defines*</strong> the point at which we insure a packet has disappeared.
+	No matter what the maximum packet lifetime is, if the packet is being handled by compliant routers, the packet will be dropped once it hits that age (Dordal, 2014).
+	Likewise, when we define this maximum packet lifetime, we <strong>*don&apos;t*</strong> ensure that acknowledgements will be dropped by then.
+	As delivery of the packet will take a non-zero amount of time, the lifespan of the acknowledgement will necessarily be offset.
+	The packet might even be delivered just before it expires, effectively <strong>*doubling*</strong> the amount of time we may have to wait for the acknowledgement and have it still arrive before its own expiration.
 </p>
 <p>
-	<abbr title="User Datagram Protocol">UDP</abbr> headers are eight bytes long (Dordal, 2014), and are part of the payload data as seen by <abbr title="Internet Protocol version Four">IPv4</abbr>.
-	That makes our <abbr title="Internet Protocol version Four">IPv4</abbr> payload length 2008 bytes long.
-	We&apos;re not given the size of the <abbr title="Internet Protocol version Four">IPv4</abbr> header used, and <abbr title="Internet Protocol version Four">IPv4</abbr> uses variable-width headers, unlike <abbr title="Internet Protocol version Six">IPv6</abbr>.
-	Ignoring <abbr title="Internet Protocol version Four">IPv4</abbr> headers, a minimum of two fragments should be necessary; including maximum size headers, only two fragments should be needed as well.
-	We can thus assume that a well-written implementation will fragment this packet into only two parts, but this is not strictly required; as many as 251 (2008 divided by 8) fragments are in fact possible.
-	<abbr title="Request for Comments">RFC</abbr> 791 also makes no specification about along what lines fragmentation must occur, beyond specifying that it must be on an eight-byte boundary, making it implementation-dependant.
-	It&apos;s also worth noting that packet reassembly doesn&apos;t occur at the other end of the Ethernet link, but rather, at the original packet&apos;s destination.
+	There has to be a mistake in the question.
+	My guess is that it was intended to ask why the TIME_WAIT state needs to be long enough to ensure not only the packet, but its acknowledgements have have disappeared.
+	In this case, it&apos;s to make sure there are no stray packets (including acknowledgement packets) from this instance of the connection that might make their way into a future instance of the connection.
+	The chances of one of these delayed packets having the correct sequence number to be mistaken as a packet from the then-current instance of the connection upon arrival is minimal, but it&apos;s still worth trying to clear the line at the end of each connection instance.
 </p>
-<h2>Problems with <abbr title="remote procedure call">RPC</abbr></h2>
+<h2>The Nagle algorithm on a congested network</h2>
 <p>
-	The first issue with <abbr title="remote procedure call">RPC</abbr> is that it must cache results on the server side in case they don&apos;t make it to the client.
-	If the results make it, but the acknowledgement doesn&apos;t make it back to the server, the server may end up resending the results thinking the client never got them.
-	If the client is no longer listening to for the reply, as it&apos;s already received it, this could lead to the server retransmitting repeatedly and will likely result in the results being cached indefinitely.
-	This was such a big problem that Sun Microsystems went and developed an alternative version of <abbr title="remote procedure call">RPC</abbr> to get around the problem (Dordal, 2014).
-</p>
-<p>
-	Another problem is <abbr title="remote procedure call">RPC</abbr> has no sense of sessions; it only has a single request, a single reply, and a single acknowledgement.
-	While this is in fact it&apos;s strength, it&apos;s a big weakness as well.
-	It means that neither the request nor the reply can exceed the limits of a single packet in length.
-	For some applications, such as <abbr title="Domain Name System">DNS</abbr>, this is perfectly acceptable.
-	That&apos;s more than enough space to get the job done.
-	For other applications though, it makes <abbr title="remote procedure call">RPC</abbr> an invalid choice of transfer protocols.
-	Imagine trying to download a live disk image for your favourite Linux distribution.
-	With so much software and other data packed into it, the file size would exceed the limits of a single packet, probably by over a million fold.
-	<abbr title="remote procedure call">RPC</abbr> simply can&apos;t handle that type of usage.
-	Transfer of files, including multi-packet files, has been implemented.
-	However, it&apos;s done by breaking the file into pieces and having the client request not the file, but a <strong>*specific chunk*</strong> of the file.
-	Some types of long requests or replies can be broken down in a sensible way such as this, but not all can.
-	Even for fragmented file transfer such as this, it doesn&apos;t allow for disk-level optimisations to be made, as each segment is transferred individually, and not within the context of the file as a whole.
+	The Nagle algorithm seeks to reduce the number of packets being sent, which in theory, should help with congestion problems.
+	After all, all the same payload data gets through, but only one set of headers is needed for what would otherwise be several packets (Dordal, 2014).
+	However, it still has disadvantages.
+	First, on a congested network, the Nagle algorithm will cause less congestion to be generated, but the application using the Nagle algorithm won&apos;t be able to get its packets sent as quickly, so they won&apos;t be received as quickly.
+	With the Nagle algorithm already slowing down transmission, congestion adds to this to make it worse.
+	To top it off, acknowledgements will take longer to reach the application using the Nagle algorithm, causing said application to bundle even more of the would-be-tiny-packets into the bigger packet, slowing down transmission further.
+	Additionally, these larger packets will tie up the line longer than the small packets would, so no other packets can be slipped between the small packets in the queues and on the line.
 </p>
 <p>
-	Lastly, <abbr title="remote procedure call">RPC</abbr> doesn&apos;t handle network congestion well.
-	As a result, it works fine over a single <abbr title="local area network">LAN</abbr> and in a few other cases, but it for the most part doesn&apos;t function well over the greater Internet.
-	That said, this problem hasn&apos;t stopped people from finding uses for it&apos;s use over the Internet.
-	<abbr title="Domain Name System">DNS</abbr>, one of the most widely-used Internet services, even by people that have never even heard of <abbr title="Domain Name System">DNS</abbr>, is built on top of <abbr title="remote procedure call">RPC</abbr>.
+	Despite these two issues though, I do think the Nagle algorithm does more good than harm on a congested network.
 </p>
-<h2>Timestamping</h2>
+<h2>Data-less packets on an established connection</h2>
 <p>
-	Timestamping is used by real-time applications so the receiver of the timestamped packet can determine the current relevancy of said packet.
-	As the book says (Dordal, 2014), a packet that arrives late to a real-time application is the same as a packet that never arrived.
-	There&apos;s a very short window in which the packet can be used, and data loss (such as would be caused by dropping the late-arriving packet) is more tolerable than late use of the packet&apos;s payload.
+	Obviously, packets with no payload data are used during connection instantiation and termination.
+	However, they&apos;re also used during the normal operation of an established connection (Dordal, 2014).
 </p>
-<h2><abbr title="User Datagram Protocol">UDP</abbr> versus raw <abbr title="Internet Protocol">IP</abbr> packets</h2>
 <p>
-	The main reason <abbr title="User Datagram Protocol">UDP</abbr> should be preferred over crafting raw <abbr title="Internet Protocol">IP</abbr> packets is the use of ports.
-	If we were to build a hypothetical protocol which used raw <abbr title="Internet Protocol">IP</abbr> packets as its mode of communication, that protocol would tie up the machine&apos;s entire line.
-	<abbr title="Transmission Control Protocol">TCP</abbr> wouldn&apos;t get through.
-	<abbr title="User Datagram Protocol">UDP</abbr> wouldn&apos;t get through.
-	Only one application could listen to incoming traffic, and that application would be getting <strong>*all*</strong> the traffic, trying to make sense of it.
-	<abbr title="Transmission Control Protocol">TCP</abbr> and <abbr title="User Datagram Protocol">UDP</abbr> both include the concept of ports though.
-	The operating system (or a process controlled by it) then acts as the single application able to listen on the line, intercepting all packets.
-	From there, the <abbr title="operating system">OS</abbr> is able to determine which application (if any) should receive each packet based on whether <abbr title="Transmission Control Protocol">TCP</abbr> or <abbr title="User Datagram Protocol">UDP</abbr> was used, and what port the packet was sent to.
-	Without this concept of ports, network communication becomes limited to only one process, so raw <abbr title="Internet Protocol">IP</abbr> should never be used by userland applications.
+	The main example of this would be acknowledgement packets.
+	Connections are often very one-sided, with one side transmitting all the data and the other end remaining silent.
+	As the receiving end has no data to send, it can&apos;t include the acknowledgements in its own data-carrying packets.
+	Instead, it has to send data-less packets consisting only of headers in order to acknowledge how much data has been successfully received.
 </p>
-<h2>Cutting out round-trip delays</h2>
 <p>
-	The book doesn&apos;t seem to cover this question, but how does <abbr title="Quick User Datagram Protocol Internet Connections">QUIC</abbr> eliminate round trips and save time on <abbr title="Transport Layer Security">TLS</abbr> handshakes?
-	It turns out that <abbr title="Quick User Datagram Protocol Internet Connections">QUIC</abbr> is able to make use of pre-shared keys for encryption (Thompson &amp; Hamilton, 2016).
-	The first time <abbr title="Quick User Datagram Protocol Internet Connections">QUIC</abbr> is used to connect to a given server, no round trips can be eliminated.
-	Everything must be done similarly to how it&apos;s done with <abbr title="Transport Layer Security">TLS</abbr> over <abbr title="Transmission Control Protocol">TCP</abbr>.
-	However, when a <abbr title="Transport Layer Security">TLS</abbr> connection is torn down, the <abbr title="Transport Layer Security">TLS</abbr> connection is torn down with it.
-	In <abbr title="Quick User Datagram Protocol Internet Connections">QUIC</abbr>, this is not the case, and future communications with that server may use the same keys obtained during the first connection, so round trips are saved because the handshake doesn&apos;t need to be performed this time.
+	Another case of data-less packets is the polling packets sent by a data-sending node.
+	If the receiving node has reduced the windows size to zero, the sending node will periodically send data-less polling packets to check to see if the window size is still zero.
+</p>
+<h2>FIN_WAIT_1</h2>
+<p>
+	FIN_WAIT_1 is stage in which the application has sent its own FIN packet, but has not yet received a response (Dordal, 2014).
+	Under ideal conditions, this state lasts but a moment, as data transmission over the network these days is almost instantaneous for packets that small.
+	If connections in this state are piling up, there&apos;s probably either heavy network congestion or an outright network disconnect to blame.
+</p>
+<h2>FIN_WAIT_2</h2>
+<p>
+	FIN_WAIT_2 is the stage in which a node has sent its FIN packet, has received acknowledgement of that FIN packet, and has not yet received a FIN packet from the other node (Dordal, 2014).
+	If you see several connections are in this state, you&apos;re probably working on a machine that is receiving data, but not sending any.
+	With how quick data can be transferred, having multiple connections in this state suggests either network congestion or large data files.
+	For example, if I was trying to download a live Debian <abbr title="International Organisation for Standardisation">ISO</abbr> over <abbr title="Hypertext Transfer Protocol">HTTP</abbr>, my client machine would likely send its own FIN packet in order to make sure the server wasn&apos;t the one that had to go into the TIMEWAIT state once the connection terminated, then would stay in the FIN_WAIT_2 state while receiving the file data.
+	As the file size is enormous, the connection on my client end would be stuck lingering in the FIN_WAIT_2 state for a considerable amount of time.
+	Now, if I tried downloading several other large files before this first file download concluded, I&apos;d end up with more connections lingering in the FIN_WAIT_2 state as well.
 </p>
 <div class="APA_references">
 	<h2>References:</h2>
 	<p>
-		Dordal, P. (2014). 11 UDP Transport - An Introduction to Computer Networks, edition 1.9.10. Retrieved from <a href="https://intronetworks.cs.luc.edu/current/html/udp.html"><code>https://intronetworks.cs.luc.edu/current/html/udp.html</code></a>
-	</p>
-	<p>
-		Information Sciences Institute. (1981, September). RFC 791 - Internet Protocol. Retrieved from <a href="https://tools.ietf.org/html/rfc791#page-8"><code>https://tools.ietf.org/html/rfc791#page-8</code></a>
-	</p>
-	<p>
-		Thompson, M., &amp; Hamilton, R. (2016, October 25). 2.1. Handshake Overview. Retrieved from <a href="https://tools.ietf.org/id/draft-thomson-quic-tls-01.html#rfc.section.2.1"><code>https://tools.ietf.org/id/draft-thomson-quic-tls-01.html#rfc.section.2.1</code></a>
+		Dordal, P. (2014). 12 TCP Transport - An Introduction to Computer Networks, edition 1.9.10. Retrieved from <a href="https://intronetworks.cs.luc.edu/current/html/tcp.html#tcp-state-diagram"><code>https://intronetworks.cs.luc.edu/current/html/tcp.html#tcp-state-diagram</code></a>
 	</p>
 </div>
 		<hr/>

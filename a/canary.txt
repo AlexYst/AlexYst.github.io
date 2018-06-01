@@ -18,7 +18,7 @@ just fine.
 My PGP key ID is 0xE7464A03 and my PGP fingerprint is
 D135 B061 DBED 690B 479F E2E3 7D83 E1E5 E746 4A03.
 
-As of today, Wednesday, 2018 May 23,
+As of today, Wednesday, 2018 May 30,
 I have not been legally required to withhold information.
 University of the People has issued me a take-down request for
 some pages on this website, but I have not been asked to keep
@@ -45,17 +45,17 @@ This canary has gone down in the past due to technical issues:
   '- Various life circumstances made website updates difficult.
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEE0TWwYdvtaQtHn+LjfYPh5edGSgMFAlsGEn0ACgkQfYPh5edG
-SgPWgg//VPA5pWRYF5DGFsA4IViHNPw33btn5gpz+jEdMuowKzB4nLj+rKZH+AFT
-plGCT2iFHELrPe+6iU0WWCbkzULyYrpOxJdBTXLP3X9UmUrB/vk8IhOqYvvxir/+
-AeYiczlllQeo2T6XjPxOb85HS88ywiVpg9sZ65XkznpsX2pSjvZCwQo7MjeM9Tqi
-jOl8WYL74GLoTvD/8V/4uTDDfC4NRNS50Jkd/fJFenmNEXwoyTvSi6kQuEe/q88W
-D9BQBSZCq8Y4+0RvXyLNRElO4C+FyvNOiFBAOUzJOOIUeAabWpnPa5iq0iiPfry0
-U0o9dkF6YhCWTOEOUBKyrYYSN8vnxj84k90XgMmbk2Q3x24MB5BEBUawnhiN0/oG
-s+4+++0VWNaWKLqiwHAJqdlhU+tsEvnDFGfNOsJcuGBitflxsRHRN99Uf5vAXpMg
-WA1Y4Ak4+H+Xn5NiICs6hqV5Iv7Kj3Zv83UOU7iSwIbNRduKG7poa829RFbZqBBm
-pM4xolzetrYyGOXNxf1gvGBPJXB+BQ8opwETIWKTBJ4b5cSIKUAZdCRu5S+AKsZR
-8Uu66W3J+go0z4uJmLOmsvcjW0/7jwNYtsU/GdSt50hxVAE09Ecw1IdLro7iId3H
-o4SztHuzP4EduWkFWGud1UXNyrYVa34YUFoMLi1jf3tFAAlst1g=
-=Ev1I
+iQIzBAEBCAAdFiEE0TWwYdvtaQtHn+LjfYPh5edGSgMFAlsPemIACgkQfYPh5edG
+SgOkSg/+MxwAwvrMF3B3Tx9VnXtYN8XlDGrPABOCVtvC4QZr1tWz8M3R4Tf6i6Pc
+urGBmgtSAKjiZFidXn7GLg6yGDGZdGnphB0/LUFZqx7Rx1kFEesFxcGjRxxEMtWw
+nXvF5ssauGFU+BFlmZPUCNiJGmmSRiRTwZ1o6kg5r1Vnr4JZQYGyVl5ryKwCvvfJ
+mpBlh90cf60sJ7V1Il0YU6Yu3xRZI4PkHxyW/FpzLVADsaHZUHQaEFvQ4GwxuYJF
+cRoox2lGjgh1WC6iv7eMKKHel2So2AGFazl+PNJ6UTR07gfDJwf7GrFWXMkWj74c
+frH2XanZ39is3PnVusScRrbrWOXxmjT8yGQyc3XuDOhes0ZAsvf22XbjTdScJWhj
+DgEGiX0m214/EJFvgGPDLh16Q1j4YxrBGYZQKC17mkaVxTNWFy95qWk1A2hZCCWB
+ITlc+o0eCKm1ZFRL5iwhTWJ+Bmxwmedp/JXLCy6Po/D0MwKIhkSd1oYEcUjUoVy+
+FLvH5xZriiQD8DcwmXMQONIs8l5IcKmWl1Y1xULRfxQwv5Vce1e41B9eVLiIHqch
+kiDacwjuS6cQL61GN5fQ2gQ5Y6FooxXamrYZrPdXHDtQWc8m2IKhm08s59OMD82t
+0RtRl+uPBevTxwklmANw2L8yUh2Wuj3UTA0FDtcFjXsxyOqaDa0=
+=FDPv
 -----END PGP SIGNATURE-----
