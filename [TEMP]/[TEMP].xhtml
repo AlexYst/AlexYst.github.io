@@ -42,78 +42,93 @@
 			<h1>Packets</h1>
 			<p>Written in <span title="Communications and Networking">CS 2204</span> by <a href="https://y.st./">Alex Yst</a>, finalised on 2018-05-30</p>
 		</header>
-<h2>Maximum packet lifetime</h2>
-<p>
-	The assignment asks us this:
-</p>
-<blockquote>
+<section id="Unit8">
+	<h2>Unit 8</h2>
+	<h3><abbr title="Domain Name System">DNS</abbr></h3>
 	<p>
-		Why does the maximum packet lifetime have to be large enough to ensure that not only the packet but also its acknowledgments (sic) have disappeared?
+		<abbr title="Domain Name System">DNS</abbr> is a vital part of many network systems.
+		The Web, email, even gaming ...
+		They all use <abbr title="Domain Name System">DNS</abbr>.
+		With that in mind, there&apos;s no doubt that the lack of recovery of lost packets in <abbr title="Domain Name System">DNS</abbr>, seeing as <abbr title="Domain Name System">DNS</abbr> is built on <abbr title="User Datagram Protocol">UDP</abbr> instead of <abbr title="Transmission Control Protocol">TCP</abbr>, is a problem.
+		That said, with <abbr title="Domain Name System">DNS</abbr> so frequently used and not requiring much data to be transferred in each query/response, using <abbr title="User Datagram Protocol">UDP</abbr> instead of <abbr title="Transmission Control Protocol">TCP</abbr> saves a lot of overhead.
 	</p>
-</blockquote>
-<p>
-	This question makes no sense.
-	The maximum packet lifetime <strong>*defines*</strong> the point at which we insure a packet has disappeared.
-	No matter what the maximum packet lifetime is, if the packet is being handled by compliant routers, the packet will be dropped once it hits that age (Dordal, 2014).
-	Likewise, when we define this maximum packet lifetime, we <strong>*don&apos;t*</strong> ensure that acknowledgements will be dropped by then.
-	As delivery of the packet will take a non-zero amount of time, the lifespan of the acknowledgement will necessarily be offset.
-	The packet might even be delivered just before it expires, effectively <strong>*doubling*</strong> the amount of time we may have to wait for the acknowledgement and have it still arrive before its own expiration.
-</p>
-<p>
-	There has to be a mistake in the question.
-	My guess is that it was intended to ask why the TIME_WAIT state needs to be long enough to ensure not only the packet, but its acknowledgements have have disappeared.
-	In this case, it&apos;s to make sure there are no stray packets (including acknowledgement packets) from this instance of the connection that might make their way into a future instance of the connection.
-	The chances of one of these delayed packets having the correct sequence number to be mistaken as a packet from the then-current instance of the connection upon arrival is minimal, but it&apos;s still worth trying to clear the line at the end of each connection instance.
-</p>
-<h2>The Nagle algorithm on a congested network</h2>
-<p>
-	The Nagle algorithm seeks to reduce the number of packets being sent, which in theory, should help with congestion problems.
-	After all, all the same payload data gets through, but only one set of headers is needed for what would otherwise be several packets (Dordal, 2014).
-	However, it still has disadvantages.
-	First, on a congested network, the Nagle algorithm will cause less congestion to be generated, but the application using the Nagle algorithm won&apos;t be able to get its packets sent as quickly, so they won&apos;t be received as quickly.
-	With the Nagle algorithm already slowing down transmission, congestion adds to this to make it worse.
-	To top it off, acknowledgements will take longer to reach the application using the Nagle algorithm, causing said application to bundle even more of the would-be-tiny-packets into the bigger packet, slowing down transmission further.
-	Additionally, these larger packets will tie up the line longer than the small packets would, so no other packets can be slipped between the small packets in the queues and on the line.
-</p>
-<p>
-	Despite these two issues though, I do think the Nagle algorithm does more good than harm on a congested network.
-</p>
-<h2>Data-less packets on an established connection</h2>
-<p>
-	Obviously, packets with no payload data are used during connection instantiation and termination.
-	However, they&apos;re also used during the normal operation of an established connection (Dordal, 2014).
-</p>
-<p>
-	The main example of this would be acknowledgement packets.
-	Connections are often very one-sided, with one side transmitting all the data and the other end remaining silent.
-	As the receiving end has no data to send, it can&apos;t include the acknowledgements in its own data-carrying packets.
-	Instead, it has to send data-less packets consisting only of headers in order to acknowledge how much data has been successfully received.
-</p>
-<p>
-	Another case of data-less packets is the polling packets sent by a data-sending node.
-	If the receiving node has reduced the windows size to zero, the sending node will periodically send data-less polling packets to check to see if the window size is still zero.
-</p>
-<h2>FIN_WAIT_1</h2>
-<p>
-	FIN_WAIT_1 is stage in which the application has sent its own FIN packet, but has not yet received a response (Dordal, 2014).
-	Under ideal conditions, this state lasts but a moment, as data transmission over the network these days is almost instantaneous for packets that small.
-	If connections in this state are piling up, there&apos;s probably either heavy network congestion or an outright network disconnect to blame.
-</p>
-<h2>FIN_WAIT_2</h2>
-<p>
-	FIN_WAIT_2 is the stage in which a node has sent its FIN packet, has received acknowledgement of that FIN packet, and has not yet received a FIN packet from the other node (Dordal, 2014).
-	If you see several connections are in this state, you&apos;re probably working on a machine that is receiving data, but not sending any.
-	With how quick data can be transferred, having multiple connections in this state suggests either network congestion or large data files.
-	For example, if I was trying to download a live Debian <abbr title="International Organisation for Standardisation">ISO</abbr> over <abbr title="Hypertext Transfer Protocol">HTTP</abbr>, my client machine would likely send its own FIN packet in order to make sure the server wasn&apos;t the one that had to go into the TIMEWAIT state once the connection terminated, then would stay in the FIN_WAIT_2 state while receiving the file data.
-	As the file size is enormous, the connection on my client end would be stuck lingering in the FIN_WAIT_2 state for a considerable amount of time.
-	Now, if I tried downloading several other large files before this first file download concluded, I&apos;d end up with more connections lingering in the FIN_WAIT_2 state as well.
-</p>
-<div class="APA_references">
-	<h2>References:</h2>
 	<p>
-		Dordal, P. (2014). 12 TCP Transport - An Introduction to Computer Networks, edition 1.9.10. Retrieved from <a href="https://intronetworks.cs.luc.edu/current/html/tcp.html#tcp-state-diagram"><code>https://intronetworks.cs.luc.edu/current/html/tcp.html#tcp-state-diagram</code></a>
+		Back to the question at hand, <abbr title="Domain Name System">DNS</abbr> is actually able to be used over <abbr title="Transmission Control Protocol">TCP</abbr> or <abbr title="User Datagram Protocol">UDP</abbr>; it&apos;s not limited to just <abbr title="User Datagram Protocol">UDP</abbr> as the question claims.
+		When used over <abbr title="User Datagram Protocol">UDP</abbr> though, a <abbr title="Domain Name System">DNS</abbr> client will re-attempt a query if it doesn&apos;t get a response, but usually no more then four times (Bernstein, n.d.).
+		If the query fails four times, there&apos;s probably a networking issue, and <abbr title="Transmission Control Protocol">TCP</abbr> isn&apos;t going to help with that, so lack of <abbr title="Transmission Control Protocol">TCP</abbr> features isn&apos;t going to save your query at that point.
 	</p>
-</div>
+	<h3>Vacation reply trap</h3>
+	<p>
+		I didn&apos;t see any mention of vacation replies in this week&apos;s reading material, so I&apos;m unsure of the context of this question.
+		The term &quot;vacation reply&quot; could refer to automated replies on any sort of asynchronous messaging system; or even several types of synchronous messaging systems.
+		Usually, I hear the term used to refer to email-related auto-replies though, so I&apos;ll discuss vacation reply loops in that context.
+	</p>
+	<p>
+		When two email servers start sending a series of replies to one another, it&apos;s what&apos;s known as an email loop.
+		As Wikipedia mentions, one cause of such a loop is vacation auto-responders (Wikipedia, 2018).
+		As to how long the loop will persist, it really depends on the configurations of both servers.
+		Either side could end the loop at any time by simply not replying.
+		If either side&apos;s storage quota fills with these bogus responses, that side will have nothing to reply to and the loop will terminate.
+		With unlimited disk space, the loop could continue forever.
+		Additionally, there are anti-loop measures that can be coded into the software of the servers.
+		For example, special headers can be used to indicate that a letter is a pre-generated reply.
+		If the other server is aware of such a header, it can simply ignore the latter instead of automatically responding to it.
+		In other words, if both servers conform to such a standard, the loop won&apos;t begin in the first place.
+		This does require compliance on both ends though.
+		Another measure, and one that doesn&apos;t require both servers to work together, is to simply set a limit to how many (or how often) the autoresponder will respond to letters from a given user.
+		Hit that limit, and the loop terminates.
+		For example, if your autoresponder will only reply to one email per sender per day, it doesn&apos;t matter how badly the other party&apos;s autoresponder is configured.
+		You send a letter to them, their responder replies, your responder replies, theirs replies again, and your responder ignores this final auto-reply, so only three automatic replies were sent over the network instead of the potential millions.
+	</p>
+	<p>
+		Short of disk limitations and anti-loop measures though, yes, the loop would continue indefinitely until one party returned from vacation and turned off their autoresponder.
+	</p>
+	<h3><code>Content-Type</code> headers</h3>
+	<p>
+		The question asks why Web pages are prefixed with <abbr title="Multi-purpose Internet Mail Extensions">MIME</abbr> headers.
+		Being a Web person, this is something I&apos;ve dealt with quite a bit.
+		However, <abbr title="Multi-purpose Internet Mail Extensions">MIME</abbr> stands for &quot;Multipurpose Internet Mail Extensions&quot;.
+		In other words, <abbr title="Multi-purpose Internet Mail Extensions">MIME</abbr> headers are for email, not the Web!
+		People commonly <strong>*misuse*</strong> the term &quot;<abbr title="Multi-purpose Internet Mail Extensions">MIME</abbr>&quot; or even &quot;<abbr title="Multi-purpose Internet Mail Extensions">MIME</abbr>-type&quot; to refer to <abbr title="Hypertext Transfer Protocol">HTTP</abbr> <code>Content-Type</code> headers.
+	</p>
+	<p>
+		<abbr title="Hypertext Transfer Protocol">HTTP</abbr> <code>Content-Type</code> headers are used to inform the client as to what file type is being transmitted.
+		That way, the client knows how to process it.
+		Some types of files have data types that can be easily identified.
+		For example, many image types such as <abbr title="Portable Network Graphic">PNG</abbr> and <abbr title="Joint Photographic Experts Group">JPEG</abbr> have predictable opening sequences of octets.
+		However, other file types don&apos;t have such indicators in their encoding.
+		For example, <abbr title="Extensible Markup Language">XML</abbr> (including <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>), <abbr title="Cascading Style Sheets">CSS</abbr>, and JavaScript are all encoded the same way: as plain text.
+		Well-written <abbr title="Hypertext Markup Language">HTML</abbr> can even be indistinguishable from <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> with certain features omitted.
+		The <code>Content-Type</code> header allows the client to know how the server wants the file to be interpreted.
+		There could be a hard-coded file extension reader put in the client instead, but even the file extension isn&apos;t a reliable way to detect file type.
+		For example, a <code>.php</code> extension refers to a <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> script file on the server side.
+		But the server doesn&apos;t send the script, it sends the output of the script.
+		So based on file extension, what should the client treat this file as?
+		There&apos;s no way to know without the <code>Content-Type</code> header!
+		The output could be <abbr title="Hypertext Markup Language">HTML</abbr>, as is the case usual, but it could be <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> (I always use <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>, never <abbr title="Hypertext Markup Language">HTML</abbr>) or even an image of some sort!
+		Next, we have the case of directory indexes.
+		The file name isn&apos;t even known.
+		It could be <code>index.xhtml</code>, but it could also be <code>index.html</code>, <code>no-index.png</code>, or anything else.
+		The <code>Content-Type</code> header is simply the most reliable way to ensure all clients understand the sent file in the same way; or at least, ensure all reasonable (read: standards-compliant) clients understand the file the same way.
+		If any client <strong>*doesn&apos;t*</strong> interpret the file as being of that sent type (I&apos;m looking at you, Internet Explorer), it&apos;s that client in the wrong and this cannot be blamed on the server.
+		The server was unambiguously clear in what the file was to be interpreted as through use of the <code>Content-Type</code> header.
+	</p>
+	<h2>Firewall issues: <abbr title="Voice over Internet Protocol">VoIP</abbr> versus audio streaming</h2>
+	<p>
+		I couldn&apos;t find anything that addressed the issue of firewall problems specific to <abbr title="Voice over Internet Protocol">VoIP</abbr> or audio streaming, either in the assigned reading or elsewhere.
+		As far as I can tell, the only issue would be a misconfigured firewall, blocking something you didn&apos;t want blocked.
+		In either case, you&apos;re trying to read data from an audio stream over the network; the only difference with <abbr title="Voice over Internet Protocol">VoIP</abbr> is that <abbr title="Voice over Internet Protocol">VoIP</abbr> has <strong>*two*</strong> audio streams, one in each direction.
+	</p>
+	<div class="APA_references">
+		<h3>References:</h3>
+		<p>
+			Bernstein, D. J. (n.d.). Notes on the Domain Name System. Retrieved from <a href="https://cr.yp.to/djbdns/notes.html"><code>https://cr.yp.to/djbdns/notes.html</code></a>
+		</p>
+		<p>
+			Wikipedia. (2018, March 28). Email loop. Retrieved from <a href="https://en.wikipedia.org/wiki/Email_loop"><code>https://en.wikipedia.org/wiki/Email_loop</code></a>
+		</p>
+	</div>
+</section>
 		<hr/>
 		<p>
 			Copyright © 2018 Alex Yst;
