@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2018 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2018/06-June/07.xhtml"/>
+		<title>iptables &lt;https://y.st./en/weblog/2018/06-June/07.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+<nav>
+	<p>
+		<a href="/en/">Home</a> |
+		<a href="/en/a/about.xhtml">About</a> |
+		<a href="/en/a/contact.xhtml">Contact</a> |
+		<a href="/a/canary.txt">Canary</a> |
+		<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+		<a href="/en/opinion/">Opinions</a> |
+		<a href="/en/take-down/">Take-down requests</a> |
+		<a href="/en/law/">Law</a> |
+		<a href="/en/recipe/">Recipes</a> |
+		<a href="/en/a/links.xhtml">Links</a> |
+		<a href="/en/weblog/2018/06-June/07.xhtml.asc">{this page}.asc</a>
+	</p>
+	<hr/>
+	<p>
+		Weblog index:
+		<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+		<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+		<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+	</p>
+	<hr/>
+	<p>
+		Jump to entry:
+		<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+		<a rel="prev" href="/en/weblog/2018/06-June/06.xhtml">&lt;Previous</a>
+		<a rel="next" href="/en/weblog/2018/06-June/08.xhtml">Next&gt;</a>
+		<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+</nav>
+		<header>
+			<h1><code>iptables</code></h1>
+			<p>Day 01188: Thursday, 2018 June 07</p>
+		</header>
+<img src="/img/CC_BY-SA_4.0/y.st./weblog/2018/06/07.jpg" alt="Trees reaching over the street" class="framed-centred-image" width="640" height="480" />
+<section id="iptables">
+	<h2><code>iptables</code></h2>
+	<p>
+		I&apos;ve been struggling with trying to figure out <code>iptables</code> on and off for <strong>*months*</strong>.
+		It&apos;s probably been about a year now.
+		Thunderbird has that Torbirdy plugin, but it keeps disabling it, which causes traffic to be sent out over a clearnet connection without warning and without a way to prevent it.
+		If Thunderbird would just <strong>*disable all traffic*</strong> when it disables the plugin, everything would be fine.
+		But it doesn&apos;t.
+		In general, my machine should never be sending data over the clearnet, so I thought <code>iptables</code> could help me.
+		No one would help me figure out how to use it though (not that it was their job to do so), and the guides I found confused me at the time.
+	</p>
+	<p>
+		A few days ago, finally, I managed to piece enough of it together to get what I thought to be a working set of rules.
+		The first thing to know is that <code>iptables</code> isn&apos;t configured by editing a configuration file as I thought it was; each <code>iptables</code> line is actually a command line command.
+		With my rule set, I was finally able to get some help, and they confirmed that you do indeed enter the lines as commands.
+		They also recommended I add a line at the end.
+		I haven&apos;t had time to have my computer potentially be out of commission if I messed something up, so I couldn&apos;t actually test out the rules right away.
+		At the time, I forgot to add a rule to allow connections to <code>lo</code>, so I added that in today, then once I tested everything, I duplicated the commands and added a <code>6</code> to the second set, using <code>ip6tables</code> instead of <code>iptables</code>.
+	</p>
+	<p>
+		Everything seems to be in order, I think.
+		I do wonder what services will get cut off though.
+		For example, the date- and time-updating code doesn&apos;t know a proxy has to be used, so they system won&apos;t be updating the clock to match network time any more.
+		Is there a way to get it to update over <abbr title="The Onion Router">Tor</abbr>?
+		Not sure.
+		Anything over <abbr title="User Datagram Protocol">UDP</abbr> is no longer going to work either.
+		I did test an installation after the rules were put in place too, so I know the package manager is set up properly to work over <abbr title="The Onion Router">Tor</abbr>.
+		It&apos;s been set up that way since I first set up the machine, but I wasn&apos;t sure id there were any <abbr title="Domain Name System">DNS</abbr> leaks there, which would now result in failed <abbr title="Domain Name System">DNS</abbr> queries.
+	</p>
+	<p>
+		Anyway, for now, here is my ruleset.
+		It seems to block all non-<abbr title="The Onion Router">Tor</abbr> traffic while allowing all <abbr title="The Onion Router">Tor</abbr> traffic, which is exactly what I&apos;m after:
+	</p>
+	<blockquote>
+<pre>sudo iptables --policy OUTPUT DROP
+sudo iptables --append OUTPUT --match owner --uid-owner debian-tor --jump ACCEPT
+sudo iptables --append OUTPUT --out-interface lo --jump ACCEPT
+sudo iptables --append OUTPUT --jump REJECT
+sudo ip6tables --policy OUTPUT DROP
+sudo ip6tables --append OUTPUT --match owner --uid-owner debian-tor --jump ACCEPT
+sudo ip6tables --append OUTPUT --out-interface lo --jump ACCEPT
+sudo ip6tables --append OUTPUT --jump REJECT</pre>
+	</blockquote>
+	<p>
+		I mentioned an installation I used to test the package manager with.
+		That installation was for the <a href="apt:iptables-persistent"><code>iptables-persistent</code></a> package, which saves <code>iptables</code> rules.
+		Upon first installing it, it&apos;ll let you save the current rules.
+		Updating the rules later isn&apos;t automatic, and requires some command to be run.
+		I don&apos;t remember the command, but I did see it online, so I can look it up when I need to.
+	</p>
+	<p>
+		The next step is to get the Librem set up.
+		I waited to set up <a href="/en/domains/taylor.local.xhtml"><code>taylor</code></a> for use, knowing I wanted these <code>iptables</code> rules in place from the very beginning.
+		I&apos;m going to need to figure out what to do about captive portals though.
+		I guess I need a way to temporarily disable the non-<abbr title="The Onion Router">Tor</abbr> traffic block, but I&apos;m not sure how to do that just yet.
+		I might wait to get <code>taylor</code> set up until I have a working solution on that front.
+		Then again, maybe what I need isn&apos;t a way to use captive portals.
+		Maybe what I need is to actually set up a home Internet connection, so I don&apos;t have to deal with the local captive portals at my complex.
+		It&apos;s long overdue, and would allow me to finally have my own Minetest server again.
+		Of course, then I need to find a way to allow connections to the local network without allowing connections to the full Internet, as Minetest runs over <abbr title="User Datagram Protocol">UDP</abbr> and cannot be reached via <abbr title="The Onion Router">Tor</abbr>.
+	</p>
+</section>
+<section id="job_hunt">
+	<h2>Job hunt</h2>
+	<p>
+		I can&apos;t explain the details here, but it looks like there are some complications preventing me from job hunting for now.
+		I&apos;m hoping to have these issues resolved in a few days, but progress seems to be stupidly slow.
+		I could expedite the process and be done today, but it&apos;d cost a bunch of money.
+		As I&apos;m trying to make money, not lose money, it seems like a better idea to wait and see how things play out first.
+	</p>
+</section>
+<section id="EUGLUG">
+	<h2><abbr title="Eugene Unix &amp; GNU/Linux User Group">EUGLUG</abbr></h2>
+	<p>
+		Being unable to progress on the job front, I instead looked into meeting up with the local Unix/Linux user group, <a href="https://euglug.org/"><abbr title="Eugene Unix &amp; GNU/Linux User Group">EUGLUG</abbr></a>.
+		They don&apos;t distribute their meet-up location on the Web though, so you have to inquire via email about it.
+		Hopefully they&apos;ll respond by the next meeting I don&apos;t have to work through.
+		Meetings are on Thursdays, and I really need to get out of the apartment more and meet like-minded people, so I&apos;m going to tell my boss I&apos;m no longer available to work on Thursday evenings.
+		Honestly, I debated back and forth about this.
+		I feel bad limiting when the boss can schedule me for, but I do deserve to have a life outside of work and school.
+		Even if I didn&apos;t though, my boss doesn&apos;t deserve me at their beck and call.
+		They won&apos;t even do their own job and stand up for their employees, myself included, so why should I go out of my way to make myself available for them?
+		Honestly, if they were a decent boss, I probably wouldn&apos;t have the heart to set limits on my work schedule.
+		I still do have to work this coming Thursday though, and due to not having given the boss enough warning, it&apos;s possible I&apos;ll need to work the Thursday after that.
+	</p>
+</section>
+		<hr/>
+		<p>
+			Copyright © 2018 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2018%2F06-June%2F07.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.2</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2018%2F06-June%2F07.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+
