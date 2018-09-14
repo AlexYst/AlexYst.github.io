@@ -192,3 +192,36 @@ a.hyperlink_unavailable {
 	color: #888;
 }
 
+/* Stuff for the goal page: */
+p.goal-attributes {
+	display: table;
+}
+
+p.goal-attributes span {
+	display: table-row;
+}
+
+p.goal-attributes span span {
+	display: table-cell;
+	border-width: 2px;
+	padding: 1em;
+}
+
+p.goal-attributes span span.goal-attribute-high {
+	border-color: #ff0;
+	background-color: #ff8;
+	color: #ff0;
+}
+
+p.goal-attributes span span.goal-attribute-medium {
+	display: table-cell;
+}
+
+p.goal-attributes span span.goal-attribute-low {
+	display: table-cell;
+}
+
+span.highlight {
+	background-color: #fff;
+	color: #000;
+}

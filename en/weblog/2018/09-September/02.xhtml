@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2018 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2018/09-September/02.xhtml"/>
+		<title>Dealing with my mother &lt;https://y.st./en/weblog/2018/09-September/02.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+<nav>
+	<p>
+		<a href="/en/">Home</a> |
+		<a href="/en/a/about.xhtml">About</a> |
+		<a href="/en/a/contact.xhtml">Contact</a> |
+		<a href="/a/canary.txt">Canary</a> |
+		<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+		<a href="/en/opinion/">Opinions</a> |
+		<a href="/en/take-down/">Take-down requests</a> |
+		<a href="/en/law/">Law</a> |
+		<a href="/en/recipe/">Recipes</a> |
+		<a href="/en/a/links.xhtml">Links</a> |
+		<a href="/en/weblog/2018/09-September/02.xhtml.asc">{this page}.asc</a>
+	</p>
+	<hr/>
+	<p>
+		Weblog index:
+		<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+		<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+		<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+	</p>
+	<hr/>
+	<p>
+		Jump to entry:
+		<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+		<a rel="prev" href="/en/weblog/2018/09-September/01.xhtml">&lt;Previous</a>
+		<a rel="next" href="/en/weblog/2018/09-September/03.xhtml">Next&gt;</a>
+		<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+</nav>
+		<header>
+			<h1>Dealing with my mother</h1>
+			<p>Day 01275: Sunday, 2018 September 02</p>
+		</header>
+<img src="/img/CC_BY-SA_4.0/y.st./weblog/2018/09/02.jpg" alt="The road to my mother&apos;s place" class="framed-centred-image" width="640" height="480" />
+<section id="virus">
+	<h2>Windows virus</h2>
+	<p>
+		I got to my mother&apos;s place to try to work on her supposed virus issue, and she&apos;d kept the machine on from last time it froze on her.
+		Based on the weird artefacts visible all over the monitor, I diagnosed it as a hardware problem; most likely the motherboard.
+		I restarted the machine and downloaded ClamAV to scan for viruses anyway.
+		It would no doubt find several, with Windows having the worst security of any modern operating system, and once those were removed, we could verify that the problem persisted and it was probably the hardware as I already believed.
+		But ...
+		ClamAV comes in a <code>.tar.gz</code> file.
+		Windows doesn&apos;t know what to do with that.
+		Why is the Windows version of ClamAV packed in a <code>.tar.gz</code> file?
+	</p>
+	<p>
+		I tried to look up what to do with such an archive.
+		I noticed a familiar name flash in the browser window on the search engine page for about a second: 7-Zip.
+		I was pretty sure that one was free software.
+		But then the machine froze and the screen bugged out.
+		From this point forward, any time I restarted Windows and tried to get the necessary software, the machine would bug out before I could get to the Z-Zip website, usually happening on the search engine page.
+		I couldn&apos;t download, let alone install, 7-Zip.
+		For that matter, what if I magically had it on the hard drive ready to install already?
+		Surely the time limit before freezing I was dealing with would have cut short any installation I attempted, and would almost certainly leave the machine in an even more broken state in which the software was half installed.
+		I had no hope of installing 7-Zip nor ClamAV.
+		But it was probably a hardware issue anyway, so it was a moot point.
+	</p>
+	<p>
+		My mother was headed out on a trip with her friend and Vanessa, so I caught her really quickly and told her what I thought.
+		I also recommended getting a second opinion if she knew anyone else that might know something about computers.
+		She didn&apos;t.
+		But then it occurred to me something I could do to prove beyond a doubt that it was a hardware problem: I could catch it freezing while in the <abbr title="Basic Input/Output System">BIOS</abbr>.
+		I mean, if the operating system isn&apos;t running, it can&apos;t be a system issue and can&apos;t be a virus, right?
+		So I popped back into the house to try doing stuff in the <abbr title="Basic Input/Output System">BIOS</abbr> menu.
+		I quickly found a hardware diagnostic tool in there.
+		Not only would it check certain aspects of the hardware&apos;s health, it&apos;d also take a long time to run, giving the machine plenty of time to freeze.
+		But it didn&apos;t.
+		And the tool found no errors.
+		I guess it&apos;s a Windows problem after all?
+		A virus probably trashed something important.
+		I emailed her what I found, but since I couldn&apos;t keep Windows functioning long enough to make an installation, let allone run the antivirus software once installed, I couldn&apos;t fix it.
+		She&apos;d need to either have me replace the operating system (if she wanted it replaced with another Windows instance, she&apos;d need to buy that) or get someone more specialised to fix this.
+		That, or replace the machine.
+	</p>
+	<p>
+		As we&apos;d also previously discussed backing up her files if the machine needed to be replaced, I said I&apos;d try to get the part I needed to make that happen at the recycling centre.
+		I mean, if the system won&apos;t stay operational, I can&apos;t simply plug in external storage and copy everything.
+		I&apos;ll need to access the hard drive from the context of another system; I&apos;ll need a hard drive enclosure.
+		It the recycling centre doesn&apos;t have one, I&apos;ll see if I can find an affordable one online, but she&apos;ll have to wait for it to arrive in the mail.
+		Getting one at the recycling centre, if possible, would be faster.
+	</p>
+	<p>
+		When I got home from work, I found she&apos;d written back.
+		She says she&apos;s got to go to the recycling centre too, no doubt to get a new Windows machine.
+		As we&apos;d discussed, getting a new on from the recycling centre would be less costly than paying Microsoft for a new copy of the operating system.
+		She wants me to go with her.
+		I suspect she wants me to help her find the right Windows machine for her.
+		Like last time, I&apos;ll be of zero help.
+		It won&apos;t even be by choice.
+		I simply have no relevant knowledge to the situation of choosing a Windows machine.
+		A Windows machine with high specs will necessarily be less functional than a Linux machine with low specs.
+		That&apos;s just life.
+	</p>
+	<p>
+		However, I also suspect she has ulterior motives.
+		Though she knows how much I hate it, she likes to try to &quot;save me trips&quot; by strong-arming me into taking rides from her under the guise that it&apos;s to &quot;help me&quot;.
+		I think a big part of why she likes doing it is that it gives her control.
+		The last time she pulled a major stunt on this front, I reworked the plan and gave her what she claimed to want without giving in to her ulterior motive nonsense.
+		She copped such an attitude, but had no actual thing to hold against me without admitting her scheme.
+		And of course, she didn&apos;t want to do that, so she stayed mad at me for at least a week.
+		I want to say it was over a month, but my memory is hazy about the details.
+		It was certainly at least a week though.
+		And it never got resolved.
+		I guess she just eventually forgot about the situation at some point.
+		And now, since I&apos;ve moved away, she&apos;s lost pretty much all the power in our relationship.
+		This would be the first time she&apos;d be able to even attempt such a stunt in a big way again.
+		If I turn down the ride and try to meet her there, I&apos;m the bad guy for not allowing the optimisation of the trip.
+		I mean, if I take the ride, we arrive at the same time and, in her view, I don&apos;t &quot;have to&quot; make the long trip via my body&apos;s own power.
+		If I take the ride to try (and likely fail) to help with her situation, but refuse to buy the part I need myself to deliberately ensure I have to make the trip myself later and she recognises that she hasn&apos;t &quot;saved&quot; me anything, I&apos;m the bad guy for not getting the part as quickly as I can, as I could have gotten it on her trip that ended up postponing my own.
+		And finally, I could make a point of letting her know that I&apos;d make the trip later whether we accomplished our goals or not.
+		If she takes up the morning with her trip, I&apos;ll buy the part I need, but I&apos;ll bike back there after work to make sure I get the trip in.
+		I&apos;ll be tired from work, and it&apos;ll be dark as I&apos;ll get off around 22:00, but I&apos;ll make the trip.
+		Not only will she not have &quot;saved&quot; me the trip, she&apos;ll have made the trip more difficult and less pleasant if she doesn&apos;t see reason and just meet me at the recycling centre.
+		But then I&apos;m the bad guy for being obtuse.
+		There&apos;s just no way to win.
+	</p>
+	<p>
+		Or so I thought at first.
+		I was trying to foil her ulterior motive, one that&apos;d go unnoticed if you didn&apos;t know our relationship, but that&apos;s plain as day if you do.
+		As you read this, you probably think I&apos;m an utter nut job for reading so deeply into such a seemingly-benign suggestion by her, but if you knew her as well as I do, you&apos;d understand.
+		But I don&apos;t think foiling her plan is the right plan for me.
+		Rather, I need to fight her ulterior motive with one of my own.
+		I should give her exactly what she wants to the letter, but make sure I get something out of it too.
+		I think I&apos;ll take the opportunity to rub in her face a bit that I&apos;m not the man she thinks I am, which is to say, not a man at all.
+		I&apos;ll wear one of my more feminine outfits.
+		And I&apos;ll be sure to pull out my feminine wallet in front of her if a natural chance arises, such as if they indeed do have the hard drive enclosure.
+	</p>
+</section>
+<section id="health">
+	<h2>Health</h2>
+	<p>
+		I ended up biking to my mother&apos;s place and back home twice, then biking to work and back.
+		Total, I got about an hour of biking in.
+		I obviously should&apos;ve gotten more in, but I&apos;m still tired and probably will continue to be if I go out biking every day like this.
+	</p>
+</section>
+		<hr/>
+		<p>
+			Copyright © 2018 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2018%2F09-September%2F02.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.2</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2018%2F09-September%2F02.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+
