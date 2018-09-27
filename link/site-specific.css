@@ -208,21 +208,21 @@ p.goal-attributes span {
 }
 
 p.goal-attributes span span.goal-attribute-high {
-	border-color: #f0f;
+	border-color: #808;
 	background-color: #fcf;
-	color: #f0f;
+	color: #808;
 }
 
 p.goal-attributes span span.goal-attribute-medium {
-	border-color: #ff0;
+	border-color: #880;
 	background-color: #ffc;
-	color: #ff0;
+	color: #880;
 }
 
 p.goal-attributes span span.goal-attribute-low {
-	border-color: #0ff;
+	border-color: #088;
 	background-color: #cff;
-	color: #0ff;
+	color: #088;
 }
 
 span.highlight {
