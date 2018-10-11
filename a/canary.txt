@@ -18,7 +18,7 @@ just fine.
 My PGP key ID is 0xE7464A03 and my PGP fingerprint is
 D135 B061 DBED 690B 479F E2E3 7D83 E1E5 E746 4A03.
 
-As of today, Wednesday, 2018 October 03,
+As of today, Wednesday, 2018 October 10,
 I have not been legally required to withhold information.
 University of the People has issued me a take-down request for
 some pages on this website, but I have not been asked to keep
@@ -45,17 +45,17 @@ This canary has gone down in the past due to technical issues:
   '- Various life circumstances made website updates difficult.
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEE0TWwYdvtaQtHn+LjfYPh5edGSgMFAlu1goIACgkQfYPh5edG
-SgMjyg//Rh8eRz9rpte3YQObeKKAhFQ4c2iCMNRzzunvXR/PLo1OJH9VQbpxsTGu
-gdQRv1Vyiwr2NDtlp95833hJ9O7UGLgF/zMFtRniqF7BMRP1fL6vsJ5hiRrII5wW
-XNX5fQLavFOyXgSgqJ3cHL4IEulcL2I9+YDlM5zpbyIyYphsI+dOx3hV1X9sZ6Lx
-/mBREnRYPigyAFWiiMplrxUYMvIByDn5MHCvLMjmiSIIvlqC2TU0IHmn3/Cp0r5A
-wnh9cDtIyVWPb+YSXXLcFV0aLZ25Mto9YIBQfjH1t+bPJZAKlKcYJaYHSa3e+7rg
-ken/ZZyZBX2GrOa8YIvda/23Uo2EzMAxL2h+UJKU22nob73nOAZYKIdZirJhlLR/
-40E/5PKm/ElI9+8afpxzFX4M2mHK1eP3mBrdYAaWa3vZpHpU3ygkrmx6F8NgNkQN
-n6FiDPG55C296waoVuF43qAIsWF/GWp+RnfcBIRwVljND8uXGEuklBXrOxbg26zQ
-ndi8lfnP8C5ojBMTTQoKZbuwq0a5UlR8zBBbDv4nAvJOt12V6kOfXprsV1AAqJCt
-uuF0sr34wLQfRDuu/knif+DntQqdFrcPNoJSqCOtRlwSw9GSlbeS9Awjr5u6zcMi
-5LPF0yCMSCpBD4uYZv38bZ3GINnXqlLm98I7xBBhA5FZPWergNc=
-=qyxZ
+iQIzBAEBCAAdFiEE0TWwYdvtaQtHn+LjfYPh5edGSgMFAlu+wl4ACgkQfYPh5edG
+SgNeNRAAhTcrmdwCYi++nD75IP1mYvokEZxXRjgsbwFyWNkCs6c/kgncjXdMQ/vP
+WjOQrvd1vf60/D6SOxBikM951oTXiIeQFpIuI+nSNfpXnPRXdRXR2P+MtP2TeAWM
+ZRxdVzlRXVzo6zmgDMtwDgBWoyAruQ+VNkgjY9PnVvJeFzHm4tUq9Bflvoi/vtK1
+LKSk0mAlmF/Ew9GM1in2IcOJYrim3sod0MNeZu/fkup8PiVtb47wZNtcZ8xYZhUn
++c0+87Se93dLwJTbW42H1IARiC0lNaD9CV1EOdignK4FsRkf1sl7726ZCNh0Uu/J
+Ioz2xfOD4PQfInUNWk4ifPHUbRe6n8p71zFp3cluIA6PF6ICIlcQhUCx37c8i7UR
+4iqE9zzQi/hE0F/bHt79uG3ThcxGEMY+rIvXtIEp2+ofvhHIVYHeynEdmvEeGXbP
+8Fyg4D2eZIZ9+0i+h5HgNyIEMnBAoLC4kubekQOBxervIoE0Soh4FM011RkGTzwg
+Q5lV9POc99TBGzWHl0hoXIy2ggVKqgfswV8Rsu6EgrwFXUuLLpBK89a7YnorlXUr
+looBPKdAGt/viP3zdjIrLFm1Wd8Q2ls6nyTY6vLItVBayEPTzAY2BTS6yqt/8OsU
+YHT55vt//bYZZ5LEW07AYSFX4+MXXYH9eCLqhXupOMXQ+t8yglI=
+=NLJa
 -----END PGP SIGNATURE-----
