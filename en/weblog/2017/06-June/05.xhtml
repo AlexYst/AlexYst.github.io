@@ -78,7 +78,7 @@
 		I still need a way to delete the old files, but that&apos;s less important.
 		The <code>Settings(file_name):remove(key)</code> method is supposed to delete a key/value pair from the file, but it seems to be no-op, or something.
 		I was going to remove each key/value pair as I finished with it.
-		I ended up having to use <code>io.open(file_name, "w"):close()</code> at the end to erase everything at once instead.
+		I ended up having to use <code>io.open(file_name, &quot;w&quot;):close()</code> at the end to erase everything at once instead.
 		Either way, it accomplishes the same task though: removing the key/value pairs so they won&apos;t be re-imported a second time.
 	</p>
 	<p>
@@ -118,7 +118,7 @@
 		First, there&apos;s the fact that their definition includes what item they drop when dug, but are defined to not be diggable.
 		This is ridiculous, and causes a false positive in my mod.
 		The fact that they&apos;re undiggable means more than ever though that I need to remove them from the stats page.
-		Otherwise, the imposible-to-earn stat just sits there and taunts users.
+		Otherwise, the impossible-to-earn stat just sits there and taunts users.
 		But that should be a defining quality I can use to blacklist the open chests, right?
 		Yes and no.
 		A node that can never be dug should have its <code>diggable</code> property set to <code>false</code>.

@@ -43,50 +43,204 @@
 			<p>Written in <span title="Introduction to Health Psychology (previously known 
 as Introduction to Human Psychology)">PSYC 1111</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised on 2018-10-24</p>
 		</header>
-<section id="Unit8">
-	<h2>Unit 8</h2>
+<section id="Unit1">
+	<h2>Unit 1</h2>
 	<p>
-		The concept of mortality rates is pretty straightforward.
-		They get corrected by some relevant denominator, which makes sense and makes the statistic more meaningful.
+		The reading material for the week is broken down into three sections, each with multiple things that need to be read.
+		I&apos;ve never seen that in any of my courses here at the university before.
+		There are also three ungraded quizzes instead of one big one, which again, isn&apos;t something I&apos;ve seen before at this school.
+		I wonder why this was done and if this is going to be a common occurrence in this course.
 	</p>
 	<p>
-		Morbidity rates seem a bit odd, as far as the name goes.
-		Why are they called morbidity rates?
-		They're a measure of how many people suffer from a given, not-necessarily-potent illness.
-		For example, you could measure the morbidity rate of people suffering from the common cold, but the common cold isn't particularly morbid.
+		The book starts off telling us that the wrong question to ask when encountering a new programming language is what the language can do.
+		I&apos;d never even thought to ask that though.
+		The book says all programming languages perform the same computations.
+		This isn&apos;t quite true.
+		All <strong>*Turing-complete*</strong> languages perform the same computations.
+		There are also domain-specific languages, which have a more-limited computation set.
+		When encountering a general-purpose programming language, my first question is whether it can be written in, compiled, and run using only free (as in freely-licensed and unencumbered, not as in gratis) software.
+		If the language doesn&apos;t function in my sterile Debian environment, it is of zero use to me.
+		My second question is of the permanence of functions and (if available) classes.
+		While I&apos;ll write in any language that passes the first test, I tend to prefer for my own projects languages that treat functions and classes as permanent structures over languages that treat them as replaceable objects/variables.
 	</p>
 	<p>
-		Measures of functioning are a better assessment of a person's health, I think.
-		I think it could use some work, but has the right idea in mind.
-		For example, I might end up with a large scrape across my arm.
-		I may still be able to perform all daily tasks, so the scrape doesn't alter my measures of functioning, but my quality of life is still lower until it has healed more.
+		Many parts that came next were review for me.
+		For example, the use of assemblers.
+		In a previous course, I was required to write in assembly and use an assembler in a very basic assembly language called Hack.
+		I never could get the assembler functioning.
+		I ended up building my own assembler from scratch in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> and using it to complete the assignments.
+		It was a highly educational experience for me.
+		The book makes a good point that each layer of abstraction causes loss of detail and loss of control though.
+		It&apos;s a usability trade-off.
+		Do you want to be able to specify every detail at the cost of <strong>*having*</strong> to specify every detail, or do you want to be free to specify things at a higher level at the cost of accepting the implementation chosen by the computer?
+		Which option is better often depends on the project, but as a general rule of thumb, human labour is more costly than computer labour, so working at a higher level is more cost-effective for programs in which such fine details aren&apos;t important.
 	</p>
 	<p>
-		The paper on teleheath practices was not what I expected it to be.
-		I assumed it'd  talk about how effective it is and how more healthcare providers should provide the option.
-		Having &quot;tele&quot; in the name, I assumed the primary remote interactions would be over the telephone, which gave me a bias against the paper before even reading it.
-		I understand that the &quot;tele&quot; comes from &quot;telecommunication&quot; and that telephones aren't the only method of telecommunication, but my gut instinct jumps to the negative conclusion in this case.
-		I assumed other methods of telecommunication would not be offered to the participants.
-		One of my main issues with telephones is the attitude of people that have them.
-		They assume that because most people have telephone service, <strong>*everyone*</strong> must have telephone service.
-		Many businesses and organisations, both public and private, refuse to serve you  if you don't hand over a telephone number.
-		Don't have one?
-		Too bad.
-		No service for you.
-		For example, the <abbr title="Department of Motor Vehicles">DMV</abbr> in my state refuses to issue me a drive test, and therefore refuses to issue me a driver license, because I don't have telephone service.
-		What kind of idiotic reason is that!?
-		So because I don't have a telephone line, I'm not allowed to drive a motor vehicle.
+		I had no idea that Pascal programs had to be written in a single file.
+		That&apos;s rather inconvenient.
+		Ada seems like it was developed the right way; which is to say, without hardware-specific hacks and especially without attempts to standardise bugs into features.
+		Too languages and systems work to preserve backwards compatibility at the cost of keeping poorly-designed features around that should really be fixed.
 	</p>
 	<p>
-		Anyway, I wasn't wrong that participants in the study were required to engage with their healthcare providers over the telephone, though the main way patients communicated with their doctors via a special monitoring machine instead.
-		However, I <strong>*was*</strong> wrong that the study was highly in favour of pushing us toward a future where telephones are the main way we speak with our healthcare providers.
-		While some improvement in health was demonstrated, the increase in observed health was <code>*negligible*</code>.
-		It could have easily been caused by other factors, and even if it was in fact caused by telephoning the doctor, such negligible results don't justify pushing that setup on everyone.
-		And that's not to mention that most of the communication happened over the type of device that could be connected to the Internet for patients that don't have telephone service (though they would need Internet service).
-		It simply doesn't make sense to send one of these monitoring stations to everyone's home.
-		Many patients wouldn't be able to afford them, and the devices are only able to transmit certain types of health data, making them only useful in very specific circumstances, such as when dealing with a diagnosed chronic illness.
-		Those of us that choose to bike down to the doctors' office and make appointments in person, then actually meet our doctors face-to-face on the date of our appointments have nothing to fear from the results of this study.
-		In-person care isn't going away any time soon.
+		The book also emphasises the need to follow standards when programming.
+		I highly agree.
+		The book also says that if standards must be broken, they should be broken only in a few, well-documented modules.
+		In most cases, I&apos;d argue that if you think you&apos;ve got to break standards, you&apos;re doing something very wrong.
+		Think long and hard before breaking standards, and maybe get some advice from people that tend to strictly follow standards before proceeding in this direction.
+	</p>
+	<p>
+		Next, the book discussed hardware, which again was review for me.
+		I&apos;ve already taken a course that was entirely about hardware and machine instructions, so this was stuff I already knew.
+		This, by the way, was the same course in which I built the assembler mentioned above.
+		Memory speeds, caches, registers ...
+		We covered all that.
+	</p>
+	<p>
+		The language evolution chart was interesting, but was in a format that made it effectively useless unless printed out and assembled.
+		I have no printer, and due to the license terms of the chart (commercial use is forbidden), wouldn&apos;t print it anyway.
+		In the provided <abbr title="Portable Document Format">PDF</abbr> form, I couldn&apos;t follow lines between segments, so I couldn&apos;t draw any information from it.
+	</p>
+	<p>
+		The next reading assignment discussed how programmers choose their languages not by rational means, but for cultural reasons.
+		To a great extent, I fall victim to that mentality.
+		First and foremost, I need a language that functions in freedom.
+		This is for highly-practical reasons.
+		However, there are so many languages with free interpreters/compilers that build code that functions on my sterile Debian machine.
+		That first and most important limitation doesn&apos;t rule out much; mainly only C# and whatever language Adobe Flash interprets.
+		From there, my choice in what language to use is very much based on my impression of the language.
+		For example, I don&apos;t program in Python because Python has a condescending attitude.
+		Try running a script that begins with <code>from __future__ import braces</code> and you&apos;ll see what I mean.
+		It&apos;s perfectly acceptable for a language to choose to use indention instead of braces to denote blocks.
+		However, it&apos;s <strong>*not*</strong> acceptable for the interpreter and the language itself to deliberately mock users that don&apos;t like the design choices of the language.
+		It&apos;d be acceptable in the manual or something, but not in the interpreter.
+		This just goes to show how snotty Python is.
+		Furthermore, Python doesn&apos;t even take itself seriously.
+		For example, try running a script headed by <code>from __future__ import antigravity</code>.
+		You get an Easter egg: a <abbr title="Uniform Resource Identifier">URI</abbr> of a Web comic.
+		Easter eggs don&apos;t belong in compilers or interpreters.
+		I don&apos;t use Python if I can help it, because I don&apos;t like the attitude behind it.
+		Instead, I&apos;ll use just about anything else, provided it works.
+	</p>
+	<p>
+		Like the reading material says, Java and <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> are a bit poorly-designed.
+		At least they don&apos;t mock you though.
+		I tend to use <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> for anything non-graphical, as it has a nice hybrid <abbr title="object-oriented programming">OOP</abbr> and non-<abbr title="object-oriented programming">OOP</abbr> thing going for it, that allows objects to be used, but doesn&apos;t have classes or functions be objects themselves.
+		I love that feature, even if it&apos;s not theoretically the most useful feature a language could have, and I&apos;ve never found another language that shares it.
+		That is, aside from Hack.
+		Hack is a language based on <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> and modified by Facebook.
+		This isn&apos;t the same Hack I mentioned above, which is an assembly language.
+		I mainly don&apos;t use Hack though because it&apos;s not available in Debian&apos;s repositories.
+		I don&apos;t trust Facebook at all, so I&apos;d definitely need the code gone over by someone I do actually trust, such as the Debian developers, before I&apos;d ever adopt it for my own use.
+		Because <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> doesn&apos;t have the functions needed for graphical applications, I&apos;ll likely turn to Java when I start building graphical applications.
+		It works, it&apos;s cross-platform compatible, and it doesn&apos;t mock people like Python does.
+		It&apos;s also a language I already have some experience with, due to courses here at this university.
+		It does have major problems though, such as the capacity to have multiple methods that share the exact same method name in the exact same namespace, provided they take different arguments.
+		That terrible feature leads to a lot of issues when debugging, as the error messages claim you&apos;re trying to call non-existent method, when you&apos;re really just passing the wrong arguments into a method call.
+		I don&apos;t like Java, but with the right <abbr title="integrated development environment">IDE</abbr>, it becomes tolerable.
+	</p>
+	<p>
+		After reading that article, I&apos;m a bit more interested to try Perl.
+		It might meet my needs, and if it does, it&apos;d mean being free of <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>&apos;s inadequacies.
+	</p>
+	<p>
+		The textbook claims to use Extended Backus-Naur Form to specify rules, but it&apos;s using rich text qualities (bold and italics) to get some of the information across.
+		The <abbr title="Request for Comments">RFC</abbr>s use Extended Backus-Naur Form.
+		They&apos;re plain text documents with no rich text formatting.
+		For that reason, I&apos;m pretty sure Extended Backus-Naur Form does not use rich text qualities to denote anything, and the book is using a non-standard variation on Extended Backus-Naur Form, after having told us that following standards is important.
+		The Wikipedia article on <a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">Extended Backus-Naur Form</a> confirms too that it&apos;s the <abbr title="Request for Comments">RFC</abbr>s that have it right, and not the textbook.
+		Boldface and italics aren&apos;t valid in Extended Backus-Naur Form.
+	</p>
+	<p>
+		The book also claims that syntax rules are easier to learn if given in the form of sequence diagrams, but I&apos;d have to disagree.
+		Real Extended Backus-Naur Form is easier to understand than both sequence diagrams and the book&apos;s bastardised Extended Backus-Naur Form, and sequence diagrams are harder to understand than both real Extended Backus-Naur Form and the book&apos;s bastardised Extended Backus-Naur Form.
+		I think some people think diagrams make everything easier, but in many cases, they do not.
+		Diagrams have a time and place, but that time and place isn&apos;t everywhen and everywhere.
+		(The book&apos;s author, thankfully, does not seem to think stuffing the book with diagrams for everything is a great idea; but in general, some people do try to attach a diagram to everything they can find a way to.)
+	</p>
+	<p>
+		The book also discusses needing to be careful when dealing with languages that are case-sensitive.
+		I&apos;d argue the opposite.
+		Case sensitivity is intuitive to any real programmer.
+		<code>M</code> and <code>m</code> are different characters.
+		They even have entirely different bit sequences.
+		There is absolutely no reason to mix the two up.
+		Rather, what you need to be careful of is case <strong>*insensitivity*</strong>.
+		When a language drops case insensitivity on you, it causes several potential issues.
+		In such cases, using a standardised case may be required to make sure nothing unexpected happens.
+		For example, let&apos;s say you&apos;re writing a class autoloader for <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, which annoyingly makes class names (and function names) case insensitive.
+		You don&apos;t know for sure what case a user will specify a class name by.
+		You either need to standardise what case is used for referencing class names, so the autoloader always receives the expected case and knows right where in the filesystem to look, or you need to program the autoloader to in some way standardise the class names it receives before it searches the filesystem for them.
+		After all, on a reasonable filesystem (read: most filesystems not developed by Microsoft) <code>/dir/MyClass.php</code> and <code>/dir/myclass.php</code> are entirely different files, as they very much should be.
+		Any sane language is case sensitive.
+		(And yes, that means that <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> isn&apos;t exactly sane, but anyone with any experience with <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> can tell you that.)
+	</p>
+	<p>
+		The book mentions that a variable must be assigned a type, and gives a seemingly valid reason for it.
+		The compiler needs to know how much memory to assign the variable.
+		However, this only applies to strongly-typed languages.
+		Strong typing is useful for more than just the compiler&apos;s work.
+		It also helps catch certain types of mistakes, when done well.
+		(Java does not do this well.)
+		However, not all languages are strongly-typed.
+		You can write a program in some languages in which a variable switches its value to one of another type or even one in which the type of the initial assignment isn&apos;t even known at compile time due to a conditional statement.
+		Clearly, blanket claims that the compiler needs to know how much memory to assign a variable are dead wrong.
+		It&apos;s only when you speak of certain specific languages that such a statement could be correct.
+	</p>
+	<p>
+		The book also claims that the only statements in normal programming languages that actually do something are the assignment statements.
+		I find that very difficult to believe.
+		For example, are languages that allow file writes not considered normal?
+		File writes are typically carried out by a special function or method.
+		Never have I seen a file write carried out via assignment statement in any language.
+		Unless ...
+		Is the book trying to claim that writes to memory are assignment statements and that segments of disk space get assigned new values?
+		That&apos;d be a really obtuse way of looking at it.
+		And what about language functions that draw on the monitor or output sound?
+		Is it calling these assignments?
+		That&apos;s quite a large stretch there.
+		Data gets written, but these aren&apos;t &quot;assignment statements&quot;.
+	</p>
+	<p>
+		The book presents three methods of type checking when assigning values to variables.
+		First, you can stuff the value into a typed variable regardless of a type mismatch.
+		Data isn&apos;t converted or anything, so you can get odd results when you accidentally use a value that doesn&apos;t belong in that type of variable.
+		Second, you can convert the value in some way.
+		And third, you can throw errors in case of type mismatch.
+		However, there&apos;s a fourth option: weak typing!
+		While by no means a great option, some languages attach types to values, but not to variables.
+		Any type of value can go in any variable in such languages.
+		Despite the debugging issues this causes, it&apos;s still very much a common option some languages (Python and <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, for example) implement.
+	</p>
+	<p>
+		I&apos;m not sure what we were supposed to get from the history section on John von Neumann.
+		It didn&apos;t really talk much about programming languages, which is a supertopic of this course&apos;s actual topic, comparative programming languages.
+		Comparative programming languages weren&apos;t discussed at all.
+		I got two things out of that article though.
+		First, Von Neumann was opposed to assemblers.
+		He thought assembly should be done by hand.
+		In his time, this may have been a valid thought, but by modern standards, computing has become cheap, while human labour remains expensive.
+		Not only do we have computers perform assembly for us, but we even program things in such a way that they&apos;re less efficient with computing resources just to make them easier for humans to maintain.
+		Assembling by hand today, for any reason other than to learn how assembly is completed by a computer for educational purposes, would be insane.
+		Second, I learned that Von Neumann&apos;s computer design was abstract.
+		He came up with high-level ideas for how it should be structured, but no implementation to realise this design.
+		This in no way invalidates what he came up with, but it&apos;s interesting to know.
+	</p>
+	<p>
+		I don&apos;t seem to understand how a Turing machine can simulate any computation.
+		The problem is that it can only move forward or backward by one cell each time it processes a cell.
+		How do you accomplish loops?
+		Or conditionals?
+		It doesn&apos;t make any sense.
+		Maybe we&apos;ll study that further in another unit.
+	</p>
+	<p>
+		One part of the reading assignment is on a server that blocks my <abbr title="Internet Protocol">IP</abbr> address, so I had to skip it:
+	</p>
+	<img src="https://my.uopeople.edu/draftfile.php/119878/user/draft/200377538/403_Forbidden.png" alt="403 Forbidden" class="framed-centred-image" width="689" height="267"/>
+	<p>
+		There was a monstrous amount of reading material this week.
+		There was no written assignment this time aside from the learning journal assignment, but I&apos;m not sure how I&apos;m going to keep up once the written assignments start popping up.
+		There&apos;s only so much time in the day, and I have other things to get done in addition to coursework.
 	</p>
 </section>
 		<hr/>

@@ -114,8 +114,8 @@
 </p>
 <pre><code>#!/bin/sh<br/>
 # set PATH so it includes user&apos;s private bin if it exists<br/>
-if [ -d "$HOME/bin" ] ; then<br/>
-    PATH="$HOME/bin:$PATH"<br/>
+if [ -d &quot;$HOME/bin&quot; ] ; then<br/>
+    PATH=&quot;$HOME/bin:$PATH&quot;<br/>
 fi</code></pre>
 <p>
 	Now, the <code>~/bin</code> directory is added to the $PATH as it should be.
