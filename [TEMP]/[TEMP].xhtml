@@ -43,204 +43,85 @@
 			<p>Written in <span title="Introduction to Health Psychology (previously known 
 as Introduction to Human Psychology)">PSYC 1111</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised on 2018-10-24</p>
 		</header>
-<section id="Unit1">
-	<h2>Unit 1</h2>
+<section id="Unit2">
+	<h2>Unit 2</h2>
 	<p>
-		The reading material for the week is broken down into three sections, each with multiple things that need to be read.
-		I&apos;ve never seen that in any of my courses here at the university before.
-		There are also three ungraded quizzes instead of one big one, which again, isn&apos;t something I&apos;ve seen before at this school.
-		I wonder why this was done and if this is going to be a common occurrence in this course.
+		When I read &quot;Should I buy a new payroll program from vendor X or vendor Y?&quot;, the first thing that popped into my head was &quot;It depends. Which one is open source?&quot;.
+		Seriously, I don&apos;t trust software from anyone if the source code is hidden from the public.
+		I don&apos;t mind paying, but if the source code is hidden, you don&apos;t know what malicious things the software may or may not be doing behind your back.
 	</p>
 	<p>
-		The book starts off telling us that the wrong question to ask when encountering a new programming language is what the language can do.
-		I&apos;d never even thought to ask that though.
-		The book says all programming languages perform the same computations.
-		This isn&apos;t quite true.
-		All <strong>*Turing-complete*</strong> languages perform the same computations.
-		There are also domain-specific languages, which have a more-limited computation set.
-		When encountering a general-purpose programming language, my first question is whether it can be written in, compiled, and run using only free (as in freely-licensed and unencumbered, not as in gratis) software.
-		If the language doesn&apos;t function in my sterile Debian environment, it is of zero use to me.
-		My second question is of the permanence of functions and (if available) classes.
-		While I&apos;ll write in any language that passes the first test, I tend to prefer for my own projects languages that treat functions and classes as permanent structures over languages that treat them as replaceable objects/variables.
+		The section on types of growth rates was all review for me.
+		I don&apos;t recall where I learned about algorithm growth rates, but it&apos;s something I&apos;ve known about for a while.
+		Some algorithms remain linear in their resource consumption as the input size grows, but others grow exponentially, leading resource usage to get out of control for larger inputs.
 	</p>
 	<p>
-		Many parts that came next were review for me.
-		For example, the use of assemblers.
-		In a previous course, I was required to write in assembly and use an assembler in a very basic assembly language called Hack.
-		I never could get the assembler functioning.
-		I ended up building my own assembler from scratch in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> and using it to complete the assignments.
-		It was a highly educational experience for me.
-		The book makes a good point that each layer of abstraction causes loss of detail and loss of control though.
-		It&apos;s a usability trade-off.
-		Do you want to be able to specify every detail at the cost of <strong>*having*</strong> to specify every detail, or do you want to be free to specify things at a higher level at the cost of accepting the implementation chosen by the computer?
-		Which option is better often depends on the project, but as a general rule of thumb, human labour is more costly than computer labour, so working at a higher level is more cost-effective for programs in which such fine details aren&apos;t important.
+		I hadn&apos;t considered data distribution as a factor.
+		It makes a difference though when trying to understand the average case, as well as consider how likely the best and worst cases are.
+		I also hadn&apos;t considered comparing the switching of algorithms to the switching of computers.
+		Making that comparison really shows you whether it&apos;s the algorithm or the computer&apos;s speed that&apos;s holding you back.
 	</p>
 	<p>
-		I had no idea that Pascal programs had to be written in a single file.
-		That&apos;s rather inconvenient.
-		Ada seems like it was developed the right way; which is to say, without hardware-specific hacks and especially without attempts to standardise bugs into features.
-		Too languages and systems work to preserve backwards compatibility at the cost of keeping poorly-designed features around that should really be fixed.
+		The discussion assignment told us to use big-Oh notation, so I read the textbook up to that point, then made my initial post.
+		I often don&apos;t have time to read the entire assigned material in one or two days, but I need to get my initial discussion post in by them to keep my coursework on schedule.
+		Reading further though, it looks like there&apos;s also a big-Omega and big-Theta notation, both of which could apply to the discussion assignment well.
+		In particular, big-Theta would be the most appropriate.
+		However, we were asked to use big-Oh, so I guess my submission is what we were asked to have it be.
 	</p>
 	<p>
-		The book also emphasises the need to follow standards when programming.
-		I highly agree.
-		The book also says that if standards must be broken, they should be broken only in a few, well-documented modules.
-		In most cases, I&apos;d argue that if you think you&apos;ve got to break standards, you&apos;re doing something very wrong.
-		Think long and hard before breaking standards, and maybe get some advice from people that tend to strictly follow standards before proceeding in this direction.
+		I mean, aside from the part that I was dead wrong about problem 0.
+		My answer was that there was no solution.
+		I learned from other students that I&apos;d done it wrong though, and that there is in fact a valid solution to the problem.
 	</p>
 	<p>
-		Next, the book discussed hardware, which again was review for me.
-		I&apos;ve already taken a course that was entirely about hardware and machine instructions, so this was stuff I already knew.
-		This, by the way, was the same course in which I built the assembler mentioned above.
-		Memory speeds, caches, registers ...
-		We covered all that.
+		Some of the simplification methods for cost growth formulas make use of basic mathematical properties.
+		Others though use engineers&apos; logic of &quot;well, it&apos;s close enough&quot;
+		Normally, I&apos;d disagree and say that &quot;close enough&quot; isn&apos;t actually close enough.
+		However, cost growth formulas are themselves an estimation.
+		They&apos;re not used in anything you&apos;d actually code into the machine.
+		Instead, they help you determine which algorithms are most likely not to be worth the time it takes to implement them.
+		In such cases, &quot;close enough&quot; often is really close enough.
 	</p>
 	<p>
-		The language evolution chart was interesting, but was in a format that made it effectively useless unless printed out and assembled.
-		I have no printer, and due to the license terms of the chart (commercial use is forbidden), wouldn&apos;t print it anyway.
-		In the provided <abbr title="Portable Document Format">PDF</abbr> form, I couldn&apos;t follow lines between segments, so I couldn&apos;t draw any information from it.
+		The book discusses not only time constraints, but disk space constraints and memory constraints.
+		I faced such constraints when working on a Web spider I built.
+		I&apos;ve had to shelve the spider due to time constraints keeping me from continuing development.
+		While I was working on and testing it though, I found such disk/memory constraints to be problematic.
+		I don&apos;t recall whether it was disk space or <abbr title="random-access memory">RAM</abbr>, but I found I was using too much.
+		I had to drastically cut what the spider kept track of.
+		Instead of storing every <abbr title="Uniform Resource Identifier">URI</abbr> it encountered, I had to change it to only temporarily store <abbr title="Uniform Resource Identifier">URI</abbr>s of the pages it found on a given site that pointed to other pages on that same site.
+		For external links, everything but the port, domain, and scheme was just dropped.
+		And once it finished crawling a site, I had to have it drop all full <abbr title="Uniform Resource Identifier">URI</abbr>s within the site, keeping only one reference to the home page of the site.
+		It made the indexing less complete than I wanted it to be, but the spider was still pretty good at discovering new websites.
 	</p>
 	<p>
-		The next reading assignment discussed how programmers choose their languages not by rational means, but for cultural reasons.
-		To a great extent, I fall victim to that mentality.
-		First and foremost, I need a language that functions in freedom.
-		This is for highly-practical reasons.
-		However, there are so many languages with free interpreters/compilers that build code that functions on my sterile Debian machine.
-		That first and most important limitation doesn&apos;t rule out much; mainly only C# and whatever language Adobe Flash interprets.
-		From there, my choice in what language to use is very much based on my impression of the language.
-		For example, I don&apos;t program in Python because Python has a condescending attitude.
-		Try running a script that begins with <code>from __future__ import braces</code> and you&apos;ll see what I mean.
-		It&apos;s perfectly acceptable for a language to choose to use indention instead of braces to denote blocks.
-		However, it&apos;s <strong>*not*</strong> acceptable for the interpreter and the language itself to deliberately mock users that don&apos;t like the design choices of the language.
-		It&apos;d be acceptable in the manual or something, but not in the interpreter.
-		This just goes to show how snotty Python is.
-		Furthermore, Python doesn&apos;t even take itself seriously.
-		For example, try running a script headed by <code>from __future__ import antigravity</code>.
-		You get an Easter egg: a <abbr title="Uniform Resource Identifier">URI</abbr> of a Web comic.
-		Easter eggs don&apos;t belong in compilers or interpreters.
-		I don&apos;t use Python if I can help it, because I don&apos;t like the attitude behind it.
-		Instead, I&apos;ll use just about anything else, provided it works.
+		Lookup tables are a good thing to learn about, though this was all review for me.
+		I actually use lookup tables in my code all the time to make my code run faster.
+		It does cost more <abbr title="random-access memory">RAM</abbr>, and I&apos;m aware of that, but when I use them, I use them because I feel the trade-off is not only worth it, but sometimes even necessary.
+		For example, there&apos;s a game I play when I need to de-stress called Minetest.
+		It&apos;s got a great <abbr title="application programming interface">API</abbr> to build content against.
+		One of my main plugins operates on certain types of in-game items.
+		So when the game starts, it runs through the list of items and creates a look-up table of the ones with qualities it cares about.
+		Out of probably a couple hundred items, it only needs data on maybe about three dozen.
+		It then checks that look-up table when certain events occur, and if the item triggering the event isn&apos;t in the table, the code knows it can safely ignore the event instead of looking up the information on the item and recomputing which events relating to that item are even relevant.
+		And within each table element is a subtable recording which events related to that item matter, so even when encountering an item with known-relevant events, the relevant events don&apos;t need to be recalculated.
+		A player can trigger an event that needs to be checked for importance a few times per second, so especially in multiplayer mode, this time-saving is vital.
 	</p>
 	<p>
-		Like the reading material says, Java and <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> are a bit poorly-designed.
-		At least they don&apos;t mock you though.
-		I tend to use <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> for anything non-graphical, as it has a nice hybrid <abbr title="object-oriented programming">OOP</abbr> and non-<abbr title="object-oriented programming">OOP</abbr> thing going for it, that allows objects to be used, but doesn&apos;t have classes or functions be objects themselves.
-		I love that feature, even if it&apos;s not theoretically the most useful feature a language could have, and I&apos;ve never found another language that shares it.
-		That is, aside from Hack.
-		Hack is a language based on <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> and modified by Facebook.
-		This isn&apos;t the same Hack I mentioned above, which is an assembly language.
-		I mainly don&apos;t use Hack though because it&apos;s not available in Debian&apos;s repositories.
-		I don&apos;t trust Facebook at all, so I&apos;d definitely need the code gone over by someone I do actually trust, such as the Debian developers, before I&apos;d ever adopt it for my own use.
-		Because <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> doesn&apos;t have the functions needed for graphical applications, I&apos;ll likely turn to Java when I start building graphical applications.
-		It works, it&apos;s cross-platform compatible, and it doesn&apos;t mock people like Python does.
-		It&apos;s also a language I already have some experience with, due to courses here at this university.
-		It does have major problems though, such as the capacity to have multiple methods that share the exact same method name in the exact same namespace, provided they take different arguments.
-		That terrible feature leads to a lot of issues when debugging, as the error messages claim you&apos;re trying to call non-existent method, when you&apos;re really just passing the wrong arguments into a method call.
-		I don&apos;t like Java, but with the right <abbr title="integrated development environment">IDE</abbr>, it becomes tolerable.
+		The book makes a good point about not wasting time trying to optimise code blindly.
+		Some spots will need the optimisation much more drastically.
+		Once the worst of it&apos;s fixed, there comes a point when the host of human labour exceeds the savings on time and computer labour.
+		The cost of conditionals is something I hadn&apos;t given much thought to as well.
+		If the savings of skipping some part of the work doesn&apos;t outweigh the cost of the conditional, attempting to skip pointless work will actually lead to more work for the machine.
 	</p>
 	<p>
-		After reading that article, I&apos;m a bit more interested to try Perl.
-		It might meet my needs, and if it does, it&apos;d mean being free of <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>&apos;s inadequacies.
-	</p>
-	<p>
-		The textbook claims to use Extended Backus-Naur Form to specify rules, but it&apos;s using rich text qualities (bold and italics) to get some of the information across.
-		The <abbr title="Request for Comments">RFC</abbr>s use Extended Backus-Naur Form.
-		They&apos;re plain text documents with no rich text formatting.
-		For that reason, I&apos;m pretty sure Extended Backus-Naur Form does not use rich text qualities to denote anything, and the book is using a non-standard variation on Extended Backus-Naur Form, after having told us that following standards is important.
-		The Wikipedia article on <a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">Extended Backus-Naur Form</a> confirms too that it&apos;s the <abbr title="Request for Comments">RFC</abbr>s that have it right, and not the textbook.
-		Boldface and italics aren&apos;t valid in Extended Backus-Naur Form.
-	</p>
-	<p>
-		The book also claims that syntax rules are easier to learn if given in the form of sequence diagrams, but I&apos;d have to disagree.
-		Real Extended Backus-Naur Form is easier to understand than both sequence diagrams and the book&apos;s bastardised Extended Backus-Naur Form, and sequence diagrams are harder to understand than both real Extended Backus-Naur Form and the book&apos;s bastardised Extended Backus-Naur Form.
-		I think some people think diagrams make everything easier, but in many cases, they do not.
-		Diagrams have a time and place, but that time and place isn&apos;t everywhen and everywhere.
-		(The book&apos;s author, thankfully, does not seem to think stuffing the book with diagrams for everything is a great idea; but in general, some people do try to attach a diagram to everything they can find a way to.)
-	</p>
-	<p>
-		The book also discusses needing to be careful when dealing with languages that are case-sensitive.
-		I&apos;d argue the opposite.
-		Case sensitivity is intuitive to any real programmer.
-		<code>M</code> and <code>m</code> are different characters.
-		They even have entirely different bit sequences.
-		There is absolutely no reason to mix the two up.
-		Rather, what you need to be careful of is case <strong>*insensitivity*</strong>.
-		When a language drops case insensitivity on you, it causes several potential issues.
-		In such cases, using a standardised case may be required to make sure nothing unexpected happens.
-		For example, let&apos;s say you&apos;re writing a class autoloader for <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, which annoyingly makes class names (and function names) case insensitive.
-		You don&apos;t know for sure what case a user will specify a class name by.
-		You either need to standardise what case is used for referencing class names, so the autoloader always receives the expected case and knows right where in the filesystem to look, or you need to program the autoloader to in some way standardise the class names it receives before it searches the filesystem for them.
-		After all, on a reasonable filesystem (read: most filesystems not developed by Microsoft) <code>/dir/MyClass.php</code> and <code>/dir/myclass.php</code> are entirely different files, as they very much should be.
-		Any sane language is case sensitive.
-		(And yes, that means that <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> isn&apos;t exactly sane, but anyone with any experience with <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> can tell you that.)
-	</p>
-	<p>
-		The book mentions that a variable must be assigned a type, and gives a seemingly valid reason for it.
-		The compiler needs to know how much memory to assign the variable.
-		However, this only applies to strongly-typed languages.
-		Strong typing is useful for more than just the compiler&apos;s work.
-		It also helps catch certain types of mistakes, when done well.
-		(Java does not do this well.)
-		However, not all languages are strongly-typed.
-		You can write a program in some languages in which a variable switches its value to one of another type or even one in which the type of the initial assignment isn&apos;t even known at compile time due to a conditional statement.
-		Clearly, blanket claims that the compiler needs to know how much memory to assign a variable are dead wrong.
-		It&apos;s only when you speak of certain specific languages that such a statement could be correct.
-	</p>
-	<p>
-		The book also claims that the only statements in normal programming languages that actually do something are the assignment statements.
-		I find that very difficult to believe.
-		For example, are languages that allow file writes not considered normal?
-		File writes are typically carried out by a special function or method.
-		Never have I seen a file write carried out via assignment statement in any language.
-		Unless ...
-		Is the book trying to claim that writes to memory are assignment statements and that segments of disk space get assigned new values?
-		That&apos;d be a really obtuse way of looking at it.
-		And what about language functions that draw on the monitor or output sound?
-		Is it calling these assignments?
-		That&apos;s quite a large stretch there.
-		Data gets written, but these aren&apos;t &quot;assignment statements&quot;.
-	</p>
-	<p>
-		The book presents three methods of type checking when assigning values to variables.
-		First, you can stuff the value into a typed variable regardless of a type mismatch.
-		Data isn&apos;t converted or anything, so you can get odd results when you accidentally use a value that doesn&apos;t belong in that type of variable.
-		Second, you can convert the value in some way.
-		And third, you can throw errors in case of type mismatch.
-		However, there&apos;s a fourth option: weak typing!
-		While by no means a great option, some languages attach types to values, but not to variables.
-		Any type of value can go in any variable in such languages.
-		Despite the debugging issues this causes, it&apos;s still very much a common option some languages (Python and <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, for example) implement.
-	</p>
-	<p>
-		I&apos;m not sure what we were supposed to get from the history section on John von Neumann.
-		It didn&apos;t really talk much about programming languages, which is a supertopic of this course&apos;s actual topic, comparative programming languages.
-		Comparative programming languages weren&apos;t discussed at all.
-		I got two things out of that article though.
-		First, Von Neumann was opposed to assemblers.
-		He thought assembly should be done by hand.
-		In his time, this may have been a valid thought, but by modern standards, computing has become cheap, while human labour remains expensive.
-		Not only do we have computers perform assembly for us, but we even program things in such a way that they&apos;re less efficient with computing resources just to make them easier for humans to maintain.
-		Assembling by hand today, for any reason other than to learn how assembly is completed by a computer for educational purposes, would be insane.
-		Second, I learned that Von Neumann&apos;s computer design was abstract.
-		He came up with high-level ideas for how it should be structured, but no implementation to realise this design.
-		This in no way invalidates what he came up with, but it&apos;s interesting to know.
-	</p>
-	<p>
-		I don&apos;t seem to understand how a Turing machine can simulate any computation.
-		The problem is that it can only move forward or backward by one cell each time it processes a cell.
-		How do you accomplish loops?
-		Or conditionals?
-		It doesn&apos;t make any sense.
-		Maybe we&apos;ll study that further in another unit.
-	</p>
-	<p>
-		One part of the reading assignment is on a server that blocks my <abbr title="Internet Protocol">IP</abbr> address, so I had to skip it:
-	</p>
-	<img src="https://my.uopeople.edu/draftfile.php/119878/user/draft/200377538/403_Forbidden.png" alt="403 Forbidden" class="framed-centred-image" width="689" height="267"/>
-	<p>
-		There was a monstrous amount of reading material this week.
-		There was no written assignment this time aside from the learning journal assignment, but I&apos;m not sure how I&apos;m going to keep up once the written assignments start popping up.
-		There&apos;s only so much time in the day, and I have other things to get done in addition to coursework.
+		In the discussion assignment, I was reminded of the importance of graphing.
+		I failed to find the solution to part zero, and I would&apos;ve found it easily had I pulled out a graphing calculator.
+		A few students did in fact use graphing calculators, and posted their graphs as a part of their discussion write-up.
+		It seems though that I&apos;m the only student that figure out that the solution to part one was O(n!).
+		Or am I the only one to <strong>*mistakenly think*</strong> that the answer is O(n!)?
+		I got the first answer wrong, so it certainly wouldn&apos;t be out of the realm of probability that I got the second answer wrong too.
+		It&apos;d be nice if a definitive answer to the problem was provided after week&apos;s end, though I doubt it will be.
 	</p>
 </section>
 		<hr/>
