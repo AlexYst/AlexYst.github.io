@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./[TEMP]/[TEMP].xhtml"/>
-		<title>Gender differences in illness &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
+		<title>Leadership, Entrepreneurship, and Strategy &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
@@ -39,89 +39,135 @@
 <nav>
 </nav>
 		<header>
-			<h1>Gender differences in illness</h1>
-			<p>Written in <span title="Introduction to Health Psychology (previously known 
-as Introduction to Human Psychology)">PSYC 1111</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised on 2018-10-24</p>
+			<h1>Leadership, Entrepreneurship, and Strategy</h1>
+			<p>Written in <span title="Data Structures">CS 3303</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised on 2018-12-05</p>
 		</header>
-<section id="Unit2">
-	<h2>Unit 2</h2>
+<section id="Unit3">
+	<h2>Unit 3</h2>
 	<p>
-		When I read &quot;Should I buy a new payroll program from vendor X or vendor Y?&quot;, the first thing that popped into my head was &quot;It depends. Which one is open source?&quot;.
-		Seriously, I don&apos;t trust software from anyone if the source code is hidden from the public.
-		I don&apos;t mind paying, but if the source code is hidden, you don&apos;t know what malicious things the software may or may not be doing behind your back.
+		It turns out the solution to last week&apos;s discussion exercise <strong>*was*</strong> in fact provided.
+		Also, it seems I was the one wrong.
+		At first, I still thoroughly disagreed with the solution provided.
+		Simply put, we know how many times the inner loop will run, and it isn&apos;t n<sup>2</sup> times.
+		However, I got something majorly wrong as well.
+		In fact, how badly I got this wrong greatly exceeds how far the provided solution is from reality.
+		I messed up the definition of a factorial.
+		I was using addition instead of multiplication, and factorials are about multiplication.
+		I guess now that I think on it though, the provided solution is exactly right.
+		Basically, the solution should be O(n<sup>2</sup>/2).
+		However, we drop constant terms such as divide-by-two, and that leaves us with the answer nearly everyone in the class besides me got.
+		My bad.
 	</p>
 	<p>
-		The section on types of growth rates was all review for me.
-		I don&apos;t recall where I learned about algorithm growth rates, but it&apos;s something I&apos;ve known about for a while.
-		Some algorithms remain linear in their resource consumption as the input size grows, but others grow exponentially, leading resource usage to get out of control for larger inputs.
+		This week was all about lists, queues, and stacks.
+		All three of these constructs are things I&apos;m already very familiar with.
+		I use lists all the time, and I&apos;ve used queues on numerous occasions.
+		As for stacks ...
+		I can&apos;t remember any time I&apos;ve ever used a stack, aside from the calling stack.
+		However, stacks aren&apos;t exactly a difficult concept to understand, and you usually learn about them when you learn about queues, so I&apos;ve known about them for years.
+		They&apos;re just not something that tends to be useful in the type of code I write.
+		Sometimes, I need to process things in the order they arrive, and other times, order simply doesn&apos;t matter.
+		When order doesn&apos;t matter, I use queues because they&apos;re what I think to use first, and things have to be dealt with in <strong>*some*</strong> order.
 	</p>
 	<p>
-		I hadn&apos;t considered data distribution as a factor.
-		It makes a difference though when trying to understand the average case, as well as consider how likely the best and worst cases are.
-		I also hadn&apos;t considered comparing the switching of algorithms to the switching of computers.
-		Making that comparison really shows you whether it&apos;s the algorithm or the computer&apos;s speed that&apos;s holding you back.
+		The book&apos;s choice to implement the concept of a current position in a list implementation seems rational, until you see what they use it for.
+		It&apos;s the type of thing you could use for iteration over a list, so it seems like a valid feature.
+		However, they instead use it for rearranging lists.
+		For example, the method that moves something to the beginning of the list takes the item in the current position and moves it.
+		That means you need to set the current position, then perform the move.
+		Why not just have the moving method take the current position, as represented by an integer, as a parameter?
+		That&apos;d be a lot easier to use in practice.
+		The book&apos;s implementation also uses the current position for insertion and deletion.
+		Again, pass the position into those methods as an argument.
+		You really only need the current position for the <code>next()</code> and <code>prev()</code> methods.
 	</p>
 	<p>
-		The discussion assignment told us to use big-Oh notation, so I read the textbook up to that point, then made my initial post.
-		I often don&apos;t have time to read the entire assigned material in one or two days, but I need to get my initial discussion post in by them to keep my coursework on schedule.
-		Reading further though, it looks like there&apos;s also a big-Omega and big-Theta notation, both of which could apply to the discussion assignment well.
-		In particular, big-Theta would be the most appropriate.
-		However, we were asked to use big-Oh, so I guess my submission is what we were asked to have it be.
+		The current position concept for use in additions, deletions, and access begins to make more sense when looking at linked lists, as opposed to array-powered lists, until you realise that this is still an <abbr title="application programming interface">API</abbr> failure; a problem in the interface.
+		As the book discussed, it&apos;s important to be able to access <strong>*any*</strong> element of the list.
+		This includes items we&apos;re not currently pointing at.
+		Without random access, a list doesn&apos;t function as a proper list.
+		This makes linked lists unsuitable for use in implementing lists.
+		They can still be used for list implementations if you abstract away the inability to access random elements, though they&apos;re pretty slow for that kind of use.
+		Linked lists are much more suited to things such as queues and stacks, where random access is neither needed nor permitted.
 	</p>
 	<p>
-		I mean, aside from the part that I was dead wrong about problem 0.
-		My answer was that there was no solution.
-		I learned from other students that I&apos;d done it wrong though, and that there is in fact a valid solution to the problem.
+		The idea of a free list is interesting.
+		It&apos;s not something I would have thought of, myself.
+		It trades space for time, by not actually deleting old nodes, as it&apos;s computationally expensive to generate new nodes.
+		So old nodes get saved and recycled.
+		The drawback is, of course, that the size needed to store the list never shrinks.
+		It can only grow.
+		Well, the total space used by all the linked lists of a specific type can only grow.
+		The linked lists are able to share a free list, after all.
 	</p>
 	<p>
-		Some of the simplification methods for cost growth formulas make use of basic mathematical properties.
-		Others though use engineers&apos; logic of &quot;well, it&apos;s close enough&quot;
-		Normally, I&apos;d disagree and say that &quot;close enough&quot; isn&apos;t actually close enough.
-		However, cost growth formulas are themselves an estimation.
-		They&apos;re not used in anything you&apos;d actually code into the machine.
-		Instead, they help you determine which algorithms are most likely not to be worth the time it takes to implement them.
-		In such cases, &quot;close enough&quot; often is really close enough.
+		The book started out saying an array-based stack could use either end of the array as the top.
+		I immediately thought that would be a bad idea.
+		You shouldn&apos;t use index zero as the top, as it&apos;d mean always copying all the other elements for both pushes and pops.
+		What do you gain from using that end?
+		But then the book covered how bad of an idea that is, so the book and I were on the same page again.
 	</p>
 	<p>
-		The book discusses not only time constraints, but disk space constraints and memory constraints.
-		I faced such constraints when working on a Web spider I built.
-		I&apos;ve had to shelve the spider due to time constraints keeping me from continuing development.
-		While I was working on and testing it though, I found such disk/memory constraints to be problematic.
-		I don&apos;t recall whether it was disk space or <abbr title="random-access memory">RAM</abbr>, but I found I was using too much.
-		I had to drastically cut what the spider kept track of.
-		Instead of storing every <abbr title="Uniform Resource Identifier">URI</abbr> it encountered, I had to change it to only temporarily store <abbr title="Uniform Resource Identifier">URI</abbr>s of the pages it found on a given site that pointed to other pages on that same site.
-		For external links, everything but the port, domain, and scheme was just dropped.
-		And once it finished crawling a site, I had to have it drop all full <abbr title="Uniform Resource Identifier">URI</abbr>s within the site, keeping only one reference to the home page of the site.
-		It made the indexing less complete than I wanted it to be, but the spider was still pretty good at discovering new websites.
+		As a side note, I liked how the book mentioned that some problems require recursion &quot;or some approximation of recursion&quot;.
+		I used to think some problems couldn&apos;t be solved without recursion, but the thing is, you can always approximate recursion.
+		Computers can&apos;t actually handle recursion by default.
+		Instead, operating system designers approximate recursion, which then the system and other programs use.
+		If recursion can be built fro non-recursion, recursion can&apos;t be a basic building block.
+		It can in fact be approximated and imitated.
 	</p>
 	<p>
-		Lookup tables are a good thing to learn about, though this was all review for me.
-		I actually use lookup tables in my code all the time to make my code run faster.
-		It does cost more <abbr title="random-access memory">RAM</abbr>, and I&apos;m aware of that, but when I use them, I use them because I feel the trade-off is not only worth it, but sometimes even necessary.
-		For example, there&apos;s a game I play when I need to de-stress called Minetest.
-		It&apos;s got a great <abbr title="application programming interface">API</abbr> to build content against.
-		One of my main plugins operates on certain types of in-game items.
-		So when the game starts, it runs through the list of items and creates a look-up table of the ones with qualities it cares about.
-		Out of probably a couple hundred items, it only needs data on maybe about three dozen.
-		It then checks that look-up table when certain events occur, and if the item triggering the event isn&apos;t in the table, the code knows it can safely ignore the event instead of looking up the information on the item and recomputing which events relating to that item are even relevant.
-		And within each table element is a subtable recording which events related to that item matter, so even when encountering an item with known-relevant events, the relevant events don&apos;t need to be recalculated.
-		A player can trigger an event that needs to be checked for importance a few times per second, so especially in multiplayer mode, this time-saving is vital.
+		Just like I don&apos;t think linked lists make good list implementations, I didn&apos;t think arrays make good queue implementations.
+		You need to keep shifting elements, which is inefficient.
+		A linked list is pretty much the only good way to build a queue.
+		The concept of not keeping the enqueued items on one end of the array is interesting though, ans certainly would help to lessen the problem.
+		At least that way, only some enqueue operations would require moving any items.
+		But then, the book continued, and explained circular queue implementations.
+		That&apos;s actually rather clever!
+		I believe a circular queue implementation removes all arguments I have against using an array as a queue.
 	</p>
 	<p>
-		The book makes a good point about not wasting time trying to optimise code blindly.
-		Some spots will need the optimisation much more drastically.
-		Once the worst of it&apos;s fixed, there comes a point when the host of human labour exceeds the savings on time and computer labour.
-		The cost of conditionals is something I hadn&apos;t given much thought to as well.
-		If the savings of skipping some part of the work doesn&apos;t outweigh the cost of the conditional, attempting to skip pointless work will actually lead to more work for the machine.
+		The book&apos;s take on dictionaries is that a key from a key/value pair duplicates a part of the value&apos;s record.
+		But why does this necessarily need to be the case?
+		Personally, when I implement dictionaries, I omit the key from the record in the value.
+		For example, if I was storing employee records and the keys were the employee <abbr title="identification">ID</abbr> numbers, the records in the values would <strong>*not*</strong> include these <abbr title="identification">ID</abbr> numbers.
 	</p>
 	<p>
-		In the discussion assignment, I was reminded of the importance of graphing.
-		I failed to find the solution to part zero, and I would&apos;ve found it easily had I pulled out a graphing calculator.
-		A few students did in fact use graphing calculators, and posted their graphs as a part of their discussion write-up.
-		It seems though that I&apos;m the only student that figure out that the solution to part one was O(n!).
-		Or am I the only one to <strong>*mistakenly think*</strong> that the answer is O(n!)?
-		I got the first answer wrong, so it certainly wouldn&apos;t be out of the realm of probability that I got the second answer wrong too.
-		It&apos;d be nice if a definitive answer to the problem was provided after week&apos;s end, though I doubt it will be.
+		It seems we&apos;re using Jeliot to develop Java code in this course.
+		This will be the third Java course I&apos;ve taken at this school, and in each course, we&apos;ve used an entirely different <abbr title="integrated development environment">IDE</abbr>, for no apparent reason.
+		It&apos;d be nice if the school was more consistent between courses.
+		At least Jeliot is under a free license.
+		I don&apos;t run proprietary software on my computer, so if Jeliot was under a proprietary license, I&apos;d be stuck on a different <abbr title="integrated development environment">IDE</abbr> than the rest of the class, and that might interfere with communication and assignment completion.
+		Anyway, Jeliot didn&apos;t seem to want to run from the <code>.jnlp</code> file the assignment instructions linked to.
+		What even <strong>*is*</strong> a <code>.jnlp</code> file?
+		The software website also offered a basic <abbr title="Java Archive">JAR</abbr> file though, and that runs just fine.
+	</p>
+	<p>
+		The first thing I noticed about Jeliot was the large, blank section and the tiny code section.
+		After that, I noticed you can&apos;t see the white space by default, and that Jeliot uses spaces for indention by default.
+		Ew.
+		After replacing the spaces with proper tab characters, I looked for a setting to make white space visible, but found no such option.
+		In fact, Jeliot doesn&apos;t seem to have many options at all.
+		This certainly isn&apos;t an editor I&apos;d ever choose, but it&apos;s ... usable.
+		Or so I thought.
+		I wrote up most of the program we need for the week&apos;s assignment, then saved and closed it.
+		When I reopened the program and loaded the code, I found every last one of my tab characters had been converted into spaces.
+		Using spaces for indention is not proper coding style, and I will not write ugly code.
+		I&apos;ve switched to my usual code editor, Geany, which doesn&apos;t have Java-specific functionality.
+		(It&apos;s a text and code editor, and not an <abbr title="integrated development environment">IDE</abbr>.)
+		I could of course use Eclipse, but that <abbr title="integrated development environment">IDE</abbr> requires setup of entire project directories just to write one Java file.
+		From this point forward, I&apos;ll be writing my code in Geany, then pasting it into Jeliot for error-checking.
+		I&apos;ll be submitting my Geany version though, which uses proper indentation.
+	</p>
+	<p>
+		Building linked lists really isn&apos;t hard, so the assignment this week was a breeze.
+		I think I&apos;ve done it before in another course, though I can&apos;t say for sure.
+		I&apos;d check my personal records, but the university is censoring my main method of accessing them right now.
+		Trying to search through my old work without the main access method is unnecessarily cumbersome, so I tend not to do it.
+	</p>
+	<p>
+		For the most part, the discussion this week was just a retelling of the week&apos;s material.
+		That&apos;s how it tends to be in the discussion forum.
+		Sometimes, someone will come up with a gem we can all learn from, but usually, the discussion boards are just a thing that forces me to complete the reading material quicker than I&apos;d like to, to make sure I keep my posts released on schedule.
 	</p>
 </section>
 		<hr/>
