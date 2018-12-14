@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./[TEMP]/[TEMP].xhtml"/>
-		<title>Leadership, Entrepreneurship, and Strategy &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
+		<title>Binary tree &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
@@ -39,135 +39,133 @@
 <nav>
 </nav>
 		<header>
-			<h1>Leadership, Entrepreneurship, and Strategy</h1>
-			<p>Written in <span title="Data Structures">CS 3303</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised on 2018-12-05</p>
+			<h1>Binary tree</h1>
+			<p>Written in <span title="Data Structures">CS 3303</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised on 2018-12-12</p>
 		</header>
-<section id="Unit3">
-	<h2>Unit 3</h2>
+<section id="Unit4">
+	<h2>Unit 4</h2>
 	<p>
-		It turns out the solution to last week&apos;s discussion exercise <strong>*was*</strong> in fact provided.
-		Also, it seems I was the one wrong.
-		At first, I still thoroughly disagreed with the solution provided.
-		Simply put, we know how many times the inner loop will run, and it isn&apos;t n<sup>2</sup> times.
-		However, I got something majorly wrong as well.
-		In fact, how badly I got this wrong greatly exceeds how far the provided solution is from reality.
-		I messed up the definition of a factorial.
-		I was using addition instead of multiplication, and factorials are about multiplication.
-		I guess now that I think on it though, the provided solution is exactly right.
-		Basically, the solution should be O(n<sup>2</sup>/2).
-		However, we drop constant terms such as divide-by-two, and that leaves us with the answer nearly everyone in the class besides me got.
-		My bad.
+		Most of the section explaining the basics of binary trees was review, though I didn&apos;t know the links between noset in a tree are called &quot;edges&quot;.
+		Full and complete binary trees are easy enough to understand.
+		It&apos;s worth noting that a tree can be both full and complete, but that one does not imply the other.
+		For example, a full tree may have leaves sticking out in odd spots, making it not complete.
+		A complete tree is perfectly balanced (<strong>*maybe*</strong> that fact warrants a special name, but we already have a name for trees with that property: balanced), but there&apos;s potentially a branch with only one leaf node attached in the final layer, making it not complete.
 	</p>
 	<p>
-		This week was all about lists, queues, and stacks.
-		All three of these constructs are things I&apos;m already very familiar with.
-		I use lists all the time, and I&apos;ve used queues on numerous occasions.
-		As for stacks ...
-		I can&apos;t remember any time I&apos;ve ever used a stack, aside from the calling stack.
-		However, stacks aren&apos;t exactly a difficult concept to understand, and you usually learn about them when you learn about queues, so I&apos;ve known about them for years.
-		They&apos;re just not something that tends to be useful in the type of code I write.
-		Sometimes, I need to process things in the order they arrive, and other times, order simply doesn&apos;t matter.
-		When order doesn&apos;t matter, I use queues because they&apos;re what I think to use first, and things have to be dealt with in <strong>*some*</strong> order.
+		The book tells us that the number of leaves in a full binary tree is the same for all binary trees with the same number of branches.
+		The wording was a bit odd though, so I thought it was saying that the number of leaves was equal to the number of branches.
+		I knew that couldn&apos;t be right.
+		In a full binary tree consisting of the branches making up one big chain, if there are n branches, there are <strong>*not*</strong> n leaves.
+		There are n+1 leaves!
+		I&apos;d just misunderstood though.
+		All binary trees with n branches have the same number of leaves as other binary trees with n branches.
+		As it&apos;s incredibly easy to prove that a continuous chain of branches will always have n+1 leaves in a full tree, we can therefore deduce that in a full tree of any configuration, there is one more leaf than there are branches.
 	</p>
 	<p>
-		The book&apos;s choice to implement the concept of a current position in a list implementation seems rational, until you see what they use it for.
-		It&apos;s the type of thing you could use for iteration over a list, so it seems like a valid feature.
-		However, they instead use it for rearranging lists.
-		For example, the method that moves something to the beginning of the list takes the item in the current position and moves it.
-		That means you need to set the current position, then perform the move.
-		Why not just have the moving method take the current position, as represented by an integer, as a parameter?
-		That&apos;d be a lot easier to use in practice.
-		The book&apos;s implementation also uses the current position for insertion and deletion.
-		Again, pass the position into those methods as an argument.
-		You really only need the current position for the <code>next()</code> and <code>prev()</code> methods.
+		When the book moved on to discuss tree traversal, I immediately thought of inorder traversal.
+		It seems like the most logical way to traverse the tree in the context of trying to preserve a relationship between the data points held in the tree.
+		I&apos;d forgotten about preorder traversal and postorder traversal though.
+		Both have their usefulness in preserving the relationship between nodes instead of the relationship between the data points, which can be useful as well.
+		The section on where to put null tree checks was informative as well.
+		It made it very clear why the checks need to be done on the incoming value, not the values about to be used to recursively call the traversal function.
+		At least in Java, a variable&apos;s type doesn&apos;t protect against null values, so the function could easily be called on an empty tree even before recursion.
 	</p>
 	<p>
-		The current position concept for use in additions, deletions, and access begins to make more sense when looking at linked lists, as opposed to array-powered lists, until you realise that this is still an <abbr title="application programming interface">API</abbr> failure; a problem in the interface.
-		As the book discussed, it&apos;s important to be able to access <strong>*any*</strong> element of the list.
-		This includes items we&apos;re not currently pointing at.
-		Without random access, a list doesn&apos;t function as a proper list.
-		This makes linked lists unsuitable for use in implementing lists.
-		They can still be used for list implementations if you abstract away the inability to access random elements, though they&apos;re pretty slow for that kind of use.
-		Linked lists are much more suited to things such as queues and stacks, where random access is neither needed nor permitted.
+		I find the idea of using a separate node type for leaves as for branches to be bizarre.
+		A leaf is defined by the fact that it has no children, not the fact that it&apos;s using a different node type.
+		This separate node type prevents the adding of children later, meaning that if a node needs to no longer be a leaf node, it must be swapped out for a new branch-type node.
+		Likewise, if a branch node has it&apos;s leaves removed, while there won&apos;t be a technical reason why the node needs to be swapped out, consistency dictates that we should probably swap it out for a leaf-type node.
+		It&apos;s foreign to me too to think that the leaves might store different types of data than the branches.
+		And in the context of Java, we&apos;d need to know ahead of time the data types associated with a node&apos;s methods.
+		They&apos;d need to have the same parent class, meaning that they&apos;d need to return the same data types, regardless of what data type is stored internally.
 	</p>
 	<p>
-		The idea of a free list is interesting.
-		It&apos;s not something I would have thought of, myself.
-		It trades space for time, by not actually deleting old nodes, as it&apos;s computationally expensive to generate new nodes.
-		So old nodes get saved and recycled.
-		The drawback is, of course, that the size needed to store the list never shrinks.
-		It can only grow.
-		Well, the total space used by all the linked lists of a specific type can only grow.
-		The linked lists are able to share a free list, after all.
+		The book claims a binary tree can be implemented as an array.
+		This removes all the overhead, or at least most of it.
+		Unless the array is the perfect size for the data, which would prevent the adding of more data, there will be a little bit of overhead.
+		However, there&apos;s something very important to note here: there&apos;s no tree structure.
+		We can <strong>*emulate*</strong> a tree structure by performing a binary search on the array, but the array is in no way actually a binary tree.
+		After all, a binary tree is defined by its structure.
+		If there is no tree structure, there is no binary tree.
+		That said, the book is trying to claim this is somehow a tree, and the assignment instructions specifically say we can build our implementation using an array, so I alomst took advantage of that option.
+		Using an array, we know exactly how many &quot;levels&quot; our &quot;tree&quot; has, as well as see easily where in the &quot;tree&quot; each data point should belong to avoid adding another &quot;level&quot; to the &quot;tree&quot;.
+		The easiest way to keep track of the unused positions in the array is to keep all the used positions clumped together on one end, and the unused positions clumped together on the other.
+		<del>This doesn&apos;t make for a balanced &quot;tree&quot;, but as long as the array is always of the size necessary to implement the fewest number of &quot;levels&quot; the &quot;tree&quot; could have while still retaining all the data, the worst case in binary search is only equal to the worst case for a balanced tree.
+		This worst case just comes up a little more often than it should.
+		The main problem, instead, is insertion.
+		Insertion becomes very inefficient.
+		In the worst case, not only is the array already full, but the value inserted is at the beginning.
+		The values from the old array must then be copied to a new array of size 2n-1, then all the values shifted by one in order to make room for the new value.
+		In a &quot;tree&quot; implemented like this, just after an insertion that bumps up the array size, one of the &quot;root&quot;&apos;s &quot;children&quot; is &quot;empty&quot;.
+		The &quot;root&quot; is the worst place to have &quot;empty&quot; &quot;children&quot;.</del>
+		Still, since the topic for the week is binary trees, I decided to use a real binary tree in my assignment submission.
+		<ins>A few hours after deciding not to use an array, I realised my array implementation wouldn&apos;t work anyway.
+		It&apos;d result in &quot;nodes&quot; other than the &quot;root&quot; not having &quot;parents&quot; in some cases.
+		All sorting efficiency I&apos;d been squeezing out of the array would actually break the &quot;tree structure&quot;.</ins>
 	</p>
 	<p>
-		The book started out saying an array-based stack could use either end of the array as the top.
-		I immediately thought that would be a bad idea.
-		You shouldn&apos;t use index zero as the top, as it&apos;d mean always copying all the other elements for both pushes and pops.
-		What do you gain from using that end?
-		But then the book covered how bad of an idea that is, so the book and I were on the same page again.
+		It looks like we&apos;re not going to be covering how to keep trees balanced as items are added to them this week, unfortunately.
+		So the only real option is to deal with the random insertion order by having a naturally-growing tree, with branches and leaves in unpredictable places.
 	</p>
 	<p>
-		As a side note, I liked how the book mentioned that some problems require recursion &quot;or some approximation of recursion&quot;.
-		I used to think some problems couldn&apos;t be solved without recursion, but the thing is, you can always approximate recursion.
-		Computers can&apos;t actually handle recursion by default.
-		Instead, operating system designers approximate recursion, which then the system and other programs use.
-		If recursion can be built fro non-recursion, recursion can&apos;t be a basic building block.
-		It can in fact be approximated and imitated.
+		Max-heaps and min-heaps are types of binary trees I&apos;ve never heard of.
+		Normally, the value of each child of a binary tree has a different relationship with the parent.
+		One child is greater, while the other is lesser.
+		With a min- or max-heap though, both children have the <strong>*same*</strong> relationship with the parent though.
 	</p>
 	<p>
-		Just like I don&apos;t think linked lists make good list implementations, I didn&apos;t think arrays make good queue implementations.
-		You need to keep shifting elements, which is inefficient.
-		A linked list is pretty much the only good way to build a queue.
-		The concept of not keeping the enqueued items on one end of the array is interesting though, ans certainly would help to lessen the problem.
-		At least that way, only some enqueue operations would require moving any items.
-		But then, the book continued, and explained circular queue implementations.
-		That&apos;s actually rather clever!
-		I believe a circular queue implementation removes all arguments I have against using an array as a queue.
+		Huffman coding trees are interesting.
+		I&apos;d thought that schemes such as Unicode were inefficient because not all bit sequences are valid and the bit encodings of characters are of differing lengths.
+		However, I now see it&apos;s a matter of optimising for use with certain characters.
+		I guess <abbr title="American Standard Code for Information Interchange">ASCII</abbr> characters do tend to get used in a lot of languages, so having them represented by shorter byte sequences is useful.
 	</p>
 	<p>
-		The book&apos;s take on dictionaries is that a key from a key/value pair duplicates a part of the value&apos;s record.
-		But why does this necessarily need to be the case?
-		Personally, when I implement dictionaries, I omit the key from the record in the value.
-		For example, if I was storing employee records and the keys were the employee <abbr title="identification">ID</abbr> numbers, the records in the values would <strong>*not*</strong> include these <abbr title="identification">ID</abbr> numbers.
+		When building my code for the assignment, I ended up refactoring some stuff to make it more efficient before the first run.
+		I didn&apos;t realise it, but I&apos;d left some code in place that was no longer valid.
+		Jeliot complained about something being not implemented, but wouldn&apos;t tell me what, or even what line the problem was on.
+		Worst of all, Jeliot kept highlighting a valid function call, making it look like that function was potentially not implemented.
+		However, there was a compilation error whenever that function was renamed, meaning that Jeliot was in fact finding the function and did know it to be implemented.
+		I finally broke down and started an Eclipse project to use Eclipse&apos;s debugger instead.
+		Eclipse complained about having all the classes in the same file, but after sifting out those errors, I found the real problem reported: I was trying to examine an attribute of an integer, but integers aren&apos;t part of a class and don&apos;t have methods.
+		Jeliot can&apos;t even report such a simple error with anything more specific than &quot;not impleented&quot;, nor can it even point to the correct line so I could find the problem myself.
+		There was another error as well, where I accidentally tried to use <code>self</code> instead of <code>this</code> to get an object to reference itself.
+		Eclipse too complained about that.
+		When I tried to use Jeliot&apos;s search feature to find where I&apos;d done that, Jeliot couldn&apos;t even find the word <code>self</code>.
+		Eclipse, of course, could, and I was able to use that to figure out where to look in the copy open in Jeliot.
+		Jeliot couldn&apos;t even find a simple string in the source file.
+		I swear, Jeliot is not a usable tool for development.
+		The fact that you need to wait for Jeliot&apos;s curtain close animation before it&apos;ll let you touch the source code is also just plain idiotic.
+		There&apos;s no need for that.
+		I understand locking up during the opening animation, honestly.
+		It buys time for compilation to complete.
+		Locking up during the closing animation only serves to annoy though.
 	</p>
 	<p>
-		It seems we&apos;re using Jeliot to develop Java code in this course.
-		This will be the third Java course I&apos;ve taken at this school, and in each course, we&apos;ve used an entirely different <abbr title="integrated development environment">IDE</abbr>, for no apparent reason.
-		It&apos;d be nice if the school was more consistent between courses.
-		At least Jeliot is under a free license.
-		I don&apos;t run proprietary software on my computer, so if Jeliot was under a proprietary license, I&apos;d be stuck on a different <abbr title="integrated development environment">IDE</abbr> than the rest of the class, and that might interfere with communication and assignment completion.
-		Anyway, Jeliot didn&apos;t seem to want to run from the <code>.jnlp</code> file the assignment instructions linked to.
-		What even <strong>*is*</strong> a <code>.jnlp</code> file?
-		The software website also offered a basic <abbr title="Java Archive">JAR</abbr> file though, and that runs just fine.
+		Jeliot likewise isn&apos;t handling the scanner in the way I&apos;d expect.
+		I set my code up to catch the exception I expected it to throw if the user entered non-numeric data.
+		In fact, that exception was to be the signal that the user was done with data-entry.
+		However, Jeliot simply didn&apos;t allow such data to be entered in the first place, so no exception could ever be thrown.
+		I was going to test in Eclipse to see if this was Jeliot being idiotic again or if I just don&apos;t understand how to use the <code>nextInt()</code> method properly.
+		However, transferring between Jeliot and Eclipse was too much of a bother at this point.
+		Jeliot wants all the classes in a single file, while Eclipse won&apos;t run the code unless they&apos;re in separate files.
+		Another odd quirk of Jeliot is that it doesn&apos;t seem to support the <code>close()</code> method of scanner objects, you you have to just leave them open.
+		It also couldn&apos;t recognise the output of <code>next()</code> to be anything other than a generic object, so I couldn&apos;t pass it directly to another method.
+		Instead, I had to declare a <code>String</code>-type variable, store the value there, then pass the variable into the method I needed the value passed into.
 	</p>
 	<p>
-		The first thing I noticed about Jeliot was the large, blank section and the tiny code section.
-		After that, I noticed you can&apos;t see the white space by default, and that Jeliot uses spaces for indention by default.
-		Ew.
-		After replacing the spaces with proper tab characters, I looked for a setting to make white space visible, but found no such option.
-		In fact, Jeliot doesn&apos;t seem to have many options at all.
-		This certainly isn&apos;t an editor I&apos;d ever choose, but it&apos;s ... usable.
-		Or so I thought.
-		I wrote up most of the program we need for the week&apos;s assignment, then saved and closed it.
-		When I reopened the program and loaded the code, I found every last one of my tab characters had been converted into spaces.
-		Using spaces for indention is not proper coding style, and I will not write ugly code.
-		I&apos;ve switched to my usual code editor, Geany, which doesn&apos;t have Java-specific functionality.
-		(It&apos;s a text and code editor, and not an <abbr title="integrated development environment">IDE</abbr>.)
-		I could of course use Eclipse, but that <abbr title="integrated development environment">IDE</abbr> requires setup of entire project directories just to write one Java file.
-		From this point forward, I&apos;ll be writing my code in Geany, then pasting it into Jeliot for error-checking.
-		I&apos;ll be submitting my Geany version though, which uses proper indentation.
+		Besides me, no student posted to the discussion board until the second-to-last day.
+		I was starting to worry everyone had abandoned ship and I was the last student in the class!
+		I mean, not literally, but it was a bit annoying to have to wait to get my own replies in.
+		I typically make one reply per day in the combination of both my courses, and when other students wait until the last minute to post, I&apos;m stuck waiting until the last minute to reply.
 	</p>
 	<p>
-		Building linked lists really isn&apos;t hard, so the assignment this week was a breeze.
-		I think I&apos;ve done it before in another course, though I can&apos;t say for sure.
-		I&apos;d check my personal records, but the university is censoring my main method of accessing them right now.
-		Trying to search through my old work without the main access method is unnecessarily cumbersome, so I tend not to do it.
-	</p>
-	<p>
-		For the most part, the discussion this week was just a retelling of the week&apos;s material.
-		That&apos;s how it tends to be in the discussion forum.
-		Sometimes, someone will come up with a gem we can all learn from, but usually, the discussion boards are just a thing that forces me to complete the reading material quicker than I&apos;d like to, to make sure I keep my posts released on schedule.
+		I took longer to complete the binary sorting tree assignment than I should have.
+		Maybe stress had something to do with it, but I feel like I should have been able to complete it a few hours quicker than I did.
+		As for grading last week&apos;s assignment, one of the other students mentioned in their write-up that they couldn&apos;t get Jeliot running.
+		I wonder if they have a similar computer set-up as I do.
+		For me, the provided instructions didn&apos;t work.
+		I had to combine some ingenuity with some prior knowledge to get it running.
+		Just in case, I left instructions to repeat what worked for me in my feedback notes, so hopefully they&apos;ll read and try that.
 	</p>
 </section>
 		<hr/>

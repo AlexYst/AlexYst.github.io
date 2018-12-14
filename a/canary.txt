@@ -18,7 +18,7 @@ just fine.
 My PGP key ID is 0xE7464A03 and my PGP fingerprint is
 D135 B061 DBED 690B 479F E2E3 7D83 E1E5 E746 4A03.
 
-As of today, Wednesday, 2018 December 05,
+As of today, Wednesday, 2018 December 12,
 I have not been legally required to withhold information.
 University of the People has issued me a take-down request for
 some pages on this website, but I have not been asked to keep
@@ -45,17 +45,17 @@ This canary has gone down in the past due to technical issues:
   '- Various life circumstances made website updates difficult.
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEE0TWwYdvtaQtHn+LjfYPh5edGSgMFAlwIf84ACgkQfYPh5edG
-SgOYkxAAjKtBvNV+X7VeZ1khTy090UG5Kk72WzYI6LDbz5heN41jwHcWnK3Uy0LC
-HS82oz38EhGsiHKmUSOVQZOW8mBKIq6IXtqPZz0QB6qjkeiOCThAhISSXxGs1xi7
-taBQ2kBYpA640U1JTZeYzYjSk5fAlmRUoVUG9l1JodpN7hRo889pesc+z1SPjHDB
-QNzQCw6DGE2uOjMQidbpnEBjz8kjBHds1aGj8sJUt/j/UhJp6g+Jx1jChhuIKYEX
-e/LcfA2EkLYakeY1hCre1amcCL1w2zrYAt3t/AcW56X4yPv/gAGEU2EoUj3a0B5H
-iduI97sImWEpWHNXVtpL345CGN74DKrHXYk0yEXWp2NR4snCq90wT2k4m10YFxo7
-oltcLzqhhvdLKcgkno2H+d/hcahphsrUqG+YtNGkxrgo99RNO7qoN1NMUM5wMPfa
-bhcYxk08dHsqiPVzLgkmH3hF6VMOgvRRq+aGzabYvvD5cSiAc7T5AdaxYuO679wx
-WibLk0AwXeGPn6bbFN/BRUxLasTCRxP8b6shsQDHBSBhM6Nvfdi/DgI/v3+TNni2
-AYfJeIJ3Xegr6t+YRMXbkmgtfZ1wh+q1h8zmxKY8RsT6GAO1TlFvBibeenryY2iH
-tlYIIclt2yVEg//fZS7kXS8XhBH3EFPeqUZVaT6PhPhPavTXtCQ=
-=XVTW
+iQIzBAEBCAAdFiEE0TWwYdvtaQtHn+LjfYPh5edGSgMFAlwRtFIACgkQfYPh5edG
+SgPmkg/9FOPhQzVnkIeyj6Onmr42slEl5UCfHnv6t72DDW8mfOtHkR01cVUyy2KR
+VFgpBy0ZqVAmjS0E6mtg953Cu9N0z/rBi5uEI3S8FTbvEKwfr/5cq6qBKKCFZ2le
+MpMOcPeba4oVm27VMSm9iBF4WNfMIeyTOwsaIFPyYuHOhm99aKtRH+rK33GcCDc0
+bnomQok2uphxQ8+ojMoAnu2Houzd/INZRfUNQJ/qyCxNlZC9QFoOCyStdEHUebPS
+x7bzyDM0NPj/jNlAyf21QOYcmWejjDWfzBNMspYoArYSFFkOQl4LJzABXnc6DxH9
+MmaZkcjv6NbrqFac1jeEksCEYSBuks8ehzoyL2MWgU3WKYn1QZbyL5gf6zO3PpZQ
++0m/SzIjv2SK02djOl64iMvehxADWT88YMy3MvHDqAcey5k/8Ny5j/s8o0VfVlDP
+8q7PXBwqPXkImf0VO43j6EP2LtIn3UxIdY9XGTcBQi6KKKps+UDr0jTh+C6lqZRl
+KE/+6+SHnAlpSHXCNxHltOTh8z8P265hd0XZ/wkd9n9ONm3cwoICXMQZrCMyOGL1
+bhPm6cbxgVJIwoVNEglK3UDnfSFkHDgMp1mIK8dBQBzI/pgA+FNmCl9aRRuWnvDQ
+sZfAcEdiQVLEczKlsTOv4LVogo7oQswj+hPfx9BgehiCOcs5Dbg=
+=bE5d
 -----END PGP SIGNATURE-----
