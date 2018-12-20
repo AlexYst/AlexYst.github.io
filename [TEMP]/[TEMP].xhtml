@@ -42,130 +42,70 @@
 			<h1>Binary tree</h1>
 			<p>Written in <span title="Data Structures">CS 3303</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised on 2018-12-12</p>
 		</header>
-<section id="Unit4">
-	<h2>Unit 4</h2>
+<section id="Unit5">
+	<h2>Unit 5</h2>
 	<p>
-		Most of the section explaining the basics of binary trees was review, though I didn&apos;t know the links between noset in a tree are called &quot;edges&quot;.
-		Full and complete binary trees are easy enough to understand.
-		It&apos;s worth noting that a tree can be both full and complete, but that one does not imply the other.
-		For example, a full tree may have leaves sticking out in odd spots, making it not complete.
-		A complete tree is perfectly balanced (<strong>*maybe*</strong> that fact warrants a special name, but we already have a name for trees with that property: balanced), but there&apos;s potentially a branch with only one leaf node attached in the final layer, making it not complete.
+		Several of this week&apos;s assigned readings weren&apos;t actually available to be accessed:
+	</p>
+	<img src="https://my.uopeople.edu/draftfile.php/119878/user/draft/436056419/404_-_File_or_directory_not_found.~_again.png" alt="404 - File or directory not found." class="framed-centred-image" width="489" height="275"/>
+	<img src="https://my.uopeople.edu/draftfile.php/119878/user/draft/436056419/Can_not_find_data_record_in_database_table_context..png" alt="Can not find data record in database table context." class="framed-centred-image" width="778" height="658"/>
+	<img src="https://my.uopeople.edu/draftfile.php/119878/user/draft/436056419/Page_not_found.png" alt="Page not found" class="framed-centred-image" width="304" height="729"/>
+	<img src="https://my.uopeople.edu/draftfile.php/119878/user/draft/436056419/Unable_to_connect.png" alt="Unable to connect" class="framed-centred-image" width="332" height="557"/>
+	<p>
+		The reading material for the week mentions that system languages allow applications to be developed more quickly than bare assembly language.
+		They also allow easier <strong>*maintenance*</strong> too though.
+		It&apos;s not just initial development time that matters.
+		If the software is to survive, adapt, and evolve, the initial development will only be a part of the picture.
 	</p>
 	<p>
-		The book tells us that the number of leaves in a full binary tree is the same for all binary trees with the same number of branches.
-		The wording was a bit odd though, so I thought it was saying that the number of leaves was equal to the number of branches.
-		I knew that couldn&apos;t be right.
-		In a full binary tree consisting of the branches making up one big chain, if there are n branches, there are <strong>*not*</strong> n leaves.
-		There are n+1 leaves!
-		I&apos;d just misunderstood though.
-		All binary trees with n branches have the same number of leaves as other binary trees with n branches.
-		As it&apos;s incredibly easy to prove that a continuous chain of branches will always have n+1 leaves in a full tree, we can therefore deduce that in a full tree of any configuration, there is one more leaf than there are branches.
+		That same article talks about how strong typing encourages incompatible interfaces, and how conversion code is needed to translate between data types when trying to combine things.
+		That all makes sense.
+		The thing there that caught my attention though it that it said this usually isn&apos;t an option, as most programs are distributed as sourceless binaries.
+		It made me reflect a bit.
+		I really do appreciate the availability of source code.
+		All of the software I have on my computer, down to the very last system component has its full source code made available to the public.
+		Not everyone lives that way though.
+		In a world where proprietary software is considered the norm, most people don&apos;t have access to the source code of hardly anything on their system.
+		MY computer&apos;s hardware no doubt has some embedded, sourceless binaries, such as ones to to make the hard drive function, but everything running on top of that can be edited and recompiled at any time.
+		For people that want the freedom to modify what they like, my system, Debian, is truly a great option.
 	</p>
 	<p>
-		When the book moved on to discuss tree traversal, I immediately thought of inorder traversal.
-		It seems like the most logical way to traverse the tree in the context of trying to preserve a relationship between the data points held in the tree.
-		I&apos;d forgotten about preorder traversal and postorder traversal though.
-		Both have their usefulness in preserving the relationship between nodes instead of the relationship between the data points, which can be useful as well.
-		The section on where to put null tree checks was informative as well.
-		It made it very clear why the checks need to be done on the incoming value, not the values about to be used to recursively call the traversal function.
-		At least in Java, a variable&apos;s type doesn&apos;t protect against null values, so the function could easily be called on an empty tree even before recursion.
+		Still, even with access to the source code of everything on your machine, modifying and recompiling things to fit them together is inconvenient.
+		Scripting languages provide a better glue by not requiring modification to existing components.
 	</p>
 	<p>
-		I find the idea of using a separate node type for leaves as for branches to be bizarre.
-		A leaf is defined by the fact that it has no children, not the fact that it&apos;s using a different node type.
-		This separate node type prevents the adding of children later, meaning that if a node needs to no longer be a leaf node, it must be swapped out for a new branch-type node.
-		Likewise, if a branch node has it&apos;s leaves removed, while there won&apos;t be a technical reason why the node needs to be swapped out, consistency dictates that we should probably swap it out for a leaf-type node.
-		It&apos;s foreign to me too to think that the leaves might store different types of data than the branches.
-		And in the context of Java, we&apos;d need to know ahead of time the data types associated with a node&apos;s methods.
-		They&apos;d need to have the same parent class, meaning that they&apos;d need to return the same data types, regardless of what data type is stored internally.
+		The article does make the point that one type of language doesn&apos;t replace another.
+		It says scripting doesn&apos;t replace system languages, and the reverse is true as well.
+		As for scripting replacing system languages, that wouldn&apos;t make much sense.
+		Scripting languages must somehow be implemented, and they&apos;re usually implemented in a system language.
+		But still, the point is that you&apos;ve got to choose the right tool for the job.
+		A hand saw isn&apos;t a replacement for a hammer; both have their own purposes.
+		Mainly though, between these two, it&apos;s a trade-off between efficiency of running the software and efficiency in developing and maintaining the software.
 	</p>
 	<p>
-		The book claims a binary tree can be implemented as an array.
-		This removes all the overhead, or at least most of it.
-		Unless the array is the perfect size for the data, which would prevent the adding of more data, there will be a little bit of overhead.
-		However, there&apos;s something very important to note here: there&apos;s no tree structure.
-		We can <strong>*emulate*</strong> a tree structure by performing a binary search on the array, but the array is in no way actually a binary tree.
-		After all, a binary tree is defined by its structure.
-		If there is no tree structure, there is no binary tree.
-		That said, the book is trying to claim this is somehow a tree, and the assignment instructions specifically say we can build our implementation using an array, so I alomst took advantage of that option.
-		Using an array, we know exactly how many &quot;levels&quot; our &quot;tree&quot; has, as well as see easily where in the &quot;tree&quot; each data point should belong to avoid adding another &quot;level&quot; to the &quot;tree&quot;.
-		The easiest way to keep track of the unused positions in the array is to keep all the used positions clumped together on one end, and the unused positions clumped together on the other.
-		<del>This doesn&apos;t make for a balanced &quot;tree&quot;, but as long as the array is always of the size necessary to implement the fewest number of &quot;levels&quot; the &quot;tree&quot; could have while still retaining all the data, the worst case in binary search is only equal to the worst case for a balanced tree.
-		This worst case just comes up a little more often than it should.
-		The main problem, instead, is insertion.
-		Insertion becomes very inefficient.
-		In the worst case, not only is the array already full, but the value inserted is at the beginning.
-		The values from the old array must then be copied to a new array of size 2n-1, then all the values shifted by one in order to make room for the new value.
-		In a &quot;tree&quot; implemented like this, just after an insertion that bumps up the array size, one of the &quot;root&quot;&apos;s &quot;children&quot; is &quot;empty&quot;.
-		The &quot;root&quot; is the worst place to have &quot;empty&quot; &quot;children&quot;.</del>
-		Still, since the topic for the week is binary trees, I decided to use a real binary tree in my assignment submission.
-		<ins>A few hours after deciding not to use an array, I realised my array implementation wouldn&apos;t work anyway.
-		It&apos;d result in &quot;nodes&quot; other than the &quot;root&quot; not having &quot;parents&quot; in some cases.
-		All sorting efficiency I&apos;d been squeezing out of the array would actually break the &quot;tree structure&quot;.</ins>
+		I already know how write Linux shell scripts, I just don&apos;t like to do it, so I didn&apos;t get much out of that tutorial.
+		For anything even remotely complex, shell scripting is very painful to work with.
+		I also know how to use Python pretty well, though again, I prefer other languages.
+		Python just has a bad attitude; I prefer languages that don&apos;t actively mock users.
+		The <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> tutorial wasn&apos;t of any help either; <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> is an inconsistent language, but it&apos;s my native tongue, so I use it for nearly everything.
+		That doesn&apos;t mean I think it&apos;s well-designed; I also use English for all written/spoken work, yet English is one, if not <strong>*the*</strong>, most broken natural languages.
+		Still, I use <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> every day, so a beginners&apos; tutorial on the language isn&apos;t going to cover anything I don&apos;t already know.
 	</p>
 	<p>
-		It looks like we&apos;re not going to be covering how to keep trees balanced as items are added to them this week, unfortunately.
-		So the only real option is to deal with the random insertion order by having a naturally-growing tree, with branches and leaves in unpredictable places.
-	</p>
-	<p>
-		Max-heaps and min-heaps are types of binary trees I&apos;ve never heard of.
-		Normally, the value of each child of a binary tree has a different relationship with the parent.
-		One child is greater, while the other is lesser.
-		With a min- or max-heap though, both children have the <strong>*same*</strong> relationship with the parent though.
-	</p>
-	<p>
-		Huffman coding trees are interesting.
-		I&apos;d thought that schemes such as Unicode were inefficient because not all bit sequences are valid and the bit encodings of characters are of differing lengths.
-		However, I now see it&apos;s a matter of optimising for use with certain characters.
-		I guess <abbr title="American Standard Code for Information Interchange">ASCII</abbr> characters do tend to get used in a lot of languages, so having them represented by shorter byte sequences is useful.
-	</p>
-	<p>
-		When building my code for the assignment, I ended up refactoring some stuff to make it more efficient before the first run.
-		I didn&apos;t realise it, but I&apos;d left some code in place that was no longer valid.
-		Jeliot complained about something being not implemented, but wouldn&apos;t tell me what, or even what line the problem was on.
-		Worst of all, Jeliot kept highlighting a valid function call, making it look like that function was potentially not implemented.
-		However, there was a compilation error whenever that function was renamed, meaning that Jeliot was in fact finding the function and did know it to be implemented.
-		I finally broke down and started an Eclipse project to use Eclipse&apos;s debugger instead.
-		Eclipse complained about having all the classes in the same file, but after sifting out those errors, I found the real problem reported: I was trying to examine an attribute of an integer, but integers aren&apos;t part of a class and don&apos;t have methods.
-		Jeliot can&apos;t even report such a simple error with anything more specific than &quot;not impleented&quot;, nor can it even point to the correct line so I could find the problem myself.
-		There was another error as well, where I accidentally tried to use <code>self</code> instead of <code>this</code> to get an object to reference itself.
-		Eclipse too complained about that.
-		When I tried to use Jeliot&apos;s search feature to find where I&apos;d done that, Jeliot couldn&apos;t even find the word <code>self</code>.
-		Eclipse, of course, could, and I was able to use that to figure out where to look in the copy open in Jeliot.
-		Jeliot couldn&apos;t even find a simple string in the source file.
-		I swear, Jeliot is not a usable tool for development.
-		The fact that you need to wait for Jeliot&apos;s curtain close animation before it&apos;ll let you touch the source code is also just plain idiotic.
-		There&apos;s no need for that.
-		I understand locking up during the opening animation, honestly.
-		It buys time for compilation to complete.
-		Locking up during the closing animation only serves to annoy though.
-	</p>
-	<p>
-		Jeliot likewise isn&apos;t handling the scanner in the way I&apos;d expect.
-		I set my code up to catch the exception I expected it to throw if the user entered non-numeric data.
-		In fact, that exception was to be the signal that the user was done with data-entry.
-		However, Jeliot simply didn&apos;t allow such data to be entered in the first place, so no exception could ever be thrown.
-		I was going to test in Eclipse to see if this was Jeliot being idiotic again or if I just don&apos;t understand how to use the <code>nextInt()</code> method properly.
-		However, transferring between Jeliot and Eclipse was too much of a bother at this point.
-		Jeliot wants all the classes in a single file, while Eclipse won&apos;t run the code unless they&apos;re in separate files.
-		Another odd quirk of Jeliot is that it doesn&apos;t seem to support the <code>close()</code> method of scanner objects, you you have to just leave them open.
-		It also couldn&apos;t recognise the output of <code>next()</code> to be anything other than a generic object, so I couldn&apos;t pass it directly to another method.
-		Instead, I had to declare a <code>String</code>-type variable, store the value there, then pass the variable into the method I needed the value passed into.
-	</p>
-	<p>
-		Besides me, no student posted to the discussion board until the second-to-last day.
-		I was starting to worry everyone had abandoned ship and I was the last student in the class!
-		I mean, not literally, but it was a bit annoying to have to wait to get my own replies in.
-		I typically make one reply per day in the combination of both my courses, and when other students wait until the last minute to post, I&apos;m stuck waiting until the last minute to reply.
-	</p>
-	<p>
-		I took longer to complete the binary sorting tree assignment than I should have.
-		Maybe stress had something to do with it, but I feel like I should have been able to complete it a few hours quicker than I did.
-		As for grading last week&apos;s assignment, one of the other students mentioned in their write-up that they couldn&apos;t get Jeliot running.
-		I wonder if they have a similar computer set-up as I do.
-		For me, the provided instructions didn&apos;t work.
-		I had to combine some ingenuity with some prior knowledge to get it running.
-		Just in case, I left instructions to repeat what worked for me in my feedback notes, so hopefully they&apos;ll read and try that.
+		The Perl tutorial was much more useful to me.
+		I&apos;ve been meaning to try learning Perl anyway.
+		From the tutorial, I found Perl&apos;s syntax is very much like that of my native language, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>.
+		Arrays are declared a bit differently though.
+		When initialising the array, an <code>@</code> sigil is used instead of the usual <code>$</code> sigil used for variables.
+		However, when retrieving or changing the value, you do use the usual <code>$</code> sigil.
+		Two sigils are used to get the length of the array (<code>$#</code>), but the number returned is actually one less than the array length, which is very unintuitive.
+		This results in the returned value being equal to the final key of the array, unless the array is empty, in which you get back <code>-1</code>.
+		You can also use these sigils to set the number of values in the array.
+		Instantiating a hash uses the <code>%</code> sigil, and accessing/setting values uses curly braces instead of square brackets.
+		This is all well and good, but one thing presented confuses me.
+		The tutorial says the different sigils offer different namespaces.
+		If that&apos;s the case though, why is the <code>@</code> or <code>%</code> sigil used to create an array or a map, but the <code>$</code> sigil used to access the values in the created constructs?
+		That doesn&apos;t sound like separate namespaces to me.
 	</p>
 </section>
 		<hr/>
