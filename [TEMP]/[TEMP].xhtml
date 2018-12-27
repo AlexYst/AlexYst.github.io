@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./[TEMP]/[TEMP].xhtml"/>
-		<title>Binary tree &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
+		<title>Quick sort &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
@@ -39,73 +39,270 @@
 <nav>
 </nav>
 		<header>
-			<h1>Binary tree</h1>
-			<p>Written in <span title="Data Structures">CS 3303</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised on 2018-12-12</p>
+			<h1>Quick sort</h1>
+			<p>Written in <span title="Data Structures">CS 3303</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised on 2018-12-26</p>
 		</header>
-<section id="Unit5">
-	<h2>Unit 5</h2>
+<section id="Unit6">
+	<h2>Unit 6</h2>
 	<p>
-		Several of this week&apos;s assigned readings weren&apos;t actually available to be accessed:
-	</p>
-	<img src="https://my.uopeople.edu/draftfile.php/119878/user/draft/436056419/404_-_File_or_directory_not_found.~_again.png" alt="404 - File or directory not found." class="framed-centred-image" width="489" height="275"/>
-	<img src="https://my.uopeople.edu/draftfile.php/119878/user/draft/436056419/Can_not_find_data_record_in_database_table_context..png" alt="Can not find data record in database table context." class="framed-centred-image" width="778" height="658"/>
-	<img src="https://my.uopeople.edu/draftfile.php/119878/user/draft/436056419/Page_not_found.png" alt="Page not found" class="framed-centred-image" width="304" height="729"/>
-	<img src="https://my.uopeople.edu/draftfile.php/119878/user/draft/436056419/Unable_to_connect.png" alt="Unable to connect" class="framed-centred-image" width="332" height="557"/>
-	<p>
-		The reading material for the week mentions that system languages allow applications to be developed more quickly than bare assembly language.
-		They also allow easier <strong>*maintenance*</strong> too though.
-		It&apos;s not just initial development time that matters.
-		If the software is to survive, adapt, and evolve, the initial development will only be a part of the picture.
-	</p>
-	<p>
-		That same article talks about how strong typing encourages incompatible interfaces, and how conversion code is needed to translate between data types when trying to combine things.
-		That all makes sense.
-		The thing there that caught my attention though it that it said this usually isn&apos;t an option, as most programs are distributed as sourceless binaries.
-		It made me reflect a bit.
-		I really do appreciate the availability of source code.
-		All of the software I have on my computer, down to the very last system component has its full source code made available to the public.
-		Not everyone lives that way though.
-		In a world where proprietary software is considered the norm, most people don&apos;t have access to the source code of hardly anything on their system.
-		MY computer&apos;s hardware no doubt has some embedded, sourceless binaries, such as ones to to make the hard drive function, but everything running on top of that can be edited and recompiled at any time.
-		For people that want the freedom to modify what they like, my system, Debian, is truly a great option.
+		The instructions for this project say that we&apos;ll learn about what brute force is in CS 1304.
+		No such course seems to exist at this school though.
+		I&apos;m guessing it&apos;s a typo, and is supposed to say <span title="Analysis of Algorithms">CS 3304</span>, a course that has this course as a prerequisite.
+		Either way though, I already know what brute force is.
+		It&apos;s what I use when I have no clue how to solve a problem the correct way.
+		It&apos;s a strategy of having the computer compute all possible answers, and check each one for correctness.
+		It&apos;s about the least-efficient solution possible, but it gets results, if you&apos;re willing and able to wait for it to complete.
+		When I code these types of solutions, I often leave them running when I go to work, and I get home to find the answer still hasn&apos;t been found.
+		Thankfully, I&apos;ve usually come up with a better way to find the answer by then, so I just tear apart the brute force solution and replace it with something much more efficient, and get my answer quite quickly.
+		For me, the brute force solution is often a starting point to get me thinking about the problem, and doesn&apos;t actually get me the answers I&apos;m looking for because it&apos;s too slow.
 	</p>
 	<p>
-		Still, even with access to the source code of everything on your machine, modifying and recompiling things to fit them together is inconvenient.
-		Scripting languages provide a better glue by not requiring modification to existing components.
+		Brute force doesn&apos;t only apply in the realm of computers, either.
+		For example, sometimes, I find old combination locks.
+		If they&apos;re the type that allows you to flip one digit and try again without entering all the digits again, I sometimes use brute force to find the combination to them when I&apos;m stuck away from my computer and unable to get anything actually useful done.
+		I just keep them in my bag, and when stuck in waiting rooms or the like, pull it out and start flipping digits.
+		The trick is to set the combo to <code>0000</code>, and try each combination, incrementing by one each time.
+		You don&apos;t need to keep track of a list of what combinations you&apos;ve tried, as you&apos;re trying them in order, and you&apos;ll eventually hit the right one.
+		Given how easy it is to brute force this sort of lock, I really have no faith in them.
+		A combo lock that does require re-entry of the entire combo each time would be more secure, I would think.
+		Personally though, I prefer locks that use physical keys.
+		If me, someone that has no lock-picking skills or training whatsoever, can figure out how to easily (though admittedly not quickly) find the combo, it&apos;s not a very secure option.
 	</p>
 	<p>
-		The article does make the point that one type of language doesn&apos;t replace another.
-		It says scripting doesn&apos;t replace system languages, and the reverse is true as well.
-		As for scripting replacing system languages, that wouldn&apos;t make much sense.
-		Scripting languages must somehow be implemented, and they&apos;re usually implemented in a system language.
-		But still, the point is that you&apos;ve got to choose the right tool for the job.
-		A hand saw isn&apos;t a replacement for a hammer; both have their own purposes.
-		Mainly though, between these two, it&apos;s a trade-off between efficiency of running the software and efficiency in developing and maintaining the software.
+		It&apos;s easy to see why insertion sort and bubble sort aren&apos;t very efficient.
+		They move records around without regard to whether each move actually puts any record into the place it actually belongs.
+		True, each move is guaranteed to get the order <strong>*closer*</strong> to correct, which allows the process to eventually terminate, but many more moves are performed than are actually needed.
+		Selection sort is what I&apos;d do intuitively, with no proper training as to how to sort things.
+		I&apos;d look ahead, and find the record I actually needed to move into place instead of just blindly moving records closer to where they needed to go, not knowing if that move was correct.
+		Of course, with what we&apos;re learning this week, we can do better than selection sort.
 	</p>
 	<p>
-		I already know how write Linux shell scripts, I just don&apos;t like to do it, so I didn&apos;t get much out of that tutorial.
-		For anything even remotely complex, shell scripting is very painful to work with.
-		I also know how to use Python pretty well, though again, I prefer other languages.
-		Python just has a bad attitude; I prefer languages that don&apos;t actively mock users.
-		The <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> tutorial wasn&apos;t of any help either; <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> is an inconsistent language, but it&apos;s my native tongue, so I use it for nearly everything.
-		That doesn&apos;t mean I think it&apos;s well-designed; I also use English for all written/spoken work, yet English is one, if not <strong>*the*</strong>, most broken natural languages.
-		Still, I use <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> every day, so a beginners&apos; tutorial on the language isn&apos;t going to cover anything I don&apos;t already know.
+		The book calls it unfortunate that bubble sort is taught to beginning programmers, when that sorting method is particularly terrible.
+		It&apos;s not the only thing stupidly taught to beginners though.
+		Many times at this school, I&apos;ve noticed bad practices taught to us.
+		And that&apos;s only with the subjects I&apos;m <strong>*familiar*</strong> with.
+		How many bad practices have I learned from the school, thinking they&apos;re the right way to do things?
+		I have no way to know.
+		One course that particularly comes to mind for me is <span title="Web Programming 1">CS 2205</span>.
+		We were taught so many poor Web-development behaviours that it&apos;s really no wonder the Web is a mess these days, cluttered with poorly-designed pages with invalid markup.
+		The schools aren&apos;t teaching students the importance of page accessibility or markup validation.
 	</p>
 	<p>
-		The Perl tutorial was much more useful to me.
-		I&apos;ve been meaning to try learning Perl anyway.
-		From the tutorial, I found Perl&apos;s syntax is very much like that of my native language, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>.
-		Arrays are declared a bit differently though.
-		When initialising the array, an <code>@</code> sigil is used instead of the usual <code>$</code> sigil used for variables.
-		However, when retrieving or changing the value, you do use the usual <code>$</code> sigil.
-		Two sigils are used to get the length of the array (<code>$#</code>), but the number returned is actually one less than the array length, which is very unintuitive.
-		This results in the returned value being equal to the final key of the array, unless the array is empty, in which you get back <code>-1</code>.
-		You can also use these sigils to set the number of values in the array.
-		Instantiating a hash uses the <code>%</code> sigil, and accessing/setting values uses curly braces instead of square brackets.
-		This is all well and good, but one thing presented confuses me.
-		The tutorial says the different sigils offer different namespaces.
-		If that&apos;s the case though, why is the <code>@</code> or <code>%</code> sigil used to create an array or a map, but the <code>$</code> sigil used to access the values in the created constructs?
-		That doesn&apos;t sound like separate namespaces to me.
+		Shell sort is difficult to grasp.
+		I mean, the process itself is relatively simple, and it&apos;s certainly straightforward.
+		It&apos;s just hard to see how it improves on insertion sort.
+		I think what it&apos;s basically doing though is just leaping elements around further.
+		The theory, I think, is that you can skip over a bunch of unnecessary moves, and get the element much closer to where it needs to be, even if you don&apos;t get it quite right.
+		The next iteration fine-tunes the result a bit, and so on, eventually moving things on the one-item scale to finish the job.
+	</p>
+	<p>
+		Merge sort seems really inefficient to me.
+		It must not be as bad as it seems though, given that it&apos;s not listed as one of the three slow algorithms of the ten presented this week.
+		Quick sort seems to have even more unnecessary moving of items though.
+		Furthermore, quick sort uses recursion, which is also know to typically be inefficient.
+		However, it&apos;s still the best sorting option for general purposes.
+		It just goes to show that unintuitive solutions can sometimes be the best.
+		That said, quick sort&apos;s great efficiency is based in luck.
+		With a bad roll of the die, it actually is as bad as insertion sort, bubble sort, and selection sort.
+	</p>
+	<p>
+		Heap sort seems to have a large amount of overhead.
+		It&apos;s probably good for special uses, but not for most sorting tasks.
+		The book seems to try to explain why a max-heap is used instead of a min-heap, but doesn&apos;t actually explain anything.
+		It claims that the reason is because the values are inserted into the array starting at the end, which would require a max-heap to get the right sorting order.
+		However, you could just as easily insert values starting at the beginning, which would require a min-heap.
+		No actual explanation is given as to why we should insert from the end or why a max-heap-based implementation is better.
+	</p>
+	<p>
+		Bin sort is a bit confusing.
+		From what I think I&apos;m getting, bare bones bin sort expects no more than one value to have each key.
+		The number of keys it expects though is one for each bucket, and these keys must be directly sequential.
+		In other words, if your keys are 0 through n-1, yet your records are somehow out of order, bin sort can arrange them for you.
+		A modified bin sort can handle larger and/or duplicate keys, but the cost is great overhead.
+		Bin sort doesn&apos;t seem all that useful for most cases.
+		Bucket sort seems to have less overhead, but at the cost that it can&apos;t fully sort anything on its own.
+		It only breaks down the problem so some other sorting algorithm can finish the job.
+		Radix sort seems to combine bin sort and bucket sort; it uses bucket sort to break down the problem, then uses bin sort to sort the partly-sorted values.
+	</p>
+	<p>
+		Jeliot is becoming increasingly annoying.
+		When I run code, I&apos;m usually interested in the output, so I want it to run quickly.
+		All I need to know is if the output is what I expect it to be.
+		Jeliot slows the process down considerably with its animation of the process.
+		Additionally, that output isn&apos;t even useful, as whenever Jeliot encounters an issue, the animation disappears.
+		If it left the animation up, it&apos;d be useful for debugging.
+		I could see the state the program was in when things went wrong.
+		However, the one case in which the animation would be useful is the one time in which it isn&apos;t displayed.
+		If the animation even had the option to take steps backward, it could be of use.
+		When I notice a value is wrong, I can&apos;t go back and see <strong>*why*</strong> it&apos;s wrong.
+		The only option is to reset from the beginning, which isn&apos;t even remotely helpful, so I end up just debugging by hand and ignoring the animation altogether.
+		Jeliot also has this annoying bug where if you&apos;re not staring at it, some of the output doesn&apos;t show up in the console correctly.
+		I thought my code wasn&apos;t outputting the array contents at the end like it was supposed to, which baffled me, as it did output the swap count, which was the code line directly before the one outputting the array contents.
+		There was nothing between to cause branching or other unexpected behaviour.
+		It turns out the output is actually invisible sometimes if Jeliot isn&apos;t on the active desktop.
+		(I was working on my learning journal entry on desktop 0 where I tend to keep my code editor, while Jeliot ran on desktop 1.
+		The assignment instructions were open on desktop 3, where I typically keep my Web browser and email client.)
+		If you select the text with the cursor after returning to the desktop Jeliot is running on, it gains visibility.
+	</p>
+	<p>
+		With some slight modification, I think quick sort would be even easier to implement.
+		If we didn&apos;t make sure the pivot point ended up in the correct position, we could instead just sort it into one of the two sub-arrays (namely, the one holding values greater than or equal to the pivot point).
+		I&apos;m not sure if this would be more or less efficient though.
+	</p>
+	<p>
+		The assignment instructions say we&apos;re measuring the efficiency of our algorithms based on the number of swaps performed.
+		Using that metric alone seems misleading to me, but I did my best to optimise in that regard.
+		If that&apos;s what the goal of the assignment is, that&apos;s what I&apos;ll do.
+		Strangely, by this metric alone, the optimal sorting mechanism would be one that looks at the entire array, finds the correct value for a given index, and performs only the needed swap.
+		At most, you&apos;d have n-1 swaps at that point.
+		But that wouldn&apos;t be one of the three sorting options we&apos;re allowed to implement this week.
+		So basically, I just added checks to avoid unnecessary swaps.
+		Things already in the correct sub-array get skipped over and no item ever gets swapped with itself.
+	</p>
+	<p>
+		I got my number of swaps down to twenty-two, and I figured that was good enough.
+		But then I started thinking about how I&apos;d write up my description of my implementation, and my mind wandered to what the optimal solution would be.
+		Using half-swaps and creating a lot of overhead with iterations where the algorithm plans its moves, we could really get the amount of swapping down.
+		(&quot;Half-swaps&quot; being where we swap a value into the array, and instead of putting that value where the values swapped in once was, we directly swap the old value into the spot it belongs, removing that value and so on.
+		In most cases, no two values would directly change places.)
+		Using full swaps though, the number of necessary swaps is n-1, assuming no value starts in its correct location.
+		Given that context, my swap count is fantastic!
+		There are twenty-one array items, so my algorithm made only two unnecessary swaps.
+		Given that my algorithm doesn&apos;t have any of the necessary look-ahead loops to implement any sort of planning mechanics, that&apos;s pretty darn good.
+		The goal of this assignment is to prove we understand how to implement sorting mechanics, so I&apos;d say I&apos;ve done that well enough to be done tweaking the code.
+	</p>
+	<p>
+		The discussion this week was uneventful.
+		We pretty much just discussed quick sort.
+		Maybe it was a bad idea for my to choose quick sort as the algorithm I implemented for the unit assignment.
+		I learned about quick sort inside and out by implementing it, but I got nothing out of the discussion.
+		The discussion simply didn&apos;t cover anything I hadn&apos;t already seen and worked with myself.
+		If I&apos;d chosen a different sorting algorithm to implement, I&apos;d&apos;ve learned about that algorithm instead, and maybe I&apos;d&apos;ve gotten something out of the discussion.
+	</p>
+</section>
+<section id="Unit6">
+	<h2>Unit 6</h2>
+	<p>
+		Most of this week was review for me.
+		I program as a hobby, and then to use object-oriented programming whenever I find the slightest reason why it would make sense to.
+		Typically, if there are at least two functions I have defined that operate on the same data, I create a new class and make those functions into methods.
+		If there is only one function though, I typically just define it as a stand-alone function, not classes or objects involved.
+		Then again, my native language, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, is bizarre in that it supports both object-oriented programming and non-object-oriented programming very well.
+		Most languages tend to heavily favour one style over the other.
+	</p>
+	<p>
+		The book makes the claim that object-oriented programming should be done even in languages that don&apos;t support objects.
+		I&apos;d never thought of the possibility of doing that.
+		I guess I&apos;ve done it before, back before I learned about standard object-oriented features though.
+		I&apos;m not sure how to pull it off in a strongly-typed language though.
+		Only when an array can hold multiple types of data do I really see faking object orientation as an option.
+	</p>
+	<p>
+		The <code>virtual</code> key word is new to me.
+		In C++, it looks like it causes late static binding.
+		Late binding is the default in the scripting languages I work with, so we don&apos;t need that key word.
+		The exception would be <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, which uses late binding in most contexts, but early binding when a method is called without an object from another method.
+		In that case, early binding is the default, though this can be overridden at the place of the method call with the <code>static</code> key word.
+		It looks like C++ takes binding a step further though.
+		Being that the variables themselves have types, the method calls are bound at compile time, so a different version of the method might be called on the same object depending on what type of variable is currently storing the object.
+		The <code>virtual</code> key word is used specifically to override that.
+	</p>
+	<p>
+		From the looks of it, Ada allows the definition of multiple functions that have the same name, provided they have different arguments.
+		This is the one thing I really hate about Java.
+		With true class support, it makes sense to have different classes define methods of the same name.
+		Each class definition is a namespace, separate from other name spaces.
+		However, having multiple non-class functions (or multiple methods in the same class) have the same name only leads to difficulty in debugging.
+		The unconstrained type variables that get constrained by adding a value to them are a bit odd, but I can see how they&apos;d be useful when combined with unconstrained function parameters.
+		That said, in most cases, you want your function parameters constrained in some way.
+		It seems like a niche usage, but likely has some applications on rare occasions.
+	</p>
+	<p>
+		The section on Ada&apos;s polymorphism support was difficult to follow, due to the odd use of terminology.
+		I think I get it, but it was certainly a slow read, as there were at least four strange terms that I needed to patch in my mind with more-appropriate terms to even grasp the concepts the book was trying to present.
+		I get why the book presented the lesson that way.
+		Like it said, it&apos;s best to discuss a language with that language&apos;s own terminology.
+		However, it&apos;s asinine for language developers to make up their own terms to fit concepts present across programming languages or to take terms that already exist and use them to name different language features than they typically refer to.
+	</p>
+	<p>
+		Multiple inheritance is something I haven&apos;t worked with before, but something I&apos;ve long wished to have in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>.
+		In <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, we have traits, but they don&apos;t allow for type enforcement in function/method arguments and return values.
+		We have interfaces, but they don&apos;t allow the definition of method bodies, only method signatures.
+		And we have inheritance, but there can only be one parent class.
+		There have been many times in which I have absolutely <strong>*needed*</strong> all objects of a given class to have a specific implementation for certain methods.
+		The base class therefore defines the method, and declares it <code>final</code>.
+		However, one or more of the subclasses, which provide different implementations for other methods, would benefit from inheriting from inheriting from one of the language&apos;s built-in classes.
+		Such inheritance is impossible though, without relaxing the requirements on the strict method, which isn&apos;t an option, so I&apos;m not able to make use of the built-in class&apos; features.
+		Another example is my exception definitions.
+		In order to define the exceptions to be catchable in general <code>catch</code> blocks, my exceptions need to descend from the exceptions of the former leaf nodes in the main exception class family tree.
+		However, to make them recognisable as having the extra methods I added, they need to either descend from my own exception base class or implement my own exception interface.
+		I have to go with the interface, due to having only single-inheritance capabilities.
+		As interfaces can&apos;t define method bodies, I need a separate trait to provide the method bodies.
+		As a result, I&apos;ve got an interface and a trait that are only meant to be used together, but there&apos;s no actual way to enforce this, and the fact that there are two items, an interface and a trait, feels like a duplication.
+	</p>
+	<p>
+		One thing the book didn&apos;t mention at first, but I&apos;ve seen in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> is <code>protected</code> class members.
+		<code>public</code> class members are visible to everything.
+		<code>private</code> class members are only visible within the class itself.
+		<abbr title="PHP: Hypertext Preprocessor">PHP</abbr>&apos;s <code>protected</code> members, however, are visible within the class itself and within any child classes, but are hidden everywhere else.
+		It looks like C++ has these too, they just didn&apos;t get mentioned until the next section, which was odd.
+		C++&apos;s <code>friend</code> methods and classes are interesting.
+		They allow certain outside code to access <code>private</code> methods and classes without opening up visibility of the class methods to all parts of the code.
+		I&apos;m not sure that&apos;s a great idea, but it&apos;s certainly something that gets one thinking.
+		Ada&apos;s child package concept seems a bit wonky.
+		Child packages, which are not defined by the parent, are able to access the parent&apos;s <code>private</code> members, despite the parent declaring said members <code>private</code>.
+		That seems to me like it defeats the purpose of declaring said members <code>private</code>.
+	</p>
+	<p>
+		Eiffel&apos;s treatment of constants as being methods without arguments is strange, and at first, I thought it inefficient.
+		I pictured defining Eiffel basically defining a method for each constant.
+		An item to the calling stack would be pushed, the value returned, then that calling stack item popped.
+		That&apos;s probably not how it works at all though.
+		Eiffel&apos;s constants are probably just like methods in the syntax of how to use them.
+		When compiled, such unnecessary behaviour is very unlikely to be used.
+	</p>
+	<p>
+		&quot;Overloading&quot; is another one of those words that seems to get used differently by different languages.
+		The version presented by the book is the same version Java uses: multiple methods within the same namespace can be given the same name, as long as they take different arguments.
+		I find overloading to be incredibly aggregating.
+		If you have different methods, just give them different names.
+		The only language I&apos;ve worked with that supports overloading is Java, and the feature messes with Java&apos;s error messages and causes confusion when debugging.
+		If you accidentally pass the wrong variable into a method, and what you accidentally passes in is of the wrong type, the Java compiler will complain that you&apos;re trying to call a non-existent function.
+		So what do you do?
+		You scour your code trying to figure out why the method that&apos;s sitting right in front of you is somehow not defined by the time you try to call it later in the code.
+		Did you misspell the method name, either in the method&apos;s declaration or where you called it?
+		No.
+		Is there some sort of scope issue?
+		Maybe.
+		You can&apos;t figure out why there would be one though.
+		And after a couple hours of debugging, it dawns on you that you passes the wrong variable in, not that there&apos;s anything wrong with the method at all.
+		If the Java compiler had complained about a bad argument type, you&apos;d&apos;ve fixed the problem in a couple minutes, tops.
+		But the Java compiler doesn&apos;t do that, because it&apos;s not looking at the method name and checking what it&apos;s parameter types are.
+		Instead, it&apos;s ruling out that method as your intention entirely because it&apos;s parameter types don&apos;t match the argument types in the method call.
+		The book claims overloading to be a convenience.
+		Convenience!?
+		Ha!
+		Overloading is a terrible feature to put in a language.
+		If two methods do similar things but take different arguments, just give them similar yet different names.
+		For example, use <code>add_int(int number)</code> and <code>add_float(float number)</code> instead of <code>add(int number)</code> and <code>add(float number)</code>.
+		You don&apos;t need and shouldn&apos;t want to give multiple methods identical names.
+		The exception, of course, is constructor methods.
+		You may want multiple ways to instantiate objects for a good reason.
+	</p>
+	<p>
+		The discussion topic this week was unexpected.
+		I&apos;ve seen generic programming before, but we also discussed something called &quot;open recursion&quot;, which doesn&apos;t seem to be a form of recursion at all.
+		It&apos;s something I&apos;ve dealt with before though.
+		The two programming languages I work with most are <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> and Lua.
+		In <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, we&apos;ve got open recursion.
+		It doesn&apos;t matter what order methods are declared in, they all have access to one another.
+		And as long as variables are in the right scope, they can be accessed.
+		In Lua though, you don&apos;t have access to variables that haven&apos;t been declared yet.
+		(In Lua, everything&apos;s a variable.)
+		As a result, there are times I have to declare variables without assigning values to them, then immediately assign the values as tables of functions.
+		That way, the functions are able to reference other functions within the table.
+		It sort of provides open recursion, you just have to jump through some basic hoops to get it.
+		Still, not having it by default lets you see what it&apos;s like not to have it, even if only for a minute while you fix the code.
 	</p>
 </section>
 		<hr/>
