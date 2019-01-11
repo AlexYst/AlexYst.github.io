@@ -42,207 +42,176 @@
 			<h1>Quick sort</h1>
 			<p>Written in <span title="Data Structures">CS 3303</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised on 2018-12-26</p>
 		</header>
-<section id="Unit7">
-	<h2>Unit 7</h2>
+<section id="Unit8">
+	<h2>Unit 8</h2>
 	<p>
-		I don&apos;t know what the first student I graded work for this week was thinking.
-		They included a screenshot of their code running, but there was nothing of note in the shot.
-		The code hadn&apos;t completed, so they weren&apos;t showing the output or the sorted array.
-		In fact, it looked like it&apos;d been taken within seconds of the program being started.
-		So to get their output so I could grade, I ran their code.
-		It couldn&apos;t even complete!
-		An error came up very quickly, revealing an uninstantiated variable, causing execution to halt.
-		Clearly, they didn&apos;t even fully run their code to see if it could complete, let alone see if it had the right output.
-		And to top it off, no description or analysis was provided.
+		When the textbook was talking about checking items in a sorted list to rule out many possibilities in a single comparison, I was sure it was going to discuss how we should use a binary search on sorted lists, not a basic sequential search.
+		Instead, it goes on into a discussion of jump searching.
+		I&apos;m not sure what advantage a jump search has over a binary search though.
+		In a binary search, you can rule out about half the remaining options in a single comparison.
+		Jump search doesn&apos;t have nearly that kind of effectiveness.
+		Jump searching certainly does provide better efficiency than basic sequential searching though.
 	</p>
 	<p>
-		The next submission I graded looked like it was probably well-written, but they didn&apos;t include their output.
-		So I tried to run their code myself so I could check the output for correctness.
-		A syntax error prevents the code from compiling.
-		My guess is that they developed this code outside of Jeliot.
-		I don&apos;t blame them; Jeliot majorly slowed me down in developing my own solution.
-		However, they should have at least tested in Jeliot before submitting, so they would know it would run for other students.
-		Alternatively, they could have provided their output and I would have graded based on that.
+		The idea of arranging records by access probability is interesting.
+		It seems a bit like a cop-out, rather than organising the records properly, but I can see why it would be beneficial for certain use cases.
+		You do have to know the access probabilities to make it work though.
+		The count and move-to-front methods of automated sorting have exactly the problems you&apos;d intuitively expect from them, so they&apos;re not very interesting.
+		With counts, access pattern changes aren&apos;t handled well due to built-up counts from past access, and the move-to-front method pops even rarely-used records to the front that one time they actually do get used.
+		For linked list implementations, the problem stops there, but for arrays, that causes a lot of value shifts.
+		The transpose method caught my attention though.
+		Like the book said, there&apos;s a corner case in which it performs poorly: accessing two adjacent records repeatedly will cause them to jump back and forth instead of migrating tot he front.
+		Other than that though, it seems like a rather decent algorithm that balances short- and long-term access patterns well, and doesn&apos;t even require the extra overhead of storing access counts.
 	</p>
 	<p>
-		The third person again didn&apos;t provide their own output, but their code actually ran.
-		It didn&apos;t output the number of swaps performed though.
+		The sections on bitmaps and hash maps were mostly review for me.
+		The book&apos;s take on hash maps was a little different than what I&apos;d previously learned though.
+		The version of hash mapping I&apos;d previously learned used an array of linked lists.
+		First, a hash value from zero to n-1 (where n is the number of array slots) was computed to determine where the item would fall.
+		Then, the item would be added to that linked list.
+		Looking up a value by key then involved computing the hash again to find the right linked list, then performing a sequential search on that linked list.
+		If the array size was close to the right size for the amount of data, the linked list dealt with would have somewhere from zero to two items, so the sequential search would be quick.
+		This book&apos;s hash maps are different though.
+		At first, I thought it was saying that a hash value is calculated and the records arranged in an array by hash value, smallest to largest.
+		This allows for a binary search based on hash value to be performed.
+		However, as the book continued, it turns out the book&apos;s method instead involves remapping keys to different slots when hash collisions occur, so multiple attempts still need to be made to find values in some cases.
+		As expected though, either method of hash mapping does not make searches based on key ranges or partial key matches very efficient.
+		All items in the hash map have to be checked for these types of searches.
+		Items have an order, but they have no <strong>*meaningful*</strong> order, so checking records in order is difficult, and also requires checking all items to see which one should come next, and the same applies to finding the record with the smallest or largest key.
+		Hashing works great when you just need an unordered key/value store though.
 	</p>
 	<p>
-		I was surprised to read this week that <abbr title="random-access memory">RAM</abbr> is referred to as primary memory, while disk storage is only secondary.
-		As the book says, disk memory is persistent.
-		In my mind, that makes it the more important memory, so it seems more worthy of being labelled as primary.
-		<abbr title="random-access memory">RAM</abbr>, on the other hand, is volatile.
-		It loses its contents soon after the power is cut.
-		This process can be delayed (for example, by freezing the <abbr title="random-access memory">RAM</abbr>), but the data is still lost rather quickly compared to disk memory.
-		<abbr title="random-access memory">RAM</abbr> is merely working memory.
-		It&apos;s not the file you put in your file cabinet.
-		It&apos;s the scratch paper you throw out after using it to work out your calculation.
-		<abbr title="random-access memory">RAM</abbr> may be orders of magnitude faster than disk memory, but I would by no means consider it to be the main storage of the machine.
+		Much to my surprise, once the book got done explaining hashing, it then moved on to cover both types of hashing.
+		The form I was familiar with is known as open hashing, while the type the book introduced is known as closed hashing.
 	</p>
 	<p>
-		The book discusses Windows versus UNIX in terms of disk layout, but I think it&apos;s missing a major detail.
-		It mentions how Windows uses a file allocation table.
-		That&apos;s not a property of Windows though.
-		That&apos;s a property of certain disk formats, such as the File Allocation Table (<abbr title="File Allocation Table">FAT</abbr>) format.
-		I don&apos;t know what format a UNIX system uses by default; I&apos;m on Linux, not actual UNIX.
-		But if a UNIX system was instead using a <abbr title="File Allocation Table">FAT</abbr>-formatted disk, it too would be using a file allocation table.
+		When I read about dealing with hash collisions by choosing a new slot to put one of the items in, I just sort of assumed the new slot would be chosen similarly to how the first slot had been chosen: via some sort of hash.
+		This would be pseudorandom probing.
+		However, there&apos;s also another option it seems: linear probing.
+		Linear probing chooses a new slot based on a very predictable sequence by adding a certain number to the home position of the item repeatedly until an empty slot is found.
+		As long as the number of slots in the array cannot be evenly divided by the number chosen, just about any number can be chosen.
+		One also makes a fine choice.
+		Either way, each slot of the array will be tested (after wrapping around one or more times) and lead back to the home position if all slots are full.
+		However, linear probing isn&apos;t a very &quot;hashy&quot; method of operation; it&apos;s basically sequential access, and not hash-calculated access.
+		Hashing is useful to begin with for a reason, so intuitively, adding components to our algorithm that aren&apos;t very &quot;hashy&quot; will take away some of the benefit of hashing.
+		As it turns out, linear probing caused the problem of primary clustering, which results in many values having to get checked when performing a lookup or setting a new key.
+		It builds a linear search into the hash table.
+		In other words, hash collisions need to be dealt with as we&apos;d expect: via pseudorandom probing.
 	</p>
 	<p>
-		I knew about hard drive buffering, though it&apos;s been a while since I studied it, so it was nice to have a refresher on that.
-		I don&apos;t think I knew about input and output having separate buffers though.
-		It makes perfect sense why it&apos;s done that way, but isn&apos;t something I&apos;ve thought about before.
-		I&apos;ve definitely not heard of having two input and two output buffers before.
-		I can see why that would speed things up quite a bit.
-		You can&apos;t read a buffer while it&apos;s being written to and expect consistency, so having one to read from and one to write to can at times make sure both operations are used in parallel instead of one operation waiting on the other.
+		It&apos;s worth noting the possibility of quadratic probing, but it&apos;s not really a good idea because it doesn&apos;t put all slots on the probe sequence, so even with an empty slot available, it&apos;s possible no empty slot will be encountered.
+		For certain table sizes though, quadratic probing using the right equation will in fact visit every slot though, and with a reduced cost over pseudorandom probing.
 	</p>
 	<p>
-		I was curious about how items could be sorted outside <abbr title="random-access memory">RAM</abbr>, which this week&apos;s reading assignment teased could be done.
-		It turns out it can&apos;t though.
-		Instead, the tactic usually used is to read part of the data needed, sort that, then write it back to disk and read the next part.
-		Obviously, one item might end up moved on disk many times before it ends up in the right spot, but then again, things tend to get moved around quite a bit in <abbr title="random-access memory">RAM</abbr> during the sorting process too.
-		It&apos;s not much different, aside from the fact that reading from and writing to the disk is so much slower.
-		One sorting method mentioned doesn&apos;t actually sort the data at all.
-		Instead, it creates a sorted index so data can be found quickly later, but the data itself is still out of order.
-		However, that sorted index file is sometimes only the beginning, used to plan out how the data should be arranged.
-		When this is the case, the data does in fact get sorted.
+		As discussed above, long chains of full slots can occur, resulting in many data comparisons before finding the right data or a free space.
+		In the case of linear probing, one of these chains causes several hash values to chain together so that the next value added on any of these hash values would all set their sights on the same empty slot.
+		This is what&apos;s known as primary clustering.
+		Using a better probing method eliminates that, but still has the problem of secondary clustering.
+		Secondary clustering is caused when values with the same hash value follow the same probing sequence.
+		This can be avoided by taking account the original key value in the probing sequence, and re-hashing it.
+		This is known as double hashing.
+		Again, this is just something I sort of assumed needed to be done.
+		Intuitively, I wouldn&apos;t think to ignore the original key and assign the same probing sequence to every key with the same home position.
 	</p>
 	<p>
-		The idea of using your own buffer pool system to handle large files was interesting.
-		The main buffer pool may be too small, but you can definitely create your own buffer pool system external to the main buffer pool and use that to pretend you have more <abbr title="random-access memory">RAM</abbr> than you do.
-		You&apos;re pretty much reinventing the wheel at that point, as the main buffer pool is already trying to make it appear like you have more <abbr title="random-access memory">RAM</abbr> than you do, but if you understand how pages and buffer pools work well enough, this is an easy solution to implement.
-		Even with paging, something such as quick sort shouldn&apos;t be too hard to implement.
-		Like the book said too, if you implement your own buffer system, you can better tune it to your problem as well.
-		It seems the biggest time-savers though are to focus on reducing disk reads/writes and to perform activities using different components (<abbr title="random-access memory">RAM</abbr>, hard drives, processor) running in parallel.
+		The book discussed the cost of various operations, but when it mentioned deletion, I immediately thought of the impact in regards to the aforementioned hash collision resolution.
+		What happens if record A is inserted, displacing the later-inserted record B that shares its home position, then record A is deleted?
+		Unless the whole array gets resorted upon deletion, we can&apos;t correct for this, as there could be a chain of records in home positions in the probing sequence before we reach the displaced record B.
+		The possibility of deletion seems to throw out all assumptions made about being able to stop the probing sequence once we encounter an empty slot.
+		Thankfully, the next section covered this issue.
+		A &quot;tombstone&quot; value is put in place of the deleted record, alerting the search code to know it needs to probe a little further.
+		It also said that for insertion, the entire probing sequence must be traversed up to the point of an empty slot to verify that a duplicate key doesn&apos;t get inserted.
+		I hadn&apos;t even considered that possibility.
+		Tombstones of course lengthen the probing sequence needed for finding records, but periodic reorganisation of the array can fix that.
 	</p>
 	<p>
-		The discussion assignment for the week was a bit odd.
-		We were to run code that deals with buffer pool policies, but the pools generated were so small that I&apos;m not sure they really got the point across.
-		With only two pages in the buffer pool, no page-replacement policy is going to be effective without carefully-crafted inputs.
-		Even having just three would be better than two, though I think you&apos;d need at least four or five for a good demonstration.
+		I&apos;ve known about primary keys from database software such as MySQL, but for this week&apos;s reading, I learned what that actually means.
+		Primary keys are unique, just like they have to be in MySQL databases, but keys in general don&apos;t have to be unique.
+		I thought that if they weren&apos;t unique, they couldn&apos;t be keys at all, as data can always be looked up by key.
+		Instead, data can only be looked up by primary key, but can be searched for using any key.
+		Non-unique keys are known as secondary keys.
+	</p>
+	<p>
+		ISAM seems like a rather hacky solution.
+		It requires periodic updates to the databases indexes in a process easily comparable to defragmenting a hard drive.
+		Like with defragmenting a hard drive, if your system is properly functional, you shouldn&apos;t need to do it.
+		In the case of defragmenting, it&apos;s mostly a Windows-only problem caused by poorly-constructed filesystems (<abbr title="File Allocation Table">FAT</abbr> and <abbr title="New Technology File System">NTFS</abbr>, both of which were predictably developed by Microsoft).
+		Despite countless issues such as easy corruption of data and constant fragmentation, even modern Windows uses <abbr title="New Technology File System">NTFS</abbr>.
+		On a proper filesystem, such as <abbr title="fourth extended filesystem">ext4</abbr>, fragmentation is almost non-existent.
+		I see how ISAM was a good start though.
+		The field of database management was fairly new, so development had to begin somewhere.
+		At least ISAM kept data easy to find, even if it did come at the cost of a constant need for maintenance.
+	</p>
+	<p>
+		Binary search trees on disk seem like a pain.
+		On the one hand, you can optimise them for updates, or on the other, you can optimise them for access.
+		One set of operations or the other is going to be slow though.
+		If you optimise for access, you end up rebalancing the tree after any update, which can involve moving a lot of nodes to other blocks on disk.
+		If you optimise for insertions, you don&apos;t rebalance or rearrange the data, so looking up values can require accessing many blocks on disk.
+	</p>
+	<p>
+		The operations of 2-3 trees are a bit difficult to picture in my mind.
+		I couldn&apos;t figure out how their strange operations could keep the tree perfectly balanced until the end, when it was explained that they gain and lose levels at the root, not at the leaves.
+		The amount of data in each node is variable though, which is a bit strange.
+		It seems almost disorderly and wastes space in nodes that store less than the maximum amount of data, but it avoids the need to make as many changes to the tree structure as you otherwise would need to during an update.
+		B-trees fall into pretty much the same boat, being a superset of 2-3 trees, and have the same advantages and drawbacks.
+	</p>
+	<p>
+		I&apos;m not sure what the advantage of a B+-tree is.
+		The textbook says it&apos;s just like a B-tree, but without usable data in the internal nodes.
+		Searches in B+-trees must therefore continue until they reach the leaves, every time, while searches in regular B-trees don&apos;t have this requirement.
+	</p>
+	<p>
+		The finals exam mostly went well.
+		Each of the exams had a single question I wasn&apos;t sure what the intent was though.
+		I forget the exact questions, as my exams this term are proctored, so I had to take them at the testing centre instead of at home, but there was a technically correct answer and an answer I thought the exam was likely intending.
+		Some of the answer keys at this school seem to favour technically-incorrect answers based on generalisation of the topic.
+		I went with the technically-correct answer in both cases, but even if they get marked wrong, I should be fine.
+		There wasn&apos;t a lot of challenge to the tests.
 	</p>
 </section>
-<section id="Unit7">
-	<h2>Unit 7</h2>
+<section id="Unit8">
+	<h2>Unit 8</h2>
 	<p>
-		We have had no main assignments in this course.
-		We&apos;ve had discussion assignments and learning journal assignments, but nothing else.
-		Oh.
-		Yeah.
-		Also the mountainous piles of reading assignments.
-		It&apos;s really weird that we&apos;ve had no main unit assignments though; this week was the last chance for any sort of assignment like that.
-		If assigned next week, we wouldn&apos;t have a week after that in which to grade them, so we can&apos;t have assignments next week.
+		Logic programming looks highly useful for certain types of problems, but pretty much unusable for other problems.
+		Instead of issuing instructions for the computer to execute, you provide a list of relationships, and the computer goes about deducing other relationships you&apos;ve asked for based on the known relationships.
+		If you wanted to solve one of those problems in which you needed to figure out what person lived in what house and had what colour of curtains, a logic programming language would allow you to write out all the known relationships and not worry about figuring out how to figure out the other relationships.
+		From the sounds of it though, that simplicity for the programmer comes at a computational cost for the computer.
+		The computer seems to try all possibilities; in other words, it uses brute force, which takes a lot of resources.
 	</p>
 	<p>
-		Functional programming is interesting, but only from an educational standpoint.
-		It doesn&apos;t seem like the sort of thing that&apos;s viable for actually writing programs.
-		For example, the lack of looping structures is pretty big.
-		Recursion is inefficient, so having to use it when a basic loop would do isn&apos;t good.
-		Despite its inefficiency, recursion should be used when recursion is the intuitive way to express something.
-		And by that same logic, loops should be used instead when loops are the intuitive way to express something, which is most of the time.
-		Not having loops must hinder the readability of the programs written in the language.
+		The book makes the claim that it&apos;s difficult to imagine a language more simple than a logic programming language, but there&apos;s a reason for that.
+		First, logic programming is such a high-level abstraction that most of the complexity is abstracted away.
+		Second, logic programming is so high level that most of the <strong>*usefulness*</strong> is abstracted away!
+		And third, it&apos;s so high level that most of the efficiency is abstracted away.
+		Logic programming has a time and place, but it doesn&apos;t work for most situations.
+		It&apos;s sort of like a domain-specific language in this regard; it&apos;s simpler than a language that can do anything, but it&apos;s also not able to do much (if anything) outside its domain.
+		Sure, like the book says, the Horn clause is a powerful statement, but the fact that it&apos;s the only available statement (besides facts and goals) limits what you can do drastically.
 	</p>
 	<p>
-		Lazy evaluation is just weird.
-		At first, I thought it only a little strange, but completely necessary in the context of functional programming languages.
-		However, once the book got to the part on tree comparisons, it was clear that there was quite a bit more oddity at work.
-		In the example provided, two trees are converted into lists, then compared.
-		Using lazy evaluation, the book says the trees don&apos;t even need to be fully converted if the trees are unequal, as the inequality will likely be discovered before that.
-		Clearly, the process the example&apos;s code says to use is to convert the trees, then compare.
-		Comparison shouldn&apos;t even begin until the full conversion of both trees is performed.
-		However, the partly-formed lists are compared instead so the rest of the lists doesn&apos;t need to be computed.
-		You can easily see how this would be efficient, but it&apos;s nothing short of bizarre.
+		Using Prolog as a database is an interesting concept.
+		Is it more efficient than using actual database software?
+		Probably not.
+		The <code>assert()</code> and <code>retract()</code> functions make it possible to update the data without editing the program itself though, so it seems feasible.
+		Is there a way to save the database to disk though?
+		That seems like a rather important feature, and the book didn&apos;t cover it.
 	</p>
 	<p>
-		The list notation in Haskell is odd.
-		It&apos;s pretty straightforward if you ignore the two numbers, two full stops, then a third number notation.
-		Intuitively, I&apos;d have thought the first number was just a number, then the number double full stop number was a range.
-		Instead though, all three are a range.
-		The first two numbers are both literal numbers in the range and a declaration of the interval at which the numbers in the range are spaced, while the final number is the point at which the range stops.
-		Except that that number isn&apos;t necessarily in the list, as the interval might not allow for it.
+		The description of what happens when you pass arguments of the wrong type in Prolog greatly reminded me of Java.
+		It&apos;s not quite the same.
+		In Prolog, it results in &quot;falure&quot;, which is logic programming&apos;s version of a boolean <code>false</code>.
+		There&apos;s no good way to trace it though, and the failure has no obvious cause.
+		In Java, when you pass arguments of the wrong value, the compiler complains that it can&apos;t find the method, even though the method has clearly been defined.
+		Again, it&apos;s an error that doesn&apos;t appear to make any sense.
+		It fails to notice that it&apos;s the argument that&apos;s the wrong type, not the method that doesn&apos;t exist, due to Java&apos;s ugly overloading feature.
 	</p>
 	<p>
-		The final article for the week started out by saying that programmers are procrastinators.
-		The funny thing is, censorship at this school has turned me into a procrastinator.
-		This censorship leaves me lethargic any time I even think about working on coursework, so I tend to put it off longer than I should.
-		And when I do get going on it, I need frequent breaks or I zone out.
-		And this applies to any programming assignments we have as well.
-		This spreads out to procrastinating in other areas; I can&apos;t do X until I complete my coursework, so because I put my coursework off, X gets put off too.
-		Under normal circumstances though, I don&apos;t procrastinate when it comes to programming.
-		I tend to get started as soon as I can, because I&apos;m excited about the finished product.
-		There&apos;s a lot I used to get done outside of programming too, before the censorship started.
-		And between terms, I regain some of my vital energy and actually get quite a bit done.
-	</p>
-	<p>
-		This article also asks the rhetorical question of why the universe is described using mathematics.
-		Does the universe have some connection to maths?
-		This question, to me, makes it seem like the author doesn&apos;t understand the root of what maths are.
-		Mathematics is a system for working with data in a way that is coherent and logical.
-		If something can&apos;t be described using mathematics, either you don&apos;t understand the true nature of the thing or the thing isn&apos;t coherent and consistent.
-		There are far too many mathematical rules for me to cover each one, and besides, I don&apos;t claim to know them all.
-		I once studied quantum mechanics for a bit, but the maths confused me and I never did get a firm grasp on them.
-		But even the most simple mathematical rules are based on abstracting away fundamental principles of reality.
-		Take addition, for example.
-		If there&apos;s an apple on the table and you set two more apples on the table, the number of apples now on the table can be described using addition.
-		Subtraction works the same way.
-		As humans, we have a tendency to abstract things many times a day and not even notice.
-		Currency is a physical abstraction for value, and we abstract away currency in accounts.
-		Negative numbers find use there, when we represent owing someone something as having a negative balance.
-		Multiplication builds on addition, and allows you to add multiple times at once, or even add multiple negative times.
-		The list goes on.
-		Reality doesn&apos;t magically know about mathematical rules.
-		Instead, we make up mathematical rules to use as tools for understanding our world and processing the data in it.
-		If reality were different than it is now, maths would be different as well; mathematics are only our description and interpretation of the world.
-	</p>
-	<p>
-		The article also talks about how there are representations for games we&apos;ve made up, and those games don&apos;t resemble the actual world.
-		It seems to be saying that the universe is bound by maths, but maths aren&apos;t bound by the universe.
-		Once we have our rules that can describe the system we live in though, we can use those same rules to describe things we made up, such as games.
-		Humans are the most bizarre animals on the planet, and we don&apos;t always direct our focus at reality or even things that could conceivably fit into our reality.
-		We make stuff up, but it&apos;s not useful to have a separate language and separate formalisms for describing real versus imaginary things.
-	</p>
-	<p>
-		Once the article got into actually explaining functional programming, it had much more reasonable things to say.
-		For example, unit testing in functional programs becomes much easier, because you don&apos;t have to worry about side effects and calling order.
-		All you need to worry about is inputs and outputs.
-		Deadlocks and race conditions are also non-existant in functional programming, though personally, I think this is another result of the lack of side effects in functions.
-		How can you have a race condition when no data is getting modified?
-		You just can&apos;t.
-	</p>
-	<p>
-		The book touched upon the Windows and UNIX restart models for updating.
-		On Windows, you restart the whole system.
-		Or, you did in the past.
-		I&apos;m not a Windows user, so I&apos;m not quite sure about this, but I think Modern Windows allows at least some updates without full system restarts now.
-		That said, the system is still rather unstable, and needs to be restarted every month or so just to get everything back into alignment.
-		We in the Linux world don&apos;t put up with that kind of nonsense.
-		Linux follows the UNIX model, and restarts only the components being updated, as well as components that depend on the ones being updated.
-		Components are shut down, replaced, then started back up.
-		Linux systems tend to run for years at a time without degradation of performance.
-		We pretty much don&apos;t need to restart the whole system except in case of kernel update, as the kernel is so important that the rest of the system relies on it and can&apos;t continue while it&apos;s down.
-		But some Linux users even have hot-patching available for the kernel.
-		I forget the details, but they don&apos;t have to restart their machines even for kernel updates, which is good for servers that need to be online at all times.
-		Personally, I haven&apos;t made the effort to get that sort of thing set up because my distribution has such infrequent kernel updates.
-		As far as I can remember, I don&apos;t think I&apos;ve encountered a kernel update except when upgrading to a new release of the system, where pretty much the entire set of software sees a major update, and I prefer to shut the system down to perform a clean installation at that time anyway.
-	</p>
-	<p>
-		The article&apos;s take on currying seemed way different than that described by the textbook.
-		The textbook described it as returning functions as return values and calling those functions with new input values.
-		The article instead described it as being basically the adaptor pattern, where a wrapper function is created to translate an argument set to work with a different function&apos;s parameters.
-		I&apos;m guessing it&apos;s the textbook that&apos;s correct, and that the article is just explaining the concept very poorly.
-	</p>
-	<p>
-		I get the feeling infinitely-long the data structures mentioned by the article aren&apos;t much different than generators in imperative languages.
-		The example used was Fibonacci numbers, and you can&apos;t just jump to an arbitrary Fibonacci number and compute it.
-		To compute a Fibonacci number, you must compute all the numbers that came before it, just like with a generator.
-		A generator too can go on as long as need be, with no end.
-		When the user stops asking for the next output, no more output is given.
-	</p>
-	<p>
-		The concept of &quot;continuations&quot; seems to just be a subset of higher-order functions.
-		Basically, a callback is passed to the function, and that callback called with the would-be return value of the main part of the function.
-		The function then returns the return value of the callback.
-		It looks like they further have implications with execution order, though I&apos;m not entirely sure such implications couldn&apos;t be enforced even with just a basic higher-order function.
+		The finals exam mostly went well.
+		Each of the exams had a single question I wasn&apos;t sure what the intent was though.
+		I forget the exact questions, as my exams this term are proctored, so I had to take them at the testing centre instead of at home, but there was a technically correct answer and an answer I thought the exam was likely intending.
+		Some of the answer keys at this school seem to favour technically-incorrect answers based on generalisation of the topic.
+		I went with the technically-correct answer in both cases, but even if they get marked wrong, I should be fine.
+		There wasn&apos;t a lot of challenge to the tests.
 	</p>
 </section>
 		<hr/>
