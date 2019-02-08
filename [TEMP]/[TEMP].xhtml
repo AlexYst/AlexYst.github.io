@@ -10,7 +10,7 @@
  h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
                                                                                      
 	<https://y.st./>
-	Copyright © 2018 Alex Yst <mailto:copyright@y.st>
+	Copyright © 2019 Alex Yst <mailto:copyright@y.st>
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./[TEMP]/[TEMP].xhtml"/>
-		<title>Quick sort &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
+		<title>Lab: Introduction to R &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
@@ -39,184 +39,300 @@
 <nav>
 </nav>
 		<header>
-			<h1>Quick sort</h1>
-			<p>Written in <span title="Data Structures">CS 3303</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised on 2018-12-26</p>
+			<h1>Lab: Introduction to R</h1>
+			<p>Written in <span title="Data Mining and Machine Learning">CS 4407</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised on 2019-02-06</p>
 		</header>
-<section id="Unit8">
-	<h2>Unit 8</h2>
+<section id="Unit1">
+	<h2>Unit 1</h2>
 	<p>
-		When the textbook was talking about checking items in a sorted list to rule out many possibilities in a single comparison, I was sure it was going to discuss how we should use a binary search on sorted lists, not a basic sequential search.
-		Instead, it goes on into a discussion of jump searching.
-		I&apos;m not sure what advantage a jump search has over a binary search though.
-		In a binary search, you can rule out about half the remaining options in a single comparison.
-		Jump search doesn&apos;t have nearly that kind of effectiveness.
-		Jump searching certainly does provide better efficiency than basic sequential searching though.
+		This week&apos;s reading assignment was the following:
+	</p>
+	<ul>
+		<li>
+			Chapters one through seven of <a href="https://cran.r-project.org/doc/manuals/R-intro.html">R-intro.pdf</a>
+		</li>
+		<li>
+			<a href="https://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf">Driver.dvi - ISLR First Printing.pdf</a>
+		</li>
+		<li>
+			<a href="http://faculty.wiu.edu/C-Amaravadi/is524/res/dm_c_ov.pdf">Forbidden</a>
+		</li>
+		<li>
+			<a href="http://twocrows.com/intro-dm.pdf">3rd ed Intro to DM - body - intro-dm.pdf</a>
+		</li>
+	</ul>
+	<p>
+		It looks like we&apos;re using R this term.
+		My first task for the week would be to install it, but I still have R installed from a past term, when I took <a href="/en/coursework/MATH1280/" title="Introduction to Statistics">MATH 1280</a>.
+		So that&apos;s one step I can skip this term.
+		We&apos;re also asked to install Basic Prop.
+		Due to licensing issues, I&apos;d rather avoid installing that if at all possible, so I&apos;ll put that off for now.
+		If it&apos;s legitimately needed in a future week, I&apos;ll install it at that point, and uninstall it at the end of the term.
 	</p>
 	<p>
-		The idea of arranging records by access probability is interesting.
-		It seems a bit like a cop-out, rather than organising the records properly, but I can see why it would be beneficial for certain use cases.
-		You do have to know the access probabilities to make it work though.
-		The count and move-to-front methods of automated sorting have exactly the problems you&apos;d intuitively expect from them, so they&apos;re not very interesting.
-		With counts, access pattern changes aren&apos;t handled well due to built-up counts from past access, and the move-to-front method pops even rarely-used records to the front that one time they actually do get used.
-		For linked list implementations, the problem stops there, but for arrays, that causes a lot of value shifts.
-		The transpose method caught my attention though.
-		Like the book said, there&apos;s a corner case in which it performs poorly: accessing two adjacent records repeatedly will cause them to jump back and forth instead of migrating tot he front.
-		Other than that though, it seems like a rather decent algorithm that balances short- and long-term access patterns well, and doesn&apos;t even require the extra overhead of storing access counts.
+		Next, I glanced over the reading assignment.
+		That second <abbr title="Portable Document Format">PDF</abbr> we&apos;re supposed to read is 441 pages long!
+		How are we supposed to fit <strong>*that*</strong> into our week!?
+		We&apos;ve got two course going at once, that <abbr title="Portable Document Format">PDF</abbr> isn&apos;t the only reading material for the week even in just this course, and of course most of us have our day jobs.
+		That is just ridiculous.
+		I ended up even skipping my <abbr title="Linux User Group">LUG</abbr> meeting this week to try to get as much time for reading as I could, even though it&apos;s pretty much the only social interaction I manage to get in each week.
+		Next week will be easier though, as I have the week off from work to recover from surgery.
+		I&apos;ll be stuck at home, mainly only working on coursework and researching my next procedure.
 	</p>
 	<p>
-		The sections on bitmaps and hash maps were mostly review for me.
-		The book&apos;s take on hash maps was a little different than what I&apos;d previously learned though.
-		The version of hash mapping I&apos;d previously learned used an array of linked lists.
-		First, a hash value from zero to n-1 (where n is the number of array slots) was computed to determine where the item would fall.
-		Then, the item would be added to that linked list.
-		Looking up a value by key then involved computing the hash again to find the right linked list, then performing a sequential search on that linked list.
-		If the array size was close to the right size for the amount of data, the linked list dealt with would have somewhere from zero to two items, so the sequential search would be quick.
-		This book&apos;s hash maps are different though.
-		At first, I thought it was saying that a hash value is calculated and the records arranged in an array by hash value, smallest to largest.
-		This allows for a binary search based on hash value to be performed.
-		However, as the book continued, it turns out the book&apos;s method instead involves remapping keys to different slots when hash collisions occur, so multiple attempts still need to be made to find values in some cases.
-		As expected though, either method of hash mapping does not make searches based on key ranges or partial key matches very efficient.
-		All items in the hash map have to be checked for these types of searches.
-		Items have an order, but they have no <strong>*meaningful*</strong> order, so checking records in order is difficult, and also requires checking all items to see which one should come next, and the same applies to finding the record with the smallest or largest key.
-		Hashing works great when you just need an unordered key/value store though.
+		The document on R mentions that R includes the programming language S, by which it means it includes an interpreter for said language.
+		That&apos;s interesting.
+		I was told R was a replacement for S, so I assumed R&apos;s language was only similar to S.
+		I didn&apos;t realise R is (or more accurately, contains) an actual S interpreter.
 	</p>
 	<p>
-		Much to my surprise, once the book got done explaining hashing, it then moved on to cover both types of hashing.
-		The form I was familiar with is known as open hashing, while the type the book introduced is known as closed hashing.
+		Next, the book covers how to start R from the command line.
+		Previously, I was starting R from the applications menu.
+		Oddly, the command for starting R is <code>R</code>.
+		I just tested that too, and it works.
+		Command names are of course case-sensitive, and I&apos;ve never run into any that use upper-case letters.
+		I also tried running <code>r</code>, which predictably resulted in the command not being found.
 	</p>
 	<p>
-		When I read about dealing with hash collisions by choosing a new slot to put one of the items in, I just sort of assumed the new slot would be chosen similarly to how the first slot had been chosen: via some sort of hash.
-		This would be pseudorandom probing.
-		However, there&apos;s also another option it seems: linear probing.
-		Linear probing chooses a new slot based on a very predictable sequence by adding a certain number to the home position of the item repeatedly until an empty slot is found.
-		As long as the number of slots in the array cannot be evenly divided by the number chosen, just about any number can be chosen.
-		One also makes a fine choice.
-		Either way, each slot of the array will be tested (after wrapping around one or more times) and lead back to the home position if all slots are full.
-		However, linear probing isn&apos;t a very &quot;hashy&quot; method of operation; it&apos;s basically sequential access, and not hash-calculated access.
-		Hashing is useful to begin with for a reason, so intuitively, adding components to our algorithm that aren&apos;t very &quot;hashy&quot; will take away some of the benefit of hashing.
-		As it turns out, linear probing caused the problem of primary clustering, which results in many values having to get checked when performing a lookup or setting a new key.
-		It builds a linear search into the hash table.
-		In other words, hash collisions need to be dealt with as we&apos;d expect: via pseudorandom probing.
+		The <code>help()</code> function is nice.
+		Up to now, I&apos;ve only known the shorter <code>?</code> notation, which to be honest, looks pretty awkward.
 	</p>
 	<p>
-		It&apos;s worth noting the possibility of quadratic probing, but it&apos;s not really a good idea because it doesn&apos;t put all slots on the probe sequence, so even with an empty slot available, it&apos;s possible no empty slot will be encountered.
-		For certain table sizes though, quadratic probing using the right equation will in fact visit every slot though, and with a reduced cost over pseudorandom probing.
+		R&apos;s decision to allow different characters in symbol names based on system locale seems idiotic.
+		It prevents compatibility between a script written in one region and a system running in another.
+		You can say it allows language support, but it really doesn&apos;t.
+		For example, let&apos;s say you wanted a French user to be able to use accented characters in variable names.
+		The proper way to support that is to allow the accented characters used in French to be used in symbol names regardless of locale.
+		French users then get their accented characters and users outside France are able to run the French R scripts.
+		I can&apos;t say <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> is a very clean language or should be used as an example in hardly any context, but it does get this particular feature right.
+		It allows only certain characters from the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range of Unicode to appear in symbol names, but it allows <strong>*all*</strong> characters outside the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range.
+		All characters used for basic language syntax are within the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range, so there&apos;s no reason to go through the non-<abbr title="American Standard Code for Information Interchange">ASCII</abbr> sections of Unicode to decide which characters should and should not be allowed in symbol names.
+		Of course, going through those sections and creating such a list would still be fine, provided the list of valid symbol characters applied to everyone regardless of system settings.
 	</p>
 	<p>
-		As discussed above, long chains of full slots can occur, resulting in many data comparisons before finding the right data or a free space.
-		In the case of linear probing, one of these chains causes several hash values to chain together so that the next value added on any of these hash values would all set their sights on the same empty slot.
-		This is what&apos;s known as primary clustering.
-		Using a better probing method eliminates that, but still has the problem of secondary clustering.
-		Secondary clustering is caused when values with the same hash value follow the same probing sequence.
-		This can be avoided by taking account the original key value in the probing sequence, and re-hashing it.
-		This is known as double hashing.
-		Again, this is just something I sort of assumed needed to be done.
-		Intuitively, I wouldn&apos;t think to ignore the original key and assign the same probing sequence to every key with the same home position.
+		I didn&apos;t know that R offers the option to remove objects from the current environment.
+		That sounds especially useful if you&apos;re planning to save the environment for later use.
+		You might generate several intermediate variables as you calculate the variables you actually care about, and you might not want to waste storage space on the intermediate variables.
 	</p>
 	<p>
-		The book discussed the cost of various operations, but when it mentioned deletion, I immediately thought of the impact in regards to the aforementioned hash collision resolution.
-		What happens if record A is inserted, displacing the later-inserted record B that shares its home position, then record A is deleted?
-		Unless the whole array gets resorted upon deletion, we can&apos;t correct for this, as there could be a chain of records in home positions in the probing sequence before we reach the displaced record B.
-		The possibility of deletion seems to throw out all assumptions made about being able to stop the probing sequence once we encounter an empty slot.
-		Thankfully, the next section covered this issue.
-		A &quot;tombstone&quot; value is put in place of the deleted record, alerting the search code to know it needs to probe a little further.
-		It also said that for insertion, the entire probing sequence must be traversed up to the point of an empty slot to verify that a duplicate key doesn&apos;t get inserted.
-		I hadn&apos;t even considered that possibility.
-		Tombstones of course lengthen the probing sequence needed for finding records, but periodic reorganisation of the array can fix that.
+		The book says that when working on a UNIX system, files with names starting with a full stop are hidden, but claims on Windows and OS X, these files are only hidden by default.
+		They&apos;re only hidden by default on UNIX and UNIX-like systems as well though.
+		For example, I have my Debian system configured to display these files, as I don&apos;t like files being hidden from me.
+		I like to see the truth about what&apos;s in my directories.
 	</p>
 	<p>
-		I&apos;ve known about primary keys from database software such as MySQL, but for this week&apos;s reading, I learned what that actually means.
-		Primary keys are unique, just like they have to be in MySQL databases, but keys in general don&apos;t have to be unique.
-		I thought that if they weren&apos;t unique, they couldn&apos;t be keys at all, as data can always be looked up by key.
-		Instead, data can only be looked up by primary key, but can be searched for using any key.
-		Non-unique keys are known as secondary keys.
+		The <code>assign()</code> function is interesting.
+		I&apos;m not sure what the value of it is over the normal assignment operator though.
+		It was also interesting to see that there are two arrow-looking assignment operators, one for assigning to a variable on the left and the other for assigning to one on the right.
+		I encountered the <code>=</code> assignment operator in <a href="/en/coursework/MATH1280/" title="Introduction to Statistics">MATH 1280</a>, though it was never explained to us, and just sort of came up in some of the later assignments.
+		Apparently it doesn&apos;t work in all contexts that <code>&lt;-</code> works though, according to what I read this week, so I wonder in what cases it doesn&apos;t work.
 	</p>
 	<p>
-		ISAM seems like a rather hacky solution.
-		It requires periodic updates to the databases indexes in a process easily comparable to defragmenting a hard drive.
-		Like with defragmenting a hard drive, if your system is properly functional, you shouldn&apos;t need to do it.
-		In the case of defragmenting, it&apos;s mostly a Windows-only problem caused by poorly-constructed filesystems (<abbr title="File Allocation Table">FAT</abbr> and <abbr title="New Technology File System">NTFS</abbr>, both of which were predictably developed by Microsoft).
-		Despite countless issues such as easy corruption of data and constant fragmentation, even modern Windows uses <abbr title="New Technology File System">NTFS</abbr>.
-		On a proper filesystem, such as <abbr title="fourth extended filesystem">ext4</abbr>, fragmentation is almost non-existent.
-		I see how ISAM was a good start though.
-		The field of database management was fairly new, so development had to begin somewhere.
-		At least ISAM kept data easy to find, even if it did come at the cost of a constant need for maintenance.
+		The recycling system for vector-based calculations is new to me.
+		I&apos;ve only worked with either vectors of the same length or vectors along with constants.
+		Different-length vectors were beyond the scope of the statistical work I did before.
 	</p>
 	<p>
-		Binary search trees on disk seem like a pain.
-		On the one hand, you can optimise them for updates, or on the other, you can optimise them for access.
-		One set of operations or the other is going to be slow though.
-		If you optimise for access, you end up rebalancing the tree after any update, which can involve moving a lot of nodes to other blocks on disk.
-		If you optimise for insertions, you don&apos;t rebalance or rearrange the data, so looking up values can require accessing many blocks on disk.
+		Based on some of the examples given in the book, we can deduce that functions in R return by reference, at least in many cases.
+		You can actually assign a new value to the output of the <code>length()</code> and <code>attr()</code> functions, for example.
+		It&apos;s an unintuitive way to get the job done, but it looks like no other option is provided in some cases.
+		It&apos;s just something you&apos;ve got to get used to.
 	</p>
 	<p>
-		The operations of 2-3 trees are a bit difficult to picture in my mind.
-		I couldn&apos;t figure out how their strange operations could keep the tree perfectly balanced until the end, when it was explained that they gain and lose levels at the root, not at the leaves.
-		The amount of data in each node is variable though, which is a bit strange.
-		It seems almost disorderly and wastes space in nodes that store less than the maximum amount of data, but it avoids the need to make as many changes to the tree structure as you otherwise would need to during an update.
-		B-trees fall into pretty much the same boat, being a superset of 2-3 trees, and have the same advantages and drawbacks.
+		R&apos;s concept of an array is very different than the arrays we know from other languages.
+		The arrays from other languages are more-comparable to R&apos;s vectors.
+		An array in R is sort of a cross between a one-dimensional vector and an <var>x</var>-dimensional vector.
+		It seems to store values in one long dimension, but certain functions treat the array as having <var>x</var> dimensions, where <code>var</code> is a positive integer (perhaps even just one).
+		Arrays can also be indexed using their <code>x</code>-dimensional positions.
+		Remember to index from one though, as R counter-intuitively does not index from zero as a normal language does.
 	</p>
 	<p>
-		I&apos;m not sure what the advantage of a B+-tree is.
-		The textbook says it&apos;s just like a B-tree, but without usable data in the internal nodes.
-		Searches in B+-trees must therefore continue until they reach the leaves, every time, while searches in regular B-trees don&apos;t have this requirement.
+		The fact that values in a list have both numeric and string keys is a bit odd.
+		I mean, I&apos;ve seen mixed array key types before, but in this case, the string keys refer to the same values as the integer keys.
+		Two keys refer to the same value.
+		That said, the use of string keys is optional, so only some or even none of the values might have a string key associated with them, though all values in the list have a numeric key.
+		Again, remember that R doesn&apos;t index from zero like normal languages do.
+		The abbreviated names option of lists was surprising to read about as well.
+		It seems useful for when you&apos;re working with R objects in an interactive session.
+		However, it seems like a terribly confusing thing to put in a script.
+		I&apos;d recommend that any code saved for later use use the full names of the keys.
 	</p>
 	<p>
-		The finals exam mostly went well.
-		Each of the exams had a single question I wasn&apos;t sure what the intent was though.
-		I forget the exact questions, as my exams this term are proctored, so I had to take them at the testing centre instead of at home, but there was a technically correct answer and an answer I thought the exam was likely intending.
-		Some of the answer keys at this school seem to favour technically-incorrect answers based on generalisation of the topic.
-		I went with the technically-correct answer in both cases, but even if they get marked wrong, I should be fine.
-		There wasn&apos;t a lot of challenge to the tests.
-	</p>
-</section>
-<section id="Unit8">
-	<h2>Unit 8</h2>
-	<p>
-		Logic programming looks highly useful for certain types of problems, but pretty much unusable for other problems.
-		Instead of issuing instructions for the computer to execute, you provide a list of relationships, and the computer goes about deducing other relationships you&apos;ve asked for based on the known relationships.
-		If you wanted to solve one of those problems in which you needed to figure out what person lived in what house and had what colour of curtains, a logic programming language would allow you to write out all the known relationships and not worry about figuring out how to figure out the other relationships.
-		From the sounds of it though, that simplicity for the programmer comes at a computational cost for the computer.
-		The computer seems to try all possibilities; in other words, it uses brute force, which takes a lot of resources.
+		The next document on my list was the one that was 441 pages long.
+		I ended up not being able to finish reading that one in time to include my notes on it in this learning journal submission.
+		I&apos;ll be stuck at home for a week though starting tomorrow, as I&apos;ll be recovering from surgery, so I&apos;ll finish reading it then and include my thoughts on it in next week&apos;s learning journal submission.
 	</p>
 	<p>
-		The book makes the claim that it&apos;s difficult to imagine a language more simple than a logic programming language, but there&apos;s a reason for that.
-		First, logic programming is such a high-level abstraction that most of the complexity is abstracted away.
-		Second, logic programming is so high level that most of the <strong>*usefulness*</strong> is abstracted away!
-		And third, it&apos;s so high level that most of the efficiency is abstracted away.
-		Logic programming has a time and place, but it doesn&apos;t work for most situations.
-		It&apos;s sort of like a domain-specific language in this regard; it&apos;s simpler than a language that can do anything, but it&apos;s also not able to do much (if anything) outside its domain.
-		Sure, like the book says, the Horn clause is a powerful statement, but the fact that it&apos;s the only available statement (besides facts and goals) limits what you can do drastically.
+		The next page on the reading list blocked me.
+		I wasn&apos;t able to access it at all.
+	</p>
+	<img src="https://my.uopeople.edu/draftfile.php/119878/user/draft/568333011/forbidden.png" alt="Forbidden" class="framed-centred-image" width="476" height="222"/>
+	<p>
+		Finally, the last of the assigned reading material was on data mining.
+		Data mining can be used in positive ways, but when I think of the term, I tend to think of how tech giants mine users for data to sell to their customers, the advertisers.
+		We&apos;re just the companies&apos; product, and that&apos;s not okay.
 	</p>
 	<p>
-		Using Prolog as a database is an interesting concept.
-		Is it more efficient than using actual database software?
-		Probably not.
-		The <code>assert()</code> and <code>retract()</code> functions make it possible to update the data without editing the program itself though, so it seems feasible.
-		Is there a way to save the database to disk though?
-		That seems like a rather important feature, and the book didn&apos;t cover it.
+		The first thing to really stand out to me was that the document talked about how you must build a predictive model using the data.
+		This seems like the perfect sort of task for machine learning.
+		Then again, maybe I&apos;m noticing that even though I hadn&apos;t noticed it before because I&apos;m in a course on machine learning, so machine learning is on my mind more than it&apos;s ever been.
 	</p>
 	<p>
-		The description of what happens when you pass arguments of the wrong type in Prolog greatly reminded me of Java.
-		It&apos;s not quite the same.
-		In Prolog, it results in &quot;falure&quot;, which is logic programming&apos;s version of a boolean <code>false</code>.
-		There&apos;s no good way to trace it though, and the failure has no obvious cause.
-		In Java, when you pass arguments of the wrong value, the compiler complains that it can&apos;t find the method, even though the method has clearly been defined.
-		Again, it&apos;s an error that doesn&apos;t appear to make any sense.
-		It fails to notice that it&apos;s the argument that&apos;s the wrong type, not the method that doesn&apos;t exist, due to Java&apos;s ugly overloading feature.
+		Next, it discussed how patterns don&apos;t always depict a direct cause-and-effect relationship, but merely a correlation.
+		Two behaviours might both be effects of some other, unseen cause.
+		You&apos;ve also got to weigh costs and benefits of different models.
+		Some models are faster, but others are more accurate.
+		Do you need quick answers, or do you need to act with precision?
 	</p>
 	<p>
-		The finals exam mostly went well.
-		Each of the exams had a single question I wasn&apos;t sure what the intent was though.
-		I forget the exact questions, as my exams this term are proctored, so I had to take them at the testing centre instead of at home, but there was a technically correct answer and an answer I thought the exam was likely intending.
-		Some of the answer keys at this school seem to favour technically-incorrect answers based on generalisation of the topic.
-		I went with the technically-correct answer in both cases, but even if they get marked wrong, I should be fine.
-		There wasn&apos;t a lot of challenge to the tests.
+		It&apos;s interesting to see how On-Line Analytical Processing can be used to confirm or deny relationships between variables.
+		Queries can be run against the database to test a hypothesis, and if it&apos;s wrong, a new hypothesis can be searched for.
+		This isn&apos;t like data mining though, as data mining instead uncovers patterns for you.
 	</p>
+	<p>
+		One major area data mining seems to be good for is acquiring and retaining customers.
+		Unlike the data mining I traditionally think about, this use of data mining doesnt&apos; sell your information to someone else, but instead uses it in-house.
+		You&apos;re not the product, but the customer, as you should be.
+		It&apos;s still creepy to think about this data being kept about you, don&apos;t get me wrong.
+		But at least the people holding the data about you are the ones you gave the data to.
+		When you buy something, you know the company you bought from knows who you are, when you bought it, and what you bought.
+		You give them that info.
+		It&apos;s only if and when they turn around and sell that information to someone else that people you have no idea even know about you suddenly seem to know everything about you.
+		Detecting fraudulent purchases on payment cards is another creepy, yet useful application of data mining.
+		Again, you know your credit/debit card servicer knows all your purchases, and you&apos;ve chose to give them that information.
+		It&apos;s creepy to think they&apos;re keeping all those logs on you and building a profile about you, but the value such a profile provides you as the customer is very likely worth it.
+	</p>
+	<p>
+		Some medical uses for data mining are brought up, but if these are used in the United States, I don&apos;t trust their validity.
+		The <abbr title="United States of America">US</abbr> medical industry is known to shoot down working products in favour of products that make more money.
+		You expect that from a departments store or factory, but in the medical industry, you assume the goal is to aid in your health.
+		Sadly, this isn&apos;t the case, as the corruption in that industry&apos;s gotten pretty bad.
+		It&apos;s especially bad with pharmaceuticals.
+		Don&apos;t get me wrong, I go to the doctor too when I need something.
+		In fact, I have a surgery scheduled for the beginning of next week.
+		I shy away from their drugs though, if I can at all get away with it.
+	</p>
+	<p>
+		Neural networks are much less complex than I imagined.
+		They&apos;ve only got three layers, ans it&apos;s easy to see the relationship each node has with each other.
+		I was expecting something closer to brain-level complexity, with a name like that.
+		Or at least, the simpler neural networks don&apos;t seem too complex.
+		A neural network can have more than just the three layers if there&apos;s more than one hidden layer, which raises the level of complexity.
+		The concept of over-fitting the network to the data is an issue I wouldn&apos;t&apos;ve thought of.
+		It makes perfect sense that the network would eventually be a perfect fit for the specific data set, it&apos;s just not something that would have come to mind on its own.
+	</p>
+	<p>
+		Decision trees are simple to follow and understand, though I&apos;m not clear on how they can be generated via data mining.
+		Aside from the obvious solution of brute force, of course.
+		Like the article says though, they&apos;re good at explaining what they&apos;re doing, unlike neural networks.
+		Like neural networks, there&apos;s the possibility of over-fitting the tree to a particular data set, so you need to either prune the tree or limit its growth.
+	</p>
+	<p>
+		Rule induction seems promising.
+		I&apos;m not sure how it can be performed in an automated way, but I think it should be possible.
+		Again, I guess brute force can be used to find the weights after the basic rules have been established, and rule-establishment is simply a patter of pattern recognition.
+		k-nearest neighbour seems reasonable, but like the article says, you can see why it&apos;d take a lot of memory and computation to use.
+		I also worry that as new data points are added, the data might lose some accuracy.
+		Basically, you&apos;re inferring the data of new data points based on known-valid data points, then inferring even newer data points based on a mix of known-valid data points and inferred data points.
+	</p>
+	<p>
+		The assignment for the week was pretty time-consuming.
+		I had to use nearly an entire day off from work to prepare my submission for it.
+		I spent so much time compiling the list of commands I needed to run, taking screenshots, correcting for human error (both my own and that of the textbook&apos;s author), and formatting my submission that I didn&apos;t really get to analyse what I was actually telling the computer to do.
+		I learned some new things about R, but not as much as I could have if I wasn&apos;t so busy this week.
+		I should get a chance to review what I&apos;ve done next week though, when I have nothing but time.
+	</p>
+	<h3>Discussion post drafts</h3>
+	<p>
+		The learning journal instructions say to include the drafts of the discussion posts for the week, so here they are:
+	</p>
+	<blockquote>
+		<p>
+			Supervised learning is a style of machine learning in which the answer for each data point is known.
+			The algorithm can collect data and learn, but the predictions made by the machine afterwards can actually be tested for accuracy using the known answers (Edelstein, 1998).
+			Often, this is done by having the machine learn using a small data set, then running it on a large data set to see how accurately the machine gets the new data points correct.
+		</p>
+		<p>
+			On the other hand, with unsupervised learning, there are no known answers.
+			The machine is given a data set to work with, but the tester doesn&apos;t have an answer sheet to compare the machine&apos;s results against (Edelstein, 1998).
+			Unsupervised learning can be used to cluster data points, for example.
+			We might not know the answer before running the algorithm, but we can still kind of see if the computer got close to the right answer.
+		</p>
+		<p>
+			By the way, I&apos;m unclear on what to do for the assignment this week.
+			It says to follow the instructions given Section 2.3 of <a href="https://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf">Driver.dvi - ISLR First Printing.pdf</a>.
+			However, that section doesnt&apos; seem to give any instructions.
+			It has some example commands, but it also has their output.
+			If we submit our results of running those commands, it&apos;d pretty much just be a copy and paste of what the book already contains.
+			That doesn&apos;t seem like much of an assignment, so I can&apos;t help but feel there&apos;s a mistake and we&apos;re supposed to do something besides run those commands and provide their output.
+		</p>
+		<div class="APA_references">
+			<h3>References:</h3>
+			<p>
+				Edelstein, H. A. (1998). Introduction to data mining and knowledge discovery. Retrieved from <a href="http://twocrows.com/intro-dm.pdf"><code>http://twocrows.com/intro-dm.pdf</code></a>
+			</p>
+		</div>
+	</blockquote>
+	<blockquote>
+		<p>
+			I like your example with character recognition.
+			Like you said, character recognition is learned through supervised learning.
+			The character is shown to the computer as an image, and the character as a byte sequence is given to the computer as well.
+			Each image given to the computer will be slightly different, and it&apos;s up to the machine to decide what attributes of the image determine that a given character is, for example, a zero.
+			This is exactly the sort of task that would be impossible for unsupervised learning.
+		</p>
+		<p>
+			It sort of reminds me of how humans perform the same task.
+			As children, we&apos;re subjected to symbols we&apos;re told are the same set of 52 letters (sometimes more, if English isn&apos;t your native tongue), as well as several other useful characters such as digits and punctuation.
+			These characters come in all sorts of fonts though, and can be seen from all sorts of angles.
+			In school, the teachers probably try to keep the letters mostly consistent, but as we walked through stores, saw signs outside such as street signs and billboards, and even saw products within our own homes, all these fonts were everywhere.
+			And then there was handwriting, which differs form person to person.
+			We had to learn what attributes distinguished each character, and we use that our entire lives.
+		</p>
+		<p>
+			The assistant manager at my workplace has really elegant handwriting, and their upper-case &quot;E&quot;s are by far the fanciest I&apos;ve ever seen.
+			I&apos;m working on imitating them and adding them to my own handwriting, actually.
+			They look hardly at all like the &quot;E&quot;s I&apos;ve seen in any font ever, yet we all recognise them as &quot;E&quot;s without a second thought.
+			Dispute the loopiness of the letter, there&apos;s something about it that distinctly looks like an &quot;E&quot;s and not a backwards three.
+			Yet if you were to look at a backwards three, you&apos;d recognise it as such and not think it was an &quot;E&quot;s.
+			Their letter &quot;E&quot; retains whatever points we learned that distinguish it as a &quot;E&quot;.
+		</p>
+		<p>
+			Your data-clustering example helped me understand unsupervised learning much better.
+			I was thinking that with unsupervised learning, there was something we could set the computer about to learn without yet knowing the answer yet ourselves, and this actually trained the computer for something.
+			I think I understand now though that unsupervised learning isn&apos;t really learning at all though, or at least not the way we traditionally think about learning.
+			With supervised learning, we&apos;re basically training the computer.
+			We&apos;re teaching it.
+			The computer learns.
+			With unsupervised learning, the computer instead tries to make sense of the data we give it, but doesn&apos;t learn anything that it can apply later.
+			Unsupervised learning is less like learning and more like analysis.
+		</p>
+	</blockquote>
+	<blockquote>
+		<p>
+			It&apos;s worth noting too that in supervised learning, the known right answers aren&apos;t used exclusively to check the computer&apos;s results, but also to built the knowledge base used to predict values.
+			The computer is basically shown a number of data points and associated right answers.
+			Using that, the computer builds up information on what it means for an answer to be correct, which is what it used for later data points it encounters.
+			In other words, the known right answers are used both to train the computer and to check the results of the computer&apos;s training.
+		</p>
+		<p>
+			You make a good point that unsupervised learning is good for finding patterns.
+			That may be the key difference in the types of problems supervised and unsupervised learning deal with.
+			In supervised learning, the pattern is known and we&apos;re trying to teach that pattern to the computer so it can solve later problems.
+			In unsupervised learning, we don&apos;t know the pattern and we&apos;re asking the computer to try to find the pattern for us.
+		</p>
+	</blockquote>
+	<blockquote>
+		<p>
+			I like your example.
+			It illustrates well how supervised learning and unsupervised learning can sometimes be applied to the same problem.
+			I&apos;d thought the two to apply to mutually-exclusive types of problems, but with some clever thinking, you can often find alternative solutions using alternative tools.
+		</p>
+	</blockquote>
 </section>
 		<hr/>
 		<p>
-			Copyright © 2018 Alex Yst;
+			Copyright © 2019 Alex Yst;
 			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
 			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
 			My address is in the source comments near the top of this document.
