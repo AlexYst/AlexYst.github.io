@@ -225,7 +225,13 @@ p.goal-attributes span span.goal-attribute-low {
 	color: #088;
 }
 
-span.highlight {
-	background-color: #fff;
-	color: #000;
+div.cited-quotation {
+	border: 1px dashed #fff;
+}
+
+div.cited-quotation cite {
+	border: 1px dashed #fff;
+	display: block;
+	text-align: centre;
+	font-weight: bold;
 }

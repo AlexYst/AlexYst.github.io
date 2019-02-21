@@ -143,11 +143,11 @@ li {
 	display: list-item;
 }
 
-a, em, strong, small, s, cite, q, dfn, abbr, data, time, code, var, samp, kbd, sub, sup, i, b, u, mark, rb, rt, rtc, rp, bdi, bdo, span, br, wbr, ins, del {
+a, em, strong, small, s, cite, q, dfn, abbr, data, time, code, var, samp, kbd, sub, sup, i, b, u, mark, bdi, bdo, span, br, wbr, ins, del {
 	display: inline;
 }
 
-img, iframe, embed, object, param, video, audio, source, track, map, area, label, input, button, select, datalist, optgroup, option, textarea, keygen, output, progress, meter, fieldset, legend, template, canvas, applet, ruby {
+img, iframe, embed, object, param, video, audio, source, track, map, area, label, input, button, select, datalist, optgroup, option, textarea, keygen, output, progress, meter, fieldset, legend, template, canvas, applet, ruby, rb, rt, rtc, rp {
 	display: inline-block;
 }
 
@@ -343,6 +343,11 @@ sub {
 
 section:target {
 	background-color: rgba(0, 255, 255, 0.15);
+}
+
+mark {
+	background-color: #fff;
+	color: #000;
 }
 
 /* This *MUST* be one of the last styles listed in this style sheet. */
