@@ -227,11 +227,20 @@ p.goal-attributes span span.goal-attribute-low {
 
 div.cited-quotation {
 	border: 1px dashed #fff;
+	background-image: url("/link/CC_BY-SA_4.0/y.st./background_-_inverted.png");
+	background-color: #222;
+	background-attachment: fixed;
+	margin: 2em;
 }
 
 div.cited-quotation cite {
-	border: 1px dashed #fff;
 	display: block;
-	text-align: centre;
+	text-align: center;
 	font-weight: bold;
+	padding: 0.5em;
+	font-size: 2em;
+}
+
+div.cited-quotation blockquote {
+	border: none;
 }

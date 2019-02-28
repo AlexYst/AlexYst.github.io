@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./[TEMP]/[TEMP].xhtml"/>
-		<title>Linear regression &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
+		<title>class::knn() &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
@@ -39,273 +39,159 @@
 <nav>
 </nav>
 		<header>
-			<h1>Linear regression</h1>
-			<p>Written in <span title="Data Mining and Machine Learning">CS 4407</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised on 2019-02-20</p>
+			<h1>class::knn()</h1>
+			<p>Written in <span title="Data Mining and Machine Learning">CS 4407</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised on 2019-02-27</p>
 		</header>
-<section id="Unit3">
-	<h2>Unit 3</h2>
+<section id="Unit4">
+	<h2>Unit 4</h2>
 	<p>
-		The reading assignment for the week was as follows:
-	</p>
-	<ul>
-		<li>
-			<a href="https://secure.php.net/manual/en/introduction.php">PHP: Introduction - Manual</a>
-		</li>
-		<li>
-			<a href="https://www.w3schools.com/php/php_intro.asp">PHP 5 Introduction</a>
-		</li>
-		<li>
-			<a href="https://www.wired.com/2010/02/PHP_Tutorial_for_Beginners/#The_Basics">The Basics</a>
-		</li>
-	</ul>
-	<p>
-		The assignment for the week was on a third-party website.
-		This was a bit problematic, as signing up for an account on that website required the completion of one of those obnoxious Google reCAPTCHA <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s.
-		Google is always a pain, and this time, Google was refusing to sent the <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr> on the grounds that Google thought I might be a robot.
-		Seriously?
-		Isn&apos;t the <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr> supposed to be my way to prove that I&apos;m not?
-		What&apos;s the point of a <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr> if you only send it to people you <strong>*don&apos;t*</strong> think are robots?
-		Google&apos;s got problems.
-		This isn&apos;t the first time Google has hassled me though, or even the first time they&apos;ve hassled me in this particular way, so I knew they&apos;d send me the <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr> to fill out if I left and waited long enough, then came back later.
-		Sure enough, I tried again later, and they sent me thirteen <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s in a row to fill out.
-		It&apos;s not uncommon for them to send me about twenty before they&apos;ll let me through, and it&apos;s not unheard of for them to send me upwards of thirty.
-		It&apos;s become a bit of a game for me: I count how many <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s Google makes me fill out this time, and see just how badly Google wants annoy me today.
+		This week&apos;s reading assignment was more sections in the <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> manual.
+		Oddly, the text of the link said <code>index.php</code>, though the actual target of the link was <code>install.php</code>.
+		I&apos;ve already read the manual front to back though, aside from the sections regarding each and every specific function; class; and constant the language has to offer.
+		I tend to look up the functions I need for a given project, and ignore the rest.
+		I just don&apos;t have enough room in my brain to store all the functions.
+		I can&apos;t even remember the functions I&apos;ve used, and have to look those ones up again too to get their exact usage before calling them in my code.
 	</p>
 	<p>
-		<del>The website with the lessons claims that <code>echo</code> is a function.
-		This actually isn&apos;t true, as can be verified in the <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> manual.
-		Instead, <code>echo</code> is one of the basic language constructs, though it can be called like a function syntactically.
-		However, the lesson website then proceeds to show an example using <code>echo</code> that <strong>*doesn&apos;t*</strong> call it as a function.
-		Take the following pseudocode:</del>
-	</p>
-	<blockquote>
-		<p>
-			<code>function_name &apos;argument&apos;;</code>
-		</p>
-	</blockquote>
-	<p>
-		<del>This is <strong>*not*</strong> valid in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>.
-		Instead, you need to use:</del>
-	</p>
-	<blockquote>
-		<p>
-			<code>function_name(&apos;argument&apos;);</code>
-		</p>
-	</blockquote>
-	<p>
-		<del>However, the website uses <code>echo &apos;argument&apos;;</code>.
-		This is of course valid code, but is <strong>*not*</strong> a valid function call, meaning that <code>echo</code> <strong>*cannot*</strong> be and <strong>*is not*</strong> a function.</del>
+		The <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> tutorial lessons we&apos;re completing this week as our main assignment said that <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> arrays are always indexed from zero.
+		I find it very annoying when arrays are indexed from one; it makes it difficult for me to work in the language, as I&apos;m always assuming an initial index of zero, and it leads to bugs when that assumption proves to be false.
+		<abbr title="PHP: Hypertext Preprocessor">PHP</abbr> arrays aren&apos;t actually <strong>*always*</strong> indexed from zero though.
+		When using an array, you can set any arbitrary key you like.
+		In this way, they&apos;re more like tables from other languages.
+		However, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> arrays also have an order, which is independent of the order of numeric keys.
+		Instead, the order is determined by the order the keys get added to the array, until such a time that an array-sorting function is run to clean up that mess.
+		If you don&apos;t choose a key to assign a value to, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> starts assigning numeric keys automatically.
+		If no non-negative integer keys have been used in the array yet, the key <code>0</code> gets assigned.
+		If any non-negative integer keys <strong>*have*</strong> been assigned, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> assigns a key equal to the highest integer key that has ever been used in the array, regardless of whether that key is still in use, incremented by one.
+		That means that if you never assign keys and you never remove key/value pairs from the array, your array will be indexed from zero.
+		However, if you remove key/value pairs (for example: <code>unset(<var>$var</var>[5]);</code>) or sometimes use specific integer keys, your array will have holes in it.
+		And if you assign an initial integer key greater than negative two, your array will be indexed from that.
+		(Assigning a key of negative one still results in a continuous chain of integer keys because <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> assigns zero as the next key regardless of what negative number you used, and negative one just happens to be the integer just before zero.
+		So by coincidence, it actually works.)
+		So by these mechanics, you can index arrays from one, or from five, or from seven hundred two.
+		<abbr title="PHP: Hypertext Preprocessor">PHP</abbr> will allow all of these options.
+		That said, I don&apos;t recommend doing that.
+		Indexing from zero just makes everything easier.
+		Just don&apos;t make the invalid claim that <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> arrays are <strong>*always*</strong> indexed from zero.
 	</p>
 	<p>
-		<ins>Actually, scratch all that.
-		In a later lesson, the site admits <code>echo</code> isn&apos;t a function, and even brings up the same point as I did about the lack of parentheses.
-		Why give us invalid information, just to later correct it?
-		Why knowingly give us invalid information in the first place?
-		Sheesh.</ins>
+		It&apos;s interesting that the lesson made a point of specifically telling us that multidimensional arrays can have as many dimensions as you like.
+		Most languages don&apos;t have true multidimensional array support.
+		(I&apos;ve only seen one language with true multidimensional array support, and I think that was R.)
+		Instead, what most languages offer is nested arrays.
+		<abbr title="PHP: Hypertext Preprocessor">PHP</abbr> is one of these languages.
+		Semantically, as long as you nest your arrays the same depth on every branch, it makes no difference.
+		You&apos;ve got yourself a multidimensional array that you constructed out of single-dimensional arrays.
+		Mechanically though, this does make a difference.
+		If a multidimensional array is just an array whose values happen to be arrays themselves, each of those arrays can likewise be arrays.
+		There&apos;s no limit to depth, because the arrays at each depth are treated no differently than the arrays at any other depth.
+		There&apos;s no &quot;depth-three&quot; arrays, as far as the language and the interpreter are concerned.
+		As for accessing the elements, the syntax used just selects the an element from the array at depth zero, then selects an element from that array, and so on.
+		There&apos;s no limit to the number of selections made, so you can properly access values across as many dimensions as you need to.
+		To put it simply, the lesson is completely correct in the assessment that you can build and use arrays of any (positive) number of dimensions, but it&apos;s a bizarre thing for the lesson to point out.
+		Likewise, the lesson points out that you can chain together as many <code>elseif</code> statements as you want.
+		Like arrays too, you can nest <code>if</code> statements arbitrarily deep.
 	</p>
 	<p>
-		The website also teaches us that variable names can only contain alphanumeric characters and underscores.
-		This is actually untrue as well.
-		Within the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range, these are the only characters allowed.
-		However, <strong>*all characters outside the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range*</strong> are also available for use in variable names.
-		Again, this is something the <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> manual teaches you right away.
-		In practice, most people stick to the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range when naming variables, but this should never be considered a hard requirement.
-		Personally, prefix my variable names with a cent sign if the variable contains a closure.
-		The only time I use closures is when I need to reuse code but I can&apos;t generalise the code enough to warrant a first class function.
-		This is code no one else needs to call, so no one else will need to type this symbol later.
-		Using the strange symbol allows me to put it into a separate pseudonamespace.
-		I used a funny character in an actual <code>namespace</code> once too, for a class that should never be touched by code outside my own library.
-		The class basically was a workaround for the fact that a feature I needed wasn&apos;t present in old versions of <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, but had just been added to the cutting-edge release.
-		In other words, these characters are available for use in all symbol names, not just variable names.
-		I wouldn&apos;t recommend using them in most cases, but they are very useful to have sometimes.
+		I appreciated the exercise in which we filled in the blanks for the gender code.
+		In my other course this term, we recently had an example in storing binary values, and the example used gender.
+		As an individual of non-binary gender, I found that annoying.
+		I actually use the name Alexand(er|ra), in the style of a regular expression, as my name in informal writing.
+		Legally, I&apos;m just Alex.
+		I have no need for a gendered name such as Alexander, Alexandra, Alexandria, Alexa, or Alexia.
+		However, the lesson in this course had us complete code that offered &quot;other&quot; as an option.
+		Not everyone fits into a binary box, and I appreciate when people don&apos;t try to shove a round peg like me into either a square or triangular hole.
+		I just don&apos;t fit.
 	</p>
 	<p>
-		Next, we&apos;re introduced to the <code>define()</code> function.
-		Like the lesson says, <code>define()</code> defines constants.
-		However, the <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> manual will tell you that it&apos;s not the <strong>*preferred*</strong> method of defining constants.
-		The <code>cont</code> keyword is better for a few reasons.
-		I forget all the reasons, but one reason is because the <code>const</code> keyword runs faster than the <code>define()</code> function.
-		This may be because <code>const</code> does its thing at compile time, while <code>define()</code> waits until run time.
-		If you need to define a constant conditionally and/or in terms of some variable, <code>define()</code> is your only option.
-		For all other cases, use <code>const</code> instead.
-	</p>
-	<p>
-		It drives me batty when modulus division is described as a finding of the &quot;remainder&quot;.
-		When dividing, there <strong>*is no remainder*</strong>.
-		Five divided by two is <strong>*not*</strong> two remainder one.
-		It&apos;s two and a half.
-		Modulo division is more like overflow, in how it works.
-		Take a two-bit, unsigned integer, for example.
-		There are four possible values, so if you store a value in such a space, your result is the value you attempted to store, but modulo 4.
-		This shows us too that as <code>4</code> gets stored as <code>0x00</code>, a number modulo itself is zero.
-		Modulus division doesn&apos;t have to involve powers of two, obviously.
-		Powers of two just make the point easy to explain to computer science majors.
-		If you have fifteen modulo ten, it just means you&apos;re trying to find the result you&apos;d get from trying to store fifteen in a space that has only ten values.
-		Nine, zero (because of roll over), one, two, three, four, five.
-		So you end up with a result of five.
-		Dealing with negative numbers in modulus division is undefined, so you get different results depending on how modulus division is implemented in the environment you&apos;re working in.
-		However, when working with only positive numbers, you get the same results when you look at modulus as roll over as when you look at it as &quot;remainders&quot;.
-		So I guess, do it whatever way makes it easy for you.
-		However, when you <strong>*talk*</strong> about modulus being a finding of &quot;remainders&quot;, it makes you look like the type of idiot that doesn&apos;t know how to find fractions or decimals when dividing.
-		It makes you look too stupid to figure out that there doesn&apos;t need to be &quot;leftovers&quot; just because something doesn&apos;t divide <strong>*evenly*</strong>.
-	</p>
-	<p>
-		The quiz for the week startled me a bit.
-		The first question asked what command you use to compile code.
-		The next was asking about how to change the working directory on a Linux system.
-		What?
-		I didn&apos;t even remember studying those things in this course, though I&apos;ve used the <code>make</code> and <code>cd</code> commands countless times on my Debian system, so I knew the answers.
-		And isn&apos;t this a course about Web development?
-		Compiling code and changing the working directory are things you do locally, not in regards to websites.
-		What else did I miss, that maybe I <strong>*didn&apos;t*</strong> just happen to know because of my personal situation?
-		After a bit, it struck me: we were supposed to read about how to compile Apache and <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> from source last week.
-		I sort of skipped that part of the reading material, due to already having compiled both <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> and Apache from source a few times.
-		The material would have definitely used the <code>make</code> command, and would have used the <code>cd</code> command a few times.
-		So I&apos;m still up to speed on things.
-	</p>
-	<p>
-		I don&apos;t think most people in this course ever think about accessibility, let along care about it.
-		I mean, most Web developers certainly don&apos;t.
-		There is one student I&apos;ve been conversing with, even outside of class a bit, who seems intelligent and always has an insightful take on the discussion assignments.
-		And this week, I learned that they&apos;ve been formatting their discussion posts with accessibility in mind.
-		I&apos;ve picked up a new trick to better format my own posts.
-		I suppose it won&apos;t matter for in-discussion, as again, most everyone doesn&apos;t care.
-		But my discussion posts are also archived in my public journal.
-		(Due to censorship from the school, all such journal entries aren&apos;t visible to the public until 2023.)
-		The better my posts are formatted for the discussion assignments, the better they&apos;ll be formatted in my journal.
+		In the discussion assignment, one of the other students asked me about how my pre-compiled webpages are implemented.
+		It was fun to explain it, then go back into my code so I could link to the relevant parts.
+		Like <abbr title="deoxyribonucleic acid">DNA</abbr>, the code&apos;s a bit of a mess due to the way it has evolved over time, but it shows that <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>&apos;s use in regards to webpages isn&apos;t limited to writing scripts that get run to build the pages every time a user requests them.
+		Pages can be pre-built, sort of making the result like a cache, so they don&apos;t have to be rebuilt every time.
 	</p>
 </section>
-<section id="Unit3">
-	<h2>Unit 3</h2>
+<section id="Unit4">
+	<h2>Unit 4</h2>
 	<p>
-		The reading assignment for the week was as follows:
+		I struggled with the unit assignment last week.
+		I just didn&apos;t understand what it was asking for at times.
+		And when I did understand what was asked of us, I sometimes didn&apos;t know what the best way to accomplish the goal was.
+		So it was helpful to get to read the answer key when grading other students&apos; work this week.
+		One of the things I tend to do is compare my own work to the answer key, as if to grade that as well.
+		I don&apos;t do it every time, but I do it when either I struggled with the assignment or I see something in the answer key that I don&apos;t remember doing in my own work.
+	</p>
+	<p>
+		The reading assignment for this week is the following:
 	</p>
 	<ul>
 		<li>
-			<a href="https://secure.php.net/manual/en/introduction.php">PHP: Introduction - Manual</a>
+			<a href="https://rstudio-pubs-static.s3.amazonaws.com/316172_a857ca788d1441f8be1bcd1e31f0e875.html">kNN(k-Nearest Neighbour) Algorithm in R</a>
 		</li>
 		<li>
-			<a href="https://www.w3schools.com/php/php_intro.asp">PHP 5 Introduction</a>
+			<a href="https://ww2.coastal.edu/kingw/statistics/R-tutorials/logistic.html">R Tutorials--Logistic Regression</a>
 		</li>
 		<li>
-			<a href="https://www.wired.com/2010/02/PHP_Tutorial_for_Beginners/#The_Basics">The Basics</a>
+			Chapter Four of <a href="https://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf">Driver.dvi - ISLR First Printing.pdf</a>
 		</li>
 	</ul>
 	<p>
-		The assignment for the week was on a third-party website.
-		This was a bit problematic, as signing up for an account on that website required the completion of one of those obnoxious Google reCAPTCHA <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s.
-		Google is always a pain, and this time, Google was refusing to sent the <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr> on the grounds that Google thought I might be a robot.
-		Seriously?
-		Isn&apos;t the <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr> supposed to be my way to prove that I&apos;m not?
-		What&apos;s the point of a <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr> if you only send it to people you <strong>*don&apos;t*</strong> think are robots?
-		Google&apos;s got problems.
-		This isn&apos;t the first time Google has hassled me though, or even the first time they&apos;ve hassled me in this particular way, so I knew they&apos;d send me the <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr> to fill out if I left and waited long enough, then came back later.
-		Sure enough, I tried again later, and they sent me thirteen <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s in a row to fill out.
-		It&apos;s not uncommon for them to send me about twenty before they&apos;ll let me through, and it&apos;s not unheard of for them to send me upwards of thirty.
-		It&apos;s become a bit of a game for me: I count how many <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s Google makes me fill out this time, and see just how badly Google wants annoy me today.
+		Ugh.
+		My power and Internet connection went out on me on the day I finally had time to get to the reading assignment.
+		It&apos;s been a busy week.
+		Thankfully, I&apos;d already loaded the above pages in my Web browser on day zero, so I was able to read them even without an Internet connection, as my laptop&apos;s battery slowly drained.
+		I feared I might not be able to complete my unit assignment though, even having three days left, due to the lack of power and connection.
+		Thankfully, I&apos;d gotten everything in both my courses done on day zero, save for my reading assignment in this course, discussion assignment in both courses, and unit assignment for this course completed.
+		Both discussions were well under way by this point in the week, so really all I needed to do was wait and make my daily posts.
+		All I had left to really focus on were the unit assignment for this course and the reading assignment that would make the unit assignment understandable.
+		I normally keep my lights off during the day, but I turned one on just so I&apos;d notice when the power came back on.
+		It really didn&apos;t take as long as I&apos;d feared.
 	</p>
 	<p>
-		<del>The website with the lessons claims that <code>echo</code> is a function.
-		This actually isn&apos;t true, as can be verified in the <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> manual.
-		Instead, <code>echo</code> is one of the basic language constructs, though it can be called like a function syntactically.
-		However, the lesson website then proceeds to show an example using <code>echo</code> that <strong>*doesn&apos;t*</strong> call it as a function.
-		Take the following pseudocode:</del>
-	</p>
-	<blockquote>
-		<p>
-			<code>function_name &apos;argument&apos;;</code>
-		</p>
-	</blockquote>
-	<p>
-		<del>This is <strong>*not*</strong> valid in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>.
-		Instead, you need to use:</del>
-	</p>
-	<blockquote>
-		<p>
-			<code>function_name(&apos;argument&apos;);</code>
-		</p>
-	</blockquote>
-	<p>
-		<del>However, the website uses <code>echo &apos;argument&apos;;</code>.
-		This is of course valid code, but is <strong>*not*</strong> a valid function call, meaning that <code>echo</code> <strong>*cannot*</strong> be and <strong>*is not*</strong> a function.</del>
+		The k-nearest neighbour algorithm seems pretty simple.
+		I mean, if you were to implement it, it might get complex because you&apos;d need to work with programming circles and whatnot, which would require use of complex formulas and pi, then detecting what points fell into the circle, what size your circle needed to be, and a bunch more.
+		Or maybe not.
+		If you cycled through every single data point, you could simply calculate the distance away from the prospective data point and use the Pythagorean theorem.
+		Then just pick the data points with the lowest resulting numbers, as they&apos;d be the nearest neighbours.
+		The article calls the distance calculated this way the &quot;Euclidean distance&quot;, but the formula given is clearly the Pythagorean theorem, so you only really need middle school maths to figure out the distance.
+		Instead of the Euclidean distance, the article says the Hamming distance is used in some cases, but no explanation of what that is is given.
+		But anyway, the concept is rather simple.
+		It&apos;s a classification problem, but it&apos;s clearly a case of supervised learning, not unsupervised learning.
+		You&apos;ve got your training set, and you use it to get the computer to make educated guesses about unclassified data points.
+		I would assume the new data points get added to the training set, but that&apos;d taint the training data with guesses, so maybe not.
 	</p>
 	<p>
-		<ins>Actually, scratch all that.
-		In a later lesson, the site admits <code>echo</code> isn&apos;t a function, and even brings up the same point as I did about the lack of parentheses.
-		Why give us invalid information, just to later correct it?
-		Why knowingly give us invalid information in the first place?
-		Sheesh.</ins>
+		To use the k-nearest neighbour algorithm, you obviously need to decide on a value for <var>k</var>.
+		Apparently, this value is normally set to the square root of the number of available data points in the training set.
+		It&apos;s not really explained why this is, but I guess it offers a good balance between taking too little into account and taking too much into account.
+		If too few neighbours are used, trends in the data won&apos;t really be considered.
+		If too many are used, it&apos;s basically just a popularity contest between data point types.
+		Another thing mentioned is that to prevent one property of the data points from getting weighed more heavily than the other, some sort of scaling should be used on all the data points&apos; properties.
+		That would be where the min-max scaling and z-scores from the discussion assignment come in.
 	</p>
 	<p>
-		The website also teaches us that variable names can only contain alphanumeric characters and underscores.
-		This is actually untrue as well.
-		Within the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range, these are the only characters allowed.
-		However, <strong>*all characters outside the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range*</strong> are also available for use in variable names.
-		Again, this is something the <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> manual teaches you right away.
-		In practice, most people stick to the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range when naming variables, but this should never be considered a hard requirement.
-		Personally, prefix my variable names with a cent sign if the variable contains a closure.
-		The only time I use closures is when I need to reuse code but I can&apos;t generalise the code enough to warrant a first class function.
-		This is code no one else needs to call, so no one else will need to type this symbol later.
-		Using the strange symbol allows me to put it into a separate pseudonamespace.
-		I used a funny character in an actual <code>namespace</code> once too, for a class that should never be touched by code outside my own library.
-		The class basically was a workaround for the fact that a feature I needed wasn&apos;t present in old versions of <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, but had just been added to the cutting-edge release.
-		In other words, these characters are available for use in all symbol names, not just variable names.
-		I wouldn&apos;t recommend using them in most cases, but they are very useful to have sometimes.
+		Speaking of the discussion assignment, for whatever reason, we were limited in how long our responses could be this week.
+		On the one hand, writing less meant I couldn&apos;t go into details really.
+		I felt like I hardly wrote anything, yet I only came out four words under the limit.
+		On the other hand, it made my job easier.
+		I&apos;ve got a lot that needs to get done each week, so keeping the discussion post in this course down to a minimum saved me time and effort.
 	</p>
 	<p>
-		Next, we&apos;re introduced to the <code>define()</code> function.
-		Like the lesson says, <code>define()</code> defines constants.
-		However, the <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> manual will tell you that it&apos;s not the <strong>*preferred*</strong> method of defining constants.
-		The <code>cont</code> keyword is better for a few reasons.
-		I forget all the reasons, but one reason is because the <code>const</code> keyword runs faster than the <code>define()</code> function.
-		This may be because <code>const</code> does its thing at compile time, while <code>define()</code> waits until run time.
-		If you need to define a constant conditionally and/or in terms of some variable, <code>define()</code> is your only option.
-		For all other cases, use <code>const</code> instead.
+		The article also says the k-nearest neighbour algorithm is slow and doesn&apos;t always give much insight.
+		I guess I can see that.
+		If we&apos;re looping over all the training data each time, that&apos;d really slow down our implementation.
+		As for lack of insight, guesses at the classification of new data points doesn&apos;t seem very helpful in many cases.
+		I can see it having potential for some tasks though.
+		This is a course on data mining, and the phrase &quot;data mining&quot; has a very negative connotation for me, so please excuse my negative example.
+		But if you&apos;ve creepily recorded data on past customers and want to classify who might buy a different product you offer, you might classify customers as having bought or not bought your item, then use it to figure out if it&apos;s worth it to try to advertise that item to a pending customer before they finalise their order.
+		And if not, try that same thing with another product, and so on, until you figure out which product you should try to obnoxiously up-sell to them.
 	</p>
 	<p>
-		It drives me batty when modulus division is described as a finding of the &quot;remainder&quot;.
-		When dividing, there <strong>*is no remainder*</strong>.
-		Five divided by two is <strong>*not*</strong> two remainder one.
-		It&apos;s two and a half.
-		Modulo division is more like overflow, in how it works.
-		Take a two-bit, unsigned integer, for example.
-		There are four possible values, so if you store a value in such a space, your result is the value you attempted to store, but modulo 4.
-		This shows us too that as <code>4</code> gets stored as <code>0x00</code>, a number modulo itself is zero.
-		Modulus division doesn&apos;t have to involve powers of two, obviously.
-		Powers of two just make the point easy to explain to computer science majors.
-		If you have fifteen modulo ten, it just means you&apos;re trying to find the result you&apos;d get from trying to store fifteen in a space that has only ten values.
-		Nine, zero (because of roll over), one, two, three, four, five.
-		So you end up with a result of five.
-		Dealing with negative numbers in modulus division is undefined, so you get different results depending on how modulus division is implemented in the environment you&apos;re working in.
-		However, when working with only positive numbers, you get the same results when you look at modulus as roll over as when you look at it as &quot;remainders&quot;.
-		So I guess, do it whatever way makes it easy for you.
-		However, when you <strong>*talk*</strong> about modulus being a finding of &quot;remainders&quot;, it makes you look like the type of idiot that doesn&apos;t know how to find fractions or decimals when dividing.
-		It makes you look too stupid to figure out that there doesn&apos;t need to be &quot;leftovers&quot; just because something doesn&apos;t divide <strong>*evenly*</strong>.
-	</p>
-	<p>
-		The quiz for the week startled me a bit.
-		The first question asked what command you use to compile code.
-		The next was asking about how to change the working directory on a Linux system.
-		What?
-		I didn&apos;t even remember studying those things in this course, though I&apos;ve used the <code>make</code> and <code>cd</code> commands countless times on my Debian system, so I knew the answers.
-		And isn&apos;t this a course about Web development?
-		Compiling code and changing the working directory are things you do locally, not in regards to websites.
-		What else did I miss, that maybe I <strong>*didn&apos;t*</strong> just happen to know because of my personal situation?
-		After a bit, it struck me: we were supposed to read about how to compile Apache and <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> from source last week.
-		I sort of skipped that part of the reading material, due to already having compiled both <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> and Apache from source a few times.
-		The material would have definitely used the <code>make</code> command, and would have used the <code>cd</code> command a few times.
-		So I&apos;m still up to speed on things.
-	</p>
-	<p>
-		I don&apos;t think most people in this course ever think about accessibility, let along care about it.
-		I mean, most Web developers certainly don&apos;t.
-		There is one student I&apos;ve been conversing with, even outside of class a bit, who seems intelligent and always has an insightful take on the discussion assignments.
-		And this week, I learned that they&apos;ve been formatting their discussion posts with accessibility in mind.
-		I&apos;ve picked up a new trick to better format my own posts.
-		I suppose it won&apos;t matter for in-discussion, as again, most everyone doesn&apos;t care.
-		But my discussion posts are also archived in my public journal.
-		(Due to censorship from the school, all such journal entries aren&apos;t visible to the public until 2023.)
-		The better my posts are formatted for the discussion assignments, the better they&apos;ll be formatted in my journal.
+		The unit assignment was much easier than last week&apos;s.
+		There was a bit of trial and error involved, but the intent of what was wanted was clear, and I built my solutions to meet the goals.
+		Last week, I didn&apos;t really understand what the assignment was getting at, most likely meaning I hadn&apos;t absorbed the material for that week even close to as well as I should have.
+		I learned some useful techniques while trying to format my assignment, too.
+		I found data points can be made invisible on a graph in R, and that labels can be added right where the data points would be if visible.
+		This allows, for example, for different symbols to be used to represent different types of data points.
 	</p>
 </section>
 		<hr/>
