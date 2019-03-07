@@ -230,6 +230,7 @@ div.cited-quotation {
 	background-image: url("/link/CC_BY-SA_4.0/y.st./background_-_inverted.png");
 	background-color: #222;
 	background-attachment: fixed;
+	padding: 0.5em;
 	margin: 2em;
 }
 
@@ -237,12 +238,13 @@ div.cited-quotation cite {
 	display: block;
 	text-align: center;
 	font-weight: bold;
-	padding: 0.5em, 0.5em, 0em, 0.5em;
 	font-size: 1.2em;
+	padding: 0.5em;
+	margin: 2em;
 }
 
 div.cited-quotation blockquote {
 	border: none;
-	padding-top: 0em;
-	margin-top: 0em;
+	padding: 0em;
+	margin: 0em;
 }
