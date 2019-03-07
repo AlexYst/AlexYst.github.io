@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./[TEMP]/[TEMP].xhtml"/>
-		<title>class::knn() &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
+		<title>Learning Journal &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
@@ -39,75 +39,617 @@
 <nav>
 </nav>
 		<header>
-			<h1>class::knn()</h1>
-			<p>Written in <span title="Data Mining and Machine Learning">CS 4407</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised on 2019-02-27</p>
+			<h1>Learning Journal</h1>
+			<p>CS 4407: Data Mining and Machine Learning</p>
 		</header>
-<section id="Unit4">
-	<h2>Unit 4</h2>
+<section id="Unit1">
+	<h2>Unit 1</h2>
 	<p>
-		This week&apos;s reading assignment was more sections in the <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> manual.
-		Oddly, the text of the link said <code>index.php</code>, though the actual target of the link was <code>install.php</code>.
-		I&apos;ve already read the manual front to back though, aside from the sections regarding each and every specific function; class; and constant the language has to offer.
-		I tend to look up the functions I need for a given project, and ignore the rest.
-		I just don&apos;t have enough room in my brain to store all the functions.
-		I can&apos;t even remember the functions I&apos;ve used, and have to look those ones up again too to get their exact usage before calling them in my code.
+		This week&apos;s reading assignment was the following:
+	</p>
+	<ul>
+		<li>
+			Chapters one through seven of <a href="https://cran.r-project.org/doc/manuals/R-intro.html">R-intro.pdf</a>
+		</li>
+		<li>
+			<a href="https://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf">Driver.dvi - ISLR First Printing.pdf</a>
+		</li>
+		<li>
+			<a href="http://faculty.wiu.edu/C-Amaravadi/is524/res/dm_c_ov.pdf">Forbidden</a>
+		</li>
+		<li>
+			<a href="http://twocrows.com/intro-dm.pdf">3rd ed Intro to DM - body - intro-dm.pdf</a>
+		</li>
+	</ul>
+	<p>
+		It looks like we&apos;re using R this term.
+		My first task for the week would be to install it, but I still have R installed from a past term, when I took <a href="/en/coursework/MATH1280/" title="Introduction to Statistics">MATH 1280</a>.
+		So that&apos;s one step I can skip this term.
+		We&apos;re also asked to install Basic Prop.
+		Due to licensing issues, I&apos;d rather avoid installing that if at all possible, so I&apos;ll put that off for now.
+		If it&apos;s legitimately needed in a future week, I&apos;ll install it at that point, and uninstall it at the end of the term.
 	</p>
 	<p>
-		The <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> tutorial lessons we&apos;re completing this week as our main assignment said that <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> arrays are always indexed from zero.
-		I find it very annoying when arrays are indexed from one; it makes it difficult for me to work in the language, as I&apos;m always assuming an initial index of zero, and it leads to bugs when that assumption proves to be false.
-		<abbr title="PHP: Hypertext Preprocessor">PHP</abbr> arrays aren&apos;t actually <strong>*always*</strong> indexed from zero though.
-		When using an array, you can set any arbitrary key you like.
-		In this way, they&apos;re more like tables from other languages.
-		However, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> arrays also have an order, which is independent of the order of numeric keys.
-		Instead, the order is determined by the order the keys get added to the array, until such a time that an array-sorting function is run to clean up that mess.
-		If you don&apos;t choose a key to assign a value to, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> starts assigning numeric keys automatically.
-		If no non-negative integer keys have been used in the array yet, the key <code>0</code> gets assigned.
-		If any non-negative integer keys <strong>*have*</strong> been assigned, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> assigns a key equal to the highest integer key that has ever been used in the array, regardless of whether that key is still in use, incremented by one.
-		That means that if you never assign keys and you never remove key/value pairs from the array, your array will be indexed from zero.
-		However, if you remove key/value pairs (for example: <code>unset(<var>$var</var>[5]);</code>) or sometimes use specific integer keys, your array will have holes in it.
-		And if you assign an initial integer key greater than negative two, your array will be indexed from that.
-		(Assigning a key of negative one still results in a continuous chain of integer keys because <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> assigns zero as the next key regardless of what negative number you used, and negative one just happens to be the integer just before zero.
-		So by coincidence, it actually works.)
-		So by these mechanics, you can index arrays from one, or from five, or from seven hundred two.
-		<abbr title="PHP: Hypertext Preprocessor">PHP</abbr> will allow all of these options.
-		That said, I don&apos;t recommend doing that.
-		Indexing from zero just makes everything easier.
-		Just don&apos;t make the invalid claim that <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> arrays are <strong>*always*</strong> indexed from zero.
+		Next, I glanced over the reading assignment.
+		That second <abbr title="Portable Document Format">PDF</abbr> we&apos;re supposed to read is 441 pages long!
+		How are we supposed to fit <strong>*that*</strong> into our week!?
+		We&apos;ve got two course going at once, that <abbr title="Portable Document Format">PDF</abbr> isn&apos;t the only reading material for the week even in just this course, and of course most of us have our day jobs.
+		That is just ridiculous.
+		I ended up even skipping my <abbr title="Linux User Group">LUG</abbr> meeting this week to try to get as much time for reading as I could, even though it&apos;s pretty much the only social interaction I manage to get in each week.
+		Next week will be easier though, as I have the week off from work to recover from surgery.
+		I&apos;ll be stuck at home, mainly only working on coursework and researching my next procedure.
 	</p>
 	<p>
-		It&apos;s interesting that the lesson made a point of specifically telling us that multidimensional arrays can have as many dimensions as you like.
-		Most languages don&apos;t have true multidimensional array support.
-		(I&apos;ve only seen one language with true multidimensional array support, and I think that was R.)
-		Instead, what most languages offer is nested arrays.
-		<abbr title="PHP: Hypertext Preprocessor">PHP</abbr> is one of these languages.
-		Semantically, as long as you nest your arrays the same depth on every branch, it makes no difference.
-		You&apos;ve got yourself a multidimensional array that you constructed out of single-dimensional arrays.
-		Mechanically though, this does make a difference.
-		If a multidimensional array is just an array whose values happen to be arrays themselves, each of those arrays can likewise be arrays.
-		There&apos;s no limit to depth, because the arrays at each depth are treated no differently than the arrays at any other depth.
-		There&apos;s no &quot;depth-three&quot; arrays, as far as the language and the interpreter are concerned.
-		As for accessing the elements, the syntax used just selects the an element from the array at depth zero, then selects an element from that array, and so on.
-		There&apos;s no limit to the number of selections made, so you can properly access values across as many dimensions as you need to.
-		To put it simply, the lesson is completely correct in the assessment that you can build and use arrays of any (positive) number of dimensions, but it&apos;s a bizarre thing for the lesson to point out.
-		Likewise, the lesson points out that you can chain together as many <code>elseif</code> statements as you want.
-		Like arrays too, you can nest <code>if</code> statements arbitrarily deep.
+		The document on R mentions that R includes the programming language S, by which it means it includes an interpreter for said language.
+		That&apos;s interesting.
+		I was told R was a replacement for S, so I assumed R&apos;s language was only similar to S.
+		I didn&apos;t realise R is (or more accurately, contains) an actual S interpreter.
 	</p>
 	<p>
-		I appreciated the exercise in which we filled in the blanks for the gender code.
-		In my other course this term, we recently had an example in storing binary values, and the example used gender.
-		As an individual of non-binary gender, I found that annoying.
-		I actually use the name Alexand(er|ra), in the style of a regular expression, as my name in informal writing.
-		Legally, I&apos;m just Alex.
-		I have no need for a gendered name such as Alexander, Alexandra, Alexandria, Alexa, or Alexia.
-		However, the lesson in this course had us complete code that offered &quot;other&quot; as an option.
-		Not everyone fits into a binary box, and I appreciate when people don&apos;t try to shove a round peg like me into either a square or triangular hole.
-		I just don&apos;t fit.
+		Next, the book covers how to start R from the command line.
+		Previously, I was starting R from the applications menu.
+		Oddly, the command for starting R is <code>R</code>.
+		I just tested that too, and it works.
+		Command names are of course case-sensitive, and I&apos;ve never run into any that use upper-case letters.
+		I also tried running <code>r</code>, which predictably resulted in the command not being found.
 	</p>
 	<p>
-		In the discussion assignment, one of the other students asked me about how my pre-compiled webpages are implemented.
-		It was fun to explain it, then go back into my code so I could link to the relevant parts.
-		Like <abbr title="deoxyribonucleic acid">DNA</abbr>, the code&apos;s a bit of a mess due to the way it has evolved over time, but it shows that <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>&apos;s use in regards to webpages isn&apos;t limited to writing scripts that get run to build the pages every time a user requests them.
-		Pages can be pre-built, sort of making the result like a cache, so they don&apos;t have to be rebuilt every time.
+		The <code>help()</code> function is nice.
+		Up to now, I&apos;ve only known the shorter <code>?</code> notation, which to be honest, looks pretty awkward.
+	</p>
+	<p>
+		R&apos;s decision to allow different characters in symbol names based on system locale seems idiotic.
+		It prevents compatibility between a script written in one region and a system running in another.
+		You can say it allows language support, but it really doesn&apos;t.
+		For example, let&apos;s say you wanted a French user to be able to use accented characters in variable names.
+		The proper way to support that is to allow the accented characters used in French to be used in symbol names regardless of locale.
+		French users then get their accented characters and users outside France are able to run the French R scripts.
+		I can&apos;t say <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> is a very clean language or should be used as an example in hardly any context, but it does get this particular feature right.
+		It allows only certain characters from the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range of Unicode to appear in symbol names, but it allows <strong>*all*</strong> characters outside the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range.
+		All characters used for basic language syntax are within the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range, so there&apos;s no reason to go through the non-<abbr title="American Standard Code for Information Interchange">ASCII</abbr> sections of Unicode to decide which characters should and should not be allowed in symbol names.
+		Of course, going through those sections and creating such a list would still be fine, provided the list of valid symbol characters applied to everyone regardless of system settings.
+	</p>
+	<p>
+		I didn&apos;t know that R offers the option to remove objects from the current environment.
+		That sounds especially useful if you&apos;re planning to save the environment for later use.
+		You might generate several intermediate variables as you calculate the variables you actually care about, and you might not want to waste storage space on the intermediate variables.
+	</p>
+	<p>
+		The book says that when working on a UNIX system, files with names starting with a full stop are hidden, but claims on Windows and OS X, these files are only hidden by default.
+		They&apos;re only hidden by default on UNIX and UNIX-like systems as well though.
+		For example, I have my Debian system configured to display these files, as I don&apos;t like files being hidden from me.
+		I like to see the truth about what&apos;s in my directories.
+	</p>
+	<p>
+		The <code>assign()</code> function is interesting.
+		I&apos;m not sure what the value of it is over the normal assignment operator though.
+		It was also interesting to see that there are two arrow-looking assignment operators, one for assigning to a variable on the left and the other for assigning to one on the right.
+		I encountered the <code>=</code> assignment operator in <a href="/en/coursework/MATH1280/" title="Introduction to Statistics">MATH 1280</a>, though it was never explained to us, and just sort of came up in some of the later assignments.
+		Apparently it doesn&apos;t work in all contexts that <code>&lt;-</code> works though, according to what I read this week, so I wonder in what cases it doesn&apos;t work.
+	</p>
+	<p>
+		The recycling system for vector-based calculations is new to me.
+		I&apos;ve only worked with either vectors of the same length or vectors along with constants.
+		Different-length vectors were beyond the scope of the statistical work I did before.
+	</p>
+	<p>
+		Based on some of the examples given in the book, we can deduce that functions in R return by reference, at least in many cases.
+		You can actually assign a new value to the output of the <code>length()</code> and <code>attr()</code> functions, for example.
+		It&apos;s an unintuitive way to get the job done, but it looks like no other option is provided in some cases.
+		It&apos;s just something you&apos;ve got to get used to.
+	</p>
+	<p>
+		R&apos;s concept of an array is very different than the arrays we know from other languages.
+		The arrays from other languages are more-comparable to R&apos;s vectors.
+		An array in R is sort of a cross between a one-dimensional vector and an <var>x</var>-dimensional vector.
+		It seems to store values in one long dimension, but certain functions treat the array as having <var>x</var> dimensions, where <code>var</code> is a positive integer (perhaps even just one).
+		Arrays can also be indexed using their <code>x</code>-dimensional positions.
+		Remember to index from one though, as R counter-intuitively does not index from zero as a normal language does.
+	</p>
+	<p>
+		The fact that values in a list have both numeric and string keys is a bit odd.
+		I mean, I&apos;ve seen mixed array key types before, but in this case, the string keys refer to the same values as the integer keys.
+		Two keys refer to the same value.
+		That said, the use of string keys is optional, so only some or even none of the values might have a string key associated with them, though all values in the list have a numeric key.
+		Again, remember that R doesn&apos;t index from zero like normal languages do.
+		The abbreviated names option of lists was surprising to read about as well.
+		It seems useful for when you&apos;re working with R objects in an interactive session.
+		However, it seems like a terribly confusing thing to put in a script.
+		I&apos;d recommend that any code saved for later use use the full names of the keys.
+	</p>
+	<p>
+		The next document on my list was the one that was 441 pages long.
+		I ended up not being able to finish reading that one in time to include my notes on it in this learning journal submission.
+		I&apos;ll be stuck at home for a week though starting tomorrow, as I&apos;ll be recovering from surgery, so I&apos;ll finish reading it then and include my thoughts on it in next week&apos;s learning journal submission.
+	</p>
+	<p>
+		The next page on the reading list blocked me.
+		I wasn&apos;t able to access it at all.
+	</p>
+	<img src="/img/CC_BY-SA_4.0/y.st./coursework/CS4407/forbidden.png" alt="Forbidden" class="framed-centred-image" width="476" height="222"/>
+	<p>
+		Finally, the last of the assigned reading material was on data mining.
+		Data mining can be used in positive ways, but when I think of the term, I tend to think of how tech giants mine users for data to sell to their customers, the advertisers.
+		We&apos;re just the companies&apos; product, and that&apos;s not okay.
+	</p>
+	<p>
+		The first thing to really stand out to me was that the document talked about how you must build a predictive model using the data.
+		This seems like the perfect sort of task for machine learning.
+		Then again, maybe I&apos;m noticing that even though I hadn&apos;t noticed it before because I&apos;m in a course on machine learning, so machine learning is on my mind more than it&apos;s ever been.
+	</p>
+	<p>
+		Next, it discussed how patterns don&apos;t always depict a direct cause-and-effect relationship, but merely a correlation.
+		Two behaviours might both be effects of some other, unseen cause.
+		You&apos;ve also got to weigh costs and benefits of different models.
+		Some models are faster, but others are more accurate.
+		Do you need quick answers, or do you need to act with precision?
+	</p>
+	<p>
+		It&apos;s interesting to see how On-Line Analytical Processing can be used to confirm or deny relationships between variables.
+		Queries can be run against the database to test a hypothesis, and if it&apos;s wrong, a new hypothesis can be searched for.
+		This isn&apos;t like data mining though, as data mining instead uncovers patterns for you.
+	</p>
+	<p>
+		One major area data mining seems to be good for is acquiring and retaining customers.
+		Unlike the data mining I traditionally think about, this use of data mining doesnt&apos; sell your information to someone else, but instead uses it in-house.
+		You&apos;re not the product, but the customer, as you should be.
+		It&apos;s still creepy to think about this data being kept about you, don&apos;t get me wrong.
+		But at least the people holding the data about you are the ones you gave the data to.
+		When you buy something, you know the company you bought from knows who you are, when you bought it, and what you bought.
+		You give them that info.
+		It&apos;s only if and when they turn around and sell that information to someone else that people you have no idea even know about you suddenly seem to know everything about you.
+		Detecting fraudulent purchases on payment cards is another creepy, yet useful application of data mining.
+		Again, you know your credit/debit card servicer knows all your purchases, and you&apos;ve chose to give them that information.
+		It&apos;s creepy to think they&apos;re keeping all those logs on you and building a profile about you, but the value such a profile provides you as the customer is very likely worth it.
+	</p>
+	<p>
+		Some medical uses for data mining are brought up, but if these are used in the United States, I don&apos;t trust their validity.
+		The <abbr title="United States of America">US</abbr> medical industry is known to shoot down working products in favour of products that make more money.
+		You expect that from a departments store or factory, but in the medical industry, you assume the goal is to aid in your health.
+		Sadly, this isn&apos;t the case, as the corruption in that industry&apos;s gotten pretty bad.
+		It&apos;s especially bad with pharmaceuticals.
+		Don&apos;t get me wrong, I go to the doctor too when I need something.
+		In fact, I have a surgery scheduled for the beginning of next week.
+		I shy away from their drugs though, if I can at all get away with it.
+	</p>
+	<p>
+		Neural networks are much less complex than I imagined.
+		They&apos;ve only got three layers, ans it&apos;s easy to see the relationship each node has with each other.
+		I was expecting something closer to brain-level complexity, with a name like that.
+		Or at least, the simpler neural networks don&apos;t seem too complex.
+		A neural network can have more than just the three layers if there&apos;s more than one hidden layer, which raises the level of complexity.
+		The concept of over-fitting the network to the data is an issue I wouldn&apos;t&apos;ve thought of.
+		It makes perfect sense that the network would eventually be a perfect fit for the specific data set, it&apos;s just not something that would have come to mind on its own.
+	</p>
+	<p>
+		Decision trees are simple to follow and understand, though I&apos;m not clear on how they can be generated via data mining.
+		Aside from the obvious solution of brute force, of course.
+		Like the article says though, they&apos;re good at explaining what they&apos;re doing, unlike neural networks.
+		Like neural networks, there&apos;s the possibility of over-fitting the tree to a particular data set, so you need to either prune the tree or limit its growth.
+	</p>
+	<p>
+		Rule induction seems promising.
+		I&apos;m not sure how it can be performed in an automated way, but I think it should be possible.
+		Again, I guess brute force can be used to find the weights after the basic rules have been established, and rule-establishment is simply a patter of pattern recognition.
+		k-nearest neighbour seems reasonable, but like the article says, you can see why it&apos;d take a lot of memory and computation to use.
+		I also worry that as new data points are added, the data might lose some accuracy.
+		Basically, you&apos;re inferring the data of new data points based on known-valid data points, then inferring even newer data points based on a mix of known-valid data points and inferred data points.
+	</p>
+	<p>
+		The assignment for the week was pretty time-consuming.
+		I had to use nearly an entire day off from work to prepare my submission for it.
+		I spent so much time compiling the list of commands I needed to run, taking screenshots, correcting for human error (both my own and that of the textbook&apos;s author), and formatting my submission that I didn&apos;t really get to analyse what I was actually telling the computer to do.
+		I learned some new things about R, but not as much as I could have if I wasn&apos;t so busy this week.
+		I should get a chance to review what I&apos;ve done next week though, when I have nothing but time.
+	</p>
+	<h3>Discussion post drafts</h3>
+	<p>
+		The learning journal instructions say to include the drafts of the discussion posts for the week, so here they are:
+	</p>
+	<blockquote>
+		<p>
+			Supervised learning is a style of machine learning in which the answer for each data point is known.
+			The algorithm can collect data and learn, but the predictions made by the machine afterwards can actually be tested for accuracy using the known answers (Edelstein, 1998).
+			Often, this is done by having the machine learn using a small data set, then running it on a large data set to see how accurately the machine gets the new data points correct.
+		</p>
+		<p>
+			On the other hand, with unsupervised learning, there are no known answers.
+			The machine is given a data set to work with, but the tester doesn&apos;t have an answer sheet to compare the machine&apos;s results against (Edelstein, 1998).
+			Unsupervised learning can be used to cluster data points, for example.
+			We might not know the answer before running the algorithm, but we can still kind of see if the computer got close to the right answer.
+		</p>
+		<p>
+			By the way, I&apos;m unclear on what to do for the assignment this week.
+			It says to follow the instructions given Section 2.3 of <a href="https://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf">Driver.dvi - ISLR First Printing.pdf</a>.
+			However, that section doesnt&apos; seem to give any instructions.
+			It has some example commands, but it also has their output.
+			If we submit our results of running those commands, it&apos;d pretty much just be a copy and paste of what the book already contains.
+			That doesn&apos;t seem like much of an assignment, so I can&apos;t help but feel there&apos;s a mistake and we&apos;re supposed to do something besides run those commands and provide their output.
+		</p>
+		<div class="APA_references">
+			<h3>References:</h3>
+			<p>
+				Edelstein, H. A. (1998). Introduction to data mining and knowledge discovery. Retrieved from <a href="http://twocrows.com/intro-dm.pdf"><code>http://twocrows.com/intro-dm.pdf</code></a>
+			</p>
+		</div>
+	</blockquote>
+	<blockquote>
+		<p>
+			I like your example with character recognition.
+			Like you said, character recognition is learned through supervised learning.
+			The character is shown to the computer as an image, and the character as a byte sequence is given to the computer as well.
+			Each image given to the computer will be slightly different, and it&apos;s up to the machine to decide what attributes of the image determine that a given character is, for example, a zero.
+			This is exactly the sort of task that would be impossible for unsupervised learning.
+		</p>
+		<p>
+			It sort of reminds me of how humans perform the same task.
+			As children, we&apos;re subjected to symbols we&apos;re told are the same set of 52 letters (sometimes more, if English isn&apos;t your native tongue), as well as several other useful characters such as digits and punctuation.
+			These characters come in all sorts of fonts though, and can be seen from all sorts of angles.
+			In school, the teachers probably try to keep the letters mostly consistent, but as we walked through stores, saw signs outside such as street signs and billboards, and even saw products within our own homes, all these fonts were everywhere.
+			And then there was handwriting, which differs form person to person.
+			We had to learn what attributes distinguished each character, and we use that our entire lives.
+		</p>
+		<p>
+			The assistant manager at my workplace has really elegant handwriting, and their upper-case &quot;E&quot;s are by far the fanciest I&apos;ve ever seen.
+			I&apos;m working on imitating them and adding them to my own handwriting, actually.
+			They look hardly at all like the &quot;E&quot;s I&apos;ve seen in any font ever, yet we all recognise them as &quot;E&quot;s without a second thought.
+			Dispute the loopiness of the letter, there&apos;s something about it that distinctly looks like an &quot;E&quot;s and not a backwards three.
+			Yet if you were to look at a backwards three, you&apos;d recognise it as such and not think it was an &quot;E&quot;s.
+			Their letter &quot;E&quot; retains whatever points we learned that distinguish it as a &quot;E&quot;.
+		</p>
+		<p>
+			Your data-clustering example helped me understand unsupervised learning much better.
+			I was thinking that with unsupervised learning, there was something we could set the computer about to learn without yet knowing the answer yet ourselves, and this actually trained the computer for something.
+			I think I understand now though that unsupervised learning isn&apos;t really learning at all though, or at least not the way we traditionally think about learning.
+			With supervised learning, we&apos;re basically training the computer.
+			We&apos;re teaching it.
+			The computer learns.
+			With unsupervised learning, the computer instead tries to make sense of the data we give it, but doesn&apos;t learn anything that it can apply later.
+			Unsupervised learning is less like learning and more like analysis.
+		</p>
+	</blockquote>
+	<blockquote>
+		<p>
+			It&apos;s worth noting too that in supervised learning, the known right answers aren&apos;t used exclusively to check the computer&apos;s results, but also to built the knowledge base used to predict values.
+			The computer is basically shown a number of data points and associated right answers.
+			Using that, the computer builds up information on what it means for an answer to be correct, which is what it used for later data points it encounters.
+			In other words, the known right answers are used both to train the computer and to check the results of the computer&apos;s training.
+		</p>
+		<p>
+			You make a good point that unsupervised learning is good for finding patterns.
+			That may be the key difference in the types of problems supervised and unsupervised learning deal with.
+			In supervised learning, the pattern is known and we&apos;re trying to teach that pattern to the computer so it can solve later problems.
+			In unsupervised learning, we don&apos;t know the pattern and we&apos;re asking the computer to try to find the pattern for us.
+		</p>
+	</blockquote>
+	<blockquote>
+		<p>
+			I like your example.
+			It illustrates well how supervised learning and unsupervised learning can sometimes be applied to the same problem.
+			I&apos;d thought the two to apply to mutually-exclusive types of problems, but with some clever thinking, you can often find alternative solutions using alternative tools.
+		</p>
+	</blockquote>
+</section>
+<section id="Unit2">
+	<h2>Unit 2</h2>
+	<p>
+		The reading assignment for the week is as follows:
+	</p>
+	<ul>
+		<li>
+			<a href="https://christof-strauch.de/nosqldbs.pdf">NoSQL Databases - nosqldbs.pdf</a>
+		</li>
+		<li>
+			Chapters eight through fourteen of <a href="https://cran.r-project.org/doc/manuals/R-intro.html">An Introduction to R</a>
+		</li>
+		<li>
+			<a href="https://my.uopeople.edu/brokenfile.php#/290113/user/draft/702716931/An%20Overview%20of%20Data%20Warehousing%20and%20OLAP%20Technology.pdf"><em>(No file data)</em></a>
+		</li>
+		<li>
+			<a href="https://my.uopeople.edu/pluginfile.php/389189/mod_book/chapter/179438/Data%20mining%20tools.pdf">WIDM-24_LR - Data mining tools.pdf</a>
+		</li>
+		<li>
+			<a href="https://thesai.org/Downloads/SpecialIssueNo3/Paper%204-A%20Comparison%20Study%20between%20Data%20Mining%20Tools%20over%20some%20Classification%20Methods.pdf">A Comparison Study between Data Mining Tools over some Classification Methods - Paper 4-A Comparison Study between Data Mining Tools over some Classification Methods.pdf</a>
+		</li>
+		<li>
+			<a href="http://gifi.stat.ucla.edu/janspubs/2009/reports/deleeuw_R_09a.pdf">deleeuw_R_09a.pdf</a>
+		</li>
+		<li>
+			<a href="http://leavcom.com/pdf/NoSQL.pdf">NoSQL.pdf</a>
+		</li>
+		<li>
+			<a href="http://melekirmak.com/trepon/images/260220121521451.pdf">Trepon Images 260220121521451 Pdf için bir şey bulunamadı</a>
+		</li>
+		<li>
+			<a href="http://web.ist.utl.pt/~ist13085/fcsh/sio/casos/BI-Tech2.pdf">Técnico Lisboa - Página Não Encontrada / Page Not Found</a>
+		</li>
+	</ul>
+	<p>
+		One of these is a link to the university&apos;s own <code>/brokenfile.php</code> file.
+		It&apos;s not even a redirect from an actual broken file either, I checked.
+		The <abbr title="Uniform Resource Identifier">URI</abbr> provided in the hyperlink is that of the broken file error page.
+		An error page, by the way, that doesn&apos;t actually display any sort of error message.
+		It just refuses to send any data.
+		To add to that, two of the links are outdated and lead to <code>404</code> pages.
+	</p>
+	<p>
+		I&apos;d thought that NoSQL was a particular database, such as MySQL or SQLite.
+		I was guessing that with a name like that, it probably didn&apos;t use a structured query language, but at the same time, the fact that it even mentions <abbr title="Structured Query Language">SQL</abbr> made me think it likely tries to emulate databases that do use <abbr title="Structured Query Language">SQL</abbr> or something.
+		It turns out I was way off.
+		NoSQL isn&apos;t a product at all, but instead a term coined to refer to non-relational databases.
+		Most if not all relational database software options use a form of <abbr title="Structured Query Language">SQL</abbr> to allow users to tell it what to store and retrieve, so NoSQL refers to the fact that a given database doesn&apos;t have that.
+		It&apos;s a misleading term, as while <abbr title="Structured Query Language">SQL</abbr> and relational databases are often used together, they&apos;re actually very separate concepts.
+		&quot;Relational&quot; refers to the fact that the database tables may relate their data to data on other tables, while <abbr title="Structured Query Language">SQL</abbr> is the language (which admittedly is usually not implemented according to the standard) used to speak with the database software.
+		I could build a relational database software that doesn&apos;t use any form of <abbr title="Structured Query Language">SQL</abbr>, yet it somehow wouldn&apos;t be considered a NoSQL database.
+		In other words, its a complete misnomer.
+	</p>
+	<p>
+		Non-relational databases are useful because they handle very efficiently the types of data relational databases are particularly bad at handling.
+		Relational databases need rigid structure.
+		Otherwise, you can&apos;t figure out what data relates to what other data in another table.
+		Without relations getting in the way, you can store whatever you want in a non-relational database.
+		Examples given in the text include emails, word-processing documents, and media.
+		Some non-relational databases can also be distributed across multiple machines, something that relational databases don&apos;t seem to handle well.
+		Non-relational databases also run faster, due to less happening when queries are run.
+		Relational databases have to check to see if an update to the data would break the database&apos;s rules, and if it won&apos;t, they sometimes have to make further changes to other parts of the data that are implied by the change made by the query.
+		A non-relational database has neither of these added side-effects of data update.
+	</p>
+	<p>
+		Non-relational databases do have their drawbacks though.
+		Without the <abbr title="Structured Query Language">SQL</abbr> provided by relational databases, non-relational databases rely on directly programming queries through the database&apos;s <abbr title="application programming interface">API</abbr>.
+		Supposedly, this is more difficult, though I have difficulty with <abbr title="Structured Query Language">SQL</abbr>.
+		I think I might do better with direct <abbr title="application programming interface">API</abbr> calls.
+		You could claim that with <abbr title="Structured Query Language">SQL</abbr>, you have a unified language with with to communicate with all relational databases, but that would be a lie.
+		No one follows the <abbr title="Structured Query Language">SQL</abbr> standard, so each database vendor provides their own non-standard dialect of <abbr title="Structured Query Language">SQL</abbr>.
+		Whether you&apos;re learning a new <abbr title="Structured Query Language">SQL</abbr> dialect or new <abbr title="application programming interface">API</abbr> functions, you&apos;re not able to jump right from one database software to another.
+		Due to the lack of rule-enforcement, non-relational databases are also easier to enter inconsistent or otherwise invalid data into, which can be problematic.
+		Likewise, with non-relational databases only gaining popularity recently, there&apos;s a lack of tools for administering them at this time.
+	</p>
+	<p>
+		The next article I read was about which statistical tools replaced which other statistical tools and when.
+		It was more of a history lesson than anything useful.
+		It did bring up that the field of science is moving toward open source as a means of reproducibility.
+		That&apos;s good to hear.
+		With open source tools, we can better learn how the tools themselves function, and thus how the data we use the tools on behaves.
+		And isn&apos;t that what science is all about?
+		Really, closed source tools have no place in science or any sort of school.
+		They just hide away their implementations so you can&apos;t learn from them, making them counterproductive in such environments.
+	</p>
+	<p>
+		I didn&apos;t really understand the paper on the study comparing data-mining tools.
+		It didn&apos;t help that the table data wasn&apos;t displaying correctly.
+		I think it&apos;s a bug in Firefox; I&apos;ve had that issue with other <abbr title="Portable Document Format">PDF</abbr>s on the Web as well.
+	</p>
+	<p>
+		The next paper I read both reiterated the history of data-mining software and broke down what to look for when choosing data-mining software from the multitude of options.
+		Again, I don&apos;t think such history lessons are useful, but the point-by-point discussion of what features to look for had value.
+		Of course, if you can&apos;t trust your tools, you can&apos;t trust their results, so licensing and source code availability will always be the most important thing to consider when I choose my software.
+		The wrong license is a deal-breaker for me.
+		The paper did discuss licensing and its importance, which was good to see.
+		Once you rule out the badly-licensed software, the other points can be used to figure out which option best suits your specific project.
+		Different data-mining programs cater to different groups of users and different use cases.
+		Sparsity of the data, how many dimensions it has, and whether or not you&apos;re trying to cluster it are all things to think about.
+		You also need to decide whether your task is better suited to supervised or unsupervised learning.
+		Do you have a training set to work with that already has an answer key?
+		You also need to decide whether you want a command line interface or a graphical interface.
+		Less techy people will want a <abbr title="graphical user interface">GUI</abbr>, but people who know how to work a computer well will appreciate the ease of automation that comes with a command line interface.
+	</p>
+	<p>
+		It seems a number of open and widely-implemented data exchange formats are available for importing and exporting data.
+		These should of course be used ahead of proprietary formats.
+		The major problem with proprietary formats is that you can&apos;t switch tools and keep your data.
+		You might want to replace your software with better software from another vendor at some point, but even if you don&apos;t, different tools work better for different use cases.
+		You might therefore want to use the same data with multiple tools.
+		Open formats make this possible.
+		You also need to look at what system you plan to use your tools with when deciding which tools to choose.
+		That said, if you choose the open source tools as I recommended, it&apos;s very likely your platform will be supported.
+		People have a tendency to port open source tools to their platform, then make the necessary code changes available to everyone, providing support for that project on that operating system available to the public.
+		This is different from proprietary tools, in which you have to depend on the vendor themselves to provide support for a given platform (and often, proprietary vendors don&apos;t bother to support very many platforms).
+	</p>
+	<p>
+		The 149-page paper begins by telling us that the NoSQL term originally referred to relational databases that lacked <abbr title="Structured Query Language">SQL</abbr>.
+		That&apos;s a much more intuitive and reasonable usage of the term.
+		However, the term later degraded to instead refer to non-relational databases, which is a confusing use of the term, as I discussed above.
+		Seriously, they should have coined their own term instead of hijacking a term already in use.
+	</p>
+	<p>
+		Most of the benefits of non-relational databases discussed by this paper were already covered by the 3-page paper, but the longer paper also brought up that servers can be brought offline or even crash without taking the whole database down with them.
+		Obviously, the data stored on that particular server becomes unavailable, but the rest of the data on the other serves remains accessible.
+	</p>
+	<p>
+		It also talks about how one-size-fits-all database solutions are wrong.
+		In general, one-size-fits-all solutions for <strong>*anything*</strong> are wrong.
+		There are notable exceptions to this, but if you think your solution fits every use case, you&apos;ve probably forgotten to consider several use cases.
+		It&apos;s also brought up that one-size-fits-all solutions tend not to perform as quickly or as efficiently as solutions tailored to the actual use case you&apos;re working with.
+	</p>
+	<p>
+		A great point is made too about abstracting away a database&apos;s distributed nature.
+		If applications don&apos;t realise the database is distributed, they cannot make the correct decision based on that information.
+		Network latency and downed servers cannot be abstracted away, so both can appear as missing data to the application if the application isn&apos;t made aware that it&apos;s not speaking with a single database instance on a single server.
+	</p>
+	<p>
+		One issue I had with this paper is that it says we should do everything in <abbr title="random-access memory">RAM</abbr> and have zero <abbr title="input/output">I/O</abbr>.
+		Keeping everything in memory is one thing.
+		Assuming you have enough <abbr title="random-access memory">RAM</abbr>, it&apos;ll speed things up considerably.
+		However, you still need disk writes.
+		If the power goes out or your system crashes, you&apos;ll want a semi-recent copy of the data to read back into memory once you&apos;re back online.
+		You might not want to write to disk with every change, but you will want to write changes to disk periodically.
+	</p>
+	<p>
+		The paper also discusses that while non-relational databases may be developer-friendly, they&apos;re not as administrator-friendly.
+		They lack the sort of query language that makes ad-hoc access of data easy.
+		With only the <abbr title="application programming interface">API</abbr> to update or view data, administrators have to write a program each time they want to make a change to the data or even just check on existing data.
+		Of course, this could easily be accounted for if developers wrote some sort of administration panel for the administrators to manage the database with.
+		However, the paper goes on to explain that access of data in a distributed system is more difficult too.
+		I don&apos;t really have a solution to that problem.
+		Exporting data from a distributed database also comes with difficulties.
+	</p>
+	<p>
+		I ended up not being able to get back to that 441-page document from last week.
+		I thought life would just sort of stop for my during the week of the surgery, and I&apos;d have all the time in the world for coursework.
+		That didn&apos;t happen.
+		I still had things I needed to get done, and while I did have the week off from work, I also slept a lot more.
+		Part of that was because I needed more rest to heal properly, but another part is that I usually don&apos;t get enough sleep because I&apos;m far too busy.
+		For the first time in a long while, I actually got the sleep I needed.
+		I also found myself too tired to get any coursework done unless I kept my body moving.
+		I had to get out and take a walk each day, or I didn&apos;t feel well enough to even attempt any reading assignments.
+		And those walks took time too.
+	</p>
+	<p>
+		Research for the paper this week also took longer than expected.
+		Finding open-access journals is difficult, and we needed peer-reviewed journals for our papers this week.
+		The assignment instructions recommended checking one of the libraries that lends their resources to this school, but those sites don&apos;t allow outsiders to view their contents.
+		This presents two major problems.
+		First of all, search engines can&apos;t get in there.
+		These libraries have internal search features, but they rather suck.
+		I can spend hours trying to find something in there, and turn up empty-handed.
+		Without open access, regular search engines can&apos;t get in, and without using an actual search engine, you can&apos;t reasonably find what you need.
+		Secondly, without open access, it doesn&apos;t matter what I cite anyway, because no one reading my paper will be able to check my sources for validity or further information.
+		Citing pages that exist only in walled gardens doesn&apos;t do a lick of good.
+		That makes the university&apos;s partner libraries utterly and completely useless.
+		So I had to look elsewhere.
+		I never did find any published journal sources to describe the specific analytical packages we were told to research for our papers, either.
+		I ended up having to use the main websites for these projects to get a feel for them.
+		In my defence though, we were told to use at least one journal resource, but not required to make all our sources come from journals.
+	</p>
+	<p>
+		It&apos;s also worth noting that such journal sources themselves are often incredibly bias.
+		I&apos;m not sure how bad it is in the tech industry, but the medical industry in the United States is completely corrupt.
+		In the medical industry, good medical science often gets swept under the rug if it&apos;s not profitable.
+		If it&apos;s not going to make some corporation rich, big pharmaceutical companies will often make sure word doesn&apos;t get out, even to the point of threatening doctors and scientists that would otherwise try to bring it to light.
+		And many drugs aren&apos;t actually anywhere near as effective as they&apos;re claimed to be, they are just in use because they make the pharmaceutical companies money.
+		These money-makers are what gets published, not the things that actually work best.
+		It wouldn&apos;t surprise me if the tech industry suffered similar issues.
+		The fact that information comes from published journals doesn&apos;t actually make it any more valid than information from other sources, and in fact often makes the information <strong>*less*</strong> valid.
+		There&apos;s a reason I don&apos;t often cite published journals except for assignments that specifically request it.
+	</p>
+	<p>
+		Anyway, I found the reading material didn&apos;t even mention much of what was on the essay assignment and absolutely none of what was on the discussion assignment was mentioned.
+		Normally, I focus on trying to complete the reading material first, or at least a good chunk of it, before moving on to the other assignments.
+		That way, I&apos;m better prepared for them.
+		I see that&apos;s not going to work in this course.
+		I need to work on the discussion assignment and written assignment first.
+		Then, in the time remaining, I need to read as much as I can from the reading assignment.
+		Starting next week, that&apos;s the approach I&apos;ll take.
+	</p>
+</section>
+<section id="Unit3">
+	<h2>Unit 3</h2>
+	<p>
+		The reading assignment for this week is that 441-page document again: <a href="https://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf">Driver.dvi - ISLR First Printing.pdf</a>.
+		Except this time, we&apos;re only supposed to read chapter 3 and section 4.3 instead of the entire thing.
+		I went back and took another look at <a href="#Unit1">Unit 1</a>&apos;s reading assignment, and it seems we were actually only supposed to read chapter 2.
+		Somehow, I missed the chapter designation, so I thought the whole book&apos;d been assigned to us to read.
+		Wow.
+		Now I feel foolish.
+		It&apos;s no wonder the reading assignment seemed like far too much for my to handle that week.
+	</p>
+	<p>
+		The first equation presented to us this week was <var>Y</var> ≈ <var>β<sub>0</sub></var> + <var>β<sub>1</sub></var><var>X</var>.
+		I immediately recognised that as the slop/intercept equation (<var>Y</var> = <var>m</var><var>x</var> + <var>b</var>), but with different variable names, a different arrangement, and an approximate equality instead of a true equality.
+		So I figured this week shouldn&apos;t be too difficult.
+	</p>
+	<p>
+		One thing that struck me though was that the book next discussed estimating the unknown variables by taking samples from various markets.
+		If you use different markets, there are many more variables at play that you&apos;re not accounting for.
+		For example, the average income level of the population and how gullible they are.
+		With high income and high gullibility, people are more likely to buy into the messages presented by your advertisements.
+		You obviously can&apos;t account for everything, but if you&apos;re going to take samples from multiple markets and build an equation for dealing with all those markets, you should make sure your markets are fairly similar.
+		For example, they at the very least need to have similar average income levels.
+	</p>
+	<p>
+		The &quot;∑&quot; symbol always throws me off.
+		I never did formally learn what it means, though I thin it involves summing variables denoted with subscripts.
+		At first, I thought the equations for minimising the residual sum of squares calculated something for some value that we were trying to minimise, and that you had to guess and check repeatedly until you couldn&apos;t make the number go down any further.
+		This would not only be time-consuming, but also not very precise.
+		At what precision level do you give up trying to get closer?
+		An exact formula for the values we need would be much better.
+		After working through the meanings of the variables though, I think that&apos;s exactly what these equations are.
+		They give us the values we need directly.
+		I think the first of the two equations just sums up the multiplied differences between the the average <var>x</var> and specific <var>x</var>es and the average <var>y</var> and specific <var>y</var>s, then divides all that by the sum of squared differences between the average <var>x</var> and specific <var>x</var>es.
+		That&apos;s all hard to follow when written out like that, but it&apos;s usable in the equation.
+		Then the second equation just takes the output of the first equation and uses it in a straightforward way.
+	</p>
+	<p>
+		The book talks about how to calculate the standard error of the population mean: we divide the variance (which is equal to the square of the standard deviation) by the number of data points, then square root the result.
+		It says this standard error figure is how far off our least squares line is from the population regression line.
+		However, it&apos;s worth noting that, again, this is an <strong>*estimate*</strong>.
+		We don&apos;t actually know how far off our line is.
+		Also, hypothetically, we could end up with a data sample in which all our data points are above the population regression line or all below.
+		These data points might even be in a perfectly-straight line.
+		That would give us an exceedingly low standard error, yet our least squares line may still be way off.
+		In practice, this isn&apos;t going to happen very often, but it&apos;s important to remember that it could, which means that we must treat this standard error figure as exactly what it is: only an estimate.
+		We&apos;re given more-complex formulas for dealing with the standard error of the other estimated numbers, but the idea is the same: we&apos;re only estimating how far off we likely are, not making an absolute determination.
+	</p>
+	<p>
+		The R<sup>2</sup> statistic seems to be very useful in determining how well regression even works for the problem at hand.
+		Either due to too high of a variance or due to the data not being all that linear, R<sup>2</sup> may be too low, and that problem can be caught.
+		I mean, we can sort of gage how well our least squares line fits the data when we graph it, but there&apos;s no objectivity in that.
+		What one person says is an okay fit, another may say is no fit.
+		R<sup>2</sup> allows us to measure the fit precisely, giving us a more-objective look at it.
+		We still have to determine how much of a fit we require, which is still pretty subjective, but we can objectively compare the fit of one least squares line to its data against another least squares line and that other line&apos;s data.
+	</p>
+	<p>
+		When the book started talking about using multiple predictor variables in a single equation, I was morbidly curious as to how it planned to pull that off.
+		When they showed us the equation for solving such a system, a simple <var>ŷ</var> = <var>̂β<sub>0</sub></var> + <var>̂β<sub>1</sub></var><var>x<sub>1</sub></var> + <var>̂β<sub>2</sub></var><var>x<sub>2</sub></var> + ... + <var>̂β<sub><var>p</var></sub></var><var>x<sub><var>p</var></sub></var>, I knew this was likely going to be over my head.
+		If the equation for solving for the prediction was to just multiply the estimations by the predictor values and add them together, I could see no manageable way to derive those estimations.
+		I&apos;m decently good at maths, but I&apos;m not that good.
+		Such a formula would be over my head.
+		Thankfully, the author seemed to agree with me, and simply skipped over the logistics of how to actually find such values by hand.
+		We&apos;re not expected to learn that at this time.
+	</p>
+	<p>
+		The book then uses the example of binary gender as a predictor of credit worthiness.
+		First of all, gender isn&apos;t binary.
+		Second, they claim the options to be male and female.
+		Male and female are sexes, not genders.
+		(Sex also isn&apos;t binary, as there are the occasional intersex people, though it&apos;s more often binary than gender is.)
+		As someone of non-binary gender, I find it annoying when people try to shove me into boxes I don&apos;t fit into.
+		There&apos;s a reason I use the name Alex: it&apos;s a name available to people of any gender as a shortened version of gendered names.
+		Alexander is usually for men.
+		Alexandra, Alexandria, Alexa, and Alexia are usually for women.
+		There&apos;s even Alexis though, a gender-neutral name given to men and women alike.
+	</p>
+	<p>
+		The use of an interaction term was something I wouldn&apos;t&apos;ve thought of.
+		I didn&apos;t think linear regression could account for interaction between predictor variables.
+		I thought a different type of model would be needed to get a better fit.
+		Of course, as finding the values for even just a simple multiple linear regression is above us at this point, we certainly didn&apos;t discuss how to find the proper value for the interaction term, either.
+	</p>
+	<p>
+		I don&apos;t understand the syntax used for the <code>lm()</code> function.
+		I&apos;m not sure what the <code>~</code> operator is in R, but ignoring that, the bigger problem is that we use a plus sign in the first argument to combine the variables.
+		This should add the variables together before passing the result to the function.
+		Yet somehow, it seems R is keeping these as separate data sets for it to operate on within the function.
+		That makes no sense to me whatsoever.
+		It&apos;s like the expression, and not the value of the expression, is being passed into the <code>lm()</code> function.
+		Actually ...
+		Is that actually what&apos;s going on?
+		Is the <strong>*expression*</strong> being passed and not the value?
+		I mean, part of the output of <code>lm()</code> function is my expression repeated back to me.
+		Maybe R passes expressions and not values as arguments.
+	</p>
+	<p>
+		During the quiz this week, my Internet connection got really spotty.
+		The connection stayed up long enough to load the page, but <strong>*not*</strong> the images on it.
+		As a result, I couldn&apos;t see the graphs I needed, and because the equations we were supposed to use were also included in image form instead of basic text, I couldn&apos;t see those either.
+		As the page had already loaded, my timer had started, but I couldn&apos;t actually work on the quiz!
+		It took me about half an hour to get the connection back up long enough to load everything I needed, and I had no idea the precise time I&apos;d started the quiz, so I had to just rush through it as quickly as I could, for fear I&apos;d miss my deadline.
+		Finally, after I&apos;d submitted my answers, I was told I had about thirteen more minutes to finalise them.
+		I could have gone back over my work a little bit, but I had no way to know if my connection would die again and I&apos;d lose my chance to finalise any answers, ending up with a grade of zero.
+		So, I submitted my rushed answers.
+		It&apos;s a good thing I did, too.
+		Within a couple minutes, my connection died again, and I couldn&apos;t get it back up in time.
+		Needless to say, I didn&apos;t do well on the quiz at all.
+		At least I got above a 75% though, and I believe that&apos;s passing.
+		I&apos;ll be glad once I can afford a better Internet connection, though I won&apos;t be able to spare money for that until I get a couple other things taken care of first.
+	</p>
+	<p>
+		I&apos;m not the worst off this week though.
+		One student submitted the wrong paper last week, so for the grading this week, they&apos;re not going to do well.
+		I think what happened is they submitted the paper for this course to their other course, and the paper for their other course to this course.
+		It&apos;s either that or they submitted the same paper to both courses, but that seems unlikely.
+		If the papers were simply reversed as I think they were, they&apos;re not going to do well in <strong>*either*</strong> of their courses this week.
 	</p>
 </section>
 <section id="Unit4">
@@ -192,6 +734,120 @@
 		I learned some useful techniques while trying to format my assignment, too.
 		I found data points can be made invisible on a graph in R, and that labels can be added right where the data points would be if visible.
 		This allows, for example, for different symbols to be used to represent different types of data points.
+	</p>
+</section>
+<section id="Unit5">
+	<h2>Unit 5</h2>
+	<p>
+		The reading assignment for the week is as follows:
+	</p>
+	<ul>
+		<li>
+			Chapter Eight of <a href="https://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf">Driver.dvi - ISLR First Printing.pdf</a>
+		</li>
+		<li>
+			<a href="https://www.math.unipd.it/~aiolli/corsi/0708/IR/Lez12.pdf">Microsoft PowerPoint - TextCategorization.ppt - Lez12.pdf</a>
+		</li>
+	</ul>
+	<p>
+		The discussion board assignment says it requires significant research, but then goes and limits our word count, including references, to five hundred words.
+		Like the five-hundred-word limit last week, this actually significantly cuts the amount of research that can go into the topic.
+		I can&apos;t use too many references, as they each cut into my word limit, so little research is actually the name of the game.
+		Normally, I don&apos;t like word limits for this reason, but the discussion posts are always a pain because of how little time there is to complete them, so it works in my favour.
+		We need to reply quickly, so as to allow other students to respond, yet we don&apos;t have the topic until the start of the unit.
+		So I usually try to get the initial discussion posts for both of my courses completed within the first couple days, if I can.
+		I tried to stay brief, but found I still was over budget on words, and had to cut out some things.
+		And my post was already based only on the reading assignment.
+		Had I done <strong>*any*</strong> research outside the reading assignment, I wouldn&apos;t have been able to fit my work into the required word count.
+	</p>
+	<p>
+		The concept of information gain as a measure of entropy reduction is pretty useful.
+		If you can find the right classifications, you can better understand your data and draw conclusions from it.
+		Measuring the information gain allows you to compare classifications to see which one is a better fit for branching your decision tree with.
+	</p>
+	<p>
+		The presentation this week mentioned that using an odd number of neighbours prevents ties when using the k-nearest neighbours algorithm, but this actually only makes a tie less probable.
+		I actually discussed this last week in my unit assignment submission.
+		If there are only two groups, an odd number of neighbours will prevent ties.
+		However, for any other number of neighbours used, a tie is still possible.
+		For example, one neighbour may &quot;vote&quot; for a classification in group A, while the remaining number of &quot;votes&quot; may be split evenly between group B and group C.
+	</p>
+	<p>
+		Decision trees really aren&apos;t anything new to me.
+		The measure of information gain I mentioned above is something I hadn&apos;t heard of, but aside from that, decision trees are basically like flow charts, but without the possibility of travelling backwards.
+		You can only go in one direction, so your path always terminates.
+		They&apos;re good for classifying things, but there&apos;s nothing they can do that a flowchart can&apos;t.
+		I might even go so far as to say that the graphical representation of a decision tree is a type of flowchart.
+	</p>
+	<p>
+		I&apos;m unclear on how tree-pruning works though.
+		From the looks of it, we cut off the subtrees, keeping those and discarding the part with the root of the main tree.
+		But without the root to connect them, I&apos;m not sure how the subtrees are supposed to relate to one another in any meaningful way.
+	</p>
+	<p>
+		Bagging and random forests are unintuitive.
+		In bagging, you take samples from your full sample, and use these samples to build trees.
+		Because each tree isn&apos;t working with the full data set, it&apos;s less accurate than a tree using the full data set would be.
+		However, you&apos;re able to get many trees that predict things differently that way.
+		Averaging the results together, you get a more-accurate result than had you used the single, better tree.
+		Random forests take this a step further, and not only limit which data points a tree has access to, but what branching criteria are available.
+		Again, this reduces the accuracy of individual trees.
+		However, when tree results are averaged together, it has the result of making sure all (or at least most) criteria were taken into account in the result.
+	</p>
+	<p>
+		When I looked at the unit assignment at the beginning of the week, I was quite intimidated and thought the assignment would be pretty difficult.
+		When I sat down to work on it after reading the material for the week though, it was actually a breeze.
+		To start with, the entire first half of the assignment practically did itself.
+		The instructions told me exactly what commands to enter, and all I had to do was copy text output into my submission, take a screenshot, and troubleshoot a single missing library; I found <code>mlbench</code> wasn&apos;t available on my system.
+		It was in the package manager though, so I just ran <kbd>sudo aptitude install <a href="apt:r-cran-mlbench">r-cran-mlbench</a></kbd> on the command line.
+		I assumed I&apos;d have to restart R for R to find it, but much to my surprise, just rerunning <kbd>library(mlbench)</kbd> worked.
+		I also expected <kbd>data(Ionosphere)</kbd> to fail, as our data file was called <code>Ionosphere.txt</code>, and we didn&apos;t include that <code>.txt</code> extension.
+		It worked anyway though.
+		It was like clockwork that&apos;d been missing a cog, and that cog had been put in place, so everything was fine now.
+	</p>
+	<p>
+		The second half of the assignment wasn&apos;t intimidating either once I&apos;d read the material.
+		In fact, the instructions even told us which functions to use.
+		We just needed to know what arguments to pass in.
+		I admit I struggled a bit in figuring out the code to use between the functions mentioned in the instructions, and my result probably isn&apos;t as clean as it could be, but I arrived at a reasonable answer to submit.
+	</p>
+	<p>
+		When I went to grade last week&apos;s work, I got a nasty surprise.
+		The first thing we were to grade was whether the student had included a detailed log of their R session.
+		The assignment instructions never asked for that though!
+		I only included parts I thought were relevant, and didn&apos;t include the part that generated the graph I&apos;d included.
+		It&apos;d be nice if the assignments told us everything we were expected to include in our submission, but this isn&apos;t the first time at this school I&apos;ve been blind-sided like this.
+	</p>
+	<p>
+		I&apos;d missed something when I went through the work myself, too.
+		We were shown in the instructions that we could define each coordinate pair as a two-item vector, but that didn&apos;t seem like a useful thing to do, given that the functions we were working with would interpret the intended rows as columns and intended columns as rows if we then tried to group those variables into a data frame.
+		I ended up not doing that, and instead creating one vector of <var>x</var> values and another vector of <var>y</var> values.
+		The first student whose work I graded this week though showed me the missing piece: the <code>rbind()</code> function.
+		I&apos;m not sure if I missed that in the reading assignment or if this was something we were expected to find outside of class, but it allows the data points to be defined the way the assignment instructions grouped them and still get usable data.
+		That said, they got the rest of the assignment wrong because they failed to assign groups to any of the data points and instead used the point names as classes, resulting in six classes instead of two.
+		It yielded &quot;correct&quot; results when only one neighbour was used to determine a point&apos;s class, but didn&apos;t allow for using multiple neighbours, as no two points in the training set had the same class name.
+		The second student pretty much had the same solution that I&apos;d had, so they&apos;d defined an <var>x</var> vector and a <var>y</var> vector, except their graph-generation code was cleaner than mine, and only needed one line instead of my two.
+		Unlike my graph, theirs wasn&apos;t colour-coded, but I&apos;d be interested to see if I can get the colours onto the graph using their method.
+		If so, their method would be a more-correct way to achieve the effect.
+		The third student used the same method as the first student, but actually did the work correctly, showing that the <code>rbind()</code> function does do what we needed it to do for lass week&apos;s assignment.
+	</p>
+</section>
+<section id="Unit6">
+	<h2>Unit 6</h2>
+	<p>
+		...
+	</p>
+</section>
+<section id="Unit7">
+	<h2>Unit 7</h2>
+	<p>
+		...
+	</p>
+</section>
+<section id="Unit8">
+	<h2>Unit 8</h2>
+	<p>
+		...
 	</p>
 </section>
 		<hr/>

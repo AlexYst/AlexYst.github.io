@@ -16,6 +16,14 @@
 	along with this program.  If not, see <http://www.gnu.org./licenses/>.
 */
 
+// Redirect bad URIs to the main page. Bad URIs either aren't using TLS
+// ("http:" instead of "https:") or they're using the wrong host name.
+// This should be done via HTTP redirects, not JavaScript, but that
+// isn't available on all hosts.
+if(window.location.href.substring(0, 14) != "https://y.st./") {
+	window.location.replace("https://y.st./");
+}
+
 // This function causes the left and right arrow keys to load previous
 // and next pages in a sequence. As of writing, this is only used on
 // the weblog pages.

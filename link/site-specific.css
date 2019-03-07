@@ -152,7 +152,7 @@ span.redacted {
 	background-color: #fff;
 }
 
-img.weblog-header-image, img.framed-centred-image {
+img.framed-centred-image {
 	max-width: calc(100% - 2rem - 2px);
 	display: block;
 	margin: auto;
