@@ -835,7 +835,180 @@
 <section id="Unit6">
 	<h2>Unit 6</h2>
 	<p>
-		...
+		The reading assignment for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			<a href="https://arxiv.org/ftp/cs/papers/0308/0308031.pdf">0308031.pdf</a>
+		</li>
+		<li>
+			<a href="https://my.uopeople.edu/pluginfile.php/389237/mod_book/chapter/179471/neural-networks-ebook.pdf">neural-networks-ebook.pdf</a>
+		</li>
+		<li>
+			<a href="http://home.thep.lu.se/pub/Preprints/91/lu_tp_91_23.pdf">lu_tp_91_23.pdf</a>
+		</li>
+	</ul>
+	<p>
+		I&apos;ve found a way to squeeze just a little more time for coursework out of my week.
+		I really hate to skip my weekly <abbr title="Linux User Group">LUG</abbr> meetings, though I did have to skip one this term to fit in a heavy study session.
+		They&apos;re the only socialising I&apos;ve managed to fit into my week.
+		I&apos;m just so busy.
+		I can&apos;t get much studying done at the meetings either, as I don&apos;t study well with people around.
+		However, I can get the grading for the week done during those meetings.
+		That way, I don&apos;t have to grade when I&apos;m at home, leaving me more time to study.
+		I think I&apos;m going to do that during future terms, too.
+		There&apos;s no real reason not to, and allows me to be productive without having to give up my meetings.
+	</p>
+	<p>
+		It seems that in my own solution for last week, I jumped through unnecessary hoops.
+		The return value for the prediction function listed probabilities instead of actual guesses, so I used the <code>round()</code> function to round the probabilities into hard predictions.
+		It seems the <code>table()</code> function would have done something with the probabilities to make them usable on its own.
+		One student didn&apos;t answer the final question, which was one of the main ones we were grading on, and another submitted a partial R session that didn&apos;t accomplish anything.
+	</p>
+	<p>
+		As I was loading the pages for the discussion assignment and unit assignment to see what my tasks were for the week, the first thing I noticed was a link to a Basic Prop example below the main unit links.
+		My heart sank.
+		You may remember that in <a href="#Unit1">Unit 1</a>, I&apos;d hoped to avoid downloading and running this nasty bit of software due to licensing issues.
+		Reading over the unit assignment confirmed my suspicion though.
+		We&apos;ve got to use this noxious <abbr title="Java Archive">JAR</abbr> to get our work done.
+		There doesn&apos;t seem to be a way around it.
+	</p>
+	<p>
+		This is the third week in a row in which our initial discussion post has had a word count cap placed on it.
+		Last week, I put my post into LibreOffice Writer and found my word count to be below the maximum, but when I posted it, the university&apos;s word counter counted it to be above.
+		It was counting words that weren&apos;t there, so I had to delete the post, rework it, and repost it.
+		I had my suspicions as to what it was doing, and I tested that this week.
+		It&apos;s counting the markup used for formatting.
+		For example, that means that each paragraph costs me two words.
+		If I take three paragraphs and combine them into one, that saves me four words, because there are two less paragraphs.
+		Hilariously, I could use this to artificially inflate my word count.
+		I could make a post that&apos;s clearly only got a single word get counted as having thousands of words.
+		However, that&apos;s not at all useful.
+		It&apos;d be much nicer to be able to get words dropped from the count, but I don&apos;t yet have a way to do that arbitrarily.
+		There are a few hacks I could do to drop the word count slightly, but it wouldn&apos;t be enough to really help me cover topics with the level of detail they deserve.
+		While the word counter likes to cleat me, I don&apos;t have a good way to cheat the word counter back.
+		That means that again, doing extra research, which would add more references and thus eats my word count, does more harm than good.
+	</p>
+	<p>
+		It was interesting to read that a node in a neural network may itself contain a neural network.
+		I&apos;ve got to wonder how such recursion occurs.
+		Does the programmer set up the nodes to contain neural networks from the beginning, to make each node better at learning?
+		Or does the learning process sometimes involve switching the algorithm used by a given node into a neural network?
+		The reading material doesn&apos;t really cover this.
+		Bidirectional node connections are also something I&apos;d love to see some elaboration upon.
+		If the flow of the data isn&apos;t unidirectional, how does it terminate instead of looping indefinitely?
+	</p>
+	<p>
+		Later, the material talked about a network using only zeros and ones as data being passed between neurons and only boolean logic within the neurons.
+		That seems like a bad use of a neural network.
+		Why not use logic gates instead, which are designed exactly for that purpose?
+	</p>
+	<p>
+		I&apos;m unclear as to what the activation function is.
+		On the surface, it looks like the activation determines whether a given neuron outputs a value at all.
+		That makes no sense though.
+		The output is fed into other neurons alongside output of other neurons, which means there <strong>*always*</strong> has o be output.
+		So if the neuron is &quot;inactive&quot;, does it just output a zero, regardless of the value that would otherwise be provided by the output function?
+	</p>
+	<p>
+		I&apos;m also not clear on how the back-propagation algorithm works.
+		The material talked about how to determine how much error is caused by the weights assigned each input, but not how to use that information to calculate better weights.
+		I didn&apos;t understand the mathematics presented in the other reading material either, and as that document was almost entirely formulas and explanations I didn&apos;t get about the formulas, I didn&apos;t understand what that document was talking about.
+		It would have really helped to see some programming code instead of equations using unfamiliar symbols.
+	</p>
+	<p>
+		The idea of normalising data once again came up.
+		Last time, the issue was that data with a small scale would dominate data with a large scale when searching for neighbours in a k-nearest neighbours search.
+		Put simply, if you&apos;ve got neighbours placed centimetres apart in the north/south direction but kilometres apart in the east/west direction, you&apos;re going to have bands of neighbours at the same latitude, while longitude will be effectively ignored.
+		This time, data with large scales has a similar effect over data with smaller scales in a learning context, though I&apos;m having trouble actually visualising why.
+		I imagine it&apos;s likely for similar reasons as with a k-nearest neighbours search, but I&apos;m not sure.
+		Actually, on second thought, it probably has more to do with attempts to minimise error.
+		Data with a higher scale would output a higher error when the data&apos;s even a lower percentage off from what it is predicted to be.
+	</p>
+	<p>
+		Another key point was the use of the regularisation parameter to avoid over- or under-fitting the model to the data.
+		I&apos;ve seen no way to make use of this in Basic Prop though, which is really too bad.
+		The assignment has us working with very specific data under the context that we&apos;ll never see data that isn&apos;t in the set.
+		This is <strong>*exactly*</strong> the sort of situation in which intentionally over-fitting the data would really come in handy.
+		The book says the problem with over-fitting the model is that the network will learn the imperfections in the data set as well as the actual trends, but for the unit assignment, there <strong>*are no*</strong> imperfections in the data set, because the data set isn&apos;t a collection of observations, but rather, the very definition of what we&apos;re looking for.
+		We&apos;re not looking at handwriting, in which there are infinite examples of a representation of each digit.
+		We&apos;re looking at a seven-segment digital display in which only seventeen of the possible one hundred twenty-eight combinations will ever be seen.
+	</p>
+	<p>
+		Cross-validation sounded like it might help when I started attempting to complete the unit assignment, but after reading about what it actually is, I saw how detrimental it would be to our use case.
+		It splits the data and uses only part of it for the training, while the other part for error reduction.
+		That works when your data consists of samples, but not so much when your data is a complete definition of the problem.
+		You need the full set for training if you&apos;ve got the definition of the problem right there.
+		Otherwise, you&apos;re not using part of the rules of the situation in the training phase, so those rules don&apos;t get learnt.
+		That must be why when I used cross-validation, it actually increased my error rate.
+	</p>
+	<p>
+		From what the third paper talks about, it sounds like knowledge and memories are encoded as neuron strengths, which I guess makes about as much sense as anything else.
+		I&apos;m not sure how learning takes place though.
+		Neurons that transmit more often become stronger and ones that transmit less frequently become weaker, and we can easily see a parallel to muscle strength, but what even determines which neurons fire in the first place?
+	</p>
+	<p>
+		I ended up going into the assignment pretty much blind.
+		The first part of the assignment was simply formatting the case data in a way the software would understand it.
+		It was busy work with no actual challenge.
+		I&apos;d say that the data file should have been just presented as a part of the assignment, but there were actually a couple hidden reasons why we needed to do this ourselves.
+		First, it shows we understand the data format.
+		It&apos;s not a complicated format, but formatting it ourselves lets us show that we&apos;re not completely incompetent.
+		Second, we were given <abbr title="American Standard Code for Information Interchange">ASCII</abbr> values, but we were given them in decimal.
+		And we needed them in binary.
+		Again, translating them by hand is incredibly simple, though tedious.
+		But doing it lets us prove we even understand how base translations work.
+		That said, I just pulled out my calculator.
+		<a href="apt:galculator">Galculator</a> has the option to display answers in binary, octal, decimal, and hexadecimal.
+		So all you have to do is put it in binary output mode, then ask it, for example, what <code>72</code> is equal to.
+		No equation needed, just ask it to operate on a single number.
+	</p>
+	<p>
+		Basic Prop is obnoxious to work with.
+		Every time you open the dialogue to edit the the network layout, the number of outputs gets reset to zero.
+		So if you don&apos;t remember to set it back to seven <strong>*every single time*</strong>, you have to go back and fix that afterwards.
+		Also, you can&apos;t leave the network layout dialogue open and run the simulation, even though that dialogue is in a separate window.
+		Until you close it, the main window stops responding.
+		So not only are you not able to leave it open to tweak things little by little, but you also aren&apos;t able to leave it open to stop the output layer from resetting to zero.
+		And finally, every time you modify the network layout, the pattern file unloads, even if you remember to fix the output so the pattern is compatible with both your old and new layouts.
+		So you&apos;ve got to open the file load dialogue time after time and reload the pattern.
+		There doesn&apos;t seem to be a way around that.
+	</p>
+	<p>
+		I couldn&apos;t seem to get my error down to zero, which was frustrating, as I know I could do it if I were using logic gates instead of a neural network.
+		I might even be able to do I with a neural network if I could cut some of the connections and/or adjust the weights by hand, though no guarantees on that.
+		I didn&apos;t even have to work with any of the equations that confused me, yet I couldn&apos;t get my network to produce accurate enough results.
+		Eventually, I found that if I used two hidden layers instead of one, the output stopped resetting, so I ended up using two hidden layers in all my experiments, not knowing if that was helpful or harmful to my solution, just to make progress more feasible.
+		I went back later and tried all one-layer solutions, but no solution I could five yielded an error rate under <code>0.05</code> like the assignment wanted.
+		The best I managed to do was get a solution with an error rate under <code>0.25</code>, which is honestly quite terrible, and even then, my solution only sometimes produced an error rate that low.
+	</p>
+	<p>
+		Unable to produce an even somewhat-acceptable solution using the required software, I started looking at how I&apos;d produce my desired result using logic gates.
+		I came to the conclusion that I&apos;d need a lot more than just two internal layers to get the proper solution from logic gates.
+		A logic gate solution is very much possible.
+		I have no doubt whatsoever about that.
+		However, it might only be possible as basically a series of &quot;if this exact bit pattern OR if this exact bit pattern OR ...&quot; statements.
+		That type of solution would be incredibly messy, and I can&apos;t even translate it into a working set of weights for this neural network that has a maximum of four layers, including the input and output layer.
+		I was hoping that if I could find a working set of weights, I could use it to try to reverse engineer a neural network setup that&apos;d reproduce my weights.
+		No such luck.
+		I tried to find exploitable patterns in the bit sequences too, but to no avail.
+		Even if I could find such bit pattens, I wouldn&apos;t know how to use them.
+		The simple fact is that while the neural network is fed bits, it&apos;s not outputting pure bits.
+		It&apos;s outputting numbers near <code>0</code> or <code>1</code>, but because these numbers are slightly off, they&apos;re going to produce error no matter what I do, unless I can find a way to set the weights such that the network always outputs integers.
+		And I&apos;m not even sure that&apos;s possible.
+		Eventually, I had to give up and settle for submitting my janky solution.
+		I&apos;ll just have to accept the bad grade, then take a look at the answer key when it&apos;s made available next week.
+	</p>
+	<p>
+		I was feeling pretty down on myself for being unable to get my solution into a reasonable error range.
+		As I went back through the steps to get the screenshots and console data I needed for my write-up though, I noticed that my network&apos;s guesses were within <code>0.2</code> of the correct solution.
+		So why was my average error so far off?
+		Well, it turned out that two of the guesses had two very bad data points each: a <code>0.49</code> and a <code>0.51</code>.
+		Those two outliers really messed up my stats.
+		Overall, my network performed rather decently, but I just couldn&apos;t get it to get <strong>*everything*</strong> perfect, and that was the problem.
+		Each and every answer though, if rounded to a <code>0</code> or <code>1</code>, was exactly correct.
+		That made me feel a lot better.
+		I&apos;ll still get a poor grade for this, but at least my network isn&apos;t nearly as far off as it looked at first.
 	</p>
 </section>
 <section id="Unit7">
