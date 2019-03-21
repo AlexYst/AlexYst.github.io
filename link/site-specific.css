@@ -1,6 +1,6 @@
 /*
 	<https://y.st./>
-	Copyright © 2015-2017 //y.st. <mailto:copyright@y.st>
+	Copyright © 2015-2017, 2019 Alex Yst <mailto:copyright@y.st>
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -246,4 +246,8 @@ div.cited-quotation blockquote {
 	border: none;
 	padding: 0em;
 	margin: 0em;
+}
+
+nav p a {
+	white-space: nowrap;
 }
