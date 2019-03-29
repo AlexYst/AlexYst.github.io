@@ -18,7 +18,7 @@ just fine.
 My PGP key ID is 0xE7464A03 and my PGP fingerprint is
 D135 B061 DBED 690B 479F E2E3 7D83 E1E5 E746 4A03.
 
-As of today, Wednesday, 2019 March 20,
+As of today, Thursday, 2019 March 28,
 I have not been legally required to withhold information.
 University of the People has issued me a take-down request for
 some pages on this website, but I have not been asked to keep
@@ -45,17 +45,17 @@ This canary has gone down in the past due to technical issues:
   '- Various life circumstances made website updates difficult.
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEE0TWwYdvtaQtHn+LjfYPh5edGSgMFAlySsFgACgkQfYPh5edG
-SgMJQw/+KgrSs6NofVeyDOf75NGRA9UN8M2fKlm6q5tiQNpQtXgcY4o3qzGOWw/R
-Y8PP7zgEggNfJ2gBmayH21SfAK2ms9EP1goLgSC4TxId8scTjKKJ0iaC/8bgJz1h
-8cDGrjfgc699jqpxQEvFZ1Bnr8eiWLdFkT3G0XkJadGnGY1KIfRL5bgzFOUD0GcD
-k3LJEmu3uaZdsdCs7TJEz9LGPyOp2nob0g3gOLBSNCvocYBzJfmJ9XVj23r723Va
-zkDgvkNsY/Kd3+40VDA7Ud10MkWb4ip+Q8gHPo1kipg/Gusn2v9DS4lnDXy/UKqw
-tq3JtNK4yEKIaEGw3UluMXc20whr1u67nfhOM8Lap6bJrNPWzyNEcnfBOGV0lomv
-hZQRyfvcqB1WNxWzbjFSAir1uKWQVlVBkyrB3tAbpLw/d4XFZDd0yk+HZHse2k/k
-OLJj8l52xr4EGSOYynKpIFKC2NTqYd1ERviouHIFalLeBWs7UC938E9OtcTrAZa7
-4x9Sdqg/5MlueFcRUZz+DXuwDkx+ogxYZ/rH6XmtdWKRSl2kmTwOVEzQTXvdH1f3
-RcsxLSeKiHN4CVFjG0fnJ0dsC/jJPzV2W70qq8oALY8biGzPfRW5ws3yx8S1gFi+
-Dd9x7vbAvpj1GKtmKMJez3/I9d6cuG6+dC7hEITzkkidYsIxqns=
-=kgqY
+iQIzBAEBCAAdFiEE0TWwYdvtaQtHn+LjfYPh5edGSgMFAlydVKQACgkQfYPh5edG
+SgOh/w//dLulFAEVtRsQAfAttN2kbiTv/RPJS1YpzKanWLYB9j6zXeRlwNcFVk3T
+MBPYh3loLrtdqGtqp0nhlF70tgZL0/ww38+aKf5M+RWxvuZ8BwAaTqOrjNaDNLwv
+mUKZk9miUveqQeaQPVP5mG/ikD70igvQR79jzneAEe1SuLKJ2C/dljP3gsPDc/yl
+cKL0ZeixN1E4vNVJr2BIiwmAd8WKaMWz7ccKoSnUcx+G9d4zfxjhiw84nzAgNfrR
+pVXSP3z1txb1YHjpwCDBsop2eBqmNeAimzwfX95EBIxl+FeIgI/d0m/e8LuYSF9R
+tGlnw/Cw5XSHeHsRnFEC1ySuDPzSEm+cWl4qm9WxETDOCO18xJsWsURyeCKzIbQm
+seTPxHXpVC60lfExEAX22D8qvUz4uNjnjoNfCNXko0LEqYxMR4rUTgBCWlKCqYbG
+ONFsgHvq4vOxmFuxM6g/T7LBrNEqokpopUx+EhERKCwSbJGDjqdxWYrbI87p9LXD
+Ovmfobu3llAsuksT3jev2w6YuWvR2iy5qMYSft2PZoNb4OpR2s3R53StcuU3mFsC
+WmSC9OMR9q4bQNGyoSOVU48AgBiK4xqfsrJsL0v2t8HK7IWxqwNEVopXmzOVxe7F
+5Cg287uAoLuYFUF/2kbVB5KjaksnRd1Q5gAnBmthUOdGv8adl/U=
+=jBuc
 -----END PGP SIGNATURE-----

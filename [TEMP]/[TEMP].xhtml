@@ -40,669 +40,796 @@
 </nav>
 		<header>
 			<h1>Learning Journal</h1>
-			<p>CS 3305: Web Programming 2</p>
+			<p>CS 4407: Data Mining and Machine Learning</p>
 		</header>
 <section id="Unit1">
 	<h2>Unit 1</h2>
 	<p>
-		The reading assignment for the week included the following:
+		This week&apos;s reading assignment was the following:
 	</p>
 	<ul>
 		<li>
-			<a href="https://my.uopeople.edu/pluginfile.php/388450/mod_book/chapter/178824/Web1V2Diffs.pdf">Web1V2Diffs.pdf</a>
+			Chapters one through seven of <a href="https://cran.r-project.org/doc/manuals/R-intro.html">R-intro.pdf</a>
 		</li>
 		<li>
-			<a href="https://static.zend.com/topics/php_leads_web2_0.pdf">Microsoft Word - WP_WP_Web2.0_092606.doc - php_leads_web2_0.pdf</a>
+			<a href="https://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf">Driver.dvi - ISLR First Printing.pdf</a>
 		</li>
 		<li>
-			<a href="https://tomassetti.me/difference-between-compiler-interpreter/">The difference between a compiler and an interpreter</a>
+			<a href="http://faculty.wiu.edu/C-Amaravadi/is524/res/dm_c_ov.pdf">Forbidden</a>
 		</li>
 		<li>
-			<a href="https://w3techs.com/technologies/overview/programming_language/all">Usage Statistics and Market Share of Server-side Programming Languages for Websites, February 2019</a>
+			<a href="http://twocrows.com/intro-dm.pdf">3rd ed Intro to DM - body - intro-dm.pdf</a>
 		</li>
 	</ul>
 	<p>
-		We&apos;re discussing &quot;Web 2.0&quot; this week.
-		&quot;Web 2.0&quot; is just a buzzword, and isn&apos;t actually a term that&apos;s worth much.
-		Most of the hype around it goes toward inaccessible sites designed to cater only to users using the Web via very specific types of Web browsers.
-		For example, not screen readers, and not Web browsers with no JavaScript enabled.
-		It&apos;s a term I doubt I&apos;ll ever put any stock into.
-		But for class, I&apos;ll do what I can to try to meet the assignment objectives revolving around it.
+		It looks like we&apos;re using R this term.
+		My first task for the week would be to install it, but I still have R installed from a past term, when I took <a href="/en/coursework/MATH1280/" title="Introduction to Statistics">MATH 1280</a>.
+		So that&apos;s one step I can skip this term.
+		We&apos;re also asked to install Basic Prop.
+		Due to licensing issues, I&apos;d rather avoid installing that if at all possible, so I&apos;ll put that off for now.
+		If it&apos;s legitimately needed in a future week, I&apos;ll install it at that point, and uninstall it at the end of the term.
 	</p>
 	<p>
-		The first student besides me to post didn&apos;t seem to know what they were talking about, claiming <code>POST</code>, <code>PUT</code>, <code>GET</code>, and <code>DELETE</code> requests to be a new feature added in Web 2.0.
-		These request types have been around since the beginning of the Web though, or at least near the beginning.
-		And <code>PUT</code> and <code>DELETE</code> requests pretty much fell out of use when or before Web 2.0 was a thing.
-		To further show their lack of understanding of the Web, they included <abbr title="Voice over Internet Protocol">VoIP</abbr> as something built on top of Web 2.0, even though <abbr title="Voice over Internet Protocol">VoIP</abbr> doesn&apos;t run on the Web at all.
-		I know my own initial post was rushed and didn&apos;t include everything it should have.
-		I have a schedule to keep, and I tend to only have two or three hours to compose my first post of the term (it&apos;s only the first of the term, not the first of each unit).
-		That includes reading the material needed to make my posts coherent.
-		There&apos;s also the fact that I deny the very existence of the thing we&apos;re discussing this week.
-		But even my post was more coherent than that.
-		I feel like this is going to be a long term.
-		The next student likewise seemed to be confused about the difference between the Internet and the Web.
-		We&apos;re supposed to be third- and fourth-year information technology students here.
-		We should know what the Internet and Web are, and we should know that there&apos;s more to the Internet than just the Web.
-		It makes me feel sad.
+		Next, I glanced over the reading assignment.
+		That second <abbr title="Portable Document Format">PDF</abbr> we&apos;re supposed to read is 441 pages long!
+		How are we supposed to fit <strong>*that*</strong> into our week!?
+		We&apos;ve got two course going at once, that <abbr title="Portable Document Format">PDF</abbr> isn&apos;t the only reading material for the week even in just this course, and of course most of us have our day jobs.
+		That is just ridiculous.
+		I ended up even skipping my <abbr title="Linux User Group">LUG</abbr> meeting this week to try to get as much time for reading as I could, even though it&apos;s pretty much the only social interaction I manage to get in each week.
+		Next week will be easier though, as I have the week off from work to recover from surgery.
+		I&apos;ll be stuck at home, mainly only working on coursework and researching my next procedure.
 	</p>
 	<p>
-		The reading assignment got us off on the right track on the topic for the week.
-		The very first sentence tells us that &quot;Web 2.0&quot; is a buzzword, as I mentioned above.
-		It then goes on to tell us that it&apos;s mostly a marketing term, which again, tells us it&apos;s mostly hype and has very little substance and/or meaning.
-		However, it then goes on to say they don&apos;t know of any technical comparison between this &quot;Web 2.0&quot; and &quot;Web 1.0&quot;.
-		If you&apos;re aware of what buzzwords and marketing terms are, you know very well that a technical comparison is very likely impossible.
-		You can&apos;t compare vague ideas on a technical level.
-		It just doesn&apos;t work.
-		You need something more concrete for a technical comparison.
-		With vague ideas, the best you can hope for is a superficial comparison.
-		It then goes on to tell us that precise definitions of &quot;Web 2.0&quot; and &quot;Web 1.0&quot; can&apos;t be found, which again, is one of the key characteristics of buzzwords and marketing terms.
-		Words are much less effective at building undue hype around the mundane when you give them precise definitions.
+		The document on R mentions that R includes the programming language S, by which it means it includes an interpreter for said language.
+		That&apos;s interesting.
+		I was told R was a replacement for S, so I assumed R&apos;s language was only similar to S.
+		I didn&apos;t realise R is (or more accurately, contains) an actual S interpreter.
 	</p>
 	<p>
-		One good point made by the first document of the reading assignment is that in &quot;Web 1.0&quot;, there are few content creators.
-		The reason for this is that you have to work with the code and build your pages from the ground up.
-		That&apos;s actually one of the reasons <a href="https://y.st./en/">my own website</a> fits so nicely into the category of &quot;Web 1.0&quot;.
-		I <strong>*like*</strong> building my pages from the ground up.
-		I <strong>*enjoy*</strong> getting to structure my pages as I see fit.
-		I don&apos;t like being forced to build within the strict confines of whatever platform I&apos;m working with.
-		For example, take WordPress.
-		It allows non-technical users to build websites without the need for technical knowledge.
-		It&apos;s awesome!
-		It&apos;s opening the doors of the Web to a large group of people that otherwise wouldn&apos;t get to have their own websites.
-		However, in exchange for that, those users aren&apos;t <strong>*able*</strong> to use the large variety of options open to those of us that do write our own pages.
-		In &quot;Web 2.0&quot;, the doors are open to a greater audience, so there&apos;s a much larger number of creators.
+		Next, the book covers how to start R from the command line.
+		Previously, I was starting R from the applications menu.
+		Oddly, the command for starting R is <code>R</code>.
+		I just tested that too, and it works.
+		Command names are of course case-sensitive, and I&apos;ve never run into any that use upper-case letters.
+		I also tried running <code>r</code>, which predictably resulted in the command not being found.
 	</p>
 	<p>
-		It also touches upon the fact that social networks do not allow messages to be transmitted between one another usually, so when a user is deciding which social network to join, they&apos;re likely to choose the one more of their friends are on in order to facilitate communication.
-		This is exactly the sort of monopoly social networks are generally trying to create.
-		They don&apos;t <strong>*want*</strong> to allow users to receive messages from off-network users, because they don&apos;t have all the data they want on off-network users.
-		Most modern social networks sell your data to advertisers, so they want as much data on you as they can get.
-		You&apos;re not the social networks&apos; customer.
-		That&apos;s why you don&apos;t tent to need to pay to join and use a social network.
-		Instead, you are the social networks&apos; <strong>*product*</strong>, which they sell to their real customers, the advertisers.
-		At least three federated social networks exist, though they haven&apos;t gained enough popularity to come even close to overthrowing the social giants that abuse their users.
-		These networks are diaspora*, Pump.io, and <abbr title="GNU&apos;s Not Unix">GNU</abbr> Social.
-		On any of these platforms, you can communicate with other users on servers completely unaffiliated with the administrator of the server your information is on.
-		In fact, you can even run your own server and keep your data in your own hands!
-		However, there&apos;s still no communication between servers running different software, though.
-		For example, a diaspora* server won&apos;t let you communicate with someone on a Pump.io server.
+		The <code>help()</code> function is nice.
+		Up to now, I&apos;ve only known the shorter <code>?</code> notation, which to be honest, looks pretty awkward.
 	</p>
 	<p>
-		Another important aspect of &quot;Web 2.0&quot; is that it allows relationships between user objects.
-		For example, users can be in a group or can be friends.
-		Some &quot;Web 2.0&quot; websites also have a public <abbr title="application programming interface">API</abbr>.
-		This is used to allow other sites to tie into the main social site, but typically isn&apos;t used to tie main social network sites to each other for the monopolistic reasons I mentioned above.
+		R&apos;s decision to allow different characters in symbol names based on system locale seems idiotic.
+		It prevents compatibility between a script written in one region and a system running in another.
+		You can say it allows language support, but it really doesn&apos;t.
+		For example, let&apos;s say you wanted a French user to be able to use accented characters in variable names.
+		The proper way to support that is to allow the accented characters used in French to be used in symbol names regardless of locale.
+		French users then get their accented characters and users outside France are able to run the French R scripts.
+		I can&apos;t say <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> is a very clean language or should be used as an example in hardly any context, but it does get this particular feature right.
+		It allows only certain characters from the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range of Unicode to appear in symbol names, but it allows <strong>*all*</strong> characters outside the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range.
+		All characters used for basic language syntax are within the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range, so there&apos;s no reason to go through the non-<abbr title="American Standard Code for Information Interchange">ASCII</abbr> sections of Unicode to decide which characters should and should not be allowed in symbol names.
+		Of course, going through those sections and creating such a list would still be fine, provided the list of valid symbol characters applied to everyone regardless of system settings.
 	</p>
 	<p>
-		&quot;user-centric&quot; views presented by &quot;Web 2.0&quot; websites also presents a hurdle to usability.
-		The article mentions this in terms of Web-crawling.
-		A spider can&apos;t very well index pages that show up differently to each user, and much &quot;Web 2.0&quot; content is locked away behind login walls.
-		It&apos;s worth adding though that this problem is much bigger than just spiders.
-		It&apos;s true that if spiders can&apos;t properly crawl a site, that site&apos;s content won&apos;t show up in search engines.
-		However, links provided by users won&apos;t even work correctly, as when presented to other people, those pages may not show the same content or may not display content at all!
-		&quot;Web 2.0&quot; is, at times, exceedingly bad at allowing sharing of content, which is ironic, seeing as sharing content in in fact one of its main goals.
+		I didn&apos;t know that R offers the option to remove objects from the current environment.
+		That sounds especially useful if you&apos;re planning to save the environment for later use.
+		You might generate several intermediate variables as you calculate the variables you actually care about, and you might not want to waste storage space on the intermediate variables.
 	</p>
 	<p>
-		I was glad to see that the paper attributed the desire for site stickiness to maximising ad revenue.
-		This is a key difference between &quot;Web 2.0&quot; and &quot;Web 1.0&quot;, too.
-		&quot;Web 1.0&quot; sites tend to try to present information on a single thing and do it well.
-		They link to external sites as is appropriate when mentioning other subjects.
-		However, &quot;Web 2.0&quot; sites instead try to keep everything on the same site, both to display ads on these pages that would otherwise be links to other sites that make those other sites ad money, and to noxiously track you to find what you&apos;re interested and how they can serve you to their customers.
-		That said, while &quot;Web 2.0&quot; websites have a wider range of content than a single &quot;Web 1.0&quot; website would, I&apos;d argue that as jacks of all trades, &quot;Web 2.0&quot; websites tend to be masters of none.
-		They pour all their resources into trying to keep everyone on the same site that they don&apos;t have enough resources to procure the best content for any of their subjects.
-		&quot;Web 2.0&quot; websites also tend to get most of their content from laymen, who know little to nothing about the content they write about.
-		There are a few experts, sure, but they get drowned out by the uneducated masses.
-		You can&apos;t find good information easily in &quot;Web 2.0&quot;.
+		The book says that when working on a UNIX system, files with names starting with a full stop are hidden, but claims on Windows and OS X, these files are only hidden by default.
+		They&apos;re only hidden by default on UNIX and UNIX-like systems as well though.
+		For example, I have my Debian system configured to display these files, as I don&apos;t like files being hidden from me.
+		I like to see the truth about what&apos;s in my directories.
 	</p>
 	<p>
-		The article also mentioned that most &quot;Web 2.0&quot; websites each have their own inboxes, and send you a real email when you get a message through their mail system.
-		Personally, I find this activating.
-		Most of these websites don&apos;t include the body of the message in the email, so you have no idea of knowing what it says or even just what it&apos;s about unless you log into the site.
-		It makes messaging cumbersome.
-		I don&apos;t want to check my email just to find I need to check some other messaging system.
-		I understand not allowing you to respond without logging in, but there&apos;s no valid reason not to include the message in the email body if they&apos;re going to send an email alert anyway.
-		When sites do that, I tend to not check it right away, then forget the message is waiting for me.
-		It can be months before I read the message if it&apos;s not sent properly through email like it should be.
+		The <code>assign()</code> function is interesting.
+		I&apos;m not sure what the value of it is over the normal assignment operator though.
+		It was also interesting to see that there are two arrow-looking assignment operators, one for assigning to a variable on the left and the other for assigning to one on the right.
+		I encountered the <code>=</code> assignment operator in <a href="/en/coursework/MATH1280/" title="Introduction to Statistics">MATH 1280</a>, though it was never explained to us, and just sort of came up in some of the later assignments.
+		Apparently it doesn&apos;t work in all contexts that <code>&lt;-</code> works though, according to what I read this week, so I wonder in what cases it doesn&apos;t work.
 	</p>
 	<p>
-		Surprisingly, the article did fine one aspect to some &quot;Web 2.0&quot; websites.
-		Sort of.
-		It mentions that they know the upper bound for traffic because they know how many registered users they have.
-		A &quot;Web 1.0&quot; website doesn&apos;t have that luxury, and can experience unexpected surges of traffic.
-		However, this very much comes at a cost.
-		Unregistered users aren&apos;t able to use the site at all.
-		When you look at why this benefit exists, you realise it&apos;s not actually doing more good than harm.
+		The recycling system for vector-based calculations is new to me.
+		I&apos;ve only worked with either vectors of the same length or vectors along with constants.
+		Different-length vectors were beyond the scope of the statistical work I did before.
 	</p>
 	<p>
-		The second article made a good point about many &quot;Web 2.0&quot; websites trying to behave as desktop applications.
-		That&apos;s one of the reasons I think it&apos;s so idiotic for users to install portal applications for a company&apos;s services.
-		Why install an application for ordering pizza from your favourite pizza chain when you could instead just bookmark their website, which is designed to act like an installed application anyway?
-		The website also provides better cross-platform support, at least as long as the company running it isn&apos;t moronically sniffing user-agents and serving different content to different Web browsers as some companies like to do.
-		This article also mentions that there&apos;s no need for users to update the application when it&apos;s not an application, but a website.
-		This is also something to consider.
+		Based on some of the examples given in the book, we can deduce that functions in R return by reference, at least in many cases.
+		You can actually assign a new value to the output of the <code>length()</code> and <code>attr()</code> functions, for example.
+		It&apos;s an unintuitive way to get the job done, but it looks like no other option is provided in some cases.
+		It&apos;s just something you&apos;ve got to get used to.
 	</p>
 	<p>
-		Next, I read the page on the differences between interpreters and compilers.
-		I was already well-aware of the differences, but the page provided a nice review.
-		The main thing to note is that an interpreter allows you to run uncompiled source code, while a compiler compiles the source code to run later on a specific processor.
-		This means that the interpreter allows you to distribute the same program (the source code) and run it anywhere that has the right interpreter, but the interpreter does need to be installed as a separate program or programs on each and every machine that needs to run your source code.
-		On the other hand, the compiled program doesn&apos;t need the interpreter to be installed, but in exchange, the code has to be compiled for a specific processor type and operating system.
-		You can&apos;t just distribute a file that&apos;ll run on all platforms.
-		Also, obviously, it&apos;s easier to debug an interpreted script than a compiled executable because you don&apos;t have to recompile each time you make a change, but it&apos;s slower for your users to run an interpreted script than a compiled executable.
+		R&apos;s concept of an array is very different than the arrays we know from other languages.
+		The arrays from other languages are more-comparable to R&apos;s vectors.
+		An array in R is sort of a cross between a one-dimensional vector and an <var>x</var>-dimensional vector.
+		It seems to store values in one long dimension, but certain functions treat the array as having <var>x</var> dimensions, where <code>var</code> is a positive integer (perhaps even just one).
+		Arrays can also be indexed using their <code>x</code>-dimensional positions.
+		Remember to index from one though, as R counter-intuitively does not index from zero as a normal language does.
 	</p>
 	<p>
-		The final page we were asked to read simply listed the percentages of server-side language use on sampled sites.
-		Unsurprisingly, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> took the lead by a wide margin.
-		Disappointingly, ASP.NET still made it into second place.
-		Admittedly, I&apos;m biased against Microsoft, so I would have liked to see their language, ASP.NET, much further down on the list.
+		The fact that values in a list have both numeric and string keys is a bit odd.
+		I mean, I&apos;ve seen mixed array key types before, but in this case, the string keys refer to the same values as the integer keys.
+		Two keys refer to the same value.
+		That said, the use of string keys is optional, so only some or even none of the values might have a string key associated with them, though all values in the list have a numeric key.
+		Again, remember that R doesn&apos;t index from zero like normal languages do.
+		The abbreviated names option of lists was surprising to read about as well.
+		It seems useful for when you&apos;re working with R objects in an interactive session.
+		However, it seems like a terribly confusing thing to put in a script.
+		I&apos;d recommend that any code saved for later use use the full names of the keys.
 	</p>
+	<p>
+		The next document on my list was the one that was 441 pages long.
+		I ended up not being able to finish reading that one in time to include my notes on it in this learning journal submission.
+		I&apos;ll be stuck at home for a week though starting tomorrow, as I&apos;ll be recovering from surgery, so I&apos;ll finish reading it then and include my thoughts on it in next week&apos;s learning journal submission.
+	</p>
+	<p>
+		The next page on the reading list blocked me.
+		I wasn&apos;t able to access it at all.
+	</p>
+	<img src="/img/CC_BY-SA_4.0/y.st./coursework/CS4407/forbidden.png" alt="Forbidden" class="framed-centred-image" width="476" height="222"/>
+	<p>
+		Finally, the last of the assigned reading material was on data mining.
+		Data mining can be used in positive ways, but when I think of the term, I tend to think of how tech giants mine users for data to sell to their customers, the advertisers.
+		We&apos;re just the companies&apos; product, and that&apos;s not okay.
+	</p>
+	<p>
+		The first thing to really stand out to me was that the document talked about how you must build a predictive model using the data.
+		This seems like the perfect sort of task for machine learning.
+		Then again, maybe I&apos;m noticing that even though I hadn&apos;t noticed it before because I&apos;m in a course on machine learning, so machine learning is on my mind more than it&apos;s ever been.
+	</p>
+	<p>
+		Next, it discussed how patterns don&apos;t always depict a direct cause-and-effect relationship, but merely a correlation.
+		Two behaviours might both be effects of some other, unseen cause.
+		You&apos;ve also got to weigh costs and benefits of different models.
+		Some models are faster, but others are more accurate.
+		Do you need quick answers, or do you need to act with precision?
+	</p>
+	<p>
+		It&apos;s interesting to see how On-Line Analytical Processing can be used to confirm or deny relationships between variables.
+		Queries can be run against the database to test a hypothesis, and if it&apos;s wrong, a new hypothesis can be searched for.
+		This isn&apos;t like data mining though, as data mining instead uncovers patterns for you.
+	</p>
+	<p>
+		One major area data mining seems to be good for is acquiring and retaining customers.
+		Unlike the data mining I traditionally think about, this use of data mining doesnt&apos; sell your information to someone else, but instead uses it in-house.
+		You&apos;re not the product, but the customer, as you should be.
+		It&apos;s still creepy to think about this data being kept about you, don&apos;t get me wrong.
+		But at least the people holding the data about you are the ones you gave the data to.
+		When you buy something, you know the company you bought from knows who you are, when you bought it, and what you bought.
+		You give them that info.
+		It&apos;s only if and when they turn around and sell that information to someone else that people you have no idea even know about you suddenly seem to know everything about you.
+		Detecting fraudulent purchases on payment cards is another creepy, yet useful application of data mining.
+		Again, you know your credit/debit card servicer knows all your purchases, and you&apos;ve chose to give them that information.
+		It&apos;s creepy to think they&apos;re keeping all those logs on you and building a profile about you, but the value such a profile provides you as the customer is very likely worth it.
+	</p>
+	<p>
+		Some medical uses for data mining are brought up, but if these are used in the United States, I don&apos;t trust their validity.
+		The <abbr title="United States of America">US</abbr> medical industry is known to shoot down working products in favour of products that make more money.
+		You expect that from a departments store or factory, but in the medical industry, you assume the goal is to aid in your health.
+		Sadly, this isn&apos;t the case, as the corruption in that industry&apos;s gotten pretty bad.
+		It&apos;s especially bad with pharmaceuticals.
+		Don&apos;t get me wrong, I go to the doctor too when I need something.
+		In fact, I have a surgery scheduled for the beginning of next week.
+		I shy away from their drugs though, if I can at all get away with it.
+	</p>
+	<p>
+		Neural networks are much less complex than I imagined.
+		They&apos;ve only got three layers, ans it&apos;s easy to see the relationship each node has with each other.
+		I was expecting something closer to brain-level complexity, with a name like that.
+		Or at least, the simpler neural networks don&apos;t seem too complex.
+		A neural network can have more than just the three layers if there&apos;s more than one hidden layer, which raises the level of complexity.
+		The concept of over-fitting the network to the data is an issue I wouldn&apos;t&apos;ve thought of.
+		It makes perfect sense that the network would eventually be a perfect fit for the specific data set, it&apos;s just not something that would have come to mind on its own.
+	</p>
+	<p>
+		Decision trees are simple to follow and understand, though I&apos;m not clear on how they can be generated via data mining.
+		Aside from the obvious solution of brute force, of course.
+		Like the article says though, they&apos;re good at explaining what they&apos;re doing, unlike neural networks.
+		Like neural networks, there&apos;s the possibility of over-fitting the tree to a particular data set, so you need to either prune the tree or limit its growth.
+	</p>
+	<p>
+		Rule induction seems promising.
+		I&apos;m not sure how it can be performed in an automated way, but I think it should be possible.
+		Again, I guess brute force can be used to find the weights after the basic rules have been established, and rule-establishment is simply a patter of pattern recognition.
+		k-nearest neighbour seems reasonable, but like the article says, you can see why it&apos;d take a lot of memory and computation to use.
+		I also worry that as new data points are added, the data might lose some accuracy.
+		Basically, you&apos;re inferring the data of new data points based on known-valid data points, then inferring even newer data points based on a mix of known-valid data points and inferred data points.
+	</p>
+	<p>
+		The assignment for the week was pretty time-consuming.
+		I had to use nearly an entire day off from work to prepare my submission for it.
+		I spent so much time compiling the list of commands I needed to run, taking screenshots, correcting for human error (both my own and that of the textbook&apos;s author), and formatting my submission that I didn&apos;t really get to analyse what I was actually telling the computer to do.
+		I learned some new things about R, but not as much as I could have if I wasn&apos;t so busy this week.
+		I should get a chance to review what I&apos;ve done next week though, when I have nothing but time.
+	</p>
+	<h3>Discussion post drafts</h3>
+	<p>
+		The learning journal instructions say to include the drafts of the discussion posts for the week, so here they are:
+	</p>
+	<blockquote>
+		<p>
+			Supervised learning is a style of machine learning in which the answer for each data point is known.
+			The algorithm can collect data and learn, but the predictions made by the machine afterwards can actually be tested for accuracy using the known answers (Edelstein, 1998).
+			Often, this is done by having the machine learn using a small data set, then running it on a large data set to see how accurately the machine gets the new data points correct.
+		</p>
+		<p>
+			On the other hand, with unsupervised learning, there are no known answers.
+			The machine is given a data set to work with, but the tester doesn&apos;t have an answer sheet to compare the machine&apos;s results against (Edelstein, 1998).
+			Unsupervised learning can be used to cluster data points, for example.
+			We might not know the answer before running the algorithm, but we can still kind of see if the computer got close to the right answer.
+		</p>
+		<p>
+			By the way, I&apos;m unclear on what to do for the assignment this week.
+			It says to follow the instructions given Section 2.3 of <a href="https://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf">Driver.dvi - ISLR First Printing.pdf</a>.
+			However, that section doesnt&apos; seem to give any instructions.
+			It has some example commands, but it also has their output.
+			If we submit our results of running those commands, it&apos;d pretty much just be a copy and paste of what the book already contains.
+			That doesn&apos;t seem like much of an assignment, so I can&apos;t help but feel there&apos;s a mistake and we&apos;re supposed to do something besides run those commands and provide their output.
+		</p>
+		<div class="APA_references">
+			<h3>References:</h3>
+			<p>
+				Edelstein, H. A. (1998). Introduction to data mining and knowledge discovery. Retrieved from <a href="http://twocrows.com/intro-dm.pdf"><code>http://twocrows.com/intro-dm.pdf</code></a>
+			</p>
+		</div>
+	</blockquote>
+	<blockquote>
+		<p>
+			I like your example with character recognition.
+			Like you said, character recognition is learned through supervised learning.
+			The character is shown to the computer as an image, and the character as a byte sequence is given to the computer as well.
+			Each image given to the computer will be slightly different, and it&apos;s up to the machine to decide what attributes of the image determine that a given character is, for example, a zero.
+			This is exactly the sort of task that would be impossible for unsupervised learning.
+		</p>
+		<p>
+			It sort of reminds me of how humans perform the same task.
+			As children, we&apos;re subjected to symbols we&apos;re told are the same set of 52 letters (sometimes more, if English isn&apos;t your native tongue), as well as several other useful characters such as digits and punctuation.
+			These characters come in all sorts of fonts though, and can be seen from all sorts of angles.
+			In school, the teachers probably try to keep the letters mostly consistent, but as we walked through stores, saw signs outside such as street signs and billboards, and even saw products within our own homes, all these fonts were everywhere.
+			And then there was handwriting, which differs form person to person.
+			We had to learn what attributes distinguished each character, and we use that our entire lives.
+		</p>
+		<p>
+			The assistant manager at my workplace has really elegant handwriting, and their upper-case &quot;E&quot;s are by far the fanciest I&apos;ve ever seen.
+			I&apos;m working on imitating them and adding them to my own handwriting, actually.
+			They look hardly at all like the &quot;E&quot;s I&apos;ve seen in any font ever, yet we all recognise them as &quot;E&quot;s without a second thought.
+			Dispute the loopiness of the letter, there&apos;s something about it that distinctly looks like an &quot;E&quot;s and not a backwards three.
+			Yet if you were to look at a backwards three, you&apos;d recognise it as such and not think it was an &quot;E&quot;s.
+			Their letter &quot;E&quot; retains whatever points we learned that distinguish it as a &quot;E&quot;.
+		</p>
+		<p>
+			Your data-clustering example helped me understand unsupervised learning much better.
+			I was thinking that with unsupervised learning, there was something we could set the computer about to learn without yet knowing the answer yet ourselves, and this actually trained the computer for something.
+			I think I understand now though that unsupervised learning isn&apos;t really learning at all though, or at least not the way we traditionally think about learning.
+			With supervised learning, we&apos;re basically training the computer.
+			We&apos;re teaching it.
+			The computer learns.
+			With unsupervised learning, the computer instead tries to make sense of the data we give it, but doesn&apos;t learn anything that it can apply later.
+			Unsupervised learning is less like learning and more like analysis.
+		</p>
+	</blockquote>
+	<blockquote>
+		<p>
+			It&apos;s worth noting too that in supervised learning, the known right answers aren&apos;t used exclusively to check the computer&apos;s results, but also to built the knowledge base used to predict values.
+			The computer is basically shown a number of data points and associated right answers.
+			Using that, the computer builds up information on what it means for an answer to be correct, which is what it used for later data points it encounters.
+			In other words, the known right answers are used both to train the computer and to check the results of the computer&apos;s training.
+		</p>
+		<p>
+			You make a good point that unsupervised learning is good for finding patterns.
+			That may be the key difference in the types of problems supervised and unsupervised learning deal with.
+			In supervised learning, the pattern is known and we&apos;re trying to teach that pattern to the computer so it can solve later problems.
+			In unsupervised learning, we don&apos;t know the pattern and we&apos;re asking the computer to try to find the pattern for us.
+		</p>
+	</blockquote>
+	<blockquote>
+		<p>
+			I like your example.
+			It illustrates well how supervised learning and unsupervised learning can sometimes be applied to the same problem.
+			I&apos;d thought the two to apply to mutually-exclusive types of problems, but with some clever thinking, you can often find alternative solutions using alternative tools.
+		</p>
+	</blockquote>
 </section>
 <section id="Unit2">
 	<h2>Unit 2</h2>
 	<p>
-		The reading assignments for the week are as follows:
+		The reading assignment for the week is as follows:
 	</p>
 	<ul>
 		<li>
-			<a href="https://secure.php.net/manual/en/install.php">PHP: Installation and Configuration - Manual</a>
+			<a href="https://christof-strauch.de/nosqldbs.pdf">NoSQL Databases - nosqldbs.pdf</a>
 		</li>
 		<li>
-			<a href="https://secure.php.net/manual/en/install.unix.apache2.php">PHP: Apache 2.x on Unix systems - Manual</a>
+			Chapters eight through fourteen of <a href="https://cran.r-project.org/doc/manuals/R-intro.html">An Introduction to R</a>
 		</li>
 		<li>
-			<a href="https://www.w3schools.com/php/default.asp">PHP 5 Tutorial</a>
+			<a href="https://my.uopeople.edu/brokenfile.php#/290113/user/draft/702716931/An%20Overview%20of%20Data%20Warehousing%20and%20OLAP%20Technology.pdf"><em>(No file data)</em></a>
+		</li>
+		<li>
+			<a href="https://my.uopeople.edu/pluginfile.php/389189/mod_book/chapter/179438/Data%20mining%20tools.pdf">WIDM-24_LR - Data mining tools.pdf</a>
+		</li>
+		<li>
+			<a href="https://thesai.org/Downloads/SpecialIssueNo3/Paper%204-A%20Comparison%20Study%20between%20Data%20Mining%20Tools%20over%20some%20Classification%20Methods.pdf">A Comparison Study between Data Mining Tools over some Classification Methods - Paper 4-A Comparison Study between Data Mining Tools over some Classification Methods.pdf</a>
+		</li>
+		<li>
+			<a href="http://gifi.stat.ucla.edu/janspubs/2009/reports/deleeuw_R_09a.pdf">deleeuw_R_09a.pdf</a>
+		</li>
+		<li>
+			<a href="http://leavcom.com/pdf/NoSQL.pdf">NoSQL.pdf</a>
+		</li>
+		<li>
+			<a href="http://melekirmak.com/trepon/images/260220121521451.pdf">Trepon Images 260220121521451 Pdf için bir şey bulunamadı</a>
+		</li>
+		<li>
+			<a href="http://web.ist.utl.pt/~ist13085/fcsh/sio/casos/BI-Tech2.pdf">Técnico Lisboa - Página Não Encontrada / Page Not Found</a>
 		</li>
 	</ul>
 	<p>
-		It seems this week is mostly about installing Web server software from source.
-		I find it a bit amusing that we&apos;ve waited until a 3000-level course to cover that.
-		It&apos;s a good skill to have.
-		I actually got my start on the Web on an OS X machine.
-		It came with Apache and <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> bundled and integrated with the operating system.
-		However, Apple hardware is expensive, so I had a really old matching that Apple didn&apos;t support with newer operating system versions.
-		Apache and <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> were really old.
-		Once I figured out how to even get my website accessible from outside my home, using my machine as the Web host, I started trying to build a cool and interactive website out of <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>.
+		One of these is a link to the university&apos;s own <code>/brokenfile.php</code> file.
+		It&apos;s not even a redirect from an actual broken file either, I checked.
+		The <abbr title="Uniform Resource Identifier">URI</abbr> provided in the hyperlink is that of the broken file error page.
+		An error page, by the way, that doesn&apos;t actually display any sort of error message.
+		It just refuses to send any data.
+		To add to that, two of the links are outdated and lead to <code>404</code> pages.
 	</p>
 	<p>
-		I invented pseudo-namespaces, fearing that if someone used my code, my function names would clash with theirs.
-		I basically just prefixed all my function names with the domain name of my website followed with two underscores, with the dot converted to an underscore as well.
-		Even without having learned about namespaces, I understood their value and importance.
-		I later learned my version of <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> was painfully old, and had to learn how to install a newer version.
-		It was tied so heavily into Apache though that I needed to upgrade Apache as well.
-		Both <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> and Apache had to be installed from source code.
-		And with the newer version of Apache, I lost the <abbr title="operating system">OS</abbr> integration, as Apple had specifically tied that version of Apache to the <abbr title="operating system">OS</abbr>.
-		If I recall, it took days or weeks to figure out how to get everything installed correctly.
-		I had no idea what I was doing, and had to learn how to use Apple&apos;s proprietary development tools to compile, as that was necessary at the time.
-		It might even be necessary now, but I wouldn&apos;t know.
-		With the upgrade though, I had real namespaces, and was able to remove my ugly prefixes in favour of doing things the right way (<code>net\example\function_name()</code> instead of <code>example_net__function_name()</code>).
+		I&apos;d thought that NoSQL was a particular database, such as MySQL or SQLite.
+		I was guessing that with a name like that, it probably didn&apos;t use a structured query language, but at the same time, the fact that it even mentions <abbr title="Structured Query Language">SQL</abbr> made me think it likely tries to emulate databases that do use <abbr title="Structured Query Language">SQL</abbr> or something.
+		It turns out I was way off.
+		NoSQL isn&apos;t a product at all, but instead a term coined to refer to non-relational databases.
+		Most if not all relational database software options use a form of <abbr title="Structured Query Language">SQL</abbr> to allow users to tell it what to store and retrieve, so NoSQL refers to the fact that a given database doesn&apos;t have that.
+		It&apos;s a misleading term, as while <abbr title="Structured Query Language">SQL</abbr> and relational databases are often used together, they&apos;re actually very separate concepts.
+		&quot;Relational&quot; refers to the fact that the database tables may relate their data to data on other tables, while <abbr title="Structured Query Language">SQL</abbr> is the language (which admittedly is usually not implemented according to the standard) used to speak with the database software.
+		I could build a relational database software that doesn&apos;t use any form of <abbr title="Structured Query Language">SQL</abbr>, yet it somehow wouldn&apos;t be considered a NoSQL database.
+		In other words, its a complete misnomer.
 	</p>
 	<p>
-		Later, my computer died on me.
-		My pibling gave me a new laptop (well, new to me and much newer than my old machine, but still very old).
-		It ran Windows though, and Windows and I have <strong>*never*</strong> gotten along.
-		There&apos;s a reason I was on an ancient OS X machine when I could have afforded a newish Windows machine for about the same price.
-		So I looked into how to install OS X on non-Apple hardware.
-		It turns out it&apos;s very possible, but also illegal due to language in the OS X license agreement.
-		Not wanting to break the law, I looked into alternative systems.
-		Anything had to be better than Windows, right?
-		<strong>*Anything*.</strong>
-		Even if it wasn&apos;t as good as OS X, I&apos;d have a better chance of getting by with whatever I ended up with than I would sticking with the copy of Windows already on the machine.
-		I&apos;d heard about something called &quot;Linux&quot;, but I wasn&apos;t sure how usable it was.
-		So I looked into that first.
+		Non-relational databases are useful because they handle very efficiently the types of data relational databases are particularly bad at handling.
+		Relational databases need rigid structure.
+		Otherwise, you can&apos;t figure out what data relates to what other data in another table.
+		Without relations getting in the way, you can store whatever you want in a non-relational database.
+		Examples given in the text include emails, word-processing documents, and media.
+		Some non-relational databases can also be distributed across multiple machines, something that relational databases don&apos;t seem to handle well.
+		Non-relational databases also run faster, due to less happening when queries are run.
+		Relational databases have to check to see if an update to the data would break the database&apos;s rules, and if it won&apos;t, they sometimes have to make further changes to other parts of the data that are implied by the change made by the query.
+		A non-relational database has neither of these added side-effects of data update.
 	</p>
 	<p>
-		I found Linux wasn&apos;t a single operating system, but a multitude of operating systems that shared a similar codebase.
-		But the developers of these systems <strong>*wanted*</strong> me to install their system.
-		Apple was telling me to go away if I wasn&apos;t going to buy not only their operating system but their hardware as well.
-		The Linux communities didn&apos;t care what hardware I used though.
-		I agonised over the decision of what system to install.
-		I don&apos;t recall how long it took me to decide.
-		With so many options, how do I know which is right for me?
-		I ended up choosing Ubuntu 12.04, which had come out that month, if I recall.
-		It seemed popular, compared to other Linux versions.
-		Maybe people knew what they were doing and chose it because it was good.
+		Non-relational databases do have their drawbacks though.
+		Without the <abbr title="Structured Query Language">SQL</abbr> provided by relational databases, non-relational databases rely on directly programming queries through the database&apos;s <abbr title="application programming interface">API</abbr>.
+		Supposedly, this is more difficult, though I have difficulty with <abbr title="Structured Query Language">SQL</abbr>.
+		I think I might do better with direct <abbr title="application programming interface">API</abbr> calls.
+		You could claim that with <abbr title="Structured Query Language">SQL</abbr>, you have a unified language with with to communicate with all relational databases, but that would be a lie.
+		No one follows the <abbr title="Structured Query Language">SQL</abbr> standard, so each database vendor provides their own non-standard dialect of <abbr title="Structured Query Language">SQL</abbr>.
+		Whether you&apos;re learning a new <abbr title="Structured Query Language">SQL</abbr> dialect or new <abbr title="application programming interface">API</abbr> functions, you&apos;re not able to jump right from one database software to another.
+		Due to the lack of rule-enforcement, non-relational databases are also easier to enter inconsistent or otherwise invalid data into, which can be problematic.
+		Likewise, with non-relational databases only gaining popularity recently, there&apos;s a lack of tools for administering them at this time.
 	</p>
 	<p>
-		The interface was a bit strange, but it was usable.I found Apache and <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> were in the software repositories.
-		Installing them took almost no effort.
-		I greatly appreciated that these tools were cross-platform.
-		I was learning to use a new system, but I didn&apos;t need to learn new server software right away.
-		That was awesome.
-		I spent about a week on Ubuntu, if I recall, but then I had an epiphany: Canonical never charged me for Ubuntu.
-		Most of the other distribution vendors weren&apos;t charging either.
-		All it cost me was the price of a <abbr title="digital versatile disc">DVD</abbr> to burn the system on.
-		I could afford to try out other systems!
-		And try them out I did.
-		I tried Debian, I tried Mint.
-		Mint was kind of cool at the time.
-		I stuck with it a while, and later went to Xubuntu, a variant of Ubuntu produced by the same Canonical, but with a better desktop interface.
-		For a class, I tried out Fedora as well, though it was never my cup of tea, and now I&apos;m back on Debian for licensing reasons.
-		Because I&apos;ve learned to care about licensing.
-		No matter where I drift though, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> and Apache follow me.
-		They&apos;re free software, so the source code is readily available.
-		And when the source code is available, there will be people that want to port it to their system.
-		Porting to Linux once takes care of running it on all Linux distributions, but if I were ever to switch to a drastically different system, such as <abbr title="Berkeley Software Distribution">BSD</abbr>, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> and Apache have already beaten me there, too.
-		While I might not always choose them, they&apos;ll always here with me for me to choose if I want to.
+		The next article I read was about which statistical tools replaced which other statistical tools and when.
+		It was more of a history lesson than anything useful.
+		It did bring up that the field of science is moving toward open source as a means of reproducibility.
+		That&apos;s good to hear.
+		With open source tools, we can better learn how the tools themselves function, and thus how the data we use the tools on behaves.
+		And isn&apos;t that what science is all about?
+		Really, closed source tools have no place in science or any sort of school.
+		They just hide away their implementations so you can&apos;t learn from them, making them counterproductive in such environments.
 	</p>
 	<p>
-		I admit I&apos;ve gone soft, and no longer compile my own Web server software.
-		I still know how to though, so the pages on doing that were just review.
-		The <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>7 tutorial was of no help to me though.
-		I use <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>7 on a daily basis.
-		I&apos;m very familiar with the language and its syntax.
-		I&apos;ve got to look up a function name every once in a while, when I&apos;m doing something I don&apos;t usually do, but a tutorial&apos;s not going to help me remember the names of functions I hardly ever use, or even ones I&apos;ve never used before.
+		I didn&apos;t really understand the paper on the study comparing data-mining tools.
+		It didn&apos;t help that the table data wasn&apos;t displaying correctly.
+		I think it&apos;s a bug in Firefox; I&apos;ve had that issue with other <abbr title="Portable Document Format">PDF</abbr>s on the Web as well.
 	</p>
 	<p>
-		For the main assignment for the week, we were to take screenshots and paste them into a word-processing document.
-		That&apos;s a format to transfer screenshots in, but I followed those instructions to the letter just the same.
-		Alongside the uploaded word-processing document though, I submitted my work in a better format: simply uploading the images and using <code>&lt;img/&gt;</code> tags to display them as a part of the page.
-		That way, other students don&apos;t have to download them as a separate attachment, then open them up in a word-processor.
-		I mean, seriously, what a pain in the neck for no good reason, right?
-		I did have to doctor one of the screenshots a bit though.
-		The assignment said to screenshot the output of <code>phpinfo()</code> in a screenshot, up to the last <code>/etc</code> &quot;command (sic)&quot;.
-		Between the top bar of the website and the bottom bar, too much space was eaten up, and that much couldn&apos;t be displayed at once without a bigger monitor than my laptop has.
-		Firefox allows you to modify the code of pages you look at though.
-		So I deleted the top and bottom bar, freeing up enough space to get all the requested output captured.
+		The next paper I read both reiterated the history of data-mining software and broke down what to look for when choosing data-mining software from the multitude of options.
+		Again, I don&apos;t think such history lessons are useful, but the point-by-point discussion of what features to look for had value.
+		Of course, if you can&apos;t trust your tools, you can&apos;t trust their results, so licensing and source code availability will always be the most important thing to consider when I choose my software.
+		The wrong license is a deal-breaker for me.
+		The paper did discuss licensing and its importance, which was good to see.
+		Once you rule out the badly-licensed software, the other points can be used to figure out which option best suits your specific project.
+		Different data-mining programs cater to different groups of users and different use cases.
+		Sparsity of the data, how many dimensions it has, and whether or not you&apos;re trying to cluster it are all things to think about.
+		You also need to decide whether your task is better suited to supervised or unsupervised learning.
+		Do you have a training set to work with that already has an answer key?
+		You also need to decide whether you want a command line interface or a graphical interface.
+		Less techy people will want a <abbr title="graphical user interface">GUI</abbr>, but people who know how to work a computer well will appreciate the ease of automation that comes with a command line interface.
+	</p>
+	<p>
+		It seems a number of open and widely-implemented data exchange formats are available for importing and exporting data.
+		These should of course be used ahead of proprietary formats.
+		The major problem with proprietary formats is that you can&apos;t switch tools and keep your data.
+		You might want to replace your software with better software from another vendor at some point, but even if you don&apos;t, different tools work better for different use cases.
+		You might therefore want to use the same data with multiple tools.
+		Open formats make this possible.
+		You also need to look at what system you plan to use your tools with when deciding which tools to choose.
+		That said, if you choose the open source tools as I recommended, it&apos;s very likely your platform will be supported.
+		People have a tendency to port open source tools to their platform, then make the necessary code changes available to everyone, providing support for that project on that operating system available to the public.
+		This is different from proprietary tools, in which you have to depend on the vendor themselves to provide support for a given platform (and often, proprietary vendors don&apos;t bother to support very many platforms).
+	</p>
+	<p>
+		The 149-page paper begins by telling us that the NoSQL term originally referred to relational databases that lacked <abbr title="Structured Query Language">SQL</abbr>.
+		That&apos;s a much more intuitive and reasonable usage of the term.
+		However, the term later degraded to instead refer to non-relational databases, which is a confusing use of the term, as I discussed above.
+		Seriously, they should have coined their own term instead of hijacking a term already in use.
+	</p>
+	<p>
+		Most of the benefits of non-relational databases discussed by this paper were already covered by the 3-page paper, but the longer paper also brought up that servers can be brought offline or even crash without taking the whole database down with them.
+		Obviously, the data stored on that particular server becomes unavailable, but the rest of the data on the other serves remains accessible.
+	</p>
+	<p>
+		It also talks about how one-size-fits-all database solutions are wrong.
+		In general, one-size-fits-all solutions for <strong>*anything*</strong> are wrong.
+		There are notable exceptions to this, but if you think your solution fits every use case, you&apos;ve probably forgotten to consider several use cases.
+		It&apos;s also brought up that one-size-fits-all solutions tend not to perform as quickly or as efficiently as solutions tailored to the actual use case you&apos;re working with.
+	</p>
+	<p>
+		A great point is made too about abstracting away a database&apos;s distributed nature.
+		If applications don&apos;t realise the database is distributed, they cannot make the correct decision based on that information.
+		Network latency and downed servers cannot be abstracted away, so both can appear as missing data to the application if the application isn&apos;t made aware that it&apos;s not speaking with a single database instance on a single server.
+	</p>
+	<p>
+		One issue I had with this paper is that it says we should do everything in <abbr title="random-access memory">RAM</abbr> and have zero <abbr title="input/output">I/O</abbr>.
+		Keeping everything in memory is one thing.
+		Assuming you have enough <abbr title="random-access memory">RAM</abbr>, it&apos;ll speed things up considerably.
+		However, you still need disk writes.
+		If the power goes out or your system crashes, you&apos;ll want a semi-recent copy of the data to read back into memory once you&apos;re back online.
+		You might not want to write to disk with every change, but you will want to write changes to disk periodically.
+	</p>
+	<p>
+		The paper also discusses that while non-relational databases may be developer-friendly, they&apos;re not as administrator-friendly.
+		They lack the sort of query language that makes ad-hoc access of data easy.
+		With only the <abbr title="application programming interface">API</abbr> to update or view data, administrators have to write a program each time they want to make a change to the data or even just check on existing data.
+		Of course, this could easily be accounted for if developers wrote some sort of administration panel for the administrators to manage the database with.
+		However, the paper goes on to explain that access of data in a distributed system is more difficult too.
+		I don&apos;t really have a solution to that problem.
+		Exporting data from a distributed database also comes with difficulties.
+	</p>
+	<p>
+		I ended up not being able to get back to that 441-page document from last week.
+		I thought life would just sort of stop for my during the week of the surgery, and I&apos;d have all the time in the world for coursework.
+		That didn&apos;t happen.
+		I still had things I needed to get done, and while I did have the week off from work, I also slept a lot more.
+		Part of that was because I needed more rest to heal properly, but another part is that I usually don&apos;t get enough sleep because I&apos;m far too busy.
+		For the first time in a long while, I actually got the sleep I needed.
+		I also found myself too tired to get any coursework done unless I kept my body moving.
+		I had to get out and take a walk each day, or I didn&apos;t feel well enough to even attempt any reading assignments.
+		And those walks took time too.
+	</p>
+	<p>
+		Research for the paper this week also took longer than expected.
+		Finding open-access journals is difficult, and we needed peer-reviewed journals for our papers this week.
+		The assignment instructions recommended checking one of the libraries that lends their resources to this school, but those sites don&apos;t allow outsiders to view their contents.
+		This presents two major problems.
+		First of all, search engines can&apos;t get in there.
+		These libraries have internal search features, but they rather suck.
+		I can spend hours trying to find something in there, and turn up empty-handed.
+		Without open access, regular search engines can&apos;t get in, and without using an actual search engine, you can&apos;t reasonably find what you need.
+		Secondly, without open access, it doesn&apos;t matter what I cite anyway, because no one reading my paper will be able to check my sources for validity or further information.
+		Citing pages that exist only in walled gardens doesn&apos;t do a lick of good.
+		That makes the university&apos;s partner libraries utterly and completely useless.
+		So I had to look elsewhere.
+		I never did find any published journal sources to describe the specific analytical packages we were told to research for our papers, either.
+		I ended up having to use the main websites for these projects to get a feel for them.
+		In my defence though, we were told to use at least one journal resource, but not required to make all our sources come from journals.
+	</p>
+	<p>
+		It&apos;s also worth noting that such journal sources themselves are often incredibly bias.
+		I&apos;m not sure how bad it is in the tech industry, but the medical industry in the United States is completely corrupt.
+		In the medical industry, good medical science often gets swept under the rug if it&apos;s not profitable.
+		If it&apos;s not going to make some corporation rich, big pharmaceutical companies will often make sure word doesn&apos;t get out, even to the point of threatening doctors and scientists that would otherwise try to bring it to light.
+		And many drugs aren&apos;t actually anywhere near as effective as they&apos;re claimed to be, they are just in use because they make the pharmaceutical companies money.
+		These money-makers are what gets published, not the things that actually work best.
+		It wouldn&apos;t surprise me if the tech industry suffered similar issues.
+		The fact that information comes from published journals doesn&apos;t actually make it any more valid than information from other sources, and in fact often makes the information <strong>*less*</strong> valid.
+		There&apos;s a reason I don&apos;t often cite published journals except for assignments that specifically request it.
+	</p>
+	<p>
+		Anyway, I found the reading material didn&apos;t even mention much of what was on the essay assignment and absolutely none of what was on the discussion assignment was mentioned.
+		Normally, I focus on trying to complete the reading material first, or at least a good chunk of it, before moving on to the other assignments.
+		That way, I&apos;m better prepared for them.
+		I see that&apos;s not going to work in this course.
+		I need to work on the discussion assignment and written assignment first.
+		Then, in the time remaining, I need to read as much as I can from the reading assignment.
+		Starting next week, that&apos;s the approach I&apos;ll take.
 	</p>
 </section>
 <section id="Unit3">
 	<h2>Unit 3</h2>
 	<p>
-		The reading assignment for the week was as follows:
-	</p>
-	<ul>
-		<li>
-			<a href="https://secure.php.net/manual/en/introduction.php">PHP: Introduction - Manual</a>
-		</li>
-		<li>
-			<a href="https://www.w3schools.com/php/php_intro.asp">PHP 5 Introduction</a>
-		</li>
-		<li>
-			<a href="https://www.wired.com/2010/02/PHP_Tutorial_for_Beginners/#The_Basics">The Basics</a>
-		</li>
-	</ul>
-	<p>
-		The assignment for the week was on a third-party website.
-		This was a bit problematic, as signing up for an account on that website required the completion of one of those obnoxious Google reCAPTCHA <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s.
-		Google is always a pain, and this time, Google was refusing to sent the <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr> on the grounds that Google thought I might be a robot.
-		Seriously?
-		Isn&apos;t the <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr> supposed to be my way to prove that I&apos;m not?
-		What&apos;s the point of a <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr> if you only send it to people you <strong>*don&apos;t*</strong> think are robots?
-		Google&apos;s got problems.
-		This isn&apos;t the first time Google has hassled me though, or even the first time they&apos;ve hassled me in this particular way, so I knew they&apos;d send me the <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr> to fill out if I left and waited long enough, then came back later.
-		Sure enough, I tried again later, and they sent me thirteen <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s in a row to fill out.
-		It&apos;s not uncommon for them to send me about twenty before they&apos;ll let me through, and it&apos;s not unheard of for them to send me upwards of thirty.
-		It&apos;s become a bit of a game for me: I count how many <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s Google makes me fill out this time, and see just how badly Google wants annoy me today.
+		The reading assignment for this week is that 441-page document again: <a href="https://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf">Driver.dvi - ISLR First Printing.pdf</a>.
+		Except this time, we&apos;re only supposed to read chapter 3 and section 4.3 instead of the entire thing.
+		I went back and took another look at <a href="#Unit1">Unit 1</a>&apos;s reading assignment, and it seems we were actually only supposed to read chapter 2.
+		Somehow, I missed the chapter designation, so I thought the whole book&apos;d been assigned to us to read.
+		Wow.
+		Now I feel foolish.
+		It&apos;s no wonder the reading assignment seemed like far too much for my to handle that week.
 	</p>
 	<p>
-		<del>The website with the lessons claims that <code>echo</code> is a function.
-		This actually isn&apos;t true, as can be verified in the <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> manual.
-		Instead, <code>echo</code> is one of the basic language constructs, though it can be called like a function syntactically.
-		However, the lesson website then proceeds to show an example using <code>echo</code> that <strong>*doesn&apos;t*</strong> call it as a function.
-		Take the following pseudocode:</del>
-	</p>
-	<blockquote>
-		<p>
-			<code>function_name &apos;argument&apos;;</code>
-		</p>
-	</blockquote>
-	<p>
-		<del>This is <strong>*not*</strong> valid in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>.
-		Instead, you need to use:</del>
-	</p>
-	<blockquote>
-		<p>
-			<code>function_name(&apos;argument&apos;);</code>
-		</p>
-	</blockquote>
-	<p>
-		<del>However, the website uses <code>echo &apos;argument&apos;;</code>.
-		This is of course valid code, but is <strong>*not*</strong> a valid function call, meaning that <code>echo</code> <strong>*cannot*</strong> be and <strong>*is not*</strong> a function.</del>
+		The first equation presented to us this week was <var>Y</var> ≈ <var>β<sub>0</sub></var> + <var>β<sub>1</sub></var><var>X</var>.
+		I immediately recognised that as the slop/intercept equation (<var>Y</var> = <var>m</var><var>x</var> + <var>b</var>), but with different variable names, a different arrangement, and an approximate equality instead of a true equality.
+		So I figured this week shouldn&apos;t be too difficult.
 	</p>
 	<p>
-		<ins>Actually, scratch all that.
-		In a later lesson, the site admits <code>echo</code> isn&apos;t a function, and even brings up the same point as I did about the lack of parentheses.
-		Why give us invalid information, just to later correct it?
-		Why knowingly give us invalid information in the first place?
-		Sheesh.</ins>
+		One thing that struck me though was that the book next discussed estimating the unknown variables by taking samples from various markets.
+		If you use different markets, there are many more variables at play that you&apos;re not accounting for.
+		For example, the average income level of the population and how gullible they are.
+		With high income and high gullibility, people are more likely to buy into the messages presented by your advertisements.
+		You obviously can&apos;t account for everything, but if you&apos;re going to take samples from multiple markets and build an equation for dealing with all those markets, you should make sure your markets are fairly similar.
+		For example, they at the very least need to have similar average income levels.
 	</p>
 	<p>
-		The website also teaches us that variable names can only contain alphanumeric characters and underscores.
-		This is actually untrue as well.
-		Within the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range, these are the only characters allowed.
-		However, <strong>*all characters outside the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range*</strong> are also available for use in variable names.
-		Again, this is something the <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> manual teaches you right away.
-		In practice, most people stick to the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range when naming variables, but this should never be considered a hard requirement.
-		Personally, prefix my variable names with a cent sign if the variable contains a closure.
-		The only time I use closures is when I need to reuse code but I can&apos;t generalise the code enough to warrant a first class function.
-		This is code no one else needs to call, so no one else will need to type this symbol later.
-		Using the strange symbol allows me to put it into a separate pseudonamespace.
-		I used a funny character in an actual <code>namespace</code> once too, for a class that should never be touched by code outside my own library.
-		The class basically was a workaround for the fact that a feature I needed wasn&apos;t present in old versions of <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, but had just been added to the cutting-edge release.
-		In other words, these characters are available for use in all symbol names, not just variable names.
-		I wouldn&apos;t recommend using them in most cases, but they are very useful to have sometimes.
+		The &quot;∑&quot; symbol always throws me off.
+		I never did formally learn what it means, though I thin it involves summing variables denoted with subscripts.
+		At first, I thought the equations for minimising the residual sum of squares calculated something for some value that we were trying to minimise, and that you had to guess and check repeatedly until you couldn&apos;t make the number go down any further.
+		This would not only be time-consuming, but also not very precise.
+		At what precision level do you give up trying to get closer?
+		An exact formula for the values we need would be much better.
+		After working through the meanings of the variables though, I think that&apos;s exactly what these equations are.
+		They give us the values we need directly.
+		I think the first of the two equations just sums up the multiplied differences between the the average <var>x</var> and specific <var>x</var>es and the average <var>y</var> and specific <var>y</var>s, then divides all that by the sum of squared differences between the average <var>x</var> and specific <var>x</var>es.
+		That&apos;s all hard to follow when written out like that, but it&apos;s usable in the equation.
+		Then the second equation just takes the output of the first equation and uses it in a straightforward way.
 	</p>
 	<p>
-		Next, we&apos;re introduced to the <code>define()</code> function.
-		Like the lesson says, <code>define()</code> defines constants.
-		However, the <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> manual will tell you that it&apos;s not the <strong>*preferred*</strong> method of defining constants.
-		The <code>cont</code> keyword is better for a few reasons.
-		I forget all the reasons, but one reason is because the <code>const</code> keyword runs faster than the <code>define()</code> function.
-		This may be because <code>const</code> does its thing at compile time, while <code>define()</code> waits until run time.
-		If you need to define a constant conditionally and/or in terms of some variable, <code>define()</code> is your only option.
-		For all other cases, use <code>const</code> instead.
+		The book talks about how to calculate the standard error of the population mean: we divide the variance (which is equal to the square of the standard deviation) by the number of data points, then square root the result.
+		It says this standard error figure is how far off our least squares line is from the population regression line.
+		However, it&apos;s worth noting that, again, this is an <strong>*estimate*</strong>.
+		We don&apos;t actually know how far off our line is.
+		Also, hypothetically, we could end up with a data sample in which all our data points are above the population regression line or all below.
+		These data points might even be in a perfectly-straight line.
+		That would give us an exceedingly low standard error, yet our least squares line may still be way off.
+		In practice, this isn&apos;t going to happen very often, but it&apos;s important to remember that it could, which means that we must treat this standard error figure as exactly what it is: only an estimate.
+		We&apos;re given more-complex formulas for dealing with the standard error of the other estimated numbers, but the idea is the same: we&apos;re only estimating how far off we likely are, not making an absolute determination.
 	</p>
 	<p>
-		It drives me batty when modulus division is described as a finding of the &quot;remainder&quot;.
-		When dividing, there <strong>*is no remainder*</strong>.
-		Five divided by two is <strong>*not*</strong> two remainder one.
-		It&apos;s two and a half.
-		Modulo division is more like overflow, in how it works.
-		Take a two-bit, unsigned integer, for example.
-		There are four possible values, so if you store a value in such a space, your result is the value you attempted to store, but modulo 4.
-		This shows us too that as <code>4</code> gets stored as <code>0x00</code>, a number modulo itself is zero.
-		Modulus division doesn&apos;t have to involve powers of two, obviously.
-		Powers of two just make the point easy to explain to computer science majors.
-		If you have fifteen modulo ten, it just means you&apos;re trying to find the result you&apos;d get from trying to store fifteen in a space that has only ten values.
-		Nine, zero (because of roll over), one, two, three, four, five.
-		So you end up with a result of five.
-		Dealing with negative numbers in modulus division is undefined, so you get different results depending on how modulus division is implemented in the environment you&apos;re working in.
-		However, when working with only positive numbers, you get the same results when you look at modulus as roll over as when you look at it as &quot;remainders&quot;.
-		So I guess, do it whatever way makes it easy for you.
-		However, when you <strong>*talk*</strong> about modulus being a finding of &quot;remainders&quot;, it makes you look like the type of idiot that doesn&apos;t know how to find fractions or decimals when dividing.
-		It makes you look too stupid to figure out that there doesn&apos;t need to be &quot;leftovers&quot; just because something doesn&apos;t divide <strong>*evenly*</strong>.
+		The R<sup>2</sup> statistic seems to be very useful in determining how well regression even works for the problem at hand.
+		Either due to too high of a variance or due to the data not being all that linear, R<sup>2</sup> may be too low, and that problem can be caught.
+		I mean, we can sort of gage how well our least squares line fits the data when we graph it, but there&apos;s no objectivity in that.
+		What one person says is an okay fit, another may say is no fit.
+		R<sup>2</sup> allows us to measure the fit precisely, giving us a more-objective look at it.
+		We still have to determine how much of a fit we require, which is still pretty subjective, but we can objectively compare the fit of one least squares line to its data against another least squares line and that other line&apos;s data.
 	</p>
 	<p>
-		The quiz for the week startled me a bit.
-		The first question asked what command you use to compile code.
-		The next was asking about how to change the working directory on a Linux system.
-		What?
-		I didn&apos;t even remember studying those things in this course, though I&apos;ve used the <code>make</code> and <code>cd</code> commands countless times on my Debian system, so I knew the answers.
-		And isn&apos;t this a course about Web development?
-		Compiling code and changing the working directory are things you do locally, not in regards to websites.
-		What else did I miss, that maybe I <strong>*didn&apos;t*</strong> just happen to know because of my personal situation?
-		After a bit, it struck me: we were supposed to read about how to compile Apache and <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> from source last week.
-		I sort of skipped that part of the reading material, due to already having compiled both <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> and Apache from source a few times.
-		The material would have definitely used the <code>make</code> command, and would have used the <code>cd</code> command a few times.
-		So I&apos;m still up to speed on things.
+		When the book started talking about using multiple predictor variables in a single equation, I was morbidly curious as to how it planned to pull that off.
+		When they showed us the equation for solving such a system, a simple <var>ŷ</var> = <var>̂β<sub>0</sub></var> + <var>̂β<sub>1</sub></var><var>x<sub>1</sub></var> + <var>̂β<sub>2</sub></var><var>x<sub>2</sub></var> + ... + <var>̂β<sub><var>p</var></sub></var><var>x<sub><var>p</var></sub></var>, I knew this was likely going to be over my head.
+		If the equation for solving for the prediction was to just multiply the estimations by the predictor values and add them together, I could see no manageable way to derive those estimations.
+		I&apos;m decently good at maths, but I&apos;m not that good.
+		Such a formula would be over my head.
+		Thankfully, the author seemed to agree with me, and simply skipped over the logistics of how to actually find such values by hand.
+		We&apos;re not expected to learn that at this time.
 	</p>
 	<p>
-		I don&apos;t think most people in this course ever think about accessibility, let along care about it.
-		I mean, most Web developers certainly don&apos;t.
-		There is one student I&apos;ve been conversing with, even outside of class a bit, who seems intelligent and always has an insightful take on the discussion assignments.
-		And this week, I learned that they&apos;ve been formatting their discussion posts with accessibility in mind.
-		I&apos;ve picked up a new trick to better format my own posts.
-		I suppose it won&apos;t matter for in-discussion, as again, most everyone doesn&apos;t care.
-		But my discussion posts are also archived in my public journal.
-		(Due to censorship from the school, all such journal entries aren&apos;t visible to the public until 2023.)
-		The better my posts are formatted for the discussion assignments, the better they&apos;ll be formatted in my journal.
+		The book then uses the example of binary gender as a predictor of credit worthiness.
+		First of all, gender isn&apos;t binary.
+		Second, they claim the options to be male and female.
+		Male and female are sexes, not genders.
+		(Sex also isn&apos;t binary, as there are the occasional intersex people, though it&apos;s more often binary than gender is.)
+		As someone of non-binary gender, I find it annoying when people try to shove me into boxes I don&apos;t fit into.
+		There&apos;s a reason I use the name Alex: it&apos;s a name available to people of any gender as a shortened version of gendered names.
+		Alexander is usually for men.
+		Alexandra, Alexandria, Alexa, and Alexia are usually for women.
+		There&apos;s even Alexis though, a gender-neutral name given to men and women alike.
+	</p>
+	<p>
+		The use of an interaction term was something I wouldn&apos;t&apos;ve thought of.
+		I didn&apos;t think linear regression could account for interaction between predictor variables.
+		I thought a different type of model would be needed to get a better fit.
+		Of course, as finding the values for even just a simple multiple linear regression is above us at this point, we certainly didn&apos;t discuss how to find the proper value for the interaction term, either.
+	</p>
+	<p>
+		I don&apos;t understand the syntax used for the <code>lm()</code> function.
+		I&apos;m not sure what the <code>~</code> operator is in R, but ignoring that, the bigger problem is that we use a plus sign in the first argument to combine the variables.
+		This should add the variables together before passing the result to the function.
+		Yet somehow, it seems R is keeping these as separate data sets for it to operate on within the function.
+		That makes no sense to me whatsoever.
+		It&apos;s like the expression, and not the value of the expression, is being passed into the <code>lm()</code> function.
+		Actually ...
+		Is that actually what&apos;s going on?
+		Is the <strong>*expression*</strong> being passed and not the value?
+		I mean, part of the output of <code>lm()</code> function is my expression repeated back to me.
+		Maybe R passes expressions and not values as arguments.
+	</p>
+	<p>
+		During the quiz this week, my Internet connection got really spotty.
+		The connection stayed up long enough to load the page, but <strong>*not*</strong> the images on it.
+		As a result, I couldn&apos;t see the graphs I needed, and because the equations we were supposed to use were also included in image form instead of basic text, I couldn&apos;t see those either.
+		As the page had already loaded, my timer had started, but I couldn&apos;t actually work on the quiz!
+		It took me about half an hour to get the connection back up long enough to load everything I needed, and I had no idea the precise time I&apos;d started the quiz, so I had to just rush through it as quickly as I could, for fear I&apos;d miss my deadline.
+		Finally, after I&apos;d submitted my answers, I was told I had about thirteen more minutes to finalise them.
+		I could have gone back over my work a little bit, but I had no way to know if my connection would die again and I&apos;d lose my chance to finalise any answers, ending up with a grade of zero.
+		So, I submitted my rushed answers.
+		It&apos;s a good thing I did, too.
+		Within a couple minutes, my connection died again, and I couldn&apos;t get it back up in time.
+		Needless to say, I didn&apos;t do well on the quiz at all.
+		At least I got above a 75% though, and I believe that&apos;s passing.
+		I&apos;ll be glad once I can afford a better Internet connection, though I won&apos;t be able to spare money for that until I get a couple other things taken care of first.
+	</p>
+	<p>
+		I&apos;m not the worst off this week though.
+		One student submitted the wrong paper last week, so for the grading this week, they&apos;re not going to do well.
+		I think what happened is they submitted the paper for this course to their other course, and the paper for their other course to this course.
+		It&apos;s either that or they submitted the same paper to both courses, but that seems unlikely.
+		If the papers were simply reversed as I think they were, they&apos;re not going to do well in <strong>*either*</strong> of their courses this week.
 	</p>
 </section>
 <section id="Unit4">
 	<h2>Unit 4</h2>
 	<p>
-		This week&apos;s reading assignment was more sections in the <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> manual.
-		Oddly, the text of the link said <code>index.php</code>, though the actual target of the link was <code>install.php</code>.
-		I&apos;ve already read the manual front to back though, aside from the sections regarding each and every specific function; class; and constant the language has to offer.
-		I tend to look up the functions I need for a given project, and ignore the rest.
-		I just don&apos;t have enough room in my brain to store all the functions.
-		I can&apos;t even remember the functions I&apos;ve used, and have to look those ones up again too to get their exact usage before calling them in my code.
+		I struggled with the unit assignment last week.
+		I just didn&apos;t understand what it was asking for at times.
+		And when I did understand what was asked of us, I sometimes didn&apos;t know what the best way to accomplish the goal was.
+		So it was helpful to get to read the answer key when grading other students&apos; work this week.
+		One of the things I tend to do is compare my own work to the answer key, as if to grade that as well.
+		I don&apos;t do it every time, but I do it when either I struggled with the assignment or I see something in the answer key that I don&apos;t remember doing in my own work.
 	</p>
 	<p>
-		The <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> tutorial lessons we&apos;re completing this week as our main assignment said that <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> arrays are always indexed from zero.
-		I find it very annoying when arrays are indexed from one; it makes it difficult for me to work in the language, as I&apos;m always assuming an initial index of zero, and it leads to bugs when that assumption proves to be false.
-		<abbr title="PHP: Hypertext Preprocessor">PHP</abbr> arrays aren&apos;t actually <strong>*always*</strong> indexed from zero though.
-		When using an array, you can set any arbitrary key you like.
-		In this way, they&apos;re more like tables from other languages.
-		However, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> arrays also have an order, which is independent of the order of numeric keys.
-		Instead, the order is determined by the order the keys get added to the array, until such a time that an array-sorting function is run to clean up that mess.
-		If you don&apos;t choose a key to assign a value to, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> starts assigning numeric keys automatically.
-		If no non-negative integer keys have been used in the array yet, the key <code>0</code> gets assigned.
-		If any non-negative integer keys <strong>*have*</strong> been assigned, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> assigns a key equal to the highest integer key that has ever been used in the array, regardless of whether that key is still in use, incremented by one.
-		That means that if you never assign keys and you never remove key/value pairs from the array, your array will be indexed from zero.
-		However, if you remove key/value pairs (for example: <code>unset(<var>$var</var>[5]);</code>) or sometimes use specific integer keys, your array will have holes in it.
-		And if you assign an initial integer key greater than negative two, your array will be indexed from that.
-		(Assigning a key of negative one still results in a continuous chain of integer keys because <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> assigns zero as the next key regardless of what negative number you used, and negative one just happens to be the integer just before zero.
-		So by coincidence, it actually works.)
-		So by these mechanics, you can index arrays from one, or from five, or from seven hundred two.
-		<abbr title="PHP: Hypertext Preprocessor">PHP</abbr> will allow all of these options.
-		That said, I don&apos;t recommend doing that.
-		Indexing from zero just makes everything easier.
-		Just don&apos;t make the invalid claim that <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> arrays are <strong>*always*</strong> indexed from zero.
+		The reading assignment for this week is the following:
+	</p>
+	<ul>
+		<li>
+			<a href="https://rstudio-pubs-static.s3.amazonaws.com/316172_a857ca788d1441f8be1bcd1e31f0e875.html">kNN(k-Nearest Neighbour) Algorithm in R</a>
+		</li>
+		<li>
+			<a href="https://ww2.coastal.edu/kingw/statistics/R-tutorials/logistic.html">R Tutorials--Logistic Regression</a>
+		</li>
+		<li>
+			Chapter Four of <a href="https://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf">Driver.dvi - ISLR First Printing.pdf</a>
+		</li>
+	</ul>
+	<p>
+		Ugh.
+		My power and Internet connection went out on me on the day I finally had time to get to the reading assignment.
+		It&apos;s been a busy week.
+		Thankfully, I&apos;d already loaded the above pages in my Web browser on day zero, so I was able to read them even without an Internet connection, as my laptop&apos;s battery slowly drained.
+		I feared I might not be able to complete my unit assignment though, even having three days left, due to the lack of power and connection.
+		Thankfully, I&apos;d gotten everything in both my courses done on day zero, save for my reading assignment in this course, discussion assignment in both courses, and unit assignment for this course completed.
+		Both discussions were well under way by this point in the week, so really all I needed to do was wait and make my daily posts.
+		All I had left to really focus on were the unit assignment for this course and the reading assignment that would make the unit assignment understandable.
+		I normally keep my lights off during the day, but I turned one on just so I&apos;d notice when the power came back on.
+		It really didn&apos;t take as long as I&apos;d feared.
 	</p>
 	<p>
-		It&apos;s interesting that the lesson made a point of specifically telling us that multidimensional arrays can have as many dimensions as you like.
-		Most languages don&apos;t have true multidimensional array support.
-		(I&apos;ve only seen one language with true multidimensional array support, and I think that was R.)
-		Instead, what most languages offer is nested arrays.
-		<abbr title="PHP: Hypertext Preprocessor">PHP</abbr> is one of these languages.
-		Semantically, as long as you nest your arrays the same depth on every branch, it makes no difference.
-		You&apos;ve got yourself a multidimensional array that you constructed out of single-dimensional arrays.
-		Mechanically though, this does make a difference.
-		If a multidimensional array is just an array whose values happen to be arrays themselves, each of those arrays can likewise be arrays.
-		There&apos;s no limit to depth, because the arrays at each depth are treated no differently than the arrays at any other depth.
-		There&apos;s no &quot;depth-three&quot; arrays, as far as the language and the interpreter are concerned.
-		As for accessing the elements, the syntax used just selects the an element from the array at depth zero, then selects an element from that array, and so on.
-		There&apos;s no limit to the number of selections made, so you can properly access values across as many dimensions as you need to.
-		To put it simply, the lesson is completely correct in the assessment that you can build and use arrays of any (positive) number of dimensions, but it&apos;s a bizarre thing for the lesson to point out.
-		Likewise, the lesson points out that you can chain together as many <code>elseif</code> statements as you want.
-		Like arrays too, you can nest <code>if</code> statements arbitrarily deep.
+		The k-nearest neighbour algorithm seems pretty simple.
+		I mean, if you were to implement it, it might get complex because you&apos;d need to work with programming circles and whatnot, which would require use of complex formulas and pi, then detecting what points fell into the circle, what size your circle needed to be, and a bunch more.
+		Or maybe not.
+		If you cycled through every single data point, you could simply calculate the distance away from the prospective data point and use the Pythagorean theorem.
+		Then just pick the data points with the lowest resulting numbers, as they&apos;d be the nearest neighbours.
+		The article calls the distance calculated this way the &quot;Euclidean distance&quot;, but the formula given is clearly the Pythagorean theorem, so you only really need middle school maths to figure out the distance.
+		Instead of the Euclidean distance, the article says the Hamming distance is used in some cases, but no explanation of what that is is given.
+		But anyway, the concept is rather simple.
+		It&apos;s a classification problem, but it&apos;s clearly a case of supervised learning, not unsupervised learning.
+		You&apos;ve got your training set, and you use it to get the computer to make educated guesses about unclassified data points.
+		I would assume the new data points get added to the training set, but that&apos;d taint the training data with guesses, so maybe not.
 	</p>
 	<p>
-		I appreciated the exercise in which we filled in the blanks for the gender code.
-		In my other course this term, we recently had an example in storing binary values, and the example used gender.
-		As an individual of non-binary gender, I found that annoying.
-		I actually use the name Alexand(er|ra), in the style of a regular expression, as my name in informal writing.
-		Legally, I&apos;m just Alex.
-		I have no need for a gendered name such as Alexander, Alexandra, Alexandria, Alexa, or Alexia.
-		However, the lesson in this course had us complete code that offered &quot;other&quot; as an option.
-		Not everyone fits into a binary box, and I appreciate when people don&apos;t try to shove a round peg like me into either a square or triangular hole.
-		I just don&apos;t fit.
+		To use the k-nearest neighbour algorithm, you obviously need to decide on a value for <var>k</var>.
+		Apparently, this value is normally set to the square root of the number of available data points in the training set.
+		It&apos;s not really explained why this is, but I guess it offers a good balance between taking too little into account and taking too much into account.
+		If too few neighbours are used, trends in the data won&apos;t really be considered.
+		If too many are used, it&apos;s basically just a popularity contest between data point types.
+		Another thing mentioned is that to prevent one property of the data points from getting weighed more heavily than the other, some sort of scaling should be used on all the data points&apos; properties.
+		That would be where the min-max scaling and z-scores from the discussion assignment come in.
 	</p>
 	<p>
-		In the discussion assignment, one of the other students asked me about how my pre-compiled webpages are implemented.
-		It was fun to explain it, then go back into my code so I could link to the relevant parts.
-		Like <abbr title="deoxyribonucleic acid">DNA</abbr>, the code&apos;s a bit of a mess due to the way it has evolved over time, but it shows that <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>&apos;s use in regards to webpages isn&apos;t limited to writing scripts that get run to build the pages every time a user requests them.
-		Pages can be pre-built, sort of making the result like a cache, so they don&apos;t have to be rebuilt every time.
+		Speaking of the discussion assignment, for whatever reason, we were limited in how long our responses could be this week.
+		On the one hand, writing less meant I couldn&apos;t go into details really.
+		I felt like I hardly wrote anything, yet I only came out four words under the limit.
+		On the other hand, it made my job easier.
+		I&apos;ve got a lot that needs to get done each week, so keeping the discussion post in this course down to a minimum saved me time and effort.
+	</p>
+	<p>
+		The article also says the k-nearest neighbour algorithm is slow and doesn&apos;t always give much insight.
+		I guess I can see that.
+		If we&apos;re looping over all the training data each time, that&apos;d really slow down our implementation.
+		As for lack of insight, guesses at the classification of new data points doesn&apos;t seem very helpful in many cases.
+		I can see it having potential for some tasks though.
+		This is a course on data mining, and the phrase &quot;data mining&quot; has a very negative connotation for me, so please excuse my negative example.
+		But if you&apos;ve creepily recorded data on past customers and want to classify who might buy a different product you offer, you might classify customers as having bought or not bought your item, then use it to figure out if it&apos;s worth it to try to advertise that item to a pending customer before they finalise their order.
+		And if not, try that same thing with another product, and so on, until you figure out which product you should try to obnoxiously up-sell to them.
+	</p>
+	<p>
+		The unit assignment was much easier than last week&apos;s.
+		There was a bit of trial and error involved, but the intent of what was wanted was clear, and I built my solutions to meet the goals.
+		Last week, I didn&apos;t really understand what the assignment was getting at, most likely meaning I hadn&apos;t absorbed the material for that week even close to as well as I should have.
+		I learned some useful techniques while trying to format my assignment, too.
+		I found data points can be made invisible on a graph in R, and that labels can be added right where the data points would be if visible.
+		This allows, for example, for different symbols to be used to represent different types of data points.
 	</p>
 </section>
 <section id="Unit5">
 	<h2>Unit 5</h2>
 	<p>
-		Our reading assignment for the week is <a href="https://opentextbc.ca/electroniccommerce/chapter/electronic-commerce-technology/">Electronic commerce technology - Electronic Commerce: The Strategic Perspective</a>.
-		Now we&apos;re getting somewhere I&apos;m not actually familiar with yet.
-		It looks like we&apos;re putting aside the <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> lessons.
-		I&apos;m surprised, as we haven&apos;t finished the third-party course on <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> yet, but I&apos;m happy not to continue rehashing what I already have known about the language for probably over a decade.
+		The reading assignment for the week is as follows:
+	</p>
+	<ul>
+		<li>
+			Chapter Eight of <a href="https://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf">Driver.dvi - ISLR First Printing.pdf</a>
+		</li>
+		<li>
+			<a href="https://www.math.unipd.it/~aiolli/corsi/0708/IR/Lez12.pdf">Microsoft PowerPoint - TextCategorization.ppt - Lez12.pdf</a>
+		</li>
+	</ul>
+	<p>
+		The discussion board assignment says it requires significant research, but then goes and limits our word count, including references, to five hundred words.
+		Like the five-hundred-word limit last week, this actually significantly cuts the amount of research that can go into the topic.
+		I can&apos;t use too many references, as they each cut into my word limit, so little research is actually the name of the game.
+		Normally, I don&apos;t like word limits for this reason, but the discussion posts are always a pain because of how little time there is to complete them, so it works in my favour.
+		We need to reply quickly, so as to allow other students to respond, yet we don&apos;t have the topic until the start of the unit.
+		So I usually try to get the initial discussion posts for both of my courses completed within the first couple days, if I can.
+		I tried to stay brief, but found I still was over budget on words, and had to cut out some things.
+		And my post was already based only on the reading assignment.
+		Had I done <strong>*any*</strong> research outside the reading assignment, I wouldn&apos;t have been able to fit my work into the required word count.
 	</p>
 	<p>
-		The article discusses <abbr title="Internet Protocol">IP</abbr> addresses, calling them 32-bit numbers.
-		I guess it was written before <abbr title="Internet Protocol version Six">IPv6</abbr>; now they&apos;re 32-bit or 128-bit numbers, depending on which version of <abbr title="Internet Protocol">IP</abbr> you use.
-		It calls these 32-bit numbers difficult for humans to recall, making <abbr title="Domain Name System">DNS</abbr> vital.
-		You can compact these bits into seven digits, just like an old United States telephone number, back before you had to include the area code when placing calls.
-		Yet somehow, people thought it was okay to use these numbers to identify other people and businesses on the telephone network, but not businesses on the Web and the rest of the Internet.
-		It&apos;s sickening.
-		And yet people, to this day, put up with the telephone number system as if it&apos;s okay.
-		It&apos;s not.
-		We need <abbr title="Domain Name System">DNS</abbr> for telephony, or we need to deprecate the telephone network.
+		The concept of information gain as a measure of entropy reduction is pretty useful.
+		If you can find the right classifications, you can better understand your data and draw conclusions from it.
+		Measuring the information gain allows you to compare classifications to see which one is a better fit for branching your decision tree with.
 	</p>
 	<p>
-		It goes on to discuss the layered setup of electronic commerce technology.
-		It reminds me a lot of the layered structure of the Internet in general.
-		If we were able to invent the perfect technology in one go, we&apos;d probably have a more-monolithic setup.
-		It&apos;d be more efficient.
-		However, building layers like this allows us to focus on one problem at a time, breaking the problem into manageable pieces.
-		This accomplishes two other important tasks too.
-		First, as better solutions come along, we can replace only the parts that need to be replaced.
-		We don&apos;t necessarily need to reinvent the whole stack.
-		Second, we can use the components for other purposes.
-		Again, we don&apos;t need to reinvent things that are already a part of the stack if they happen to be useful in the context of some other stack as well.
-		Layers and modularity offer not only ease of problem-solving, but also flexibility.
+		The presentation this week mentioned that using an odd number of neighbours prevents ties when using the k-nearest neighbours algorithm, but this actually only makes a tie less probable.
+		I actually discussed this last week in my unit assignment submission.
+		If there are only two groups, an odd number of neighbours will prevent ties.
+		However, for any other number of neighbours used, a tie is still possible.
+		For example, one neighbour may &quot;vote&quot; for a classification in group A, while the remaining number of &quot;votes&quot; may be split evenly between group B and group C.
 	</p>
 	<p>
-		We&apos;re introduced to the concept of Uniform Resource Locators (<abbr title="Uniform Resource Identifier">URI</abbr>s), but that&apos;s an outdated and deprecated term.
-		Sadly, it&apos;s still widely in use by people that don&apos;t know what they&apos;re talking about.
-		Because this article is old, I&apos;m willing to give it the benefit of the doubt and say it was likely written back when &quot;<abbr title="Uniform Resource Locator">URL</abbr>&quot; was a valid term.
-		However, modern sources have no such excuse.
-		The correct term is &quot;Uniform Resource Identifiers&quot; (&quot;<abbr title="Uniform Resource Identifier">URI</abbr>s&quot;), as these strings don&apos;t always locate anything.
-		Sometimes, they specify a location, but other times, they specify a registered name of some sort with no information on how to track down the indicated resource.
-		A <abbr title="Uniform Resource Identifier">URI</abbr> identifies a resource, but that identity may or may not actually contain information about the resource&apos;s location.
+		Decision trees really aren&apos;t anything new to me.
+		The measure of information gain I mentioned above is something I hadn&apos;t heard of, but aside from that, decision trees are basically like flow charts, but without the possibility of travelling backwards.
+		You can only go in one direction, so your path always terminates.
+		They&apos;re good for classifying things, but there&apos;s nothing they can do that a flowchart can&apos;t.
+		I might even go so far as to say that the graphical representation of a decision tree is a type of flowchart.
 	</p>
 	<p>
-		Next, we&apos;re introduced to using both <abbr title="Portable Document Format">PDF</abbr>s and <abbr title="Hypertext Markup Language">HTML</abbr> as formats for pages.
-		Especially back in the day, <abbr title="Portable Document Format">PDF</abbr> was an absolutely <strong>*terrible*</strong> format for Web documents.
-		Like the article says, you needed Adobe software to render them.
-		If Adobe refused to offer a version for your system, you were out of luck.
-		If Adobe did offer a version for your system but you don&apos;t trust Adobe (Why <strong>*would*</strong> you trust Adobe?), you were out of luck.
-		These days, <abbr title="Portable Document Format">PDF</abbr>s are usable in third-party software, though the filling of forms meant to be sent over the network (as in you fill out the form, then hit a submission button within the <abbr title="Portable Document Format">PDF</abbr>) still don&apos;t work in third-party software, at least last time I checked.
-		The article also mentions that Adobe-supplied <abbr title="Portable Document Format">PDF</abbr>-creation software is more expensive than webpage-building software.
-		I&apos;ve got to agree with that, though <abbr title="Portable Document Format">PDF</abbr> creation these days doesn&apos;t need to depend on Adobe software at all, due to other software providers having entered the market.
-		Even back then though, a basic text editor, which probably came standard with every operating system even in those times, is all that&apos;s needed for writing <abbr title="Hypertext Markup Language">HTML</abbr>.
-		Personally, I use something a little more complex these days with syntax highlighting, but this isn&apos;t necessary for basic webpage development.
-		The page claims <abbr title="Portable Document Format">PDF</abbr>s to be better for both forms and information, while not asserting that <abbr title="Hypertext Markup Language">HTML</abbr> is better for anything in particular.
-		I completely disagree.
-		For printable forms, yes, <abbr title="Portable Document Format">PDF</abbr>s are the way to go.
-		For all other forms and for information, <abbr title="Hypertext Markup Language">HTML</abbr> is a much better option.
-		It&apos;s easier for your users to work with and scales well the user&apos;s screen size and resolution.
-		For example, someone with poor eyesight might configure their browser to display text in a larger font.
-		This works well in <abbr title="Hypertext Markup Language">HTML</abbr>.
-		It doesn&apos;t work at all in <abbr title="Portable Document Format">PDF</abbr>s.
-		A bit later though, I found the issue with the article: it&apos;s biased.
-		Adobe is used as the primary example of a company with a website as well, showing that the Adobe company, and thus it&apos;s products, are probably favoured by the author or the author&apos;s employer for one reason or another.
+		I&apos;m unclear on how tree-pruning works though.
+		From the looks of it, we cut off the subtrees, keeping those and discarding the part with the root of the main tree.
+		But without the root to connect them, I&apos;m not sure how the subtrees are supposed to relate to one another in any meaningful way.
 	</p>
 	<p>
-		I was well aware of both the Internet and intranets, but I hadn&apos;t heard of extranets before.
-		I didn&apos;t do any side research on them to verify, but the impression I got was that they connect two usually-adjacent intranets.
-		It also seems like an intranet can be a part of multiple extranets.
-		It&apos;s an interesting concept, and allows compartmentalisation while also restricting access to only the departments of an organisation that need it.
+		Bagging and random forests are unintuitive.
+		In bagging, you take samples from your full sample, and use these samples to build trees.
+		Because each tree isn&apos;t working with the full data set, it&apos;s less accurate than a tree using the full data set would be.
+		However, you&apos;re able to get many trees that predict things differently that way.
+		Averaging the results together, you get a more-accurate result than had you used the single, better tree.
+		Random forests take this a step further, and not only limit which data points a tree has access to, but what branching criteria are available.
+		Again, this reduces the accuracy of individual trees.
+		However, when tree results are averaged together, it has the result of making sure all (or at least most) criteria were taken into account in the result.
 	</p>
 	<p>
-		The article takes a very naïve look at firewalls.
-		It says they&apos;re used to keep network traffic from the Internet from reaching the intranet.
-		This is one common use for them, but not the only use available.
-		For example, the firewall on my own computer instead prevents rogue applications from accessing the Internet!
-		The firewall is used in reverse of what the article describes, allowing only the single application I allow to access the Internet to be able to transmit any information.
-		This application is my proxy software.
-		Any other application wanting to access the network has to play nicely with the proxy.
-		If it tries to leak data outside the encrypted channel, the firewall prevents it from doing so.
-		Firewalls simply allow or block traffic from one end or both, based on some criteria defined by their configuration.
+		When I looked at the unit assignment at the beginning of the week, I was quite intimidated and thought the assignment would be pretty difficult.
+		When I sat down to work on it after reading the material for the week though, it was actually a breeze.
+		To start with, the entire first half of the assignment practically did itself.
+		The instructions told me exactly what commands to enter, and all I had to do was copy text output into my submission, take a screenshot, and troubleshoot a single missing library; I found <code>mlbench</code> wasn&apos;t available on my system.
+		It was in the package manager though, so I just ran <kbd>sudo aptitude install <a href="apt:r-cran-mlbench">r-cran-mlbench</a></kbd> on the command line.
+		I assumed I&apos;d have to restart R for R to find it, but much to my surprise, just rerunning <kbd>library(mlbench)</kbd> worked.
+		I also expected <kbd>data(Ionosphere)</kbd> to fail, as our data file was called <code>Ionosphere.txt</code>, and we didn&apos;t include that <code>.txt</code> extension.
+		It worked anyway though.
+		It was like clockwork that&apos;d been missing a cog, and that cog had been put in place, so everything was fine now.
 	</p>
 	<p>
-		The article talks about the problem with single-key encryption.
-		How do you safely transmit the key?
-		The article makes the statement that telephone and fax machines can&apos;t be trusted due to not being completely secure.
-		Not completely secure?
-		That&apos;s a laugh.
-		Try highly insecure.
-		The telephone network has been shown to be completely unreliable when it comes to security.
-		The United States government has even ordered back doors be put into the United States telephone network in the past.
-		Even if you trust the government (and if your government is enforcing back doors, you shouldn&apos;t), back doors actually make it easier for crackers to get in.
-		The government has deliberately weakened the encryption of the telephone network, over which bot telephone calls and fax messages travel, making it unsafe for use when doing anything remotely important.
-		Like the article says though, public key encryption fixes the problem by making it so the public key doesn&apos;t need to be kept secure at all; only the private key does.
-		The system is genius, if you ask me.
-		Also like the article says, public key encryption can also be used to sign messages to verify their authenticity.
-		For example, I sign my <a href="https://y.st./a/canary.txt">warrant canary</a> every week.
+		The second half of the assignment wasn&apos;t intimidating either once I&apos;d read the material.
+		In fact, the instructions even told us which functions to use.
+		We just needed to know what arguments to pass in.
+		I admit I struggled a bit in figuring out the code to use between the functions mentioned in the instructions, and my result probably isn&apos;t as clean as it could be, but I arrived at a reasonable answer to submit.
 	</p>
 	<p>
-		The article explains that with electronic funds transfers, all transactions need to be sent through the banks.
-		That seems rather obvious.
-		What&apos;s not obvious though is that the banks are legally required to record all these transactions.
-		I wasn&apos;t aware of that.
-		That&apos;s creepy and unnecessary.
-		I think I&apos;m going to try avoid using my cards from now on.
-		I still need them for online purchases, but most of my purchases are in person, where cash is accepted.
+		When I went to grade last week&apos;s work, I got a nasty surprise.
+		The first thing we were to grade was whether the student had included a detailed log of their R session.
+		The assignment instructions never asked for that though!
+		I only included parts I thought were relevant, and didn&apos;t include the part that generated the graph I&apos;d included.
+		It&apos;d be nice if the assignments told us everything we were expected to include in our submission, but this isn&apos;t the first time at this school I&apos;ve been blind-sided like this.
 	</p>
 	<p>
-		The article lost all credibility in my book when I got to the part where it mentioned a &quot;<abbr title="personal identification number">PIN</abbr> number&quot;.
-		Anyone who knows what a <abbr title="personal identification number">PIN</abbr> is knows &quot;<abbr title="personal identification number">PIN</abbr>&quot; stands for &quot;personal identification number&quot;.
-		That means a &quot;<abbr title="personal identification number">PIN</abbr> number&quot; is a personal identification number number.
-		A number number?
-		What even is that?
-		Only idiots talk about &quot;<abbr title="personal identification number">PIN</abbr> numbers&quot; or &quot;<abbr title="automated teller machine">ATM</abbr> machines&quot;.
-	</p>
-	<p>
-		When starting my project for the week, I needed to figure out which of the three offered platforms to develop my e-commerce shop on.
-		I knew nothing of any of the three, so I started out by seeing how the main sites of the company performed without JavaScript.
-		Last time I had to use a specific platform for Web development in this course, I was required to use Wix, with no alternative.
-		Wix is pretty terrible, and websites built with it don&apos;t function for users who don&apos;t use JavaScript.
-		When you&apos;re building a site, why would you want to push away visitors that don&apos;t use JavaScript?
-		And with the stores we have to build this week, that equates to pushing away would-be <strong>*customers*</strong>.
-		Two of the three provided sample sites, so I knew the built sites would be fine.
-		The third platform provided no samples, but the company websites were fine without JavaScript, which was a good sign.
-		Next, I looked to see if any provided the option to directly modify the <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>.
-		None listed this as a feature.
-		I expected they wouldn&apos;t, but if one did, that&apos;d be the option I&apos;d use.
-		Writing what you need in <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> is much easier than trying to work with company-specific interfaces.
-		The company-specific interfaces also often use drag-and-drop, with pixel-specific placements, which makes the pages created look terrible when viewed in a browser window that isn&apos;t the exact size expected by the company.
-		Almost no one seem to use those exact sizes either, due to differing monitor sizes and window size preferences.
-		Pixel-precise placements are almost always the wrong way to do things.
-		Next, I looked at domain support.
-		Could you use your own domain?
-		It looks like for the paid tiers, all three offer that support.
-		Two of the platforms are silent about what your address will look like if you don&apos;t pay though.
-		The third tells you that you get a subdomain of their name.
-		Without <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>-editing support, I don&apos;t think any of these options are <strong>*worth*</strong> paying for, but even if they were, I&apos;m poor and I&apos;ve got nothing to sell.
-		There&apos;s no sense in paying for a demo site I&apos;ll only have up for a couple weeks, so I went for the option that provides a subdomain.
-		Subdomains are cleaner than subdirectories for identifying your business pages.
-		As I went to check which of the three offered a subdomain so I could sign up though, I noticed that one of the other sites admitted to offering one of those terrible drag-and-drop, while the other offered &quot;full customisability&quot;.
-		I was highly sceptical, thinking it likely didn&apos;t offer anything even <strong>*close*</strong> to full customisability, but I had to know what it offered.
-		So I chose that platform over the one offering a clean subdomain.
-	</p>
-	<p>
-		It turned out that that platform too offered a subdomain, but the registration page claimed I didn&apos;t fill out the <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr> correctly.
-		There was no <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>.
-		So I tried to register instead from my other browser instance, which has JavaScript enabled.
-		Sure enough, there was one of those annoying Google reCAPTCHA <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s that usually makes me fill put about twenty to thirty <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s before it&apos;ll let me through.
-		This time, it only made me fill out one.
-		It&apos;s the first time in <strong>*years*</strong> that Google&apos;s reCAPTCHA hasn&apos;t done it&apos;s best to be an absolute thorn in my side.
-		I found the <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>-/<abbr title="Cascading Style Sheets">CSS</abbr>-editing option, so that was available like I&apos;d hoped, but it said I couldn&apos;t use that option without paying.
-		Too bad.
-		Looks like the list of features on the gratis version was a lie.
-	</p>
-	<p>
-		Direct <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>-editing would definitely be best though, if I was to be preserving this site in my archive, so I tried the next company.
-		This company&apos;s registration page was <strong>*also*</strong> broken without JavaScript, as they disabled the &quot;submit&quot; button until the JavaScript detects that all fields are filled.
-		It&apos;s an idiotic sort of design, really.
-		If you&apos;re going to set up a page like that, the proper way is to not disable the button in the original <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> of the page, but instead disable it using JavaScript.
-		That way, it works as you want it to when JavaScript is enabled, but it&apos;s not completely broken when it&apos;s not.
-		Even with JavaScript checking these things, you can never trust data from users to be valid or complete, so you&apos;ve got to check all that on the server side anyway.
-		Allowing people without JavaScript to use your site shouldn&apos;t even be a question; you just do it, every time.
-		I copied the address and was about to paste it in the other browser instance when I remembered I could instead just edit the page to enable the button.
-		See?
-		You can&apos;t trust your users, so JavaScript isn&apos;t a proper validation mechanism.
-		You&apos;ve got to double check it server-side.
-		I&apos;d signed up for the wrong site though, and this was the one with the drag-and-drop editor.
-		Oops.
-	</p>
-	<p>
-		The final site completely disabled the registration page if JavaScript was disabled, so I had to take that to my other instance.
-		Google&apos;s reCAPTCHA was back, this time refusing to send me any <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s at all, on the grounds that it thought I might be an automated script.
-		Isn&apos;t that what <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s are for though?
-		To allow people to prove they&apos;re <strong>*not*</strong> automated scripts?
-		reCAPTCHA&apos;s pretty stupidly programmed.
-		So I waited, and gave Google some time to stop being an idiot, and they send me five <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s to fill out.
-		Again, a pretty small number compared to what they usually throw at me.
-		It turned out this platform offered no real customisation either.
-		All you could do is change the colours, though that&apos;s more than the first site would let you do on an unpaid subscription.
-	</p>
-	<p>
-		I ended up going back to the first company, but while they said you could put text on the store front page, I never could figure out how to do it.
-		That text was needed so we could include the accepted payment types information, which the assignment required.
-		Otherwise, a student would have to register an account and attempt to make a purchase before they could see what payment options are available, and for that method to even work, each of us students would need to actually have a payment system in place.
-		I doubt many of us have the accounts set up to accept payments online, and I know I sure don&apos;t.
-		I ended up writing up the necessary information, then taking a screenshot of the text and uploading it as the banner image.
-		There&apos;s no way to disable the banner image rotation though, and each of the three banner images has a default image.
-		Even if you upload one banner image, the other two defaults will be used unless you upload three banner images.
-		So to keep the text in place, I uploaded three copies of this screenshot.
-		This is why I don&apos;t like working with pre-built website systems.
-		Your options are severely limited, and you&apos;ve got to do hacky things to get your needs met, if you can even get them met at all.
-		I much prefer to build from scratch, or at the very least, be able to modify the code of an existing page, so as to actually have control over the <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>.
-	</p>
-	<p>
-		The assignment instructions say to save the <abbr title="Uniform Resource Identifier">URI</abbr> of our e-commerce website in a word-processing document and upload it.
-		That&apos;s rather asinine.
-		Students then hove to download that document, then copy the <abbr title="Uniform Resource Identifier">URI</abbr> from it and paste it into their Web browsers.
-		Why not just submit the <abbr title="Uniform Resource Identifier">URI</abbr> in the submission form?
-		I did as the instructions said to do, but also provided a direct hyperlink so users don&apos;t have to download that stupid file.
+		I&apos;d missed something when I went through the work myself, too.
+		We were shown in the instructions that we could define each coordinate pair as a two-item vector, but that didn&apos;t seem like a useful thing to do, given that the functions we were working with would interpret the intended rows as columns and intended columns as rows if we then tried to group those variables into a data frame.
+		I ended up not doing that, and instead creating one vector of <var>x</var> values and another vector of <var>y</var> values.
+		The first student whose work I graded this week though showed me the missing piece: the <code>rbind()</code> function.
+		I&apos;m not sure if I missed that in the reading assignment or if this was something we were expected to find outside of class, but it allows the data points to be defined the way the assignment instructions grouped them and still get usable data.
+		That said, they got the rest of the assignment wrong because they failed to assign groups to any of the data points and instead used the point names as classes, resulting in six classes instead of two.
+		It yielded &quot;correct&quot; results when only one neighbour was used to determine a point&apos;s class, but didn&apos;t allow for using multiple neighbours, as no two points in the training set had the same class name.
+		The second student pretty much had the same solution that I&apos;d had, so they&apos;d defined an <var>x</var> vector and a <var>y</var> vector, except their graph-generation code was cleaner than mine, and only needed one line instead of my two.
+		Unlike my graph, theirs wasn&apos;t colour-coded, but I&apos;d be interested to see if I can get the colours onto the graph using their method.
+		If so, their method would be a more-correct way to achieve the effect.
+		The third student used the same method as the first student, but actually did the work correctly, showing that the <code>rbind()</code> function does do what we needed it to do for lass week&apos;s assignment.
 	</p>
 </section>
 <section id="Unit6">
@@ -712,19 +839,15 @@
 	</p>
 	<ul>
 		<li>
-			<a href="https://magazine.joomla.org/issues/issue-aug-2018/item/3351-10-reasons-to-choose-joomla">10 Reasons to choose Joomla</a>
+			<a href="https://arxiv.org/ftp/cs/papers/0308/0308031.pdf">0308031.pdf</a>
 		</li>
 		<li>
-			<a href="https://www.joomla.org/about-joomla.html">Joomla! - Content Management System to build websites &amp; apps</a>
+			<a href="https://my.uopeople.edu/pluginfile.php/389237/mod_book/chapter/179471/neural-networks-ebook.pdf">neural-networks-ebook.pdf</a>
 		</li>
 		<li>
-			<a href="https://www.computerworld.com/article/2494863/open-source-tools-choosing-an-open-source-cms-part-2-why-we-use-joomla.html">Choosing an open-source CMS, part 2: Why we use Joomla | Computerworld</a>
+			<a href="http://home.thep.lu.se/pub/Preprints/91/lu_tp_91_23.pdf">lu_tp_91_23.pdf</a>
 		</li>
 	</ul>
-	<p>
-		Hilariously, one of the links is broken in the study instructions, because it uses the invalid <code>ttps:</code> scheme instead of the valid <code>https:</code> scheme in its <abbr title="Uniform Resource Identifier">URI</abbr>.
-		Hopefully that&apos;ll be fixed in a later term.
-	</p>
 	<p>
 		I&apos;ve found a way to squeeze just a little more time for coursework out of my week.
 		I really hate to skip my weekly <abbr title="Linux User Group">LUG</abbr> meetings, though I did have to skip one this term to fit in a heavy study session.
@@ -737,204 +860,155 @@
 		There&apos;s no real reason not to, and allows me to be productive without having to give up my meetings.
 	</p>
 	<p>
-		Oddly, the final of the three aspects we&apos;re supposed to grade on had no instructions at all.
-		There was no indication as to what we were supposed to be grading on.
-		So I just gave everyone full credit on that.
-		The first student failed to make their site visible to the world, so that was that was the only aspect I was able to give them any credit on.
-		I was quite surprised, as I&apos;d been rather paranoid, myself.
-		I checked my website repeatedly from an anonymous browser window, which was part of how I debugged the fact that my header image wasn&apos;t displaying correctly.
-		The other two students did well though.
+		It seems that in my own solution for last week, I jumped through unnecessary hoops.
+		The return value for the prediction function listed probabilities instead of actual guesses, so I used the <code>round()</code> function to round the probabilities into hard predictions.
+		It seems the <code>table()</code> function would have done something with the probabilities to make them usable on its own.
+		One student didn&apos;t answer the final question, which was one of the main ones we were grading on, and another submitted a partial R session that didn&apos;t accomplish anything.
 	</p>
 	<p>
-		Joomla!, needed for this week&apos;s unit assignment, seems to employ those obnoxious Google reCAPTCHA <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s like the sites last week.
-		Again, Google refused to send any <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s at first on the grounds that I might be a robot, which again, is idiotic because the whole point of providing the <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s is to provide a chance for me to prove I&apos;m not.
-		For over an hour, Google refused to send <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s.
-		It made me question the discussion assignment.
-		We were supposed to find jobs we could apply for in relation to Joomla!, but if it takes over an hour to even get <strong>*started*</strong> on a Joomla! project, such a job really isn&apos;t worth my time.
-		I did some research though, and found Joomla! is not only this website, but also a free software product the same company offers.
-		A Joomla! job need not have anything to do with this website.
+		As I was loading the pages for the discussion assignment and unit assignment to see what my tasks were for the week, the first thing I noticed was a link to a Basic Prop example below the main unit links.
+		My heart sank.
+		You may remember that in <a href="#Unit1">Unit 1</a>, I&apos;d hoped to avoid downloading and running this nasty bit of software due to licensing issues.
+		Reading over the unit assignment confirmed my suspicion though.
+		We&apos;ve got to use this noxious <abbr title="Java Archive">JAR</abbr> to get our work done.
+		There doesn&apos;t seem to be a way around it.
 	</p>
 	<p>
-		I couldn&apos;t find any jobs listed as being for Joomla! developers or Joomla! administrators on Indeed, even without narrowing my search to my country, as the discussion assignment asked us to do.
-		Several jobs made mention of Joomla!, though they didn&apos;t seem Joomla!-centric.
-		On the other hand, LinkedIn  provided plenty of results for this query, but wouldn&apos;t allow me to see any of them due to not having an account there.
-		They&apos;ve got what looks like a blurred page just behind the login form, but it&apos;s actually a lie.
-		I tried deleting the block from the page, only for the blurred page to vanish too.
-		So I reloaded and compared the blurred page to the blurred page of another listing.
-		They were identical!
-		It&apos;s not actual page information, but a decoy to keep you from seeing anything.
-		They insist that they be able to track what you&apos;re looking at and tie it to your real-world identity, and to do that, they demand that you register.
-		Creepy.
-		I&apos;ll pass.
-		There is <strong>*zero*</strong> valid reason to need an account to browse listings of <strong>*anything*</strong>.
-		Only once you start <strong>*applying*</strong> for the jobs does it make sense for a user to go ahead and create an account.
-		People that would fall for this sort of garbage and allow themselves to be tracked that way are idiots.
+		This is the third week in a row in which our initial discussion post has had a word count cap placed on it.
+		Last week, I put my post into LibreOffice Writer and found my word count to be below the maximum, but when I posted it, the university&apos;s word counter counted it to be above.
+		It was counting words that weren&apos;t there, so I had to delete the post, rework it, and repost it.
+		I had my suspicions as to what it was doing, and I tested that this week.
+		It&apos;s counting the markup used for formatting.
+		For example, that means that each paragraph costs me two words.
+		If I take three paragraphs and combine them into one, that saves me four words, because there are two less paragraphs.
+		Hilariously, I could use this to artificially inflate my word count.
+		I could make a post that&apos;s clearly only got a single word get counted as having thousands of words.
+		However, that&apos;s not at all useful.
+		It&apos;d be much nicer to be able to get words dropped from the count, but I don&apos;t yet have a way to do that arbitrarily.
+		There are a few hacks I could do to drop the word count slightly, but it wouldn&apos;t be enough to really help me cover topics with the level of detail they deserve.
+		While the word counter likes to cleat me, I don&apos;t have a good way to cheat the word counter back.
+		That means that again, doing extra research, which would add more references and thus eats my word count, does more harm than good.
 	</p>
 	<p>
-		I briefly considered trying to set up an account with a temporary email address, allowing them to track me for that single session and losing me afterwards, but I quickly remembered that we&apos;ve got to provide links to the job listings we look at.
-		I could not in good conscience link these listings to other students and require them to register as well.
-		I&apos;m not a monster, after all.
+		It was interesting to read that a node in a neural network may itself contain a neural network.
+		I&apos;ve got to wonder how such recursion occurs.
+		Does the programmer set up the nodes to contain neural networks from the beginning, to make each node better at learning?
+		Or does the learning process sometimes involve switching the algorithm used by a given node into a neural network?
+		The reading material doesn&apos;t really cover this.
+		Bidirectional node connections are also something I&apos;d love to see some elaboration upon.
+		If the flow of the data isn&apos;t unidirectional, how does it terminate instead of looping indefinitely?
 	</p>
 	<p>
-		I didn&apos;t have time to complete my unit assignment on the first day, but I set up the account as quickly as I could, as I wanted to snag my preferred subdomain.
-		I wanted the one with this course&apos;s course code as the part I got to choose, and didn&apos;t want someone else taking that one out from under me before I could get to it.
-		If they did, I&apos;d have to come up with something else, and it just wouldn&apos;t be as cool (at least not if I couldn&apos;t use a subdomain of my own domain).
-		So I grabbed that subdomain, then put the project down and worked on more-urgent coursework.
-		The next day though, I finished up the urgent stuff, and figured I might as well get started on the Joomla! project.
-		I wasn&apos;t sure how long it&apos;d take, as it had a boatload of steps, but I thought I could get something done on it in the couple hours I had before work.
-		The hardest part was finding my way back to that first page the instructions said to grab a screenshot of.
-		After that though, everything else was a breeze.
-		There were a lot of steps, but they were all micro-steps, not large tasks we had to accomplish.
-		I ended up getting it all done before work.
+		Later, the material talked about a network using only zeros and ones as data being passed between neurons and only boolean logic within the neurons.
+		That seems like a bad use of a neural network.
+		Why not use logic gates instead, which are designed exactly for that purpose?
 	</p>
 	<p>
-		The first page of the reading assignment was about why we should choose Joomla! as our <abbr title="content management system">CMS</abbr>.
-		The first reason was that Joomla! has won twenty different awards.
-		Honestly, I don&apos;t find that impressive.
-		There are tonnes of things that win lots of awards while still being utter piles of garbage.
-		For example, take almost any award-winning movie.
-		Watching it is probably a waste of your time.
-		At least for me, on the rare occasion I used to watch movies, I was disappointed by them almost every time, no matter how many awards they&apos;d won.
-		So you won twenty awards in thirteen years?
-		Big deal.
-		I don&apos;t know if any of those awards actually mean anything.
+		I&apos;m unclear as to what the activation function is.
+		On the surface, it looks like the activation determines whether a given neuron outputs a value at all.
+		That makes no sense though.
+		The output is fed into other neurons alongside output of other neurons, which means there <strong>*always*</strong> has o be output.
+		So if the neuron is &quot;inactive&quot;, does it just output a zero, regardless of the value that would otherwise be provided by the output function?
 	</p>
 	<p>
-		Next, it was said that Joomla! is free software.
-		That&apos;s something I care about.
-		If a given <abbr title="content management system">CMS</abbr> isn&apos;t free software, I can guarantee I won&apos;t choose it.
-		That doesn&apos;t mean if it&apos;s free software, I <strong>*will*</strong> choose it, but it being free software gives me a bunch less reasons to rule it out.
-		I don&apos;t have to worry about licensing agreements, obnoxious product keys, <abbr title="digital restrictions management">DRM</abbr>, bugs that I&apos;m not allowed to fix even if I find them, being disallowed to read and understand what the software is doing to my machine, supporting developers that hold back society by hiding their source code, vendor lock-in, and a bunch of other problems.
+		I&apos;m also not clear on how the back-propagation algorithm works.
+		The material talked about how to determine how much error is caused by the weights assigned each input, but not how to use that information to calculate better weights.
+		I didn&apos;t understand the mathematics presented in the other reading material either, and as that document was almost entirely formulas and explanations I didn&apos;t get about the formulas, I didn&apos;t understand what that document was talking about.
+		It would have really helped to see some programming code instead of equations using unfamiliar symbols.
 	</p>
 	<p>
-		Next, it covers that Joomla! has seventy-five language choices available.
-		Nice!
-		And it appears support for these languages is complete, judging by the fact that you can even <strong>*install*</strong> Joomla! in any of these languages.
-		That means that even the installer itself has support for these languages.
-		It&apos;s nice to see efforts being made to make the product work for as many users as possible.
+		The idea of normalising data once again came up.
+		Last time, the issue was that data with a small scale would dominate data with a large scale when searching for neighbours in a k-nearest neighbours search.
+		Put simply, if you&apos;ve got neighbours placed centimetres apart in the north/south direction but kilometres apart in the east/west direction, you&apos;re going to have bands of neighbours at the same latitude, while longitude will be effectively ignored.
+		This time, data with large scales has a similar effect over data with smaller scales in a learning context, though I&apos;m having trouble actually visualising why.
+		I imagine it&apos;s likely for similar reasons as with a k-nearest neighbours search, but I&apos;m not sure.
+		Actually, on second thought, it probably has more to do with attempts to minimise error.
+		Data with a higher scale would output a higher error when the data&apos;s even a lower percentage off from what it is predicted to be.
 	</p>
 	<p>
-		Next, the article talks about security.
-		First, it talks about two-factor authentication.
-		From the sounds of it, the <strong>*only*</strong> two-factor authentication mechanism available in Joomla! is via <abbr title="Short Message Service">SMS</abbr>.
-		As far as I&apos;m concerned, that&apos;s a point <strong>*against*</strong> Joomla!.
-		I&apos;d much rather see no two-factor authentication at all than requiring people to have <abbr title="Short Message Service">SMS</abbr>-enables mobile devices to enable two-factor authentication.
-		I don&apos;t mind <abbr title="Short Message Service">SMS</abbr>-based two-factor authentication being available, <strong>*if and only if*</strong> an alternative two-factor authentication option is available for people who either don&apos;t use the telephone system or have no desire to provide their telephone number to the host of the Joomla! instance they use.
-		There is <storng>*way*</storng> too much artificial dependence on telephones in the modern world, and it seems Joomla! is adding to that problem.
-		It&apos;s not that hard to offer two-factor authentication via email as an option too.
-		The article also talked about the B-Crypt algorithm being used for password storage.
-		I wasn&apos;t sure what that was off-hand, but it sounded like passwords were being reversibly encrypted, which is something that you should <strong>*never*</strong> do.
-		Any system that does that can be immediately written off as not being secure.
-		I looked it up though, and B-Crypt is an algorithm based on the Blowfish hash.
-		Passwords are being hashed, not reversibly encrypted, which is how it should be.
-		It seems B-Crypt can be adjusted too, making it more and more computationally expensive to perform to account for increases in processing power.
-		That&apos;s pretty awesome.
-		That certainly makes it easier to stay secure as time goes on and adversaries have access to faster computers.
-		B-Crypt also uses a salt, preventing the use of rainbow tables.
-		Again, a plus.
-		The article also briefly mentioned the bug-squashing security team of the project.
+		Another key point was the use of the regularisation parameter to avoid over- or under-fitting the model to the data.
+		I&apos;ve seen no way to make use of this in Basic Prop though, which is really too bad.
+		The assignment has us working with very specific data under the context that we&apos;ll never see data that isn&apos;t in the set.
+		This is <strong>*exactly*</strong> the sort of situation in which intentionally over-fitting the data would really come in handy.
+		The book says the problem with over-fitting the model is that the network will learn the imperfections in the data set as well as the actual trends, but for the unit assignment, there <strong>*are no*</strong> imperfections in the data set, because the data set isn&apos;t a collection of observations, but rather, the very definition of what we&apos;re looking for.
+		We&apos;re not looking at handwriting, in which there are infinite examples of a representation of each digit.
+		We&apos;re looking at a seven-segment digital display in which only seventeen of the possible one hundred twenty-eight combinations will ever be seen.
 	</p>
 	<p>
-		Next, the article covered that Joomla! is easy to use and you don&apos;t need to be a developer to use it.
-		This is a double-edged sword though.
-		It almost certainly means that you can&apos;t get as good of results as if you were working with something that did require development skills to use.
-		You don&apos;t have confusing options to figure out, making it easy to use, but you also don&apos;t have powerful options to use, meaning you&apos;re limited in what you can do with the product.
-		The article also mentions the Joomla! manual; the manual is a vital resource for users of any large project.
-		You really shouldn&apos;t be choosing a product that <strong>*doesn&apos;t*</strong> have a manual.
-		And apparently, there&apos;s also a forum full of Joomla! users, but even if the Joomla! team didn&apos;t provide this, several such forums would spring up on their own.
-		The main advantage of the developers providing this is that there&apos;s a better chance for there to be one unified forum on the topic and not fifteen forums with different experts, where you - for example - have to guess which forum to use to get help with which problem.
+		Cross-validation sounded like it might help when I started attempting to complete the unit assignment, but after reading about what it actually is, I saw how detrimental it would be to our use case.
+		It splits the data and uses only part of it for the training, while the other part for error reduction.
+		That works when your data consists of samples, but not so much when your data is a complete definition of the problem.
+		You need the full set for training if you&apos;ve got the definition of the problem right there.
+		Otherwise, you&apos;re not using part of the rules of the situation in the training phase, so those rules don&apos;t get learnt.
+		That must be why when I used cross-validation, it actually increased my error rate.
 	</p>
 	<p>
-		Apparently, there are over seven thousand extensions, too.
-		That figure sounds impressive if you&apos;re not paying attention, but the <strong>*quality*</strong> of such extensions isn&apos;t mentioned.
-		More importantly, we&apos;re not told anything about the licenses they are offered under.
-		It&apos;s made clear that most if not all of these extensions are provided by the community, so the level of skill and the attitudes of the developers will vary.
-		As I said above, I wouldn&apos;t consider a proprietary product.
-		As far as I&apos;m concerned, a proprietary extension to a freely-licensed product doesn&apos;t count toward that product&apos;s list of available extensions, so right off the bat, I&apos;m not sure if seven thousand extensions are honestly available.
-		And after that, you need to rule out the badly-designed extensions.
-		They count toward the number of available extensions, but not toward the list of ones you&apos;d actually want to use.
-		And this smaller figure is what&apos;s going to matter when you&apos;re looking at the probability of one of the extensions filling whatever need you might have.
-		Don&apos;t get me wrong, we in the free software community come out with a lot of very useful code.
-		We&apos;ve even developed an entire operating system composed of nothing but freely-licensed works: Debian, the best operating system I&apos;ve ever had the pleasure to use.
-		However, we also come out with a lot of utter garbage.
-		It&apos;s a mixed bag with us.
+		From what the third paper talks about, it sounds like knowledge and memories are encoded as neuron strengths, which I guess makes about as much sense as anything else.
+		I&apos;m not sure how learning takes place though.
+		Neurons that transmit more often become stronger and ones that transmit less frequently become weaker, and we can easily see a parallel to muscle strength, but what even determines which neurons fire in the first place?
 	</p>
 	<p>
-		The article goes on to boast that Joomla! has a world-class user interface.
-		I tested this though.
-		The interface doesn&apos;t even function without JavaScript enabled.
-		It&apos;s not just that it&apos;s harder to work or something.
-		Vital functionality such as editing posts, which is a feature that in no way requires client-side scripting, is missing in Joomla! for users that choose not to use (or are unable to use) JavaScript.
-		This is in no way a &quot;world-class&quot; user interface.
-		It doesn&apos;t even meet the <abbr title="World Wide Web Consortium">W3C</abbr>&apos;s basic accessibility guidelines.
-		Calling this a world-class user interface is a bold-faced lie.
-		There are no two ways about it.
-		It doesn&apos;t matter how many advanced features you have; if you don&apos;t have the basic necessities as well, you&apos;re not world-class.
+		I ended up going into the assignment pretty much blind.
+		The first part of the assignment was simply formatting the case data in a way the software would understand it.
+		It was busy work with no actual challenge.
+		I&apos;d say that the data file should have been just presented as a part of the assignment, but there were actually a couple hidden reasons why we needed to do this ourselves.
+		First, it shows we understand the data format.
+		It&apos;s not a complicated format, but formatting it ourselves lets us show that we&apos;re not completely incompetent.
+		Second, we were given <abbr title="American Standard Code for Information Interchange">ASCII</abbr> values, but we were given them in decimal.
+		And we needed them in binary.
+		Again, translating them by hand is incredibly simple, though tedious.
+		But doing it lets us prove we even understand how base translations work.
+		That said, I just pulled out my calculator.
+		<a href="apt:galculator">Galculator</a> has the option to display answers in binary, octal, decimal, and hexadecimal.
+		So all you have to do is put it in binary output mode, then ask it, for example, what <code>72</code> is equal to.
+		No equation needed, just ask it to operate on a single number.
 	</p>
 	<p>
-		Next, the article boasts that the Joomla! community and the Joomla! developers never stop, so work on Joomla! will continue for the foreseeable future.
-		As they put it, it&apos;s a future-proof solution.
-		That seems legitimate.
-		One of the problems with proprietary software is that the developers could stop supporting it at any time, and if they do, you&apos;re out of luck.
-		There&apos;s nothing you can do about it.
-		In fact, the Joomla! team likewise might discontinue the project.
-		That&apos;s simply a fact of how development works.
-		However, because the code is available and freely-licenced, the project can be picked up by anyone.
-		With a large community, the project will continue even if the Joomla! team disbands, though the project may need to take on a different name and may end up splintering into several projects with the same original code base.
-		Even if the Joomla! team disbands, if the community picks the project back up (and they most likely would), individual members from the former team may even contribute on their own time, or due to being funded by companies wanting continued support.
-		Because the project is freely-licensed, it&apos;s much harder for the project to truly die.
+		Basic Prop is obnoxious to work with.
+		Every time you open the dialogue to edit the the network layout, the number of outputs gets reset to zero.
+		So if you don&apos;t remember to set it back to seven <strong>*every single time*</strong>, you have to go back and fix that afterwards.
+		Also, you can&apos;t leave the network layout dialogue open and run the simulation, even though that dialogue is in a separate window.
+		Until you close it, the main window stops responding.
+		So not only are you not able to leave it open to tweak things little by little, but you also aren&apos;t able to leave it open to stop the output layer from resetting to zero.
+		And finally, every time you modify the network layout, the pattern file unloads, even if you remember to fix the output so the pattern is compatible with both your old and new layouts.
+		So you&apos;ve got to open the file load dialogue time after time and reload the pattern.
+		There doesn&apos;t seem to be a way around that.
 	</p>
 	<p>
-		And finally, the article touts that Joomla! is powerful, due to its high level of extensibility.
-		I&apos;m not sure how true this is.
-		I mean, above, I pointed out a part of the article that was clearly lying, and combined with the fact that this article was written by the Joomla! developers and therefore biased, I&apos;d take this with a grain of salt.
-		However, even if you did hit limitations in what Joomla!&apos;s extention <abbr title="application programming interface">API</abbr> could do, there&apos;s still the fact that Joomla! is written in an easy-to-understand language (<abbr title="PHP: Hypertext Preprocessor">PHP</abbr>) and the fact that you&apos;re legally allowed to change the source code as you wish.
-		You can edit Joomla! itself to get it to do whatever you need it to do.
-		Even if you did have to add certain features yourself, there&apos;s a good chance that using Joomla! as a starting point instead of building from scratch would save you a lot of time and effort.
-		A better idea would be to add the <abbr title="application programming interface">API</abbr> features you need to put your functionality in an extension, then try to get the developers to accept your changes into the main project.
-		From your perspective, this would mean that you wouldn&apos;t have to run your own custom fork of Joomla!, which would make upgrading much easier.
-		From the standpoint of the community, it&apos;d mean that they too would have access to the <abbr title="application programming interface">API</abbr> features that were useful to you, and might be useful to them as well.
+		I couldn&apos;t seem to get my error down to zero, which was frustrating, as I know I could do it if I were using logic gates instead of a neural network.
+		I might even be able to do I with a neural network if I could cut some of the connections and/or adjust the weights by hand, though no guarantees on that.
+		I didn&apos;t even have to work with any of the equations that confused me, yet I couldn&apos;t get my network to produce accurate enough results.
+		Eventually, I found that if I used two hidden layers instead of one, the output stopped resetting, so I ended up using two hidden layers in all my experiments, not knowing if that was helpful or harmful to my solution, just to make progress more feasible.
+		I went back later and tried all one-layer solutions, but no solution I could five yielded an error rate under <code>0.05</code> like the assignment wanted.
+		The best I managed to do was get a solution with an error rate under <code>0.25</code>, which is honestly quite terrible, and even then, my solution only sometimes produced an error rate that low.
 	</p>
 	<p>
-		Overall, I&apos;d say the article convinced me <strong>*not*</strong> to choose Joomla!.
-		It&apos;s by far not the worst option out there, and is in fact rather decent from what I can tell, but it&apos;s not what I would look for in a <abbr title="content management system">CMS</abbr> or any other Web-based system.
+		Unable to produce an even somewhat-acceptable solution using the required software, I started looking at how I&apos;d produce my desired result using logic gates.
+		I came to the conclusion that I&apos;d need a lot more than just two internal layers to get the proper solution from logic gates.
+		A logic gate solution is very much possible.
+		I have no doubt whatsoever about that.
+		However, it might only be possible as basically a series of &quot;if this exact bit pattern OR if this exact bit pattern OR ...&quot; statements.
+		That type of solution would be incredibly messy, and I can&apos;t even translate it into a working set of weights for this neural network that has a maximum of four layers, including the input and output layer.
+		I was hoping that if I could find a working set of weights, I could use it to try to reverse engineer a neural network setup that&apos;d reproduce my weights.
+		No such luck.
+		I tried to find exploitable patterns in the bit sequences too, but to no avail.
+		Even if I could find such bit pattens, I wouldn&apos;t know how to use them.
+		The simple fact is that while the neural network is fed bits, it&apos;s not outputting pure bits.
+		It&apos;s outputting numbers near <code>0</code> or <code>1</code>, but because these numbers are slightly off, they&apos;re going to produce error no matter what I do, unless I can find a way to set the weights such that the network always outputs integers.
+		And I&apos;m not even sure that&apos;s possible.
+		Eventually, I had to give up and settle for submitting my janky solution.
+		I&apos;ll just have to accept the bad grade, then take a look at the answer key when it&apos;s made available next week.
 	</p>
 	<p>
-		The next page we were assigned to read was more of an official page from the Joomla! team.
-		Most of the points covered were already covered by the previous article, but there were a couple new key things.
-		The first thing I noticed was that Joomla! provides various permission levels to different users.
-		That&apos;s a very powerful tool.
-		Next, the extension repository is described as being mostly composed of freely-licensed extensions.
-		Y&apos;know that seven thousand extensions figure that I said we needed to take with a grain of salt due to having no context for it?
-		Yeah, most of those are in fact usably-licensed, so the actual relevant figure actually is close to seven thousand after all.
-		Good to know.
-		How close though?
-		I&apos;m unsure.
-		I like to assume that &quot;most&quot; means at least seventy-five percent though.
-		And if the Joomla! community is strong enough, it could be upwards of ninety even ninety-five percent.
-		That leaves a pretty healthy number of available extensions.
-	</p>
-	<p>
-		The final page of the reading assignment was interesting because it was written by someone outside the Joomla! team.
-		That made it much less biased.
-		If you&apos;re looking for information on how to use a product or any of it&apos;s features, your best bet is to read work by insiders.
-		But if you&apos;re trying to find out if that product is even worth using, you&apos;re get better results reading work by outsiders.
-		That article spouted off some figures such as those relating to popularity of Joomla!, though those don&apos;t tell you what you need to know.
-		For example, Windows is the most-popular desktop operating system.
-		However, it&apos;s also the least-secure and has a bunch of spyware built in that phones home to Microsoft.
-		Windows is by far <strong>*not*</strong> the best operating system, yet it&apos;s still the most popular.
-		Popularity of software is partly determined by quality, but it&apos;s also determined a lot by culture.
-		One thing this article did mention though is the scale of user-friendliness to feature-fullness.
-		It looks like Joomla! takes a middle ground.
-		As I was worried about missing features, I&apos;d be more likely to choose Drupal, as it was said to be closer to the feature-full side of the spectrum.
-		I&apos;d need to actually do some research first though to find out if Drupal was good for a given project.
-		And before that, I&apos;d need to <strong>*have*</strong> a given project.
-		I&apos;m pretty sure no <abbr title="content management system">CMS</abbr> is right for my main personal website, though it might be awesome for other projects I may work on.
-		Another big thing it talks about is how the Joomla! team is pretty democratic.
-		The project sometimes gets delayed due to the team not agreeing on things.
-		The alternative is for one person to be in charge, breaking all ties.
-		I like the democratic approach better.
-		It slows development at times, but I think it&apos;s more likely to lead to a better end result.
+		I was feeling pretty down on myself for being unable to get my solution into a reasonable error range.
+		As I went back through the steps to get the screenshots and console data I needed for my write-up though, I noticed that my network&apos;s guesses were within <code>0.2</code> of the correct solution.
+		So why was my average error so far off?
+		Well, it turned out that two of the guesses had two very bad data points each: a <code>0.49</code> and a <code>0.51</code>.
+		Those two outliers really messed up my stats.
+		Overall, my network performed rather decently, but I just couldn&apos;t get it to get <strong>*everything*</strong> perfect, and that was the problem.
+		Each and every answer though, if rounded to a <code>0</code> or <code>1</code>, was exactly correct.
+		That made me feel a lot better.
+		I&apos;ll still get a poor grade for this, but at least my network isn&apos;t nearly as far off as it looked at first.
 	</p>
 </section>
 <section id="Unit7">
@@ -944,95 +1018,266 @@
 	</p>
 	<ul>
 		<li>
-			<a href="https://docs.joomla.org/Creating_a_simple_module">Creating a simple module - Joomla! Documentation</a>
+			<a href="https://neuralnetworksanddeeplearning.com/chap2.html">Neural networks and deep learning</a>
 		</li>
 		<li>
-			<a href="https://docs.joomla.org/J3.x%3ACreating_a_simple_module/Developing_a_Basic_Module">J3.x:Creating a simple module/Developing a Basic Module - Joomla! Documentation</a>
+			<a href="https://pdfs.semanticscholar.org/f7de/25eb027083d4e7144c1ef6831baff35d6d06.pdf">metalearning.dvi - 25eb027083d4e7144c1ef6831baff35d6d06.pdf</a>
 		</li>
 		<li>
-			<a href="https://docs.joomla.org/Module">Module - Joomla! Documentation</a>
+			<a href="https://web.stanford.edu/group/pdplab/pdphandbook/handbookch8.html">7 The Simple Recurrent Network: A Simple Model that Captures the Structure in Sequences</a>
 		</li>
 		<li>
-			<a href="https://tutorialspoint.com/joomla/joomla_create_modules.htm">Joomla Create Modules</a>
+			<a href="https://www.iis.sinica.edu.tw/page/jise/2005/200511_09.pdf">Microsoft Word - 92-21-edited.doc - 200511_09.pdf</a>
 		</li>
 	</ul>
 	<p>
-		I tried to get the Weblinks module running on my Joomla! site, but no matter what I tried, I couldn&apos;t get any visible change.
-		I had two Weblinks widgets supposedly in place, but neither was actually visible for some reason.
-		I finally had to give up and choose a different module to install for the unit project.
-		However, every other module I could find either was of no interest, required payment to download, or made the download process too confusing to figure out.
-		One of them, for example, presented a page written in German when I clicked &quot;Download&quot;.
-		I don&apos;t read German.
-		Yet.
-		I wasn&apos;t sure what to do on that page.
-		I certainly don&apos;t mind paying for software as long as it&apos;s under a free licence, and some of the interesting paid modules were, but I don&apos;t want to pay for a module I&apos;ll use once for this assignment and then throw away.
-		I&apos;m not keeping this Joomla! site once the course is over.
-		I&apos;ve already got a website to manage.
-		I didn&apos;t want to choose some module I didn&apos;t think was actually useful, so I had to give up on giving up, and go through every option the control panel offered to try to debug Weblinks.
-		It turns out there&apos;s an unintuitive third section you have to configure.
-		If you want Weblinks to work, you&apos;ve got to configure it in three different places in the control panel.
+		The first student whose work I graded this week had some useful insights as to how I should have completed the assignment.
+		However, the second student did even worse than I did as far as error level, and also had no write-up whatsoever.
+		The third student used an alternative program instead of Basic Prop.
+		I would be all in favour of that, and I would have used an alternative program myself if I thought that was an option.
+		I really didn&apos;t want to run Basic Prop on my machine.
+		However, they again had no write-up to explain their screenshots, and those screenshots had none of the information the grading instructions were asking for.
 	</p>
 	<p>
-		I added two links to the page: one to my home page and one to my learning journal for this course, which itself links to the rest of my coursework archive for this course.
-		I couldn&apos;t get them to display in the correct order, which was unfortunate.
-		This is one of the reasons I write my pages directly in <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> and <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>.
-		I control the layout, and the page comes out exactly as I code it to.
-		There&apos;s none of this garbage such as hyperlinks fighting to stay disorganised.
-		It was good enough though.
-		I had the module installed and running.
-		No one would know the links were not in their intended order.
-		That is, aside from people reading this journal entry.
+		Something occurred to me as I was reading this week.
+		In the past, when I&apos;d heard about machine learning, I&apos;d always thought of it as terribly inefficient.
+		I thought all the training data had to be stored with the program that learned from it.
+		Without those &quot;memories&quot;, it wouldn&apos;t have learned anything.
+		This meant any copies of the program had to store these huge data sets, which not only took up quite a bit of disk space compared to human-tuned algorithms, but also meant keeping all that somewhere accessible and frequently accessed, meaning probably in <abbr title="random-access memory">RAM</abbr>.
+		The frequent access itself would take a toll on efficiency as well.
+		That&apos;s not how machine learning works at all though.
+		It builds a model, then throws out the data.
+		At least with the neural networks we&apos;ve been looking at, what&apos;s important is these weight values, which cost next to nothing to store alongside the main model.
+		Learning from even terabytes of data doesn&apos;t mean keeping terabytes of data stored with every copy of the program.
 	</p>
 	<p>
-		I thought the first page on creating modules for Joomla! would be about how to develop, in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, modules for Joomla!.
-		That would have been a fun exercise for the week.
-		However, that&apos;s not what it was at all.
-		Instead, it just told us that modules are blocks added to Joomla! pages and can be added on a per-page basis.
-		So it didn&apos;t even mean modules as in extensions, but modules as in widgets.
-		It didn&apos;t even explain how to use them, create them, or do anything with them.
-		It was an entirely useless page, but it was also incredibly brief.
+		There was also quite a bit on the training parameters, which weren&apos;t explained at all last week.
+		It would have really been nice to have this information <strong>*before*</strong> completing last week&apos;s unit project.
+		I tried some Web searching on my own, but couldn&apos;t find anything helpful due to not knowing exactly what to look for.
 	</p>
 	<p>
-		The second page on creating modules was closer to what it said on the tin: it was a page on creating extensions for Joomla!.
-		It didn&apos;t really get into the <abbr title="application programming interface">API</abbr> at all, but it showed a very basic module with two <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> files.
-		Due to one including the other (<code>require_once</code>), it&apos;s unclear whether both these files are actually needed or not.
-		As best I can tell, only the first file is needed, and the second can be defined or not under any name, just to keep any classes you need in a separate file or files.
-		It&apos;s good practice to put each class in it&apos;s own file, but for tutorials such as this, whether that&apos;s why it&apos;s in a separate file or not really should be mentioned.
-		The nice thing though is that Joomla! modules are clearly written in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>.
-		I mean, there&apos;s an <abbr title="Extensible Markup Language">XML</abbr> file too, for metadata about the module, but the fact that the main code of the module is written in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> means you can do just about anything with the module.
-		Integrating the functionality with the main Joomla! functionality requires using the Joomla! <abbr title="application programming interface">API</abbr>, obviously, but you&apos;re not limited in how you can process the data you have access to.
-		That makes customising Joomla! much easier, especially for odd use cases that the Joomla! developers would have no reason to think of.
-		You don&apos;t have to worry that some use case can&apos;t be worked with in Joomla!.
+		The page on multi-layer perceptrons was a good read.
+		I&apos;m unclear on how they&apos;re not just another name for the networks we&apos;ve been looking at already though.
+		The paper talked about the need to scale handwriting images before classifying them.
+		I wouldn&apos;t have thought of that, myself.
+		People write in different sizes though.
+		That would really throw off the results if scaling weren&apos;t used to normalise the images, especially given the data the model takes into account.
+		Only some parts of the image seem to even be used, and they look like cross-sections.
 	</p>
 	<p>
-		The third page first says that modules are extensions, then says that they&apos;re widgets.
-		I get the feeling Joomla!&apos;s terminology isn&apos;t exactly consistent.
-		An extension and a widget aren&apos;t the same thing, so to use the same word to mean both of them only leads to confusion.
-		An extension is an executable that adds functionality to the code of the main program.
-		In some programs, these executables are scripts, not compiled binaries.
-		Joomla!&apos;s one of these programs.
-		A widget is a user-facing interface item that can be added.
-		Often times, they can be interacted with.
-		Widgets can be added and removed from the interface, and can often times be moved to other parts of the interface.
-		The main program can define widgets, but widgets can also often be defined by extensions.
-		So in Joomla!, a module (read: extension) can define a module (read: widget).
-		Separate terminology would definitely help.
-		The page also explains that template designers choose where widgets show up, which is good to know, and uses the example that they module space labelled as &quot;left&quot; might not actually be defined to be on the left of the page.
-		It probably should be on the left unless there&apos;s a specific reason not to put it there, but administrators should be aware that if they install custom templates, things may not be in the assumed places.
-		If they show up in odd places, after the administrator checks to see that they chose the correct module spaces to put modules in, they should look to the template they&apos;re using to see if odd arrangements are coming from there.
-		This is of course not an oversight in Joomla!, but a natural consequence of having a huge amount of customisability in the templates.
-		Finally, the page lists a bunch of specific extensions and gives brief descriptions of what they do.
+		I really found the idea of using manipulating matrices to simulate a neural network&apos;s calculations to be interesting.
+		I have to admit, I&apos;m not good at manipulating matrices.
+		However, this method still seemed less complex than trying to figure out weight changes individually.
+		The maths were still above my head though.
+		When the page started talking about finding partial derivatives, I knew it&apos;d lost me.
+		I&apos;ve never studied partial derivatives.
+		I&apos;ve heard the term, but that&apos;s all.
+		We&apos;re expected to already know how to use partial derivatives, and there&apos;s no time to dive into that topic in addition to everything else by the end of the week.
+		I plan to take <span title="Calculus">MATH 1211</span> and <span title="Discrete Mathematics">MATH 1302</span> starting on 2019-11-14 (four terms from now), so maybe one of those will help.
+		Further down the line, in late 2020 (the second term of the 2020-2021 school year, but no date for that term is known yet), I&apos;m hoping to take <span title="Statistical Inference">MATH 1281</span> as well.
+		That course is on statistics though, so it probably won&apos;t explain partial derivatives.
+		The courses on discrete mathematics and calculus seem more promising in that regard.
 	</p>
 	<p>
-		The final page of the reading assignment again explains how to build an extension, but this time introduces a third <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> file.
-		This third file appears to be called by Joomla! itself, just like the first, but no explanation of what it&apos;s actually for is made.
-		The second file, the included one, is again included in this example, so we again don&apos;t see whether this specific file name actually means anything.
+		The concept of metalearning caught me by surprise.
+		Normally, you program a machine to perform a task.
+		With machine learning, you instead program a machine to learn how to perform the task on its own using examples.
+		With metalearning though, you instead program the machine to learn how to learn how to perform the task.
+		It&apos;s another step back from the problem, and it&apos;s even more instruction to the computer to figure it out and not make the programmer fine-tune the details.
+		Using machine learning to set the learning parameters was much less impressive than the phrase &quot;learning to learn&quot; implied, but it&apos;s still an impressive idea that I wouldn&apos;t have come up with on my own.
+		Using machine learning to come up with a learning algorithm, which was also talked about by the material, is more of what the phase led me to consider when I read it.
+		However, generating the learning algorithm through machine learning appears to be much less useful than I originally thought, due to the necessary components of learning such an algorithm.
+		Namely, you need examples of the algorithm, and the machine learns to imitate said algorithm.
+		In other words, it doesn&apos;t come up with a novel learning algorithm.
+		Instead, it imitates the algorithm you already have.
+		But if you already have the learning algorithm, what good does it do to have the computer approximate the algorithm?
+		You might as well just use the algorithm outright.
+	</p>
+	<p>
+		Confusingly, it seems a trained back-propagation network can outperform a programmed back-propagation network.
+		I&apos;m not sure how this could be possible.
+		That improved performance comes with the risk of over-fitting though, which of course degrades performance.
+		Additionally, a programmed back-propagation algorithm is faster than a learned one.
+	</p>
+	<p>
+		Due to the obnoxious word limit, I ended up having to delete about half my discussion post before I posted it.
+		I also ended up removing some helpful links, as they added to my word count.
+		The same links were in the references section, and I left those links intact, but the duplicate links up where they were relevant had to be scrubbed.
+		They didn&apos;t add to the actual word count whatsoever, but they did add to the word count as calculated by the university&apos;s word counter, and I couldn&apos;t afford the word cost.
+		I think my resulting post turned out a bit scattered-feeling, too.
+		Most of the context for what I had to say had to be removed because explaining where I was coming from was prohibitively expensive.
+		As I deleted words, and even entire sentences, to approach the word limit, I encountered another quirk of the word counter: contractions count as three words, not one.
+		You&apos;ve got the part before the apostrophe, the part after, and the apostrophe itself.
+		Yes, the university&apos;s word counter is counting my apostrophes as words.
+		I&apos;d thought I was saving words by using contractions, but I was actually making it harder to fit in what I wanted to say.
+		Instead, if I write with no contractions, my post&apos;ll look really clunky, but it&apos;ll be less expensive.
+		I&apos;ll have to keep that in mind for next week, if we&apos;ve got another word-limited discussion assignment that week.
+	</p>
+	<p>
+		The essay this week was pretty therapeutic for me.
+		We were given no instructions on how to use Basic Prop last week, and just thrown right into using it.
+		Also as mentioned above, the meanings of learning rate and momentum weren&apos;t covered until this week.
+		I really had no chance at success.
+		But this week, we were to write up our process and our conclusions about the project.
+		It was an awesome chance to vent about everything that went wrong.
+		I included almost none of that in my submission last week, as it wasn&apos;t relevant there, but it&apos;s the only thing that <strong>*is*</strong> relevant this time.
+		We were supposed to explain how we&apos;d reached our successful models and what we&apos;d tried along the way.
+		But I had no successful model.
+		What I&apos;d tried was obviously a part of that, but how my models came up short was exactly what needed to be explained to get across just why no successful model to explain was ever found.
+		Given more time, or any actual information during the period we performed this exercise, I could have no doubt found a working solution.
+		But that wasn&apos;t the case.
 	</p>
 </section>
 <section id="Unit8">
 	<h2>Unit 8</h2>
 	<p>
-		...
+		The reading assignment for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			Chapter Ten of <a href="https://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf">Driver.dvi - ISLR First Printing.pdf</a>
+		</li>
+		<li>
+			<a href="https://www.ee.columbia.edu/~dpwe/papers/PhamDN05-kmeans.pdf">PhamDN05-kmeans.pdf</a>
+		</li>
+	</ul>
+	<p>
+		I had ... four essays to grade this week?
+		That&apos;s odd.
+		Normally, we each grade three students and are in turn graded by three students.
+		I certainly don&apos;t at all mind, but it was an unexpected twist this week.
+		I assumed the system was set up such that it could only allow students to grade three peers and be graded by three peers.
+		It turns out the number&apos;s actually variable.
+	</p>
+	<p>
+		The first student essay I graded looked like a write-up for the previous unit assignment, not this one.
+		I guess I should have given them a zero for not submitting the correct assignment, but because the two assignments were on the same project, they had some similarities that allowed me to give them credit for three of the grading aspects.
+		The first was the aspect about explaining the results of the project.
+		They told how the project went, so I could give them points for that.
+		The next was grammar.
+		We were asked to grade their use of proper grammar, and the paper they submitted had sentences and thus grammar to grade.
+		And finally, the paper met the length requirement.
+		The second student <strong>*definitely*</strong> submitted the wrong assignment.
+		Their submission included all the data, including the weights file, which the first student had omitted.
+		The third student submitted a paper on mobile ad-hoc networks.
+		It must&apos;ve been meant for their other class.
+	</p>
+	<p>
+		The K-means clustering algorithm is interesting.
+		It&apos;s a bit of a drawback that you need to know the number of clusters before you even try to apply the algorithm, but for several types of problems, that&apos;s not an issue.
+		If you know your data classes, you know how many data classes there are, so plugging that number in isn&apos;t hard.
+		The article on the K-means algorithm states that usually, a human tries several values of K and visually compares the results, but the fact that that needs to be done seems like exactly the reason K-means clustering shouldn&apos;t be used on those types of problems.
+		The article suggests that it&apos;s rather difficult for a human to visually analyse the results when applied to multi-dimensional datasets.
+		Two dimensions would be a bit difficult to analyse visually.
+		Anything beyond that would be nearly impossible.
+		Again, this points to the possibility that perhaps the K-means clustering algorithm is the wrong tool for such jobs.
+	</p>
+	<p>
+		As I read on, I saw that the K-means algorithm depends on randomness.
+		I guess randomness is useful at times.
+		However, I don&apos;t think it&apos;s great for classification or sorting problems.
+		At this point, I questioned the usefulness of K-means clustering even for problems in which the correct value of K is known.
+	</p>
+	<p>
+		As I read through the material for the week, I had the usual problem of not understanding the complex equations and the parts of the material linked to them.
+		At least I think I have enough understanding to implement both hierarchical clustering and k-means clustering.
+		However, I did have an epiphany about the roles of supervised and unsupervised machine learning.
+		In supervised learning, we&apos;re trying to teach the computer to perform a task.
+		I already understood that from previous weeks.
+		In unsupervised learning, the computer learns nothing, and the processing done had no effect on future processing.
+		Again, I already knew that too.
+		However, I think I have a better idea of the usefulness of unsupervised learning.
+		Instead of trying to teach the computer, we&apos;re trying to get <strong>*the computer*</strong> to teach <strong>*us*</strong>.
+		As the material puts it, it&apos;s an exploratory process, use so we can better understand where to go from there.
+		We&apos;re not looking for the machine to learn something it can use to solve future problems for us.
+		We&apos;re looking for the computer to make some sense of the data so we will know what to tell the computer to do next, or even so we can apply outside the computer what <strong>*we*</strong> learn from the computer.
+	</p>
+	<p>
+		The textbook explained how K-means clustering works better than the other article we read.
+		It&apos;s attempting to reduce the amount of variance within each cluster in the answer it provides.
+		I guess I sort of guessed something similar, but not quite in those words.
+		The goal is to segment the data into clusters in which the data points are grouped very closely to the cluster centres.
+		The measured variance gets squared though, which is something that&apos;s often done in these sorts of problems, but also something I almost never think to do.
+		It&apos;s possible this is done for ease.
+		I mean, to find the difference, we have to square the deviation on the X direction and add it to the square of the deviation in the Y direction.
+		The square root of the sum is the distance from the cluster centre, if we&apos;re working in two dimensions.
+		It&apos;s a bit more complex when adding even more dimensions.
+		But what if we just don&apos;t take the square root of the sum, using the sum itself?
+		In that case, we&apos;d be using the squares of the distances, but it&apos;d take less processing power.
+		More likely though, I think the squaring is used to give much higher weight to outliers, increasing the tendency to try to eliminate them by either moving the cluster centres or changing which cluster the point belongs to.
+	</p>
+	<p>
+		Another thing the textbook explained better is where the randomness mentioned by the article comes in.
+		To find the optimal solution, all solution s would need to be tried.
+		This isn&apos;t feasible.
+		Unfortunately, there&apos;s no other way to get the best answer though.
+		So instead, the K-means clustering algorithm settles for a pretty good solution that most likely isn&apos;t the absolute best.
+		When trying solutions though, there&apos;s got to be a place to start, so the points are placed into random clusters to begin with, and the cluster choices are improved from there.
+		Different starting clusters will result in slightly-different ending clusters.
+		To put it simply, a locally optimal solution is found, not an absolutely optimal solution.
+	</p>
+	<p>
+		Hierarchical clustering seems more useful than K-means clustering when you don&apos;t know the number of clusters you need.
+		Sometimes you know this information, but other times, you don&apos;t.
+		Instead, a tree-based dendrogram is created.
+		I&apos;d also argue that the lack of randomness makes hierarchical clustering a better solution for some problems.
+		The resulting dendrograms remind me very much of the evolutionary tree seen in taxonomy.
+		I went over that in my discussion post for the week though, so there&apos;s no need for me to repeat that here.
+	</p>
+	<p>
+		The section of clustering by different types of observations was interesting.
+		It mentioned splitting groups of people by gender or by nationality, saying that one isn&apos;t a subset of the other.
+		However, I&apos;m not sure how a dendrogram would be used to put these people into a tree anyway.
+		Creating a dendrogram requires numerical values so we can compare how similar the leaves are.
+		This doesn&apos;t seem like a valid example.
+		To take it a step further, this was compared to how K-means clustering might behave given the same people.
+		Again though, K-means clustering requires data points with numeric characteristics.
+		You can&apos;t cluster by gender or by nationality using that algorithm either.
+		It would have been much better to use a valid example, so we could understand why a dendrogram might not perform as well as K-means clustering in some cases.
+		As it stands, I can&apos;t be sure that the claim that hierarchical clustering isn&apos;t always the better option even holds water.
+	</p>
+	<p>
+		It&apos;s also worth noting that the book labels the genders as male and female.
+		Male and female are sexes, not genders.
+		Masculine and feminine are genders.
+		Gender describes the brain and the mind, while sex describes the sex organs.
+		There&apos;s also a third option for both though.
+		Someone who is intersex has genitals that don&apos;t match the classification for either male or female.
+		Someone who is non-binary, such as myself, isn&apos;t fully masculine nor fully feminine, so we&apos;re not men or women, but something in between.
+		It&apos;s why I use the name &quot;Alex&quot;.
+		It&apos;s short for both &quot;Alexander&quot; and &quot;Alexandra&quot;, not to mention &quot;Alexis&quot;, which is already a gender-neutral name.
+		I also tend to stylize my name as &quot;Alexand(er|ra)&quot;, using the same notation as a regular expression.
+	</p>
+	<h3>Epilogue: Unit 9</h3>
+	<p>
+		The instructions that came with the final exam told my proctor I could only use a four-function calculator.
+		These calculators lack the capacity to work with logarithms and they don&apos;t have the e constant, Euler&apos;s number.
+		Without those options, three of the questions on the exam were impossible to solve.
+		Two dealt with logarithms, and one asked us to take Euler&apos;s number to some power.
+		I don&apos;t have Euler&apos;s number memorised or something.
+		I didn&apos;t know we&apos;d need it.
+		I had to just skip those three, even though the equations were laid out in the final exam question.
+		It should have been as easy as plugging in the numbers, but the only calculator the proctor allowed me to use simply couldn&apos;t do what needed to be done.
+		There was another question I had to skip too, but that one was all on me.
+	</p>
+	<p>
+		One question in particular stood out to me.
+		It was asking us about the structure of a neuron.
+		We were being tested on biology in a computer science course!
+		Why do we even need to know about a neuron&apos;s structure?
+		It wasn&apos;t a big deal, as I did remember reading about three of the parts we were tested on and the fourth, the nucleus, is the same in every cell.
+		If you&apos;ve ever studied cells in your life, you should know where the nucleus is.
+	</p>
+	<p>
+		I forget what the question was, but there was one easy question that appeared twice on the exam.
+		I think the school tries to randomise which questions appear on the tests for each student, but the randomisation algorithm doesn&apos;t make sure questions only appear a maximum of once.
+		This isn&apos;t the first time that&apos;s occurred on me.
+	</p>
+	<p>
+		And finally, one question asked about R2 instead of R<sup>2</sup>.
+		I didn&apos;t know what it was talking about at first.
+		If the testing platform is unable to handle superscript, which I highly doubt, I&apos;d recommend calling it &quot;R squared&quot; instead of &quot;R2&quot;.
+		It would make it much easier for future students taking the course to understand what was being asked of them.
 	</p>
 </section>
 		<hr/>

@@ -251,3 +251,27 @@ div.cited-quotation blockquote {
 nav p a {
 	white-space: nowrap;
 }
+
+div.graphical-calendar {
+	display: table;
+}
+
+div.graphical-calendar h2 {
+	display: table-caption;
+	caption-side: top;
+}
+
+div.graphical-calendar div {
+	display: table-row;
+}
+
+div.graphical-calendar div div {
+	display: table-cell;
+}
+
+div.graphical-calendar div div.term-in-session {
+	background-image: url("/link/CC_BY-SA_4.0/y.st./background_-_inverted.png");
+	background-color: #222;
+	background-attachment: fixed;
+}
+
