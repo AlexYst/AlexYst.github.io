@@ -40,331 +40,191 @@
 </nav>
 		<header>
 			<h1>Learning Journal</h1>
-			<p>CS 3307: Operating Systems 2</p>
+			<p>CS 3306: Databases 2</p>
 		</header>
 <section id="Unit1">
 	<h2>Unit 1</h2>
 	<p>
-		When I took <a href="https://y.st./en/coursework/CS2301/" title="Operating Systems 1">CS 2301</a>, it seemed the entire focus of the course was on Windows.
-		That would have been fine, except we were required to use specific Windows applications to get information that competing products could also tell us, then take screenshots of the specific program we were expected to run.
-		I&apos;m not on a Windows system, and had no way to run said software.
-		Even though I could still get all the required information using other software, it wasn&apos;t good enough for the assignment because the assignment asked us to use the specific software it wanted us to use.
-		It was a major headache to deal with.
-		I&apos;m hoping this course doesn&apos;t turn out the same way.
-		It seems this course requires access to a Linux system, but provides an option for getting remote access to one using a third party.
-		This is what should have been the case for the Windows-based course: an option should have been made available for accessing a remote Windows system.
-		But no.
-		It was just assumed that all students taking the course were on the Windows operating system, and though I wrote several letters to the professor asking what to do in my situation, I never got a response.
-		Anyway, if this course either provides a way to get remote access to each operating system we&apos;ll need to work with or we&apos;re only working with Linux, this course&apos;ll go much smoother for me.
-		I&apos;m running Debian locally, so I won&apos;t even need a remote Linux system for much, if anything.
-		Part of the reading assignment for the week is a 537-page <abbr title="Portable Document Format">PDF</abbr>.
-		It&apos;s like whoever set up the reading assignment thinks we&apos;re all just made of time.
-		I can&apos;t read all that in one week.
-		It&apos;s all about the Linux command line though, which I use on an almost-daily basis, so it should be mostly safe to just reference this document as necessary instead of reading it in its entirety.
-		The section of the material on why to use threads was informative.
-		Making use of multiple processors is useful, though avoiding <abbr title="input/output">I/O</abbr> blocking <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a> seems even more important.
-		I wonder if I can speed up my website-compilation script using threads in this way.
+		The learning journal assignment for the week asks us where databases are used in our own lives, meaning we should talk from our own experience, not use references.
+		However, we&apos;re also told to include citations, which requires that we not discuss what&apos;s going on in our own lives, but instead get our information from another source.
+		As you can see, these two instructions are contradictory to one another and following them is mutually exclusive.
+		At first, I considered discussing the database locations covered by the book but filtering out the ones that don&apos;t have a presence in my life.
+		I would then have a source to cite, yet what I write would still apply to my life as requested.
+		For example, one area databases are mentioned as being used is in keeping track of telephone calls made, generating monthly bills for telephone service, and keeping track of balances on prepaid telephone cards.
+		I don&apos;t have telephone service though.
+		I live telephone free, and it&apos;s fantastic.
+		I highly recommend it.
+		Another purpose for which databases are said to be used is for aeroplane flight schedules.
+		I don&apos;t fly anywhere though.
+		Both of these highly-prevalent databases would be omitted from discussion if I were to filter what the textbook covered through the lens of relevancy to my own life.
+		That seems more like an oversight than an aid to learning, though.
+		With that in mind, I&apos;ll discuss where databases can be found using citations, regardless of whether said databases have a place in my own life.
 	</p>
 	<p>
-		Pretty much any semi-advanced machine runs an operating system of some sort.
-		My laptop, which I use every day, obviously runs an operating system.
-		In my case, it runs Debian 9
-		I got my mobile device functioning again a few days ago, that has an operating system as well.
-		My mobile runs Replicant 4.2.
-		My thermostats look like basic dials, any probably don&apos;t have any computers inside, but more-modern thermostats have operating systems as well.
-		My refrigerator, freezer, oven, toaster, and blender are also too basic for an operating system, but my microwave oven might have a simple one, which it likely uses to make the numbers display correctly using seven-segment displays.
-		For the past year, while my mobile&apos;s been unable to function, I&apos;ve been using a basic digital camera; normally, I just use the mobile&apos;s built-in camera.
-		While this digital camera is incredibly basic, it appears to have an operating system of some sort for sure.
-		That operating system allows for configuration of the camera, as well as tracking the date and time.
-		I don&apos;t actually own a whole lot of electronics, so my laptop, mobile, camera, and probably microwave oven are the only four operating systems I can think of in my home.
-		Outside my home though, I interact with other operating systems, such as the ones run by many cash registers at stores.
-		Both of the main grocery stores I frequent use computerised cash registers that very clearly run operating systems.
+		Financial institutions use databases to store accounts, loans, and transaction information <a href="https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf">(Silberschatz-Korth-Sudarshan, 2001)</a>.
+		The textbook mentions banks, but all of this applies to credit unions as well.
+		Additionally, the textbook mentions storing credit card transactions - a subset of transactions in general - in databases, as well as generating monthly bills using said databases <a href="https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf">(Silberschatz-Korth-Sudarshan, 2001)</a>.
+		Reservations and schedules can be stored in databases.
+		The textbook specifically mentions that airlines do this <a href="https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf">(Silberschatz-Korth-Sudarshan, 2001)</a>, but it applies to other fields as well.
+		For example, if you make an appointment with a medical professional, there&apos;s a good chance they keep track of said appointment via a database.
+		I know every medical professional I can remember dealing with does this.
+		For that matter, the account information mentioned as being used by banks also applies to a wide array of other businesses, each of which keeps an account with your name on it, including your doctors&apos; office.
+		Universities keep accounts for students as well, which include information on registered and past courses in addition to grades.
+		As mentioned above, telephone companies keep records on their customers as well.
+		They track calls made, calls taken, and current (and often past) account balances.
+		As can easily be predicted, they use this data for generating their monthly bills.
+		They also use databases to store information about the status of their own network <a href="https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf">(Silberschatz-Korth-Sudarshan, 2001)</a>.
+		Stocks and bonds are dealt with via databases as well <a href="https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf">(Silberschatz-Korth-Sudarshan, 2001)</a>.
+		These are intangible concepts that really can&apos;t exist outside some sort of representation, such as a database.
+		Many businesses of all sectors store customer information (when they can get their grubby mitts on it) as well as transactional information <a href="https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf">(Silberschatz-Korth-Sudarshan, 2001)</a>.
+		Factories and warehouses use databases to track inventories, as well as information about products such as supply chains and orders.
+		Employee information tends to be stored in databases too.
+		This includes mostly information needed for generating pay cheques, such as salaries, wages, and hours worked, but also includes information on employee benefits, if any <a href="https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf">(Silberschatz-Korth-Sudarshan, 2001)</a>.
+	</p>
+	<p>
+		In addition to databases being widely present in the world, they&apos;re also interacted with by nearly everyone in first-world countries.
+		<abbr title="automated teller machine">ATM</abbr>s allow a user to make transactions without requiring a live teller to interact with the database on their behalf <a href="https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf">(Silberschatz-Korth-Sudarshan, 2001)</a>.
+		For that matter, many types of transactions within an account (such as moving money between sub-accounts) can also be done via a Web interface.
+		For that matter, all sorts of database interactions occur over the Web.
+		Even noxious tracking of your browsing habits done by companies so they can more-effectively pester you with relevant advertisements is an interaction between you and databases <a href="https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf">(Silberschatz-Korth-Sudarshan, 2001)</a>, albeit an unwanted interaction.
+		(I recommend installing <a href="https://www.eff.org/privacybadger">Privacy Badger</a>, from the <abbr title="Electronic Frontier Foundation">EFF</abbr>.)
+		Likewise, those annoying automated telephone systems where you hit all the numbered keys to perform different tasks are database interfaces as well <a href="https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf">(Silberschatz-Korth-Sudarshan, 2001)</a>.
+	</p>
+	<p>
+		Basically, what it comes down to is this: organisations use databases to do database things.
+		So to understand where databases are used, we need to understand what databases are good at, so we can know what &quot;database things&quot; are.
+		When data is being gathered, it&apos;s usually getting stored in a database.
+		Likewise, when data needs to be updatable, the data gets put in a database.
+		The alternative (besides pen and paper or monolithic plain text files that have to be searched by hand; both of which technically qualify as databases, just not what we traditionally think of as databases these days) is to hard-code the data into the program.
+		That&apos;s not feasible when data needs to be updatable.
+		As for when data needs to be gathered, it&apos;s outright impossible in most cases.
+		To add data to a system using hard-coding, you need a programmer on duty.
+		Keeping a programmer on-duty at all times can be expensive, not to mention that such hard-coding of the data becomes tedious very quickly.
+		The programmer&apos;s probably just going to program you a database and throw away the hard-coding.
+		Databases allow for ever-changing data without the need to reprogram the system each time something is altered.
 	</p>
 	<div class="APA_references">
 		<h3>References:</h3>
 		<p>
-			Arpaci-Dusseau. R., &amp; Arpaci-Dusseau, A. (2012). <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/">Operating systems - three easy pieces</a>. University of Wisconsin-Madison. Retrieved from <code>http://pages.cs.wisc.edu/~remzi/OSTEP/</code>
+			Silberschatz-Korth-Sudarshan. (2001). <a href="https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf">Database System Concepts, Fourth Edition</a>. Retrieved from <code>https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf</code>
 		</p>
 	</div>
 </section>
 <section id="Unit2">
 	<h2>Unit 2</h2>
-	<h3>Operating systems</h3>
 	<p>
-		I&apos;d hoped to find an article on somewhere interesting we can find operating systems, but given that we&apos;re restricted to using the search features of four specific websites that don&apos;t have advanced search features (and don&apos;t even return decent results), that didn&apos;t happen.
-		However, I was able to find a more-mundane article.
-		Operating systems such as Linux are available on both servers and desktop machines <a href="https://static.redhat.com/legacy/f/pdf/IDC_Linux_Mainstream.pdf">(Gillen &amp; Waldman, 2011)</a>.
+		The focus of this week&apos;s learning journal assignment is Microsoft-based backup and recovery software.
+		I&apos;m confused as to why the qualifier though.
+		Why does it need to be Microsoft-based?
+		There&apos;s plenty of backup and recovery software that has nothing to do with Microsoft.
+		Backup and recovery isn&apos;t a Microsoft-specific issue.
+		There&apos;s no value in pretending this is a Microsoft-specific topic.
+		And that&apos;s just the thing.
+		The assignment asks us to talk about one we&apos;ve used in our own lives.
+		I&apos;ve always found Windows to be insufferable, so I&apos;ve never used it long enough to even need to back anything up.
+		I used to be an OS X user until I found Linux, though I always performed backups on OS X by hand.
+		The only backup and recovery software I&apos;ve ever used has been on Linux.
+		Déjà Dup was the one I used first.
+		It allowed for automated, periodic, incremental backups, which was nice, and had a graphical interface.
+		More recently, I&apos;ve had experience with <code>rsync</code>, a command line utility that allows for easy backup of files to another drive or (when combiled with other tools) across a networks.
+		I have absolutely zero experience with any Microsoft-based backup utility of any kind, so I can&apos;t discuss my experience with any Microsoft-based backup utility.
+		And I don&apos;t have access to a Windows system to experiment with just for the for the purposes of this assignment.
+		My only choice is to instead discuss my experience with a Linux-based backup/restore utility.
 	</p>
 	<p>
-		Linux is available for a large number of processor architectures <a href="https://static.redhat.com/legacy/f/pdf/IDC_Linux_Mainstream.pdf">(Gillen &amp; Waldman, 2011)</a>.
-		When you can&apos;t find another operating system to run on something, Linux can often be your go-to system.
-		That makes it easy to get older, unsupported hardware running.
-		I used to have an old <abbr title="Performance Optimisation With Enhanced RISC - Performance Computing">PowerPC</abbr> machine from Apple.
-		Apple no longer supported the thing.
-		I wasn&apos;t able to get a modern operating system onto it.
-		That is, until I tried Linux.
-		I was able to run a modern version of a Linux-based system on the machine, because modern Linux still supports so many processor architectures.
-		At the time I had the machine, I initially installed Ubuntu on it.
-		I installed Debian on the machine, partly because Debian has support for a lot of the unusual architectures, in addition to the common ones.
-		Linux breathed new life into the machine, and made it easy to run modern software on the out-dated machine.
-		No system besides Linux provides support for as many architectures as Linux <a href="https://static.redhat.com/legacy/f/pdf/IDC_Linux_Mainstream.pdf">(Gillen &amp; Waldman, 2011)</a>.
+		(It&apos;s worth noting that the learning journal assignment says we can discuss a Microsoft-based backup/restore utility from &quot;one of the websites&quot;, but it doesn&apos;t even tell us what websites it&apos;s even referring to.
+		The only assigned reading material for the week was in the textbook hosted on the university&apos;s own website, which didn&apos;t mention Windows backup/restore options and didn&apos;t mention other websites.)
 	</p>
 	<p>
-		Another way that Linux makes things easy is that it has less potential for vendor lock-in than other systems <a href="https://static.redhat.com/legacy/f/pdf/IDC_Linux_Mainstream.pdf">(Gillen &amp; Waldman, 2011)</a>.
-		Because of this, users of Linux don&apos;t have to worry that they&apos;re going to end up stuck on a single platform, and have to deal with the garbage the provider of that system is going to throw at them in the future with no hope of escape.
-		For example, I remember a time when Canonical started building spyware into Ubuntu, a variant of Linux they produce.
-		I wasn&apos;t an Ubuntu user, but if I was, I could have switched to Debian, or Red Hat, or Mint, or any of a multitude of other Linux distributions.
-		Canonical had to clean up their act, if I recall, to avoid people flocking away from Ubuntu.
-		There was no vendor lock-in to keep users there, so Canonical had to actually provide a quality product.
-		Linux distributions have to rely on quality to keep users, because users are free to leave at any time.
-		Switching is really easy.
-		As the article says, commitment to a platform kind of serves as a bit of vendor lock-in <a href="https://static.redhat.com/legacy/f/pdf/IDC_Linux_Mainstream.pdf">(Gillen &amp; Waldman, 2011)</a>.
-		If I were to switch to another distribution, I&apos;d no doubt have to change my workflow a bit, and that&apos;s a deterrent.
-		But if there was a good reason, I could easily migrate to a different distribution if I had to, as there&apos;s no actual vendor lock-in there.
-		Rather, the form of vendor lock-in referred to in this instance is more along the lines of habits of the user, not the threat of not prohibitive difficulties and expenses of migrating away.
-	</p>
-	<h3>The week&apos;s activities</h3>
-	<p>
-		Last week, we had an upper bound on how much we could write in our learning journals, which was cumbersome.
-		I had to leave out a lot of details I otherwise would have included.
-		This week though, we instead have a lower bound, which works much better for my writing style.
-		I tend to surpass lower bounds on &quot;write about your weekly activities&quot;-type learning journal assignments without even trying.
-		The amount of effort I put in tends to reflect how much I&apos;m allowed to write as well.
-		When I have to keep things brief, I condense my work so I can have less to write about, so I won&apos;t have to leave as much out.
-		Writing also causes me to think more, so I get much more out of the lesson when I can write extensively about it.
+		As I said, I got my start with backups with Déjà Dup.
+		I had a home server at the time, so I was able to use Déjà Dup to schedule automated backups so I never had to worry about forgetting to periodically back up all my data.
+		I found though that in order to avoid having to back up modified files in their entirety, Déjà Dup stored backups each in their own file, rather than as directory subtrees as one might expect.
+		This made it so I couldn&apos;t really go through old copies of my data outside of Déjà Dup.
+		I also had no easy way to delete old backups that I no longer needed, because the newer backups were incremental and depended on the data present in the old backups.
+		Déjà Dup can delete older backups if you configure it to, but I&apos;m not comfortable with my data getting erased without manual decision.
+		Overall, it just wasn&apos;t a good solution for my use case.
 	</p>
 	<p>
-		My first task for the week was to get my discussion post completed and handed in.
-		I try to write up at least one discussion post per day between courses, so I usually get my initial post for one course submitted on day zero and my initial post for the other course submitted on day one.
-		In this course, we&apos;re to get a paper on concurrency from one of four websites, then report on it.
-		Of the four, only one had a search feature that actually returned any relevant results.
-		However, it wouldn&apos;t allow me to access any of the papers without getting past a login wall.
-		Seriously?
-		What kind of nonsense is that?
-		Basically, the site must want to be nosey about who reads what papers, and assumes once you&apos;ve got login credentials, you&apos;ll keep using them instead of bothering to register a new account every time to avoid the noxious tracking.
-		Clearly, this site hasn&apos;t seen how I deal with stores that charge higher prices to non-members: I register a new membership card for each and every purchase when I have to use that store for whatever reason to avoid having my purchases chained together, and otherwise mostly avoid that store in favour of others because constantly registering new membership cards is a hassle I&apos;d rather avoid.
-		More to the point though, we&apos;re required to cite our sources.
-		That means that if I used this source, I&apos;d have to link other students to this noxious site, and they&apos;d need to register accounts in order to see what I was citing.
-		Even worse, a permanent link to the noxious site would appear on my own website in my journal within the post here.
-		(I archive all the products of my studies.)
-		Clearly, the right choice was to pick a different website.
-		However, the other three websites had the same noxious policy!
-		Fine.
-		I&apos;d register, but also add a disclaimer to my post explaining that I do not support the website due to its noxious policy and recommend registering with fake account details.
+		As mentioned previously, I&apos;ve also use <code>rsync</code> for backing up files.
+		I had an account on a server that allowed me only <abbr title="SSH File Transfer Protocol">SFTP</abbr> access.
+		I used <abbr title="Secure Shell Filesystem">SSHFS</abbr> to mount the remote partition to my local file system over <abbr title="SSH File Transfer Protocol">SFTP</abbr>, then used <code>rsync</code> to copy my files over to the mounted partition.
+		The convenient thing about using <code>rsync</code> for this was the <code>--update</code> flag.
+		It allowed me to only send over the new files.
+		On that particular server, I didn&apos;t keep copies of older backups, so I only needed to transfer over files that were new or had been modified.
+		There was a bit of an issue with timestamps too, or so the server administrator and I thought, so I ended up using the <code>--checksum</code> flag as well, so files were checked by checksum rather than by modification timestamp.
+		I later found out that many of the files I was sending over were legitimately being modified without my knowledge by one of my scripts though, and modified the script to correct the behaviour.
+		The <code>--delete</code> flag was rather useful too, as it prevented files from lingering in the backup once I&apos;d removed them locally.
 	</p>
 	<p>
-		So I wrote up the disclaimer,then tried registering with fake details.
-		The registration form on the login wall wasn&apos;t functioning.
-		So I tried from the dedicated registration page.
-		That worked just fine.
-		However, after registering, the site pulled a bait and switch on me.
-		Instead of sending me the promised article, it sent me to an advertisement on the website of the author.
-		My guess was that the hub site isn&apos;t even storing the articles, and is requiring login credentials in order to provide the relevant <abbr title="Uniform Resource Identifier">URI</abbr>s on other websites!
-		They think it&apos;s okay to coerce people into registering for their own website for resources hosted by other people.
-		The audacity!
-		And to make matters worse, it seems their article database isn&apos;t even up-to-date, so they can&apos;t even deliver what they promise.
-		I got redirected to the ad likely because the actual article no longer exists and that&apos;s how the author&apos;s site handles <code>404</code>s.
+		These days, I don&apos;t have a home Internet connection any more, so I&apos;m not able to get my home server set up properly.
+		As such, automated backups aren&apos;t possible.
+		Instead, I have to manually instantiate a backup every once in a while.
+		I probably should use <code>rsync</code> for this, but instead, I just use a manual drag-and-drop to my external hard drive.
+		It&apos;s just simpler.
 	</p>
 	<p>
-		At first, I was going to use one of the other websites instead just because of the bait and switch, but as I wrote about it, I realised better what was going on.
-		It hadn&apos;t occurred to me previously that the articles aren&apos;t hosted on the noxious hub site.
-		But because they&apos;re not, I don&apos;t have to link to the noxious hub site.
-		I should find another relevant article, one that&apos;s still available, using this stupid first site.
-		I couldn&apos;t find anything that seemed relevant though.
-		I tried the other three sites again, and still turned up nothing.
-		I ended up settling for something from the first site that wasn&apos;t quite relevant, but I just wrote up my post to reflect that I couldn&apos;t find an exact match for the topic.
-		That&apos;s what happens when you limit people to using sources from only a tiny subset of the Web: they&apos;re likely not to find exact match for what they&apos;re looking for.
-		Of course now, my disclaimer isn&apos;t at all relevant, so I left it out.
+		I&apos;m unclear on exactly what the learning journal assignment means by a Microsoft-based backup/restore utility.
+		If it means software actually written by Microsoft, this is an incredibly narrow scope, and I&apos;m not sure how many students taking this course actually have experience with said software.
+		However, if it&apos;s instead meant any backup/restore utility that runs on Microsoft&apos;s operating system, Microsoft Windows, <code>rsync</code> actually technically qualifies.
+		I&apos;ve never used it on Windows, as I don&apos;t use Windows, but the <a href="https://rsync.samba.org/download.html"><code>rsync</code> website</a> says that <code>rsync</code> is available as a component in the <a href="https://cygwin.com/">Cygwin</a> suite.
+		Cygwin is a collection of Linux command line tools that have been retooled to instead run natively on Windows.
+		That means you can use <code>rsync</code> natively on Windows to back up and/or restore your files.
 	</p>
-	<p>
-		With the discussion assignment complete, it was time to turn to the reading assignment.
-		We were to read three chapters from one book and two from another.
-		The link to the second book returned a <code>404</code> though.
-		The textbook&apos;s no longer available.
-		Thankfully, the chapter titles for the second book were provided.
-		One chapter was on accessing your system.
-		I don&apos;t know what that means.
-		Don&apos;t we already have access to our systems?
-		It probably has to do with accessing remote systems or something.
-		I&apos;ve done that before.
-		I could do with a refresher, but I can make do without one.
-		The second chapter was on accessing files and directories.
-		I access files and directories on a daily basis.
-		I&apos;ll be just fine without reading about how to do that.
-		Typically, I use a graphical file manager, but I also access them on occasion via the command line for various reasons, so even if this is a lesson on how to access files via the command line, I&apos;ve already got it covered.
-	</p>
-	<p>
-		While reading the material this week, the textbook provided examples in C.
-		This isn&apos;t the first course to do that.
-		I&apos;m kind of wondering if this school even includes C in the curriculum.
-		It&apos;s an important language to know.
-		If I knew one of the courses I&apos;ll be taking taught C and I knew which course that was, I&apos;d be sure to schedule it for next term.
-		So far, I&apos;ve taken courses on Java and Python here.
-		I took a course that touched upon several languages slightly but didn&apos;t actually teach them, and one of those languages was Perl.
-		I forget the others though.
-		And one course kind of taught <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> a bit, though not enough <abbr title="PHP: Hypertext Preprocessor">PHP</abbr> to actually do anything interesting with.
-		<abbr title="PHP: Hypertext Preprocessor">PHP</abbr> is my native language though, so it&apos;s not like I don&apos;t already do interesting things in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>.
-	</p>
-	<p>
-		It&apos;s nice to see the basic principle of how to deal with threading though.
-		When I have time between terms, I might try applying the principles to the script that builds my website from source.
-		All the pages are cryptographically signed, so when there&apos;s a major change, it can take a long time to build.
-		Even when there&apos;s not a huge change though, it can take about half a minute to check for changes in the source.
-		It&apos;d be nice to speed it up, and threads might be the way to do that.
-		Of particular interest to me is the ability to pass values back out of threads as they terminate.
-		That seems like a useful feature for a lot of use cases.
-	</p>
-	<p>
-		Last week, I guessed that locking threads out of execution during critical sections was how to deal with race conditions.
-		It looks like I wasn&apos;t far off.
-		You can specifically lock competing threads out of the critical section without needing to entirely lock them out of execution.
-		It seems this is called mutual exclusion <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-api.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>, which was a term several students had in the discussion forum.
-		I assume then that they read ahead in the textbook, as it wasn&apos;t introduced until this week.
-		Mutual exclusion is achieved in a pretty ingenious way, too.
-		The function call used to acquire the lock simply doesn&apos;t return until the lock has been acquired <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-api.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>.
-		However, the signalling between threads seems to have a severe limitation.
-		There doesn&apos;t seem to be a way to check to see if a thread has signalled without waiting for said signal.
-		That means that when you want to know if a thread has reached a specific point in execution, you&apos;ve got to halt what you&apos;re doing ans wait for it to reach said point <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-api.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>.
-		You can&apos;t simply check whether the thread has made it, then conditionally work on something else if it hasn&apos;t.
-	</p>
-	<p>
-		My understanding though is that threads within the same process share the same variable space, at least in the global scope.
-		It should be possible to use a global variable as a flag, and conditionally execute that way, using similar mechanics as to how race conditions would typically be introduced accidentally.
-		The textbook says not to do this though <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-api.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>.
-		It performs poorly and can be buggy at times.
-		So how is one supposed to conditionally execute the main code if the work in another thread has been completed and code to get other work done if the work the main code depends on isn&apos;t complete?
-		Sleeping the main thread and waiting isn&apos;t always the desired behaviour!
-		The textbook makes it out like the only reason to avoid the signals and locks is out of laziness, but this isn&apos;t the concern I have.
-		I do my best to keep my code clean and pristine.
-		I even use <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> on my website instead of messy <abbr title="Hypertext Markup Language">HTML</abbr> for that very purpose, because it forces the code to be well-written and not lazy.
-		Questioning this system isn&apos;t an issue of laziness.
-		I guess a better way to address my issue is this:
-		The textbook says to use the locks and signals even when you think you can get away without doing so, which is all well and good.
-		But it&apos;s not getting away with not doing so that concerns me.
-		I can imagine cases in which I fear not being able to get away with <strong>*using*</strong> locks and signals!
-		Locks and signals seem counterproductive for some use cases.
-		Hopefully, we look into this sort of use case later in the term, though I&apos;m doubting that we will.
-	</p>
-	<p>
-		Interestingly, locks are implemented as variables that must be passed into the locking and unlocking functions <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>.
-		What this means is that there can be multiple locks, completely unrelated to one another.
-		Critical sections don&apos;t have to share a lock, so they can be run concurrently.
-		For example, if one critical section works only with the variable <var>$var0</var> and another works only with the variable <var>$var1</var>, executing the two concurrently won&apos;t cause problems.
-		You can give the two sections separate locks, so one section isn&apos;t waiting for the other to be done with <var>$var0</var> before it uses <var>$var1</var>.
-	</p>
-	<p>
-		The textbook went into the history of mutual exclusion, starting with the ability to turn off interrupts <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>.
-		When I read that old processors allowed this, I sat there in shock for a couple seconds.
-		Being able to do that pretty much voids the entire purpose of interrupts!
-		Take, for example, a program that calls the function to turn off interrupts at the beginning of its execution, then turns them back on just before it exits.
-		It&apos;s an extreme example for sure, but it certainly get the message across without further explanation: a process can use this option to entirely take over the machine.
-		And that&apos;s just the case of deliberate misuse.
-		What about bugs?
-		Interrupts may get turned off, then never get turned back on.
-		Even if the operating system makes sure to turn them back on when a program ends, this still means that a process may accidentally take over the machine.
-		A big part of the purpose of interrupts is that a program may not intentionally and willingly give up control often enough, or may even end up in an infinite loop and fail to give up control on its own at all.
-		Interrupts are vital for ensuring this sort of issue doesn&apos;t take down the entire machine and require a reboot, resulting in downtime and losing all unsaved progress.
-		I get it.
-		This was a start.
-		But still.
-		We&apos;ve come a long way from that these days.
-	</p>
-	<p>
-		In both the previous paragraphs, the textbook mentioned something, then I went off and elaborated on the implications.
-		After saying what I needed to, I continued reading only to find the textbook said pretty much the same things I did, though in different words.
-		The textbook and I seemed to be on the same page in this chapter.
-		For this early mutual exclusion method though, I missed something big: the complete ineffectiveness when it comes to execution on multiple processors.
-		When dealing with multiple processors, you can&apos;t exclude other threads by preventing the current thread form giving up control of the one processor it&apos;s running on <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>.
-		Lost interrupts from other hardware components, such as <abbr title="input/output">I/O</abbr> completion interrupts <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a> are also an issue I failed to account for.
-	</p>
-	<p>
-		The test-and-set instruction is interesting.
-		After the instruction was briefly explained, it was easy to see how it could be used to build better locks.
-		This time though, I continued reading before writing about how it was done, so as to not to read about what I&apos;d just written this time.
-		The concept is exactly as I thought it&apos;d be.
-		The thread is able to check to see if the lock is claimed while claiming the lock, but because the claim on the lock doesn&apos;t have a thread identifier attached, claiming the already-claimed lock has no effect.
-		When the thread sees that the lock was already claimed, it ignores the fact that it already claimed it and claims it again, repeatedly, until it sees that it succeeded in claiming the eventually-unclaimed unclaimed lock <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>.
-		The book introduces the compare-and-set instruction as being capable of creating locks identical to those created with the set-and-test <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>, which is true, but it can also be used to create locks that keep track of which thread has the lock, for example, by setting the lock to the value of some thread <abbr title="identification">ID</abbr>, where <abbr title="identification">ID</abbr>s cannot equal some value that represents the lock being unclaimed.
-		For example, using zero as the lock&apos;s unclaimed state as the textbook does, all other values could represent a specific thread.
-		Thread one, thread two, et cetera.
-		Is this functionality useful?
-		I&apos;m not sure.
-		But it&apos;s interesting to note.
-		The load-linked and store-conditional seem to pretty much operate on a similar principle.
-		This time, you can check the value, then try to set the value, but if another thread has already set the value in the mean time, the set will fail.
-		Then you check to see whether the set was a success or failure not by checking the value itself again, as the other thread may have set the same value as this thread tried to set (and it <strong>*would*</strong> be the same value, if using the zero/one lock scheme the book uses as an example), but instead checking the return value of the function that sets the value if it hasn&apos;t changed.
-		There are extra steps compared to methods using other primitives, but it works.
-	</p>
-	<p>
-		Using the fetch-and-add primitive for a ticket lock wasn&apos;t something I could figure out on my own.
-		When the concept was introduced, I started trying to figure out how to use incrementation and decrementation (fetch-and-add negative one) to keep track of the number of threads waiting on the lock, while somehow using the values returned, which would become useless after the first decrementation ... it didn&apos;t make any sense to me.
-		The book&apos;s solution is much more simple though: just use a second counter to keep track of which ticket should now execute, and don&apos;t decrement either value <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>.
-		For long-running processes, we can see that this still works despite integer limits due to overflow.
-		You need to test to see if your ticket matches the value of the second value, not equal or lesser, so as long as you have fewer threads than there are possible values in your integer size (which should even be the case for an integer size of a single byte in nearly every case), it performs as if there were no integer limit.
-		That is, assuming the fetch-and-add operates by the same rules as basic addition.
-	</p>
-	<p>
-		When the book said threads waiting for the lock should yield instead of spinning <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>, it hit me like a tonne of bricks.
-		Why didn&apos;t I think of that!?
-		I&apos;d forgotten that it was called yielding, but I was still very much aware of the concept.
-		I even mentioned it above when I was discussion the problem of turning off interrupts.
-		Interrupts exist because programs aren&apos;t always well-programmed, and may misbehave, either intentionally or because of error.
-		They don&apos;t always yield periodically like they should.
-		Clearly, I had all the parts.
-		I knew about yielding from a previous course, and now I knew how a thread could tell if it had the lock.
-		But I failed to put the two together.
-		At this point though, we&apos;d addressed all the problems I&apos;d had in locking mechanics.
-		I figured we had the perfect lock now.
-		However, not so much.
-		The book brought up the problem of context switching overhead when switching to threads that don&apos;t have the lock, and will thus almost immediately yield <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>.
-		Oh.
-		Right.
-		That issue.
-		I hadn&apos;t thought of that.
-		The textbook claimed we hadn&apos;t solved the starvation problem with that though <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>.
-		As in, threads may never get a chance to enter the critical section, while other threads enter and exit numerous times.
-		We fixed that by using the fetch-and-add-based queue though.
-		Using such a queue doesn&apos;t require the useless spinning.
-		It can be used with yielding just fine.
-		Admittedly, there&apos;s still a problem to solve at this point in the book, but thread starvation definitely is not it!
-		When you turn work toward one problem, you don&apos;t roll back the solution to the problem prior.
-	</p>
-	<p>
-		The <code>park()</code> and <code>unpark()</code> option <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a> seems easy enough, though you then need a a queue that keeps track of thread <abbr title="identification">ID</abbr>s.
-		That can no longer be done by the threads simply taking and keeping a ticket number.
-	</p>
-	<p>
-		I don&apos;t feel like I got as much from the chapter on lock-based concurrent data structures as I did the chapter on locks themselves.
-		As I read about locks themselves, ideas kept clicking and I kept realising implications of things before I&apos;d even get to the part of the book explaining what I&apos;d just realised.
-		With lock-based data structures, I just sort of saw the ideas presented, but they didn&apos;t seem to lead me to coming up with the next idea the way the concepts of locks led me in the learning.
-		Scaling concurrent use of locked counters seems like a trade-off between inefficiency and temporary accuracy issues <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks-usage.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>.
-		For linked lists, the idea is that only things changing the list need to lock the list, not things performing look-ups.
-		Also, sometimes an insertion will fail and you&apos;ll need to try it again, so you need to put the lock around the loop that tries repeatedly, not the inner lines that actually make the attempt, so you don&apos;t lock and unlock in a needlessly repetitious manner <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks-usage.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>.
-		For queues, you want separate locks for the enqueue and dequeue operations; the head and tail of the queue can be locked separately without ill effect <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks-usage.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>.
-		For hash tables, each of the lists the outer structure contains can have it&apos;s own lock <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks-usage.pdf">(Arpaci-Dusseau &amp; Arpaci-Dusseau, 2012)</a>.
-		This is because determining which list an item should be in doesn&apos;t modify the structure in any way, so it can be determined before claiming any lock which list to use and thus which lock to claim.
-	</p>
-	<div class="APA_references">
-		<h3>References:</h3>
-		<p>
-			Arpaci-Dusseau, R., &amp; Arpaci-Dusseau, A. (2012). <a href="">Interlude: Thread API</a>. Retrieved from <code>http://pages.cs.wisc.edu/~remzi/OSTEP/threads-api.pdf</code>
-		</p>
-		<p>
-			Arpaci-Dusseau, R., &amp; Arpaci-Dusseau, A. (2012). <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks-usage.pdf">Lock-based Concurrent Data Structures</a>. Retrieved from <code>http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks-usage.pdf</code>
-		</p>
-		<p>
-			Arpaci-Dusseau, R., &amp; Arpaci-Dusseau, A. (2012). <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf">Locks</a>. Retrieved from <code>http://pages.cs.wisc.edu/~remzi/OSTEP/threads-locks.pdf</code>
-		</p>
-		<p>
-			Gillen, A., &amp; Waldman, B. (2011, June). <a href="https://static.redhat.com/legacy/f/pdf/IDC_Linux_Mainstream.pdf">Linux in the Mainstream: Growing Deployment of Business-Critical Workloads</a>. Retrieved from <code>https://static.redhat.com/legacy/f/pdf/IDC_Linux_Mainstream.pdf</code>
-		</p>
-	</div>
 </section>
 <section id="Unit3">
 	<h2>Unit 3</h2>
 	<p>
-		...
+		E-commerce is simply the carrying out of commerce-related activities over the Web <a href="https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf">(Silberschatz-Korth-Sudarshan, 2001)</a>.
+		I thought it was specifically the purchasing of things over the Web, but it&apos;s not.
+		Getting information on products via the Web is also e-commerce.
+		For example, when I recently looked into <abbr title="light amplification by stimulated emission of radiation">laser</abbr> hair removal, that was e-commerce, even though I didn&apos;t buy it over the Web.
+		I visited several companies&apos; websites for more information, but I pay using cash in person at my appointments.
+		I don&apos;t use a whole lot of e-commerce websites though.
+		For the most part, I try to save as much as I feasibly can, which means doing very little shopping, either online or offline.
+		The main things I need to pay for are rent, electricity, and groceries, all of which I pay for in person, not online.
+		I don&apos;t look into products much even, as I know I&apos;m not going to buy them.
+		I don&apos;t even pay my tuition here at this university through the e-commerce portion of the website, due to the only way to do that being via PayPal.
+		I always have horrid experiences when I try to use PayPal; PayPal has even locked up my credit card in the past.
+		So instead, I mail a cashier&apos;s cheque to the school to pay tuition.
+		It costs me a little extra, because I have to buy an envelope and postage, but it lets me bypass the PayPal requirement.
+		That said, while I pay via post, I do get the services I pay for via the Web.
+		So maybe that&apos;s still e-commerce?
+		There are a few e-shops I use though, and every once in a while, I research a product I&apos;ve been thinking about getting.
+		The main e-commerce website I use, though the one I use least often, would be the <a href="https://www.nic.st/"><code>st</code> domain name registry</a>.
+		I dropped a pretty thick stack of cash there years ago in order to claim the domain <code>y.st.</code>, which I use for my <a href="https://y.st./en/">my website</a>.
+		Now I go back every once in a while to pay upkeep on the domain, which is much cheaper.
+		I looked into every <abbr title="country code top-level domain">ccTLD</abbr> registry in existence before choosing the <code>st</code> registry, so that was e-commerce too, as I was doing research on a product (domains) that I wanted to buy.
+		Another e-commerce website I use is <a href="https://bandcamp.com/">Bandcamp</a>.
+		Bandcamp sells music, and has two features that makes me choose it over other music-selling websites.
+		As you can tell from <a href="https://bandcamp.com/alex_yst">my account</a>, I&apos;ve bought a lot of music over the years.
+		First and foremost, it allows artists to release their work under Creative Commons licenses.
+		Most artists choose not to do this, but I simply choose not to buy music by those artists.
+		I only by music under the <abbr title="Creative Commons Attribution">CC BY</abbr> and <abbr title="Creative Commons Attribution-ShareAlike">CC BY-SA</abbr> licenses, so having a shop that sells it is really nice for me.
+		Bandcamp also allows your purchases to be downloaded in a variety of formats, including several formats other sites don&apos;t offer.
+		I like Ogg Vorbis format for use on my player, and I also download in the lossless <abbr title="Free Lossless Audio Codec">FLAC</abbr> format for the archive on my external hard drive.
+		I might not ever use the lossless files, but it&apos;s nice to know I have them if I ever decide I want them for some reason.
+		A long time ago, I also bought a huge bundle of music by Josh Woodward from <a href="https://www.joshwoodward.com/">Josh Woodward</a>&apos;s own website.
+		Over two hundred <abbr title="Creative Commons Attribution">CC BY</abbr>-licensed songs for only $40 <abbr title="United States Dollars">USD</abbr>!?
+		Sign me up!
+		He&apos;s really cut down on the number of purchasing options these days.
+		It used to be that you could buy either his whole collection at a discounted rate, any individual album, and I think even any individual song.
+		Now he only sells his collection as a whole.
+		You can still download individual songs gratis though, and to get a single album, you can download each song from the album individually.
+		Downloading songs without paying for them was always an option there though, even when he allowed purchasing single albums.
+		I don&apos;t know why he doesn&apos;t allow such purchases any more.
+		When I need to get my final exams proctored, I bike to a university in the next city over.
+		There, they&apos;ve got a testing centre you can pay to have exams proctored in.
+		I&apos;ve got to go there in person, but if I pay by credit card, they have me pay via their e-commerce website.
+		This is my final proctored term though.
+		I&apos;ll need to go there one last time to have my exam for this course and the other one I&apos;m taking right now proctored, but after that, I won&apos;t need a proctor any more and won&apos;t be going back to the testing centre&apos;s e-commerce website.
+		I use other e-commerce websites on rare occasion, but none that are worth mentioning.
 	</p>
+	<div class="APA_references">
+		<h3>References:</h3>
+		<p>
+			Silberschatz-Korth-Sudarshan. (2001). <a href="https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf">Database System Concepts, Fourth Edition</a>. Retrieved from <code>https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf</code>
+		</p>
+	</div>
 </section>
 <section id="Unit4">
 	<h2>Unit 4</h2>
