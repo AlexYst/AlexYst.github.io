@@ -229,8 +229,72 @@
 <section id="Unit4">
 	<h2>Unit 4</h2>
 	<p>
-		...
+		The main access control method I interact with is the permission system on my computer&apos;s filesystem.
+		I&apos;m allowed to edit my own files all I like, but I&apos;m unable to modify system files unless I use the <code>root</code> account to do so.
+		Even though I&apos;m the only user on this computer (well, the only human user; the system has a plethora of user accounts that it uses for various purposes), it&apos;s very helpful to be locked out of modifying system files most of the time.
+		I&apos;m on Debian these days, but I used to be an Ubuntu user.
+		Back when I was on Ubuntu, I kept getting what I think were probably viruses.
+		The system would just suddenly prompt me for the administrative password out of the blue.
+		I think the viruses were trying to access system files, but because they were forced to run under my unprivileged account, they had to trick me into giving them access to the administrative account if they were to do any real damage.
+		I never fell for it, and when that would happen, I would back up my data and reinstall the system, wiping out everything, including the virus.
+		It was a heavy-handed approach, but it worked.
+		The virus would be gone and I wouldn&apos;t see any further problems until I managed to get another virus.
+		I&apos;m still not sure what I was doing to get the viruses in the first place though.
+		When I switched to a better operating system though, Debian, the viruses left me alone for good.
+		Debian and Ubuntu are pretty similar though, so I would have thought that they&apos;d be susceptible to the same viruses.
 	</p>
+	<p>
+		Anyway, the <abbr title="fourth extended filesystem">ext4</abbr> filesystem&apos;s access control is pretty simple an easy to understand.
+		Each file, including directories, is tagged with both a username and a group name.
+		There are then three permission levels for the file: the specific named user, everyone that isn&apos;t the specifically-named user but is in the named group, and everyone else.
+		For each level, there are three permissions: read permission, write permission, and execute permission.
+		If you don&apos;t have the required permission, you can&apos;t perform the action you&apos;d like to.
+		For example, the viruses were probably trying to write to system files or add files to system directories, which would require the write permission.
+		The system directories usually specify <code>root</code> as both the user and the group, and deny the write permission to everyone else.
+		A lowly basic user account such as mine doesn&apos;t have the right permission to write to those files, so a virus running under my account doesn&apos;t have the authorisation to write to those files either.
+	</p>
+	<p>
+		I also use an access control system with my computer&apos;s firewall.
+		Only one user account on the entire system is allowed to access the network, and that user isn&apos;t me.
+		Instead, it&apos;s the user account in which only my proxy software runs under.
+		That means that if any of my software tries to make network requests that I don&apos;t know about without going through the proxy, those requests are blocked.
+		There&apos;s simply no way around the proxy, which means no data gets leaked outside the proxy.
+		Software that behaves itself and uses the proxy I&apos;ve specified is allowed to access the network, while misbehaving software that tries to route around the proxy doesn&apos;t get anywhere.
+		This isn&apos;t a traditional use for access control, but it&apos;s been highly effective for my use case.
+	</p>
+	<p>
+		It&apos;s also been claimed by our textbook that when you use a webpage that uses a database as a back end, you&apos;re using that database (Silberschatz-Korth-Sudarshan, 2001).
+		Personally, I think this is a stretch.
+		You&apos;re not the database user, as far as I&apos;m concerned, the people who set up the the page are the database users.
+		By the book&apos;s definition though, I&apos;m also a user of the university&apos;s database.
+		Semantics and technicalities aside, whether or not I&apos;m actually a user of the database, access control is still relevant to me.
+		Rather than being applied to database accounts though, it&apos;s applied to website user accounts.
+		For example, when I make a post at this school, I&apos;m able to edit it for up to five minutes.
+		The access control allows me access to the edit feature for that specific period of time, but them locks me out of that feature.
+		Furthermore, the site locks me out of editing the posts of others altogether.
+		I&apos;m simply not allowed to edit the posts of my professors nor my classmates even within the five-minute span.
+		But if I had to guess, I&apos;d say that <strong>*someone*</strong> is allowed to edit all the posts.
+		In theory, there&apos;s some Web-based administrative account that&apos;s free to edit any content the user likes.
+		(If not though, there&apos;s always the accounts in the database, and the administrative account <strong>*there*</strong> certainly can edit anything in the tables.)
+	</p>
+	<p>
+		Another access control system I deal with is the one at my work.
+		Different users are granted different permissions.
+		The cash registers are connected to the computer system, and the base user level allows you to use a register that has been checked out to you.
+		These users aren&apos;t allowed to perform cash drops or void orders though, for example.
+		A while back, the head manager gave me the assistant manager group permission though, which among other things, allows the user to perform cash drops.
+		I&apos;m not actually a head manager, but the head manager got tired of dropping what they were doing to go perform a cash drop whenever the registers would lock up and demand one, so they gave a few of us that they trust more than the rest the assistant manager group permission so we could perform our own drops and save them some time.
+		I don&apos;t have many details on how this permission system works, but it locks options that we&apos;re not allowed to use.
+		With the assistant manager permission though, I&apos;m able to access just about everything.
+		I don&apos;t actually care enough to see what can be done though.
+		On top of the regular stuff everyone can access, the only things I do are perform cash drops and void erroneous orders (for example, if a customer changes their mind about buying something after I&apos;ve already finalised the order), both of which would have to be done anyway, but I&apos;d otherwise have to go get a manager to do for me.
+	</p>
+	<div class="APA_references">
+		<h3>References:</h3>
+		<p>
+			Silberschatz-Korth-Sudarshan. (2001). <a href="https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf">Database System Concepts, Fourth Edition</a>. Retrieved from <code>https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf</code>
+		</p>
+	</div>
 </section>
 <section id="Unit5">
 	<h2>Unit 5</h2>
