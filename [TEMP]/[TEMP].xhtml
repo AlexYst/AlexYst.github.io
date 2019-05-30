@@ -458,9 +458,72 @@
 </section>
 <section id="Unit7">
 	<h2>Unit 7</h2>
+	<h3>Thoughts on the reading material</h3>
 	<p>
-		...
+		I started reading the material for the week, and found the first few paragraphs to be way too familiar.
+		Even the way things were phrased made me thing we&apos;d already read this in class.
+		I went back through the old reading assignments, and found we had indeed read that chapter before; specifically, in <a href="https://y.st./en/coursework/CS3306/index.xhtml#Unit3">Unit 3</a>.
+		However, it was only that one chapter that we&apos;d read.
+		The other two chapters assigned this week were new to us.
+		The textbook frames the storing of customer data to later mine as such a positive thing.
+		But then as it explains what&apos;s stored, it makes it clear how creepy it is, even without meaning to.
+		Credit card information (which includes actual customer names), credit history, annual income, address, age, educational background ...  (Silberschatz-Korth-Sudarshan, 2001)
+		The credit card information may be necessary for processing a transaction, but keeping it on file beyond that is a creepy business practice.
+		As for the rest of that information, most companies shouldn&apos;t even <strong>*come in contact*</strong> with that information, and the fact that they do go out of their way to get it and enter it into their databases is <strong>*incredibly*</strong> creepy.
+		I&apos;ve noticed that businesses do sometimes try to get that information out of me though.
+		I always initially try not to give it, and if they insist, I give them fake data.
+		They don&apos;t need that information and they honestly shouldn&apos;t have it.
 	</p>
+	<p>
+		I find it interesting that online analytical processing systems used to store their data in memory.
+		<abbr title="random-access memory">RAM</abbr> is a finite resource to a computer, and only available in a small quantity.
+		If your data cube has a whole lot of data in it, that means you&apos;re going to be doing a lot of paging, swapping the data in virtual memory in and out of actual <abbr title="random-access memory">RAM</abbr>.
+		It seems like a cumbersome and slow process.
+		It also means that the data would be lost during a restart and need to be immediately recalculated.
+		Some newer analytical processing systems a relational database is used instead.
+		The data is stored on the hard drive, and the database software uses its clever optimisations to speed up the moving of the necessary data into <abbr title="random-access memory">RAM</abbr> when used.
+		There&apos;s still disk access clearly, but I think database software is more efficient about it than you get by paging entire blocks of memory in and out of <abbr title="random-access memory">RAM</abbr>.
+		Other newer analytical processing systems take a hybrid approach, storing summaries in memory and the rest in a relational database (Silberschatz-Korth-Sudarshan, 2001).
+		It works because you&apos;re not trying to store the entire data cube in memory, but instead only a small part of the data.
+	</p>
+	<p>
+		When the textbook mentioned over-fitting of a decision tree to the data, it was really familiar.
+		I couldn&apos;t remember whether we&apos;d covered over-fitting in this course or it was one I&apos;d taken previously.
+		A bit later though, the book mentioned neural networks though.
+		That&apos;s when I remembered for sure that it was another course.
+		Specifically, we <a href="https://y.st./en/coursework/CS4407/Failed_neural_network~_evaluation.xhtml">worked with a neural network</a> in the course I&apos;d learned about over-fitting of models to data in, which means it would have been <span title="Data Mining and Machine Learning">CS 4407</span> in which I&apos;d learned about the concept.
+		The other classification methods discussed afterwards were predictably familiar as well.
+		The section on implementing the searching of a database full of documents was quite enlightening.
+		It showed several pitfalls and difficulties in setting up such a search system for a database.
+		It explains pretty well the likely reasons why the search options on those four websites we&apos;ve been using this term return such terrible results.
+		For example, the part on automatically including the synonyms of words.
+		Many of the documents I retrieved using those sites&apos; search options were not only completely irrelevant to what I&apos;d asked for, but didn&apos;t even contain the individual words I&apos;d entered.
+		It was interesting to read why the letters in <abbr title="Universal Coordinated Time">UTC</abbr> are transposed from what we&apos;d expect.
+		The acronym is based on the French words for the concept (Silberschatz-Korth-Sudarshan, 2001).
+		It makes me wonder if it was the French who came up with a unified time to use globally.
+	</p>
+	<h3>Data warehouses</h3>
+	<p>
+		Data warehouses are places where data from several sources are brought together and stored using a single, unified schema.
+		This makes accessing the data easy, as it&apos;s all in one place, and makes querying the data easy, as it&apos;s in a unified format.
+		Businesses use these data warehouses for data mining, a technique in which they take the data they&apos;ve creepily gathered about their customers or users and use it to make business-related decisions.
+		For example, they might try to figure out how much of a new product they want to start out with in a given market or what demographics they want to target with their advertising (Silberschatz-Korth-Sudarshan, 2001).
+	</p>
+	<p>
+		Another important aspect of data warehouses is that they may store data longer than the sources they get data from.
+		For example, source data may come from a factory or store front that only keeps their records for a limited period of time.
+		People making business decisions may want access to data further back than that, as it&apos;ll help them spot trends.
+		If a store only keeps track of sales from the past few months, it&apos;s not going to help find out what times of year certain products are wanted, or if a current decline in sales of a given product is simply a seasonal thing and not a permanent decline in interest in that product.
+		It&apos;s also not going to help find if sales, on the whole, are up or down compared to previous years.
+		A data warehouse can store all the information, which can be copied form the other locations before it gets deleted from said locations.
+		By querying the warehouse instead of the live database, strain on the live database is reduced as well.
+	</p>
+	<div class="APA_references">
+		<h3>References:</h3>
+		<p>
+			Silberschatz-Korth-Sudarshan. (2001). <a href="https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf">Database System Concepts, Fourth Edition</a>. Retrieved from <code>https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf</code>
+		</p>
+	</div>
 </section>
 <section id="Unit8">
 	<h2>Unit 8</h2>
