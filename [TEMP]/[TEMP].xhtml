@@ -527,9 +527,131 @@
 </section>
 <section id="Unit8">
 	<h2>Unit 8</h2>
+	<h3>Client/server model</h3>
 	<p>
-		...
+		As the learning journal assignment this week states, in the client/server model, the server is much more powerful than the client.
+		The assignment then asks if the client/server model is suitable for situations in which both machines have relatively equal computational resources.
 	</p>
+	<p>
+		To answer this, we first have to ask ourselves <strong>*why*</strong> the clients and servers are the way they are.
+		Is the client/server model still in use because of the huge difference in system resources?
+		Absolutely not.
+		Instead, servers are built with more resources <strong>*because*</strong> of the model.
+		A server typically has to have a lot more resources to keep up, as it&apos;s dealing with so many clients.
+		Each client only needs enough resources to handle its own transactions with the servers it deals with, and typically doesn&apos;t deal with many servers at a time.
+		However, the server needs enough to handle all transactions with all the clients it deals with, and there can be hundreds if not thousands of clients interacting with a given server.
+	</p>
+	<p>
+		The reason the client/server model is used is that one machine is able to act as the central authority for the resource.
+		By &quot;resource&quot;, I don&apos;t mean processing power, <abbr title="random-access memory">RAM</abbr>, or anything like that, but instead the database, the website, or whatever it is that the client is trying to access.
+		This single authority model works well for many types of applications.
+		On the Web, a webmaster is able to host documents (such as webpage) where the rest of the world can retrieve them, for example.
+		Clients that don&apos;t already have the documents are able to easily retrieve them.
+		With a database, having all the data hosted on a single machine instead of having it distributed means that a client knows exactly which machine to ask for the data: the same machine it goes to for the rest of the data in that database.
+	</p>
+	<p>
+		Our textbook brings up an interesting architecture: the data-server model (Silberschatz-Korth-Sudarshan, 2001).
+		The most important thing to notice about this model is that it&apos;s got a server and one or more clients.
+		That means it&apos;s not an alternative to the client/server model, but rather a subcategory of that model.
+		In the data-server model, the client requests data from the server, and the server provides that data.
+		But then, it&apos;s the client that processes the data, not the server.
+		The client then sends back the changes it needs made in the database (Silberschatz-Korth-Sudarshan, 2001).
+		This has a number of interesting implications.
+		First, it&apos;s the client using more computational resources than the server.
+		The server can thus conserve its resources to service more clients without needing as many total resources; it can be a weaker machine than it otherwise could be.
+		Second, more bandwidth is needed, as much more data is being sent back and forth.
+		And third, the client needs to know how to manipulate the data.
+		The full data-manipulation logic rests with the client, not the server.
+	</p>
+	<p>
+		For the context of this question though, a data-server setup isn&apos;t even necessarily the right choice.
+		We know that the clients and the server in the presented scenario have nearly-equal resources, but we don&apos;t know anything about the connection between the machines.
+		On anything but a very fast connection, the data-server model doesn&apos;t perform well (Silberschatz-Korth-Sudarshan, 2001).
+		On a slow or mid-speed connection, having the server process the data will speed things up.
+		There are other issues that become more of a problem when using the data-server model too, such as cache coherency and locking (Silberschatz-Korth-Sudarshan, 2001).
+	</p>
+	<h3>Advantages of cloud computing</h3>
+	<p>
+		Next, we&apos;re asked to discuss the advantages of cloud computing.
+		My discussion of this topic should not be considered an endorcement by any means.
+		In most cases, cloud computing has <strong>*severe disadvantages*</strong>, and I believe those disadvantages <strong>*vastly outweigh*</strong> the advantages cloud computing can offer.
+		However, many advantages do exist, so I&apos;ll discuss a few of those below.
+	</p>
+	<p>
+		One advantage is monetary savings (LevelCloud, 2015).
+		You&apos;re not paying certain upkeep costs, such as electricity, cooling, and maintenance.
+		At least, you&apos;re not paying for these things directly.
+		Instead, you pay for them in the form of the fees your cloud provider charges you.
+		Imagine though that you&apos;ve got a server on the premises, and you&apos;ve got to pay for these costs directly.
+		You&apos;ve got to foot the whole bill.
+		On the other hand, when you pay the cloud provider, they divide this cost amongst several subscribers.
+		Several subscribers are using the resources of the same machine, so they each only pay a fraction of what it costs for upkeep of the machine.
+		There is, of course, something to be noted here.
+		The more cloud resources you use, the higher your bill and the less you save.
+		There comes a point when it&apos;s cheaper to run your own machines.
+		Take, for example, any large Internet mogul you can think of.
+		It doesn&apos;t matter which one.
+		There are several.
+		I won&apos;t name any specific names.
+		If they were to use cloud services themselves, provided by another company, they&apos;d probably be haemorrhaging money.
+		The takeaway here is that if your resource usage is below some scale, the economics of bundling your resource usage with the resource usage of other companies all on the same machine makes cloud computing a money-saver.
+		On the other hand, if you&apos;ve got enough computing and/or storage to keep several machines busy, you&apos;ll save more by running your own machines.
+	</p>
+	<p>
+		One claimed advantage to cloud computing is reliability (LevelCloud, 2015).
+		It&apos;s argued that clouds have better uptime than what you&apos;d have in-house.
+		This though, is more a matter of cost savings again.
+		You can provide your own reliability, redundancy, and things of that nature.
+		It&apos;s just going to take more hardware, more upkeep, and more people.
+		In other words, more money.
+		For cloud companies, this is what they do.
+		They bundle everything together to take advantage of the economics of scale, then pass that savings on to you.
+		For example, they&apos;re got <abbr title="information technology">IT</abbr> people standing by, ready to take care of problems that occur with their machines.
+		With how many machines they&apos;ve got, that works out to being pretty cheap per machine that needs to be maintained.
+		On the other hand, if you ran your own services in-house and wanted high reliability, you&apos;d need at least one <abbr title="information technology">IT</abbr> person on staff even when nothing is going wrong.
+		Per machine, your costs would be higher, simply because you&apos;re paying the same amount per <abbr title="information technology">IT</abbr> person but they have less to do because you&apos;ve got fewer machines.
+		Cloud computing is all about scale.
+		Well, that and giving up control of your data.
+	</p>
+	<p>
+		Using cloud computing instead of an in-house solution means there&apos;s less for your company to manage (LevelCloud, 2015).
+		You don&apos;t need as much of an <abbr title="information technology">IT</abbr> department.
+		The cloud company has an <abbr title="information technology">IT</abbr> department for you.
+		Again, you can easily tie the advantages here back to the underlying theme of scale.
+	</p>
+	<p>
+		Finally, there&apos;s quick deployment of new applications.
+		You don&apos;t have to obtain new machines to handle the new things you have in the works before they can face the public, or even face your own company (LevelCloud, 2015).
+		The cloud company has the machines on standby just waiting for your applications.
+		Do you see how this ties back to the theme of scale again?
+		If you had your own machines, you&apos;d have to have the maximum number of machines you ever needed at once, unless you sell off your machines when you don&apos;t need them any more, which would be more costly.
+		On the other hand, the cloud company only needs as many machines as all its customers at once need.
+		When you need more resources, another company likely needs fewer, and vice versa.
+		On a scale as large as a cloud company&apos;s user base, there&apos;s much less fluctuation in resource usage, and the cloud company can keep its machines reasonably busy.
+		Also along these lines, using cloud computing allows you to scale both up and down very quickly (Sauerwalt, n.d.).
+	</p>
+	<p>
+		Some argue that <abbr title="Service as a Software Substitute">SaaSS</abbr> is a cloud benefit as well (Sauerwalt, n.d.), so I&apos;ll list it here.
+		<abbr title="Service as a Software Substitute">SaaSS</abbr> is actually a very dangerous thing to get into though, and usually involves vendor lock-in and an obfuscation of what the platform does below the surface, making it hard to move to a better provider when you need to.
+	</p>
+	<p>
+		Cloud computing has some crippling disadvantages, which I covered a few of in this week&apos;s discussion assignment.
+		When it comes to advantages though, they can all be tied back to one underlying theme: scale.
+		The economics of scale dictate that large quantities are cheaper per unit than small quantities.
+		Cloud companies take advantage of that by gathering a large user base, then pass a part of that savings on to said users.
+	</p>
+	<div class="APA_references">
+		<h3>References:</h3>
+		<p>
+			LevelCloud. (2015, March 31). <a href="https://www.levelcloud.net/why-levelcloud/cloud-education-center/advantages-and-disadvantages-of-cloud-computing/">Advantages and Disadvantages of Cloud Computing</a>. Retrieved from <code>https://www.levelcloud.net/why-levelcloud/cloud-education-center/advantages-and-disadvantages-of-cloud-computing/</code>
+		</p>
+		<p>
+			Sauerwalt, R. (n.d.). <a href="https://www.ibm.com/cloud/learn/benefits-of-cloud-computing">Benefits of cloud computing | IBM</a>. Retrieved from <code>https://www.ibm.com/cloud/learn/benefits-of-cloud-computing</code>
+		</p>
+		<p>
+			Silberschatz-Korth-Sudarshan. (2001). <a href="https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf">Database System Concepts, Fourth Edition</a>. Retrieved from <code>https://my.uopeople.edu/pluginfile.php/476000/mod_book/chapter/187010/Database%20System%20Concepts%204th%20Edition%20By%20Silberschatz-Korth-Sudarshan.pdf</code>
+		</p>
+	</div>
 </section>
 		<hr/>
 		<p>

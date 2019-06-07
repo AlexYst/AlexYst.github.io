@@ -18,7 +18,7 @@ just fine.
 My PGP key ID is 0xE7464A03 and my PGP fingerprint is
 D135 B061 DBED 690B 479F E2E3 7D83 E1E5 E746 4A03.
 
-As of today, Wednesday, 2019 May 29,
+As of today, Thursday, 2019 June 06,
 I have not been legally required to withhold information.
 University of the People has issued me a take-down request for
 some pages on this website, but I have not been asked to keep
@@ -45,17 +45,17 @@ This canary has gone down in the past due to technical issues:
   '- Various life circumstances made website updates difficult.
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEE0TWwYdvtaQtHn+LjfYPh5edGSgMFAlzvArMACgkQfYPh5edG
-SgMOxQ//TqH0ZKIC0QvGBI3Uh9BxNtBviUdcDJqc+zNSJoZ76R2avQRxmsDyAnU8
-IK4IikciSj3CEVtrLOqoaU2E9rxBFvGB2PLHfGnF8FkMIdgqjeP9fGpe/Zp1QYvr
-4eJ/C5gPVgVslNMssBoqWfy7utYYXcRz9rnxbaVBBMBGEhwyG8rJ8BPbj6SiDqgw
-7YL6QAeow4ffceaojNi7/WT02dB7wpidZ9Sd1gyqWSn0/LHQ02LzPGvXgyUREafq
-JgIzSK2zq0IedVdoeUFk5fwV7w/yWvJqNyEfdX7qr1CJXMz4UFAIEJmYZ2kzT9Zk
-NELddgfmS86Tsmyh7KhzH6BBfpSWRtN7u+gM+2FKCynnRQxSpZXZ3/AHY7ZOlLbY
-NeP1Ob3Uo0RRlboo+VRshLE7Q+EZlrZP20wTwfovh9w6tonjtAfRLc9KhYnKfevn
-Ly+mzrtR/Wl8rSMDP3sLOkhgkGXxp2Ny9nLoU41V0ZaZI3VOFmJCOxU9/Z7BoyBS
-JYPU3cLNMmZ3K7bZ0ancA5ZcepXFFjPa1h+ir+hbS7N0lEsnEBqwiKw6+ICsE+lA
-uH/XwBFVhFj3duSo3+4A9kwm4LymDQ1x+O2guvkrU3G4423+M/iQrqh7kytQ468v
-0z80s2DNibprUmb5y8DSKZeg692kpBI2dGfQinqv7c3hIPDu9KE=
-=JPPf
+iQIzBAEBCAAdFiEE0TWwYdvtaQtHn+LjfYPh5edGSgMFAlz5iJsACgkQfYPh5edG
+SgPylA/9Fmn14xcH1B8a3GCXFGYsOhLb1vgyFOYV7cQa4sSGpdhuWXXRir8fm0z+
+MJ/yNksCQVJ93jD9nBFGbEmUaCrDBr87hvWdfApasWwG/hX0TIJayD2QgL3iJD9C
+AFxPA9VUpvkctS5+xk+E72SKeBX/eG41g/9Xys129JGjw2MdBm/stmbpTHL9ef6j
+soE4b3bLgfJ51dYcT3fWyhdaRlElE4GnS91JrG1uPoXYFaLHjXhWMJTR8tnBmJyK
+OfPMLTd+IqJ4rFSaQZyGhWslfw8QBSATy5aVjfEU4izxdGHw1jmIzywNODPkMAq/
+XmiVDgl1088bYugjd2rMaUPM4EP09dkAbnHrC6iKpe1Z7KrOpeSNcY3svQpeQQ9Z
+/KlZaFi2tdEcwmm+WxHsjD+qS5cBCWeHdzodt34/vyF+jUtsjk32shXcijjWU4TR
+Ukwfc+hraSgzkInPg+A134pP327GkNtQP+QgtWbmM0KjI7YgLKhRRmGTrn/IRnCR
+Kbgb0RVQ1hSxMPt5pH2474OsH1lRthAUkRbKrZq4xI5Uy2n+l14tToVEu56+S6Je
+F+s96dXgH0c8fULWO6m9Pr4ERl3X1U5M26Qv6wDa9VQj3g/MiK1AObCF8HOdvCJv
+L3/ue+PT9lcULhgJYUqIbK0ExFDH711XDNAubPCiKubis76J11k=
+=sebq
 -----END PGP SIGNATURE-----
