@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2019 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2019/06-June/12.xhtml"/>
+		<title>Debugging minestats &lt;https://y.st./en/weblog/2019/06-June/12.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+<nav>
+	<p>
+		<a href="/en/coursework/">Coursework</a> |
+		<a href="/en/take-down/">Take-down requests</a> |
+		<a href="/en/">Home</a> |
+		<a href="/en/a/about.xhtml">About</a> |
+		<a href="/en/a/contact.xhtml">Contact</a> |
+		<a href="/a/canary.txt">Canary</a> |
+		<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+		<a href="/en/opinion/">Opinions</a> |
+		<a href="/en/law/">Law</a> |
+		<a href="/en/recipe/">Recipes</a> |
+		<a href="/en/a/links.xhtml">Links</a> |
+		<a href="/en/weblog/2019/06-June/12.xhtml.asc">{this page}.asc</a>
+	</p>
+	<hr/>
+	<p>
+		Weblog index:
+		<a href="/en/weblog/memories">Memories</a> |
+		<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+		<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+		<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+	</p>
+	<hr/>
+	<p>
+		Jump to entry:
+		<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+		<a rel="prev" href="/en/weblog/2019/06-June/11.xhtml">&lt;Previous</a>
+		<a rel="next" href="/en/weblog/2019/06-June/13.xhtml">Next&gt;</a>
+		<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+</nav>
+		<header>
+			<h1>Debugging <code>minestats</code></h1>
+			<p>Day 01558: <time>Wednesday, 2019 June 12</time></p>
+		</header>
+<img src="/img/CC_BY-SA_4.0/y.st./weblog/2019/06/12.jpg" alt="Trees along the road" class="framed-centred-image" width="800" height="480"/>
+<section id="diet">
+	<h2>Dietary intake</h2>
+	<p>
+		For breakfast, I had a 198-gram smoothie.
+		I didn&apos;t really have lunch.
+		I was still exhausted from yesterday.
+		Instead of making lunch, I snacked on 237 grams of pretzels.
+		For dinner, I had half a Reuben and several fries.
+	</p>
+</section>
+<section id="trip">
+	<h2>Trip</h2>
+	<p>
+		I&apos;m back to having only two days off per week.
+		It&apos;s definitely a good thing, at least when it comes to my pay cheque.
+		But it occurred to me today that I shouldn&apos;t spend both my days off for the week biking into Eugene.
+		I mean, I&apos;ve got my <abbr title="Eugene Unix &amp; GNU/Linux User Group">EUGLUG</abbr> meeting, and that&apos;s an hour into Eugene, then an hour back.
+		Often even longer, depending on what pace I feel like going.
+		I&apos;ll be getting plenty of ride time in, and should take it somewhat easy today.
+		That said, I still have my commitment to bike every day, so I needed to go somewhere, just somewhere a bit closer.
+	</p>
+	<p>
+		I ended up going to the local mall; there&apos;s a hobby shop there.
+		I thought they might carry embroidery floss.
+		It turns out they do, and it&apos;s the same brand as that at the craft store.
+		The hobby shop&apos;s quite a bit further out of the way for me than the craft shop, but the point today wasn&apos;t the errand itself, so it was fine.
+		I was able to get all three colours of floss I was missing, so I guess I can get started on my project as soon as I want to now.
+		The neighbour still hasn&apos;t contacted me.
+		I think I&apos;ll put off the project until school starts, not just to give them time, but also so I can use the cross-stitching as a distraction while taking breaks from coursework.
+	</p>
+</section>
+<section id="Minetest">
+	<h2>Minetest</h2>
+	<p>
+		Rewriting <code>elemental</code> to have fewer hard-coded assumptions is interesting.
+		It requires using a basic, unipage formspec whenever <code>sfinv</code> isn&apos;t present.
+		Either that or writing custom multi-page functionality.
+		I feel like if administrators want multi-page support though, they&apos; just leave <code>sfinv</code> installed though, so the unipage formspec seems like the right way to go.
+		But once a unipage layout is written, is having a separate version with multiple pages even useful?
+		I might or might not be able to get a better layout with multiple pages, depending on how well I get the unipage layout set up.
+	</p>
+	<p>
+		The bigger issue though is <code>minestats</code>.
+		If <code>elemental</code> claims to support all these subgame versions but relies on a mod that doesn&apos;t, it doesn&apos;t truly support all those subgame versions.
+		Having <code>minestats</code> support the most-recent version of Minetest Game is no longer good enough, if it could be said that it ever was.
+	</p>
+	<p>
+		I started going through Minetest Game versions in order to spot the problems in <code>minestats</code>&apos; detection of elements in those subgames.
+		The first problem I encountered were the doors in 0.4.3.
+		Once a problem is spotted, the first step is to take a look at the subgame&apos;s code to see if the problem is easy enough to spot.
+		Oh my squid, 0.4.3&apos;s doors are poorly programmed.
+		It&apos;s really no wonder <code>minestats</code> is having trouble with them.
+		They&apos;re worse than the <code>xpanes</code> nodes!
+		I mean, technically, they&apos;re making the exact same mistake as the <code>xpanes</code> nodes.
+		What makes it worse though is that there&apos;s absolutely zero excuse for it in the doors.
+		I&apos;d argue that <code>xpanes</code> could do what it does in a much cleaners way.
+		I&apos;m not sure what that way is for sure, but there&apos;s <strong>*got*</strong> to be a better way to shift the nodes out than to monitor <strong>*all*</strong> node placements and removals.
+		And then there&apos;s the fact that I question whether the nodes need to be shifted in <code>xpanes</code> to begin with.
+		But for doors, the only time the function needs to be called is when doors themselves are placed or dug.
+		Never any other time.
+		However, these primitive doors monitor all node placements and removals, as they use the global callbacks instead of the node-specific callbacks.
+		This is a problem I guess was fixed in later versions.
+		Modern doors still have an issue in that they have an extra inventory item form defined for no reason (you can see in the <code>beds</code> mod that &quot;multi-node nodes&quot; don&apos;t need an extra in-inventory form and can use one of the two main node forms in the inventory), but they at least get the placement and digging code right.
+		So the first step in continuing to fix up <code>minestats</code> is to figure out how to distinguish these doors from things that should actually be counted.
+		Otherwise, there&apos;s a door element, and you can place and remove the same door repeatedly for infinite door element points.
+		This infinite points issue is exactly what defines things that shouldn&apos;t be considered countable elements.
+	</p>
+	<p>
+		With some utter hackery, I got <code>minestats</code> to stop counting door drops.
+		Basically, nodes that use <code>param2</code> for facing direction are no longer countable as drops.
+	</p>
+	<p>
+		The next problem, I found in Minetest Game 0.4.7.
+		Seed drops weren&apos;t getting counted.
+		The reason was code I&apos;d programmed to prevent modern doors (not to be confused with the 0.4.3 doors) from being counted.
+		Even modern doors are so hacky, and hackery is needed to avoid mistaking them for countable minables.
+		The early farm plants, first introduced in 0.4.7, used similar hacky code.
+		The difference being, of course, that farm seeds don&apos;t always drop, and sometimes drop in multiples, while doors always drop their inventory item form.
+		For early seeds though, an inventory form is supplied for no valid reason whatsoever.
+		Modern farm seeds are placed down, and it takes time for them to sprout.
+		There is no &quot;inventory form&quot;, as the form they take in the inventory is the same as when you just place them down and they haven&apos;t sprouted yet.
+		Early farm seeds were non-node items though, and when you tried to place them, they&apos;d turn into their sprouted form.
+		First, why not have the sprouted form be the seeds in the inventory using an inventory image separate from the node tiles?
+		Several nodes do that already; it&apos;s not a new concept and the engine deliberately supports it.
+		But second, why do the seeds sprout as soon as you plant them?
+		That wouldn&apos;t even be an issue on its own though, it just makes the first issue worse.
+	</p>
+	<p>
+		I threw even more hackery at this problem too.
+		To put it simply, craft items are counted even when they behave like door items, as long as the node they drop from doesn&apos;t always drop the same thing.
+		Utter hackery.
+	</p>
+	<p>
+		My next problem showed up in Minetest Game 0.4.10.
+		With all the hackery I&apos;d put into the code, seeds dropped by grass and jungle grass were no longer counted like they should be.
+		They used to be counted correctly.
+		It seems that modern seeds have a facing direction, which uses <code>param2</code>.
+		At first, I thought this utter lunacy, but it&apos;s actually just a case of ease of programming.
+		With the way seeds are defined - that is, with the <code>signlike</code> draw type, they&apos;d appear to hover in the air without a facing direction telling them to rest on the ground instead.
+		As <code>param2</code> isn&apos;t being used for anything else, the developers just set seeds to use it as a facing direction, even though the only facing direction the node is legally allowed to have is <code>1</code>.
+		If there&apos;s an oversight, which there very well might be, it could be possible to change <code>param2</code> with a screwdriver, making the values <code>0</code> through <code>5</code> all legal values, though if that&apos;s even the case, it certainly wouldn&apos;t be intended.
+	</p>
+	<p>
+		The solution to that was to add a check to only rule things out if they didn&apos;t specifically didn&apos;t have an <code>on_place()</code> callback.
+		0.4.3&apos;s doors got mistakenly counted because they appear not to change when placed when they really do, so anything that admits that it might change when placed can now bypass that filter.
+	</p>
+	<p>
+		I&apos;m done for tonight though.
+		I&apos;ll look for further issues another day, and after cleaning up each subgame, I&apos;ll cycle through the subgames again to make sure a fix for one subgame didn&apos;t break another.
+	</p>
+</section>
+<section id="cafe">
+	<h2>Dropping by the café</h2>
+	<p>
+		I&apos;ve been meaning to celebrate the end of my bloodline since I got back the negative results from the doctor on the post-vasectomy sperm search.
+		I wanted to go out for dinner, but things kept getting in the way.
+		Today&apos;s probably the last chance I&apos;m going to get in quite a while though, and I was basically sitting on my hands today anyway, so I dropped by my favourite café.
+		Their Springfield branch has been open for dinner now for a while now, but I haven&apos;t been by.
+		Previously, they were only open for lunch, while they finished setting things up.
+		I&apos;ve been interested to check out their expanded menu though.
+		They do have more available now, but I ended up going with just a basic Reuben.
+		It&apos;s delicious, and being a celebration, I wanted something I knew I&apos;d enjoy.
+		I did pick up one of their take-out menus for later though.
+	</p>
+	<p>
+		The sandwiches there come with a small order of fries, and the waiter talked me into making those Cajun fries.
+		Those were interesting to try, though definitely not something I would order again.
+		It was worth getting them this time just to know.
+		As my dietician has instructed, I set aside half the sandwich and half the fries for another meal.
+		I&apos;ll probably have those for dinner tomorrow.
+	</p>
+</section>
+		<hr/>
+		<p>
+			Copyright © 2019 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2019%2F06-June%2F12.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.2</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2019%2F06-June%2F12.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+
