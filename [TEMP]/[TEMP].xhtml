@@ -607,38 +607,636 @@
 </section>
 <section id="Unit3">
 	<h2>Unit 3</h2>
+	<h3>Describe what you did.</h3>
 	<p>
-		...
+		For the week, I read the material, graded assignments from last week, and participated in the discussion activity of the week.
+		I also built a bouncing sphere animation for the main assignment of the week.
+		I ended up overcomplicating the assignment, but my animation turned out better for it.
+	</p>
+	<h3>Describe your reactions to what you did.</h3>
+	<p>
+		I suppose my main reaction to what I&apos;ve done this week was frustration.
+		I stayed up late trying to fix my janky animation, only to find out that the one part that was causing my trouble, the <var>z</var> dimension, was something we didn&apos;t even need to include in our submissions.
+		The frustrating part was that I&apos;d done that to myself.
+		It was me that failed to read the directions correctly.
+	</p>
+	<h3>Describe any feedback you received or any specific interactions you had.</h3>
+	<p>
+		Discussion assignments do absolutely zero for me.
+		Any &quot;interactions&quot; there tend to consist of either us all repeating the same things, because we&apos;re all answering the same questions after reading the same material, or people going off-topic.
+	</p>
+	<p>
+		With that in mind, the only real interaction I had in regards to this course was from our professor about my <a href="https://y.st./en/coursework/CS4406/#Unit1">Unit 1 learning journal</a> submission.
+		I was told not to tell what the textbook told me, but at the same time, to tell what I learned.
+		As what I learned came from the textbook, these requests are in direct opposition to one another.
+		I&apos;m not sure what I&apos;m supposed to do.
+		However, I was also told to answer a series of questions, questions I&apos;d already answered, just in the context of a full write-up.
+		I can only assume that my best option is to now specifically answer each question individually in its own section to be sure each one gets recognised as having been answered.
+	</p>
+	<h3>Describe your feelings and attitudes.</h3>
+	<p>
+		I suppose the one thing I didn&apos;t cover before were my feelings and attitudes, as they aren&apos;t really relevant to what I was doing, not to mention that they&apos;re pretty much always the same.
+		My main feeling is one of constant lethargy, and my attitude is that I just want to get the work over with.
+		I used to thoroughly enjoy my studies here at this school, but that all ended a little over a year and a half ago.
+		This school has drained the joy of learning right out of me.
+		Since 2017-11-01, I&apos;ve just wanted to get my schooling done so it can be over with.
+		It has nothing to do with this course, or any specific course, and isn&apos;t anything that you&apos;re doing wrong.
+		Rather, the way the school is run.
+		It&apos;s not a healthy environment, and I&apos;ll be happy when my time here is finally over.
+	</p>
+	<p>
+		So what is my attitude?
+		My attitude is that I&apos;ve only got two more years here, and then I&apos;ll be free.
+	</p>
+	<h3>Describe what you learned.</h3>
+	<p>
+		You want me to talk about what I learned, but not talk about what the textbook said.
+		Honestly, I don&apos;t know what to say.
+		What I learned came from the textbook.
+	</p>
+	<p>
+		I suppose in short, I learned how to properly move objects about in space using <code>three.js</code>.
+		That was something I couldn&apos;t figure out last week, and couldn&apos;t find information on how to do on the Web.
+		That would be the main thing.
+		I also learned how to better deal with collision detection, at least for some cases.
+		My sphere was acting all sorts of wonky when it hit edges of the viewing area, due to slightly clipping into them, then repeatedly detecting a collision and repeatedly trying to switch directions to get back out.
+		The sphere misbehaved because it would flip directions to get out of the wall, fail to get all the way out, then flip again to get out but actually be heading further in now.
+		An easy fix was to shove the sphere back out right away, so when it turned around, it&apos;d already be out of the wall before it moved.
+	</p>
+	<h3>What surprised me or caused me to wonder?</h3>
+	<p>
+		I&apos;m constantly wondering how to get my work done in this course.
+		When I ask a search engine for even the most basic advice on how to perform some simple action in <code>three.js</code>, it gives me bupkis.
+		I can&apos;t remember all the <abbr title="application programming interface">API</abbr> calls from the textbook, and need to be able to see basic method signatures while I&apos;m working.
+		Even in languages and <abbr title="application programming interface">API</abbr>s I work with frequently, I have to constantly check the the Internet for function names and argument lists.
+		And with <code>three.js</code>, I don&apos;t even have the luxury of being familiar with the language or the <abbr title="application programming interface">API</abbr>!
+		I&apos;d never heard of <code>three.js</code> before this course, and I almost never touch JavaScript code.
+	</p>
+	<h3>What happened that felt particularly challenging? Why was it challenging to me?</h3>
+	<p>
+		What was challenging this week?
+		Well that&apos;s easy: the programming assignment.
+		Why was it challenging?
+		Because I misread the directions, over-complicated things, and implemented a feature it turned out we were never intended to have to deal with: bouncing the object in the <var>z</var> direction in a perspective-view-defined box while simultaneously bouncing the object in the <var>x</var> and <var>y</var> directions.
+		The slanted walls of the view really bugged up my results until I added some code that specifically dealt with the object clipping into the walls, which was something it never did when I had it only bouncing in two dimensions.
+		Having three dimensions along with slanted walls caused the object to enter the walls when moving toward them, triggering repeated collision detection and causing the object to bounce back and forth <strong>*within*</strong> the wall.
+	</p>
+	<p>
+		Debugging the wall position code was also a challenge, as I&apos;d worked out the perfect equation to represent the wall, and it was somehow not even close to perfectly representing the wall.
+		It turns out I accidentally left out a negative sign in my equation.
+		An easy fix, but not an easy bug to track down.
+	</p>
+	<h3>What skills and knowledge do I recognize that I am gaining?</h3>
+	<p>
+		Before this course, I couldn&apos;t do anything in <abbr title="three-dimensional">3D</abbr>, and now I can.
+		So that&apos;s something.
+		I could visualise in <abbr title="three-dimensional">3D</abbr> and I could understand <abbr title="three-dimensional">3D</abbr> coordinates.
+		I often have to when I work on the plug-ins I write for Minetest, a game I play when I have time.
+		But that was the extent of my skills in virtual <abbr title="three-dimensional">3D</abbr> space.
+	</p>
+	<p>
+		At this point, I can add lights to specific spots, or even add ambient lights.
+		I can also sort of define objects using <code>three.js</code>, though not any complex ones.
+		I can also move objects around and perform very basic collision detection.
+		I feel like what I wrote this week was a desktop screen saver, but hey, I couldn&apos;t do that before.
+	</p>
+	<h3>What am I realizing about myself as a learner?</h3>
+	<p>
+		What I realise about myself as a learner is that I learn a lot more when I write extensively about what I&apos;m learning.
+		When I&apos;m struggling to grasp the material in a course, such as this one, writing about the problem often helps me retain what I&apos;ve learned and sometimes work through the parts I don&apos;t quite understand.
+		When I don&apos;t write, I don&apos;t learn, so when I don&apos;t write much, I don&apos;t learn much.
+	</p>
+	<h3>In what ways am I able to apply the ideas and concepts gained to my own experience?</h3>
+	<p>
+		Honestly?
+		I&apos;m not sure any of this applies to what I do outside of school.
+		This sort of question is one f those traps, where you can either lie and claim the material is really useful and try to come up with some bogus use for it to explain, or you can be honest and admit that you don&apos;t see how this applies to you.
+		This sort of question is an underhanded one to include in an assignment.
+	</p>
+	<p>
+		Anything that&apos;s written with accessibility in mind doesn&apos;t use JavaScript, which means the <abbr title="application programming interface">API</abbr> we&apos;re learning is something I won&apos;t use just because good webpages don&apos;t depend on JavaScript.
+		<code>three.js</code>&apos; <abbr title="application programming interface">API</abbr> seems to be so drastically different than what we&apos;re sort of learning OpenGL&apos;s <abbr title="application programming interface">API</abbr> is like, too.
+		Every time I find an answer as to how to do something in <code>three.js</code>, it&apos;s way different than what I read you have to do in OpenGL.
+		If we move on to learn OpenGL&apos;s <abbr title="application programming interface">API</abbr> at some point, that&apos;s something I&apos;ll actually be able to apply.
+	</p>
+	<p>
+		For now, the main thing I&apos;m getting from this course is terminology.
+		There are terms I see used that make no sense in the programs they&apos;re used in.
+		The words don&apos;t match what actually happens.
+		For example, something labelled &quot;shaders&quot;, that doesn&apos;t shade anything, but instead makes objects move around a little in space.
+		What&apos;s that about?
+		However, this course is explaining terms such as that.
+		No doubt, in my example, the object movement is implemented using OpenGL shaders.
+		Shaders in that context have nothing to do with shading, and are instead just small programs executed on the <abbr title="graphics processing unit">GPU</abbr> that can influence a rendering.
+		Understanding that makes the interfaces of programs I use elsewhere make much more sense.
+	</p>
+	<h3>Ignore the following.</h3>
+	<p>
+		I wrote up a full report on my activities for the week before I saw your feedback for my <a href="https://y.st./en/coursework/CS4406/#Unit1">Unit 1 learning journal</a> submission saying not to do that.
+		I really didn&apos;t want to just delete all my work.
+		Submitting it makes it eligible to be archived though, so I&apos;m including it here as an add-on.
+		You don&apos;t need to read or grade anything below here.
+	</p>
+	<p>
+		The reading assignment for the week was <a href="https://www.cs.csustan.edu/~rsc/NSF/Notes.pdf">Notes.pdf</a>, chapters four and five.
+	</p>
+	<p>
+		The section on the Cartesian coordinate system was confusing at first.
+		I couldn&apos;t figure out what it was trying to get across.
+		Once I realised the points it was getting at though, I realised it was all stuff I already knew.
+		I&apos;ve used the <abbr title="two-dimensional">2D</abbr> Cartesian space a lot in high school, and the <abbr title="three-dimensional">3D</abbr> Cartesian space in a game I develop plugins for.
+		Neither of these spaces in unfamiliar territory for me, though I&apos;m always found it strange that <code>y</code> is the vertical one instead of <var>z</var>.
+		After making it partway through this course though, I see that that&apos;s either common practice or it&apos;s something that comes from graphics libraries.
+		If the latter, the developers probably used <var>y</var> as the vertical axis to make the code easier to understand, which I appreciate.
+		Eventually, I&apos;d love to join the development team myself, and having easier to understand code will be nice.
+		I&apos;ve got to learn the language first though.
+		The source code is fully available for me to read and tinker with, but it&apos;s written in C++, a language I&apos;ve never actually worked with before.
+	</p>
+	<p>
+		The term &quot;octant&quot; was new to me.
+		I would have assumed the eight sections to be called &quot;sectors&quot; or something, but it makes more sense that if the <abbr title="two-dimensional">2D</abbr> term is four-specific, the <abbr title="three-dimensional">3D</abbr> equivalent would be eight-specific.
+	</p>
+	<p>
+		Dot products are weird.
+		I had to go back and read what the computation was supposed to yield after reading the equation itself before I could understand the equation, as for some reason, I thought they were supposed to produce a point in space in which the two vectors cross.
+		Instead, you multiply the components of each vector with the corresponding components of the other vector (<var>x</var> from one with <var>x</var> from the other, et cetera), the add the resulting values together.
+		What could that result possibly tell us though that could be useful to us?
+		The textbook next talked about how the dot product is zero when the vectors intersect at a 90° angle, positive if they form an acute angle, and negative if they form an obtuse angle.
+		That seems useful at first, but before even talking about that, the textbook first tells us that for parallel vectors, the dot product is either positive or negative depending on whether the vectors are pointing in the same or opposite directions.
+		That means we can&apos;t use the dot product to determine angle properties, as when there is no angle formed, because the sign of the dot product doesn&apos;t mean the same thing all the time.
+		My understanding is that the dot product will never be zero for parallel vectors, so we can still properly detect right angles, but otherwise, I&apos;m not sure how a dot product helps us.
+		At least the dot product, combined with the lengths of the vectors, can be used to compute the angle formed.
+		angle measures are often useful to know.
+	</p>
+	<p>
+		It was stated that reflection- and ricochet-calculation require knowing the normal vector of the plane the light/object hit, but I don&apos;t really get why that is.
+		It seems that another valid way to calculate the new trajectory would be to take the line segment running through the plane that represents where a plane would intersect that plane while also containing the full path of the light/object.
+		From there, you&apos;d take 180° and subtract the initial impact angle.
+		It&apos;s as easy to picture why this works as it is to picture why reflecting over the normal vector works, though it might be easier to calculate using the normal vector method.
+		I&apos;m not really sure.
+		Either way though, knowing the normal vector doesn&apos;t see to be strictly necessary as the book seems to imply it is.
+	</p>
+	<p>
+		Previously, the textbook talked about how graphics libraries represent transformations using matrices.
+		I was curious as to how rotations could possibly be handled that way.
+		It turns out it&apos;s not overly complicated.
+		The trick is to insert sine and cosine values into the matrix you multiply by.
+		I can&apos;t say I understand why sine and cosine behave the way they do, but their wave-like form comes in handy a lot of times, and this would be one of those times.
+		I doubt I&apos;ll be able to remember which cells need which functions and which ones need to be made negative, but the graphics library handles that mostly on its own, if I&apos;m not mistaken.
+	</p>
+	<p>
+		The book shows a diagram with a &quot;point G&quot;, which lies in a hole crated in a convex polygon by the overlapping edges that contain it.
+		The book says that this point is intuitively inside the polygon, but is outside because of the ray-based definition of being &quot;inside&quot; that the book gives.
+		Personally, I find it intuitive to think the point is outside the polygon.
+		I mean, try making such a polygon out of some real material, such as wood.
+		Or even just try shading in the polygon using an image editor.
+		That spot is a hole.
+		It doesn&apos;t get shaded.
+		There&apos;s no wood there, if you build it out of wood.
+		The polygon <strong>*surrounds*</strong> that point, but it doesn&apos;t <strong>*include*</strong> that point.
+		I guess that&apos;s the difference though in how I consider a point to be &quot;in&quot; a polygon.
+		I think of that as meaning that the point is a part of the polygon; the polygon being <strong>*around*</strong> the point isn&apos;t enough.
+		I think my vision of this is compatible with the book&apos;s ray-centric definition, too.
+	</p>
+	<p>
+		I think why many people might find this definition unintuitive is because this sort of polygon violates their internal model of what a polygon is.
+		Quite frankly, having a polygon&apos;s edges cross over one another is ... weird, to say the least.
+		And because of that, I think people have difficulty visualising it.
+		As a result, they instead visualise a different polygon than the one that&apos;s actually presented, with the cross-over edges removed.
+		Essentially, they fill in the hole in the middle of the polygon in their mind.
+		Because of that, there is no hole to them, so any point occupying the spot the hole would be is seen as not being in a hole at all, but actually within the bounds of the polygon.
+	</p>
+	<p>
+		The section on collision detection was enlightening.
+		Bounding boxes aren&apos;t a new concept to me; they&apos;re very similar to actual collision boxes.
+		What I found interesting though was the idea of using these bounding boxes not to detect collision, but instead <strong>*rule out*</strong> collision before performing the actual collision detection.
+		That way, the computationally-expensive tests usually don&apos;t need to be performed.
+		I&apos;m also surprised to see collision detection presented in a book about graphics though.
+		It doesn&apos;t seem to be a graphics-related concept, mostly.
+		I guess it makes sense though.
+		If objects collide, you need to account for that when deciding where to draw them.
+	</p>
+	<p>
+		The polar coordinate system is something I&apos;ve learned about, but something I usually write off.
+		It seems like such a bizarre system.
+		It&apos;s useful in a few edge cases though.
+		I forget exactly what those edge cases are, but I think I remember they come up when dealing with trigonometric functions such as sine, cosine, and tangent.
+		Spherical coordinates seem like a natural extension of polar coordinates in <abbr title="three-dimensional">3D</abbr> space, so again, they don&apos;t seem like the best option in most cased, but might have some use for edge cases.
+		Cylindrical coordinates are even stranger to me, as one of the dimensions is measured normally, while the  other two are measured according to a polar coordinate system.
+		I guess the book&apos;s example of using them for objects that can spin but must always remain upright makes sense though.
+		You still need to translate these coordinates into proper Cartesian coordinates at some point, but it&apos;s often the case that abstracting away the real system in place (for example, Cartesian coordinates) in favour of some other system (cylindrical coordinates) can make life easier for the programmer.
+	</p>
+	<p>
+		When I saw the discussion assignment this week, I rejoiced.
+		As I demonstrated last week, I&apos;m completely terrible when it comes to building <abbr title="three-dimensional">3D</abbr> models and such, because I have no experience with them yet.
+		But alpha channels?
+		Those relate to <abbr title="two-dimensional">2D</abbr> graphics.
+		I have pretty much no artistic talent even in <abbr title="two-dimensional">2D</abbr>, but I still have years of practice with <abbr title="two-dimensional">2D</abbr> graphics, so I&apos;m well aware of a lot of the mechanics, such as alpha channels.
+		One of the big struggles for me is my tight schedule.
+		My first goal each week is to post at least once in the discussion forum for one of my courses each day.
+		Due to how the discussion boards at this school are set up, you can only respond to other students after posting your own initial post, meaning that on day zero, I&apos;ve got to do my best to cobble together an initial post from whatever reading material I manage to get through by the end of the day, and the next day, if someone else hasn&apos;t posted in that same course&apos;s discussion board, I&apos;ve got to repeat the process for my other course to submit my initial discussion post there.
+		It&apos;s a tight schedule, and it stresses me out.
+		But this week, I didn&apos;t have to madly scramble on the first day this week.
+		I could lean on my prior knowledge, and use that to find exactly the sources I needed to back up my thoughts without having to learn the concept all in one day.
+		I still read much of the material before posting because there was time to do that, but I didn&apos;t have to struggle through it as I have in past units.
+		It was covering things I already understood very well.
+	</p>
+	<p>
+		One of the quirks of the system seems to be that once you specify a colour to draw in, that colour is permanent and applied to all your other objects you draw later.
+		At least, until you manually set a new colour.
+		You don&apos;t set colours per-object, but instead set the colour for all future objects, then change it when needed.
+		This is no doubt because graphics libraries use global variables instead of parameters.
+		Setting the colour probably sets some global variable (or variables), and that value stays set until you set it to some other value.
+		I&apos;ve got to wonder if this even applies to WebGL though, which doesn&apos;t seem to use the same setup as the graphics libraries discussed in this book.
+	</p>
+	<p>
+		It&apos;s important to note that you have to define the appearance node before the geometry node.
+		The appearance node defines some things about how the object will be rendered, such as its colour.
+	</p>
+	<p>
+		The section on considering the <abbr title="red-green-blue">RGB</abbr> colour space to be a cube was interesting.
+		Especially when trying to build a good palette, I&apos;ve often thought about the colour space as a cube.
+		However, I&apos;d never heard of anyone else doing that.
+		It seems I&apos;m not the only one that thinks that way though.
+		The difference between my cube an the book&apos;s cube though is that I think in discrete values.
+		My cube goes from <code>0</code> to <code>255</code>, not from <code>0.0</code> to <code>1.0</code>.
+		It&apos;s likely that we&apos;re going to be working with colour fairly regularly, and I&apos;m going to need to convert back and forth between the colour representation I work best with and the colour representation the graphics library uses.
+		<del>The book makes the claim that you can see the full range of colours on the surface of the cube though, which as someone that has done a lot of planning using this cube, I can say is patently false.</del>
+		You only see a small fraction of the colours on the surface.
+		The only colours you see on the surface are ones in which one of the colour channels is set to full intensity or zero intensity.
+		As an extreme example, try to find grey on the surface.
+		You can&apos;t do it, as grey occupies the centre line diagonally through the core of the cube.
+		<ins>Oops, the book corrects itself a bit later, and admits that the interior of the cube also represents various colours.
+		An it even mentions the diagonal line of greys I just talked about.</ins>
+	</p>
+	<p>
+		I&apos;ve also thought about colours as an octahedron.
+		In this representation, each of the eight basic colours has a face, and that face is adjacent to the three faces that share two colour channel values with it.
+		It&apos;s not a useful representation though, as it only takes into account those eight colours.
+		There&apos;s no middle ground between them.
+		I&apos;ve often thought of colours in terms of shapes though.
+	</p>
+	<p>
+		The concept of luminance is interesting.
+		When the book first brought it up, I wrote it off, thinking that it wouldn&apos;t matter much.
+		We can&apos;t actually program in the luminance we want, at least not directly.
+		The colour channels are what we actually work with.
+		So they&apos;re what matters, right?
+		The book made an excellent point about colour blind people though.
+		Making images with different-enough luminance levels will help them interpret the image.
+		The formula for finding the luminance of a colour was also surprising.
+		<code>0.30*red + 0.59 * green + 0.11*blue</code> ...
+		The three colour channels don&apos;t contribute equally to the luminance like I thought they did.
+		I experimented in the <abbr title="GNU Image Manipulation Program">GIMP</abbr> a bit to see how it handles luminance-based greyscale conversion, and sure enough, perfect red, perfect green, and perfect blue don&apos;t get converted to the same shade of grey.
+		Green is by far the lightest, while blue is just a bit darker than red.
+		Weird.
+	</p>
+	<p>
+		The book claims the Hue-Saturation-Value colour-specification scheme to be more intuitive than <abbr title="red-green-blue">RGB</abbr>.
+		I&apos;m not seeing it though.
+		I agree that it can be difficult to find certain colours when using the <abbr title="red-green-blue">RGB</abbr> scheme.
+		Brown, for instance, is a colour I have difficulty specifying in <abbr title="red-green-blue">RGB</abbr> format.
+		However, the Hue-Saturation-Value format requires you to use a numeric representation of a hue.
+		What does that even mean?
+		Line, I understand what it actually means, but if I&apos;m looking for a greenish colour, what hue number do I use?
+		Green doesn&apos;t translate to a number in my mind.
+		However, specifying that I want my colour to have a high green channel intensity and a low red  and blue channel intensity is a very intuitive way to find green.
+		And other colours are often (though not always, such as is the case with brown for me) very easy as well.
+		I light blue for lining clouds with, for example, would have a high blue, a mostly-high green, and a high red that&apos;s not quite as high as the green channel.
+		That would give you a light blue colour with just a tad bit of cyan.
+		Perfect.
+		How do I even go about <strong>*starting*</strong> to find that colour in Hue-Saturation-Value space?
+		I can finish the job with the right saturation (low, but not too low) and value (high, but probably not too high), but those numbers don&apos;t get me anywhere without the hue number.
+	</p>
+	<p>
+		The Hue-Lightness-Saturation model is just as unintuitive to me as the Hue-Saturation-Value model.
+	</p>
+	<p>
+		The <abbr title="Cyan-Magenta-Yellow-Key">CMYK</abbr> model is familiar to me, and seems to me to be about as intuitive as the <abbr title="red-green-blue">RGB</abbr> model.
+		It&apos;s a subtractive model instead of an additive one, but it really does represent the same, cubic colour space that the <abbr title="red-green-blue">RGB</abbr> model uses.
+		You just measure from different places.
+		For example, instead of measuring how much red there is, you measure instead how much cyan there is.
+		Rend and cyan are opposites, so these two corresponding measures give you exactly-opposite values every time.
+	</p>
+	<p>
+		When the textbook mentioned that some systems don&apos;t allocate the same number of bits for each colour channel, it reminded me of the old eight-bit colour system.
+		Three bits were allocated to each red and green, but only two bits were allocated to blue.
+		Humans aren&apos;t as good at distinguishing levels of blue as we are levels of red and green, so it was thought that it was worth losing that extra bit of blue depth to get the colour into an eight-bit format.
+	</p>
+	<p>
+		Transparency in <abbr title="three-dimensional">3D</abbr> images is clearly very difficult.
+		Order of rendering matters, but in <abbr title="three-dimensional">3D</abbr> space, objects can intersect.
+		Their intersection marks the point at which which object needs to be rendered first for proper results switches.
+		You can&apos;t draw in both orders, so one side of the image will come out wrong.
+		However, I couldn&apos;t help but wonder if we could learn something from clipping planes here.
+		What if the plane of one object was used to clip the other object&apos;s plane, and instead of throwing one side out like we do with clipping planes, we saved both sides as separate planes?
+		We could then draw the side of the split plane that needs to go in back first, they draw the plane that was used to split the other plane, and finally draw the front part of the split plane.
+		Both planes would then be drawn in the correct order in all parts.
+		It gets even more complicated as you add more-complex meshes and a higher number of translucent objects, but I think the idea is sound.
+		The main issue, I think, would be that it&apos;d be computationally expensive.
+		It could be worth it in some cases though.
+		After writing about my solution, the next thing I read in teh textbook was pretty much the same thing, but with even more splitting.
+		Everything that intersects gets split.
+		It&apos;s probably easier to calculate that though, as you don&apos;t need to try to figure out which cuts are necessary ans which aren&apos;t.
+	</p>
+	<p>
+		The assignment instructions this week told us how to translate objects to other locations.
+		That would have been helpful information to have for last week&apos;s assignment.
+		I couldn&apos;t figure out how to do it.
+	</p>
+	<p>
+		Anyway, we were to take a cube, a sphere, or a torus knot and bounce it around in the viewport.
+		At first, I tried to use a sphere.
+		However, we were supposed to get the object to change colours each time in hit a wall, and I couldn&apos;t even set the initial colour.
+		It just had this odd rainbow-like gradient to it, and no matter what colour I tried to set, the same colours were present on the sphere.
+		So I made a cube.
+		But the cube looked like a square, as you see it dead-on.
+		I could fix that by rotating it, but we&apos;re not supposed to do that for this assignment.
+		So I went back and tried to debug the sphere some more.
+		What I discovered is that the <code>THREE.MeshNormalMaterial()</code> doesn&apos;t seem to want to change colours for me.
+		The <code>THREE.MeshBasicMaterial()</code> works just fine though.
+		However, it doesn&apos;t have any depth to it, so the object just looks like a circle, or rather, a polygon with many sides that approximates a circle.
+		<code>THREE.MeshLambertMaterial()</code> gave me something workable though; something that responded to my colour-setting code, but also had a concept of light and shadow.
+	</p>
+	<p>
+		Getting the sphere to bounce off the walls wasn&apos;t too hard.
+		I used global variables to set a &quot;direction&quot; the sphere would travel in each dimension, but the &quot;direction&quot; was actually a speed.
+		When the position of the sphere got too far, I set the speed to its own inverse, which made it travel in the opposite direction, but only along that particular axis, providing a ricochet effect as the sphere continued in the previous direction along the other two axes.
+		I also set a new colour at that point.
+		I thought about setting a random colour each time, but decided to instead use six of the eight basic colours, and have the colour switch to a specific one based on what wall the sphere bounced off of, giving each of the six walls its own sphere colour.
+		My problem was that I couldn&apos;t figure out how to properly change the maximum and minimum <code>x</code> and <code>y</code> bounds based on the <var>z</var> position.
+		The viewing space isn&apos;t a rectangular prism, so if I didn&apos;t account for the <code>z</code> value in the <var>x</var> and <var>y</var> bounds, the sphere would either bounce off of nothing when far away or clip into the wall when close to the camera.
+		It&apos;d help if I understood what the angle of the view was.
+	</p>
+	<p>
+		What I ended up doing was setting the sphere to the far back of where I&apos;d just sort of decided to place the back (invisible) wall, then moving the sphere around until I&apos;d gotten it into a corner, and recorded the position.
+		Then I did the same with the front wall.
+		Using those positions, I set up a linear equation that would return those two specific values, which then returned sensible values for the cases in between.
+		I think I was supposed to bounce the sphere off the clipping planes themselves, if I understood the assignment correctly, but I have no idea how to even <strong>*find*</strong> the clipping planes, let alone interact with them.
+		I think I was supposed to put together real collision detection, but instead, I only approximated it.
+		After setting all this up, I found the <var>VIEW_ANGLE</var> variable.
+		I think that&apos;s probably the angle I was looking for before, but somehow missed.
+		I&apos;m really terrible at this.
+	</p>
+	<p>
+		I never could find a good initial placement for the sphere that showed off the bouncing well.
+		It always tended to bounce around in a very obvious cycle.
+		I tried several values, but gave up and set the starting position to be random every time.
+		Once I&apos;d done that though, it occurred to me what the problem was: the viewport is square!
+		A square box with 45°-angled bounces (due to the velocity in all three dimensions - but most importantly, the <var>x</var> and <var>y</var> dimensions - being identical) isn&apos;t going to give good results.
+		I was about to try setting some different velocities, but decided to make those random as well, because why not?
+		My first attempt made the sphere speed around so quickly the graphics renderer couldn&apos;t keep up.
+		It was literally leaving after images in its path.
+		I didn&apos;t like the look of that, so I divided the random value by four.
+		I have no idea why, but I actually multiplied them by <code>0.25</code> instead of actual division at first.
+		It didn&apos;t even occur to me that I could use division until I wrote in my learning journal that I&apos;d divided the values.
+		I rewrote it using actual division, as it provided better clarity in the code.
+		I ended up dividing by eight instead of four later, as I seemed to be getting higher speeds and needed to dampen them further.
+		I think my machine had cleared out the WebGL stuff that was bogging it down (WebGL slows down my computer and makes it start overheating, but I set down the assignment for a while and closed the browser), so it was performing faster when I started working with WebGL again.
+	</p>
+	<p>
+		Also of note, when I reread the assignment to make sure I covered everything, I found that it said to modify the <var>x</var> and <var>y</var> values.
+		It said nothing about moving the object in the <var>z</var> direction.
+		That seems contradictory to its insistence a bit prior to that saying that we shouldn&apos;t animate in <abbr title="two-dimensional">2D</abbr>, but in <abbr title="three-dimensional">3D</abbr>.
+		This was actually supposed to be a <abbr title="two-dimensional">2D</abbr> animation though.
+		I&apos;d overcomplicated it.
+		There were a few strange bugs caused by <var>z</var>-direction movement I&apos;d had to figure out, not to mention that I&apos;d had to get the angled bounding walls to function correctly with a combination of guessing, checking, and a linear equation.
+		Whatever, though.
+		My actual animation came out slightly better for being able to move in all three dimensions, and the frustration of trying to figure out how to do that properly is something I won&apos;t have to struggle with as much should we do something similar in the future.
+	</p>
+	<p>
+		One of the questions on the quiz confused me for a bit.
+		It presented a rectangle and gave the coordinates of the opposing two vertices.
+		Obviously, by doing that, it gave us the coordinates of every vertex, as you just carry over the <var>x</var> value from the known vertex positioned the same horizontally but not vertically and the <var>y</var> value from the vertex positioned the same vertically but not horizontally.
+		However, the <var>y</var> values didn&apos;t make much sense.
+		The one closer to the top of the page had a higher value.
+		It took me a few seconds to realise I hadn&apos;t messed something up, and that the <var>y</var> values were just reversed.
+		The course material did mention that some systems count from the bottom instead of the top.
+	</p>
+	<p>
+		When grading this week, the first student&apos;s work I looked at wouldn&apos;t render.
+		I&apos;m not sure if that was a problem on my end or theirs.
+		The second student went above and beyond.
+		They implemented full keyboard controls for their square&apos;s motion.
+		I was thoroughly impressed.
+		The third student though said only to see their attached file, but didn&apos;t actually attach a file.
+		That was a shame.
+		I had to give them a zero, as they hadn&apos;t actually submitted any code, but it sounds like they did actually write it and intend to upload it.
 	</p>
 </section>
 <section id="Unit4">
 	<h2>Unit 4</h2>
+	<h3>Describe what you did.</h3>
 	<p>
 		...
+	</p>
+	<h3>Describe your reactions to what you did.</h3>
+	<p>
+		...
+	</p>
+	<h3>Describe any feedback you received or any specific interactions you had.</h3>
+	<p>
+		...
+	</p>
+	<h3>Describe your feelings and attitudes.</h3>
+	<p>
+		...
+	</p>
+	<h3>Describe what you learned.</h3>
+	<p>
+		...
+	</p>
+	<h3>What surprised me or caused me to wonder?</h3>
+	<p>
+		...
+	</p>
+	<h3>What happened that felt particularly challenging? Why was it challenging to me?</h3>
+	<p>
+		...
+	</p>
+	<h3>What skills and knowledge do I recognize that I am gaining?</h3>
+	<p>
+		...
+	</p>
+	<h3>What am I realizing about myself as a learner?</h3>
+	<p>
+		...
+	</p>
+	<h3>In what ways am I able to apply the ideas and concepts gained to my own experience?</h3>
+	<p>
+		
 	</p>
 </section>
 <section id="Unit5">
 	<h2>Unit 5</h2>
+	<h3>Describe what you did.</h3>
 	<p>
 		...
+	</p>
+	<h3>Describe your reactions to what you did.</h3>
+	<p>
+		...
+	</p>
+	<h3>Describe any feedback you received or any specific interactions you had.</h3>
+	<p>
+		...
+	</p>
+	<h3>Describe your feelings and attitudes.</h3>
+	<p>
+		...
+	</p>
+	<h3>Describe what you learned.</h3>
+	<p>
+		...
+	</p>
+	<h3>What surprised me or caused me to wonder?</h3>
+	<p>
+		...
+	</p>
+	<h3>What happened that felt particularly challenging? Why was it challenging to me?</h3>
+	<p>
+		...
+	</p>
+	<h3>What skills and knowledge do I recognize that I am gaining?</h3>
+	<p>
+		...
+	</p>
+	<h3>What am I realizing about myself as a learner?</h3>
+	<p>
+		...
+	</p>
+	<h3>In what ways am I able to apply the ideas and concepts gained to my own experience?</h3>
+	<p>
+		
 	</p>
 </section>
 <section id="Unit6">
 	<h2>Unit 6</h2>
+	<h3>Describe what you did.</h3>
 	<p>
 		...
+	</p>
+	<h3>Describe your reactions to what you did.</h3>
+	<p>
+		...
+	</p>
+	<h3>Describe any feedback you received or any specific interactions you had.</h3>
+	<p>
+		...
+	</p>
+	<h3>Describe your feelings and attitudes.</h3>
+	<p>
+		...
+	</p>
+	<h3>Describe what you learned.</h3>
+	<p>
+		...
+	</p>
+	<h3>What surprised me or caused me to wonder?</h3>
+	<p>
+		...
+	</p>
+	<h3>What happened that felt particularly challenging? Why was it challenging to me?</h3>
+	<p>
+		...
+	</p>
+	<h3>What skills and knowledge do I recognize that I am gaining?</h3>
+	<p>
+		...
+	</p>
+	<h3>What am I realizing about myself as a learner?</h3>
+	<p>
+		...
+	</p>
+	<h3>In what ways am I able to apply the ideas and concepts gained to my own experience?</h3>
+	<p>
+		
 	</p>
 </section>
 <section id="Unit7">
 	<h2>Unit 7</h2>
+	<h3>Describe what you did.</h3>
 	<p>
 		...
+	</p>
+	<h3>Describe your reactions to what you did.</h3>
+	<p>
+		...
+	</p>
+	<h3>Describe any feedback you received or any specific interactions you had.</h3>
+	<p>
+		...
+	</p>
+	<h3>Describe your feelings and attitudes.</h3>
+	<p>
+		...
+	</p>
+	<h3>Describe what you learned.</h3>
+	<p>
+		...
+	</p>
+	<h3>What surprised me or caused me to wonder?</h3>
+	<p>
+		...
+	</p>
+	<h3>What happened that felt particularly challenging? Why was it challenging to me?</h3>
+	<p>
+		...
+	</p>
+	<h3>What skills and knowledge do I recognize that I am gaining?</h3>
+	<p>
+		...
+	</p>
+	<h3>What am I realizing about myself as a learner?</h3>
+	<p>
+		...
+	</p>
+	<h3>In what ways am I able to apply the ideas and concepts gained to my own experience?</h3>
+	<p>
+		
 	</p>
 </section>
 <section id="Unit8">
 	<h2>Unit 8</h2>
+	<h3>Describe what you did.</h3>
 	<p>
 		...
+	</p>
+	<h3>Describe your reactions to what you did.</h3>
+	<p>
+		...
+	</p>
+	<h3>Describe any feedback you received or any specific interactions you had.</h3>
+	<p>
+		...
+	</p>
+	<h3>Describe your feelings and attitudes.</h3>
+	<p>
+		...
+	</p>
+	<h3>Describe what you learned.</h3>
+	<p>
+		...
+	</p>
+	<h3>What surprised me or caused me to wonder?</h3>
+	<p>
+		...
+	</p>
+	<h3>What happened that felt particularly challenging? Why was it challenging to me?</h3>
+	<p>
+		...
+	</p>
+	<h3>What skills and knowledge do I recognize that I am gaining?</h3>
+	<p>
+		...
+	</p>
+	<h3>What am I realizing about myself as a learner?</h3>
+	<p>
+		...
+	</p>
+	<h3>In what ways am I able to apply the ideas and concepts gained to my own experience?</h3>
+	<p>
+		
 	</p>
 </section>
 		<hr/>
