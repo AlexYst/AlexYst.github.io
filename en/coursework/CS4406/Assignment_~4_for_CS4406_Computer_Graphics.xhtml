@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<script type="text/javascript" src="https://getfirebug.com/firebug-lite-debug.js"/>
+		<meta name="description" content="CS4406 Computer Graphics - Assignment #4"/>
+		<meta charset="utf-8"/>
+		<title>Assignment #4 for CS4406 Computer Graphics</title>
+		<style>
+			#container {
+				background: #000000;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		<style id="jsbin-css"/>
+	</head>
+	<body>
+		<div id="container"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.min.js"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.min.js"/>
+		<script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js"/>
+		<script src="http://uopeopleweb.com/js/math.js"/>
+		<script type="text/javascript">
+// set the scene size
+var WIDTH = 600, HEIGHT = 600;
+
+// set some camera attributes
+var VIEW_ANGLE = 45, ASPECT = WIDTH / HEIGHT, NEAR = 1, FAR = 1000;
+
+// get the DOM element to attach to
+var $container = $(&apos;#container&apos;);
+
+// create a WebGL renderer, camera, and a scene
+// NOTE: for the assignment in Unit 4 where you need to use a texture, or in any other assignment where a texture is required 
+// you should deactivate the Detector and use ONLY the CanvasRenderer.  There are some issues in using what are called Cross Domain images for 
+// for textures.   You can get more details by looking up WebGL and CORS using Google search.  I have included some code below that will 
+// get around this issue that you can use. 
+var renderer = new THREE.WebGLRenderer();
+
+var scene = new THREE.Scene();
+var clock = new THREE.Clock();
+var camera = new THREE.PerspectiveCamera(VIEW_ANGLE,ASPECT,NEAR,FAR);
+
+// the camera starts at 0,0,0 so pull it back for some assignments you may need to adjust this value
+// some distance to make the scene visible properly
+camera.position.z = 30;    	
+
+// add the camera to the scene
+scene.add(camera)
+
+// set up the camera controls.  Please keep in mind that what this does is move the entire scene around.
+// because the entire scene is moving the position of the camera and lights in relation to objects within 
+// the scene doesn&apos;t change so the lighting on the surface of the object(s) will not change either
+var cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
+cameraControls.addEventListener( &apos;mousemove&apos;, renderer );
+
+// start the renderer
+renderer.setSize(WIDTH, HEIGHT);
+
+// attach the render-supplied DOM element
+$container.append(renderer.domElement);
+
+// ----------------------------------------------------------------------------------------
+//  Example of Code that you can adapt to get around the issue of Cross-Domain issues and 
+//  CORS restrictions using textures.  We have this problem when using jsbin.com as a
+//  development environment becuase we cannot load texture images to the local server.
+//  Rather we need to pull them from location using a web URL.  You can use the images 
+//  that we have put on the uopeopleweb.com site along with the following code (modified 
+//  of course for your particular program)
+//
+//  Notice that what this code does is create a new Texture object called Texture1 and loads
+//	the texture image into the object.  
+//  
+//	var Texture1 = new THREE.Texture();
+//	var loader = new THREE.ImageLoader();
+//
+//	loader.addEventListener( &apos;load&apos;, function ( event ) {
+//			Texture1.image = event.content;
+//			Texture1.needsUpdate = true;
+//	} );
+//
+//	loader.load( &apos;http://uopeopleweb.com/js/paper.jpg&apos; );
+	
+// ----------------------------------------------------------------------------------------
+//  END OF THE STANDARD CODE FOR THE ASSIGNMENT
+//  Following this is where you must place your own custom code to complete the assignment
+// ----------------------------------------------------------------------------------------
+
+// First, we add a PointLight, which is a sort of directional light
+// that shines in every direction from a fixed point. Without a
+// directional light, we can&apos;t have any highlights.
+var PointLight = new THREE.PointLight(0xffffff, 1, 127);
+
+// We&apos;ll put this light in the upper left corner of the viewing space.
+PointLight.position.z = 8;
+PointLight.position.y = 6;
+scene.add(PointLight);
+
+// Using only the PointLight, we can&apos;t see the bottoms of the spheres.
+// They&apos;re completely in shadow. I guess that&apos;s fine, but adding an
+// ambient light corrects the problem, so let&apos;s do that. If we keep the
+// ambient light low enough, we can still see the light and shadow,
+// while if we keep it high enough, we can see even the part of the
+// sphere that&apos;s in shadow.
+var AmbientLight = new THREE.AmbientLight(0x0f0f0f);
+scene.add(AmbientLight);
+
+// I couldn&apos;t get cube 3 to work correctly, so I had to swap out the
+// cubes for spheres. The main fours spheres - sphere 0 through sphere
+// 3 - will all have a radius of 2.5.
+var radius = 2.5;
+
+// I tried to set these values really low, so fewer polygons would need
+// to render. Setting them *too* low resulted in the spheres not
+// looking like spheres much at all. Using sixteen for both values
+// seems to be enough to make the sphere look good though.
+var segments = 16, rings = 16;
+
+// Sphere 0 will use a texture. We can&apos;t use textures without a
+// TextureLoader object, so let&apos;s create one.
+var loader = new THREE.TextureLoader();
+
+// The MeshLambertMaterial gave me the best results for this one. I
+// wanted to allow the shape of the sphere to show even with the
+// texture applied, so it looked like a sphere and not just a flat
+// circle, and the MeshLambertMaterial made that happen nicely.
+var sphere0 = new THREE.Mesh(new THREE.SphereGeometry(radius, segments, rings), new THREE.MeshLambertMaterial({
+// JavaScript is obnoxious. It doesn&apos;t allow the loading of images this
+// way unless those images are hosted at the same domain as the script
+// that tries to load them. However, our JavaScript needs to run on
+// JSbin and we can&apos;t upload images there. That means we cannot use
+// image files! So we&apos;re at a loss and can&apos;t complete this assignment,
+// as it requires us to use an image as a texture, right? Well, not
+// quite. &quot;data:&quot;-scheme URIs allow us to embed the image data directly
+// into the script itself, so JavaScript doesn&apos;t have to load them from
+// an alternate domain.
+// 
+// This particular &quot;data:&quot;-scheme URI represents a tiny image that will
+// add stripes to the sphere.
+	map: loader.load(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAICAIAAAC3eAIWAAAAHElEQVQI1y3HsQ0AAAjAIOL/P9dBJwIgMiTvfQFmAgf/VWK/XgAAAABJRU5ErkJggg==&quot;),
+}));
+
+// Once the sphere is defined, we&apos;ll give it coordinates, then add it
+// to the scene. Let&apos;s put it in the upper left corner.
+sphere0.position.x = -4;
+sphere0.position.y = 4;
+scene.add(sphere0);
+
+// Sphere 1 will demonstrate transparency. I used a MeshLambertMaterial
+// again, as it works pretty well for making objects appear
+// three-dimensional and also supports transparency.
+var sphere1 = new THREE.Mesh(new THREE.SphereGeometry(radius, segments, rings), new THREE.MeshLambertMaterial({
+// We set the colour to green.
+	color: 0x00ff00,
+// I tried setting the transparency lower, but I just wasn&apos;t happy with
+// how faintly is showed up in the rendering. 0.5 gave good results
+// though.
+	opacity: 0.5,
+// If we don&apos;t set transparency to true, it won&apos;t matter what opacity
+// we try to use, so let&apos;s set that.
+	transparent: true,
+}));
+
+// Now that sphere 1 is defined, let&apos;s position it and add it to the
+// scene. Here, we put it in the upper right corner.
+sphere1.position.x = 4;
+sphere1.position.y = 4;
+scene.add(sphere1);
+
+// Sphere 1 is supposed to demonstrate transparency. But how in the
+// world are we supposed to show that the sphere is transparent and not
+// simply a darker shade? The best solution would be to have something
+// behind the transparent sphere that could be seen through the sphere.
+// For this, we define a helper sphere, which exists only to show off
+// sphere 1&apos;s transparency.
+// 
+// The values we give this sphere really don&apos;t matter as long as the
+// sphere is easily distinguished from the transparent sphere. I used
+// another MeshLambertMaterial and set it to be blue. It&apos;s smaller than
+// the other spheres too, with a radius of 1.5 instead of 2.5.
+var helper_sphere = new THREE.Mesh(new THREE.SphereGeometry(1.5, segments, rings), new THREE.MeshLambertMaterial({
+	color: 0x0000ff,
+}));
+
+// We position the helper sphere to be behind the lower right corner of
+// sphere 1, so we can see it partly behind and partly sticking off to
+// the side of sphere 1, then add it to the scene.
+helper_sphere.position.x = 6;
+helper_sphere.position.y = 3;
+helper_sphere.position.z = -4;
+scene.add(helper_sphere);
+
+// The grading instructions say we&apos;ll be graded on whether we applied
+// scaling, rotation, and translation. There&apos;s nowhere in the project
+// where we were asked to use any of these though, so there&apos;s nowhere
+// that they actually fit in. We&apos;re using translation to put the
+// spheres into place, but for good measure, I decided to implement
+// real-time translation, which looks like movement, as well. The
+// helper sphere will use this variable in its later translations.
+// It&apos;ll move behind the transparent sphere, further making it obvious
+// that the sphere is transparent.
+var helper_movement_direction = 0.1
+
+// As for scaling, it really doesn&apos;t belong in this project at all,
+// unlike translation. I added it to the helper sphere though to meet
+// the requirement. The sphere will scale up and down later using this
+// variable.
+// 
+// Rotation will be dealt with in the main spheres though in a bit.
+var helper_size_direction = 0.1
+
+// Sphere 2 needs to be a solid colour. That&apos;s its only stated
+// characteristic in the assignment. A simple MeshLambertMaterial pulls
+// that off while still showing the shape of the sphere.
+var sphere2 = new THREE.Mesh(new THREE.SphereGeometry(radius, segments, rings), new THREE.MeshLambertMaterial({
+// We&apos;ll set the solid colour to green.
+	color: 0x00ff00,
+}));
+
+// Once the sphere has been defined, we&apos;ll position it in the lower
+// left corner and add it to the scene.
+sphere2.position.x = -4;
+sphere2.position.y = -4;
+scene.add(sphere2);
+
+// The final sphere need to reflect the light source. When I was using
+// cubes, this is the one that was giving me trouble. I couldn&apos;t get
+// three.js to add a specular shine to a cube. Switching to spheres,
+// while disappointing, got the job done. This time, we use a
+// MeshPhongMaterial, which (at least when applied to a curvy shape
+// such as a sphere) allows for specular highlighting, which is the way
+// in which three.js simulates the reflection of a local light source.
+var sphere3 = new THREE.Mesh(new THREE.SphereGeometry(radius, segments, rings), new THREE.MeshPhongMaterial({
+// By setting the colour to green yet a third time, we can easily
+// compare and contrast the non-colour effects of spheres 1, 2, and 3.
+// Sphere 0 doesn&apos;t use a colour though.
+	color: 0x00ff00,
+// We need to define the colour that&apos;ll be used to simulate the
+// reflection of the local light source. For the most-significant
+// effect, we set this to pure white.
+	specular: 0xffffff,
+}));
+
+// With the final sphere defined, we translate it to the lower right
+// corner and add it to the scene.
+sphere3.position.x = 4;
+sphere3.position.y = -4;
+scene.add(sphere3);
+
+// ----------------------------------------------------------------------------------------
+// END OF YOUR CUSTOM CODE FOR THE ASSIGNMENT
+// The rendering functions that follow are standard and can be used for this assignment.  
+// You are welcome to customize them or create your own if you desire, however, you can 
+// simply use the code provided.
+//
+
+// Standard functions for rendering the scene.  Notice how we have the animate function 
+// which submits a call to requestAnimationFrame to call animate.   This creates a loop
+// that will render the scene again whenever something within the scene changes.
+function animate() {
+	requestAnimationFrame(animate);
+	render();
+}
+
+// I&apos;ve modified the render() function to define the motion of the
+// scene. This implements the rotation of the main four spheres and the
+// translation and scaling of the helper sphere.
+function render() {
+// First, let&apos;s rotate the main spheres on their x axes.
+	sphere0.rotation.x += 0.1;
+	sphere1.rotation.x += 0.1;
+	sphere2.rotation.x += 0.1;
+	sphere3.rotation.x += 0.1;
+
+// If the helper sphere goes too far, we send it back the other
+// direction. That way, it moved back and forth behind the transparent
+// sphere.
+	if((helper_sphere.position.y &lt; 3 &amp;&amp; helper_movement_direction &lt; 0)
+	|| (helper_sphere.position.y &gt; 6 &amp;&amp; helper_movement_direction &gt; 0)) {
+// Sending it the other way is done by changing the sign on the
+// variable that gets added to y and subtracted from x.
+		helper_movement_direction = -helper_movement_direction;
+	}
+
+// We now add the value to y and subtract it from x to move it
+// diagonally.
+	helper_sphere.position.y += helper_movement_direction;
+	helper_sphere.position.x -= helper_movement_direction;
+
+// If the helper sphere gets too large or too small, we tell it to
+// start growing/shrinking in the other direction.
+	if((helper_sphere.scale.y &lt; 0.5 &amp;&amp; helper_size_direction &lt; 0)
+	|| (helper_sphere.scale.y &gt; 1.5 &amp;&amp; helper_size_direction &gt; 0)) {
+		helper_size_direction = -helper_size_direction;
+	}
+
+// Once we know which direction to go, we grow or shrink the sphere by
+// adding the value of the variable to the scale of x, y, and z.
+	helper_sphere.scale.x += helper_size_direction;
+	helper_sphere.scale.y += helper_size_direction;
+	helper_sphere.scale.z += helper_size_direction;
+
+// Now, we render the updated scene.
+	renderer.render(scene, camera);
+}
+
+	animate();
+		</script>
+	</body>
+</html>

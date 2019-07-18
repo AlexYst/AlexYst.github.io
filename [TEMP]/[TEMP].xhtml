@@ -40,1203 +40,821 @@
 </nav>
 		<header>
 			<h1>Learning Journal</h1>
-			<p>CS 4406: Computer Graphics</p>
+			<p>CS 4405: Mobile Applications</p>
 		</header>
 <section id="Unit1">
 	<h2>Unit 1</h2>
 	<p>
-		The reading assignment for the week was as follows:
+		The reading material for the week was as follows:
 	</p>
 	<ul>
-		<li>
-			<a href="https://math.hws.edu/graphicsbook/c1/index.html">Introduction to Computer Graphics, Chapter 1 -- Introduction</a>
-		</li>
-		<li>
-			<a href="https://math.hws.edu/graphicsbook/c5/index.html">Introduction to Computer Graphics, Chapter 5 -- Three.js: A 3D Scene Graph API</a>
-		</li>
-		<li>
-			<a href="https://people.csail.mit.edu/fredo/Depiction/1_Introduction/reviewGraphics.pdf">A Short Review of Computer Graphics.PDF - reviewGraphics.pdf</a>
-		</li>
-		<li>
-			<a href="https://www.cs.csustan.edu/~rsc/NSF/Notes.pdf">Notes.pdf</a>: Chapter 0 and Chapter 1
-		</li>
+		<p>
+			<a href="https://mvellandi.github.io/journal/mobile-application-design-development-app-web-user-interface-interaction/">Mobile Application Design Best Practices &amp;#8211; Keegan Jones and Tim Van Damme</a>
+		</p>
+		<p>
+			<a href="https://my.uopeople.edu/mod/resource/view.php?id=178262">MobileDevGuide.pdf</a>, pages 1 - 59, 75 - 109, and 112 - 121
+		</p>
+		<p>
+			<a href="https://onextrapixel.com/design-best-practices-for-the-mobile-web/">Design Best Practices for the Mobile Web</a>
+		</p>
+		<p>
+			<a href="https://www.ibm.com/developerworks/web/library/wa-interface/index.html"><em>(missing article)</em></a>
+		</p>
+		<p>
+			<a href="https://www.slideshare.net/OpenRoad/mobile-ui-design-user-centered-design-and-ui-best-practices">Mobile UI Design - User Centered Design and UI Best Practices</a>
+		</p>
 	</ul>
 	<p>
-		Seeing that the Introduction to Computer Graphics textbook focusses on <abbr title="three-dimensional">3D</abbr> graphics piqued my interest.
-		When I signed up for this course, I was hoping to learn how to better create <abbr title="two-dimensional">2D</abbr> graphics, a skill I&apos;d use on my website, for creating game graphics, and perhaps more.
-		Working with <abbr title="three-dimensional">3D</abbr> graphics should be pretty interesting though.
-		In the end, as the textbook says, the end result of <abbr title="three-dimensional">3D</abbr> graphics editing is a <abbr title="two-dimensional">2D</abbr> image.
-		I didn&apos;t think I could use that sort of thing much in the type of game I need images for, but I should be able to get even better-looking Web graphics using <abbr title="three-dimensional">3D</abbr> methods.
-		As I read on, I found we were discussing terminology I&apos;d seen in Blender when trying to create a <abbr title="three-dimensional">3D</abbr> model though.
-		I&apos;m starting to get into some basic modelling in the game I work with, so what we learn in this course may help with my game graphics after all, just not the part I&apos;d thought about as graphics.
+		The first thing I noticed as I was looking through the material for the week was that we&apos;re building iPhone mock-ups.
+		I really hoped that this wouldn&apos;t be an iPhone-centric course; I&apos;m never in my life going to build an application for a system as locked-down as iOS.
+		The iPhone can only install applications that are approved by Apple, and only from Apple&apos;s walled garden of an application store.
+		The terms developers agree to when submitting their applications for possible inclusion in the application store require developers to lock down the application and prevent modification of the application.
+		Applications under the <abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License">GPL</abbr>, for example, aren&apos;t allowed in the Apple application store.
+		I will never write locked-down code like that, so anything iPhone-specific is utterly and completely useless for me.
+		Such studies would surely be useful to some students, but certainly not me.
+		Thankfully, after checking out the reading list, I saw that we&apos;re also doing Android stuff too (as well as Blackberry and Windows stuff).
+		While I will likely never have any applications in Google&apos;s application store, Android allows installation of applications from outside sources, so developing for it is an actual possibility for me.
 	</p>
 	<p>
-		The term &quot;frame buffer&quot; was new to me, but the concept wasn&apos;t.
-		I was already aware that the colour values for the image on-screen was stored in some block of memory, and that changes made to that block of memory cause changes on the monitor without need to recalculate every single pixel.
-		You can even see side effects of that system when things go wrong.
-		For example, Firefox locks up on me sometimes.
-		When it does, all Firefox windows stop calculating values for their pixels (aside from the pixels of the window border, which are handled by the window manager instead of Firefox itself), and these windows begin to capture the output of whatever was in their place previously.
-		For example, if I minimise the window to reveal the windows behind it, then unminimise the malfunctioning Firefox window, the window boarder gets drawn, but the inner pixels of the window don&apos;t change, so I see a still frame of the windows that were behind the Firefox window before I brought it back up.
-		Or I can drag a smaller window across the malfunctioning Firefox window and it&apos;ll leave a trail.
-		All of this is because Firefox isn&apos;t updating the values in the frame buffer that it&apos;s responsible for, so those valuse remain at whatever another process last set them to.
+		It&apos;s sad how locked-down many mobile devices are.
+		These so-called &quot;smartphones&quot; are telephones in name only.
+		They&apos;re actually pocket computers.
+		Can you imagine if desktop computers were only able to run software approved by the company that sold your computer to you?
+		That&apos;s what iPhones are like.
+		I don&apos;t know why anyone puts up with that garbage, especially as they have to pay an arm an a leg for the privilege of putting up with that garbage.
 	</p>
 	<p>
-		I was also aware of the term &quot;raster graphics&quot;, and know the difference between raster graphics and vector graphics, though I wasn&apos;t aware the term was a legacy term from the vacuum tube days.
-		I&apos;ve never managed to figure out how to properly edit vector graphics in an editing program though.
-		I manage to make use of the <abbr title="GNU Image Manipulation Program">GIMP</abbr> reasonably well, but I can&apos;t get the first shape into place in Inkscape.
-		The best I&apos;ve managed to do is compose and edit the <abbr title="Extensible Markup Language">XML</abbr> of <abbr title="Scalable Vector Graphics">SVG</abbr> files in a code editor, using an image viewer to check the results so as to know what to adjust.
-		It&apos;s a bit of a pain, actually.
-		I was also already aware of the difference between lossy and lossless compression.
-		I&apos;ve never liked the idea of lossy compression, but it does drastically cut down the file size of my photographs.
+		Part of the reading assignment was an article from <abbr title="International Business Machines Corporation">IBM</abbr>.
+		That article&apos;s missing now though.
+		Frustratingly, the <abbr title="Uniform Resource Identifier">URI</abbr> now redirects to a hub page for other articles.
+		I hate when websites do that.
+		Instead of just telling you the article&apos;s no longer available, they give you some other page and if you don&apos;t notice, you&apos;re confused as to what the person that linked you there was trying to show you.
+		In this case, if I hadn&apos;t noticed, I&apos;d&apos;ve been confused as to which article was the one I was intended to read instead of realising that it was none of them.
 	</p>
 	<p>
-		On some level, I knew enough about <abbr title="three-dimensional">3D</abbr> graphics to know that they&apos;re created using <abbr title="two-dimensional">2D</abbr> shapes in a <abbr title="three-dimensional">3D</abbr> space.
-		I knew they weren&apos;t generated using voxels, the <abbr title="three-dimensional">3D</abbr> equivalent of pixels.
-		It hadn&apos;t occurred to me that this makes them very similar to vector graphics though.
-		I have far too little experience with both vector graphics and <abbr title="three-dimensional">3D</abbr> graphics to have notice such a conclusion.
+		The material from Keegan Jones and Tim Van Damme tells us that mobile devices follow us everywhere and have several types of sensory data that they take in about where we are.
+		That&apos;s exactly why you need a device you can trust or no device at all.
+		Otherwise, your device can keep tabs on you and send your data back to its real masters: the company that made it.
+		There&apos;s a reason I run a fork of a fork of Android that has all the Google sourceless garbage removed.
+		(I&apos;m hoping to get a full Debian fork device called the Librem 5 at some point in the future, though it hasn&apos;t been released just yet.)
+		No source code means you don&apos;t know what it&apos;s doing, and it&apos;s probably doing something you&apos;d rather it not do.
+		The built-in <abbr title="Global Positioning System receiver">GPSr</abbr> can be especially creepy to people that don&apos;t understand that they don&apos;t actually control their device.
+		For example, several people I know have ads pop up on their device that are always eerily relevant to where they currently are.
+		They feel watched.
+		And to be honest, they <strong>*are*</strong> being watched through their device&apos;s <abbr title="Global Positioning System receiver">GPSr</abbr>.
 	</p>
 	<p>
-		The textbook explained that shaders are small programs sent to the <abbr title="graphics processing unit">GPU</abbr>, and that they don&apos;t always have anything to do with shading.
-		That explains a lot in the game I work with.
-		The developers added several features that they called shaders, but some of them can&apos;t even be remotely attached to the idea of shading.
-		For example, one of them causes certain images to be displaced, and another couple case objects to move around visually.
-		These features are probably implemented using <abbr title="graphics processing unit">GPU</abbr> shaders, so the developers are calling them shaders.
+		Another important thing this material covers is button size.
+		Many devices are tiny.
+		That&apos;s how they fit in our pockets so well.
+		But our fingers are too large to use the things super nimbly.
+		It&apos;s best to have buttons at least 44 pixels by 44 pixels so we don&apos;t fat finger the buttons and hit the wrong ones as often.
 	</p>
 	<p>
-		I couldn&apos;t follow a lot of what the material on <code>three.js</code> was saying.
-		It was a bit above my head.
-		One thing I did understand though was how the faces in a <code>three.js</code> model don&apos;t specify the coordinates of their vertices directly, but instead specify where those vertices lie in the vertex array.
-		That seems rather useful.
-		I mean, it obviously means more overhead, but it also means more consistency.
-		If a vertex gets moved, all faces using that vertex are essentially automatically updated.
-		Or more accurately, the faces don&apos;t even <strong>*need*</strong> to be updated.
+		Next, it covers tips on what to do when converting a website into a mobile application.
+		My recommendation though: <strong>*don&apos;t*</strong> convert a website into a mobile application.
+		All these company-specific mobile applications are a waste of device storage, not to mention that they allow more access to a user&apos;s device than the company should have.
+		I guess yeah, if you&apos;re one of those creepy companies, that&apos;s exactly what you want.
+		But if you&apos;re a reasonable company, just have a website that works well on both mobile devices and larger devices such as desktops and laptops.
+		Users don&apos;t have to install extra garbage, nor do they have to update when you add new features.
+		Keep website stuff on actual websites.
+		The material brings up a valid counterpoint, namely that a native application is faster for users than a website.
+		The other points in makes &quot;in favour&quot; of native applications are exactly why users should choose websites instead though, such as <abbr title="Global Positioning System receiver">GPSr</abbr> access.
 	</p>
 	<p>
-		The short review of computer graphics claimed purple to be at (255, 0, 255).
-		That is definitely not purple.
-		That&apos;s pure magenta, one of the eight most extreme colours; the others being black, white, red, blue, green, yellow, and cyan.
-		There&apos;s some variance as to where people draw the lines between colour labels, but there&apos;s no mistaking what colours are at positions with all colour channels each set to either zero or two fifty-five.
-		If you&apos;re working with graphics, you should know these eight basic colours.
+		For dealing with multiple screen resolutions, the material recommends making the high-resolution images first, then downscaling.
+		That&apos;s probably the best way to support multiple resolutions.
+		Doing the reverse causes your high-resolution images to be pixilated.
+		Even if you start large and downscale though, you may need to touch up the downscaled images a bit.
+		Some designs that work well when you have a lot of space to work with don&apos;t work so well when you&apos;re short on pixels.
+		The material also recommends vector graphics.
+		I&apos;ve just barely started learning to work with vector graphics myself, but they seem like a great option for graphic images.
+		Ways to save space are also discussed, such as making small versions of your buttons and stretching out the very centre pixel when you need larger buttons of the same style.
+		A &quot;scratch file&quot; housing all of your assets was briefly mentioned, which might also be for space-saving reasons, though I&apos;m not sure.
 	</p>
 	<p>
-		At first, I liked how the textbook is sensible enough to start at the beginning when numbering its chapters; which is to say, it starts at chapter zero instead of just skipping over it like most books, textbook or otherwise.
-		However, it seems to only even call it chapter zero in some contexts, and not label it as even being a chapter in others, such as the table of context.
-		It&apos;s sort of treating zero as less than a number.
-		That&apos;s a let-down.
+		Also, user feedback is vital.
+		You think your application is easy to figure out because you already know completely how to use it, but your clever design might not actually be very intuitive.
 	</p>
 	<p>
-		The <abbr title="three-dimensional">3D</abbr> eye coordinate system seems bizarre.
-		If I&apos;m understanding it correctly, instead of moving the camera, you move everything <strong>*except*</strong> the camera as a way to simulate camera movement.
-		That seems rather complicated compared to just moving one object, the camera itself.
+		The best design practices article brings up the fact that mobile website development is becoming more and more mandatory for Web developers.
+		Even I have tested out my website on a mobile device to make sure the design was right.
+		I had to account for the fact that mobile devices, or at least the one I used test, doesn&apos;t handle <abbr title="Cascading Style Sheets">CSS</abbr> flex boxes.
+		I don&apos;t believe mobile versions of websites are a good thing.
+		Allowing the user access to different content or content provided in different formats based on what device they&apos;re currently on is frustrating.
+		I&apos;ve had times, for example, that a website dumbed-down its interface so I couldn&apos;t do the one thing I&apos;d actually come to the website to do just because the developer wanted mobile users not to have so many options to worry about.
+		Mobile and desktop users should be presented with the exact same page and the exact same content.
+		However, you should present the content in a way that looks good for both desktops and mobiles.
+		And to make things easier, the <abbr title="Cascading Style Sheets">CSS</abbr> specification allows you to define a different style sheet for mobile devices.
+		That allows you to adjust the appearance without omitting vital functionality that you don&apos;t realise is vital.
+		You don&apos;t know which functionality your users actually need access to on the go.
+		As the article says, responsive design is important here.
+		Use <abbr title="Cascading Style Sheets">CSS</abbr> to tell the device how to adjust the page to deal with its small screen size instead of serving different content.
 	</p>
 	<p>
-		The concept of parallel and perspective viewing volumes is interesting.
-		With how complicated <abbr title="three-dimensional">3D</abbr> graphics rendering seems to be, I hadn&apos;t even considered something as simple as parallel viewing volume.
-		I just sort of assumed that you always had to calculate trajectories from objects to the viewing point, which makes the image more realistic, but also more complicated to produce.
-		It seems that&apos;s actually optional though, and can be done depending on what sort of effect you&apos;re going for.
+		The article also talks about navigation design.
+		It says to use large, button-like links.
+		I suppose that&apos;s reasonable.
+		It helps users touch the link they actually meant to.
+		It says to use a vertical navigation menu too, which I have mixed feelings about.
+		Your navigation menu should be on nearly every page, and vertical navigation menus look really odd when they have content below them on the page.
+		They&apos;re really better for navigation-only pages.
+		It says to keep the number of navigation options minimal too, though that, again, requires dumbing down your mobile site, which can be very frustrating to users.
+		Icons are a good idea it brings up though.
+		Icons take up space, making the clickable region of the screen a bit larger, and also make it easier to spot what you&apos;re looking for.
+		I don&apos;t think using icons is right for every website, but it&apos;s something to consider, and is often a good idea to implement.
 	</p>
 	<p>
-		The section on converting coordinates from the eye space to the display space was enlightening.
-		It hadn&apos;t occurred to me that the eye space uses floats instead of integers for its coordinate system.
-		I should have realised though.
-		I really don&apos;t know how to make much work in Blender yet, but I&apos;ve worked with it a little bit.
-		I managed to make a cube and get it properly sized and textured for what I needed.
-		That&apos;s the extent of what I&apos;ve done in Blender.
-		However, that little bit should have been enough to show me that the coordinate system used was in floats.
-		I mean, I had to get the cube&apos;s side length to <code>1.28</code> before it came out right, and that&apos;s clearly not an integer.
-		The eye space is an intermediate step between the world space and the <abbr title="two-dimensional">2D</abbr> image, so there&apos;s no reason for it to jump immediately to integer coordinates.
-		If it did, it really wouldn&apos;t be any different than the final <abbr title="two-dimensional">2D</abbr> image&apos;s coordinate space and could simply be skipped.
+		The article says that horizontal scrolling should be avoided on mobile websites.
+		Let&apos;s face it though: horizontal scrolling should be avoided on websites.
+		Full stop.
+		This isn&apos;t a mobile-specific issue.
+		It may be more of a pain on mobile devices, but it&apos;s a pain on desktops and laptops too.
+		Even without horizontal scrolling, the article recommends making pages smaller, for example, by splitting up large pages into multiple smaller pages.
+		That&apos;s probably good advice as long as you don&apos;t go overboard with it.
+		If pages are too small, users have to go through page after page to find what they&apos;re looking for.
+		There are websites that present, for example, top ten lists in which each page houses one of the ten things, and there&apos;s only a short paragraph or two on each page.
+		This is what it looks like to go way too far in splitting up your pages into smaller ones.
+		The article also recommends accordion-style collapsing of sections you&apos;re not reading.
+		Those probably work much nicer, especially if your <abbr title="Cascading Style Sheets">CSS</abbr> is set to expose the full content right away to larger devices such as desktops.
+		That way, the mobile user still sees the full content, but doesn&apos;t have to deal with it all at once.
 	</p>
 	<p>
-		If we&apos;re going to be working the way the textbook describes, we&apos;ve going to be defining callbacks to do our work instead of doing it directly.
-		I&apos;m well familiar with using callbacks, but it&apos;s surprising that we&apos;d be handling graphics this way, if this course is at all what I thought it was before I registered.
-		I thought we were generating graphics, such as <abbr title="Portable Network Graphic">PNG</abbr> files.
-		If we&apos;re instead creating interactive scenes, that&apos;s an entirely different situation, though callbacks would certainly make the most sense in such an environment.
+		A great point is also made that we shouldn&apos;t cramp everything together.
+		Trying to squeeze every bit of content we can onto the screen hinders usability.
+		White space is a requirement; it&apos;s not the enemy, when used well.
 	</p>
 	<p>
-		I thought that transforming the world space to convert from world coordinates to eye coordinates would be very complex.
-		The textbook did a great job of explaining just how simple the calculations are though.
-		At least, when dealing with an orthographical view, these calculations are extremely simple.
-		You just move the world using the reverse path in which you moved the eye, setting the eye back into the default position in the process (as moving the world moves the objects in the world, such as the eye itself).
-		The world thus becomes eye-centric.
-		Perspective views perform further calculations that are a little more complex.
-		You basically divide a point&apos;s <var>x</var> and <var>y</var> values by their <var>z</var> value to find where on the <abbr title="two-dimensional">2D</abbr> image space they project to.
-		It seems simple except when I try to think about it too hard, at which point I start looking for some complex way to determine which otherwise-visible points are ignored because they&apos;re obscured by closer points.
-		The obvious answer though is to render everything, and when it comes to projecting to the <abbr title="two-dimensional">2D</abbr> space, only write the colour of the relevant pixel according to the point with the <var>z</var> value closest to zero.
-		It&apos;s a bit difficult for me to keep in mind that you can compare all the objects; you don&apos;t have to take a pixel and use it to calculate the one and only object it can see, then deal exclusively with that object.
-		Rendering isn&apos;t a lookup operation.
+		I tried to read the content of the slide show, but the slide show wasn&apos;t responding.
 	</p>
 	<p>
-		I recently learned the term &quot;z-fighting&quot;, and immediately recognised the visual effect from a particular game I play sometimes.
-		However, I&apos;d never given much thought as to exactly why it occurs.
-		The textbook gave an excellent explanation though.
-		Items occupying the same space have the same <var>z</var> value, so when <code>z</code> values are compared to see if the current object is the closest thing to the camera, the points on both objects, when the object is drawn, register as the closest and are able to draw to the pixel.
-		Next time the other equally-close object is drawn, it overwrites the value set by the previously-writing object, and the value of the pixel flips back and forth.
-		Very interesting.
-		The textbook framed it as a rounding issue when converting from continuous numbers to integers, but I don&apos;t think that&apos;s actually all that relevant to the issue.
-		First, two objects could share exactly the same continuous number coordinates and that same effect would occur, with or without rounding.
-		And secondly, the computer representation of a float has precision limitations too; there&apos;s not just integer size limits.
-		So even if numbers remained as floats and were used that way, z-fighting would still occur.
-		The rounding certainly makes z-fighting more likely to occur though.
+		The textbook brought up the concept of &quot;hybrid&quot; mobile applications: part native code and part data fetched from the Web.
+		These have the disadvantage of native applications in that they&apos;re not safe to install if public source code isn&apos;t available, and seem almost like restrictive Web browsers (they fetch Web data, but you can&apos;t go to arbitrary websites).
+		I&apos;m really not sure why I&apos;d ever build one myself, though I can easily see why some big companies do it.
+		It offers them options, such as applications with up-to-date information without the user having to update the application.
+		Again though, plain websites seem like a better and safer option for the user.
 	</p>
 	<p>
-		Reading through the assignment notes for the week, they said that we&apos;d be working with <code>three.js</code> because it doesn&apos;t require C++ and because it uses JavaScript and JavaScript is a language we&apos;ve worked with previously in this school&apos;s computer science curriculum.
-		Um.
-		What?
-		I don&apos;t remember writing a <strong>*single*</strong> line of JavaScript at this school!
-		I <a href="https://y.st./en/coursework/">archive</a> all my coursework though, so I went back and checked for the presence of JavaScript.
-		Sure enough, there wasn&apos;t a single JavaScript file and not a single assignment that related to JavaScript in any way.
-		And for context, I&apos;ve taken <strong>*both*</strong> Web programming courses already.
-		They covered <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, <abbr title="Extensible Markup Language">XML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>, and <abbr title="Hypertext Markup Language">HTML</abbr>, but not JavaScript.
-		JavaScript had <strong>*not*</strong> been a part of this school&apos;s curriculum!
-		I think we discussed JavaScript one week in one of the courses, but we definitely didn&apos;t learn it.
-		After writing my thoughts on that though, I went back to reading the notes, and noticed the exact wording used.
-		JavaScript was one of the languages &quot;introduced&quot;, not one of the languages &quot;learned&quot;.
-		Okay, the notes had me there.
-		We&apos;d definitely had JavaScript introduced to us in the form of telling us it existed, we just weren&apos;t taught how to actually use it.
-		Just like we were introduced to the fact that Perl is a language, but again, not actually taught to make use of that language.
+		The idea of prototypes for applications seems pretty useful.
+		In particular, the textbook mentioned that a prototype can tame any of many forms.
+		The idea it presented of an <abbr title="Extensible Hypertext Markup Language">XHTML</abbr> (ostensibly with <abbr title="Cascading Style Sheets">CSS</abbr>) prototype with clickable links in place of buttons seemed like something I&apos;d be able to put together well.
 	</p>
 	<p>
-		I know some JavaScript from my own experiments outside the school, though JavaScript is a language I&apos;m very weak in.
-		With access to the Internet at my fingertips though, I&apos;ll be able to look up the functions I need to make it through the class, I think.
-		As for C++, I&apos;ve been hoping that C++ would be taught in a course I&apos;ll take in the future, though this seems to confirm that it won&apos;t be.
-		It doesn&apos;t seem to be taught at this school, which is disappointing.
+		As the textbook says, Android is developed by the Open Handset Alliance, which is led by Google.
+		It&apos;s ironic that the group is called that though.
+		Android has a lot of components, but they can be broken into two groups: parts belonging to the Android Open Source Project, which are open, and components belonging to Google Applications, which are proprietary and locked down.
+		In order to be allowed membership in the Open Handset Alliance, inclusion of the locked-down Google Applications is mandatory.
+		In other words, membership in the alliance requires that the handsets you sell not actually be open.
 	</p>
 	<p>
-		The notes also say to get the code for the assignment from the &quot;Development Environment link in the course page&quot;.
-		No such link exists on the course page.
-		I checked the syllabus too, and it&apos;s not there.
-		I ended up giving up and checking the assignment page, which I&apos;d put my reading of on hold to read the notes, as the assignment page told me to read the notes.
-		The code was there, as it should be, and not through some separate &quot;Development Environment&quot; link.
+		It seems there&apos;s Android-specific terminology used to refer to some things.
+		This terminology would be good to remember when reading <abbr title="application programming interface">API</abbr> documentation and the like.
+		For example, a process with a user interface is called an &quot;activity&quot;.
+		Background processes are called &quot;services&quot;.
+		Broadcasts between applications or from the system to an application are called &quot;messages&quot;, and are handled by &quot;message receivers&quot;.
+		Triggers tto the system sent by applications are instead called &quot;intents&quot;.
+		A &quot;data provider&quot; abstracts away the details about persistent storage.
 	</p>
 	<p>
-		This seems to be the harder of my two courses this term.
-		Some of the material seems to be above my head.
-		Hopefully I can pull it together and figure out the material.
-		I&apos;d love to learn how to generate and render <abbr title="three-dimensional">3D</abbr> scenes like this.
-		Honestly, I don&apos;t see this stuff applying to a job I&apos;d be interested in, but off the clock, this seems like I could do a lot of things with it.
-		It might even help me contribute to a project I like called Minetest.
-		It&apos;s a <abbr title="three-dimensional">3D</abbr> game in which the world is made up of giant cubes.
-		It uses the Irrlicht engine, mentioned briefly in one of the tables presented in the reading material, and relies on code contributions from the community for its continued development.
-		I&apos;d love to be a part of what makes Minetest so great.
-		The textbook also mentioned Blender.
-		If I could even learn to use Blender properly, I could improve the plug-ins I write for Minetest, even if I didn&apos;t have the skills to contribute to the Minetest engine itself.
-		In any case, I feel like there&apos;s a lot I could get from this course if I can wrap my head around the material better.
+		I have some experience with <abbr title="Android Debug Bridge">ADB</abbr>, though not much.
+		I&apos;ve never managed to get an Android emulator working though.
+		Hopefully that&apos;ll change this term.
+		I&apos;ve also had trouble getting a working Android development environment set up, so maybe the material this term will help me learn how to get that working correctly as well.
+	</p>
+	<p>
+		The textbook says that once developed, Android applications should be submitted to Google Play.
+		That <strong>*really*</strong> needs to be thought about before you just jump right into it though.
+		You have to agree to Google&apos;s terms of service and buy into Google&apos;s noxious practices to get a Google account, and you can&apos;t submit applications to the Play Store without one.
+		If you&apos;re a big, faceless corporation, then sure.
+		Hands down, you want your application where it&apos;ll get the most downloads, regardless of what you have to buy into.
+		So go with the Play Store.
+		If you value your security and privacy though, having a Google account is a really bad idea.
+	</p>
+	<p>
+		The textbook said that all Blackberry devices are made by the same company.
+		It pointed out that this has reduced fragmentation of the platform.
+		It also means less competition though; it&apos;s a monopoly over the platform.
+		It seems Blackberry is pretty locked down as well, requiring a signing key from the developers (which means, you need the permission an approval of the company) for even certain basic features such as access to the filesystem and network connectivity.
+		It seems the platform isn&apos;t technically as locked down as iOS, but it&apos;s pretty locked down an you can&apos;t do much of interest without the approval of the company.
+	</p>
+	<p>
+		It&apos;s interesting that Blackberry 10 provides so many <abbr title="application programming interface">API</abbr>s to build applications against.
+		In particular, the option to use the Android 2.3.3 <abbr title="application programming interface">API</abbr> on Blackberry 10 could make it easier for Android developers to provide a Blackberry version of their applications.
+		At first I thought that alternatively, Blackberry 10 users might be able to just run Android applications in some cases, though if Blackberry 10 has the same requirement that a signing key be gotten from the company to do anything interesting, applications meant for Android aren&apos;t going to function on Blackberry 10 because they&apos;ll be signed with a key not given by Research In Motion, the makers of Blackberry.
+		It turns out it&apos;s a moot point though.
+		Android packages aren&apos;t compatible with BlackBerry 10, which despite running code developed using the Android <abbr title="application programming interface">API</abbr>, only runs applications packaged in BlackBerry 10&apos;s own package format.
+		Of note though, it&apos;s possible to request a debug token, which unlocks a Blackberry 10 device enough to get it to run unsigned code.
+		You can&apos;t expect most people to have one of these debug tokens, and I&apos;m not sure if Research In Motion always grants requests for them, but if you get one, you can run whatever code you like to.
+		It&apos;s easier just to choose a better, less locked-down system such as Android though.
+	</p>
+	<p>
+		The section on iOS says that iOS is capable of running third-party applications.
+		While technically true, what it doesn&apos;t make clear right away is that it can only run third-party applications that have been approved by Apple.
+		You can&apos;t just install whatever third-party applications you want to, and if you&apos;re a developer, you can&apos;t just develop applications for iOS without Apple&apos;s permission and approval.
+	</p>
+	<p>
+		The section on Windows says applications can only be distributed through Microsoft&apos;s application store, and thus permission from Microsoft is required for making your applications runnable, and Microsoft takes their cut of the revenue, but the textbook also says applications meant for the desktop will run on the mobile, and no such requirement is placed on Windows desktop applications.
+		Maybe the mobiles simply wont&apos; run files gotten from elsewhere?
+		Anyway, the obvious takeaway for me is that, again, this platform is too locked-down for me to develop for.
+		The part about using a Microsoft Account to manage authentication for non-Microsoft applications caught my attention though.
+		This seems like a terrible idea from a privacy and security standpoint, but is probably very convenient for users that don&apos;t care about such things.
+	</p>
+	<p>
+		The idea of cross-platform development sounds promising in some ways.
+		As I mentioned, I have no intention of developing for most of these platforms.
+		Android and probably Firefox OS (which was mentioned, though not covered in the part of the textbook we read this week) both seem like platforms I might one day want to release applications for, and it&apos;d be nice not to have to develop them twice.
+		Full Linux desktops are coming to mobile pretty soon too, so developing for all three would be nice.
+		It sounds like the most-challenging part of cross-platform development though is making the applications look and feel like they belong to each platform.
+		Development time needs to be spent on each platform to make sure each set of design philosophies is handled properly.
+		Much of it seems like users just being unable to adjust to small differences in the interfaces between different applications and needing a uniform experience across applications.
+		Part of it makes perfect sense though, such as that different platforms have different hardware buttons that should actually function in your application.
+	</p>
+	<p>
+		The section on mobile Web development mentioned that developing a website is easier than building an application, which is useful.
+		More importantly though, it mentions how it frees you from the need to get the approval of application stores.
+		This is huge.
+		These big companies shouldn&apos;t be the gatekeepers that determine what users can install, but they are.
+		They don&apos;t act as gatekeepers to the Web though.
+		The Web is still fully accessible to users.
+		Client-side versus server-side adaptation was covered.
+		Server-side adaptation seems to nearly always be the wrong solution.
+		At the very least, <code>User-Agent</code> sniffing is a noxious practice that often leads to incompatibilities for lesser-known browsers even when said browsers would be fully able to render the regular, non-adapted code of a regular implementation of the page.
+		If you look only at the browser&apos;s reported capabilities, not its <code>User-Agent</code> string, you can get a less-terrible server-side adaptation set up, but client-side is probably still the way to go in nearly every case.
+		The textbook states inability to serve different content to different devices as a negative, but as far as I&apos;m concerned, sending the same content to all devices should be the goal.
+		As a user of websites, I find the dumbed-down mobile sites to be next to useless.
+		I can&apos;t be the only one, either.
+	</p>
+	<p>
+		So-called &quot;progressive enhancement&quot; is a terrible idea.
+		The concept is that you start with a bare-bones page, then progressively add to the page using JavaScript.
+		Do you see the obvious problem?
+		That&apos;s right: over-dependence on JavaScript.
+		Users without JavaScript enabled or with browsers that aren&apos;t JavaScript-compatible get the bare bones page, possibly without any actual content, depending on how you set up your page.
+		These types of pages are annoying, not to mention that some users, such as disabled users using assistive technologies, may not be able to reach your content.
+		JavaScript should provide added functionality to provide a better experience.
+		It should <strong>*not*</strong>, however, be worked in as a vital part of making your page even usable.
+	</p>
+	<p>
+		This seems to be the easier of my two courses this term.
+		While I didn&apos;t agree with some of the material, I&apos;m pretty sure I understood it all.
+		In my other course, I haven&apos;t been so fortunate.
+		Much of the material seems to be above my head.
+		It&apos;s going to be a struggle to get through that course.
+		As I&apos;m sure you can tell by my opinions on things, I&apos;m never going to be a mobile application developer.
+		I may and probably even will develop at least one mobile application for my own use, and will share the application (and source code) if I do, but I don&apos;t have what it takes to develop applications, mobile or otherwise, for a faceless corporation that would lock down the code to prevent others from using it.
+		Or even a fresh start-up that wanted to lock down their code.
+		I just wouldn&apos;t be able to be happy if writing locked-down, proprietary code is what I chose to do with my life.
 	</p>
 </section>
 <section id="Unit2">
 	<h2>Unit 2</h2>
 	<p>
-		This week&apos;s reading assignment was <a href="https://www.cs.csustan.edu/~rsc/NSF/Notes.pdf">Notes.pdf</a>, chapters two and three.
+		This week&apos;s reading assignment was chapter one of <a href="https://my.uopeople.edu/mod/resource/view.php?id=178261">The Busy Coder&apos;s Guide to Android Development</a>.
+		When I read about Android development, I always worry that what I&apos;m reading may be too recent.
+		As I discussed last week, I have no use for vanilla Android, and use a fork of a fork of it, with the Google garbage removed.
+		The project&apos;s short-staffed though, as it&apos;s not exactly popular, so the version of Android they work with is pretty old.
+		If the material is too recent, it won&apos;t all work on my distribution.
+		This book, however, was written for Android 3.0.
+		Wow.
+		That&apos;s even older than what my distro works with.
+		And my understanding is that anything written for an older version of Android is supposed to run on newer versions of Android as well.
+		So aside from any Google-Applications-specific <abbr title="application programming interface">API</abbr>s discussed, everything I learn from this book should be usable on my distribution.
 	</p>
 	<p>
-		The grading rubric for this week was bizarre.
-		It had us grade last week&apos;s assignment based on the completely-different criteria laid out by this week&apos;s assignment instructions.
-		The obvious choice was to give everyone a zero, as the criteria didn&apos;t fit what anyone actually did.
-		It&apos;s a good thing this assignment isn&apos;t worth points.
-		Or at least, it claimed last week not to be worth points, so hopefully, it isn&apos;t.
-		However, it seems rather unfair to grade that way, so I instead gave everyone full credit with my notes explaining that the rubric given didn&apos;t match the assignment.
+		The first student I graded work for didn&apos;t explain their application design at all, and included both a picker and a keyboard on all three of their mobile screens.
+		It crowded out the other items of the interface.
+		I really don&apos;t think they knew what they were doing.
+		I mean, I didn&apos;t know what I was doing either, and I still produced a clean-looking interface that at least seems sensible.
+		It probably has usability issues I haven&apos;t thought of, but you can tell what&apos;s going on in the screenshots.
+		And if you can&apos;t, at least there&apos;s written descriptions explaining everything.
+		The next student&apos;s work showed a much cleaner interface, and despite the lack of a description, their intent was mostly clear.
+		Their application tracks the cost and/or distance of vehicular journeys.
+		The third student uploaded a screenshot of the instructions of how to take a screenshot on Windows instead of one of the three screenshots of their application, so only two of their prototype screenshots ended up submitted.
+		Their interface was likewise pretty clean and mostly intuitive.
+		It seemed to combine garden plant photography and fuel efficiency calculation into the same application, which was a bizarre design decision, but the interface was still pretty clean.
+		Unfortunately, I had no choice but to grade the messy, poorly-designed application with the highest grade.
+		The other two submissions left out multiple interface objects that both the assignment instructions and the rubric demanded.
+		The student that didn&apos;t seem to know what they were doing had left only one thing out that they&apos;d been asked to include.
+		That&apos;s the problem with rubrics: it&apos;s difficult to create one that adequately captures everything that should be taken into account.
+		The students with better designs are to blame for their own loss of points; they were told very clearly to include certain elements.
+		For me, that meant putting in elements that compromised my design and would have better to have replaced with other interface elements, but I followed the instructions.
+		These students hadn&apos;t.
+		But for the student with seemingly no concept of what they were building, it still seems incorrect for them to have the highest grade.
 	</p>
 	<p>
-		The first student submitted the example code from the assignment.
-		I considered doing this, but there were a couple reasons I didn&apos;t.
-		One of those reasons being that we didn&apos;t actually modify the code in any way, which means that code wasn&apos;t our work; our work was to read the notes and try to understand them.
-		Submitting the code wouldn&apos;t be an accurate representation of my efforts.
-		The second student provided a screenshot of what they saw, which was interesting.
-		It allowed me to verify that I wasn&apos;t the only one not seeing something similar to what the notes for the assignment showed in its included screenshot.
-		Like what I saw, this student saw no distinction between the faces of the pseudo-sphere.
-		The third student did what I did, and submitted their thoughts on the assignment.
-		They kept it much more brief than I did; as I&apos;m sure you can see here, I tend to be very verbose.
-		I tend to learn best when I&apos;m writing about what I&apos;m studying, and if I don&apos;t write enough, I tend not to learn as much.
+		On the assignment this week, we were supposed to complete part of a course on another website.
+		After the first video, an introduction to the course, the site asked me a series of questions.
+		I thought I should answer them truthfully, and that they were trying to get a feel for where I was in terms of what I already knew.
+		Apparently not.
+		Instead, they wanted me to lie through my teeth.
+		The first question asked how much experience I had with Java.
+		I chose the less than a year option, and the site marked me wrong and told me to try again.
+		Seriously?
+		To move on, I have to lie and say I&apos;ve had more experience with the language than I have?
+		That&apos;s just ridiculous.
+		This questionnaire was ridiculous.
 	</p>
 	<p>
-		Most of this week&apos;s reading material was much easier to understand than last week&apos;s.
-		A lot of it was stuff I already knew from mast experience, such as how transformations work on shapes in a coordinate space.
-		One thing about the explanation of transformation order confused me.
-		In the example <abbr title="application programming interface">API</abbr> calls, three transformations are applied and then the geometry is set up.
-		How can the geometry be set up last?
-		Doesn&apos;t there need to be the base geometry before any transformations are applied so the transformations can have something to be applied to?
-		Also, the textbook said that the transformations are applied in reverse order, because they&apos;re applied in terms of which transformation is &quot;nearest&quot; to the geometry.
-		What I understood that to mean is that because the <abbr title="application programming interface">API</abbr> call associated with the final transformation was closest to the <abbr title="application programming interface">API</abbr> call setting up the geometry, it was the &quot;closest&quot; transformation to the geometry.
-		That was the only thing that made sense in the context.
-		Except that it didn&apos;t make sense.
-		An <abbr title="application programming interface">API</abbr> call can&apos;t be run on data that doesn&apos;t exist, then retroactively get applied when the data becomes available.
-		That&apos;s not how operating on data works.
-		You could set up a stack to push the operations onto so you could make it appear that that&apos;s the way operating on data works, and doing so would result in that reverse order behaviour, but that&apos;d be unnecessary overhead.
-		I could only assume that I&apos;ve completely misunderstood what&apos;s going on.
-		Later on, the textbook specifically said that transformations are applied in the order &quot;last-specified, first-applied&quot;.
-		This pretty much means the stack theory isn&apos;t too far off.
-		However, it still seems bizarre that you wouldn&apos;t code in the order you need things done.
-		For some reason, the graphics <abbr title="application programming interface">API</abbr> is having us code backwards.
-		Is there any good reason for this?
-		I have to assume that someone thought there was, and that someone knows a lot more about graphic rendering than I do.
-		And then the textbook went back to calling it applying the transformation &quot;closest&quot; to the geometry again.
-		Which still doesn&apos;t make any sense.
-		<abbr title="last-in, first-out">LIFO</abbr> is something I can understand and work with though.
+		The external course explained the version-naming pattern: the names are alphabetical.
+		It&apos;s pretty annoying to have version names at all though.
+		Version numbers allow easy comparison between versions of a project.
+		If the developer is at all sane and at all reasonable, and you&apos;re looking at version 5.4 and version 7.2, you know that version 7.2 is newer.
+		You just compare the numbers separated by full stops from left to right until you find one that doesn&apos;t match, then assume the one with the bigger number is newer.
+		But you don&apos;t have that luxury with version names.
+		Over the past decade, there seem to have been several projects that assign their names alphabetically, increasing the first letter at each major version update.
+		Android seems to be one of those projects.
+		But not all projects do that.
+		You can&apos;t assume names can be compared like that.
+		A great example is from when I used to be an OS X user.
+		Various websites would offer software and say you need, for example, Snow Leopard or newer.
+		What does that even mean?
+		I was on 10.4.11, also known as (if I recall correctly) Tiger.
+		Is Snow Leopard newer or older than Tiger?
+		The names weren&apos;t alphabetical, and you had to either memorise the sequence of version names or look up the names each time you needed to compare.
+		Both were a waste of time.
+		If people just used the intuitive version numbers, which OS X does have, comparison would be nearly instantaneous, and take no real effort whatsoever.
+		Version names are a disservice to your user base.
+		Use version numbers and <strong>*only*</strong> version numbers.
+		I don&apos;t care if you think your version names are cute, or cool, or whatever.
+		They&apos;re not cute/cool/whatever enough to be worth the hours in total they waste from people&apos;s lives when they have to figure out how to compare your versions or one another.
+		Even alphabetically-assigned version names are problematic, as people using your software don&apos;t automatically and don&apos;t necessarily know they you&apos;re using alphabetically-assigned version names.
+		Besides, what happens when you get past &quot;Z&quot;?
+		Do you wrap back to &quot;A&quot;?
+		If so, you version names are no longer in alphabetical order, and people have to go back to figuring out which versions lie on which side of your dividing Z/A line.
 	</p>
 	<p>
-		Soon, the textbook started comparing the transformations to a stack as well.
-		But the context at that point was that previously-defined transformations affect later geometry.
-		If you define a bunch of transformations, then define a cube to make use of those transformations, the cube will be transformed because everything is done in reverse order for whatever reason.
-		But then, when you define an unrelated sphere, all the same transformations apply to the sphere as well.
-		You don&apos;t define transformations that will apply to an object you need transformed.
-		Oh no.
-		That would actually be easy to work with, and we can&apos;t have that.
-		Instead, you need to first transform the entire, empty scene, then throw objects into it ant they all get transformed the same way.
-		Not going to work for you?
-		In that case, you need to define the transformations for your first object, define the first object, undo the transformations, add new ones that apply to your second object, then define the second object.
-		What a complete mess.
-		What in the world were the people that came up with this system thinking!?
-		I have to keep reminding myself that they must have known something I&apos;m not thinking of.
-		I mean, there&apos;s obviously a lot they know that I don&apos;t, but there must be something huge I&apos;m missing if this is actually somehow a good system.
+		For that matter, I&apos;m morbidly curious as to what Google will name their &quot;X&quot; and &quot;Z&quot; versions, seeing as they&apos;ve further limited themselves to naming their versions after, as they put it, &quot;sugary treats&quot;.
 	</p>
 	<p>
-		The explanation as to why meshes are made out of triangles was enlightening.
-		I&apos;d assumed it was a limitation of the graphics library.
-		I figured it was easier for the developers of the library to disallow polygons with an arbitrary number of vertices.
-		You can build other polygons out of triangles, so allowing only triangles is &quot;good enough&quot;.
-		That&apos;s not actually the case at all though.
-		If you have three or fewer points, there will always be at least one plane that they all lie on.
-		If you add a fourth point though, it can be off-plane from the other planes, so the surface of the face it represents would be undefined.
-		Limiting us to work with triangle prevents such undefined surfaces.
-		There are ways around that issue without limiting sides.
-		For example, you could change the format for specifying polygons, so the first parameter is the equation of a plane and the second parameter is the list of vertices in the order they connect.
-		The vertices would be transformed from the <abbr title="two-dimensional">2D</abbr> space of the plane to the <abbr title="three-dimensional">3D</abbr> space of the world by the graphics library, but because they were originally defined in a <abbr title="two-dimensional">2D</abbr> space, you&apos;d have absolute certainty that they all lied on the same plain.
-		What a nightmare though, both for the developers of the library and users of it!
-		It would really complicate the format and make it harder to work with.
-		Limiting faces to being triangular makes life easier for everyone involved.
+		The section that showed how to set up a virtual device gave me some relief.
+		It said you could use a version of Android, or use that same version with Google <abbr title="application programming interface">API</abbr>s.
+		What that means is that using it without explicitly using it with the Google <abbr title="application programming interface">API</abbr>s is to use it without those <abbr title="application programming interface">API</abbr>s.
+		There&apos;s a chance I&apos;ll be required to build an application that targets the Google <abbr title="application programming interface">API</abbr>s for a class, such as this one.
+		Aside from in a class though, there&apos;s no way I&apos;ll ever build an application against proprietary <abbr title="application programming interface">API</abbr>s.
+		By doing so, I&apos;d be requiring my users to have said proprietary <abbr title="application programming interface">API</abbr>s installed on their device.
+		In other words, I&apos;d be doing my users a disservice, not to mention that I&apos;d be endorsing the use of proprietary <abbr title="application programming interface">API</abbr>s.
+		With proprietary code, you don&apos;t know what it&apos;s doing and you&apos;re not allowed to change it if you did.
+		You don&apos;t have control of your device, the software vendor does.
+		Fully justified fear and suspicion of the unknown aside, Google&apos;s software that is bundled into most versions of Android are outright known to be dangerous.
+		They&apos;re known to keep tabs on your location, for starters, which is creepy.
+		But also, they&apos;re known to be able to install and remove software from your system without your consent, and known to be able to wipe your device&apos;s user storage remotely.
+		I can&apos;t in good conscience do anything that might encourage users to have the Google garbage installed on their mobiles.
+		By having a virtual device without those <abbr title="application programming interface">API</abbr>s, I&apos;ll be able to see in the testing environment that my applications behave properly without them.
 	</p>
 	<p>
-		I wasn&apos;t clear on what normals are at first, either.
-		The textbook says you might need them if your object needs to face a certain direction, but didn&apos;t tell what they actually are.
-		From the context, I was guessing that they might be some angular offset used to shift all faces of a model by, but I really didn&apos;t know for sure.
-		Much, <strong>*much*</strong> later, as in in another chapter even, the textbook actually told us what normals are.
-		A normal is a vector that&apos;s perpendicular to its respective face.
-		Was that so hard?
-		Using terminology and then only later actually explaining it really makes it hard to learn.
-		I spent much of the reading confused as to what normals even were, so I had no way to process much of what was said about them.
-		I&apos;d go back and reread the chapters again, but there really isn&apos;t time in the week for that, so that information is just lost to me and I&apos;m probably going to end up struggling later.
-		Some of what I need will likely be found through specific Web searches, but some of it likely won&apos;t be.
-		And even if it all was all easy to find online, there&apos;s really no benefit in the textbook using unknown terminology long before explaining it.
-		It didn&apos;t even take long to explain it when the book finally got to it (a single sentence, really), so it could easily be fit in before the first usage of the term.
-	</p>
-	<p>
-		The textbook brought up another good reason graphics <abbr title="application programming interface">API</abbr>s allow you to model things in their own space, then place them in the scene.
-		It already mentioned object reuse last week.
-		That reason alone is enough to warrant <abbr title="application programming interface">API</abbr> options for the task.
-		But then this week, it makes the claim that it&apos;s difficult to model things in the world at their intended locations.
-		Boo hoo.
-		You just need better graphics-editing tools, if you can&apos;t pull that off easily.
-		But then it brings up that things need to move through the scene, if the work is animated.
-		Modelling would be a nightmare if you had to adjust the coordinates of each vertex of the image every time the object as a whole moved.
-		That&apos;s definitely a second good reason for providing the tools needed to model things in their own space.
-	</p>
-	<p>
-		The textbook makes a great point about why models should usually be centred about the origin.
-		When the section began, I actually started thinking about off-centre objects and how being off-centre would change the effects of scaling.
-		I concluded that everything would be fine, as the distances between the surfaces would be the same, so the object would scale to the same.
-		Mostly, I was write.
-		However, the book pointed out that objects are scaled about the origin, so if an object is off-centre, scaling it will have the side effect of moving it through space.
-		Well, I mean, the object is still technically located in the same spot, by the computer&apos;s perspective..
-		However, the the place it <strong>*renders*</strong> will change.
-		The computer sees the object as existing at the finite point we moved the origin of the object to, but what we perceive as the object gets moved out of place.
-		I can see some use cases for off-centre origins though.
-		For example, if a tree&apos;s origin was at the base of the model, scaling it wouldn&apos;t cause the tree&apos;s trunk to plunge into the ground (or jump up into the air) and need to be placed back on solid ground again.
-		The textbook also mentions that rotating objects whose centre is at the origin is also easier because the object likewise doesn&apos;t move through space in unexpected ways.
-		For most models, centring then at the origin really seems like the best option.
-	</p>
-	<p>
-		The textbook explained why in most cases, you should scale, rotate, then translate an object.
-		Other orders have less-intuitive and harder-to-work-with effects.
-		If we pay attention here though, there&apos;s more we can pick up from the example of the distorted box: transformations are applied not based on an object&apos;s own coordinate space, but based on the world space the object resides in.
-		We shouldn&apos;t, therefore, think about translations in the model&apos;s own space when we&apos;re trying to transform them in the world.
-		We should think of them similarly to primitives we might have used in the world directly.
-	</p>
-	<p>
-		The textbook brought up that because scaling is multiplication, reversing it is division.
-		With that in mind, it continued, you can&apos;t undo a scale to zero.
-		Huh.
-		Right.
-		Division by zero errors.
-		I admit I hadn&apos;t thought of those, but not because I simply didn&apos;t think about division by zero.
-		Instead, because I hadn&apos;t thought about <strong>*multiplication*</strong> by zero!
-		In the real world, if you multiply something by zero, you have nothing.
-		Nothing exists in two dimensions, so multiplying the width of something would result in having no object and no volume.
-		In a computer representation though, <strong>*everything*</strong> is in two dimensions.
-		The faces can be arranged at arbitrary angles in <abbr title="three-dimensional">3D</abbr>, but the faces themselves are two-dimensional, and the faces are the only things that actually exist in the scene.
-		Scaling a dimension by zero simply crunches the face back into a two-dimensional orientation parallel with two of the axes; it doesn&apos;t make it disappear altogether.
-		You could even scale all three dimensions by zero and get a face with all vertices existing at the same point in space.
-	</p>
-	<p>
-		Later, the textbook finally explained what it meant by transformations being &quot;closer&quot; to the geometry.
-		It meant that these transformations were nested deeper in a scene graph, closer to the node representing the relevant geometry.
-		When the textbook first mentioned transformations being &quot;closer&quot; to the geometry, it provided no such explanation of what it was even talking about.
-	</p>
-	<p>
-		The textbook mentions that you can&apos;t create a cube out of a single quad strip.
-		This is very true, but I think it&apos;s worth briefly taking a look at why.
-		Six connected squares could easily be folded into a cube, depending on how they are connected.
-		In fact, each of those squares could be connected to no more than two other squares, creating a continual path of squares.
-		Take four squares in a row, then attach a square above one end and one below the other.
-		However, quad strips can&apos;t be defined that way.
-		In a quad strip, the two vertices shared between a pair of adjacent squares can&apos;t be shared by any other square.
-		In other words, you can&apos;t define three squares in the quad strip to share a single vertex, and a continual strip of squared that could fold to become the faces of a cube would have to have at least two vertices that were each shared by three squares.
-	</p>
-	<p>
-		The textbook at first said that display lists were named unsigned numbers.
-		Of course, I would try to begin naming lists from zero.
-		I&apos;m a programmer.
-		Programmers realise that zero is a valid number, and don&apos;t skip it when indexing or naming.
-		A bit later though, the textbook reiterates, but this time says you need to use unsigned, <strong>*non-zero*</strong> integers.
-		That makes a huge difference.
-		I could have easily gotten stuck trying to debug for hours if using zero silently fails and the inability to use zero wasn&apos;t mentioned.
-		Of course, I don&apos;t know if it silently fails or not.
-		Maybe it halts the script and spews visible error messages telling you exactly what the problem is.
-		We can always be hopeful that that&apos;s the sort of behaviour a library will have, so you&apos;re not left trying to debug simple problems without any clue as to what the problems actually <strong>*are*</strong>.
-	</p>
-	<p>
-		The assignment for the week was a major headache.
-		Whenever I try to run the code given to me by the university in my Web browser directly, no graphics are rendered and the Firebug console gives me the error message &quot;Access to restricted URI denied.&quot;.
-		So I can&apos;t see what I&apos;m doing.
-		Last week, the code ran just fine on the JSbin website.
-		This week, it doesn&apos;t render there, either.
-		I was going to have to work blind.
-	</p>
-	<p>
-		I tried.
-		I really tried.
-		But I just can&apos;t work if I can&apos;t see.
-		You should see me when I&apos;m coding.
-		I often write small fragments at a time, then running my code to see if it did what I expected.
-		Even for the most-basic stuff.
-		And I often botch things pretty badly.
-		But because I can <strong>*see*</strong> what&apos;s going on, I can correct it.
-		I may not even understand what goes wrong right away, but I just keep adding output to the problem area until I find what output isn&apos;t as expected, and can fix it.
-		But I can&apos;t do that if I can&apos;t see.
-		And I have no idea what I&apos;m doing when it comes to WebGL, so I can&apos;t even assume I&apos;m coding things right and move on.
-		I can&apos;t work blind.
-	</p>
-	<p>
-		There was no time to ask for help.
-		I&apos;d taken too long to read the textbook this week.
-		The material is difficult to get through, and takes me forever.
-		I needed to get my assignment done quickly in the remaining time, and if I waited for a response to my queries, the deadline would pass.
-		I decided to try to figure out what script was misbehaving and causing that error message.
-		I deleted all references to scripts aside from the main Firebug script, hoping to add them back, one by one, until Firebug complained again.
-		However, Firebug didn&apos;t quit complaining, so it couldn&apos;t start again.
-		The main Firebug script was trying to access some forbidden <abbr title="Uniform Resource Identifier">URI</abbr>!
-		I don&apos;t know what the problem is, but Firebug just isn&apos;t going to run locally, it seems, and I just don&apos;t get it.
-	</p>
-	<p>
-		Next, I tried to figure out what was so magical about last week&apos;s code.
-		Why did it run in JSbin when this week&apos;s code doesn&apos;t?
-		The first step was to see if I could inject the code for the yellow triangle from the example that wouldn&apos;t run into the sphere code from last week that did run.
-		I couldn&apos;t see the triangle.
-		I assumed it was inside the sphere, or something.
-		So I found the line that added the sphere to the scene and commented it out.
-		The sphere was still created in the code, it just wasn&apos;t added to the scene and rendered.
-		Success!
-		I had a spinning, yellow triangle.
-		Is the example code this week just broken?
-		Perhaps it&apos;s just broken.
-		But why?
-		So I started comparing the two files to see what might be the problem.
-	</p>
-	<p>
-		The first thing I noticed were the line endings.
-		The rendering code used <code>\n</code>, while the dysfunctional code was using <code>\r\n</code>.
-		That shouldn&apos;t cause a problem in the rendering, but it was distracting, as it made every line in the editor change as I flipped between the two files.
-		I couldn&apos;t see what had really changed.
-		So I converted all the line endings to <code>\n</code>.
-		Next, I saw the dysfunctional code didn&apos;t have a <code>&lt;title/&gt;</code> element.
-		That made the dysfunctional code technically invalid, but I didn&apos;t think JSbin would care enough to disable the output over it.
-		And actually, the Firebug console was showing up anyway, proving that JSbin was in fact trying to properly set the JavaScript to run.
-		Next, I saw ... the script tags were different.
-		Last week&apos;s included JavaScript files were fewer in number and mostly hosted by my nemesis, CloudFlare.
-		Actually, I&apos;m surprised those files actually work because of who&apos;s hosting them.
-		This week&apos;s JavaScript files were greater in number and mostly hosted by the university.
-		Could that be the problem?
-		I swapped out the scripts, and found I was working with the wrong file: the one that wasn&apos;t supposed to render anything.
-		The spinning triangle example, while still unable to render, actually does have a proper <code>&lt;title/&gt;</code> element.
-		Also, most of the scripts are instead hosted on some website about healthy living that no longer exists, and thus can&apos;t serve the scripts.
-		Bingo.
-		I&apos;d found the problem.
-		But also, why do all three of these files have different base environment scripts?
-		I mean, two of these are even supposed to be the same assignment.
-		Why would they have different environments?
-		And on closer inspection, the two files that seemed to have a <code>&lt;title/&gt;</code> element actually have <strong>*two*</strong> <code>&lt;title/&gt;</code> elements, which is invalid, while the file I thought didn&apos;t have any actually had one.
-		Whoever wrote these files didn&apos;t know what they were doing.
-	</p>
-	<p>
-		With the reason for the yellow triangle file not working seemingly found, and having nothing to do with the template file, I tried injecting the yellow triangle into the template file.
-		Still no rendering.
-		But when I next completely replaced the sphere&apos;s geometry in last week&apos;s code, the yellow triangle rendered just fine.
-		Next, I tried replacing the linked scripts in both files that wouldn&apos;t render with links to the scripts from the working file.
-		I thought for sure that that&apos;d work, but it didn&apos;t.
-		It was time to look for more file differences.
-		This time, I found that the broken code was using the <code>Detector.webgl</code> property to conditionally choose a renderer, while the working code did not.
-		So I deleted the conditional.
-		That didn&apos;t fix anything.
-		The hight and width of the window were set differently as well, and while I didn&apos;t think it would change anything, I tried setting them according to the working file&apos;s values just to rule that out.
-		Sure enough, no effect.
-	</p>
-	<p>
-		Next, I came across the line that statically set the renderer in the working file.
-		That was missing from the broken code, because the broken code was using the conditional statement instead to set the renderer.
-		Copying over the renderer-defining line, I finally got the example code to work.
-		Except ... the triangle was bigger now, and no longer spun.
-		The spinning and apparently some zooming out had come from elsewhere in the sphere code.
-		With the rendering now working, it was time to undo all of my changes, then redo the renderer fix, to reset me back to a clean starting place.
-		The code went back to not working, but after replacing the <code>&lt;script/&gt;</code> tags again, everything went back to rendering properly.
-		Next, I tried only fixing the renderer in the template file we were given, as it used scripts from the university&apos;s website, but that wouldn&apos;t render either, and I needed to swap out the <code>&lt;script/&gt;</code> tags there, too.
-		It seems the university is no longer hosting the required scripts, or something.
-		Long story short, the files this week both use code that doesn&apos;t work and rely on scripts that aren&apos;t there any more.
-	</p>
-	<p>
-		After debugging all that, I started trying to build my solution, and noticed that my spell-checker had detected a misspelled word in a comment, so I read the comment while I was fixing that.
-		The comment told me to disable the detector.
-		If it needed to be disabled, why was it included?
-		But also, disabling that hadn&apos;t been the only thing needed.
-		I&apos;d needed to replace the <code>&lt;script/&gt;</code> tags.
-	</p>
-	<p>
-		With my template now working, I copied over the triangle code, then painted the triangle blue.
-		It disappeared though!
-		I thought I was dealing with another bug, and after being unable to find it, I just copied over the triangle again, overwriting the painted one.
-		It rendered.
-		So I painted it blue again.
-		And it disappeared!
-		I spotted an ambient light that had been added to the scene.
-		It had no blue component.
-		If I&apos;d chosen to make the triangle red, as the assignment allows our rotating square to be either red or blue, it would have no doubt showed up in the light, but a blue object absorbs red and green light, reflecting only blue.
-		And there was no blue to reflect.
-		I changed the ambient light to output white light, and sure enough, the triangle regained visibility.
-		Perfect.
-	</p>
-	<p>
-		Next, I tried adding another vertex to the triangle.
-		It&apos;d be horribly unsquare, but I needed to see if I could simply add vertices.
-		It seems I could not.
-		I added two more to see if it&apos;d add a second triangle.
-		When I saw it did nothing, I was about to set the camera to zoom out a bit and see if the vertices were off-screen, I remembered I hadn&apos;t added edges or faces.
-		Of course they weren&apos;t rendering.
-		From here, I decided to just scrap the triangle and try out a triangle strip.
-		I couldn&apos;t figure out how to do that though.
-		After some unsuccessful Web searching, I gave up trying to do this the efficient way and instead just drew two, unconnected triangles that happen to share two vertices.
-		I defined four vertices, each with an <var>x</var> and <var>y</var> value of <code>-5</code> or <code>5</code>, then added two faces, one of which used all the vertices with at least one negative coordinate and one that used all vertices with at least one positive coordinate.
-		I guess I didn&apos;t need to specify the edges manually?
-		Anyway, a blue square now sat near the middle of the window.
-		The square was a bit low to the bottom though.
-		I&apos;m not sure why that is.
-		Looking at the code that sets the camera&apos;s position, it should be pulled back along the <var>z</var> axis, but centred on the <var>x</var> and <var>y</var> axes.
-		I could easily adjust the square&apos;s coordinates to compensate, but without understanding the reason the camera was off-centre, I was reluctant to compensate for it like that.
-		The assignment never said the square had to be centred, so I left it.
-	</p>
-	<p>
-		Next, it was time to rotate the scene.
-		I wasn&apos;t sure how to do that, so I took a look at the code from last week.
-		It was using the <code>autoRotate</code> method of an object returned from <code>THREE.OrbitControls</code>.
-		It wasn&apos;t actually defining the rotation itself.
-		Is that what I was supposed to do too?
-		I undid all my changes to the template document to take a look at the original <code>&lt;script/&gt;</code> tags.
-		Sure enough, a file with a name indicating that it was specifically for defining these controls was included.
-		I was supposed to use the orbit controls.
-		But also, i thought I realised what was going on with the university&apos;s JavaScript files.
-		They were probably behind the school&apos;s login wall!
-		I did a quick check, and saw that no, the university was actually just sending bizarre files instead of the JavaScript files.
-		The one I looked at was mostly broken characters, but also mentioned OS X, something that looked like a Java package name Apple might produce given their domain name, and something about Google Chrome.
-		None of that software is installed on my machine, so it wasn&apos;t some file reacting to my setup or something.
-		It was just a broken or misnamed file.
-	</p>
-	<p>
-		I copied over the orbiting code, figuring I&apos;d need to make changes before it&apos;d run, but tried it out anyway.
-		It worked just fine.
-		I&apos;d adjust it later anyway, but for now, I wanted to get a working sample in place.
-		I definitely wanted to clean up the code before submission though, so all of this would be reworked a bit.
-		The position of the square was really bothering me though.
-		I looked through the code to see if I could find any code that looked like it offset the camera&apos;s view from its actual location somehow, and found that <var>VIEW_ANGLE</var> was set to <code>45</code>.
-		That wasn&apos;t right.
-		That should be <code>0</code> or <code>90</code>, I wasn&apos;t sure which, if we wanted to see the square head-on.
-		That might be the cause of the offset.
-		I set it to <code>90</code> and tried again.
-		The result was much better.
-		It was still a bit off, but it was within the range of what I&apos;d tolerate.
-	</p>
-	<p>
-		Looking back at the instructions to see if I&apos;d missed anything besides the inclusion of comments, which I&apos;d add as I cleaned up the code, I saw that the assignment also wanted us to scale the object and move it elsewhere in space.
-		How would the graders even know if the object had been scaled (verses defined at the shown size to begin with) or moved (as opposed to defined in the shown location to begin with)?
-		These seemed like strange requirements.
-		Additionally, the reading material this week told us how to scale in OpenGL, but we&apos;re instead working in WebGL.
-		I tried looking up how to scale in WebGL, but it seems transformations in WebGL require shaders, which we haven&apos;t worked with.
-		I mean, this is the first actual assignment.
-		The textbook talked about shaders, but not how to produce them, and even if it had, it only talked about them in the context of OpenGL, not WebGL.
-	</p>
-	<p>
-		I couldn&apos;t find any good tutorials on shaders, but from the scraps of information I was able to piece together from comparing what the tutorials I couldn&apos;t understand were doing, shaders seem to use very specific variable names for input.
-		They don&apos;t even look like function arguments, but you basically use them as function arguments after declaring them.
-		If they have the right name, WebGL will set those variables as if they were arguments being passed in.
-		It&apos;s a confusing system, likely related to WebGL&apos;s (and OpenGL&apos;s) unintuitive choice to operate on global variables outside the shaders too, instead of using arguments and return values like a clean library does.
-		From the code samples I could find, it seemed that <code>getWebGLContext()</code> needed to be called on the canvas to return some other object with properties we could use to initialise the shader with, but what canvas?
-		I couldn&apos;t find any canvas objects in the code we were working with.
-		The closes thing I could find was the scene object, but passing that into <code>getWebGLContext()</code> (even without doing anything with the returned object) prevented rendering, as did passing in anything I could think might work, including passing nothing.
-		It was like the call to <code>getWebGLContext()</code> itself was breaking the rendering, and seemed to have nothing to do with the argument.
-		I did notice that some of the setup code for the rotation was actually included in the boilerplate part of the template though, so I was able to delete my copy of it from the section we were supposed to edit.
-	</p>
-	<p>
-		Eventually, I had to give up.
-		We haven&apos;t covered how to use shaders yet, or if we did, I didn&apos;t understand it.
-		And why would we even be jumping right into shaders in the first assignment, the one in which we were just figuring out how to even get geometry to render at all?
-		It made no sense.
-		Getting a shape of our choice in a colour of our choice and making it spin seemed like a good first assignment on its own.
-		It seems like shaders should be given their own assignment, at the very least, not to mention that the assignment this week didn&apos;t even mention shaders.
-		For that matter, it didn&apos;t even tell us to scale or translate the square, it only said that we&apos;de be graded on whether or not we&apos;d demonstrated how to scale and translate objects.
-		There were no actual instructions telling us in where or why to move the square or why  or to what size to scale the square.
-		Things just weren&apos;t adding up.
-		Due to seeing this assignment&apos;s grading rubric early, as it was mistakenly used as the grading rubric for last week&apos;s work, I knew I&apos;d be penalised for not showing a translation or scaling, but I just couldn&apos;t figure out how to pull it off.
-		I&apos;ll just have to accept the lower grade and try to do better next week.
-	</p>
-	<p>
-		While cleaning up the code and commenting, I set the triangles to only render from one side.
-		That allowed me to see that my triangles were actually facing opposite directions, so I reordered my vertices, then built new triangles using those vertices in a more-consistent manner.
-		That got them to face the same way, after which I made them render on both sides again.
-		I ended up removing the camera angle adjustment I&apos;d added at first too.
-		It didn&apos;t seem to be necessary, or even useful, by the time I got to cleaning up that part of the code.
-		I think the off-centre issue was because the console wasn&apos;t letting me scroll all the way to the bottom or something.
-		When the console is completely minimised, the square seems centred just fine.
+		The textbook started off this week by discussing smartphones being telephones, so I&apos;ve got to bring up what I did last week: smartphones are telephones in name only.
+		They&apos;re actually pocket computers, which is why they&apos;re so versatile.
+		Telephones can&apos;t do most of what smartphones are used to do every day.
+		With that out of the way, it then continued about various issues such as form factor of tiny devices, which is valid, but then brought up that one challenge of developing mobile applications instead of desktop applications is that when applications mess up someone&apos;s mobile (various examples were provided, such as resource-hogging and such), people get angry about it.
+		Why are they not like that with their other computers?
+		For me, I get frustrated when my software starts making my laptop act up as well.
+		And if I had a working desktop machine, I&apos;d be mad if software messed that up too.
+		Either the majority of people are feel very detached from their non-mobile computers, or the book&apos;s point here is completely invalid.
+		Most of the material from the textbook was either a repeat of what I discussed from the assignment for the week, along with a full page listing things that Android can do specifically because it&apos;s not on a telephone, such as access files and the Internet, so I won&apos;t go over those ideas here a second time.
 	</p>
 </section>
 <section id="Unit3">
 	<h2>Unit 3</h2>
-	<h3>Describe what you did.</h3>
 	<p>
-		For the week, I read the material, graded assignments from last week, and participated in the discussion activity of the week.
-		I also built a bouncing sphere animation for the main assignment of the week.
-		I ended up overcomplicating the assignment, but my animation turned out better for it.
+		The reading material for the week was as follows:
 	</p>
-	<h3>Describe your reactions to what you did.</h3>
+	<ul>
+		<li>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Mobile">Mobile Web Development - Developer guides | MDN</a>
+		</li>
+		<li>
+			<a href="https://webplatform.github.io/docs/concepts/mobile_web/">Mobile Web · WebPlatform Docs</a>
+		</li>
+		<li>
+			<a href="https://www.html5rocks.com/en/mobile/responsivedesign/">Creating a Mobile-First Responsive Web Design - HTML5 Rocks</a>
+		</li>
+		<li>
+			<a href="https://www.w3schools.com/jquery/">jQuery Tutorial</a>
+		</li>
+	</ul>
 	<p>
-		I suppose my main reaction to what I&apos;ve done this week was frustration.
-		I stayed up late trying to fix my janky animation, only to find out that the one part that was causing my trouble, the <var>z</var> dimension, was something we didn&apos;t even need to include in our submissions.
-		The frustrating part was that I&apos;d done that to myself.
-		It was me that failed to read the directions correctly.
-	</p>
-	<h3>Describe any feedback you received or any specific interactions you had.</h3>
-	<p>
-		Discussion assignments do absolutely zero for me.
-		Any &quot;interactions&quot; there tend to consist of either us all repeating the same things, because we&apos;re all answering the same questions after reading the same material, or people going off-topic.
-	</p>
-	<p>
-		With that in mind, the only real interaction I had in regards to this course was from our professor about my <a href="https://y.st./en/coursework/CS4406/#Unit1">Unit 1 learning journal</a> submission.
-		I was told not to tell what the textbook told me, but at the same time, to tell what I learned.
-		As what I learned came from the textbook, these requests are in direct opposition to one another.
-		I&apos;m not sure what I&apos;m supposed to do.
-		However, I was also told to answer a series of questions, questions I&apos;d already answered, just in the context of a full write-up.
-		I can only assume that my best option is to now specifically answer each question individually in its own section to be sure each one gets recognised as having been answered.
-	</p>
-	<h3>Describe your feelings and attitudes.</h3>
-	<p>
-		I suppose the one thing I didn&apos;t cover before were my feelings and attitudes, as they aren&apos;t really relevant to what I was doing, not to mention that they&apos;re pretty much always the same.
-		My main feeling is one of constant lethargy, and my attitude is that I just want to get the work over with.
-		I used to thoroughly enjoy my studies here at this school, but that all ended a little over a year and a half ago.
-		This school has drained the joy of learning right out of me.
-		Since 2017-11-01, I&apos;ve just wanted to get my schooling done so it can be over with.
-		It has nothing to do with this course, or any specific course, and isn&apos;t anything that you&apos;re doing wrong.
-		Rather, the way the school is run.
-		It&apos;s not a healthy environment, and I&apos;ll be happy when my time here is finally over.
+		The first thing the Mozilla article sugested was responsive design.
+		I fully agree that that&apos;s how multi-device should be implemented.
+		It&apos;s for more than just mobiles.
+		Some websites haven&apos;t rendered well on past laptops I&apos;ve had even, due to the developers being too incompetent to build anything besides an idiotic fixed-width page.
+		For me, there was a screen size issue, just like with mobiles, but to a lesser extent.
+		However, this isn&apos;t even strictly a screen size problem.
+		Not every user wants a full-screen browser window.
+		Even on a large screen, smaller browser windows are often much more convenient for the user.
+		Before I switched to Linux, I used to never use full screen windows when I didn&apos;t have to.
+		They made me feel cramped in, as I couldn&apos;t see multiple things that I was working with.
+		On Linux, things have been a bit different for me, as I now have access to as many desktops as I want, which I can switch to with a single click.
+		I keep my system configured to have four desktops, and each one has its own set of windows, so I can easily and quickly switch between sets of tasks.
+		With this setup, I almost always use full-sized windows except when I&apos;m getting a screenshot for school, in which case I shrink the window down as much as feasible for smaller image dimensions.
+		But without this multi-desktop feature, I wouldn&apos;t be using full-size windows when I don&apos;t have to, and I&apos;d continue to be very annoyed with fixed-width webpages that force me to bump up my windows size just to render usably, especially in times when even full-sized windows aren&apos;t enough on my modest screen.
 	</p>
 	<p>
-		So what is my attitude?
-		My attitude is that I&apos;ve only got two more years here, and then I&apos;ll be free.
-	</p>
-	<h3>Describe what you learned.</h3>
-	<p>
-		You want me to talk about what I learned, but not talk about what the textbook said.
-		Honestly, I don&apos;t know what to say.
-		What I learned came from the textbook.
-	</p>
-	<p>
-		I suppose in short, I learned how to properly move objects about in space using <code>three.js</code>.
-		That was something I couldn&apos;t figure out last week, and couldn&apos;t find information on how to do on the Web.
-		That would be the main thing.
-		I also learned how to better deal with collision detection, at least for some cases.
-		My sphere was acting all sorts of wonky when it hit edges of the viewing area, due to slightly clipping into them, then repeatedly detecting a collision and repeatedly trying to switch directions to get back out.
-		The sphere misbehaved because it would flip directions to get out of the wall, fail to get all the way out, then flip again to get out but actually be heading further in now.
-		An easy fix was to shove the sphere back out right away, so when it turned around, it&apos;d already be out of the wall before it moved.
-	</p>
-	<h3>What surprised me or caused me to wonder?</h3>
-	<p>
-		I&apos;m constantly wondering how to get my work done in this course.
-		When I ask a search engine for even the most basic advice on how to perform some simple action in <code>three.js</code>, it gives me bupkis.
-		I can&apos;t remember all the <abbr title="application programming interface">API</abbr> calls from the textbook, and need to be able to see basic method signatures while I&apos;m working.
-		Even in languages and <abbr title="application programming interface">API</abbr>s I work with frequently, I have to constantly check the the Internet for function names and argument lists.
-		And with <code>three.js</code>, I don&apos;t even have the luxury of being familiar with the language or the <abbr title="application programming interface">API</abbr>!
-		I&apos;d never heard of <code>three.js</code> before this course, and I almost never touch JavaScript code.
-	</p>
-	<h3>What happened that felt particularly challenging? Why was it challenging to me?</h3>
-	<p>
-		What was challenging this week?
-		Well that&apos;s easy: the programming assignment.
-		Why was it challenging?
-		Because I misread the directions, over-complicated things, and implemented a feature it turned out we were never intended to have to deal with: bouncing the object in the <var>z</var> direction in a perspective-view-defined box while simultaneously bouncing the object in the <var>x</var> and <var>y</var> directions.
-		The slanted walls of the view really bugged up my results until I added some code that specifically dealt with the object clipping into the walls, which was something it never did when I had it only bouncing in two dimensions.
-		Having three dimensions along with slanted walls caused the object to enter the walls when moving toward them, triggering repeated collision detection and causing the object to bounce back and forth <strong>*within*</strong> the wall.
+		The next tip the article gave was to use the <code>viewport</code> <code>&lt;meta/&gt;</code> tag.
+		I actually learned about that tag the hard way.
+		The thing is that many mobile Web browsers are pretty foolish in their default rendering of a webpage.
+		They&apos;ll smash all the text into a column that if zoomed in to, would look perfect.
+		But then they render the page zoomed way out.
+		You end up with a mostly-blank page with all the text smashed to the left side, which is very ugly, not to mention inconvenient.
+		Using a <code>viewport</code> <code>&lt;meta/&gt;</code> tag, you can tell mobile Web browsers to render your page in the intuitive way that they already should by default so your page doesn&apos;t look like utter garbage.
+		It&apos;s completely a Web browser flaw, not a webpage flaw, but it&apos;s incredibly easy to fix the rendering of your page by adding this tag to your webpage.
+		Its very easy to see that it&apos;s the browser to blame though when you try looking at a bare-bones page that only uses <code>&lt;p/&gt;</code> tags within the <code>&lt;body/&gt;</code> tag and the browser still manages to botch the rendering.
 	</p>
 	<p>
-		Debugging the wall position code was also a challenge, as I&apos;d worked out the perfect equation to represent the wall, and it was somehow not even close to perfectly representing the wall.
-		It turns out I accidentally left out a negative sign in my equation.
-		An easy fix, but not an easy bug to track down.
-	</p>
-	<h3>What skills and knowledge do I recognize that I am gaining?</h3>
-	<p>
-		Before this course, I couldn&apos;t do anything in <abbr title="three-dimensional">3D</abbr>, and now I can.
-		So that&apos;s something.
-		I could visualise in <abbr title="three-dimensional">3D</abbr> and I could understand <abbr title="three-dimensional">3D</abbr> coordinates.
-		I often have to when I work on the plug-ins I write for Minetest, a game I play when I have time.
-		But that was the extent of my skills in virtual <abbr title="three-dimensional">3D</abbr> space.
+		The dangers of expecting users to hover over elements was mentioned, but is self-explanatory, so I won&apos;t go into detail.
+		It&apos;s a good thing to keep in mind though.
 	</p>
 	<p>
-		At this point, I can add lights to specific spots, or even add ambient lights.
-		I can also sort of define objects using <code>three.js</code>, though not any complex ones.
-		I can also move objects around and perform very basic collision detection.
-		I feel like what I wrote this week was a desktop screen saver, but hey, I couldn&apos;t do that before.
-	</p>
-	<h3>What am I realizing about myself as a learner?</h3>
-	<p>
-		What I realise about myself as a learner is that I learn a lot more when I write extensively about what I&apos;m learning.
-		When I&apos;m struggling to grasp the material in a course, such as this one, writing about the problem often helps me retain what I&apos;ve learned and sometimes work through the parts I don&apos;t quite understand.
-		When I don&apos;t write, I don&apos;t learn, so when I don&apos;t write much, I don&apos;t learn much.
-	</p>
-	<h3>In what ways am I able to apply the ideas and concepts gained to my own experience?</h3>
-	<p>
-		Honestly?
-		I&apos;m not sure any of this applies to what I do outside of school.
-		This sort of question is one f those traps, where you can either lie and claim the material is really useful and try to come up with some bogus use for it to explain, or you can be honest and admit that you don&apos;t see how this applies to you.
-		This sort of question is an underhanded one to include in an assignment.
+		Mozilla also recommends using <code>-moz-touch-enabled</code> as a media type for <abbr title="Cascading Style Sheets">CSS</abbr> to be loaded on a mobile device.
+		<strong>*DO NOT DO THIS!!*</strong>
+		I cannot emphasise that enough.
+		This is <strong>*not*</strong> a standards-compliant value.
+		This is browser-specific garbage that doesn&apos;t belong on any website.
+		Just look at that &quot;-moz&quot; part.
+		Do you think that value&apos;s understood by non-Mozilla mobile browsers?
+		No.
+		Not a chance.
+		This sort of idiocy is the type of thing that leads to <strong>*less*</strong> support for Web browsers, because developers are wasting all their time on these browser-specific <strong>*hacks*</strong> instead of standards-compliant code that runs on all working Web browsers.
+		Developers don&apos;t have the time and energy to provide browser-specific hacks for each and every Web browser, so they end up supporting only a few popular ones, and leaving the rest with nothing, even when those other Web browsers would render a standards-compliant webpage perfectly.
+		Don&apos;t use this sort of hack.
+		Ever.
+		Instead, use actually-valid code, such as the <code>max-width</code> feature of a <code>@media</code> query.
+		Bizarrely, a bit down the page after telling readers to use this browser-specific hack, Mozilla then recommends against browser-specific hacks, and even specifically says to avoid things with browser-specific prefixes (y&apos;know, such as that &quot;-moz&quot; prefix that they <strong>*just*</strong> recommended using).
 	</p>
 	<p>
-		Anything that&apos;s written with accessibility in mind doesn&apos;t use JavaScript, which means the <abbr title="application programming interface">API</abbr> we&apos;re learning is something I won&apos;t use just because good webpages don&apos;t depend on JavaScript.
-		<code>three.js</code>&apos; <abbr title="application programming interface">API</abbr> seems to be so drastically different than what we&apos;re sort of learning OpenGL&apos;s <abbr title="application programming interface">API</abbr> is like, too.
-		Every time I find an answer as to how to do something in <code>three.js</code>, it&apos;s way different than what I read you have to do in OpenGL.
-		If we move on to learn OpenGL&apos;s <abbr title="application programming interface">API</abbr> at some point, that&apos;s something I&apos;ll actually be able to apply.
+		The final noteworthy piece of advice the article provides is to be careful when using <code>User-Agent</code> strings to determine what to send users.
+		They say that if you use the <code>User-Agent</code> string at all, you need to make sure your algorithm is correct in its assessment of what users are using.
+		That&apos;s a complete joke though; your algorithm can <strong>*never*</strong> be correct 100% of the time.
+		You can&apos;t account for every <code>User-Agent</code> string out there.
+		You&apos;re going to get some wrong.
+		And that&apos;s ignoring the fact that some users set this string to something that doesn&apos;t match their actual browser, so your guess will sometimes be wrong even if you recognise the <code>User-Agent</code> string.
+		They might do this for privacy reasons, or they might do it because some stupid website like yours won&apos;t send proper code except to certain browsers, so they have to, but then your website sends different code that wont&apos; render correctly based on that same <code>User-Agent</code>, so the user had no way to win.
+		Seriously.
+		Never use the <code>User-Agent</code> string for anything.
+		There are no excuses for this.
+		The fact of the matter is that the <code>User-Agent</code> is a blight on the Web.
+		It&apos;s a remnant from the browser wars, and was used specifically to try to get people to switch to whatever browser you&apos;d prefer they use.
+		At times, it was used to actually provide support for multiple browsers as well, as each Web browser vendor was using their own non-standard version of <abbr title="Hypertext Markup Language">HTML</abbr>.
+		The importance of standards is starting to be pretty widely accepted at this point though.
+		Honestly, the Web would be a much better place if the <code>User-Agent</code> string was dropped from <abbr title="Hypertext Transfer Protocol">HTTP</abbr> altogether.
+		Never rely on this string.
 	</p>
 	<p>
-		For now, the main thing I&apos;m getting from this course is terminology.
-		There are terms I see used that make no sense in the programs they&apos;re used in.
-		The words don&apos;t match what actually happens.
-		For example, something labelled &quot;shaders&quot;, that doesn&apos;t shade anything, but instead makes objects move around a little in space.
-		What&apos;s that about?
-		However, this course is explaining terms such as that.
-		No doubt, in my example, the object movement is implemented using OpenGL shaders.
-		Shaders in that context have nothing to do with shading, and are instead just small programs executed on the <abbr title="graphics processing unit">GPU</abbr> that can influence a rendering.
-		Understanding that makes the interfaces of programs I use elsewhere make much more sense.
-	</p>
-	<h3>Ignore the following.</h3>
-	<p>
-		I wrote up a full report on my activities for the week before I saw your feedback for my <a href="https://y.st./en/coursework/CS4406/#Unit1">Unit 1 learning journal</a> submission saying not to do that.
-		I really didn&apos;t want to just delete all my work.
-		Submitting it makes it eligible to be archived though, so I&apos;m including it here as an add-on.
-		You don&apos;t need to read or grade anything below here.
+		The <abbr title="Hypertext Markup Language">HTML</abbr>5 Rocks page brings up a good point in saying that we should use semantic markup on our pages.
+		While this is brought up in the context of mobile devices, semantic markup is about so much more than mobiles.
+		Assistive technologies such as screen readers for the blind also depend heavily on pages being marked up correctly.
+		Semantic markup also makes it more clear to future developers that work on your site, if you&apos;re developing for a company or something, what your intention was so they don&apos;t accidentally break it.
 	</p>
 	<p>
-		The reading assignment for the week was <a href="https://www.cs.csustan.edu/~rsc/NSF/Notes.pdf">Notes.pdf</a>, chapters four and five.
+		The <abbr title="Hypertext Markup Language">HTML</abbr>5 Rocks page also makes the claim that mobile devices try to display non-mobile-optimised sites with a large viewport because such sites will render better that way.
+		As I showed in my example a bit ago though, this is patently false.
+		Yes, a huge viewport is selected by default.
+		However, the text on the page is squished into a column much narrower than the page, behaving as if a much smaller viewport were being used.
+		Clearly, this isn&apos;t how a non-mobile-optimised site would want to be rendered either.
+		No one wins from this behaviour; not sites intending to be seen on a mobile and not sites that completely ignore the presence of mobiles.
+		This default behaviour is completely ridiculous.
 	</p>
 	<p>
-		The section on the Cartesian coordinate system was confusing at first.
-		I couldn&apos;t figure out what it was trying to get across.
-		Once I realised the points it was getting at though, I realised it was all stuff I already knew.
-		I&apos;ve used the <abbr title="two-dimensional">2D</abbr> Cartesian space a lot in high school, and the <abbr title="three-dimensional">3D</abbr> Cartesian space in a game I develop plugins for.
-		Neither of these spaces in unfamiliar territory for me, though I&apos;m always found it strange that <code>y</code> is the vertical one instead of <var>z</var>.
-		After making it partway through this course though, I see that that&apos;s either common practice or it&apos;s something that comes from graphics libraries.
-		If the latter, the developers probably used <var>y</var> as the vertical axis to make the code easier to understand, which I appreciate.
-		Eventually, I&apos;d love to join the development team myself, and having easier to understand code will be nice.
-		I&apos;ve got to learn the language first though.
-		The source code is fully available for me to read and tinker with, but it&apos;s written in C++, a language I&apos;ve never actually worked with before.
+		The site also recommends the use of <abbr title="Hypertext Markup Language">HTML</abbr> special characters instead of images when feasible, then gives some examples such as Unicode stars in place of a star image for ratings.
+		That&apos;s a pretty good idea.
+		If you&apos;re using <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>5 instead of <abbr title="Hypertext Markup Language">HTML</abbr>5, you can make the page size even smaller by including the Unicode characters directly in the code.
+		It might work with <abbr title="Hypertext Markup Language">HTML</abbr> as well - I&apos;m not sure, as I avoid using <abbr title="Hypertext Markup Language">HTML</abbr> like the plague - but it definitely works in <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>, and is even the recommended way of using special characters.
 	</p>
 	<p>
-		The term &quot;octant&quot; was new to me.
-		I would have assumed the eight sections to be called &quot;sectors&quot; or something, but it makes more sense that if the <abbr title="two-dimensional">2D</abbr> term is four-specific, the <abbr title="three-dimensional">3D</abbr> equivalent would be eight-specific.
+		The page also briefly mentions that using the <code>em</code> unit is better than using the <code>px</code> unit, justifying this by saying that <code>em</code> responds to user font settings.
+		Another good reason for this is that <code>px</code> refers to pixels, and you don&apos;t know how <strong>*densely packed*</strong> the pixels on a user&apos;s screen are.
+		A pixel-based measurement on a low-resolution screen may make things render well for one user, while making things completely unreadable for another user on a high-resolution screen.
+		Likewise, a measurement taken on a high-resolution screen might make the page way too huge to display well on a low-resolution screen.
+		I think I read that some devices use this measurement to refer to actual pixels, while others use it to refer to a unit of measurement that is about the size of what a common pixel size is (to avoid screen-resolution-specific rendering), regardless of the actual pixels on the device.
+		<code>px</code> really doesn&apos;t give you a good tool to work with when trying to get anything done.
+		<code>em</code> is more flexible in almost every way.
 	</p>
 	<p>
-		Dot products are weird.
-		I had to go back and read what the computation was supposed to yield after reading the equation itself before I could understand the equation, as for some reason, I thought they were supposed to produce a point in space in which the two vectors cross.
-		Instead, you multiply the components of each vector with the corresponding components of the other vector (<var>x</var> from one with <var>x</var> from the other, et cetera), the add the resulting values together.
-		What could that result possibly tell us though that could be useful to us?
-		The textbook next talked about how the dot product is zero when the vectors intersect at a 90° angle, positive if they form an acute angle, and negative if they form an obtuse angle.
-		That seems useful at first, but before even talking about that, the textbook first tells us that for parallel vectors, the dot product is either positive or negative depending on whether the vectors are pointing in the same or opposite directions.
-		That means we can&apos;t use the dot product to determine angle properties, as when there is no angle formed, because the sign of the dot product doesn&apos;t mean the same thing all the time.
-		My understanding is that the dot product will never be zero for parallel vectors, so we can still properly detect right angles, but otherwise, I&apos;m not sure how a dot product helps us.
-		At least the dot product, combined with the lengths of the vectors, can be used to compute the angle formed.
-		angle measures are often useful to know.
+		As for the Internet Explorer conditional tags the page recommends, those are more browser-specific hackery, and should therefore be avoided.
+		The same goes for the vendor prefixes the page mentions a bit later.
+		As the Mozilla article said, avoid the use of vendor prefixes.
 	</p>
 	<p>
-		It was stated that reflection- and ricochet-calculation require knowing the normal vector of the plane the light/object hit, but I don&apos;t really get why that is.
-		It seems that another valid way to calculate the new trajectory would be to take the line segment running through the plane that represents where a plane would intersect that plane while also containing the full path of the light/object.
-		From there, you&apos;d take 180° and subtract the initial impact angle.
-		It&apos;s as easy to picture why this works as it is to picture why reflecting over the normal vector works, though it might be easier to calculate using the normal vector method.
-		I&apos;m not really sure.
-		Either way though, knowing the normal vector doesn&apos;t see to be strictly necessary as the book seems to imply it is.
-	</p>
-	<p>
-		Previously, the textbook talked about how graphics libraries represent transformations using matrices.
-		I was curious as to how rotations could possibly be handled that way.
-		It turns out it&apos;s not overly complicated.
-		The trick is to insert sine and cosine values into the matrix you multiply by.
-		I can&apos;t say I understand why sine and cosine behave the way they do, but their wave-like form comes in handy a lot of times, and this would be one of those times.
-		I doubt I&apos;ll be able to remember which cells need which functions and which ones need to be made negative, but the graphics library handles that mostly on its own, if I&apos;m not mistaken.
-	</p>
-	<p>
-		The book shows a diagram with a &quot;point G&quot;, which lies in a hole crated in a convex polygon by the overlapping edges that contain it.
-		The book says that this point is intuitively inside the polygon, but is outside because of the ray-based definition of being &quot;inside&quot; that the book gives.
-		Personally, I find it intuitive to think the point is outside the polygon.
-		I mean, try making such a polygon out of some real material, such as wood.
-		Or even just try shading in the polygon using an image editor.
-		That spot is a hole.
-		It doesn&apos;t get shaded.
-		There&apos;s no wood there, if you build it out of wood.
-		The polygon <strong>*surrounds*</strong> that point, but it doesn&apos;t <strong>*include*</strong> that point.
-		I guess that&apos;s the difference though in how I consider a point to be &quot;in&quot; a polygon.
-		I think of that as meaning that the point is a part of the polygon; the polygon being <strong>*around*</strong> the point isn&apos;t enough.
-		I think my vision of this is compatible with the book&apos;s ray-centric definition, too.
-	</p>
-	<p>
-		I think why many people might find this definition unintuitive is because this sort of polygon violates their internal model of what a polygon is.
-		Quite frankly, having a polygon&apos;s edges cross over one another is ... weird, to say the least.
-		And because of that, I think people have difficulty visualising it.
-		As a result, they instead visualise a different polygon than the one that&apos;s actually presented, with the cross-over edges removed.
-		Essentially, they fill in the hole in the middle of the polygon in their mind.
-		Because of that, there is no hole to them, so any point occupying the spot the hole would be is seen as not being in a hole at all, but actually within the bounds of the polygon.
-	</p>
-	<p>
-		The section on collision detection was enlightening.
-		Bounding boxes aren&apos;t a new concept to me; they&apos;re very similar to actual collision boxes.
-		What I found interesting though was the idea of using these bounding boxes not to detect collision, but instead <strong>*rule out*</strong> collision before performing the actual collision detection.
-		That way, the computationally-expensive tests usually don&apos;t need to be performed.
-		I&apos;m also surprised to see collision detection presented in a book about graphics though.
-		It doesn&apos;t seem to be a graphics-related concept, mostly.
-		I guess it makes sense though.
-		If objects collide, you need to account for that when deciding where to draw them.
-	</p>
-	<p>
-		The polar coordinate system is something I&apos;ve learned about, but something I usually write off.
-		It seems like such a bizarre system.
-		It&apos;s useful in a few edge cases though.
-		I forget exactly what those edge cases are, but I think I remember they come up when dealing with trigonometric functions such as sine, cosine, and tangent.
-		Spherical coordinates seem like a natural extension of polar coordinates in <abbr title="three-dimensional">3D</abbr> space, so again, they don&apos;t seem like the best option in most cased, but might have some use for edge cases.
-		Cylindrical coordinates are even stranger to me, as one of the dimensions is measured normally, while the  other two are measured according to a polar coordinate system.
-		I guess the book&apos;s example of using them for objects that can spin but must always remain upright makes sense though.
-		You still need to translate these coordinates into proper Cartesian coordinates at some point, but it&apos;s often the case that abstracting away the real system in place (for example, Cartesian coordinates) in favour of some other system (cylindrical coordinates) can make life easier for the programmer.
-	</p>
-	<p>
-		When I saw the discussion assignment this week, I rejoiced.
-		As I demonstrated last week, I&apos;m completely terrible when it comes to building <abbr title="three-dimensional">3D</abbr> models and such, because I have no experience with them yet.
-		But alpha channels?
-		Those relate to <abbr title="two-dimensional">2D</abbr> graphics.
-		I have pretty much no artistic talent even in <abbr title="two-dimensional">2D</abbr>, but I still have years of practice with <abbr title="two-dimensional">2D</abbr> graphics, so I&apos;m well aware of a lot of the mechanics, such as alpha channels.
-		One of the big struggles for me is my tight schedule.
-		My first goal each week is to post at least once in the discussion forum for one of my courses each day.
-		Due to how the discussion boards at this school are set up, you can only respond to other students after posting your own initial post, meaning that on day zero, I&apos;ve got to do my best to cobble together an initial post from whatever reading material I manage to get through by the end of the day, and the next day, if someone else hasn&apos;t posted in that same course&apos;s discussion board, I&apos;ve got to repeat the process for my other course to submit my initial discussion post there.
-		It&apos;s a tight schedule, and it stresses me out.
-		But this week, I didn&apos;t have to madly scramble on the first day this week.
-		I could lean on my prior knowledge, and use that to find exactly the sources I needed to back up my thoughts without having to learn the concept all in one day.
-		I still read much of the material before posting because there was time to do that, but I didn&apos;t have to struggle through it as I have in past units.
-		It was covering things I already understood very well.
-	</p>
-	<p>
-		One of the quirks of the system seems to be that once you specify a colour to draw in, that colour is permanent and applied to all your other objects you draw later.
-		At least, until you manually set a new colour.
-		You don&apos;t set colours per-object, but instead set the colour for all future objects, then change it when needed.
-		This is no doubt because graphics libraries use global variables instead of parameters.
-		Setting the colour probably sets some global variable (or variables), and that value stays set until you set it to some other value.
-		I&apos;ve got to wonder if this even applies to WebGL though, which doesn&apos;t seem to use the same setup as the graphics libraries discussed in this book.
-	</p>
-	<p>
-		It&apos;s important to note that you have to define the appearance node before the geometry node.
-		The appearance node defines some things about how the object will be rendered, such as its colour.
-	</p>
-	<p>
-		The section on considering the <abbr title="red-green-blue">RGB</abbr> colour space to be a cube was interesting.
-		Especially when trying to build a good palette, I&apos;ve often thought about the colour space as a cube.
-		However, I&apos;d never heard of anyone else doing that.
-		It seems I&apos;m not the only one that thinks that way though.
-		The difference between my cube an the book&apos;s cube though is that I think in discrete values.
-		My cube goes from <code>0</code> to <code>255</code>, not from <code>0.0</code> to <code>1.0</code>.
-		It&apos;s likely that we&apos;re going to be working with colour fairly regularly, and I&apos;m going to need to convert back and forth between the colour representation I work best with and the colour representation the graphics library uses.
-		<del>The book makes the claim that you can see the full range of colours on the surface of the cube though, which as someone that has done a lot of planning using this cube, I can say is patently false.</del>
-		You only see a small fraction of the colours on the surface.
-		The only colours you see on the surface are ones in which one of the colour channels is set to full intensity or zero intensity.
-		As an extreme example, try to find grey on the surface.
-		You can&apos;t do it, as grey occupies the centre line diagonally through the core of the cube.
-		<ins>Oops, the book corrects itself a bit later, and admits that the interior of the cube also represents various colours.
-		An it even mentions the diagonal line of greys I just talked about.</ins>
-	</p>
-	<p>
-		I&apos;ve also thought about colours as an octahedron.
-		In this representation, each of the eight basic colours has a face, and that face is adjacent to the three faces that share two colour channel values with it.
-		It&apos;s not a useful representation though, as it only takes into account those eight colours.
-		There&apos;s no middle ground between them.
-		I&apos;ve often thought of colours in terms of shapes though.
-	</p>
-	<p>
-		The concept of luminance is interesting.
-		When the book first brought it up, I wrote it off, thinking that it wouldn&apos;t matter much.
-		We can&apos;t actually program in the luminance we want, at least not directly.
-		The colour channels are what we actually work with.
-		So they&apos;re what matters, right?
-		The book made an excellent point about colour blind people though.
-		Making images with different-enough luminance levels will help them interpret the image.
-		The formula for finding the luminance of a colour was also surprising.
-		<code>0.30*red + 0.59 * green + 0.11*blue</code> ...
-		The three colour channels don&apos;t contribute equally to the luminance like I thought they did.
-		I experimented in the <abbr title="GNU Image Manipulation Program">GIMP</abbr> a bit to see how it handles luminance-based greyscale conversion, and sure enough, perfect red, perfect green, and perfect blue don&apos;t get converted to the same shade of grey.
-		Green is by far the lightest, while blue is just a bit darker than red.
-		Weird.
-	</p>
-	<p>
-		The book claims the Hue-Saturation-Value colour-specification scheme to be more intuitive than <abbr title="red-green-blue">RGB</abbr>.
-		I&apos;m not seeing it though.
-		I agree that it can be difficult to find certain colours when using the <abbr title="red-green-blue">RGB</abbr> scheme.
-		Brown, for instance, is a colour I have difficulty specifying in <abbr title="red-green-blue">RGB</abbr> format.
-		However, the Hue-Saturation-Value format requires you to use a numeric representation of a hue.
-		What does that even mean?
-		Line, I understand what it actually means, but if I&apos;m looking for a greenish colour, what hue number do I use?
-		Green doesn&apos;t translate to a number in my mind.
-		However, specifying that I want my colour to have a high green channel intensity and a low red  and blue channel intensity is a very intuitive way to find green.
-		And other colours are often (though not always, such as is the case with brown for me) very easy as well.
-		I light blue for lining clouds with, for example, would have a high blue, a mostly-high green, and a high red that&apos;s not quite as high as the green channel.
-		That would give you a light blue colour with just a tad bit of cyan.
-		Perfect.
-		How do I even go about <strong>*starting*</strong> to find that colour in Hue-Saturation-Value space?
-		I can finish the job with the right saturation (low, but not too low) and value (high, but probably not too high), but those numbers don&apos;t get me anywhere without the hue number.
-	</p>
-	<p>
-		The Hue-Lightness-Saturation model is just as unintuitive to me as the Hue-Saturation-Value model.
-	</p>
-	<p>
-		The <abbr title="Cyan-Magenta-Yellow-Key">CMYK</abbr> model is familiar to me, and seems to me to be about as intuitive as the <abbr title="red-green-blue">RGB</abbr> model.
-		It&apos;s a subtractive model instead of an additive one, but it really does represent the same, cubic colour space that the <abbr title="red-green-blue">RGB</abbr> model uses.
-		You just measure from different places.
-		For example, instead of measuring how much red there is, you measure instead how much cyan there is.
-		Rend and cyan are opposites, so these two corresponding measures give you exactly-opposite values every time.
-	</p>
-	<p>
-		When the textbook mentioned that some systems don&apos;t allocate the same number of bits for each colour channel, it reminded me of the old eight-bit colour system.
-		Three bits were allocated to each red and green, but only two bits were allocated to blue.
-		Humans aren&apos;t as good at distinguishing levels of blue as we are levels of red and green, so it was thought that it was worth losing that extra bit of blue depth to get the colour into an eight-bit format.
-	</p>
-	<p>
-		Transparency in <abbr title="three-dimensional">3D</abbr> images is clearly very difficult.
-		Order of rendering matters, but in <abbr title="three-dimensional">3D</abbr> space, objects can intersect.
-		Their intersection marks the point at which which object needs to be rendered first for proper results switches.
-		You can&apos;t draw in both orders, so one side of the image will come out wrong.
-		However, I couldn&apos;t help but wonder if we could learn something from clipping planes here.
-		What if the plane of one object was used to clip the other object&apos;s plane, and instead of throwing one side out like we do with clipping planes, we saved both sides as separate planes?
-		We could then draw the side of the split plane that needs to go in back first, they draw the plane that was used to split the other plane, and finally draw the front part of the split plane.
-		Both planes would then be drawn in the correct order in all parts.
-		It gets even more complicated as you add more-complex meshes and a higher number of translucent objects, but I think the idea is sound.
-		The main issue, I think, would be that it&apos;d be computationally expensive.
-		It could be worth it in some cases though.
-		After writing about my solution, the next thing I read in teh textbook was pretty much the same thing, but with even more splitting.
-		Everything that intersects gets split.
-		It&apos;s probably easier to calculate that though, as you don&apos;t need to try to figure out which cuts are necessary ans which aren&apos;t.
-	</p>
-	<p>
-		The assignment instructions this week told us how to translate objects to other locations.
-		That would have been helpful information to have for last week&apos;s assignment.
-		I couldn&apos;t figure out how to do it.
-	</p>
-	<p>
-		Anyway, we were to take a cube, a sphere, or a torus knot and bounce it around in the viewport.
-		At first, I tried to use a sphere.
-		However, we were supposed to get the object to change colours each time in hit a wall, and I couldn&apos;t even set the initial colour.
-		It just had this odd rainbow-like gradient to it, and no matter what colour I tried to set, the same colours were present on the sphere.
-		So I made a cube.
-		But the cube looked like a square, as you see it dead-on.
-		I could fix that by rotating it, but we&apos;re not supposed to do that for this assignment.
-		So I went back and tried to debug the sphere some more.
-		What I discovered is that the <code>THREE.MeshNormalMaterial()</code> doesn&apos;t seem to want to change colours for me.
-		The <code>THREE.MeshBasicMaterial()</code> works just fine though.
-		However, it doesn&apos;t have any depth to it, so the object just looks like a circle, or rather, a polygon with many sides that approximates a circle.
-		<code>THREE.MeshLambertMaterial()</code> gave me something workable though; something that responded to my colour-setting code, but also had a concept of light and shadow.
-	</p>
-	<p>
-		Getting the sphere to bounce off the walls wasn&apos;t too hard.
-		I used global variables to set a &quot;direction&quot; the sphere would travel in each dimension, but the &quot;direction&quot; was actually a speed.
-		When the position of the sphere got too far, I set the speed to its own inverse, which made it travel in the opposite direction, but only along that particular axis, providing a ricochet effect as the sphere continued in the previous direction along the other two axes.
-		I also set a new colour at that point.
-		I thought about setting a random colour each time, but decided to instead use six of the eight basic colours, and have the colour switch to a specific one based on what wall the sphere bounced off of, giving each of the six walls its own sphere colour.
-		My problem was that I couldn&apos;t figure out how to properly change the maximum and minimum <code>x</code> and <code>y</code> bounds based on the <var>z</var> position.
-		The viewing space isn&apos;t a rectangular prism, so if I didn&apos;t account for the <code>z</code> value in the <var>x</var> and <var>y</var> bounds, the sphere would either bounce off of nothing when far away or clip into the wall when close to the camera.
-		It&apos;d help if I understood what the angle of the view was.
-	</p>
-	<p>
-		What I ended up doing was setting the sphere to the far back of where I&apos;d just sort of decided to place the back (invisible) wall, then moving the sphere around until I&apos;d gotten it into a corner, and recorded the position.
-		Then I did the same with the front wall.
-		Using those positions, I set up a linear equation that would return those two specific values, which then returned sensible values for the cases in between.
-		I think I was supposed to bounce the sphere off the clipping planes themselves, if I understood the assignment correctly, but I have no idea how to even <strong>*find*</strong> the clipping planes, let alone interact with them.
-		I think I was supposed to put together real collision detection, but instead, I only approximated it.
-		After setting all this up, I found the <var>VIEW_ANGLE</var> variable.
-		I think that&apos;s probably the angle I was looking for before, but somehow missed.
-		I&apos;m really terrible at this.
-	</p>
-	<p>
-		I never could find a good initial placement for the sphere that showed off the bouncing well.
-		It always tended to bounce around in a very obvious cycle.
-		I tried several values, but gave up and set the starting position to be random every time.
-		Once I&apos;d done that though, it occurred to me what the problem was: the viewport is square!
-		A square box with 45°-angled bounces (due to the velocity in all three dimensions - but most importantly, the <var>x</var> and <var>y</var> dimensions - being identical) isn&apos;t going to give good results.
-		I was about to try setting some different velocities, but decided to make those random as well, because why not?
-		My first attempt made the sphere speed around so quickly the graphics renderer couldn&apos;t keep up.
-		It was literally leaving after images in its path.
-		I didn&apos;t like the look of that, so I divided the random value by four.
-		I have no idea why, but I actually multiplied them by <code>0.25</code> instead of actual division at first.
-		It didn&apos;t even occur to me that I could use division until I wrote in my learning journal that I&apos;d divided the values.
-		I rewrote it using actual division, as it provided better clarity in the code.
-		I ended up dividing by eight instead of four later, as I seemed to be getting higher speeds and needed to dampen them further.
-		I think my machine had cleared out the WebGL stuff that was bogging it down (WebGL slows down my computer and makes it start overheating, but I set down the assignment for a while and closed the browser), so it was performing faster when I started working with WebGL again.
-	</p>
-	<p>
-		Also of note, when I reread the assignment to make sure I covered everything, I found that it said to modify the <var>x</var> and <var>y</var> values.
-		It said nothing about moving the object in the <var>z</var> direction.
-		That seems contradictory to its insistence a bit prior to that saying that we shouldn&apos;t animate in <abbr title="two-dimensional">2D</abbr>, but in <abbr title="three-dimensional">3D</abbr>.
-		This was actually supposed to be a <abbr title="two-dimensional">2D</abbr> animation though.
-		I&apos;d overcomplicated it.
-		There were a few strange bugs caused by <var>z</var>-direction movement I&apos;d had to figure out, not to mention that I&apos;d had to get the angled bounding walls to function correctly with a combination of guessing, checking, and a linear equation.
-		Whatever, though.
-		My actual animation came out slightly better for being able to move in all three dimensions, and the frustration of trying to figure out how to do that properly is something I won&apos;t have to struggle with as much should we do something similar in the future.
-	</p>
-	<p>
-		One of the questions on the quiz confused me for a bit.
-		It presented a rectangle and gave the coordinates of the opposing two vertices.
-		Obviously, by doing that, it gave us the coordinates of every vertex, as you just carry over the <var>x</var> value from the known vertex positioned the same horizontally but not vertically and the <var>y</var> value from the vertex positioned the same vertically but not horizontally.
-		However, the <var>y</var> values didn&apos;t make much sense.
-		The one closer to the top of the page had a higher value.
-		It took me a few seconds to realise I hadn&apos;t messed something up, and that the <var>y</var> values were just reversed.
-		The course material did mention that some systems count from the bottom instead of the top.
-	</p>
-	<p>
-		When grading this week, the first student&apos;s work I looked at wouldn&apos;t render.
-		I&apos;m not sure if that was a problem on my end or theirs.
-		The second student went above and beyond.
-		They implemented full keyboard controls for their square&apos;s motion.
-		I was thoroughly impressed.
-		The third student though said only to see their attached file, but didn&apos;t actually attach a file.
-		That was a shame.
-		I had to give them a zero, as they hadn&apos;t actually submitted any code, but it sounds like they did actually write it and intend to upload it.
+		When grading this week, the first student I graded only completed 73% of the Creating Project Sunshine lesson.
+		The percentage is provided right there on the page they screenshotted, so I&apos;m not sure how you could mess that up.
+		The instructions clearly said to go through the whole lesson.
+		It should have been an easy week, where everyone got full marks.
+		Seriously.
+		The third student I graded didn&apos;t even submit a screenshot, and instead submitted only a single full stop character.
+		Um.
+		What?
+		I really don&apos;t get why they submitted anything if they hadn&apos;t taken the screenshot, but if they were going to submit without the required screenshot, it seems like they&apos;d at least write up some affirmation that they&apos;d done the work or something.
+		But no, just a full stop.
 	</p>
 </section>
 <section id="Unit4">
 	<h2>Unit 4</h2>
-	<h3>Describe what you did.</h3>
 	<p>
-		...
+		As feedback for my <a href="https://y.st./en/coursework/CS4405/#Unit2">Unit 2 learning journal</a> submission, you said that I&apos;d mentioned my machine locking up on me.
+		I reread my entry, and I can&apos;t find where in there I even said that.
+		Do you have me mixed up with another student?
+		My machine has indeed been locking up in my <strong>*other*</strong> course, where we&apos;re using <code>three.js</code>, which is a huge resource hog, but nothing we&apos;ve done in this course has done anything of the sort.
+		But also, you recommended checking to see if my machine meets the minimum system requirements.
+		I looked up the <a href="https://www.uopeople.edu/programs/ed/degrees/master-of-education-med/technology-requirements/">university&apos;s system requirements page</a>, and found that this school doesn&apos;t have any.
+		None, aside from wanting the latest version of one of several browsers installed.
+		The page says that even a mobile device will suffice, and my laptop runs a lot faster than my mobile ever did.
+		But also, this is the only machine that can get on the local Wi-Fi network.
+		It&apos;s <abbr title="media access control">MAC</abbr>-address-whitelisted, so if I replace my machine, I&apos;m blocked from the Internet.
+		Which is too bad for me, because I have a brand new laptop that I can&apos;t use for school because it can&apos;t get online when I&apos;m at home, and have to use my really old one for everything that I do, for now.
+		And before you ask, it&apos;s not my router, so it&apos;s not my whitelist.
+		I can&apos;t modify it.
 	</p>
-	<h3>Describe your reactions to what you did.</h3>
 	<p>
-		...
+		This week&apos;s reading material was as follows:
 	</p>
-	<h3>Describe any feedback you received or any specific interactions you had.</h3>
+	<ul>
+		<li>
+			<a href="https://docs.oracle.com/javase/tutorial/java/index.html">Trail: Learning the Java Language (The Java™ Tutorials)</a>
+		</li>
+		<li>
+			<a href="https://tutorialspoint.com/java/java_overview.htm">Java Overview</a>
+		</li>
+	</ul>
 	<p>
-		...
+		This week, it seems we&apos;re focussing on learning Java.
+		I&apos;ve already worked with Java in a few other courses here at this school though.
+		I certainly need more practice, but I&apos;ve got the basic things covered by the reading assignment down already.
+		I did see a few interesting things in the reading material though.
 	</p>
-	<h3>Describe your feelings and attitudes.</h3>
 	<p>
-		...
+		The overview said that Java code is platform-independent and not compiled for a particular machine.
+		It&apos;s certainly platform-independent, but it&apos;s compiled for a very specific machine every time: the Java Virtual Machine!
+		This machine doesn&apos;t exist.
+		No hardware has ever been built that actually implements the way this machine is defined to work, as far as I know.
+		But it&apos;s still compilation for a specific machine none the less.
+		The Java Runtime is basically just an emulator that runs Java bytecode on machines and systems not designed to run it.
+		Of course, as an emulator, it implements <abbr title="application programming interface">API</abbr>s not necessarily available on the host system using the host system&apos;s own <abbr title="application programming interface">API</abbr>s, which is where the cross-platform compatibility comes in.
+		An emulator built for each of two systems will perform the same actions on those two systems, and the emulated system&apos;s <abbr title="application programming interface">API</abbr> calls are simply implemented in the <abbr title="application programming interface">API</abbr> calls of the host systems.
+		It was also claimed that Java is interpreted, which again, isn&apos;t true.
+		It&apos;s a compiled language.
+		If you emulate a system, you can&apos;t claim that compiled code that runs on your emulated system is an interpreted language.
+		It&apos;s still a compiled language.
 	</p>
-	<h3>Describe what you learned.</h3>
 	<p>
-		...
+		As a side note, it actually took me quite a while before I understood where Java fits when it comes to being a compiled or interpreted language.
+		It gets compiled into byte code, which I was told wasn&apos;t an executable, and needs to be run on the Java runtime, like you&apos;d run a script in the interpreter of an interpreted language.
+		How Java bytecode actually works isn&apos;t discussed all that often; it just gets said that you compile it, but you still need to run it on the runtime.
 	</p>
-	<h3>What surprised me or caused me to wonder?</h3>
 	<p>
-		...
+		It was claimed that Java is designed to be easy to learn.
+		If that were true, the feature known in Java as method overloading wouldn&apos;t be present.
+		This feature allows you to give multiple methods identical names so long as the signatures differ (that is, the combination of the method name, the number of parameters the method takes, and the types of those parameters) so the compiler can properly distinguish which method should be called when you call a method.
+		This seems fine until you look at the mess it causes.
+		If you make a mistake when you pass arguments to a method, the compiler will complain that you tried to call an undefined method, not that you passed in values with the wrong types.
+		This means that if you&apos;re new to the language, you try to find typos in your method names (both where you declared the method and where you called it) and when you can&apos;t find any, spend hours trying trying to debug why a method that is clearly defined before being called somehow isn&apos;t defined at the point you called it.
+		There&apos;s no valid reason for this.
+		If you have multiple methods that do similar things, but take different argument types, just give them slightly-different names.
+		An excellent example of this is OpenGL.
+		In my other course, I&apos;m learning about the OpenGL <abbr title="application programming interface">API</abbr>, which has several functions that do essensially the same thing, but taking different argument types.
+		One takes a float and another takes an integer, for example.
+		To distinguish, the argument types are referenced in the names of the functions, which are otherwise named identically.
+		That&apos;s all it takes.
+		There&apos;s no need to <strong>*ever*</strong> name multiple methods the same thing, with the exception of (arguably) the constructor methods.
+		Separate names makes the <abbr title="application programming interface">API</abbr> more clear and prevents such misleading compile error messages.
 	</p>
-	<h3>What happened that felt particularly challenging? Why was it challenging to me?</h3>
 	<p>
-		...
+		For that matter, if Java is designed to be easy to learn, why does it use bizarre terminology that doesn&apos;t match what other languages use?
+		As a quick example, in just about every language, an argument is a value passed to a function or method, while a parameter is a placeholder variable used in the function/method signature and within the body of the function/method that takes on a value supplied as an argument.
+		In Java though, parameters and arguments are <strong>*both*</strong> called &quot;parameters&quot;, and you have to use a qualifier to get across what you mean.
+		A &quot;formal parameter&quot; is a parameter and an &quot;actual parameter&quot; is an argument.
+		If Java was intended to be easy to learn, its designer utterly failed in that mission in several key ways.
 	</p>
-	<h3>What skills and knowledge do I recognize that I am gaining?</h3>
 	<p>
-		...
+		The overview likewise claimed that in Java, you can develop virus-free systems.
+		I <strong>*highly*</strong> doubt that.
+		Nothing that can run arbitrary code (as nearly every useful system can) can be completely impervious to viruses.
+		The simple fact is that to a computer, there&apos;s no such thing as viruses.
+		There is only data and data that can be executed as software.
+		A virus does something that the user doesn&apos;t want, but it usually does it through the system&apos;s intended <abbr title="application programming interface">API</abbr>.
+		Sure, there are vulnerabilities that could be exploited, but software doesn&apos;t need to exploit a vulnerability to be considered a virus, nor does exploiting a vulnerability mean the offending code is a virus.
+		There&apos;s no distinguishing factor in the code itself that determines the code to be a virus.
+		You can&apos;t set a system - the Java Virtual Machine included - to run non-viruses while not running viruses.
+		Reality doesn&apos;t work that way.
 	</p>
-	<h3>What am I realizing about myself as a learner?</h3>
 	<p>
-		...
+		The section on Java&apos;s free software status was interesting.
+		I was aware that there was a free software version of Java, known as OpenJDK, and a proprietary version, just called Java (I think? I don&apos;t pay much attention to the proprietary version.), but I wasn&apos;t really sure what the difference was.
+		OpenJDK is developed by Oracle, who also develops the proprietary version, and I wasn&apos;t sure what the point was.
+		OpenJDK is supposedly not gimped like some free software versions written by companies that want to get you hooked enough to buy into their proprietary version, so why have the proprietary version?
+		It seems this stems from when Sun held the copyrights to most of Java though.
+		They made most of it free software, but didn&apos;t hold the copyrights to part of it and couldn&apos;t freely license it.
+		I think those parts have been replaced with free software components now though.
 	</p>
-	<h3>In what ways am I able to apply the ideas and concepts gained to my own experience?</h3>
 	<p>
-		
+		This was a slow week in this course, my other course is going nowhere so I&apos;ve quit giving it the level of attention I&apos;d previously been giving it, and I had an extra day off from work this week, so I got to work and finished the third-party lessons we were told would be due in Unit 6.
+		When I tried to log into the site, it hit me with a birth date entry wall, claiming that the authorities in my region require me to enter my date of birth to comply with privacy laws.
+		Having to enter personal information is the exact opposite of privacy though.
+		This isn&apos;t a privacy law, that&apos;s for sure.
+		If any law requires this, it is by definition not a privacy law, even if your country tries to lie and claim it is.
+		I tried resetting my connection once to access the site from another country, but the site still claimed authorities in my region were requiring this.
+		Because of that, I&apos;m pretty sure it was a lie, and they were just being nosey.
+		I should have reset my <abbr title="Internet Protocol">IP</abbr> address a few more times and tried a few more countries to be sure, but I just wasn&apos;t feeling it that day.
+		So I told them I was born on the date of the Unix Epoch: 1970-01-01.
+		It&apos;s a date any tech-minded person should know, and it definitely doesn&apos;t tie back to me personally, so I can keep my privacy.
+		It&apos;s really none of their business.
+		They can have my name, if they want it, and they already have my email address.
+		But that&apos;s the extent of the personal information I&apos;ll give them.
+	</p>
+	<p>
+		After completing the video lessons, my general impression of mobile development is that Android seems to be an interesting platform to develop on, but it&apos;s also full of easy pitfalls and subtle gotchas.
+		And with all the problems, I&apos;ve got to wonder if the platform&apos;s worth my time.
+		I mean, learning how the platform works is great, and definitely worth my time, but is actually developing applications on it worth my time?
+		Another thing to keep in mind is that Google refuses to allow me to register an account.
+		That means I can&apos;t submit any application I release to Google Play.
+		Obviously, I would want to submit my application to better distribution systems, such as F-Droid, but submitting to F-Droid doesn&apos;t mean not also submitting to Google Play.
+		The two aren&apos;t mutually exclusive.
+		And without submitting to Google Play, the number of people that&apos;d even find my application, whether they decide to install it or not, will be severely limited.
+		Developing for the desktop not only seems easier, but also seems more likely to build a user base.
+	</p>
+	<p>
+		It seems that Android skips zero when indexing menu items, so when you choose your menu item order, you start at one.
+		I&apos;m almost certainly going to forget that in the future.
+		I wonder how difficult that&apos;ll be to debug.
+	</p>
+	<p>
+		The course says that <abbr title="Uniform Resource Locator">URL</abbr>s are a type of <abbr title="Uniform Resource Identifier">URI</abbr>, but doesn&apos;t explain what that means, so I figured I&apos;d talk about that here.
+		The <abbr title="Internet Engineering Task Force">IETF</abbr> used to provide two separate terms for strings in this format.
+		There were <abbr title="Uniform Resource Locator">URL</abbr>s, which provide information on where a resource can be found but not what that resource is, and there were <abbr title="Uniform Resource Name">URN</abbr>s, which specify a name for a resource, but give no indication as to where that resource can actually be acquired from.
+		Later, the <abbr title="Internet Engineering Task Force">IETF</abbr> realised that these strings were very much the same in many regards, and deprecated both terms.
+		Now, the unified term, <abbr title="Uniform Resource Identifier">URI</abbr>, is preferred.
+		<abbr title="Uniform Resource Identifier">URI</abbr>s and <abbr title="Uniform Resource Locator">URL</abbr>s still exist, but they&apos;re all called <abbr title="Uniform Resource Identifier">URI</abbr>s.
+		Use of the deprecated terms, <abbr title="Uniform Resource Locator">URL</abbr> and <abbr title="Uniform Resource Name">URN</abbr> are discouraged, but may legacy <abbr title="application programming interface">API</abbr>s such as Java&apos;s still reference the older terms, and many people simply don&apos;t know the term <abbr title="Uniform Resource Identifier">URI</abbr> and continue using the term <abbr title="Uniform Resource Locator">URL</abbr>.
+		From the looks of it, the Android-specific parts of the <abbr title="application programming interface">API</abbr> use the correct term, <abbr title="Uniform Resource Identifier">URI</abbr>, but the parts of the <abbr title="application programming interface">API</abbr> inherited from Java use the legacy term <abbr title="Uniform Resource Locator">URL</abbr>, which is where the confusion comes in.
+		I think Google made the right call in setting the <abbr title="application programming interface">API</abbr> up this way.
+		Developers familiar with Java still have their knowledge of Java method names to make use of, not to mention the wealth of information on Java on the Internet, but Android isn&apos;t introducing new <abbr title="application programming interface">API</abbr> methods that use the legacy name.
+	</p>
+	<p>
+		A bit later, Google makes the claim that if there&apos;s an authority component in a <abbr title="Uniform Resource Identifier">URI</abbr>, there must be a slash between the path and the authority.
+		I know it&apos;s a bit of nitpicking, but strictly speaking, this is actually not true, and there isn&apos;t allowed to be anything between the authority and the path.
+		Rather, the path must either be an empty string or begin with a slash.
+		This makes a difference when parsing <abbr title="Uniform Resource Identifier">URI</abbr>s.
+		The difference is that the slash is actually <strong>*a part of*</strong> the path an not a delimiter between the path and the authority.
+		Google also makes the claim that the query component has no required format, which I guess is partly true, but there are some limitations.
+		Firstly, only certain characters are even allowed in query components.
+		And secondly, the usual <abbr title="Uniform Resource Identifier">URI</abbr> encoding using the percent character is valid, meaning that while percent signs are allowed, they&apos;re only allowed when followed by two hexadecimal digits.
+		(As a side note, I&apos;ve done <strong>*way*</strong> too much reading of <abbr title="Uniform Resource Identifier">URI</abbr>-related <abbr title="Request for Comments">RFC</abbr>s.)
+	</p>
+	<p>
+		Hilariously, one of the quiz questions about <abbr title="Uniform Resource Identifier">URI</abbr>s doesn&apos;t allow you to select the correct answer.
+		It asks what the query component is in the <abbr title="Uniform Resource Identifier">URI</abbr> <code>geo:0,0?q=Montreal,Canada</code>.
+		The query component is the part of the <abbr title="Uniform Resource Identifier">URI</abbr> after the first question mark and before the pound sign.
+		Only one pound sign is allowed in a <abbr title="Uniform Resource Identifier">URI</abbr>, and if the pound sign comes before the first question mark, or if there is no question mark, there is no query component.
+		With that in mind, the query component is obviously <code>q=Montreal,Canada</code>, but that option wasn&apos;t available.
+		Instead, the options Google gave for what the query component might be were <code>geo:0</code>, <code>0,0?</code>, <code>Montreal,Canada</code>, <code>q=Montreal</code>, and <code>0?q=</code>.
+	</p>
+	<p>
+		I found it surprising that Android uses <abbr title="Unicode Transformation Format">UTF</abbr>-16 for character encoding.
+		That means that every character takes at least two bytes to store.
+		That eliminates the compression of characters in the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> range to one byte, but also reduces the number of characters that can be stored in less than three bytes.
+		Of course, if extra space is needed to specify a character, <abbr title="Unicode Transformation Format">UTF</abbr>-16 has to jump up to four-byte characters.
+		You don&apos;t get to use three-byte characters like you do in <abbr title="Unicode Transformation Format">UTF</abbr>-8.
+		With that in mind, using <abbr title="Unicode Transformation Format">UTF</abbr>-16 was an interesting choice, but it might be better for supporting languages that use upper ranges of characters.
+		Or maybe Google did it for the emoticons.
+		Google does some goofy things at times, so I wouldn&apos;t put that past them.
+	</p>
+	<p>
+		I knew that newer versions of Android ask the user before allowing each application to use permissions.
+		In that way, even if an application requests a certain permission that it doesn&apos;t need, you can install it and simply deny that permission.
+		However, what I didn&apos;t know is that Android only asks the user about permissions Google thinks are sensitive.
+		In other words, you can&apos;t simply deny whatever permissions you want to.
+		You can only deny permissions that are on the list of ones Google thinks you should be concerned with.
+		That&apos;s a bit of a let-down.
+	</p>
+	<p>
+		One of the lessons made the claim that the &quot;save&quot; button is a relic from a bygone era, which I can kind of get behind as far as control + &quot;s&quot; is a better option, but that doesn&apos;t fit the context of what they were saying.
+		They said that a good application should do what the user wants without them having to ask for it.
+		In a great many cases, you do <strong>*not*</strong> want your application automatically saving your partly-edited files on you!
+		You can leave your files in a broken state, not to mention that you might be trying some things out and end up wanting to discard your changes.
+		There are some cases in which automatic saving makes sense, but these are contexts in which a &quot;save&quot; option was never introduced in the first place.
+		The option to manually save your work (which comes with the equally-important option to <strong>*not*</strong> save your work) is in no way a legacy feature.
+		It&apos;s still a vital functionality in many workflows, including my own.
+	</p>
+	<p>
+		It seems that several methods in the Android <abbr title="application programming interface">API</abbr> have the name <code>TextView.setText()</code>.
+		As I mentioned previously, this sort of behaviour leads to errors.
+		Google brought up another error I hadn&apos;t thought of: the wrong method might get called when you pass in the wrong arguments.
+		In the case mentioned, they wanted to call the function that takes a string argument, but if not careful, would have instead called the function by that name that takes an integer argument.
+		As Google put it, in the best case, the wrong text would be displayed, as the integer used as an input would provide valid output that was wrong for the situation.
+		In the worst case, the integer wouldn&apos;t be valid input and would crash the application.
+		These would both be runtime errors, and not caught by the compiler.
+		On the other hand, if these methods each had a unique name, passing an integer into the one that requires a string as input would cause a compile-time error, and the code could be fixed right away, with no risk of accidentally letting that bug slip into the released version.
+		Assuming Java disallowed multiple methods sharing a name and could therefore generate proper error messages, you&apos;d even get an error message telling you you&apos;d used the incorrect argument type, and could easily see the problem and fix it in your code.
+		This shows the problem in the Java language&apos;s decision to allow multiple methods to share a name, but also shows a problem in the Android <abbr title="application programming interface">API</abbr> used by taking advantage of that noxious Java feature.
+		Hilariously, Google soon says that type safety is great to have, and type safety is exactly something you don&apos;t get when multiple methods can share a name.
+		Method overloading makes typing issues problematic, as Java can&apos;t detect that you used the wrong type of argument, and instead thinks you intended to call an entirely different method with an entirely different function body.
+		Method overloading <strong>*takes away*</strong> a good portion of your type safety, as you not only don&apos;t get assurance that your variable is of the right type, but also don&apos;t even get assurance that the right method is even being called.
+	</p>
+	<p>
+		I find it incredibly bizarre that Android ends processes and restarts them when you change the screen orientation.
+		I&apos;m sure there&apos;s some good reason for this behaviour, though the videos certainly didn&apos;t tell what it was.
+		They tried to justify it as being because there are multiple possible screen configurations, so when those change, you&apos;ve got to kill the process and restart, but that doesn&apos;t actually explain anything.
+		I mean, look at desktop applications.
+		You can change your screen resolution or orientation on your desktop machine without killing any of your visible processes, even though the case of changing these settings on a desktop are <strong>*far*</strong> less common on a desktop machine.
+		Somehow, desktop machines are doing better than mobiles for a use case that mobiles deal with daily while desktops deal with once in a blue moon.
+		And to top it off, the main issue with screen orientation on a mobile seems to be that processes (the ones referred to as &quot;activities&quot; on Android, I mean) are full screen.
+		That means that changing the orientation of the screen changes the window shape, or rather, the shape of the equivalent to a window.
+		That means that the problem is similar to when I change the size of my browser window.
+		Yet somehow, Firefox handles this change in dimensions just fine without needing to restart.
+	</p>
+	<p>
+		Room seems like a complicated way to access a database.
+		Supposedly, it&apos;s supposed to reduce the amount of boilerplate code you need to write, if I understand correctly.
+		However, you seem to need to implement all the tables and rows as objects and bind those to the database, which is confusing to figure out and means writing code you otherwise wouldn&apos;t need.
+		I guess you get out of writing boilerplate code, but in exchange, you write other code, so you&apos;re still needing to write a bunch of code, and the code you write isn&apos;t as easy to follow.
+		I imagine once you get familiar with Room more, Room-based code will be less confusing, but you&apos;re still learning to use this new system just to change what kind of code you&apos;re writing, not get out of writing as much code.
+		I don&apos;t see what you get out of that.
+	</p>
+	<p>
+		The videos justified putting a simple counter in a background thread on the grounds that you might also want to make a network connection to send data on your drinking habits to a third party that keeps track of all your health-related data.
+		Wow.
+		Creepy.
+		My mother once tried to give me a wristband that keeps track of heart rate and steps taken and sends it to a third party for tracking through one&apos;s mobile.
+		It was completely incompatible with my device and there was no interface to see this data without uploading to the creepy tracking server, so the thing was completely useless to me and I&apos;m not sure why she bought it for me.
+		Ignoring that though, even if the thing <strong>*was*</strong> compatible with my device, there&apos;s no way I would have used the thing.
+		It&apos;s none of anyone&apos;s business but my own, and there was absolutely no reason whatsoever to give this information to some company that&apos;s tracking the health data of thousands of people.
+		Who even knows what they&apos;re using all this data for?
+		Most companies have some ulterior motive for wanting to store personal data from users.
+		And with the application it communicates through being proprietary, you can&apos;t even check the source code to see what else the application is doing on your device.
+		It&apos;s ridiculously shady, but what&apos;s truly ridiculous is that most users are so oblivious to how shady it is.
+	</p>
+	<p>
+		Then again though, the water-reminder application the videos walked through the building of was completely ridiculous anyway.
+		There is absolutely no scientific evidence that it&apos;s a good idea to drink water every fifteen minutes like this application reminds you to do, and the medical consensus, contrary to popular myth, is that your body will notify you when it needs water through feelings of thirst, and that if you drink when thirsty, you&apos;ll be just fine.
+		We evolved to have thirst for a reason.
+		As this application is, as the videos put it, just a toy application used to teach some core concepts, it&apos;s fine for its premise to be nonsensical, but while we&apos;re on the topic of how it&apos;s not a good idea to send your health information to third parties, I might as well point out that the entire application idea is just as flawed as the component with the outright dangerous mindset.
+	</p>
+	<p>
+		The videos showed us how to compare versions using the goofy names for Android versions that I recommend against using.
+		Apparently, the versions are assigned integers that are given named constants for ease.
+		This only provides ease though if you buy into the obnoxious version names instead of using proper version numbers.
+		I have to wonder if there&apos;s an easy way to compare the version of Android on a user&apos;s device with other versions using version numbers too.
+		If not, you&apos;ve got to hard-code the version-identification numbers into your application after experimenting to find out what those integers are, which is, to be honest, an ugly hack.
+		It&apos;s not preferable.
+		(The other option, of course, is to buy into the obnoxious version names, which is an unacceptable solution.
+		Even the hacky hard-coded version numbers would be preferable to that, though should definitely be given comments in the code to explain what the integers mean.
+		It would probably even be a good idea to set some constants in your application to refer to the integers for further clarity.
+		And to be clear, using version names instead of version numbers is quite unclear, so again, using the version names instead is a very bad idea.)
+	</p>
+	<p>
+		It seems that using a <code>FirebaseJobDispatcher</code> requires using a <code>GooglePlayDriver</code>, and the latter of the two is a part of Google Play Services, which itself is a part of Google Apps.
+		For me, this means I should avoid using these classes, as they require proprietary code to function.
+		If I were to use these classes in my applications, I wouldn&apos;t even be able to run them on my own device, which is free of proprietary components.
+		For other people that don&apos;t mind non-free dependencies, such as people writing proprietary applications themselves, it&apos;s still worth noting that these classes are going to make it harder to support as many devices.
+		For example, Fire OS is a fork of Android used by Amazon devices, such as the Kindle.
+		It doesn&apos;t have Google Apps installed, but does have much of the same <abbr title="application programming interface">API</abbr> as Android.
+		Using these classes would make your application not compatible with Fire OS devices.
+	</p>
+	<p>
+		Constraint layouts seem pretty nice.
+		You can do a lot with them, while still having your layout remain flexible enough to handle various screen sizes.
+	</p>
+	<p>
+		Google says that it&apos;s easy to make your application accessible and convertible to other languages as long as you&apos;re mindful about it.
+		Honestly, this applies so much to webpages too.
+		However, so many Web developers ignore these sorts of things.
+		On a website, you might not have the time to translate all the text to several other languages, as there&apos;s so much more text on a website than there is in an application, not to mention that it&apos;s in paragraph form, so you can&apos;t simply translate short phrases, and have to worry about grammar.
+		There&apos;s absolutely no excuse for failing to make webpages accessible though, and yet so many Web developers fail so hard in that regard.
+	</p>
+	<p>
+		Google says you should automatically transfer settings across devices, so the same settings are available on all of a user&apos;s devices.
+		If you do that to me though, I&apos;ll get creeped out that one of my devices is using settings I never gave that particular device, realise you must be tracking me across devices, and uninstall your application from all my devices.
+		For some users, tracking them across devices might be a welcome experience, but it certainly isn&apos;t a welcome experience for all of us.
+	</p>
+	<p>
+		When Google brought up different pixel densities in the context of images used in an application, I thought they were going to recommend <abbr title="Scalable Vector Graphics">SVG</abbr> images, as they&apos;d brought those up before.
+		Instead, they recommended including several sizes of image in your application and coding the application to choose the right one for the right screen resolution.
+		I have to wonder what the advantage of that is; it seems like extra work for no gain.
+		As they mentioned before, Android does support <abbr title="Scalable Vector Graphics">SVG</abbr> files, and if you use one of those instead of raster graphics, only one image file is needed.
+		Vector graphics scale cleanly, so there&apos;s no issue of scaled images being distorted.
+		I suppose having multiple sizes of image would be better in a few edge cases, such as photo-realistic images, but in an application, you usually don&apos;t use photo-realistic images, and instead use graphics with few colours comparatively and basic shapes (or rather, shapes that could be composed of basic shapes), which vector graphics handle quite well.
 	</p>
 </section>
 <section id="Unit5">
 	<h2>Unit 5</h2>
-	<h3>Describe what you did.</h3>
 	<p>
 		...
-	</p>
-	<h3>Describe your reactions to what you did.</h3>
-	<p>
-		...
-	</p>
-	<h3>Describe any feedback you received or any specific interactions you had.</h3>
-	<p>
-		...
-	</p>
-	<h3>Describe your feelings and attitudes.</h3>
-	<p>
-		...
-	</p>
-	<h3>Describe what you learned.</h3>
-	<p>
-		...
-	</p>
-	<h3>What surprised me or caused me to wonder?</h3>
-	<p>
-		...
-	</p>
-	<h3>What happened that felt particularly challenging? Why was it challenging to me?</h3>
-	<p>
-		...
-	</p>
-	<h3>What skills and knowledge do I recognize that I am gaining?</h3>
-	<p>
-		...
-	</p>
-	<h3>What am I realizing about myself as a learner?</h3>
-	<p>
-		...
-	</p>
-	<h3>In what ways am I able to apply the ideas and concepts gained to my own experience?</h3>
-	<p>
-		
 	</p>
 </section>
 <section id="Unit6">
 	<h2>Unit 6</h2>
-	<h3>Describe what you did.</h3>
 	<p>
 		...
-	</p>
-	<h3>Describe your reactions to what you did.</h3>
-	<p>
-		...
-	</p>
-	<h3>Describe any feedback you received or any specific interactions you had.</h3>
-	<p>
-		...
-	</p>
-	<h3>Describe your feelings and attitudes.</h3>
-	<p>
-		...
-	</p>
-	<h3>Describe what you learned.</h3>
-	<p>
-		...
-	</p>
-	<h3>What surprised me or caused me to wonder?</h3>
-	<p>
-		...
-	</p>
-	<h3>What happened that felt particularly challenging? Why was it challenging to me?</h3>
-	<p>
-		...
-	</p>
-	<h3>What skills and knowledge do I recognize that I am gaining?</h3>
-	<p>
-		...
-	</p>
-	<h3>What am I realizing about myself as a learner?</h3>
-	<p>
-		...
-	</p>
-	<h3>In what ways am I able to apply the ideas and concepts gained to my own experience?</h3>
-	<p>
-		
 	</p>
 </section>
 <section id="Unit7">
 	<h2>Unit 7</h2>
-	<h3>Describe what you did.</h3>
 	<p>
 		...
-	</p>
-	<h3>Describe your reactions to what you did.</h3>
-	<p>
-		...
-	</p>
-	<h3>Describe any feedback you received or any specific interactions you had.</h3>
-	<p>
-		...
-	</p>
-	<h3>Describe your feelings and attitudes.</h3>
-	<p>
-		...
-	</p>
-	<h3>Describe what you learned.</h3>
-	<p>
-		...
-	</p>
-	<h3>What surprised me or caused me to wonder?</h3>
-	<p>
-		...
-	</p>
-	<h3>What happened that felt particularly challenging? Why was it challenging to me?</h3>
-	<p>
-		...
-	</p>
-	<h3>What skills and knowledge do I recognize that I am gaining?</h3>
-	<p>
-		...
-	</p>
-	<h3>What am I realizing about myself as a learner?</h3>
-	<p>
-		...
-	</p>
-	<h3>In what ways am I able to apply the ideas and concepts gained to my own experience?</h3>
-	<p>
-		
 	</p>
 </section>
 <section id="Unit8">
 	<h2>Unit 8</h2>
-	<h3>Describe what you did.</h3>
 	<p>
 		...
-	</p>
-	<h3>Describe your reactions to what you did.</h3>
-	<p>
-		...
-	</p>
-	<h3>Describe any feedback you received or any specific interactions you had.</h3>
-	<p>
-		...
-	</p>
-	<h3>Describe your feelings and attitudes.</h3>
-	<p>
-		...
-	</p>
-	<h3>Describe what you learned.</h3>
-	<p>
-		...
-	</p>
-	<h3>What surprised me or caused me to wonder?</h3>
-	<p>
-		...
-	</p>
-	<h3>What happened that felt particularly challenging? Why was it challenging to me?</h3>
-	<p>
-		...
-	</p>
-	<h3>What skills and knowledge do I recognize that I am gaining?</h3>
-	<p>
-		...
-	</p>
-	<h3>What am I realizing about myself as a learner?</h3>
-	<p>
-		...
-	</p>
-	<h3>In what ways am I able to apply the ideas and concepts gained to my own experience?</h3>
-	<p>
-		
 	</p>
 </section>
 		<hr/>

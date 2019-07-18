@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<script type="text/javascript" src="https://getfirebug.com/firebug-lite-debug.js"/>
+		<meta name="description" content="CS4406 Computer Graphics - Assignment #2"/>
+		<meta charset="utf-8"/>
+		<title>Assignment #2 for CS4406 Computer Graphics</title>
+		<style>
+			#container {
+				background: #000000;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		<style id="jsbin-css"/>
+	</head>
+	<body>
+		<div id="container"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.min.js"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.min.js"/>
+		<script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js"/>
+		<script src="http://uopeopleweb.com/js/math.js"/>
+		<script type="text/javascript">
+// set the scene size
+var WIDTH = 600, HEIGHT = 600;
+
+// set some camera attributes
+var VIEW_ANGLE = 45, ASPECT = WIDTH / HEIGHT, NEAR = 1, FAR = 1000;
+
+// get the DOM element to attach to
+var $container = $(&apos;#container&apos;);
+
+// create a WebGL renderer, camera, and a scene
+// NOTE: for the assignment in Unit 4 where you need to use a texture, or in any other assignment where a texture is required 
+// you should deactivate the Detector and use ONLY the CanvasRenderer.  There are some issues in using what are called Cross Domain images for 
+// for textures.   You can get more details by looking up WebGL and CORS using Google search.  I have included some code below that will 
+// get around this issue that you can use. 
+var renderer = new THREE.WebGLRenderer();
+
+var scene = new THREE.Scene();
+var clock = new THREE.Clock();
+var camera = new THREE.PerspectiveCamera(VIEW_ANGLE,ASPECT,NEAR,FAR);
+
+// the camera starts at 0,0,0 so pull it back for some assignments you may need to adjust this value
+// some distance to make the scene visible properly
+camera.position.z = 30;    	
+
+// add the camera to the scene
+scene.add(camera)
+
+// set up the camera controls.  Please keep in mind that what this does is move the entire scene around.
+// because the entire scene is moving the position of the camera and lights in relation to objects within 
+// the scene doesn&apos;t change so the lighting on the surface of the object(s) will not change either
+var cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
+cameraControls.addEventListener(&apos;mousemove&apos;, renderer);
+
+// start the renderer
+renderer.setSize(WIDTH, HEIGHT);
+
+// attach the render-supplied DOM element
+$container.append(renderer.domElement);
+
+// ----------------------------------------------------------------------------------------
+//  Example of Code that you can adapt to get around the issue of Cross-Domain issues and 
+//  CORS restrictions using textures.  We have this problem when using jsbin.com as a
+//  development environment becuase we cannot load texture images to the local server.
+//  Rather we need to pull them from location using a web URL.  You can use the images 
+//  that we have put on the uopeopleweb.com site along with the following code (modified 
+//  of course for your particular program)
+//
+//  Notice that what this code does is create a new Texture object called Texture1 and loads
+//	the texture image into the object.  
+//  
+//	var Texture1 = new THREE.Texture();
+//	var loader = new THREE.ImageLoader();
+//
+//	loader.addEventListener( &apos;load&apos;, function ( event ) {
+//			Texture1.image = event.content;
+//			Texture1.needsUpdate = true;
+//	} );
+//
+//	loader.load( &apos;http://uopeopleweb.com/js/paper.jpg&apos; );
+	
+// ----------------------------------------------------------------------------------------
+//  END OF THE STANDARD CODE FOR THE ASSIGNMENT
+//  Following this is where you must place your own custom code to complete the assignment
+// ----------------------------------------------------------------------------------------
+
+// According to the three.js documentation, a MeshLambertMaterial is a
+// material that doesn&apos;t shine. You don&apos;t get highlights based on where
+// the light is compared to the material. In other words, the material
+// is more matte. That&apos;ll work just fine for our square.
+var material = new THREE.MeshLambertMaterial({
+// The instructions say to make our square red or blue. 0xff0000 would
+// be the reddest of reds, while 0x0000ff is the bluest of blues.
+	color:0x0000ff,
+// Do we want a wireframe, or do we want the faces of our shape to be
+// filled in? Filled in seems best for this simple assignment, so we
+// set wireframe to false.
+	wireframe: false,
+// We&apos;re going to make our square spin in a bit, so we&apos;re going to want
+// to make both sides visible. Do that by setting the side to be drawn
+// to THREE.DoubleSide.
+	side: THREE.DoubleSide,
+});
+
+// We need a geomety object to work with. Let&apos;s instantiate that now.
+var myGeometry = new THREE.Geometry();
+
+// A square has four corners, so we&apos;ll need four vertices.
+myGeometry.vertices.push(new THREE.Vector3(5, 5, 0)); 
+myGeometry.vertices.push(new THREE.Vector3(5, -5, 0)); 
+myGeometry.vertices.push(new THREE.Vector3(-5, -5, 0)); 
+myGeometry.vertices.push(new THREE.Vector3(-5, 5, 0)); 
+
+// Here, we use indices into the vertex list we just pushed vertices
+// onto to define the bounding points of our triangles. Wait,
+// triangles? I thought we were building a square! Well in actuality,
+// WebGL is unable to draw real squares. Instead, we have to define
+// triangles that share vertices in order to create the illusion of a
+// square out of two triangles.
+//
+// Note that the orer we specify the vertices in matters. It determines
+// which side of the triangle is the front, so we want to either
+// specify the vertices in clockwise order to make both triangles face
+// backwards or specify the vertices in counter-clockwise order to make
+// both triangles face forward. I chose counter-clockwise, so the
+// triangles face away from the camera at first. As we spin though,
+// we&apos;ll see both sides.
+myGeometry.faces.push( new THREE.Face3(0, 1, 3));  
+myGeometry.faces.push( new THREE.Face3(1, 2, 3));  
+
+// Now, we build a mesh out of the two triangles and the material.
+var myPolygon  = new THREE.Mesh( myGeometry, material);   
+
+// And we add the polygon to the scene.
+scene.add(myPolygon);   
+
+// In the example code for this week, the ambient light had no blue
+// component to it, so blue objects such as this square wouldn&apos;t even
+// render. We can set the ambient light colour to whatever we like
+// before adding it to the scene though. I chose brilliant, white
+// light. Everything shows up in white light.
+var ambientLight = new THREE.AmbientLight(0xffffff);
+
+// While we&apos;re discussing light, I should bring up that ambient light
+// is directionless. It doesn&apos;t cause shading based on direction,
+// because it isn&apos;t coming from a direction. That should be fine for
+// our spinning square as well.
+scene.add(ambientLight);
+
+
+// In the boilerplate code provided for this assignment that we&apos;re not
+// supposed to edit, a cameraControls object is set up for us. By
+// setting that object&apos;s autoRotate property to true, we can make the
+// whole scene spin. Because the entire scene is just this one square,
+// the square spins.
+cameraControls.autoRotate = true;
+
+// ----------------------------------------------------------------------------------------
+// END OF YOUR CUSTOM CODE FOR THE ASSIGNMENT
+// The rendering functions that follow are standard and can be used for this assignment.  
+// You are welcome to customize them or create your own if you desire, however, you can 
+// simply use the code provided.
+//
+
+// Standard functions for rendering the scene.  Notice how we have the animate function 
+// which submits a call to requestAnimationFrame to call animate.   This creates a loop
+// that will render the scene again whenever something within the scene changes.
+function animate() {
+	requestAnimationFrame(animate);
+	render();
+}
+
+function render() {
+	cameraControls.update();
+	renderer.render(scene, camera);
+}
+animate();
+		</script>
+	</body>
+</html>

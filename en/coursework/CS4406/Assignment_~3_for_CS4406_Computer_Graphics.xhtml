@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<script type="text/javascript" src="https://getfirebug.com/firebug-lite-debug.js"/>
+		<meta name="description" content="CS4406 Computer Graphics - Assignment #3"/>
+		<meta charset="utf-8"/>
+		<title>Assignment #3 for CS4406 Computer Graphics</title>
+		<style>
+			#container {
+				background: #000000;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		<style id="jsbin-css"/>
+	</head>
+	<body>
+		<div id="container"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.min.js"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.min.js"/>
+		<script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js"/>
+		<script src="http://uopeopleweb.com/js/math.js"/>
+		<script type="text/javascript">
+// set the scene size
+var WIDTH = 600, HEIGHT = 600;
+
+// set some camera attributes
+var VIEW_ANGLE = 45, ASPECT = WIDTH / HEIGHT, NEAR = 1, FAR = 1000;
+
+// get the DOM element to attach to
+var $container = $(&apos;#container&apos;);
+
+// create a WebGL renderer, camera, and a scene
+// NOTE: for the assignment in Unit 4 where you need to use a texture, or in any other assignment where a texture is required 
+// you should deactivate the Detector and use ONLY the CanvasRenderer.  There are some issues in using what are called Cross Domain images for 
+// for textures.   You can get more details by looking up WebGL and CORS using Google search.  I have included some code below that will 
+// get around this issue that you can use. 
+var renderer = new THREE.WebGLRenderer();
+
+var scene = new THREE.Scene();
+var clock = new THREE.Clock();
+var camera = new THREE.PerspectiveCamera(VIEW_ANGLE,ASPECT,NEAR,FAR);
+
+// the camera starts at 0,0,0 so pull it back for some assignments you may need to adjust this value
+// some distance to make the scene visible properly
+camera.position.z = 30;    	
+
+// add the camera to the scene
+scene.add(camera)
+
+// set up the camera controls.  Please keep in mind that what this does is move the entire scene around.
+// because the entire scene is moving the position of the camera and lights in relation to objects within 
+// the scene doesn&apos;t change so the lighting on the surface of the object(s) will not change either
+var cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
+cameraControls.addEventListener( &apos;mousemove&apos;, renderer );
+
+// start the renderer
+renderer.setSize(WIDTH, HEIGHT);
+
+// attach the render-supplied DOM element
+$container.append(renderer.domElement);
+
+// ----------------------------------------------------------------------------------------
+//  Example of Code that you can adapt to get around the issue of Cross-Domain issues and 
+//  CORS restrictions using textures.  We have this problem when using jsbin.com as a
+//  development environment becuase we cannot load texture images to the local server.
+//  Rather we need to pull them from location using a web URL.  You can use the images 
+//  that we have put on the uopeopleweb.com site along with the following code (modified 
+//  of course for your particular program)
+//
+//  Notice that what this code does is create a new Texture object called Texture1 and loads
+//	the texture image into the object.  
+//  
+//	var Texture1 = new THREE.Texture();
+//	var loader = new THREE.ImageLoader();
+//
+//	loader.addEventListener( &apos;load&apos;, function ( event ) {
+//			Texture1.image = event.content;
+//			Texture1.needsUpdate = true;
+//	} );
+//
+//	loader.load( &apos;http://uopeopleweb.com/js/paper.jpg&apos; );
+	
+// ----------------------------------------------------------------------------------------
+//  END OF THE STANDARD CODE FOR THE ASSIGNMENT
+//  Following this is where you must place your own custom code to complete the assignment
+// ----------------------------------------------------------------------------------------
+
+// First, we add a PointLight, which is a sort of directional light
+// that shines in every direction from a fixed point. Without a
+// directional light, we can&apos;t have any shadows.
+var PointLight = new THREE.PointLight( 0xffffff, 1, 127 );
+
+// We&apos;ll put this light in the upper left corner of the viewing space.
+PointLight.position.set(-16, 16, 0);
+scene.add( PointLight );
+
+// Using only the PointLight, we can&apos;t see the bottom of the sphere.
+// It&apos;s completely in shadow. I guess that&apos;s fine, but we can&apos;t exactly
+// *see* the shadow, as we can&apos;t even see the bottom of the sphere.
+// Adding an ambient light corrects the problem. If we keep the ambient
+// light low enough, we can still see the light and shadow, while if we
+// keep it high enough, we can see even the part of the sphere that&apos;s
+// in shadow.
+var AmbientLight = new THREE.AmbientLight( 0x0f0f0f );
+scene.add( AmbientLight );
+
+// I experimented with several different materials. The
+// MeshLambertMaterial was the one that seemed to work best for this
+// assignment. It responds to light and shadow, unlike the
+// MeshBasicMaterial, but also responds to colour, unlike the
+// MeshNormalMaterial.
+var sphereMaterial = new THREE.MeshLambertMaterial({color: 0xffffff});
+
+// We want a small sphere, so a radius of one will suffice.
+var radius = 1;
+
+// I tried to set these values really low, so fewer polygons would need
+// to render. Setting them *too* low resulted in the sphere not looking
+// like a sphere much at all. Using sixteen for both values seems to be
+// enough to make the sphere look good though.
+var segments = 16, rings = 16;
+
+// Using the values we&apos;ve set, we create our sphere object. Of course,
+// it&apos;s not a real sphere, because everything in WebGL is made of
+// triangles, but it&apos;s close enough.
+var sphere = new THREE.Mesh(
+	new THREE.SphereGeometry(radius, segments, rings),
+	sphereMaterial
+);
+
+// And now that we have our sphere, we&apos;ll add it to the scene.
+scene.add(sphere);
+
+// I implemented the bouncing effect using these variables. Basically,
+// they hold a velocity in each of the three dimensions. If the
+// velocities are identical, the sphere will bounce in right angles,
+// which is pretty boring. Here, I set the velocities each to a random
+// value. They&apos;re almost never the identical to one another, so you get
+// a good bounce, and every time you load the page, you get a different
+// trajectory, which is pretty cool. Another interesting fact is that
+// these velocities determine not only the speed at which the sphere
+// travels, but also the *angle* at which it travels. We divide the
+// random number by eight though, because if we don&apos;t, the sphere often
+// travels way too quickly and leaves ugly after images.
+// 
+// Using variables allowed me to make the initial movement random,
+// which was nice, but is wasn&apos;t actually the initial reason for the
+// variables. You may notice that these variables all end in &quot;Dir&quot;,
+// which in this case, references direction. These variables were
+// established to control the direction in which the sphere moves, so
+// after hitting a wall, the variable could be changed and the
+// direction would change with it. I ended up implementing that as an
+// increment to add to the sphere&apos;s current position on each step. If
+// the increment is negative, the sphere moves in the opposite
+// direction. Later on in the code, we&apos;ll set the increment to its own
+// inverse to change the direction of the sphere&apos;s movement.
+var xDir = Math.random() / 8;
+var yDir = Math.random() / 8;
+var zDir = Math.random() / 8;
+
+// Since the sphere&apos;s initial velocity is random, why not have the
+// starting position be random as well? First, we need to find the z
+// coordinate, as it determines the range in which is valid for the
+// other two coordinates. This is because a perspective view, such as
+// the one we&apos;re using, isn&apos;t a rectangular prism. The view is wider in
+// the back than it is the front.
+sphere.position.z = Math.random() * 20 - 10;
+
+// Now that we know the starting z coordinate, we can calculate the
+// bounds of what&apos;s valid for the other two coordinates.
+// 
+// When z is -10, valix x and y coordinates are from -15.5 to +15.5.
+// When z is 10, valix x and y coordinates are from -7.2 to +7.2.
+var xyBounds = sphere.position.z*-0.415+11.35;
+
+// With the bounds now know, we now pick random x and y coordinates.
+sphere.position.x = Math.random() * xyBounds * 2 - xyBounds;
+sphere.position.y = Math.random() * xyBounds * 2 - xyBounds;
+
+// ----------------------------------------------------------------------------------------
+// END OF YOUR CUSTOM CODE FOR THE ASSIGNMENT
+// The rendering functions that follow are standard and can be used for this assignment.  
+// You are welcome to customize them or create your own if you desire, however, you can 
+// simply use the code provided.
+//
+
+// Standard functions for rendering the scene.  Notice how we have the animate function 
+// which submits a call to requestAnimationFrame to call animate.   This creates a loop
+// that will render the scene again whenever something within the scene changes.
+function animate() {
+	requestAnimationFrame(animate);
+	render();
+}
+
+// I&apos;m not sure how we were supposed to hook into the predefined
+// render() function from the boilerplate code. Instead, I ended up
+// replacing the render() function entirely.
+function render() {
+// Previously, I mentioned that the *Dir variables are increments that
+// get added to the sphere&apos;s coordinates. Well, this is where that
+// happens.
+	sphere.position.x += xDir;
+	sphere.position.y += yDir;
+	sphere.position.z += zDir;
+
+// Z just changed, which means the x and y bounds just changed. Let&apos;s
+// calculate the new bounds:
+	var xyBounds = sphere.position.z*-0.415+11.35;
+
+// If the x coordinate of the sphere places it outside (or even just
+// clipping into) the boundaries, we need to change the direction.
+// 
+// First, we check to see that the sphere&apos;s x position isn&apos;t too high.
+	if(sphere.position.x &gt; xyBounds) {
+// The ball bounced off the right wall. Set the colour to cyan.
+		sphere.material.color.setHex(0x00ffff);
+// Flip the direction of the movement.
+		xDir = -xDir;
+// There&apos;s an odd behaviour in which sometimes the sphere will move too
+// far outside the bounds to get back into range in the next frame.
+// This causes bizarre behaviour, as the sphere tries to flip back and
+// forth and wiggle out of the wall. There are a couple ways to fix
+// that. The first way is to only flip the direction if flipping the
+// direction gets it back on track. The other option is to push the
+// sphere to the boundaries, so on the next frame, it definitely moves
+// away from them. I went with the latter option.
+// 
+// I think the sphere only clips too far into the wall because the
+// boundaries of the box aren&apos;t a rectangular prism. It allows the
+// sphere to clip into the boundaries, then have the boundaries shrink,
+// so the sphere doesn&apos;t get out in the next frame. Again, the second
+// way of dealing with the problem, the one implemented here, works
+// best for fixing that as it doesn&apos;t allow the sphere to ever appear
+// to be inside the wall, even for an instant.
+		sphere.position.x = xyBounds
+// The rest of these are pretty much just like the first, but with a
+// different colour being set.
+// 
+// Next, we check to see if the x position is too low.
+	} else if(sphere.position.x &lt; -xyBounds) {
+// The ball bounced off the left wall. Set the colour to red.
+		sphere.material.color.setHex(0xff0000);
+// Flip the direction of the movement.
+		xDir = -xDir;
+// Don&apos;t allow the sphere to clip into the wall.
+		sphere.position.x = -xyBounds;
+	}
+// Next, we check to see if the y position is too high.
+	if(sphere.position.y &gt; xyBounds) {
+// The ball bounced off the top wall. Set the colour to magenta.
+		sphere.material.color.setHex(0xff00ff);
+// Flip the direction of the movement.
+		yDir = -yDir;
+// Don&apos;t allow the sphere to clip into the wall.
+		sphere.position.y = xyBounds
+// Next, we check to see if the y position is too low.
+	} else if(sphere.position.y &lt; -xyBounds) {
+// The ball bounced off the bottom wall. Set the colour to green.
+		sphere.material.color.setHex(0x00ff00);
+// Flip the direction of the movement.
+		yDir = -yDir;
+// Don&apos;t allow the sphere to clip into the wall.
+		sphere.position.y = -xyBounds;
+	}
+// Next, we check to see if the z position is too high.
+	if(sphere.position.z &gt; 10) {
+// The ball bounced off the front wall. Set the colour to yellow.
+		sphere.material.color.setHex(0xffff00);
+// Flip the direction of the movement.
+		zDir = -zDir;
+// Don&apos;t allow the sphere to clip into the wall.
+		sphere.position.z = 10;
+// Next, we check to see if the z position is too low.
+	} else if(sphere.position.z &lt; -10) {
+// The ball bounced off the back wall. Set the colour to blue.
+		sphere.material.color.setHex(0x0000ff);
+// Flip the direction of the movement.
+		zDir = -zDir;
+// Don&apos;t allow the sphere to clip into the wall.
+		sphere.position.z = -10;
+	}
+// Now, we re-render the scene.
+	renderer.render(scene, camera);
+}
+
+animate();
+		</script>
+	</body>
+</html>
