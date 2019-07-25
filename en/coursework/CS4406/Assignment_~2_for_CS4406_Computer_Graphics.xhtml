@@ -106,7 +106,7 @@ var material = new THREE.MeshLambertMaterial({
 	side: THREE.DoubleSide,
 });
 
-// We need a geomety object to work with. Let&apos;s instantiate that now.
+// We need a geometry object to work with. Let&apos;s instantiate that now.
 var myGeometry = new THREE.Geometry();
 
 // A square has four corners, so we&apos;ll need four vertices.
@@ -122,18 +122,18 @@ myGeometry.vertices.push(new THREE.Vector3(-5, 5, 0));
 // triangles that share vertices in order to create the illusion of a
 // square out of two triangles.
 //
-// Note that the orer we specify the vertices in matters. It determines
-// which side of the triangle is the front, so we want to either
-// specify the vertices in clockwise order to make both triangles face
-// backwards or specify the vertices in counter-clockwise order to make
-// both triangles face forward. I chose counter-clockwise, so the
-// triangles face away from the camera at first. As we spin though,
-// we&apos;ll see both sides.
-myGeometry.faces.push( new THREE.Face3(0, 1, 3));  
-myGeometry.faces.push( new THREE.Face3(1, 2, 3));  
+// Note that the order we specify the vertices in matters. It
+// determines which side of the triangle is the front, so we want to
+// either specify the vertices in clockwise order to make both
+// triangles face backwards or specify the vertices in
+// counter-clockwise order to make both triangles face forward. I chose
+// clockwise, so the triangles face away from the camera at first. As
+// we spin though, we&apos;ll see both sides.
+myGeometry.faces.push(new THREE.Face3(0, 1, 3));
+myGeometry.faces.push(new THREE.Face3(1, 2, 3));
 
 // Now, we build a mesh out of the two triangles and the material.
-var myPolygon  = new THREE.Mesh( myGeometry, material);   
+var myPolygon  = new THREE.Mesh(myGeometry, material);
 
 // And we add the polygon to the scene.
 scene.add(myPolygon);   
