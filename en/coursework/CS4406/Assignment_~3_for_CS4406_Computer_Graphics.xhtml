@@ -1,3 +1,20 @@
+<!--
+	Assignment #3 for CS4406 Computer Graphics
+	Copyright © 2019 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -54,7 +71,7 @@ scene.add(camera)
 // because the entire scene is moving the position of the camera and lights in relation to objects within 
 // the scene doesn&apos;t change so the lighting on the surface of the object(s) will not change either
 var cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
-cameraControls.addEventListener( &apos;mousemove&apos;, renderer );
+cameraControls.addEventListener(&apos;mousemove&apos;, renderer);
 
 // start the renderer
 renderer.setSize(WIDTH, HEIGHT);
@@ -91,11 +108,11 @@ $container.append(renderer.domElement);
 // First, we add a PointLight, which is a sort of directional light
 // that shines in every direction from a fixed point. Without a
 // directional light, we can&apos;t have any shadows.
-var PointLight = new THREE.PointLight( 0xffffff, 1, 127 );
+var PointLight = new THREE.PointLight(0xffffff, 1, 127);
 
 // We&apos;ll put this light in the upper left corner of the viewing space.
 PointLight.position.set(-16, 16, 0);
-scene.add( PointLight );
+scene.add(PointLight);
 
 // Using only the PointLight, we can&apos;t see the bottom of the sphere.
 // It&apos;s completely in shadow. I guess that&apos;s fine, but we can&apos;t exactly
@@ -104,8 +121,8 @@ scene.add( PointLight );
 // light low enough, we can still see the light and shadow, while if we
 // keep it high enough, we can see even the part of the sphere that&apos;s
 // in shadow.
-var AmbientLight = new THREE.AmbientLight( 0x0f0f0f );
-scene.add( AmbientLight );
+var AmbientLight = new THREE.AmbientLight(0x0f0f0f);
+scene.add(AmbientLight);
 
 // I experimented with several different materials. The
 // MeshLambertMaterial was the one that seemed to work best for this
