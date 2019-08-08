@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 	Assignment #5 for CS4406 Computer Graphics
 	Copyright © 2019 Alex Yst <mailto:copyright@y.st>
@@ -15,7 +16,6 @@
 	You should have received a copy of the GNU General Public License
 	along with this program. If not, see <https://www.gnu.org./licenses/>.
 -->
-<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -232,7 +232,7 @@ var hydrogen_material = new THREE.MeshPhongMaterial({
 // effect, we set this to pure white. Instead, I set it to a light blue
 // to soften the effect.
 	specular: 0x8888ff,
-})
+});
 
 // All four bonds share a material too, so again, we&apos;ll store that
 // material in a variable.
@@ -245,7 +245,7 @@ var bond_material = new THREE.MeshPhongMaterial({
 // reflection of the local light source. For the most-significant
 // effect, we set this to pure white.
 	specular: 0xffffff,
-})
+});
 
 // The bonds all share the same geometry, so let&apos;s set that in a
 // variable.
@@ -276,11 +276,11 @@ var bond_geometry = new THREE.CylinderGeometry(
 // few polygons, and we can&apos;t see the ends anyway, because they&apos;re
 // inside the spheres.
 	true
-)
+);
 
 // We&apos;ll reuse the hydrogen geometry again. So you guessed it, another
 // variable.
-var hydrogen_geometry = new THREE.SphereGeometry(1.75, segments, rings)
+var hydrogen_geometry = new THREE.SphereGeometry(1.75, segments, rings);
 
 // If we tried to set the position of the cylinder and translate it by
 // setting bondX.position and bondX.rotation, three.js would always
@@ -353,12 +353,12 @@ hydrogen3.castShadow = true;
 
 // ----------------------------------------------------------------------------------------
 // END OF YOUR CUSTOM CODE FOR THE ASSIGNMENT
-// The rendering functions that follow are standard and can be used for this assignment.  
-// You are welcome to customize them or create your own if you desire, however, you can 
+// The rendering functions that follow are standard and can be used for this assignment.
+// You are welcome to customize them or create your own if you desire, however, you can
 // simply use the code provided.
 //
 
-// Standard functions for rendering the scene.  Notice how we have the animate function 
+// Standard functions for rendering the scene.  Notice how we have the animate function
 // which submits a call to requestAnimationFrame to call animate.   This creates a loop
 // that will render the scene again whenever something within the scene changes.
 function animate() {

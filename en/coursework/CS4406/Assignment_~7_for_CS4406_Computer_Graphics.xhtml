@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<!--
+	Assignment #6 for CS4406 Computer Graphics
+	Copyright © 2019 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<script type="text/javascript" src="https://getfirebug.com/firebug-lite-debug.js"/>
+		<meta name="description" content="CS4406 Computer Graphics - Assignment #7"/>
+		<meta charset="utf-8"/>
+		<title>Assignment #7 for CS4406 Computer Graphics</title>
+		<style>
+			#container {
+				background: #000000;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		<style id="jsbin-css"></style>
+	</head>
+	<body>
+		<div id="container"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"/> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.min.js"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.min.js"/>
+		<script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js"/>
+		<script src="https://cdn.rawgit.com/albertopiras/threeJS-object-controls/master/ObjectControls.js"/>
+		<script src="http://uopeopleweb.com/js/math.js"/>
+		<script type="text/javascript">
+// set the scene size
+var WIDTH = 600, HEIGHT = 600;
+
+// set some camera attributes
+var VIEW_ANGLE = 45, ASPECT = WIDTH / HEIGHT, NEAR = 1, FAR = 1000;
+
+// get the DOM element to attach to
+var $container = $(&apos;#container&apos;);
+
+// create a WebGL renderer, camera, and a scene
+// NOTE: for the assignment in Unit 4 where you need to use a texture, or in any other assignment where a texture is required 
+// you should deactivate the Detector and use ONLY the CanvasRenderer.  There are some issues in using what are called Cross Domain images for 
+// for textures.   You can get more details by looking up WebGL and CORS using Google search.  I have included some code below that will 
+// get around this issue that you can use. 
+var renderer = new THREE.WebGLRenderer();
+
+var scene = new THREE.Scene();
+var clock = new THREE.Clock();
+var camera = new THREE.PerspectiveCamera(VIEW_ANGLE,ASPECT,NEAR,FAR);
+
+// the camera starts at 0,0,0 so pull it back for some assignments you may need to adjust this value
+// some distance to make the scene visible properly
+camera.position.z = 5;
+
+// add the camera to the scene
+scene.add(camera)
+
+// set up the camera controls.  Please keep in mind that what this does is move the entire scene around.
+// because the entire scene is moving the position of the camera and lights in relation to objects within 
+// the scene doesn&apos;t change so the lighting on the surface of the object(s) will not change either
+//var cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
+//cameraControls.addEventListener(&apos;mousemove&apos;, renderer);
+
+// start the renderer
+renderer.setSize(WIDTH, HEIGHT);
+
+// attach the render-supplied DOM element
+$container.append(renderer.domElement);
+
+// ----------------------------------------------------------------------------------------
+//  Example of Code that you can adapt to get around the issue of Cross-Domain issues and 
+//  CORS restrictions using textures.  We have this problem when using jsbin.com as a
+//  development environment becuase we cannot load texture images to the local server.
+//  Rather we need to pull them from location using a web URL.  You can use the images 
+//  that we have put on the uopeopleweb.com site along with the following code (modified 
+//  of course for your particular program)
+//
+//  Notice that what this code does is create a new Texture object called Texture1 and loads
+//	the texture image into the object.  
+//  
+//	var Texture1 = new THREE.Texture();
+//	var loader = new THREE.ImageLoader();
+//
+//	loader.addEventListener( &apos;load&apos;, function ( event ) {
+//			Texture1.image = event.content;
+//			Texture1.needsUpdate = true;
+//	} );
+//
+//	loader.load( &apos;http://uopeopleweb.com/js/paper.jpg&apos; );
+	
+// ----------------------------------------------------------------------------------------
+//  END OF THE STANDARD CODE FOR THE ASSIGNMENT
+//  Following this is where you must place your own custom code to complete the assignment
+// ----------------------------------------------------------------------------------------
+
+// I want the axis helper to look three-dimensional, and the best way
+// to do that is give it light and shadow. That requires adding a light
+// to the scene. Let&apos;s attach it to the camera, so the light always
+// comes from the angle we&apos;re at.
+camera.add(new THREE.PointLight());
+
+// Something&apos;s broken in the three.js scripts. Even copying and pasting
+// examples from the documentation break the rendering when a
+// THREE.ParametricGeometry() object is instantiated. We&apos;re going to
+// need to recreate that functionality by hand. Ugh.
+// 
+// Anyway, this input function takes an x and y value and returns a z
+// value. To be clear, that&apos;s not how a a function given to
+// THREE.ParametricGeometry() works, but there&apos;s no need for us to
+// reconstruct the same interface.
+// 
+// Here, we&apos;re computing the shape of a cone.
+function compute_z(x, y) {
+	return Math.sqrt(x**2 + y**2) * -1.5 + 1.25;
+}
+
+// We need to rotate everything together, so let&apos;s define a group that
+// everything will be added to.
+var group = new THREE.Group();
+scene.add(group);
+
+// If we&apos;re building a geometry from scratch, we&apos;ll want a geometry
+// object to work with.
+var geometry = new THREE.Geometry();
+
+// We need to know the index of the vertex that just got pushed, so we
+// know how it related to the other vertices. can use this index to
+// calculate the coordinates of the vertex, as well as what row and
+// column the vertex is at. We&apos;ll use the index as the incrementing
+// value, so we have that number on hand to derive our other numbers
+// from.
+// 
+// From -1 to +1 in increments of 0.1 give us 21 different values, so
+// we have 21 rows and 21 columns. The index of the final vertex will
+// be 21*21-1, which is the final integer before 21*21, so we only
+// execute the loop if the current index is less than 21*21.
+for(var index=0; index&lt;21*21; index++) {
+// First, our column will be the index modulo 21. This means that after
+// we reach the final column, we wrap back around to the first column.
+	var column = index % 21;
+// The row will be the index divided by 21. This means that when we
+// finish the final column on one row, we&apos;ll move on to the next row.
+	var row = Math.floor(index / 21);
+// From the column, we derive x. Scale the column from a range of 20 to
+// a range of two, then offset by negative one.
+	var x = column / 10 - 1;
+// From the row, we derive y. Scale the row from a range of 20 to a
+// range of two, then offset by negative one.
+	var y = row / 10 - 1;
+// From x and y, we&apos;ll compute z, but we&apos;ll do that in a the function
+// we defined a bit ago.
+	var z = compute_z(x, y);
+// With the three coordinates, we can add the vertex.
+	geometry.vertices.push(new THREE.Vector3(x, y, z));
+// If the row or column is zero, we don&apos;t have the right other vertices
+// pushed to add faces involving this vertex yet, so we only add faces
+// if we are neither at row zero or column zero.
+	if(row != 0 &amp;&amp; column != 0) {
+// We need to add two faces. We&apos;re filing a square area, and three.js
+// doesn&apos;t draw squares. That&apos;s why we need to use two triangles.
+// 
+// We can calculate the indices of the other vertices we need from the
+// current index, too. This is the main reason I opted to track the
+// current index in a variable. Subtracting one drops us down a column.
+// Subtracting twenty-one drops us down a row. Obviously, subtracting
+// twenty-two, which is a combination of one and twenty-one, drops us
+// down one row *and* one column.
+		geometry.faces.push(new THREE.Face3(index-1, index-22, index-21));
+		geometry.faces.push(new THREE.Face3(index, index-1, index-21));
+	}
+}
+
+// When you build your own geometry like we did here, it doesn&apos;t
+// automatically have the normals calculated like when you use the
+// built-in geometries. Without the normals calculated, the object (in
+// this case, the background plane) won&apos;t react to directional
+// lights whatsoever, and will appear to be completely in shadow all
+// the time. Let&apos;s correct that problem by calculating the
+// normals.
+geometry.computeFaceNormals();
+geometry.computeVertexNormals();
+
+// Now we can build the mesh representing the output of the function
+// and add that to the group.
+var material = new THREE.MeshNormalMaterial({side: THREE.DoubleSide});
+var output = new THREE.Mesh(geometry, material);
+group.add(output);
+
+// The helpers all use the same geometry, so let&apos;s set a variable for
+// that.
+var helper_geometry = new THREE.CylinderGeometry(
+// This is the radius of the circle on one end of the cylinder. We want
+// it to be really thin, so it doesn&apos;t really get in the way.
+	0.01,
+// three.js allows you to set the radius of the circle on the other end
+// of the &quot;cylinder&quot; separately from the radius of the first circle. Of
+// course, if the two aren&apos;t equal, it&apos;s not a real cylinder, as
+// defined by the mathematical term. Let&apos;s set it equal to the first.
+	0.01,
+// This is the length of the cylinder. It should be long enough to
+// pass through the two-unit function graph, but short enough to remain
+// fully on the screen while the graph is at a reasonable scale.
+	3,
+// This is the number of faces around the edge of the cylinder. If you
+// have too many, it wastes system resources to render, but if you have
+// too few, it doesn&apos;t look like a cylinder. Eight seems to be an
+// alright value here.
+	8,
+// This is the number of segments from one circular end of the cylinder
+// to the other. Why you would set this value to anything besides one
+// is beyond me. All that would do is waste system resources when
+// rendering.
+	1,
+// Set this to true to leave the ends open. Leaving them open saves a
+// few polygons, and we can&apos;t see the ends anyway, because they&apos;re
+// inside a cone.
+	true
+);
+
+// The cones at the end of the helpers share a geometry too, so again,
+// let&apos;s define that in a variable so they can all share.
+var helper_cone_geometry = new THREE.ConeGeometry(0.0625, 0.125);
+
+// The x-axis helper should be red.
+x_helper_material = new THREE.MeshPhongMaterial({
+	color: 0xff0000,
+});
+
+// The y-axis helper should be green.
+y_helper_material = new THREE.MeshPhongMaterial({
+	color: 0x00ff00,
+});
+
+// The z-axis helper should be blue.
+z_helper_material = new THREE.MeshPhongMaterial({
+	color: 0x0000ff,
+});
+
+// This will be a bar that shows which way the x dimension is.
+var x_helper = new THREE.Mesh(helper_geometry, x_helper_material);
+
+// To get this into the proper position - along the x axis - it needs
+// to be rotated ninety degrees on the z axis.
+x_helper.rotation.z = Math.PI / 2;
+
+// Let&apos;s add this helper to the group, so it rotates and scales with
+// everything else.
+group.add(x_helper);
+
+// This will be a bar that shows which way the y dimension is.
+var y_helper = new THREE.Mesh(helper_geometry, y_helper_material);
+
+// Let&apos;s add this helper to the group, so it rotates and scales with
+// everything else.
+group.add(y_helper);
+
+// This will be a bar that shows which way the z dimension is.
+var z_helper = new THREE.Mesh(helper_geometry, z_helper_material);
+
+// To get this into the proper position - along the z axis - it needs
+// to be rotated ninety degrees on the x axis.
+z_helper.rotation.x = Math.PI / 2;
+
+// Let&apos;s add this helper to the group, so it rotates and scales with
+// everything else.
+group.add(z_helper);
+
+// Let&apos;s add six cones to be the pointy parts of the helper arrows.
+var x_helper_plus  = new THREE.Mesh(helper_cone_geometry, x_helper_material);
+var x_helper_minus = new THREE.Mesh(helper_cone_geometry, x_helper_material);
+var y_helper_plus  = new THREE.Mesh(helper_cone_geometry, y_helper_material);
+var y_helper_minus = new THREE.Mesh(helper_cone_geometry, y_helper_material);
+var z_helper_plus  = new THREE.Mesh(helper_cone_geometry, z_helper_material);
+var z_helper_minus = new THREE.Mesh(helper_cone_geometry, z_helper_material);
+
+// The cones need to be properly positioned.
+x_helper_plus.position.x  =  1.5;
+x_helper_minus.position.x = -1.5;
+y_helper_plus.position.y  =  1.5;
+y_helper_minus.position.y = -1.5;
+z_helper_plus.position.z  =  1.5;
+z_helper_minus.position.z = -1.5;
+
+// The positive y cone is is facing in the right direction by default.
+// The others need to be rotated into place.
+x_helper_plus.rotation.z = Math.PI / -2;
+x_helper_minus.rotation.z = Math.PI / 2;
+y_helper_minus.rotation.z = Math.PI;
+z_helper_plus.rotation.x = Math.PI / 2;
+z_helper_minus.rotation.x = Math.PI / -2;
+
+// Now we should add the cones to the group, so they rotate and scale
+// along with everything else.
+group.add(x_helper_plus);
+group.add(x_helper_minus);
+group.add(y_helper_plus);
+group.add(y_helper_minus);
+group.add(z_helper_plus);
+group.add(z_helper_minus);
+
+// We&apos;re supposed to add a plane to the scene to help show where the
+// cone exists in space. Let&apos;s make it a wireframe so we can see
+// through it, and add it to the group.
+// 
+// As a side note, because we didn&apos;t set a colour for this wireframe,
+// it&apos;ll be a different random colour each time the scene is loaded.
+group.add(new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.PlaneGeometry(
+// Our main output goes from x == -1 to x == 1, which is a width of
+// two, so we should make the plane two units wide.
+	2,
+// It goes from y == -1 to y == 1 as well, so it had a height of two
+// units, which the plane should also match.
+	2,
+// The final two parameters when setting up a THREE.PlaneGeometry() are
+// the number of segments of width and of height. Higher numbers make
+// the plane more visible, while lower numbers make the things obscured
+// by the plane more visible. Eight seems like a good balance to me.
+	8, 8
+))));
+
+// CameraControls are broken, as of the time of submitting this
+// assignment. As such, I had to use ObjectControls instead. By
+// controlling the group though, we make everything move as if it was
+// actually the camera moving.
+var controls = new THREE.ObjectControls(camera, renderer.domElement, group);
+controls.enableVerticalRotation();
+controls.setRotationSpeed(0.04);
+
+// ----------------------------------------------------------------------------------------
+// END OF YOUR CUSTOM CODE FOR THE ASSIGNMENT
+// The rendering functions that follow are standard and can be used for this assignment.
+// You are welcome to customize them or create your own if you desire, however, you can
+// simply use the code provided.
+//
+
+// Standard functions for rendering the scene.  Notice how we have the animate function
+// which submits a call to requestAnimationFrame to call animate. This creates a loop
+// that will render the scene again whenever something within the scene changes.
+function animate() {
+	requestAnimationFrame(animate);
+	render();
+}
+
+function render() {
+	renderer.render(scene, camera);
+}
+animate();
+		</script>
+	</body>
+</html>

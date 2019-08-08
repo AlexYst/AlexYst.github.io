@@ -977,7 +977,54 @@
 <section id="Unit7">
 	<h2>Unit 7</h2>
 	<p>
-		...
+		I&apos;d like to thank you.
+		In my other course, my professor has been telling me to keep my word count low.
+		I don&apos;t think they like reading paragraphs upon paragraphs of my text.
+		I learn not by reading though, but by writing.
+		When I&apos;m not allowed to write much, I don&apos;t learn much.
+		I&apos;ve been able to learn much more in this course because you&apos;ve allowed me to write much more about what I&apos;m reading, helping me retain the knowledge I&apos;m gaining.
+		I guess this entry&apos;s a lot shorter than my others, seeing as this week was mostly just review, but my longer entries from past weeks really helped me remember and understand the material.
+	</p>
+	<p>
+		Last week, we were to submit a screenshot of the course list from the video lessons we were supposed to have watched.
+		I couldn&apos;t fit it all on one screen, so I took three screenshots and stitched them together in the <abbr title="GNU Image Manipulation Program">GIMP</abbr>.
+		Of the students I graded this week, one submitted two screenshots and another four, again, because we can&apos;t get a good shot on one screen.
+		One student panicked about how much the site had changed since the screenshot shown in the example though, and uploaded no less than <strong>*fifty-one*</strong> screenshots, just to make sure the graders understood that the videos had in fact been watched.
+		Wow.
+	</p>
+	<p>
+		This week&apos;s reading assignment was chapters nine, ten, and twelve of <a href="https://my.uopeople.edu/mod/resource/view.php?id=178261">The Busy Coder&apos;s Guide to Android Development</a>.
+	</p>
+	<p>
+		I found it odd that the textbook was referring to Android&apos;s <code>TextView</code>s as &quot;labels&quot;.
+		It didn&apos;t say they could be <strong>*used as*</strong> labels, but rather that they <strong>*are*</strong> labels.
+		There&apos;s so much more that you can do with them than just label stuff though!
+		And just a bit later, a demo was provided that did just that: use a <code>TextView</code> to display text on the screen in a way that didn&apos;t label anything.
+		Furthermore, it seems that <code>Button</code> is a subclass of <code>TextView</code>.
+		That means that every <code>Button</code> is a <code>TextView</code>, similar to how every square is a rectangle; squares are a subclass of rectangles.
+		If we&apos;re referring to <code>TextView</code>s as labels, that means that <code>Buttons</code> are labels!
+		That can&apos;t be right.
+		Furthermore, <code>EditText</code> is a subclass of <code>TextView</code>, meaning that these text-entry fields would also be labels.
+		Again, this points to <code>EditText</code> being labels.
+		<code>CheckBox</code>es and <code>RadioButton</code>s are likewise <code>TextView</code>s.
+		Clearly, while a <code>TextView</code> can be used as a label, <code>TextView</code>s themselves are not labels in and of themselves.
+	</p>
+	<p>
+		The section on containers went more in-depth than the video lessons did.
+		In particular, the part about how to size elements within a container was useful.
+		Having the weight of a widget be zero by default when filling the remaining space was an odd choice by Google though.
+		It seems that the weights of the widgets are added together to form a denominator, then the weight of an individual weight becomes the numerator in the fraction representing how much of the remaining space the widget will take up.
+		I could see right away that that means that if any widget has a non-zero weight, all the widgets with the default weight will simply not get any screen space.
+		I think if all the widgets have zero weight though, the space is just divided amongst them evenly, but I&apos;m not sure on that.
+		Padding and margins are work as expected, if you&apos;ve at all worked with <abbr title="Cascading Style Sheets">CSS</abbr> before.
+		That seems predictable, seeing as Google was a Web-based company <strong>*long*</strong> before developing Android.
+		They would be familiar with <abbr title="Cascading Style Sheets">CSS</abbr> terms and know how to properly use them.
+	</p>
+	<p>
+		The textbook says that if you like <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>/<abbr title="Hypertext Markup Language">HTML</abbr> <code>&lt;table/&gt;</code>s, you&apos;ll like Android&apos;s <code>TableLayout</code> because it allows you to position widgets in a grid-like way.
+		However, it&apos;s worth noting that this is an <strong>*improper*</strong> use of <code>&lt;table/&gt;</code> tags, and makes it difficult for assistive technologies such as screen readers to convey the meaning of a page to their user!
+		<code>&lt;table/&gt;</code> tags are meant <strong>*only*</strong> for tabular data, and never just to assist in building the layout of the page.
+		With that in mind, if you use the <code>&lt;table/&gt;</code> tag <strong>*correctly*</strong>, and you like the <code>&lt;table/&gt;</code> tag, it doesn&apos;t say anything about whether you&apos;d like a grid-based layout for non-tabular data, such as Android&apos;s <code>TableLayout</code> provides.
 	</p>
 </section>
 <section id="Unit8">
