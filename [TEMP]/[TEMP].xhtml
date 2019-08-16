@@ -1030,7 +1030,63 @@
 <section id="Unit8">
 	<h2>Unit 8</h2>
 	<p>
-		...
+		This week&apos;s reading assignment was chapters eight through fourteen of <a href="https://my.uopeople.edu/mod/resource/view.php?id=178261">The Busy Coder&apos;s Guide to Android Development</a>.
+		We already read chapters nine, ten, and twelve last week though, so when it comes to new material to cover in our learning journals, we only have chapters eight, eleven, thirteen, and fourteen this week.
+	</p>
+	<p>
+		On the topic of the review chapters from last week though, the book informs us of how to set various text properties for a <code>TextView</code>, incorrectly referring to these widgets as &quot;labels&quot;.
+		Those can be useful for emphasis and for style.
+		I didn&apos;t see a way to change text styles partway through an element&apos;s text though, which makes use for emphasis much harder.
+		You need three <code>TextView</code>, one for before, one for during, and one for after the emphasis.
+		Trying to get text to still flow normally and fill the container correctly regardless of screen size though seems like a daunting task.
+		I have to wonder if there&apos;s an easier way to emphasise text in Android.
+	</p>
+	<p>
+		I thought that Chapter 8 was one that we&apos;d covered already because it seemed so familiar.
+		Reading my past learning journal entries again though, it looks like it was a different textbook we read that covered this same material, so we didn&apos;t technically read this chapter.
+		Still, it was complete review for us.
+		The more I read of the chapter too, the more key phrases I recognised.
+		It was like they were word-for-word identical or something.
+		It was a bit distracting, honestly.
+		I kept going back to make sure this really wasn&apos;t the chapter we&apos;d already read, checking both my learning journal and the school lesson plans.
+	</p>
+	<p>
+		Input type hints seem like a good idea mostly, though I wonder if the format of the date entered by a user is checked for validity before Android allows the user to submit the value.
+		If so, I really hope the date format can be set by the developer in some way.
+		Android doesn&apos;t use <abbr title="International Organisation for Standardisation">ISO</abbr> 8601 like it should when using other date-related widgets such as <code>DatePicker</code>, so if it&apos;s attempting to validate against some other date format, dates in the international standard format would be rejected, which isn&apos;t right.
+	</p>
+	<p>
+		The more-advanced usage of <code>ListView</code>s covered by the textbook this week explains a lot.
+		When we first read about <code>ListView</code>s, which I think was last week, they seemed almost right for what might be used in applications such as email clients, file manager, contact managers, and things such as that, but these applications - at least the ones I&apos;ve used - use more than just text.
+		Normally, the extra garbage they pack around the text would just be bloat, but on a touchscreen, they pad out space that has to be used for making the list items larger anyway.
+		The list items need to be large so you don&apos;t fat-finger the list items as often.
+		Useful or not though, there&apos;s typically icons and the like around these things, which didn&apos;t fit with what we&apos;d read about <code>ListView</code>s up to that point.
+		It seems that these things are likely handled by <code>ListView</code>s after all though.
+		Developers aren&apos;t stuck reinventing these mechanics that are common enough that they really should be handled by something built-in.
+	</p>
+	<p>
+		Setting up a tabbed activity seems a lot easier than I would have expected though.
+		I don&apos;t see tabs in Android applications often, and they aren&apos;t something I&apos;d&apos;ve thought there would be <abbr title="application programming interface">API</abbr> options specifically for.
+		I would have thought that tabs would be one of those things that, when even needed at all, the programmer would have to implement using <code>Button</code>s or the like and code the swaps out the layout.
+		The more generic form, <code>ViewFlipper</code>, looks like it probably provides the functionality I&apos;ve seen in several applications though.
+		Tabs don&apos;t seem that common on the mobile applications I&apos;ve seen, but flipping between different content without tabs certainly does.
+	</p>
+	<p>
+		The final exam was pretty easy.
+		Though I learned a lot in the course, almost nothing I didn&apos;t already know before taking this course was actually on the exam.
+		I&apos;m kind of disappointed that we never got around to actually building any applications in this course.
+		We read about building applications, and we watched videos about building applications, but we never actually constructed any of our own.
+		I guess that might have been a good thing for me.
+		I&apos;ve tried to set up an Android development environment on multiple occasions, and I never can get it working.
+		I might have hit that same problem again in this course, had we actually needed to do that.
+		I was hoping though that if I had problems again, I could ask for help and someone might be able to show me what I was doing wrong.
+		Maybe I wouldn&apos;t be able to get help though, and maybe I would have instead had to fail whatever assignments involved building applications.
+		If we&apos;d needed to set up an iOS or Windows development environment on the other hand, I&apos;m almost certain I wouldn&apos;t be able to find software for that that I could actually install on my Debian system.
+		I would have almost certainly failed, had we done any non-Android development, even if I&apos;d managed to get the Android development environment working perfectly.
+		Maybe between terms though, I&apos;ll try again to set up Eclipse and <abbr title="Android Developer Tools">ADT</abbr>.
+		Then again, I can&apos;t build much of use anyway until I have a device with a working battery.
+		I still need to buy a new battery to replace my cracked one, and it&apos;ll take several weeks to arrive in the mail, most likely.
+		I should remember to get the new battery between terms, then when it arrives, see if I can get the development environment set up correctly and put into practice some of what I&apos;ve learned this term.
 	</p>
 </section>
 		<hr/>
