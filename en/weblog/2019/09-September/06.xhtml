@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2019 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2019/09-September/06.xhtml"/>
+		<title>Gettin&apos; stuff done &lt;https://y.st./en/weblog/2019/09-September/06.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+<nav>
+	<p>
+		<a href="/en/coursework/">Coursework</a> |
+		<a href="/en/take-down/">Take-down requests</a> |
+		<a href="/en/">Home</a> |
+		<a href="/en/a/about.xhtml">About</a> |
+		<a href="/en/a/contact.xhtml">Contact</a> |
+		<a href="/a/canary.txt">Canary</a> |
+		<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+		<a href="/en/opinion/">Opinions</a> |
+		<a href="/en/law/">Law</a> |
+		<a href="/en/recipe/">Recipes</a> |
+		<a href="/en/a/links.xhtml">Links</a> |
+		<a href="/en/weblog/2019/09-September/06.xhtml.asc">{this page}.asc</a>
+	</p>
+	<hr/>
+	<p>
+		Weblog index:
+		<a href="/en/weblog/memories">Memories</a> |
+		<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+		<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+		<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+	</p>
+	<hr/>
+	<p>
+		Jump to entry:
+		<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+		<a rel="prev" href="/en/weblog/2019/09-September/05.xhtml">&lt;Previous</a>
+		<a rel="next" href="/en/weblog/2019/09-September/07.xhtml">Next&gt;</a>
+		<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+</nav>
+		<header>
+			<h1>Gettin&apos; stuff done</h1>
+			<p>Day 01644: <time>Friday, 2019 September 06</time></p>
+		</header>
+<img src="/img/CC_BY-SA_4.0/y.st./weblog/2019/09/06.jpg" alt="A shed shingled with vinyl records" class="framed-centred-image" width="800" height="480"/>
+<section id="diet">
+	<h2>Dietary intake</h2>
+	<p>
+		I had muffuletta all day today.
+		I had 161 grams, 156 grams, and 202 grams of it for breakfast, lunch, and dinner.
+		I also drank my last 44 grams of orange juice.
+	</p>
+	<p>
+		I feel like I&apos;ve been eating too much lately.
+		At the same time though, I&apos;m pretty sure my belly size has continued to go down.
+		I&apos;m almost certain I was fatter than this when the dietitian last weighed me.
+		As long as my size continues to drop, it shouldn&apos;t be too big of a problem for me to eat a little too much.
+		I mean, it&apos;s surely slowing my progress, but I&apos;m still making progress, and that&apos;s worth a lot, as far as I&apos;m concerned.
+	</p>
+</section>
+<section id="Minetest">
+	<h2>Minetest</h2>
+	<img src="/img/CC_BY-SA_3.0/minetest.net./weblog/2019/09/06.png" alt="Four chests in a shallow cave" class="framed-centred-image" width="800" height="600"/>
+	<p>
+		I&apos;ve come to the conclusion that a grinding node just isn&apos;t an option in these older versions of Minetest.
+		The <code>minetest.handle_node_drops()</code> function hadn&apos;t been added to the <abbr title="application programming interface">API</abbr> yet.
+		Because of that, there are only two places that a hypothetical <code>liblevelup</code> of that time could have hooked into the <abbr title="application programming interface">API</abbr> to count the drops.
+		It could have hooked into the digging handler that handles all node-digging, which is where I actually modified the built-in scripts to add the call to my own function in a way a mod couldn&apos;t actually do, though a real mod could have replaced the entire function with nearly-identical code that then has to be checked against the new code every release to see if it needs to be updated.
+		The other option would be to put the counter in the code for the node-specific dig handlers.
+		These are the only two places in which we could know the node that was dug, the player that dug the node, <strong>*and*</strong> the node that was dropped.
+		And we need to know all three.
+		If we don&apos;t know what player dug it, we don&apos;t know whose total to increment.
+		If we don&apos;t know the drop, we don&apos;t know which of the player&apos;s counters to add to.
+		And if we don&apos;t know the node dug, we can&apos;t avoid incrementing the sand and sapling counters when players simply pick up sand and saplings themselves without getting them as a drop from something else.
+		So with it established that a hypothetical <code>liblevelup</code> of the time has to hook into one of these places, we can look at what both do: they dig nodes.
+		That means that unless there&apos;s a node in the world that we can remove, we can&apos;t call these functions.
+		We can&apos;t simply feed in locationless drops the way we&apos;d need to for a grinding node.
+	</p>
+	<p>
+		I&apos;ve been thinking about what sapling-based nodes can do a lot.
+		The trait of the sapling is that it sacrifices itself to create more nodes that will drop more of it, along with a couple other nodes (logs and apples).
+		However, sapling-infused nodes can&apos;t do that.
+		They can&apos;t produce nodes that would drop more of themselves, because that would add more things for <code>liblevelup</code> to count.
+		In other words, it&apos;d add more elements.
+		And those elements would clearly be reproductive as well, meaning recursion.
+		Infinite recursion, where I have to just keep adding new stuff until the game fills up.
+		No thanks.
+		Without the production of new dropper nodes, the removal of the initial node also becomes destruction, which is exactly the opposite of the spirit of what saplings do.
+		With all that in mind, I&apos;m thinking maybe sapling-infused items should remain where they are, but based on your level, produce a certain number of infertile nodes nearby that are plantlike.
+		For example, the sapling-based rail can have vines instead of the metal part of the tracks, and can grow out creeper-vine-tracks around them, with the length of those tracks capping out at the level of the player that planted the initial sapling track.
+		The creeper tracks, if dug up and planted elsewhere, won&apos;t produce further vines.
+		Torches get their light from coal in my model, making non-coal torches unable to produce light.
+		I&apos;m not sure what to do with the sand- and iron-based torches, to be honest.
+		The sapling-based one though can be a wall-clinging plant that produces other wall-cleaning plants nearby.
+		The sapling-based chest might produce lesser chests nearby, that hold less inventory or something.
+	</p>
+	<p>
+		As I said, I want coal to be the element that adds a glow to nodes.
+		I&apos;m not sure if I mentioned it already, but for a couple days at least, I&apos;ve been planning to make the coal-based chest a flame chest.
+		It will provide light and store stuff, but because it has coal instead of iron, it provides light instead of keeping people out of the chest.
+		Anyone can take stuff from a flame chest.
+		Flame rails are an obvious choice as well.
+		And we have coal blocks, in a time before coal blocks, which will probably have glowing embers or something so as to be able to provide light like the other coal-based nodes.
+	</p>
+	<p>
+		One thing has been bothering me about the sand pedestal.
+		With two of the other pedestals, you have to acquire a larger amounts of minerals, which assuming you aren&apos;t given gifts, requires you to mine all that material and increase your stats.
+		With the third pedestal, you have to gather a large amount of saplings, and while you <strong>*could*</strong> let leaf decay do all the work for you, you don&apos;t have to.
+		You could use your own hands, increase your stats, and get the saplings you need.
+		On the other hand, the sand pedestal doesn&apos;t fit this pattern set by the other pedestals.
+		You have to <strong>*actively avoid*</strong> using the sand to increase your stats if you want a sand pedestal so you can work with the sand element.
+		The feasibility of working with the sand element is inversely correlated with how much you grind on the sand element.
+		It&apos;s not only counter-intuitive, but counterproductive as well.
+		With that in mind, I&apos;m considering writing special rules for acquiring the sand element&apos;s pedestal.
+		In all four cases, you have to give up large amounts of the element in question, but the entire premise of the sand element is that you give up the sand into the void.
+		Why not combine the two expenditures?
+		Each time you gain one point in sand element experience, you&apos;ve destroyed three sand.
+		A stack of sand caps out at 99, so after gaining 33 points of sand experience, you&apos;ve destroyed a stack of sand.
+		You have to give up 41 stacks of an element to get a pedestal, so that&apos;s 41 times 33, for a total of 1353.
+		Maybe for every 1353 sand experience you gain, you should get a sand pedestal.
+		Of course, this means that in the modern game, sand pedestals aren&apos;t available, even though sand still is.
+		This is in contrast to red mushroom, brown mushroom, and string pedestals, which will all be available despite these elements no longer being tied to any modern stat.
+		To make things absolutely perfect though, I think I&apos;ll have the sand pedestals given specifically based on the sand-dropped-from-sandstone stat, so even if a mod makes some other node drop sand, it wont count unless you&apos;re losing three sand due to the initial sand drop setup.
+		It&apos;ll be an Easter egg for people to find if they take a look at the code, and if they bring it up, I&apos;ll release the Retrostats Modpack, which will unlock that part of the code.
+	</p>
+	<p>
+		I set up four chests in one of the nearby desert caves with the intent of filling each chest with one of the four elements as I worked to gather enough to build the pedestals.
+		With the change of plans on how to get the sand pedestal, the fourth chest won&apos;t be needed, but I can stash other things in it, which were previously going to need to sit in whatever chest was otherwise the emptiest.
+		I crafted a set of torches just to make iron-mining feasible, though it&apos;ll likely be the only set I craft for a great while, as I need to conserve my coal.
+	</p>
+</section>
+<section id="bicycle">
+	<h2>Bicycle maintenance</h2>
+	<p>
+		My main task for today was to head to the bike store and get fenders for my bicycle.
+		It&apos;s been on my to-do list to get them for quite a while, and I&apos;d hoped to get them second-hand, but the rainy season has already started.
+		It&apos;s kind of too late to be picky about where I get them, if I don&apos;t want my clothing stained with road gunk again.
+		I got most of the way to the bike store only to realise that I could try the recycling centre in the next city over.
+		So I turned around and did that.
+		Last time I was there, they had a large selection of bikes and bike parts, but this time, their selection was abysmal.
+		There were hardly any options.
+		I did find one bike with fenders, and not much else; most of its parts were just missing.
+		However, it cost fifty dollars.
+		That seemed a bit high for used fenders and an obligation to store the broken down bike frame they came with.
+		I decided to try the bike store and see what their prices were.
+	</p>
+	<p>
+		I left without the partial bike and hit up the bike store.
+		They wanted <strong>*sixty*</strong> dollars for both fenders, but thirty dollars for just the back one, which is what I really need.
+		I took the back fender.
+		In retrospect, I shouldn&apos;t have done that.
+		I should have gone back to the recycling centre and gotten both fenders.
+		The one at the bike shop just sort of straps on.
+		That means a thief could easily take it.
+		On the other hand, the ones at the recycling centre would require dismantling the bike in order to install or remove them.
+		I&apos;d much rather have that setup.
+		More than anything though, I just wanted to be done with my errand and cross this off my to-do list.
+		I didn&apos;t want to bike back to Eugene to get the used parts.
+		Though not all why I went with the ones I did, there&apos;s also a chance the used ones wouldn&apos;t fit my bike.
+		They&apos;re the kind that has to be the right size and shape, and my bike&apos;s frame has a very odd shape that makes attaching things to it often impossible.
+		I might have been out fifty dollars for nothing, had I gone with that option.
+		So I guess I have that as a consolation for my poor decision-making today.
+	</p>
+	<p>
+		My breaks have been shot for a while now.
+		The back breaks are really odd though, and I&apos;m not sure how to even go about changing out those pads.
+		Like I said, this bike is set up really strangely.
+		The front breaks use normal break pads though, so I tried to swap those out.
+		I found the spare pads I had were the wrong size.
+		That wasn&apos;t going to work.
+		So I tried getting break pads off of one of my scrap bikes.
+		I didn&apos;t have the right tools though.
+		Summer gave me a socket wrench and a few random sockets, but I don&apos;t have an actual set.
+		And the one I need is one of the one&apos;s that&apos;s missing.
+		I&apos;ve added getting a socket wrench set to my to-do list, and figured that&apos;d be the item I just had to check off tomorrow.
+		I don&apos;t know why I didn&apos;t think of trying one of the other scrap bikes right away, but I remembered I should do that as I was writing about needing the socket wrench set.
+		I managed to get one of the break pads changed, though the other one is on there too tight for me to get off, and I&apos;ll need to get ahold of a socket wrench set or some hex keys to get that one off.
+		I have a set, but they&apos;re all too small for this bolt.
+		I got the one that was most worn off though.
+		It&apos;s oddly worn too, so I&apos;m pretty sure it had just been installed incorrectly.
+		I could probably get more life out of it if I repositioned it, so I&apos;m keeping it for the time being for a later time I need to change the break pads.
+		With just that one pad changed, I the front breaks now work well, so that takes care of that issue for the time being.
+	</p>
+</section>
+<section id="cake">
+	<h2>Plans to bake a cake</h2>
+	<p>
+		I don&apos;t think I mentioned it, but yesterday or the day before, I decided that this coming Thursday, I want to bring a cake to <abbr title="Eugene Unix &amp; GNU/Linux User Group">EUGLUG</abbr>.
+		Baking a cake is on my to-do list.
+		I need to bake a cake using the recipe I created in an attempt to bake brownies.
+		The brownies were a bust, but as a chocolate cake, it wasn&apos;t bad.
+		But I failed to photograph the thing before decorating it, so I don&apos;t have a photo for that recipe page on my website.
+		I&apos;ve got to bake the cake again, but I don&apos;t actually want a cake, especially a whole cake.
+		If I can get the <abbr title="Eugene Unix &amp; GNU/Linux User Group">EUGLUG</abbr> members to eat it, or even just eat part of it, I won&apos;t have to deal with the cake myself.
+		I&apos;ll probably have a little of the cake, but I certainly shouldn&apos;t eat a whole cake while trying to lose weight.
+		So yeah, I need to keep organised enough that I can get that cake baked on time, while also making progress on my Minetest modpack and marking other things off my to-do list.
+	</p>
+</section>
+<section id="keys">
+	<h2>Bike lock keys</h2>
+	<p>
+		I predicted the bike lock keys wouldn&apos;t arrive in the mail today.
+		I was wrong, so now I have those in my possession.
+	</p>
+</section>
+<section id="brush">
+	<h2>Replacement brush</h2>
+	<p>
+		My hair was so tangled a couple days ago that I literally broke my brush in it.
+		Today, I purchased what appears to be a stronger brush.
+	</p>
+</section>
+<section id="downgrade">
+	<h2>Downgrading to Replicant 4.2</h2>
+	<p>
+		I haven&apos;t heard word about whether Replicant 6.0 has <code>iptables</code>, but it turns out that orWall is no longer maintained, and hasn&apos;t been for about three years.
+		Replicant 6.0 probably uses a newer version of <code>iptables</code> than orWall knows how to work with.
+		In theory, orWall wouldn&apos;t even be needed if I could upgrade Orbot, due to new features that that has, but the newer versions of Orwall are proprietary, so that&apos;s not an option.
+		So I can&apos;t access the network on Replicant 6.0, as I don&apos;t know a way to prevent data leaks on it, and I can&apos;t lesten to musing on Replicant 6.0, because I cant&apos; get it to read the <abbr title="Secure Digital">SD</abbr> card, where I store all the music.
+		I&apos;m not sure the music would fit on the device&apos;s internal storage, but even if it can, there&apos;s no reason it should have to be there.
+		There&apos;s no reason why I shouldn&apos;t be able to put it on the <abbr title="Secure Digital">SD</abbr> card.
+		I&apos;ve been meaning to downgrade this thing, but I needed to try to debug the problems first, and there doesn&apos;t seem to be a way to do that with my current skill level.
+		So today, I made the downgrade.
+	</p>
+	<p>
+		I always forget that I can&apos;t install the main operating system over <abbr title="Universal Serial Bus">USB</abbr>.
+		You have to install the recovery image via <abbr title="Universal Serial Bus">USB</abbr>, but then install the main system from the <abbr title="Secure Digital">SD</abbr> card or internal storage.
+		I always forget, and don&apos;t get the system transferred to the internal storage before I flash the recovery image and make it impossible to use <abbr title="Media Transfer Protocol">MTP</abbr>.
+		It&apos;s a pain in the neck, but I then have to format the <abbr title="Secure Digital">SD</abbr> card from my laptop, which requires digging out my micro<abbr title="Secure Digital">SD</abbr> card adaptor, then transfer the system image onto the card and put that into the device.
+		It doesn&apos;t help either that the <abbr title="Secure Digital">SD</abbr> card slot is behind the battery, so I have to shut down the device and pull the battery out.
+	</p>
+</section>
+<section id="laser">
+	<h2>Hair-removal</h2>
+	<p>
+		I&apos;ve got a long shift at work tomorrow, so I won&apos;t have much time off the clock, and if I&apos;m going to make tomorrow a productive day, I&apos;ve got to get some of the time-consuming junk out of the way tonight.
+		I decided to do my home-<abbr title="light amplification by stimulated emission of radiation">laser</abbr> treatment a day early.
+		It&apos;s still within the time frame of when the instructions said I should do it, but it frees me up tomorrow to deal with other things, such as returning bottles for deposit and hitting up the hardware store for a proper socket wrench set.
+	</p>
+</section>
+		<hr/>
+		<p>
+			Copyright © 2019 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2019%2F09-September%2F06.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.2</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2019%2F09-September%2F06.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+

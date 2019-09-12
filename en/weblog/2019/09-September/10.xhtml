@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2019 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2019/09-September/10.xhtml"/>
+		<title>Terribly disorganised &lt;https://y.st./en/weblog/2019/09-September/10.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+<nav>
+	<p>
+		<a href="/en/coursework/">Coursework</a> |
+		<a href="/en/take-down/">Take-down requests</a> |
+		<a href="/en/">Home</a> |
+		<a href="/en/a/about.xhtml">About</a> |
+		<a href="/en/a/contact.xhtml">Contact</a> |
+		<a href="/a/canary.txt">Canary</a> |
+		<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+		<a href="/en/opinion/">Opinions</a> |
+		<a href="/en/law/">Law</a> |
+		<a href="/en/recipe/">Recipes</a> |
+		<a href="/en/a/links.xhtml">Links</a> |
+		<a href="/en/weblog/2019/09-September/10.xhtml.asc">{this page}.asc</a>
+	</p>
+	<hr/>
+	<p>
+		Weblog index:
+		<a href="/en/weblog/memories">Memories</a> |
+		<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+		<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+		<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+	</p>
+	<hr/>
+	<p>
+		Jump to entry:
+		<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+		<a rel="prev" href="/en/weblog/2019/09-September/09.xhtml">&lt;Previous</a>
+		<a rel="next" href="/en/weblog/2019/09-September/11.xhtml">Next&gt;</a>
+		<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+</nav>
+		<header>
+			<h1>Terribly disorganised</h1>
+			<p>Day 01648: <time>Tuesday, 2019 September 10</time></p>
+		</header>
+<img src="/img/CC_BY-SA_4.0/y.st./weblog/2019/09/10.jpg" alt="Mailboxes in the rain" class="framed-centred-image" width="800" height="480"/>
+<section id="diet">
+	<h2>Dietary intake</h2>
+	<p>
+		For breakfast, I had 172 grams of muffuletta.
+		I had 135 grams for lunch and another 162 grams for dinner.
+	</p>
+</section>
+<section id="locale">
+	<h2>Experimenting with locales</h2>
+	<p>
+		I started work on trying to create my own locale file with the settings I want, seeing as so many applications these days don&apos;t offer users the necessary settings like they used to.
+		In my experiments, I found that Nautilus is respecting the settings specified in my custom locale perfectly.
+		In fact, when I made a typo in the file and used <code>d</code> instead of <code>%d</code>, Nautilus showed a literal &quot;d&quot; in place of the day number in the dates.
+		That sort of thing wouldn&apos;t have made it into a released locale.
+		Clearly, my own local was being used there.
+	</p>
+	<p>
+		I accidentally found a settings menu in <abbr title="GNU Network Object Model Environment">GNOME</abbr> that allows you to turn off display of arbitrary parts of the date though.
+		This makes me think that <abbr title="GNU Network Object Model Environment">GNOME</abbr> uses a hard-coded date format, as the format from the locale can&apos;t have parts stripped out of it and still look fine.
+		The date at the top menu bar thus can&apos;t be fixed without a source code edit.
+		That&apos;s fine though.
+		Date formats aren&apos;t as important to me when displaying a single date.
+		It&apos;s when you&apos;re showing me a list of dates that I want them formatted well, for easy comparison.
+	</p>
+	<p>
+		Experimenting with Thunderbird though, it seems that Thunderbird chops off the modifier component of the locale you set.
+		The format of a locale name is &quot;{language code in lower case}_{country code in upper case}[.{character encoding}][@{optionalmodifier}&quot;, as best I can tell.
+		It seems like the proper way to name my locale would be <code>en_GB.UTF-8@corrected</code>, signifying the corrected time formats.
+		The word &quot;corrected&quot is vague, but as this is only on my system, it&apos;d be fine.
+		However, Thunderbird was just using the <code>en_GB.UTF-8</code> locale.
+		I verified this too, by creating an <code>en_DK.UTF-8@corrected</code> locale.
+		Both locales&apos; files were symbolic links to the same file.
+		If Thunderbird was using these locales, they should produce identical results, but they didn&apos;t.
+		There&apos;s no good excuse for this.
+		So I tried another naming format.
+		I just called the locale <code>en_YST.UTF-8</code>.
+		Thunderbird disregarded that locale too, but this time, seemed to fall back to <code>C</code> or something.
+		This is just asinine.
+		I&apos;m going to need to get help on this.
+	</p>
+</section>
+<section id="drudgery">
+	<h2>Drudgery</h2>
+	<p>
+		The academic advisor&apos;s boss wrote back, apologising about the delay in getting back to me.
+		They said that they weren&apos;t recommending that I pay early, nor were they even allowing it.
+		However, they were telling me I should give, and I quote, &quot; more space to get [my] payment&quot;, whatever that means.
+		They then recommended a bunch of other payment options.
+		I could actually get the Western Union thing to work, I think, but after all the hassle the school has put me through, I really don&apos;t want to, so I claimed not to be able to find a local location for them.
+		I don&apos;t know if they have an actual, brick-and-mortar building nearby, but some of the convenience stores around here have signs saying they can make Western Union transactions.
+		They specifically brought up PayPal too, which I always have to emphasise is bad news.
+		In my response below, I didn&apos;t even exaggerate, except that I didn&apos;t explain that &quot;locking up my credit card&quot; is only locking up use of it in the PayPal system, and I can still use it elsewhere.
+		They said that if I thought the problems I&apos;d encountered so far weren&apos;t treated satisfactorily, I should state them so they can be reviewed further.
+		They then continued that they were sorry that &quot;[my] health had been affected at some point in [my] academic pursuit&quot; at the school, and they hoped &quot;[they] hope all the negative experiences in the past will be replaced with more positive ones moving forward&quot;.
+	</p>
+	<blockquote>
+		<p>
+			Hello <span class="redacted">[REDACTED]</span>,
+		</p>
+		<p>
+			Don&apos;t worry about the delay.
+			When last you wrote, it was already too late for anything to be done about this situation.
+			At this point, there is absolutely no need to rush in getting back to me, and I completely understand taking care of other, likely more urgent or more important matters first.
+			I actually assumed I wouldn&apos;t be receiving a response at all.
+		</p>
+		<p>
+			I don&apos;t understand what you&apos;re saying about not paying earlier than week five, but giving more space for the payment to make it.
+			When the payment option opens, I *immediately* send my payment every term.
+			If you don&apos;t want me to send my payment earlier than week five, there is no way that I can possibly send it any earlier than I&apos;ve already been sending it.
+		</p>
+		<p>
+			As I&apos;ve explained several times in my past emails, which you may or may not have seen, PayPal tends to lock up my account and credit card and hassle me for months any time I try to pay through them.
+			If I tried to pay via PayPal, my payments would always end up late, if they even got to you at all, plus I&apos;d have a few months of extra grief.
+			With the term only lasting a few months, these periods might even overlap, resulting in PayPal continually hassling me with no breaks from it.
+			PayPal is not a feasible option.
+			<span class="redacted">[REDACTED]</span> tells me that I can&apos;t pay via credit card through the Western Union website, and I was unable to find any Western Union locations within biking distance, so I can&apos;t do it in person.
+			Western Union doesn&apos;t seem to be an option either.
+			I don&apos;t know anything about the GlobalPay or QuickPay options you mention.
+			Do they take credit cards?
+		</p>
+		<p>
+			And no, I don&apos;t think making me miss the term due to this mistake was a satisfactory treatment of the issue.
+			There&apos;s no need to follow up on this matter though.
+			If you allowed me to get into the term today, I&apos;d have a single day to complete a week&apos;s worth of work in two courses.
+			I don&apos;t think I could do it under normal circumstances, but under the recent stress that you, me, and the credit union all caused me, I definitely wouldn&apos;t succeed.
+			It&apos;s too late to fix this situation, so it&apos;s not worth your time and energy to worry about getting this problem fixed.
+			It&apos;s a lost cause at this point.
+		</p>
+		<p>
+			You say that you hope the negative experiences of the past will be replaced with positive ones moving forward.
+			This isn&apos;t a possibility though.
+			The school jumped straight to threats when they didn&apos;t like what I was doing instead of trying to talk to me like reasonable people first.
+			Then, when I complied, I got absolutely zero response from the school.
+			(As a side note, this really shows the school&apos;s true character.)
+			At this point, the damage has already been done.
+			You people have censored me, and because of the rough way in which you did it, it&apos;s left me in a state of constant hopelessness and lethargy.
+			I already explained all this too.
+			At this point, I don&apos;t have the killer headaches, but being under this ridiculous and forceful censorship still takes a *major* toll on my mental health.
+			The fact that you would even *say* that you hope something will magically be better moving forward really sounds like you&apos;re blowing off the severity of the problem.
+			There is no fix here (at least not one the school would ever consider), and there is no hope for improvement.
+			All I can do is muddle through, get my coursework done, and get out of here.
+			That is why I&apos;m so greatly frustrated by this situation: missing this term has left me trapped here for another three months.
+			It&apos;s postponed when I can finally be done with all this.
+			It&apos;s only after I&apos;ve completed all my courses and left the school that anything&apos;s going to be any better for me, so you&apos;ve prevented things from getting any better for three more months.
+		</p>
+		<p>
+			I&apos;ll try to be nicer to <span class="redacted">[REDACTED]</span> moving forward.
+			When he wasn&apos;t communicating what was happening, I mistook that for him not taking action.
+			I mean, what can I expect is happening when I&apos;m not hearing back for a week at a time?
+			I can&apos;t even know if my letter has been read, let alone acted upon.
+			So I assumed nothing was happening because I couldn&apos;t see anything happening.
+			That was a faulty assumption on my part, and I will work on being more polite understanding next time.
+			It&apos;s not <span class="redacted">[REDACTED]</span>&apos;s fault if other departments take a week to do anything.
+		</p>
+		<p>
+			~ Alex Yst
+		</p>
+	</blockquote>
+</section>
+<section id="to-do">
+	<h2>To-do list</h2>
+	<p>
+		I&apos;m done with trying to get Thunderbird working correctly for now.
+		I&apos;ve put it on my to-do list so I can shelve that project without forgetting it entirely.
+		Now that I write that though, I realise I&apos;m not going to forget it anyway, as it bothers me every time I open use the mail client, which is daily.
+		I&apos;ve also put getting that Minetest mod finished on my to-do list, but for the opposite reason.
+		I&apos;ve been planning it when I have time to think but not act, but I haven&apos;t actually made much progress in actually developing it because it hasn&apos;t been a priority.
+		It should be though.
+		I&apos;d like to get back to playing this game to relax, and I can&apos;t really relax when I&apos;m playing in worlds I intend from the start to be temporary testing levels.
+	</p>
+</section>
+<section id="Tuesday">
+	<h2>Tuesday</h2>
+	<p>
+		I completely spaced it and forgot that it was Tuesday.
+		I didn&apos;t check on the Tuesday drawing, and I didn&apos;t get my <abbr title="light amplification by stimulated emission of radiation">laser</abbr> treatment done before work.
+		After work, even though I&apos;d remembered by then that it was Tuesday, I wasn&apos;t going to check the drawing.
+		It was too much trouble at that point.
+		If there was a prize of any amount of usefulness, it&apos;d be gone by then, and besides, I was pretty sure the store doing the drawings closed at 20:00.
+		If not, they still closed really early, and I probably wouldn&apos;t make it in time.
+		However, I didn&apos;t want to have to admit having missed the drawing to my journal, so after work, I went and checked it out.
+		Sure enough, they were closed, and their closing time was 20:00, just as I&apos;d thought it was.
+		When I got back home, I got my <abbr title="light amplification by stimulated emission of radiation">laser</abbr> treatment taken care of.
+	</p>
+</section>
+<section id="Morgan">
+	<h2>Morgan</h2>
+	<p>
+		Though I don&apos;t legally have a middle name, because I can&apos;t stand when card companies put my middle initial on my cards (I don&apos;t care if they use my full middle name or leave my middle name out entirely, but it feels disrespectful to include only <strong>*part*</strong> of my middle name), I do have a couple names i consider to be my middle name.
+		They&apos;re a masculine and feminine variant of the same name, but I haven&apos;t told them to anyone.
+		I was thinking today about maybe taking on a non-binary middle name instead; one I could be more open about.
+		I&apos;ve always liked the name &quot;Morgan&quot;.
+		I didn&apos;t choose to be &quot;Morgan Yst&quot; because I thought that sounded odd, but today, I thought that maybe &quot;Alex Morgan Yst&quot; would be a cool name.
+		But then I looked at what the initials would be.
+		It spells out &quot;AMY&quot;!
+		Hilarious.
+		It&apos;s too feminine though.
+		I don&apos;t really feel like an &quot;Amy&quot;.
+	</p>
+</section>
+<section id="swimming">
+	<h2>Potential swimming lessons</h2>
+	<p>
+		One of my workmates today was asking me if I&apos;d ever smoked.
+		I said that&apos;d never, and they wanted to know why not, so I admitted that I&apos;m afraid of that sort of thing.
+		They asked what there would be to fear, so I brought up how cigarettes are full of fibreglass shards and cyanide, among other things, and that even the nicotine itself is pretty toxic.
+		They tried to tell me that none of those things were in them, so i said they should try reading the warning labels on cigarette cartons.
+		At that point, they figured out i was even talking about cigarettes, because I guess I hadn&apos;t said the word &quot;cigarettes&quot; up until that point?
+		They&apos;d asked me about smoking, so I thought they were talking about cigarettes.
+		having clarified that I&apos;d been referring to cigarettes, they then assumed that while I don&apos;t smoke cigarettes, I do smoke marijuana.
+		So I explained that I don&apos;t use marijuana either, and they thought that I should try one or the other.
+		I <strong>*really*</strong> don&apos;t want to do that, and again cited fear, so they explained how marijuana is so much less likely to kill you.
+		Fair enough.
+		I don&apos;t know enough about marijuana to know if it has any mortality increases associated with it, but death isn&apos;t the only thing to fear.
+		I mean, death is coming for me eventually anyway.
+		With marijuana, the bigger threat in my eyes is a loss of self.
+		The thing about recreational drugs is that people take them in order to alter their brain functionality.
+		Some people use marijuana as a pain killer, or for some other medical reason, I don&apos;t recall if I ever knew the specifics.
+		But most of the marijuana use you hear about is specifically intended to mess with the brain.
+		In other words, to make you not be you for a while.
+	</p>
+	<p>
+		We got into a log discussion about what it means to lose yourself, whether marijuana causes such loss, and length of time such a loss lasts.
+		They claimed that you&apos;re still you, but I said that you&apos;re an altered version of you, not the real you.
+		I&apos;m running a lot of lines of <code>glib</code> code, most of which are unmodified.
+		I still call it <code>glib</code>, and it mostly functions as <code>glib</code>.
+		It&apos;s not the real <code>glib</code> though.
+		It&apos;s got the same name, and the same <abbr title="application programming interface">API</abbr>, but it&apos;s a derivative.
+		Similarly, me on marijuana wouldn&apos;t be the real me, but a derivative; an altered version.
+		But unlike <code>glib</code>, for an altered version of me to exist, the real me has to cease to exist.
+		They disagreed, saying that it only unleashes the inner you, by rendering inactive parts of you that would stop you from thinking certain things before you started to think them.
+		I explained that in my view, those parts that are keeping you from having those thoughts are probably doing it for a reason, but regardless of why, those inhibitions are a part of what makes you you.
+		Without them, you&apos;re not you, but someone similar.
+		They said the effects last less then a month.
+		Their reasoning was that they had to get off marijuana once (I forget why, but it wasn&apos;t health-related) and they felt back to normal within a month.
+		I didn&apos;t bring up the fact that if they&apos;re still impaired, their ability to know they&apos;re still in an altered state is likely impaired too.
+		I didn&apos;t bring up that they may still not be their original self.
+		Instead, I said that my restored self wouldn&apos;t be able to trust what my altered self had experienced.
+	</p>
+	<p>
+		At one point, when I was trying to get across my loss-of-self point, I brought up that I also don&apos;t believe that you&apos;re yourself without your memories.
+		They agreed that marijuana messes with your memories, which surprised me, because I&apos;d forgotten it does that.
+		That hadn&apos;t been the point I&apos;d intended to make.
+		But yeah, marijuana messes with your dream cycle, which in turn messes with your ability to form new memories.
+		I already have trouble remembering things.
+		I really don&apos;t need to go out of my way to make it worse.
+	</p>
+	<p>
+		They said I should try something new, even if it wasn&apos;t smoking.
+		I replied that there were so many new things I want to try, but that they&apos;ve all got to be put on hold until I can get my voice fixed.
+		I don&apos;t want to go out of my way to meet new people until I can make a decent first impression.
+		I listed a few things I&apos;m wanting to try.
+		I forget what all I listed, but I know learning a martial art was one of the first.
+		After a bit, they recommended <abbr title="self-contained underwater breathing apparatus">scuba</abbr> diving.
+		I offhandedly said I&apos;d need to learn to swim first.
+		They said that&apos;s what I should go with: learning to swim.
+		I replied that that&apos;s on my to-do list, but again, I&apos;d need to take lessons, which means meeting new people, which means first getting my voice fixed.
+		I&apos;d kind of hoped to learn from that other dietary meeting participant, but that didn&apos;t work out.
+	</p>
+	<p>
+		After that, they offered to teach me.
+		I&apos;m not getting my hopes up too much, seeing as the last person that said they&apos;d give me their time, as they were supposedly going to teach me to drive, never actually made time for me.
+		I have little reason to think this will be any different.
+		Still, it&apos;d be nice though.
+		A bit ahead of my revised timeline, this&apos;ll require frequent full-body shaves, as I don&apos;t have my permanent hair-removal taken care of just yet, but I&apos;m mostly stuck sitting on my hands right now anyway.
+		It&apos;d be something to look forward to actually accomplishing.
+		I said I&apos;d love to take them up on that.
+		I said I&apos;m behind on things, and I need tomorrow to catch up, then the next day, I&apos;m baking a cake and biking it to Eugene.
+		Any day after that would be great though.
+		They asked if I use &quot;Messenger&quot;.
+		I assumed it would be <abbr title="Microsoft Network">MSN</abbr> Messenger, as it was literally the only common <abbr title="instant messaging">IM</abbr> network I could think of with &quot;Messenger&quot; in the name.
+		I wasn&apos;t sure if I could get an account set up or not, but if I could, Pidgin would be a working client for it, so i knew I had the right software at my disposal.
+		It turns out they were referring to FaceBook Messenger though, and FaceBook won&apos;t allow me to register without providing my <abbr title="identification">ID</abbr>.
+		That&apos;s rather creepy, and i want no part of it.
+		My heart fell.
+		At this point, I knew this wasn&apos;t going to work out.
+		They said their telephone number is on the telephone roster and I could send them an <abbr title="Short Message Service">SMS</abbr> message, so I asked which carrier they were using, exlpaining that I have no telephone service, but if I know both a number and a carrier, I can send an email to an <abbr title="Short Message Service">SMS</abbr> inbox.
+		They&apos;re on a &quot;Wi-Fi app&quot;, as they put it though, so there&apos;s not likely to be an associated <abbr title="Short Message Service">SMS</abbr> gateway like most of the actual carriers have.
+	</p>
+	<p>
+		By the time we left for the day though, we&apos;d exchanged email addresses.
+		I was somehow under the impression that they didn&apos;t use email.
+		It looks like this might workout after all though.
+		They want me to email them on Thursday, and we&apos;ll set up a meet for Friday.
+		I know I opened up my schedule starting Friday, but I assumed their own schedule wouldn&apos;t be open quite that quickly.
+		I need to make sure to get shaved, not to mention get caught up on everything, as quickly as possible.
+	</p>
+	<p>
+		Also of note, they wanted to do this at an indoor pool, but mentioned early on that it would take a while due to lack of funds on their part.
+		I found that hilarious.
+		They&apos;re helping me.
+		Why would <strong>*they*</strong> be the one to pay for it?
+		But yeah, telling them that of course I&apos;d be the one to cover the cost seems to have sped this up quite a bit.
+		I&apos;ll be happy to have this done quickly so I know it&apos;s actually happening, but I could use another week to get things settled, first.
+		Beggars can&apos;t be choosers though.
+	</p>
+</section>
+		<hr/>
+		<p>
+			Copyright © 2019 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2019%2F09-September%2F10.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.2</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2019%2F09-September%2F10.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+
