@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2019 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2019/09-September/23.xhtml"/>
+		<title>A great team &lt;https://y.st./en/weblog/2019/09-September/23.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+<nav>
+	<p>
+		<a href="/en/coursework/">Coursework</a> |
+		<a href="/en/take-down/">Take-down requests</a> |
+		<a href="/en/">Home</a> |
+		<a href="/en/a/about.xhtml">About</a> |
+		<a href="/en/a/contact.xhtml">Contact</a> |
+		<a href="/a/canary.txt">Canary</a> |
+		<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+		<a href="/en/opinion/">Opinions</a> |
+		<a href="/en/law/">Law</a> |
+		<a href="/en/recipe/">Recipes</a> |
+		<a href="/en/a/links.xhtml">Links</a> |
+		<a href="/en/weblog/2019/09-September/23.xhtml.asc">{this page}.asc</a>
+	</p>
+	<hr/>
+	<p>
+		Weblog index:
+		<a href="/en/weblog/memories">Memories</a> |
+		<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+		<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+		<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+	</p>
+	<hr/>
+	<p>
+		Jump to entry:
+		<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+		<a rel="prev" href="/en/weblog/2019/09-September/22.xhtml">&lt;Previous</a>
+		<a rel="next" href="/en/weblog/2019/09-September/24.xhtml">Next&gt;</a>
+		<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+</nav>
+		<header>
+			<h1>A great team</h1>
+			<p>Day 01661: <time>Monday, 2019 September 23</time></p>
+		</header>
+<img src="/img/CC_BY-SA_4.0/y.st./weblog/2019/09/23.jpg" alt="The bike path leading to work" class="framed-centred-image" width="649" height="480"/>
+<section id="Minetest">
+	<h2>Minetest</h2>
+	<img src="/img/CC_BY-SA_3.0/minetest.net./weblog/2019/09/23.png" alt="The new crystal interface" class="framed-centred-image" width="1024" height="600"/>
+	<p>
+		I did some more experimenting today and found that server-side, I can load the metadata of distant nodes, but I can&apos;t load their basic data if they&apos;re in an unloaded block.
+		That is, I can&apos;t load the <code>name</code>, <code>param1</code>, or <code>param2</code> values.
+		As I&apos;d sort of guessed before, the metadata appears to be stored separately from the main data.
+	</p>
+	<p>
+		To prevent race conditions, I set up the &quot;magic&quot; inventory slot to not actually accept input, but instead delete everything that gets put into it automatically.
+		Unfortunately, Minetest doesn&apos;t offer the option to do this while simultaneously only allowing a stack of up to a certain size to be put into the inventory.
+		When you&apos;re deleting the full stack right away, you can only either allow the full stack or disallow the full stack.
+		Because of that, all stacks that would overflow the storage count are now entirely disallowed.
+		Previously, the part of the stack that would fit was allowed, while the rest was rejected.
+		Honestly though, the chances of getting anywhere near the limit are pretty small, so there&apos;s nothing to really be worried about.
+	</p>
+	<p>
+		I didn&apos;t think I&apos;d have time today, but I also managed to get the withdrawal system coded and debugged.
+		Of particular interest, the initial version would allow players to mint their own items if they tried to withdraw a negative amount of something.
+		The account balance would be raised, but no items would actually be taken from a player, even if they had the necessary items on-hand.
+		All you&apos;d need to do is enter a hugely negative number to get items added to your account, then withdraw as many as you wanted.
+		That&apos;s all debugged though.
+		Negative numbers give the player an error message, and trying to withdraw more than will fit in your inventory or more than you have in your account will simply withdraw the maximum reasonable amount.
+	</p>
+	<p>
+		The error message, which is displayed in the player&apos;s chat log, is in red though.
+		I&apos;d like for it to be in an element-specific colour.
+		I&apos;ll need to copy the palette colours by hand into a table to be read from.
+		To make more use of this table, I might make the withdrawal process output a message about how many items were withdrawn, too.
+		Otherwise, the colour will only be seen by players that try (and fail) to cheat.
+	</p>
+</section>
+<section id="work">
+	<h2>Work</h2>
+	<p>
+		The other new shift leader talked the head manager into going home early again, and we closed the store ourselves.
+		I swear, we make a great team.
+		We each have very pronounced weaknesses, and the other compensates for those weaknesses.
+	</p>
+	<p>
+		For example, I don&apos;t have the guts to try to get the head manager out of our hair.
+		The head manager knows what they&apos;re doing, but they slow us down drastically.
+		We try to get stuff done, and they tell us they&apos;d rather have us wait.
+		Late at night, we&apos;re practically sitting on our hands due to the slow business, and could easily spend that time getting ready to close in ways that don&apos;t interfere with business, such as counting the full cases of stuff we have left, saving the opened cases for closer to close so sales don&apos;t require us to recount.
+		But the head manager wants us to put of the entire inventory check until later.
+		In their defence, they&apos;ve gotten really fast at things over the years, so closing doesn&apos;t take as long when they&apos;re here.
+		But still, the options are to spend the time getting ready to close or spend the time just waiting around and glancing at the clock every now and then.
+		I&apos;d rather spend the time working.
+		And if they&apos;d let us work, we could get done early, then spend the remaining time getting a little of morning crew&apos;s work done.
+		We could actually be productive.
+		I&apos;m bad at getting people to do what I want in general, while the other shift leader is more of leader than I am.
+	</p>
+	<p>
+		At the same time though, the other shift leader has admitted to me having trouble with some of the paperwork aspects.
+		I joked about going home early myself yesterday after the head manager left, and they said I needed to stat because I, as they put it, knew more than them.
+		I know what I&apos;m doing with closing down the registers at the end of the night.
+		I know how to do the box counts.
+		(I&apos;m not sure how they know how to do the soda counts but not the box counts, as they&apos;re just the same, but whatever.)
+		And honestly, I&apos;m better at staying on task.
+		I get antsy if I&apos;m not doing something productive, while they&apos;re more laid-back.
+	</p>
+	<p>
+		I believe all we need is practice.
+		We compensate for each other&apos;s weaknesses for now, but I don&apos;t think we&apos;ll keep those weaknesses.
+		They&apos;ll learn to do paperwork.
+		I&apos;ll learn to lead.
+		We&apos;ve always gotten along well, so there&apos;s no reason we won&apos;t continue to make a great team in the future, but we&apos;re not going to need each other like we do now.
+	</p>
+	<p>
+		Also of note, I think the computer&apos;s a day off on its inventory dates.
+		That&apos;s what seems to be going on.
+		When we hit the &quot;now&quot; button to choose the current time as the inventory time, the button to enter the counts gets greyed out, so we can&apos;t enter the counts.
+		So we weren&apos;t able to do that yesterday or today.
+		But tonight, after entering the counts, the system told me that the most-recent count was entered yesterday.
+		Just before I&apos;d entered it, it claimed it had been the day before yesterday.
+		That means today&apos;s count got put under yesterday&apos;s date.
+		The head manager said not to worry about it when I explained the problem we had yesterday, and said the computer was probably accepting the counts even if it said it wasn&apos;t.
+		So we&apos;re in the clear, and don&apos;t have to worry about this.
+		If there&apos;s a problem, it&apos;s the head manager who&apos;s got to deal with it now.
+		But I&apos;d still like to debug this the best I can.
+		Tomorrow, if I&apos;m the one entering the counts again, I&apos;m going to see if I can manually set the date to the correct one.
+	</p>
+</section>
+		<hr/>
+		<p>
+			Copyright © 2019 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2019%2F09-September%2F23.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.2</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2019%2F09-September%2F23.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+
