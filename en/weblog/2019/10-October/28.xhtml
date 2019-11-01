@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2019 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2019/10-October/28.xhtml"/>
+		<title>People are terrible &lt;https://y.st./en/weblog/2019/10-October/28.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+<nav>
+	<p>
+		<a href="/en/coursework/">Coursework</a> |
+		<a href="/en/take-down/">Take-down requests</a> |
+		<a href="/en/">Home</a> |
+		<a href="/en/a/about.xhtml">About</a> |
+		<a href="/en/a/contact.xhtml">Contact</a> |
+		<a href="/a/canary.txt">Canary</a> |
+		<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+		<a href="/en/opinion/">Opinions</a> |
+		<a href="/en/law/">Law</a> |
+		<a href="/en/recipe/">Recipes</a> |
+		<a href="/en/a/links.xhtml">Links</a> |
+		<a href="/en/weblog/2019/10-October/28.xhtml.asc">{this page}.asc</a>
+	</p>
+	<hr/>
+	<p>
+		Weblog index:
+		<a href="/en/weblog/memories">Memories</a> |
+		<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+		<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+		<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+	</p>
+	<hr/>
+	<p>
+		Jump to entry:
+		<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+		<a rel="prev" href="/en/weblog/2019/10-October/27.xhtml">&lt;Previous</a>
+		<a rel="next" href="/en/weblog/2019/10-October/29.xhtml">Next&gt;</a>
+		<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+</nav>
+		<header>
+			<h1>People are terrible</h1>
+			<p>Day 01696: <time>Monday, 2019 October 28</time></p>
+		</header>
+<img src="/img/CC_BY-SA_4.0/y.st./weblog/2019/10/28.jpg" alt="Trees along the bike path" class="framed-centred-image" width="649" height="480"/>
+<section id="hardware">
+	<h2>Librem hardware issues</h2>
+	<p>
+		I complained on the Purism forum yesterday, and recommended providing options with actual hardware mouse buttons in the future.
+		I&apos;m not the first to do so, either.
+		Non-staff got on and started trying to recommend things, and the conversation continues, but they&apos;re not listening to the actual problem.
+		One thing I brought up in my first post was an inability to use the left and right mouse buttons simultaneously when there&apos;s only one actual hardware button.
+		It took forever for one of them to actually acknowledge that complaint
+		They&apos;d previously been trying to find fixes for some problem I hadn&apos;t brought up and wasn&apos;t having.
+		The other issue I brought up was that I&apos;m stuck on desktops that emulate the missing mouse buttons.
+		I&apos;m not free to use lightweight desktops that don&apos;t force bizarre and unwanted functionality on the user, as those are the same desktops that lack emulation that compensates for this ridiculous hardware.
+		All solutions provided have been <abbr title="GNU Network Object Model Environment">GNOME</abbr>-centric though, aside from one suggestion that I try <abbr title="K Desktop Environment">KDE</abbr> Plasma, which still doesn&apos;t provide a way to use my preferred desktops.
+		Arguing the need for actual hardware buttons is rather tedious, as they&apos;re not actually paying attention to what the problems with the lack of buttons are.
+	</p>
+</section>
+<section id="Thunderbird">
+	<h2>Thunderbird&apos;s stupidity</h2>
+	<p>
+		I finally have confirmation of what I&apos;d expected before: Thunderbird is using the string identifier of the system locale to determine date and time formats, but isn&apos;t using the actual locale-based formats provided by the system.
+		Instead, it has all the formats for all the locales embedded in the application, and those formats don&apos;t match the system-provided formats.
+		This means two things.
+		First, choosing the <code>en_DK</code> locale, which the system uses to provide the formats I&apos;m after, doesn&apos;t provide the desired formats in Thunderbird.
+		Secondly, there is absolutely no way to customise the date and time formats to set them to what the user finds most-easily readable.
+		<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1426907#c19">Even worse, the option to set custom date and time formats is available in the Windows version of Thunderbird, but not versions for other systems.</a>
+		It&apos;s ridiculous.
+	</p>
+</section>
+<section id="ISP">
+	<h2>Dealing with the <abbr title="Internet service provider">ISP</abbr></h2>
+	<p>
+		The representative at the <abbr title="Internet service provider">ISP</abbr>&apos;s store says my account is still pending, so there&apos;s not going to be a bill, and there&apos;s no need to cancel it.
+		Again, I&apos;m just stuck with the account because it&apos;s not complete.
+		I explained that I&apos;m still receiving emails as if I&apos;m a customer, and I even brought up that the self-install kit got sent to me after I&apos;d already tried twice to cancel the account.
+		And I made sure to mention that I&apos;d had to tell the deliveryperson to return it to the sender, thus letting them know that it&apos;s not in my possession and not my responsibility.
+		They replied that that was a perfectly fine way to get the equipment back to the <abbr title="Internet service provider">ISP</abbr>, so I&apos;m in the clear, there.
+		Honestly, I thought the <abbr title="Internet service provider">ISP</abbr> would try to hassle me about turning in the equipment, and they still might, but I also knew that what I&apos;d done was the right move.
+		They tried to write off the emails, but I&apos;m being emailed about things such as billing options at this point.
+		It&apos;s making me very nervous that they&apos;re going to try to bill me.
+		They also said they could finish up the account set-up with a telephone call, but I showed them how I couldn&apos;t manage the account, get in touch with customer service, or log into the account whatsoever due to the website blocking me.
+		They were astounded, and said they hadn&apos;t seen anything like the <code>403</code> error page I presented to them on my laptop.
+		They claimed biking in and getting telephone support every time there&apos;s a problem was still an option, but I explained how the last telephone support person I dealt with refused to give straight answers to any question I asked, and how the other in-store rep had told me the telephone support people are required to read from a script, and can&apos;t actually help with anything.
+		This rep disagreed, and claimed that it depends on how knowledgeable a given telephone rep is, but that wouldn&apos;t explain why the rep I deal with on the line last time refused to give straight answers to questions they clearly had an answer to, such as if support is even available to people without telephones.
+		They just kept repeating that support is available via telephone.
+		The in-store re ended up putting me on the telephone anyway to get telephone support to get the emails to stop.
+		Hopefully, this would mean closing the supposedly-inactive account.
+		(If they&apos;re sending me automated emails because of the account, it&apos;s not truly an inactive account, is it?)
+		This time, I had to walk the telephone robot tree myself though.
+	</p>
+	<p>
+		As stated last time, this was one of those annoying voice-recognition robots that doesn&apos;t give you any digits to push for options, and instead expects you to speak commands to it out loud.
+		This confused me at first, as the first thing it did was ask me a yes-or-no question, so I sat there for a few seconds waiting for it to list the buttons for the options.
+		On every question after that though, it listed the options, though obviously not with corresponding numbers for buttons to push.
+		Eventually, it asked me to provide either my telephone number or my account number.
+		I don&apos;t have telephone service, and I&apos;m obviously not going to give in and supply the false number that&apos;s associated with my account.
+		That just validates their insistence that a telephone number even be listed on the account at all.
+		But I didn&apos;t exactly have the account number either.
+		I asked another in-store rep about how to get the account number (which I would no doubt have if I&apos;d yet received a bill, as the account number should be listed on the statement), but by the time we could get it, the machine had given up on me.
+		It told actually gave me numeric options to push!
+		But it gave up on that too, as getting the account number was too slow for it, and it put me on hold to talk to an actual person.
+		Perfect.
+		I needed to speak with a representative anyway, as there was no way the robot would be programmed to deal with this issue.
+		But was that something I could have done at any point in the option tree?
+		Could I have just said nothing and gotten to a representative?
+	</p>
+	<p>
+		When the rep got on the line, I explained the situation again.
+		The representative said that my account was inactive, but again, couldn&apos;t explain why I&apos;d still be receiving emails as if the account was active.
+		They assured me that no bills would be issued though.
+		They tried to claim that the website block - which I actually remembered to point out was a 403 error page this time - was because my account wasn&apos;t active.
+		I pointed out how this made no sense.
+		I&apos;m presented with the error page, which prevents me form even attempting to log in.
+		And because I can&apos;t attempt to log in, the site can&apos;t make judgements based on whether my account is active or not, as it doesn&apos;t even know which account holder I am.
+		They said they weren&apos;t sure what the issue was, and it was clear they weren&apos;t going to make any attempts to figure out or get it fixed.
+		When I continued to press about the emails, they offered to &quot;finish the account&quot;.
+		I assumed that meant close the account, but the wording seemed really odd, and I recognised that this could also mean finishing the account setup and starting the billable services.
+		But that wouldn&apos;t fix the email issue, so I figured they didn&apos;t mean setting up the account further.
+		They clarified, asking if I no longer wanted service at my place, so I replied that I did, but that unless they fixed the website problem, I wouldn&apos;t be able to use the service properly.
+		I explained how I couldn&apos;t activate the modem, I couldn&apos;t manage my account, I couldn&apos;t get support from home, and I couldn&apos;t log in at all.
+		They claimed that even with the website blocking me, I could still monitor my data usage, set up automatic billing, and several other things you need the website for.
+		I replied that no, with the website blocking me, I couldn&apos;t do any of that.
+		This time, they offered to &quot;disconnect the account&quot;.
+		That still felt like odd phrasing, but it was much less ambiguous as to what was meant.
+		They asked for my Social Security number to verify that I was the account holder, so I explained that my Social Security card was at home, which is exactly where I couldn&apos;t call from, because I don&apos;t have a telephone, and I have to bike to the <abbr title="Internet service provider">ISP</abbr>&apos;s store because their website is blocking me, so I can&apos;t contact support from home.
+		They replied that they didn&apos;t need the Social Security number anyway, and told me to wait a couple minutes while they disconnected the account.
+		Seriously?
+		Why are they asking for something they don&apos;t even need?
+		So I waited a couple minutes or so, and when they got back on the line, they said &quot;Your account has been completely removed.&quot;.
+		That was completely unambiguous.
+		It should mean that no trace of my account exists in the system.
+		I have no doubt that that&apos;s not actually the case, but it should be the case that the <abbr title="Internet service provider">ISP</abbr> will leave me alone now and stop trying to get me to activate the account, or set up billing preferences, or anything like that.
+		At the very least, though the account probably wasn&apos;t actually deleted, it should actually have been closed now.
+	</p>
+</section>
+<section id="Minetest">
+	<h2>Minetest</h2>
+	<p>
+		I came up with a new idea for a mod to make use of <code>liblevelup</code>&apos;s levels.
+		I&apos;d need to separate out the different elemental levels again though, instead of using the unified levelling mechanic.
+		I was thinking about how there&apos;s a finite number of several of the resources in the game and, more importantly, how the resource count changes as the game continues development.
+		If you expand your world, each map chunk that gets generated is a lost chance to spawn finite resources that might have been, had those resources been added to the game yet.
+		For example, there&apos;s a new dry dirt node in Minetest Game 5.1.0.
+		If you generate a chunk that would have contained this node in 5.1.0, but you do the generation back in 5.0.1, the dry dirt nodes you would have had simply won&apos;t exist.
+		I haven&apos;t had time to look into it, but if dry dirt is similar to regular dirt and permafrost dirt, it&apos;s likewise available only in a limited quantity.
+		This is just one further excuse to add a renewal mechanic to the game, and this time, my plan was to do so in the form of an in-inventory item shop.
+	</p>
+	<p>
+		The premise was pretty simple.
+		Renewable items can be sold to the shop.
+		Their value is determined by your levels in relevant stats.
+		Pine logs and snow, for example, would be sold for a number of credits corresponding with your pine sapling level.
+		Sale prices would start at zero, and would go up as you increase your level.
+		Non-renewable nodes that drop elements could be purchased, and their price would be the sum of all max levels of renewable elements, minus the sum of all renewable levels, plus one, multiplied by the the max level of the element dropped plus one minus the current drop&apos;s level.
+		That&apos;s hard to follow as a sentence, but with some mathematical notation to make it easier, it would be:
+	</p>
+	<p>
+		((sum of all renewable max levels) + 1 - (sum of all player&apos;s renewable levels)) * ((max level of element to be bought) + 1 - (player&apos;s current level of the element))
+	</p>
+	<p>
+		This would mean that the price would be enormous, but would drop as players either increase their renewable levels (which has the added benefit of increasing how many credits they get for their items, essentially cutting the price twice) or mining more of the element (showing the shop that this is either a more-common element or one the player has invested a huge amount of credits into).
+		nonrenewable non-elements would be purchasable as well, and their prices would be influenced by different sets of elements and different equations.
+		It&apos;d be a custom setup for each item though, with no blanket equations such as the ones for the other two classes of items.
+	</p>
+	<p>
+		In the end, I decided that the shop changes goal of Minetest too much in single-player mode.
+		Everything I come up with either changes the game too much or doesn&apos;t do anything of note ...
+		It&apos;s good for multiplayer though, where you have to share a world and share otherwise-finite resources.
+		I mean, players can be idiotic at times and waste things, even using the <code>/pulverize</code> command on odds and ends they don&apos;t want to store, even though they&apos;ll need to craft more for a future build.
+		You don&apos;t want resources in a multiplayer world to run dry just because players are wasteful.
+		In single-player worlds though, there should have craters at former resource sites.
+		I would love for everything to be renewable, but part of the charm of a single-player world is the areas where you&apos;ve found a biome made of a resource you want, such as ice or desert stone, and after taking it, you&apos;re left with a huge hole, which you can either re-purpose, or leave as a reminder of how destructive your creations require you to be.
+	</p>
+</section>
+<section id="baking">
+	<h2>Baking cookies</h2>
+	<p>
+		While I was out, I bought the missing ingredients for a new cookie recipe I want to try.
+		I&apos;m thinking of bringing cookies in to work on Halloween.
+		I didn&apos;t feel like I had time to try out the recipe before work though.
+		I had an hour to be done with the cookies and be completely ready to head to work, including having prepared and eaten lunch.
+		The cookies will have to wait.
+	</p>
+</section>
+<section id="to-do">
+	<h2>To-do list</h2>
+	<p>
+		It seems I&apos;ve finished everything on my to-do list, aside from finish the &quot;memories&quot; section of my journal.
+		So I&apos;m moving that to a new to-do list, which includes other writing I need to do.
+		Specifically, I need to read, analyse, and write my my thoughts on the ridiculous religious works I&apos;ve been asked to read, in case the Mormons ever come back.
+		Seriously, there is some crazy garbage in there.
+	</p>
+</section>
+<section id="tape">
+	<h2>Duct tape issues</h2>
+	<p>
+		I&apos;m starting to get open wounds from chafing caused by the duct tape.
+		I don&apos;t seem to have another option though; I can&apos;t get the gaff to hold.
+		I had issues with the tape coming off too, which I forgot to write about when I got home.
+		Basically, I used less tape, to try to let my skin heal, and I think that caused the tape to come off.
+		I had to rush to the restroom and re-tape.
+		(I&apos;m lucky in that our restroom is essentially gender-neutral at my workplace.
+		There&apos;s a separate men&apos;s and women&apos;s restroom technically, but the women&apos;s restroom is filed nearly to the doorway with junk, the door can&apos;t close due to all the stuff in the way, and the toilet and sink can&apos;t even be reached.
+		Oh, also, the light bulb is gone.
+		So everyone, regardless of gender, uses the men&apos;s restroom.)
+		I was lucky I&apos;d started bringing the duct tape with me in my purse ...
+		It was a rush job though, and wasn&apos;t as comfortable as it would have been if I&apos;d had more time to apply the tape properly.
+	</p>
+	<p>
+		I forgot to mention yesterday, but when I was lifting heavy things last night, my right testicle kept slipping in and out of its socket, which was very unpleasant.
+		What a pain.
+		I wish I had a better way to conceal this obnoxious bulge.
+	</p>
+</section>
+<section id="idiocy">
+	<h2>Idiocy</h2>
+	<p>
+		At my workplace, nearly everyone loves to use ridiculous abbreviations, because they&apos;re too lazy to write out their words.
+		Except that some of the abbreviations don&apos;t actually save any time.
+		For example, some employees abbreviate &quot;paid&quot; as &quot;(P.d.)&quot; (parenthesis and full stops included).
+		All that does is make the order tickets harder to read.
+		I&apos;m one of the few people that writes out what I mean every time.
+		The only exception is that for half-and-half pizzas, I use the abbreviations provided on the tickets, but I have to write them instead of check them off, because there&apos;s no option on the tickets for half-and-half pizzas.
+		I used to try to write out all the toppings in full, and I still do if there&apos;s only one topping on each half, but there&apos;s just no space to write out each topping&apos;s name on in the tiny notes spot provided if I have to write three or more topping names.
+		With those abbreviations I use, you have to know them anyway for pizzas that aren&apos;t split down the middle, because we check off boxes that have only the abbreviations in them.
+		For everything else, I write out my words, so there&apos;s perfect clarity as to what I mean.
+		But I digress.
+	</p>
+	<p>
+		People at my workplace tend to use these random abbreviations that aren&apos;t actually a part of the main abbreviation list needed to perform our duties, and while there&apos;s a little bit of unofficial standardisation in place, people mostly just pull these abbreviations out of their butts.
+		What little standardisation is in place is because people tend to gravitate toward a similar style of abbreviation.
+		But when they write these things down, they&apos;re not thinking about what&apos;s the reader of their tickets is going to think.
+		Today, I had an interesting ticket show up at landing, where I was stationed for the day.
+		It called for &quot;MS&quot; on two pizzas.
+		What in the world is &quot;MS&quot;?
+		I figured it was a mistake, and that the writer meant &quot;NS&quot;.
+		People use &quot;NS&quot; for &quot;no sauce&qout;, &quot;LS&quot; or &quot;VLS&quot; for light sauce or very light sauce (which are identical in the amount of sauce we use), and &quot;ES&quot; or &quot;XS&quot; for &quot;extra sauce&quot;.
+		I double-checked with the ticket-writer to see what was going on, and they said it was for &quot;medium sauce&quot;.
+		Medium sauce?
+		What even is that?
+		Just the regular amount of sauce?
+		So nothing should have been noted on the ticket about the sauce?
+		Whatever though.
+		Not a problem, they&apos;d just be a pair of regular pizzas when they came out.
+	</p>
+	<p>
+		But then the pizzas came out.
+		They had no sauce.
+		The person at the pizza dress station, which was likely the head manager, as they&apos;d been working there most of the day, had thought there wasn&apos;t supposed to be sauce.
+		They either hadn&apos;t noticed that it was an em and not an en, or they&apos;d thought, as I had, that an en was intended.
+		But unlike me, they hadn&apos;t made sure.
+		The customer was waiting out in the lobby.
+		I should have apologised and had the pizzas remade.
+		Instead, I thought this could be a learning experience.
+		I handed out the pizzas, and figured that when they came back to complain, I could explain to the ticket-writer the importance of writing out their words instead of making up abbreviations.
+		In retrospect, I could have apologised to the customer, had the new pizzas remade, then while waiting for them to cook, had a talk with the writer of the ticket and explain the mix-up to them and how writing what they mean would have prevented the problem.
+	</p>
+	<p>
+		Later, the complaint came, but unfortunately, I wasn&apos;t the one to handle it.
+		The head manager was.
+		And they were pissed.
+		I couldn&apos;t hear what was going on very well, but they asked the writer how long they&apos;d been working here (likely because they thought &quot;medium sauce&quot; was something to put on the order ticket in the first place), and the writer mumbled what sounded like &quot;I quit.&quot;.
+		Sure enough, within minutes, they were gone and someone else was moved to work the front counter in their place.
+		Soon, the head manager told me that they weren&apos;t sure if I&apos;d caught it, but that the ticket-writer was no longer working here.
+		I was curious as to what the head manager&apos;s side of the story would be, but I didn&apos;t want to appear like I was trying to pry into what isn&apos;t my business.
+		So I didn&apos;t ask for details.
+		On this journal, it&apos;s all anonymous, so you don&apos;t know who I&apos;m talking about.
+		So it&apos;s fine.
+		But I do know who it is, so I shouldn&apos;t be nosy.
+		A bit later, the head manager claimed that the employee had had a brain malfunction, and still later, said that the employee&apos;s brain had quit working.
+	</p>
+	<p>
+		Honestly, I didn&apos;t handle the initial situation as well as I should have, and that eventually led to this escalation.
+		In part, this is my fault.
+		I feel bad about that.
+		I feel bad for the rest of us though, including the head manager, who has to deal with being short an employee.
+		As for the employee that quit, if you quit without putting in your two-weeks notice, and there isn&apos;t some sort of abuse or dangerous situation going on, I automatically consider you to be in the wrong, and I don&apos;t feel bad for you.
+		I saw the body language and heard the tone of the head manager when they confronted the employee, even though I couldn&apos;t make out most of the words.
+		And they spoke low, to try to keep from calling out the employee in front of everyone and shaming them.
+		There was no threat to the employee.
+		Sure, leave if you must, but give notice, first.
+		Also, you probably shouldn&apos;t just quit or put in notice on a dime like that, but instead, keep going for the day, and go home and think about the situation.
+		Quitting on the spot was an incredibly impulsive decision.
+		I&apos;ve learned from my mistake, and I plan to do better next time, but I don&apos;t feel bad for this person.
+	</p>
+</section>
+<section id="transphobia">
+	<h2>Transphobic hate crime</h2>
+	<p>
+		My workmate brought me shocking news later in the day.
+		It seems Freya&apos;s girlfriend suffered from a stroke induced by valiance against her.
+		She got attacked by some transphobic bastards.
+		Lovely.
+	</p>
+	<p>
+		Why do people even care if someone&apos;s transgendered?
+		I swear, people are terrible.
+		They hate one another over the stupidest things.
+		Race, gender, sex, religion ...
+		It makes me ashamed to call myself human.
+	</p>
+</section>
+		<hr/>
+		<p>
+			Copyright © 2019 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2019%2F10-October%2F28.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.2</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2019%2F10-October%2F28.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+
