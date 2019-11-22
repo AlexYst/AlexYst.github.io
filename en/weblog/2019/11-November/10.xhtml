@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2019 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2019/11-November/10.xhtml"/>
+		<title>Catalyst crystals &lt;https://y.st./en/weblog/2019/11-November/10.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+<nav>
+	<p>
+		<a href="/en/coursework/">Coursework</a> |
+		<a href="/en/take-down/">Take-down requests</a> |
+		<a href="/en/">Home</a> |
+		<a href="/en/a/about.xhtml">About</a> |
+		<a href="/en/a/contact.xhtml">Contact</a> |
+		<a href="/a/canary.txt">Canary</a> |
+		<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+		<a href="/en/opinion/">Opinions</a> |
+		<a href="/en/law/">Law</a> |
+		<a href="/en/recipe/">Recipes</a> |
+		<a href="/en/a/links.xhtml">Links</a> |
+		<a href="/en/weblog/2019/11-November/10.xhtml.asc">{this page}.asc</a>
+	</p>
+	<hr/>
+	<p>
+		Weblog index:
+		<a href="/en/weblog/memories">Memories</a> |
+		<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+		<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+		<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+	</p>
+	<hr/>
+	<p>
+		Jump to entry:
+		<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+		<a rel="prev" href="/en/weblog/2019/11-November/09.xhtml">&lt;Previous</a>
+		<a rel="next" href="/en/weblog/2019/11-November/11.xhtml">Next&gt;</a>
+		<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+</nav>
+		<header>
+			<h1>Catalyst crystals</h1>
+			<p>Day 01709: <time>Sunday, 2019 November 10</time></p>
+		</header>
+<img src="/img/CC_BY-SA_4.0/y.st./weblog/2019/11/10.jpg" alt="A door at night" class="framed-centred-image" width="649" height="480"/>
+<section id="Minetest">
+	<h2>Minetest</h2>
+	<p>
+		I don&apos;t know if I ever wrote about it, but I built a mod a while back that converts the drop version of elements that spawn during map generation into their node forms.
+		This included sand (converted to sandstone), mese blocks (converted to mese ore), and ice sheet ice (converted into glacier ice).
+		The mese block to mese ore conversion actually cased there to be less mese in the world, but every bit of it you collected actually counted toward your total.
+		Today, I updated the mod to convert dry dirt into dry dirt with dry grass as well, in addition to making it remove the conditional conversion back into dry dirt without dry grass without digging it up, then removed the possibility of the hoe converting the dry dirt with dry grass, so you have to dig it up before using it to farm.
+		It kind of took some character away from the taiga biomes though.
+		The patches of bare ground, while ugly, do add something to the biomes as a whole.
+		I&apos;m not sure I want to use this mod - called <code>mineralise</code> - this time.
+		I didn&apos;t use it in the last several worlds either.
+		The purpose of this mod though is to make it so elemental items can only be acquired in the way that gets them added to your running acquisition count.
+		Now that I think of it, it absolutely fails to do that with coral skeletons, and has a small hiccup when it comes to sand due to the kelp.
+		If I tried to fix the coral skeleton issue, the same hiccup would occur but with the pink, green, and cyan coral.
+	</p>
+	<p>
+		I&apos;ve come up with a new way to provide renewal mechanics using stats gained, albeit indirectly.
+		Instead of the trophy crystals being used to store the element they were acquired using, I think I want the crystals to influence nodes around them.
+		I&apos;ll call them catalyst crystals.
+		The really fun part is that I can give each crystal certain properties based on its element&apos;s characteristics.
+		Those properties will influence what reactions the catalyst crystal will enable.
+		For example, because pine saplings are able to generate snow nodes out of nothing, they get the &quot;cold&quot; property, which may aid in freezing water into ice or doing whatever it takes to create permafrost.
+		The later-added ice element&apos;s crystal would likely have that same &quot;cold&quot; attribute.
+		I&apos;ve actually thought about giving each element a set of flags like that before and using them for something, but I could never think of just what to use them for.
+		This way though, renewal isn&apos;t arbitrarily tied to a very specific crystal.
+		I guess that&apos;s my next course of action, then.
+		I need to remove the code related to storage, then start thinking of what reactions should renew what materials, and what attributes would be needed to enable those reactions.
+	</p>
+</section>
+<section id="recipe">
+	<h2>Salad recipe</h2>
+	<p>
+		I changed up my salad recipe a bit.
+		I didn&apos;t drain the corn or the beans, then I doubled the amount of vinegar (both distilled white and seasoned rice) and lime juice.
+		I think the salad came out better.
+		It&apos;s good with the dressing, but there&apos;s never enough dressing for the salad, using the proportions supplied by the original recipe.
+	</p>
+</section>
+<section id="weight">
+	<h2>Weigh-in</h2>
+	<p>
+		I weighed myself today, and I&apos;m now just over 100 kilograms, not even at 101.
+		(100.6 kilograms, to be exact.)
+		I&apos;ve gone back down a bit.
+		I feared I might have climbed higher while I wasn&apos;t weighing.
+		I&apos;d been at 102 or 103 without clothing, in a weighing I did at home but didn&apos;t record.
+		I&apos;d been going up from the 101.3 at my last appointment weigh-in.
+		I&apos;ve also figured out the trick to get scale consistently working.
+		I have to hit the reset button, then get on the scale, get back off until the number displays zero, then weigh myself normally.
+		It&apos;s very odd, but if I don&apos;t do it this way, the scale doesn&apos;t work.
+		If I don&apos;t hit the reset button, it doesn&apos;t display anything.
+		But if I get on the scale and stay on after hitting the reset button but before the numbers display, I get an error message.
+		And the numbers won&apos;t even start to display until I get on.
+		I have to add weight to the scale to prompt it to start the weighing, but take the weight off before it actually reads anything to prevent the error message.
+		Odd.
+		Really odd.
+	</p>
+</section>
+<section id="purpose">
+	<h2>Purpose in life</h2>
+	<p>
+		I saw a tee-shirt on some dude in the lobby tonight.
+		It read &quot;MY PURPOSE IN LIFE CALLS ME DAD&quot;.
+		That rubbed me the wrong way.
+		At first, I thought it was because of how true it is.
+		The sole purpose of life is to create offspring that will create offspring.
+		So your purpose is to have children, keep them alive, and mould them to have children themselves.
+		That&apos;s all there is to life.
+		I reject my purpose, and I refuse to fulfil it, but that doesn&apos;t make that not my actual purpose, no matter how much I hate it.
+		After a bit though, I started to see a bit deeper into why I wouldn&apos;t like that message, even though it&apos;s true.
+		They were wearing it around their child, thus telling their child that their purpose is the child.
+		This encourages the child to feel the same way about their own purpose.
+		They should have a child too, right?
+		Again, this is undeniably their purpose.
+		But that doesn&apos;t make their purpose right.
+		And I don&apos;t like people being encouraged to create more people.
+		I think this shirt rubbed me wrong because of the paradoxical way it made me feel.
+		The shirt is one hundred percent correct.
+		I cannot deny that.
+		And yet just the same, I deny that purpose with every fibre of my being.
+	</p>
+</section>
+		<hr/>
+		<p>
+			Copyright © 2019 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2019%2F11-November%2F10.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.2</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2019%2F11-November%2F10.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+
