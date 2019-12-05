@@ -258,8 +258,112 @@
 </section>
 <section id="Unit3">
 	<h2>Unit 3</h2>
+	<h3>This week&apos;s work</h3>
 	<p>
-		...
+		The reading assignment for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			Chapters Seven and Eight in <a href="https://1drv.ms/b/s!Aq7znvDVvxSRh_E3Cmrm4O_vYvceZA?e=WkPFgb">The New Software Engineering</a>
+		</li>
+		<li>
+			<a href="https://cs.uwaterloo.ca/~gweddell/cs446/DesignNotations.pdf">Microsoft PowerPoint - DesignNotations.ppt - DesignNotations.pdf</a>
+		</li>
+		<li>
+			<a href="https://ratandon.mysite.syr.edu/cis453/notes/DFD_over_Flowcharts.pdf">Understanding Data Flow Diagrams - DFD_over_Flowcharts.pdf</a>
+		</li>
+		<li>
+			<a href="https://userpages.umbc.edu/~cseaman/ifsm636/lect1025.pdf">lect1025.PDF - lect1025.pdf</a>
+		</li>
+		<li>
+			<a href="https://www.scm.tees.ac.uk/m.nawaz/HND_SAD/sad_07%20drawing%20DFD%20supp.ppt">School of Computing, Engineering &amp; Digital Technologies</a>
+		</li>
+	</ul>
+	<p>
+		Probably the main observation I made this week was about a bizarre pseudo-requirement from the written assignment for the week.
+		It states that we must continue to use the same example case from the textbook in later weeks that we choose to use for this week&apos;s assignment.
+		First of all, it&apos;s not possible to grade for that.
+		Submissions are graded anonymously and without context.
+		When I grade a submission, I&apos;m not able to see the past submissions from the same student, so I have no way to know if they&apos;ve used the same example case each time.
+		In other words, it&apos;s not enforceable, and thus not a requirement.
+		So why even state that to be one of the grading requirements?
+		Personally, I think it&apos;s a good idea to pick a single case and stick with it, so that&apos;s what I&apos;ll be doing.
+		After all, it means I can focus on one case and become more familiar with it, as that&apos;s were all my time spent on these assignments will be funnelled.
+		The smart idea in this case is to do as we&apos;re told.
+		But why are we even told we have to do that?
+		While I&apos;d rather stick with one example case, other students might get more benefit from taking a look at several cases and seeing how each works differently.
+	</p>
+	<p>
+		The Medicaid case seemed like the most interesting to me, but it also involved working with data I don&apos;t think should be required.
+		If I were to choose that case, I&apos;d likely spend much of my time in the coming weeks trying to justify what I see as necessary changes, and if this were a real case, the client would no doubt refuse every one of them.
+		As the developer, it wouldn&apos;t even be my place to try to change what data they require, and I&apos;d have no right to try to do so.
+		Given multiple choices as to which case to work, I saw it was in my best interest to work on literally any of the other eight cases ahead of this one and the dental one.
+		It makes sense that two of the medicine-related cases would be the ones I think ask for too much data from their patients though.
+		My own doctor&apos;s office asks for too much data from me as well.
+		It&apos;s just how the field currently works.
+		I&apos;ll give them every last detail about my health that they ask for, but there&apos;s a bunch of irrelevant garbage they want too just for their paperwork, and I refuse to give it to them.
+		For example, I had a minor surgery at a specialised clinic.
+		I told them about the surgery and there weren&apos;t complications, but they wanted me to sign a form allowing them to request documents on the surgery from the other clinic.
+		There&apos;s no reason they&apos;d need to track me between medical offices like that.
+		It was a routine procedure with routine results.
+		Knowing the surgery occurred is all they need, so needless to say, I didn&apos;t sign the form.
+		If they need further details, they can get them from me.
+		It&apos;s already creepy how much businesses try to track you, but when those businesses know intimate details about you and your body, it&apos;s even creepier.
+		Even the golf league case is asking for too much data though.
+		It asks for a home telephone number and a work telephone number.
+		Ignoring the fact that I don&apos;t think telephone numbers should be required to be on file at all, why in Squiddy&apos;s name is a work telephone number needed?
+		Is the golf league going to telephone league participants at work about golf-related matters?
+		That&apos;s likely to get them in trouble.
+		There&apos;s absolutely no good reason to have work telephone numbers on file for a golf league.
+	</p>
+	<p>
+		I ended up choosing the course registration example.
+		It uses Social Security numbers as student <abbr title="identification">ID</abbr> numbers, which is incredibly insecure, but I can work with this as an example project without feeling the need to fix the way they do things.
+		When I went to submit my work though, I found that the school&apos;s website was only allowing me to include one attachments though, which is asinine.
+		That means only one embedded image.
+		In past assignments I&apos;ve had at this school, the limit has always been five attachments.
+		With two images necessary, having only one was never going to work.
+		I ended up not embedding either image, and using the attachment slot for a ZIP file containing both images.
+	</p>
+	<p>
+		I didn&apos;t get my grading done at my Thursday <abbr title="Linux User Group">LUG</abbr> meeting this week, as the <abbr title="Linux User Group">LUG</abbr> meeting got cancelled.
+		Unlike me, the other <abbr title="Linux User Group">LUG</abbr> members celebrate holidays, and there was a holiday in my country this Thursday.
+		I got it done much later in the week, actually putting it off until the final available day.
+		One student submitted a very nice paper that put mine to shame.
+		One student submitted only a diagram and didn&apos;t complete the rest of the assignment.
+		The final student built the diagram and submitted it along with tables and a quoted passage from the book, not actually expanding on that information and completing the assignment.
+	</p>
+	<h3>Data flow</h3>
+	<p>
+		This week, we&apos;re to discuss an example of data flowing between two entities within our homes.
+		At first, I wasn&apos;t sure what to discuss.
+		I was pretty sure that no two devices within my home communicate with one another.
+		In a world in which everyone has fifteen gadgets that all communicate with one another, I was never on the cutting age of technology, but over the past several years, my tech inventory has been severely cut down.
+		I&apos;ve got no home Internet service,so my home server hasn&apos;t been powered on for years.
+		It&apos;s sitting, unplugged, in the water heater closet as I write this.
+		I&apos;ve got no modem, and my router&apos;s probably in the water heater closet with the server.
+		My mobile died a couple years ago.
+		I got it working again, but it died again several months ago.
+		That thing&apos;s not sharing data with anything else.
+		The only working tech I have is my laptop.
+		I guess I have <abbr title="Universal Serial Bus">USB</abbr> drives, but without separate systems running them, I wouldn&apos;t call them separate entities passing data to and from the laptop.
+		They&apos;re more like temporary extensions to the laptop that can become temporary extensions to other devices outside my home, such as the computers at the local library when I need to print something.
+		I don&apos;t have telephone service.
+		I don&apos;t have television service.
+		I can come up with dozens of examples of data flowing between two entities, but within my own home?
+		Nothing came to mind.
+	</p>
+	<p>
+		But then it hit me.
+		I do have one other device that&apos;s sophisticated enough to pass data to and from other devices: my camera.
+		When my mobile dies the first time, I bought the cheapest digital camera available at my local department store.
+		It communicates with other devices via <abbr title="Media Transfer Protocol">MTP</abbr> over mini<abbr title="Universal Serial Bus">USB</abbr> (It&apos;s not even high-tech enough to use micro<abbr title="United States Dollars">USD</abbr>).
+		I take daily photographs for my journal, and when I&apos;m not feeling overwhelmed, those photos get sent to my Debian laptop, which also understand <abbr title="Media Transfer Protocol">MTP</abbr>.
+		When I am, the photos may build up until Wednesday, when they absolutely have to be transferred, so this process has to happen at least weekly.
+		This shared protocol allows the two devices to not only exchange file data, but exchange commands to act on files.
+		For example, after I have the laptop ask for the photo files, I have it instruct the camera to delete the copy that resides on the camera, clearing out the list of files that&apos;ll be seen next time the two connect so duplicates won&apos;t be exchanged later.
+		It&apos;s a rather basic example, but since we&apos;re limited to discussing examples from within our own homes, it&apos;s all I&apos;ve got.
+		Even in an online computer science course, not all students will be up to their ears in tech or even have a home Internet connection as you&apos;d think they would.
 	</p>
 </section>
 <section id="Unit4">
