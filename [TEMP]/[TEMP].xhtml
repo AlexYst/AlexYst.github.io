@@ -10,7 +10,7 @@
  h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
                                                                                      
 	<https://y.st./>
-	Copyright © 2019-2020 Alex Yst <mailto:copyright@y.st>
+	Copyright © 2019 Alex Yst <mailto:copyright@y.st>
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./[TEMP]/[TEMP].xhtml"/>
-		<title>Learning Journal &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
+		<title>Object-oriented analysis &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
@@ -39,435 +39,614 @@
 <nav>
 </nav>
 		<header>
-			<h1>Learning Journal</h1>
-			<p>CS 4403: Software Engineering 2</p>
+			<h1>Object-oriented analysis</h1>
+			<p>Written in <span title="Software Engineering 2">CS 4403</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised and <a href="https://y.st./en/coursework/CS4403/Object-oriented_analysis.xhtml">archived</a> on 2019-12-18</p>
 		</header>
-<section id="Unit1">
-	<h2>Unit 1</h2>
-	<h3>This week&apos;s activities</h3>
-	<p>
-		The reading assignment this week was the first four chapters from <a href="https://1drv.ms/b/s!Aq7znvDVvxSRh_E3Cmrm4O_vYvceZA?e=WkPFgb">The New Software Engineering</a>.
-		Unfortunately, the site hosting The New Software Engineering - Saylor - is blocking me, so it seemed I wouldn&apos;t be able to read that.
-		I tried searching the Web for an alternate host of the book, but had no luck.
-		I found a couple sites that linked to the Saylor website or tried to sell me hard copies, but even if I had the money for a hard copy, it&apos;s a bit late to buy one now that class has started.
-		It&apos;d take over a week to arrive, and we students weren&apos;t allowed to know what textbooks we&apos;d need until after class had started.
-		We can&apos;t order the book and have it arrive in time, so getting a digital copy, which can arrive in seconds, is really the only option.
-		Thankfully, another student uploaded the book elsewhere, so I was able to get the book, but one of my days off from work - one of my main study days - had passed before I could get my hands on it, which set me back.
-	</p>
-	<p>
-		In addition to the reading assignment, we had the discussion assignment on data types and the written assignment on team management.
-		The discussion assignment was confusing because the book never really discussed data types at all.
-		I ended up mostly falling back on prior knowledge of data types, but that felt wrong.
-		I mean, if we were discussing data types, surely there was something we were supposed to have learned about them this week.
-		And I hadn&apos;t learned anything about them.
-		It felt like I&apos;d missed something big.
-		As for the written assignment, the scenario it introduced seemed so vague that I wasn&apos;t able to write anything concrete, which again seemed wrong.
-		Is everything we&apos;re doing already going over my head?
-		That&apos;s not a good sign.
-		It&apos;s only the first week, and things are sure to get harder as we move on.
-	</p>
-	<p>
-		I found a line in the introduction of the reading assignment hilarious.
-		&quot;We take for granted the everyday convenience we gain from reservation, telephone, automated teller, and credit card authorization applications.&quot;
-		I don&apos;t use technology to make reservations.
-		The closest thing to reservations that I make are medical appointments.
-		As far as I&apos;m aware, nowhere I have appointments at allow for making appointments via the Web, so I always go in person to make appointments.
-		I guess recently, I also made an appointment to speak with my credit union&apos;s financial advisor, but I made the appointment with them via email.
-		They may have used scheduling software on their end, but on my end, the only application used was my email client and the software running on the email server.
-		I also don&apos;t use telephones.
-		At all.
-		I guess I have an old telephone in my entryway, but it&apos;s not plugged in and I have no telephone service, so the thing just sits there in a bag, not doing anything.
-		I don&apos;t use automated teller machines or their software.
-		I&apos;m not sure if my credit union even allows depositing of cheques such as pay cheques via the <abbr title="automated teller machine">ATM</abbr>.
-		It&apos;s just easier for me to go inside and talk to a live, human teller.
-		I guess I sometimes use a credit card.
-		Do you know how many times I used a credit card last month though?
-		Just once.
-		It&apos;s certainly not an everyday convenience for me, though it does save me from having to make a trip to the credit union to withdraw money for my monthly medical treatments.
-		For the most part though, I buy things with cold, hard cash.
-		None of these types of applications, or even all of them combined, provide me anything close to the everyday convenience the textbook&apos;s author seems to think they provide everyone.
-	</p>
-	<p>
-		The book makes a good point about people being resistant to change.
-		That&apos;s one of the major weaknesses of our species.
-		Our resistance to change holds us back.
-		The worst part is that parents teach the old ways to children, so then the children get mostly stuck in that same rut.
-		Each generation makes a little progress over the last one, but the fact that we hold so tightly to what we&apos;re used to keeps us from seeing the bigger picture and keeps us from getting anywhere quickly.
-	</p>
-	<p>
-		The textbook tells us that another term for query applications is &quot;data analysis applications&quot;.
-		That seems kind of odd.
-		A query application returns the data you request of it.
-		It doesn&apos;t do any analysis on that data.
-		It seems odd that such applications would be considered to be data analysis applications.
-		The book also makes the claim that declarative languages are easy to learn and use because you declare what needs to be done instead of how it needs to be done.
-		I think it really depends on how you think though.
-		For me, I find it difficult to use <abbr title="Structured Query Language">SQL</abbr>, a declarative language.
-		However, I find imperative languages - languages in which you instruct the computer how to perform the task at hand - to be rather easy to work with.
-		Admittedly, code in imperative languages is much more verbose, so it takes longer to write, but I find I actually understand what&apos;s going on better and don&apos;t need to look as many things up as I write it.
-		When I write in <abbr title="Structured Query Language">SQL</abbr>, I find I have to look up pretty much everything I&apos;m working with, I frequently write the wrong query and get the wrong results, and even once I&apos;ve arrived at a working solution, I often don&apos;t really understand what my query is asking for when I go back and read my code later.
-	</p>
-	<p>
-		The learn-as-you-go project life cycle was interesting to read about from a textbook.
-		I mean, it&apos;s already how I work on my own projects, but it&apos;s a very amateurish way to do things, and I&apos;m surprised it&apos;s something that even has a name or that would be taught about in textbooks.
-		As the textbook says, it&apos;s not fit for business organisations.
-		That said, I highly doubt that I&apos;ll ever write software for a living.
-		Programming is a hobby of mine, and will likely never be anything more.
-		As such, it&apos;s the fun of it that matters in my case, not the professionalism.
-		That said, I have to disagree with the book that the learn-as-you-go model is for the ignorant and the lazy.
-		There are other reasons for this model too, just not really in business.
-		Plenty of not-for-profit software is written this way, even though years upon years worth of effort goes into it.
-		It&apos;s hard to be ignorant about the code you&apos;ve dedicated years of your life to.
-		It&apos;s also hard to refer to such dedication as lazy.
-		And when working on a given project isn&apos;t your day job, it can often be difficult to find time for formal life cycles.
-		You either get in some time working on the actual project or you spend that time cutting through red tape.
-		Skipping the red tape isn&apos;t always an act of ignorance or laziness.
-		For larger projects though, an actual project life cycle is a better option, but this just isn&apos;t always the case, especially for smaller, one-developer projects.
-	</p>
-	<p>
-		I didn&apos;t really understand the section on data types.
-		It said it was going to introduce us to data types, but instead of introducing us to types of anything, it just talked about various characteristics data might have.
-		It was like telling someone you&apos;d tell them about different types of fruit, but then just telling them that some fruit is red, some is green, some is round, and there&apos;s even some that&apos;s shaped like a star, but then not actually telling them about any specific type of fruit.
-		Yes, fruit can have any of these characteristics and more, but you haven&apos;t really taught them about types of fruit at all.
-	</p>
-	<h3>Interviews and meetings</h3>
-	<p>
-		An interview is a group of a small number of people, gathered for a particular reason and for a specific amount of time.
-		One-on-one information-gathering interviews are common, but aren&apos;t the only type of interview.
-		Unlike interviews, meetings necessarily involve more than two people.
-		They&apos;re still a gathering of people for a fixed period though, and can be used instead of interviews in many cases.
-		In meetings, participants tend to discuss a small number of topics, and may or may not be gathering to reach some sort of consensus about something.
-	</p>
-	<p>
-		Two purposes for which both meetings and interviews could be used would be to disseminate information amongst a small number of people or to gather information from a small number of people.
-		What meetings and interviews excel at is getting information from someone to someone else.
-		Two purposes for meetings but not interviews would be to come to a decision about something or to get information to a large number of people.
-		Interviews necessarily don&apos;t involve many people or come to any decisions.
-		Decision s may be made later based on information found during an interview, the the interview itself doesn&apos;t involve any decision-making.
-		Two uses for interviews but not meetings would be to check out candidates for a job or to elicit information from someone in an unrelated company (such as a new reporter might do).
-		Interviews are useful for their small group size.
-		There&apos;s not a whole crowd trying to add their input or ask their questions, so you can keep the conversation on track better and more-easily make sure you get all the information you need.
-	</p>
-	<p>
-		Structured interviews have a very specific set of questions to be asked.
-		They&apos;re nice because the interviewer knows beforehand what to ask, and there&apos;s no real on-the-spot planning to anything.
-		They can make sure to get the information that they held the interview to get.
-		When holding multiple interviews with different people on the same topic, this also keeps all the interviewees on even footing, as they all get asked the same questions.
-		This sort of fairness is important for things such as job interviews.
-		However, this sort of interview is also rather rigid.
-		If an interviewee&apos;s response sparks a new question in the interviewer&apos;s mind, they don&apos;t really have a way to just insert it.
-		There&apos;s typically some sort of list of questions they&apos;re writing down answers to, with no good spot to add unrelated information and have that information be taken into account.
-		Unstructured interviews allow for more open-ended questions and drawing new questions from the answers.
-		There&apos;s no set questions to ask beforehand, and the interviewer can ask new or more-specific questions based on what the interviewee answers other questions with.
-	</p>
-	<h3>Open-ended and closed-ended questions</h3>
-	<p>
-		A closed-ended question is one in which there are a set number of answers to, and those answers tend to be rather short.
-		For example, a yes-or-no question is as closed-ended as it gets.
-		There&apos;s no room for other answers in most cases, though in some cases, a &quot;maybe&quot; or &quot;I don&apos;t know&quot; may be appropriate.
-		That still leaves the number of answers available to be rather small.
-		Multiple-choice questions are also closed-ended.
-		With that sort of question, you can involve ranges in your answers, but you can&apos;t get specific points in those ranges.
-		Open-ended questions, on the other hand, allow more free form responses.
-		You could ask someone how their day went.
-		You could ask someone their favourite colour.
-		You could ask them when they plan to have their report on your desk, or what they have left to get done on their current project.
-		In any of these cases, the person answering isn&apos;t limited to a set number of answers, and can reply in whatever way will get the necessary information across.
-		Answers to open-ended questions tend to be more informative and help more with later planning, but it&apos;s harder to set courses of action beforehand based on potential responses and plan ahead before asking the questions.
-	</p>
-</section>
-<section id="Unit2">
-	<h2>Unit 2</h2>
-	<h3>Activities for the week</h3>
-	<p>
-		The first task for the week was to grade the papers for last week.
-		I usually grade those at my <abbr title="Linux User Group">LUG</abbr> meetings on Thursdays, and this week was no different.
-		The first student&apos;s paper was okay.
-		It wasn&apos;t bad, but nothing eye-catching.
-		The second student wrote hardly anything, and didn&apos;t meet more than one of the requirements.
-		The third student submitted a full-fledged paper though.
-		I was impressed with that one.
-	</p>
-	<p>
-		Next, I worked on the reading assignment:
-	</p>
-	<ul>
-		<li>
-			Chapter 5, Chapter 6, and one sub-subsection of Part 3 from <a href="https://1drv.ms/b/s!Aq7znvDVvxSRh_E3Cmrm4O_vYvceZA?e=WkPFgb">The New Software Engineering</a>
-		</li>
-		<li>
-			<a href="https://files.ifi.uzh.ch/rerg/arvo/courses/seminar_ws02/reports/Seminar_4.pdf">COCOMOSpeech6.PDF - Seminar_4.pdf</a>
-		</li>
-		<li>
-			<a href="https://my.uopeople.edu/pluginfile.php/590870/mod_book/chapter/208552/PERT%20CPM%20for%20Project%20Management.pdf">PERT CPM for Project Management - PERT CPM for Project Management.pdf</a>
-		</li>
-		<li>
-			<a href="https://nptel.ac.in/courses/106105087/pdf/m11L28.pdf">Nptel, online courses and certification, Learn for free</a>
-		</li>
-		<li>
-			<a href="https://nptel.ac.in/courses/106105087/pdf/m15L37.pdf">Nptel, online courses and certification, Learn for free</a>
-		</li>
-		<li>
-			<a href="https://personal.utdallas.edu/~chung/RE/RE_chapters/Chapter%206.pdf">Chapter 6.pdf</a>
-		</li>
-		<li>
-			<a href="https://www.math.csusb.edu/faculty/prakash/611/Project_Management.ppt.pdf">Project_Management.ppt - Project_Management.ppt.pdf</a>
-		</li>
-	</ul>
-	<p>
-		The Nptel documents had been replaced with pages asking that our bookmarks be replaced, and we had no way to know what page on the site we were to read, as only a link to the course index was provided on those pages.
-	</p>
-	<p>
-		Finally, I submitted my discussion posts and essay for the week.
-	</p>
-	<p>
-		The main thing I learned this week was how to use <abbr title="critical path method">CPM</abbr> diagrams to decide which components need to be worked on in what order.
-		You can use them to easily find which chain of tasks is guaranteed to hold everything else up, and make sure always to be working on that chain.
-		Other tasks can be worked on concurrently, but at no time should you not have someone working on that particular chain&apos;s tasks.
-		Affinity analysis - a method of identifying like tasks so they can be combined - was also something we focused on.
-	</p>
-	<h3>Algorithmic, function point, and combined top-down, bottom-up estimating</h3>
-	<p>
-		Algorithmic estimation is exactly what it says on the tin: it&apos;s estimation using mathematical formulae.
-		The advantages of this are rather obvious.
-		First of all, maths are the same every time you plug the same numbers into the same equations.
-		That means that the estimations provided by algorithmic estimation is repeatable.
-		Every time you crunch the numbers, they&apos;ll turn up the same.
-		Furthermore, computers are very good at processing algorithms.
-		You can automate algorithmic estimation
-		However, this method also assumes that things follow a continuous pattern; that the future will be the same as the past was.
-		That&apos;s not always a valid assumption.
-		This method also doesn&apos;t account for anomalous situations.
-	</p>
-	<p>
-		Function point estimating uses repeatable and objective inputs, which helps with reliability.
-		However, it too relies on history.
-		You need to have recorded some history to calibrate it with, and if the future doesn&apos;t match the past, you again won&apos;t get accurate results.
-		It also focuses on things external to the application, ignoring the internals.
-	</p>
-	<p>
-		Combining top-down and bottom-up estimation is an option.
-		Top-down estimation provides a focus on the system as a whole.
-		It&apos;s also efficient, though if you&apos;re using it in combination with bottom-up estimation, you&apos;ve also got to take into account the resources that go into this second estimation method as well.
-		Bottom-up estimation allows you to look at the details, instead of the system as a whole, giving you the opposite perspective that the top-down estimation gave you.
-		It can also provide the stability that top-down estimation is unable to, and because individuals provide estimations on their own work, it offers a level of commitment from individuals that other estimations methods lack.
-		The downsides of top-down estimation seem to be nullifies when performed alongside bottom-up estimation, and some of the negatives of bottom-up estimation too are compensated for by pairing it with top-down estimation.
-		However, bottom-up estimation takes more effort than other estimations methods, and pairing it with a second estimation method means putting in even more effort on top of that.
-		When you don&apos;t have the resources to put in the effort, this might not be the estimation method to choose.
-	</p>
-</section>
-<section id="Unit3">
-	<h2>Unit 3</h2>
-	<h3>This week&apos;s work</h3>
-	<p>
-		The reading assignment for the week was as follows:
-	</p>
-	<ul>
-		<li>
-			Chapters Seven and Eight in <a href="https://1drv.ms/b/s!Aq7znvDVvxSRh_E3Cmrm4O_vYvceZA?e=WkPFgb">The New Software Engineering</a>
-		</li>
-		<li>
-			<a href="https://cs.uwaterloo.ca/~gweddell/cs446/DesignNotations.pdf">Microsoft PowerPoint - DesignNotations.ppt - DesignNotations.pdf</a>
-		</li>
-		<li>
-			<a href="https://ratandon.mysite.syr.edu/cis453/notes/DFD_over_Flowcharts.pdf">Understanding Data Flow Diagrams - DFD_over_Flowcharts.pdf</a>
-		</li>
-		<li>
-			<a href="https://userpages.umbc.edu/~cseaman/ifsm636/lect1025.pdf">lect1025.PDF - lect1025.pdf</a>
-		</li>
-		<li>
-			<a href="https://www.scm.tees.ac.uk/m.nawaz/HND_SAD/sad_07%20drawing%20DFD%20supp.ppt">School of Computing, Engineering &amp; Digital Technologies</a>
-		</li>
-	</ul>
-	<p>
-		Probably the main observation I made this week was about a bizarre pseudo-requirement from the written assignment for the week.
-		It states that we must continue to use the same example case from the textbook in later weeks that we choose to use for this week&apos;s assignment.
-		First of all, it&apos;s not possible to grade for that.
-		Submissions are graded anonymously and without context.
-		When I grade a submission, I&apos;m not able to see the past submissions from the same student, so I have no way to know if they&apos;ve used the same example case each time.
-		In other words, it&apos;s not enforceable, and thus not a requirement.
-		So why even state that to be one of the grading requirements?
-		Personally, I think it&apos;s a good idea to pick a single case and stick with it, so that&apos;s what I&apos;ll be doing.
-		After all, it means I can focus on one case and become more familiar with it, as that&apos;s were all my time spent on these assignments will be funnelled.
-		The smart idea in this case is to do as we&apos;re told.
-		But why are we even told we have to do that?
-		While I&apos;d rather stick with one example case, other students might get more benefit from taking a look at several cases and seeing how each works differently.
-	</p>
-	<p>
-		The Medicaid case seemed like the most interesting to me, but it also involved working with data I don&apos;t think should be required.
-		If I were to choose that case, I&apos;d likely spend much of my time in the coming weeks trying to justify what I see as necessary changes, and if this were a real case, the client would no doubt refuse every one of them.
-		As the developer, it wouldn&apos;t even be my place to try to change what data they require, and I&apos;d have no right to try to do so.
-		Given multiple choices as to which case to work, I saw it was in my best interest to work on literally any of the other eight cases ahead of this one and the dental one.
-		It makes sense that two of the medicine-related cases would be the ones I think ask for too much data from their patients though.
-		My own doctor&apos;s office asks for too much data from me as well.
-		It&apos;s just how the field currently works.
-		I&apos;ll give them every last detail about my health that they ask for, but there&apos;s a bunch of irrelevant garbage they want too just for their paperwork, and I refuse to give it to them.
-		For example, I had a minor surgery at a specialised clinic.
-		I told them about the surgery and there weren&apos;t complications, but they wanted me to sign a form allowing them to request documents on the surgery from the other clinic.
-		There&apos;s no reason they&apos;d need to track me between medical offices like that.
-		It was a routine procedure with routine results.
-		Knowing the surgery occurred is all they need, so needless to say, I didn&apos;t sign the form.
-		If they need further details, they can get them from me.
-		It&apos;s already creepy how much businesses try to track you, but when those businesses know intimate details about you and your body, it&apos;s even creepier.
-		Even the golf league case is asking for too much data though.
-		It asks for a home telephone number and a work telephone number.
-		Ignoring the fact that I don&apos;t think telephone numbers should be required to be on file at all, why in Squiddy&apos;s name is a work telephone number needed?
-		Is the golf league going to telephone league participants at work about golf-related matters?
-		That&apos;s likely to get them in trouble.
-		There&apos;s absolutely no good reason to have work telephone numbers on file for a golf league.
-	</p>
-	<p>
-		I ended up choosing the course registration example.
-		It uses Social Security numbers as student <abbr title="identification">ID</abbr> numbers, which is incredibly insecure, but I can work with this as an example project without feeling the need to fix the way they do things.
-		When I went to submit my work though, I found that the school&apos;s website was only allowing me to include one attachments though, which is asinine.
-		That means only one embedded image.
-		In past assignments I&apos;ve had at this school, the limit has always been five attachments.
-		With two images necessary, having only one was never going to work.
-		I ended up not embedding either image, and using the attachment slot for a ZIP file containing both images.
-	</p>
-	<p>
-		I didn&apos;t get my grading done at my Thursday <abbr title="Linux User Group">LUG</abbr> meeting this week, as the <abbr title="Linux User Group">LUG</abbr> meeting got cancelled.
-		Unlike me, the other <abbr title="Linux User Group">LUG</abbr> members celebrate holidays, and there was a holiday in my country this Thursday.
-		I got it done much later in the week, actually putting it off until the final available day.
-		One student submitted a very nice paper that put mine to shame.
-		One student submitted only a diagram and didn&apos;t complete the rest of the assignment.
-		The final student built the diagram and submitted it along with tables and a quoted passage from the book, not actually expanding on that information and completing the assignment.
-	</p>
-	<h3>Data flow</h3>
-	<p>
-		This week, we&apos;re to discuss an example of data flowing between two entities within our homes.
-		At first, I wasn&apos;t sure what to discuss.
-		I was pretty sure that no two devices within my home communicate with one another.
-		In a world in which everyone has fifteen gadgets that all communicate with one another, I was never on the cutting age of technology, but over the past several years, my tech inventory has been severely cut down.
-		I&apos;ve got no home Internet service,so my home server hasn&apos;t been powered on for years.
-		It&apos;s sitting, unplugged, in the water heater closet as I write this.
-		I&apos;ve got no modem, and my router&apos;s probably in the water heater closet with the server.
-		My mobile died a couple years ago.
-		I got it working again, but it died again several months ago.
-		That thing&apos;s not sharing data with anything else.
-		The only working tech I have is my laptop.
-		I guess I have <abbr title="Universal Serial Bus">USB</abbr> drives, but without separate systems running them, I wouldn&apos;t call them separate entities passing data to and from the laptop.
-		They&apos;re more like temporary extensions to the laptop that can become temporary extensions to other devices outside my home, such as the computers at the local library when I need to print something.
-		I don&apos;t have telephone service.
-		I don&apos;t have television service.
-		I can come up with dozens of examples of data flowing between two entities, but within my own home?
-		Nothing came to mind.
-	</p>
-	<p>
-		But then it hit me.
-		I do have one other device that&apos;s sophisticated enough to pass data to and from other devices: my camera.
-		When my mobile dies the first time, I bought the cheapest digital camera available at my local department store.
-		It communicates with other devices via <abbr title="Media Transfer Protocol">MTP</abbr> over mini<abbr title="Universal Serial Bus">USB</abbr> (It&apos;s not even high-tech enough to use micro<abbr title="United States Dollars">USD</abbr>).
-		I take daily photographs for my journal, and when I&apos;m not feeling overwhelmed, those photos get sent to my Debian laptop, which also understand <abbr title="Media Transfer Protocol">MTP</abbr>.
-		When I am, the photos may build up until Wednesday, when they absolutely have to be transferred, so this process has to happen at least weekly.
-		This shared protocol allows the two devices to not only exchange file data, but exchange commands to act on files.
-		For example, after I have the laptop ask for the photo files, I have it instruct the camera to delete the copy that resides on the camera, clearing out the list of files that&apos;ll be seen next time the two connect so duplicates won&apos;t be exchanged later.
-		It&apos;s a rather basic example, but since we&apos;re limited to discussing examples from within our own homes, it&apos;s all I&apos;ve got.
-		Even in an online computer science course, not all students will be up to their ears in tech or even have a home Internet connection as you&apos;d think they would.
-	</p>
-</section>
-<section id="Unit4">
-	<h2>Unit 4</h2>
-	<h3>Thoughts on the week</h3>
-	<p>
-		The reading assignment for the week was as follows:
-	</p>
-	<ul>
-		<li>
-			Chapters Nine and Ten in <a href="https://1drv.ms/b/s!Aq7znvDVvxSRh_E3Cmrm4O_vYvceZA?e=WkPFgb">The New Software Engineering</a>
-		</li>
-		<li>
-			<a href="https://www.smartdraw.com/entity-relationship-diagram/">Entity Relationship Diagram (ERD) - What is an ER Diagram?</a>
-		</li>
-		<li>
-			<a href="http://blog.aplikacja.info/blog/2011/12/09/crud-matrix-as-a-software-design-and-estimation-tool/">CRUD Matrix As a Software Design And Estimation Tool | Dariusz on Software Quality</a>
-		</li>
-		<li>
-			<a href="http://jackzheng.net/teaching/archive/cis3730-2010-fall/files/1.5-erd.pdf">PowerPoint Presentation - 1.5-erd.pdf</a>
-		</li>
-	</ul>
-	<p>
-		The first thing on my to-do list for the week was to grading of last week&apos;s work.
-		The first student hand-drew their graphs, which is always interesting to see.
-		When we work with software in class that handles graphs, I assume students will use that same software for any graphs and charts we have to build.
-		In courses we&apos;re not introduced to such software, I&apos;m always curious as to which software students will use to build their graphs and charts.
-		Personally, I use Dia.
-		It works well enough, but doesn&apos;t always have the symbols I&apos;d like, and I have to jury-rig something.
-		In last week&apos;s case, I had to cobble together something that looks kind of like the boxes with rounded corners and a top label section, which we used for the data flow diagrams.
-		Sometimes student choose to draw their diagrams by hand though and scan or photograph them.
-		I like the character it gives the graphs, though it seems odd no to use technology to produce the diagrams in these computer science courses.
-		Two of the students I graded work for chose the same example case as I had.
-		At first, I worried I might have chosen the wrong case.
-		Had I chosen the easy one (read: lazy option)?
-		But no.
-		One of the students went way above and beyond.
-		They hadn&apos;t chosen it out of laziness.
-		We probably gravitated toward that problem because it deals with automation at a school and we&apos;re working on it for a course in school.
-		I know that&apos;s one of the things I considered when I chose it, so I likely wasn&apos;t the only one to consider the relevance.
-	</p>
-	<p>
-		I noticed too in the discussion board today that most students had chosen this same example problem.
-		Interesting.
-		Eleven of us mentioned choosing this problem, while only two of us mentioned choosing a different problem.
-		There were four of us that didn&apos;t say, but even if they all chose different problems, that&apos;s still be almost two thirds of us that chose this same problem.
-		I guess something about it really called out to us all more than the other options.
-	</p>
-	<h3>Functional decomposition</h3>
-	<p>
-		Functional decomposition is the process of breaking down business functions into their component activities for analysis, and building charts mapping out these functions.
-		It allows you to get a lower-level look at what&apos;s really happening, and how it relates to the upper-level view of operations.
-	</p>
-	<p>
-		The highest level is known as the business function level.
-		It identifies the functions of the business and breaks them down into processes and subprocesses.
-		Some of these will include &quot;activities&quot;.
-		Activities can be thought of like functions in programming; they have input data and output data, and the activity processes the input in some way to generate the output.
-	</p>
-	<p>
-		Activities are broken down further in the next level of diagram: the activity level.
-		Activity-level diagrams include all functions and processes within the activities, fully defined.
-		Nothing is allowed to be omitted, so from the activity-level charts and the business-level chart, you usually see the full behaviour of the business functions.
-		Sometimes further decomposing can be helpful to add more detail though.
-	</p>
-	<p>
-		Finally, we have the concept of an elementary process.
-		Elementary processes are identified by the fact that breaking them down further would, as the textbook puts it, make the process &quot;lose its identity&quot;.
-		It doesn&apos;t elaborate on this, and isn&apos;t clear on exactly what it means.
-		I think it&apos;s a matter of the components having little relevance to anything beyond a certain level.
-		For example, I might give directions on how to get somewhere to someone.
-		I might tell them to walk five blocks east, then two blocks south.
-		I could tell them to step half a metre forward a given number of times, but that&apos;d not only be micromanaging, but would also be far harder for them to perform.
-		The concept of walking five blocks east might &quot;lose its identity&quot; if I tried to break it down into individual steps, so I should just stick with the block count.
-		Anyway, once you&apos;ve broken everything down into elementary processes, that&apos;s when you know functional decomposition is complete.
-	</p>
-</section>
-<section id="Unit5">
-	<h2>Unit 5</h2>
-	<p>
-		...
-	</p>
-</section>
-<section id="Unit6">
-	<h2>Unit 6</h2>
-	<p>
-		...
-	</p>
-</section>
-<section id="Unit7">
-	<h2>Unit 7</h2>
-	<p>
-		...
-	</p>
-</section>
-<section id="Unit8">
-	<h2>Unit 8</h2>
-	<p>
-		...
-	</p>
-</section>
+<p>
+	This week, we&apos;re performing an object-oriented analysis of one of the example problems from the textbook.
+	In my submission, I&apos;ll be working with the problem of the university course registration system.
+</p>
+<h2>Summary paragraph</h2>
+<ol start="0">
+	<li>
+		<u>Students</u> (fill out) <u>registration paperwork</u> and either (mail) <u>it</u> to the <u>registrar&apos;s office</u> or (deliver) <u>it</u> by hand.
+	</li>
+	<li>
+		The <u>registrar&apos;s clerk</u> (enters) the <u>data</u> from the <u>paperwork</u> into the <u>system</u>.
+	</li>
+	<li>
+		The <u>accounts receivable subsystem</u> is (queried) to see if the <u>student</u> (owes) <u>fees</u> from the <u>previous term</u>; if <u>fees</u> are (owed), a <u>bill</u> is (sent) to the <u>student</u> as <u>part</u> of a <u>denial letter</u>.
+	</li>
+	<li>
+		The <u>system</u> (checks) the <u>student&apos;s transcript</u> to see if the <u>student</u> has (completed) the <u>prerequisites for the course</u>; if the <u>prerequisites</u> aren&apos;t met, a <u>denial letter</u> listing the <u>prerequisites</u> is (sent) to the <u>student</u>.
+	</li>
+	<li>
+		The <u>system</u> (checks) the <u>course</u> for <u>open seats</u>; if none are available, a <u>denial letter</u> saying the <u>course</u> is closed is (sent) to the <u>student</u>.
+	</li>
+	<li>
+		If all three <u>checks</u> (come back clear), the <u>student&apos;s Social Security number</u> is (added) to the <u>class roster</u>; an <u>acknowledgement</u> including the <u>day</u>, <u>time</u>, <u>room</u>, and <u>new tuition owed</u> is (sent) to the <u>student</u>, and the <u>tuition due</u> is (relayed) to the <u>accounts receivable subsystem</u>.
+	</li>
+	<li>
+		The <u>system</u> (sends) <u>enrolment reports</u> to the <u>instructors</u>.
+	</li>
+</ol>
+<h2>Objects of interest</h2>
+<h3>List of nouns</h3>
+<ol start="0">
+	<li>
+		Students
+	</li>
+	<li>
+		<del>registration paperwork</del> (problem space)
+	</li>
+	<li>
+		<del>registrar&apos;s office</del> (problem space)
+	</li>
+	<li>
+		<del>it</del> = registration paperwork
+	</li>
+	<li>
+		registrar&apos;s clerk
+	</li>
+	<li>
+		<del>data</del> (problem space)
+	</li>
+	<li>
+		<del>paperwork</del> = registration paperwork
+	</li>
+	<li>
+		system
+	</li>
+	<li>
+		accounts receivable subsystem
+	</li>
+	<li>
+		student = Students
+	</li>
+	<li>
+		<del>fees</del> (data held in the accounts receivable subsystem)
+	</li>
+	<li>
+		<del>previous term</del> (not really an object, but a time frame for which fees are checked against)
+	</li>
+	<li>
+		<del>bill</del> (problem space)
+	</li>
+	<li>
+		<del>part</del> (only part of an object)
+	</li>
+	<li>
+		<del>denial letter</del> (problem space)
+	</li>
+	<li>
+		<del>student&apos;s transcript</del> (make an attribute of student)
+	</li>
+	<li>
+		<del>prerequisites for the course</del> (make an attribute of course)
+	</li>
+	<li>
+		prerequisites = prerequisites for the course
+	</li>
+	<li>
+		course
+	</li>
+	<li>
+		<del>open seats</del> (make an attribute of course)
+	</li>
+	<li>
+		<del>checks</del> (refers to multiple objects)
+	</li>
+	<li>
+		<del>student&apos;s Social Security number</del> (make an attribute of student)
+	</li>
+	<li>
+		<del>class roster</del> (make an attribute of course)
+	</li>
+	<li>
+		<del>acknowledgement</del> (problem space)
+	</li>
+	<li>
+		<del>day</del> (make an attribute of course)
+	</li>
+	<li>
+		<del>time</del> (make an attribute of course)
+	</li>
+	<li>
+		<del>room</del> (make an attribute of course)
+	</li>
+	<li>
+		<del>new tuition owed</del> (problem space)
+	</li>
+	<li>
+		<del>tuition due</del> = new tuition owed
+	</li>
+	<li>
+		<del>enrolment reports</del> (problem space)
+	</li>
+	<li>
+		<del>instructors</del> (make an attribute of course)
+	</li>
+</ol>
+<h3>Named system objects</h3>
+<ol start="0">
+	<li>
+		<code>student</code>
+		<ol start="0">
+			<li>
+				<code>Social_Security_number</code>
+			</li>
+			<li>
+				<code>transcript</code>
+			</li>
+		</ol>
+	</li>
+	<li>
+		<code>clerk</code>
+	</li>
+	<li>
+		<code>system</code>
+	</li>
+	<li>
+		<code>accounts_receivable_subsystem</code>
+	</li>
+	<li>
+		<code>course</code>
+		<ol start="0">
+			<li>
+				<code>prerequisites</code>
+			</li>
+			<li>
+				<code>seats_available</code>
+			</li>
+			<li>
+				<code>roster</code>
+			</li>
+			<li>
+				<code>day</code>
+			</li>
+			<li>
+				<code>time</code>
+			</li>
+			<li>
+				<code>room</code>
+			</li>
+			<li>
+				<code>instructor</code>
+			</li>
+		</ol>
+	</li>
+</ol>
+<h2>List of verbs (with contexts)</h2>
+<ol start="0">
+	<li>
+		<del>Students fill out registration paperwork</del> (physical action)
+	</li>
+	<li>
+		<del>[students] mail [registration paperwork]</del> (physical action)
+	</li>
+	<li>
+		<del>[students] deliver [registration paperwork]</del> (physical action)
+	</li>
+	<li>
+		registrar&apos;s clerk enters the data
+	</li>
+	<li>
+		accounts receivable subsystem is queried
+	</li>
+	<li>
+		student owes fees
+	</li>
+	<li>
+		<del>if fees are owed</del> (duplicate of above)
+	</li>
+	<li>
+		bill is sent to the student
+	</li>
+	<li>
+		system checks the student&apos;s transcript
+	</li>
+	<li>
+		<del>student has completed the prerequisites for the course</del> (duplicate of the item above)
+	</li>
+	<li>
+		denial letter listing the prerequisites is sent to the student
+	</li>
+	<li>
+		system checks the course for open seats
+	</li>
+	<li>
+		denial letter [...] is sent to the student
+	</li>
+	<li>
+		checks come back clear, the student&apos;s Social Security number is added to the class roster
+	</li>
+	<li>
+		acknowledgement [...] is sent to the student
+	</li>
+	<li>
+		tuition due is relayed to the accounts receivable subsystem
+	</li>
+	<li>
+		The system sends enrolment reports
+	</li>
+</ol>
+<h2>Table of processes</h2>
+<table>
+	<tr>
+		<th>
+			Verb
+		</th>
+		<th>
+			Space
+		</th>
+		<th>
+			Process
+		</th>
+		<th>
+			Object
+		</th>
+	</tr>
+	<tr>
+		<td>
+			enters
+		</td>
+		<td>
+			solution
+		</td>
+		<td>
+			<code>register</code>
+		</td>
+		<td>
+			<code>system</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			queried
+		</td>
+		<td>
+			solution
+		</td>
+		<td>
+			<code>get_student_fees</code>
+		</td>
+		<td>
+			<code>accounts_receivable_subsystem</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			owes
+		</td>
+		<td>
+			solution
+		</td>
+		<td>
+			<code>has_past_due_fees</code>
+		</td>
+		<td>
+			<code>student</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			is sent
+		</td>
+		<td>
+			solution
+		</td>
+		<td>
+			<code>print_bill</code>
+		</td>
+		<td>
+			<code>student</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			has completed
+		</td>
+		<td>
+			solution
+		</td>
+		<td>
+			<code>has_passed_course</code>
+		</td>
+		<td>
+			<code>student</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			is sent
+		</td>
+		<td>
+			solution
+		</td>
+		<td>
+			<code>print_prerequisite_list</code>
+		</td>
+		<td>
+			<code>student</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			checks
+		</td>
+		<td>
+			solution
+		</td>
+		<td>
+			<code>has_openings</code>
+		</td>
+		<td>
+			<code>course</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			is sent
+		</td>
+		<td>
+			solution
+		</td>
+		<td>
+			<code>print_course_full_denial</code>
+		</td>
+		<td>
+			<code>student</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			is added
+		</td>
+		<td>
+			solution
+		</td>
+		<td>
+			<code>add_student</code>
+		</td>
+		<td>
+			<code>class</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			is sent
+		</td>
+		<td>
+			solution
+		</td>
+		<td>
+			<code>print_acknowledgement</code>
+		</td>
+		<td>
+			<code>student</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			is relayed
+		</td>
+		<td>
+			solution
+		</td>
+		<td>
+			<code>add_fee</code>
+		</td>
+		<td>
+			<code>accounts_receivable_subsystem</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			send
+		</td>
+		<td>
+			solution
+		</td>
+		<td>
+			<code>print_enrolment_report</code>
+		</td>
+		<td>
+			<code>course</code>
+		</td>
+	</tr>
+</table>
+<h2>Table of object attributes</h2>
+<table>
+	<tr>
+		<th>
+			Class
+		</th>
+		<th>
+			Attributes
+		</th>
+		<th>
+			Notes
+		</th>
+	</tr>
+	<tr>
+		<td>
+			<code>student</code>
+		</td>
+		<td>
+			<code>Social_Security_number</code>, <code>transcript</code>
+		</td>
+		<td>
+			<code>transcript</code> is a bit complex, and may need to be broken into multiple attributes, or perhaps a second object.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>clerk</code>
+		</td>
+		<td>
+			<em>(none)</em>
+		</td>
+		<td>
+			This object represents the account used to enter system information, hence its lack of attributes.
+			It&apos;s definitely a system object, but I&apos;m not sure how we deal with it at the moment.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>system</code>
+		</td>
+		<td>
+			<em>(none)</em>
+		</td>
+		<td>
+			This is the main system and takes data from <code>clerk</code>.
+			Perhaps it should be simplified into a data-entry class and renamed?
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>accounts_receivable_subsystem</code>
+		</td>
+		<td>
+			<em>(none)</em>
+		</td>
+		<td>
+			The problem specifications specifically indicate that we are to get certain information from and send certain information to the accounts receivable subsystem.
+			I imagine this is some sort of database outside the control of the system we are to build.
+			It&apos;s very much an object in the system, as we definitely need to interact with it, but it has no attributes because we can only call its methods and use their output.
+			The actual data the accounts receivable subsystem has is unknown to us, and the accounts receivable subsystem is just a black box, as far as we can tell.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>course</code>
+		</td>
+		<td>
+			<code>prerequisites</code>, <code>seats_available</code>, <code>roster</code>, <code>day</code>, <code>time</code>, <code>room</code>, <code>instructor</code>
+		</td>
+		<td>
+			<code>roster</code> seems complex, as it holds multiple pieces of data (multiple Social Security numbers), but realistically, we can represent it with a basic array held by a single attribute.
+		</td>
+	</tr>
+</table>
+<h2>Table of process attributes</h2>
+<table>
+	<tr>
+		<th>
+			Process
+		</th>
+		<th>
+			Attributes
+		</th>
+	</tr>
+	<tr>
+		<td>
+			<code>register</code>
+		</td>
+		<td>
+			This process is how the clerk enters a registration request.
+			All other processes aside from <code>print_enrolment_report</code> are called by this process as subprocesses.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>get_student_fees</code>
+		</td>
+		<td>
+			<em>(none)</em>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>has_past_due_fees</code>
+		</td>
+		<td>
+			<em>(none)</em>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>print_bill</code>
+		</td>
+		<td>
+			Only used if <code>has_past_due_fees</code> returns true, and uses the output of <code>get_student_fees</code>.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>has_passed_course</code>
+		</td>
+		<td>
+			<em>(none)</em>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>print_prerequisite_list</code>
+		</td>
+		<td>
+			Only used if <code>has_passed_course</code> returns false for one or more of the prerequisite courses.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>has_openings</code>
+		</td>
+		<td>
+			<em>(none)</em>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>print_course_full_denial</code>
+		</td>
+		<td>
+			Only used if <code>has_openings</code> returns false
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>add_student</code>
+		</td>
+		<td>
+			Only used if <code>has_openings</code> returns true
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>print_acknowledgement</code>
+		</td>
+		<td>
+			Only used if <code>has_past_due_fees</code> returns false, <code>has_passed_course</code> has returned true for every prerequisite course, and <code>has_openings</code> returned true.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>add_fee</code>
+		</td>
+		<td>
+			Only used if <code>has_past_due_fees</code> returns false, <code>has_passed_course</code> has returned true for every prerequisite course, and <code>has_openings</code> returned true.
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<code>print_enrolment_report</code>
+		</td>
+		<td>
+			Performed after the registration period has closed; should probably print from the instructors&apos; printers, not from the registrar&apos;s office printer.
+		</td>
+	</tr>
+</table>
+<h2>Diagrams</h2>
+<p>
+	I&apos;m sorry, but I&apos;m not sure what software we&apos;re expected to draw these diagrams in.
+	I&apos;ve been using Dia up until now, but now we&apos;re required to make the objects have shaded, rounded rectangles around unshaded, rounded rectangles.
+	This bizarrely-specific requirement is too complex for Dia.
+	If you have any suggestions as to what type of software can handle the new charts, I&apos;ll do better next time and include the diagrams.
+</p>
 		<hr/>
 		<p>
-			Copyright © 2019-2020 Alex Yst;
+			Copyright © 2019 Alex Yst;
 			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
 			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
 			My address is in the source comments near the top of this document.

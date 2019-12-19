@@ -350,6 +350,10 @@ mark {
 	color: #000;
 }
 
+u {
+	text-decoration: underline;
+}
+
 /* This *MUST* be one of the last styles listed in this style sheet. */
 header * {
 	margin: 0rem;
