@@ -10,7 +10,7 @@
  h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
                                                                                      
 	<https://y.st./>
-	Copyright © 2019 Alex Yst <mailto:copyright@y.st>
+	Copyright © 2019-2020 Alex Yst <mailto:copyright@y.st>
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./[TEMP]/[TEMP].xhtml"/>
-		<title>Object-oriented analysis &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
+		<title>Learning Journal &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
@@ -39,614 +39,209 @@
 <nav>
 </nav>
 		<header>
-			<h1>Object-oriented analysis</h1>
-			<p>Written in <span title="Software Engineering 2">CS 4403</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised and <a href="https://y.st./en/coursework/CS4403/Object-oriented_analysis.xhtml">archived</a> on 2019-12-18</p>
+			<h1>Learning Journal</h1>
+			<p>CS 4404: Advanced Networking and Data Security</p>
 		</header>
-<p>
-	This week, we&apos;re performing an object-oriented analysis of one of the example problems from the textbook.
-	In my submission, I&apos;ll be working with the problem of the university course registration system.
-</p>
-<h2>Summary paragraph</h2>
-<ol start="0">
-	<li>
-		<u>Students</u> (fill out) <u>registration paperwork</u> and either (mail) <u>it</u> to the <u>registrar&apos;s office</u> or (deliver) <u>it</u> by hand.
-	</li>
-	<li>
-		The <u>registrar&apos;s clerk</u> (enters) the <u>data</u> from the <u>paperwork</u> into the <u>system</u>.
-	</li>
-	<li>
-		The <u>accounts receivable subsystem</u> is (queried) to see if the <u>student</u> (owes) <u>fees</u> from the <u>previous term</u>; if <u>fees</u> are (owed), a <u>bill</u> is (sent) to the <u>student</u> as <u>part</u> of a <u>denial letter</u>.
-	</li>
-	<li>
-		The <u>system</u> (checks) the <u>student&apos;s transcript</u> to see if the <u>student</u> has (completed) the <u>prerequisites for the course</u>; if the <u>prerequisites</u> aren&apos;t met, a <u>denial letter</u> listing the <u>prerequisites</u> is (sent) to the <u>student</u>.
-	</li>
-	<li>
-		The <u>system</u> (checks) the <u>course</u> for <u>open seats</u>; if none are available, a <u>denial letter</u> saying the <u>course</u> is closed is (sent) to the <u>student</u>.
-	</li>
-	<li>
-		If all three <u>checks</u> (come back clear), the <u>student&apos;s Social Security number</u> is (added) to the <u>class roster</u>; an <u>acknowledgement</u> including the <u>day</u>, <u>time</u>, <u>room</u>, and <u>new tuition owed</u> is (sent) to the <u>student</u>, and the <u>tuition due</u> is (relayed) to the <u>accounts receivable subsystem</u>.
-	</li>
-	<li>
-		The <u>system</u> (sends) <u>enrolment reports</u> to the <u>instructors</u>.
-	</li>
-</ol>
-<h2>Objects of interest</h2>
-<h3>List of nouns</h3>
-<ol start="0">
-	<li>
-		Students
-	</li>
-	<li>
-		<del>registration paperwork</del> (problem space)
-	</li>
-	<li>
-		<del>registrar&apos;s office</del> (problem space)
-	</li>
-	<li>
-		<del>it</del> = registration paperwork
-	</li>
-	<li>
-		registrar&apos;s clerk
-	</li>
-	<li>
-		<del>data</del> (problem space)
-	</li>
-	<li>
-		<del>paperwork</del> = registration paperwork
-	</li>
-	<li>
-		system
-	</li>
-	<li>
-		accounts receivable subsystem
-	</li>
-	<li>
-		student = Students
-	</li>
-	<li>
-		<del>fees</del> (data held in the accounts receivable subsystem)
-	</li>
-	<li>
-		<del>previous term</del> (not really an object, but a time frame for which fees are checked against)
-	</li>
-	<li>
-		<del>bill</del> (problem space)
-	</li>
-	<li>
-		<del>part</del> (only part of an object)
-	</li>
-	<li>
-		<del>denial letter</del> (problem space)
-	</li>
-	<li>
-		<del>student&apos;s transcript</del> (make an attribute of student)
-	</li>
-	<li>
-		<del>prerequisites for the course</del> (make an attribute of course)
-	</li>
-	<li>
-		prerequisites = prerequisites for the course
-	</li>
-	<li>
-		course
-	</li>
-	<li>
-		<del>open seats</del> (make an attribute of course)
-	</li>
-	<li>
-		<del>checks</del> (refers to multiple objects)
-	</li>
-	<li>
-		<del>student&apos;s Social Security number</del> (make an attribute of student)
-	</li>
-	<li>
-		<del>class roster</del> (make an attribute of course)
-	</li>
-	<li>
-		<del>acknowledgement</del> (problem space)
-	</li>
-	<li>
-		<del>day</del> (make an attribute of course)
-	</li>
-	<li>
-		<del>time</del> (make an attribute of course)
-	</li>
-	<li>
-		<del>room</del> (make an attribute of course)
-	</li>
-	<li>
-		<del>new tuition owed</del> (problem space)
-	</li>
-	<li>
-		<del>tuition due</del> = new tuition owed
-	</li>
-	<li>
-		<del>enrolment reports</del> (problem space)
-	</li>
-	<li>
-		<del>instructors</del> (make an attribute of course)
-	</li>
-</ol>
-<h3>Named system objects</h3>
-<ol start="0">
-	<li>
-		<code>student</code>
-		<ol start="0">
-			<li>
-				<code>Social_Security_number</code>
-			</li>
-			<li>
-				<code>transcript</code>
-			</li>
-		</ol>
-	</li>
-	<li>
-		<code>clerk</code>
-	</li>
-	<li>
-		<code>system</code>
-	</li>
-	<li>
-		<code>accounts_receivable_subsystem</code>
-	</li>
-	<li>
-		<code>course</code>
-		<ol start="0">
-			<li>
-				<code>prerequisites</code>
-			</li>
-			<li>
-				<code>seats_available</code>
-			</li>
-			<li>
-				<code>roster</code>
-			</li>
-			<li>
-				<code>day</code>
-			</li>
-			<li>
-				<code>time</code>
-			</li>
-			<li>
-				<code>room</code>
-			</li>
-			<li>
-				<code>instructor</code>
-			</li>
-		</ol>
-	</li>
-</ol>
-<h2>List of verbs (with contexts)</h2>
-<ol start="0">
-	<li>
-		<del>Students fill out registration paperwork</del> (physical action)
-	</li>
-	<li>
-		<del>[students] mail [registration paperwork]</del> (physical action)
-	</li>
-	<li>
-		<del>[students] deliver [registration paperwork]</del> (physical action)
-	</li>
-	<li>
-		registrar&apos;s clerk enters the data
-	</li>
-	<li>
-		accounts receivable subsystem is queried
-	</li>
-	<li>
-		student owes fees
-	</li>
-	<li>
-		<del>if fees are owed</del> (duplicate of above)
-	</li>
-	<li>
-		bill is sent to the student
-	</li>
-	<li>
-		system checks the student&apos;s transcript
-	</li>
-	<li>
-		<del>student has completed the prerequisites for the course</del> (duplicate of the item above)
-	</li>
-	<li>
-		denial letter listing the prerequisites is sent to the student
-	</li>
-	<li>
-		system checks the course for open seats
-	</li>
-	<li>
-		denial letter [...] is sent to the student
-	</li>
-	<li>
-		checks come back clear, the student&apos;s Social Security number is added to the class roster
-	</li>
-	<li>
-		acknowledgement [...] is sent to the student
-	</li>
-	<li>
-		tuition due is relayed to the accounts receivable subsystem
-	</li>
-	<li>
-		The system sends enrolment reports
-	</li>
-</ol>
-<h2>Table of processes</h2>
-<table>
-	<tr>
-		<th>
-			Verb
-		</th>
-		<th>
-			Space
-		</th>
-		<th>
-			Process
-		</th>
-		<th>
-			Object
-		</th>
-	</tr>
-	<tr>
-		<td>
-			enters
-		</td>
-		<td>
-			solution
-		</td>
-		<td>
-			<code>register</code>
-		</td>
-		<td>
-			<code>system</code>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			queried
-		</td>
-		<td>
-			solution
-		</td>
-		<td>
-			<code>get_student_fees</code>
-		</td>
-		<td>
-			<code>accounts_receivable_subsystem</code>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			owes
-		</td>
-		<td>
-			solution
-		</td>
-		<td>
-			<code>has_past_due_fees</code>
-		</td>
-		<td>
-			<code>student</code>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			is sent
-		</td>
-		<td>
-			solution
-		</td>
-		<td>
-			<code>print_bill</code>
-		</td>
-		<td>
-			<code>student</code>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			has completed
-		</td>
-		<td>
-			solution
-		</td>
-		<td>
-			<code>has_passed_course</code>
-		</td>
-		<td>
-			<code>student</code>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			is sent
-		</td>
-		<td>
-			solution
-		</td>
-		<td>
-			<code>print_prerequisite_list</code>
-		</td>
-		<td>
-			<code>student</code>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			checks
-		</td>
-		<td>
-			solution
-		</td>
-		<td>
-			<code>has_openings</code>
-		</td>
-		<td>
-			<code>course</code>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			is sent
-		</td>
-		<td>
-			solution
-		</td>
-		<td>
-			<code>print_course_full_denial</code>
-		</td>
-		<td>
-			<code>student</code>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			is added
-		</td>
-		<td>
-			solution
-		</td>
-		<td>
-			<code>add_student</code>
-		</td>
-		<td>
-			<code>class</code>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			is sent
-		</td>
-		<td>
-			solution
-		</td>
-		<td>
-			<code>print_acknowledgement</code>
-		</td>
-		<td>
-			<code>student</code>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			is relayed
-		</td>
-		<td>
-			solution
-		</td>
-		<td>
-			<code>add_fee</code>
-		</td>
-		<td>
-			<code>accounts_receivable_subsystem</code>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			send
-		</td>
-		<td>
-			solution
-		</td>
-		<td>
-			<code>print_enrolment_report</code>
-		</td>
-		<td>
-			<code>course</code>
-		</td>
-	</tr>
-</table>
-<h2>Table of object attributes</h2>
-<table>
-	<tr>
-		<th>
-			Class
-		</th>
-		<th>
-			Attributes
-		</th>
-		<th>
-			Notes
-		</th>
-	</tr>
-	<tr>
-		<td>
-			<code>student</code>
-		</td>
-		<td>
-			<code>Social_Security_number</code>, <code>transcript</code>
-		</td>
-		<td>
-			<code>transcript</code> is a bit complex, and may need to be broken into multiple attributes, or perhaps a second object.
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<code>clerk</code>
-		</td>
-		<td>
-			<em>(none)</em>
-		</td>
-		<td>
-			This object represents the account used to enter system information, hence its lack of attributes.
-			It&apos;s definitely a system object, but I&apos;m not sure how we deal with it at the moment.
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<code>system</code>
-		</td>
-		<td>
-			<em>(none)</em>
-		</td>
-		<td>
-			This is the main system and takes data from <code>clerk</code>.
-			Perhaps it should be simplified into a data-entry class and renamed?
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<code>accounts_receivable_subsystem</code>
-		</td>
-		<td>
-			<em>(none)</em>
-		</td>
-		<td>
-			The problem specifications specifically indicate that we are to get certain information from and send certain information to the accounts receivable subsystem.
-			I imagine this is some sort of database outside the control of the system we are to build.
-			It&apos;s very much an object in the system, as we definitely need to interact with it, but it has no attributes because we can only call its methods and use their output.
-			The actual data the accounts receivable subsystem has is unknown to us, and the accounts receivable subsystem is just a black box, as far as we can tell.
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<code>course</code>
-		</td>
-		<td>
-			<code>prerequisites</code>, <code>seats_available</code>, <code>roster</code>, <code>day</code>, <code>time</code>, <code>room</code>, <code>instructor</code>
-		</td>
-		<td>
-			<code>roster</code> seems complex, as it holds multiple pieces of data (multiple Social Security numbers), but realistically, we can represent it with a basic array held by a single attribute.
-		</td>
-	</tr>
-</table>
-<h2>Table of process attributes</h2>
-<table>
-	<tr>
-		<th>
-			Process
-		</th>
-		<th>
-			Attributes
-		</th>
-	</tr>
-	<tr>
-		<td>
-			<code>register</code>
-		</td>
-		<td>
-			This process is how the clerk enters a registration request.
-			All other processes aside from <code>print_enrolment_report</code> are called by this process as subprocesses.
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<code>get_student_fees</code>
-		</td>
-		<td>
-			<em>(none)</em>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<code>has_past_due_fees</code>
-		</td>
-		<td>
-			<em>(none)</em>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<code>print_bill</code>
-		</td>
-		<td>
-			Only used if <code>has_past_due_fees</code> returns true, and uses the output of <code>get_student_fees</code>.
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<code>has_passed_course</code>
-		</td>
-		<td>
-			<em>(none)</em>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<code>print_prerequisite_list</code>
-		</td>
-		<td>
-			Only used if <code>has_passed_course</code> returns false for one or more of the prerequisite courses.
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<code>has_openings</code>
-		</td>
-		<td>
-			<em>(none)</em>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<code>print_course_full_denial</code>
-		</td>
-		<td>
-			Only used if <code>has_openings</code> returns false
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<code>add_student</code>
-		</td>
-		<td>
-			Only used if <code>has_openings</code> returns true
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<code>print_acknowledgement</code>
-		</td>
-		<td>
-			Only used if <code>has_past_due_fees</code> returns false, <code>has_passed_course</code> has returned true for every prerequisite course, and <code>has_openings</code> returned true.
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<code>add_fee</code>
-		</td>
-		<td>
-			Only used if <code>has_past_due_fees</code> returns false, <code>has_passed_course</code> has returned true for every prerequisite course, and <code>has_openings</code> returned true.
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<code>print_enrolment_report</code>
-		</td>
-		<td>
-			Performed after the registration period has closed; should probably print from the instructors&apos; printers, not from the registrar&apos;s office printer.
-		</td>
-	</tr>
-</table>
-<h2>Diagrams</h2>
-<p>
-	I&apos;m sorry, but I&apos;m not sure what software we&apos;re expected to draw these diagrams in.
-	I&apos;ve been using Dia up until now, but now we&apos;re required to make the objects have shaded, rounded rectangles around unshaded, rounded rectangles.
-	This bizarrely-specific requirement is too complex for Dia.
-	If you have any suggestions as to what type of software can handle the new charts, I&apos;ll do better next time and include the diagrams.
-</p>
+<section id="Unit1">
+	<h2>Unit 1</h2>
+	<p>
+		The <abbr title="Transmission Control Protocol">TCP</abbr>/<abbr title="Internet Protocol">IP</abbr> protocol suite was developed by a pair of scientists at <abbr title="Defense Advanced Research Projects Agency">DARPA</abbr> - then known as <abbr title="Advanced Research Projects Agency">ARPA</abbr> - for use on a new network called the <abbr title="Advanced Research Projects Agency Network">ARPANET</abbr>.
+		The <abbr title="Advanced Research Projects Agency Network">ARPANET</abbr> would later be repurposed and built into the public Internet that we know and use today, and much of the core technology in use then is still in use today.
+		One of those components we still use is the <abbr title="Transmission Control Protocol">TCP</abbr>/<abbr title="Internet Protocol">IP</abbr> suite, which carries pretty much all our traffic that we need reliably delivered.
+		In early 1973, those two scientists - Vint Cerf and Bob Kahn - built the original <abbr title="Transmission Control Protocol">TCP</abbr> used on the <abbr title="Advanced Research Projects Agency Network">ARPANET</abbr>.
+		These days, &quot;<abbr title="Transmission Control Protocol">TCP</abbr>&quot; stands for &quot;Transmission Control Protocol&quot;, but it didn&apos;t always.
+		Originally, <abbr title="Transmission Control Protocol">TCP</abbr> was the Transmission Control Program, which can still be seen in <abbr title="Request for Comments">RFC</abbr> 675, the <abbr title="Request for Comments">RFC</abbr> document later written to standardise <abbr title="Transmission Control Protocol">TCP</abbr> by the end of next year (History-Computer.com, n.d.).
+		I&apos;m having trouble finding any information on when <abbr title="Internet Protocol">IP</abbr> came into being or why, but from the looks of it, <abbr title="Transmission Control Protocol">TCP</abbr> didn&apos;t depend on it originally.
+		As best I can tell, <abbr title="Internet Protocol">IP</abbr>&apos;s functionality was just built into <abbr title="Transmission Control Protocol">TCP</abbr>.
+		However, in 1981 September, <abbr title="Internet Protocol">IP</abbr> was finally defined in its first <abbr title="Request for Comments">RFC</abbr>, making it officially standardised (Information Sciences Institute, 1981).
+	</p>
+	<div class="APA_references">
+		<h3>References:</h3>
+		<p>
+			History-Computer.com. (n.d.). <a href="https://history-computer.com/Internet/Maturing/TCPIP.html">TCP/IP - Complete History of the TCP/IP Protocol Suite</a>. Retrieved from <code>https://history-computer.com/Internet/Maturing/TCPIP.html</code>
+		</p>
+		<p>
+			Information Sciences Institute. (1981, September). <a href="https://tools.ietf.org/html/rfc791">RFC 791 - Internet Protocol</a>. Retrieved from <code>https://tools.ietf.org/html/rfc791</code>
+		</p>
+	</div>
+</section>
+<section id="Unit2">
+	<h2>Unit 2</h2>
+	<p>
+		On the link layer, <abbr title="media access control">MAC</abbr> addresses are used.
+		However, on the network layer, <abbr title="Internet Protocol">IP</abbr> addresses are used.
+		This means that an application on a host trying to reach another host has to pass the relevant <abbr title="Internet Protocol">IP</abbr> address to the adjacent network layer on the sending host, as the application layer isn&apos;t allowed to communicate with the link layer directly, but the network layer isn&apos;t able to pass that <abbr title="Internet Protocol">IP</abbr> address on to the link layer.
+		Instead, once the network layer knows the <abbr title="Internet Protocol">IP</abbr> address of the node at the end of the next network hop, the network layer has to figure out that node&apos;s <abbr title="media access control">MAC</abbr> address.
+		To do this, it uses <abbr title="Address Resolution Protocol">ARP</abbr>.
+		<abbr title="Address Resolution Protocol">ARP</abbr> can only resolve <abbr title="Internet Protocol">IP</abbr> addresses of nodes on the same <abbr title="local area network">LAN</abbr> or subnet.
+		This is fine though, as the link layer can&apos;t communicate outside the <abbr title="local area network">LAN</abbr> or subnet anyway, and the network layer has to pass information from subnet to subnet through nodes that sit on the boarder between <abbr title="local area network">LAN</abbr>s and subnets.
+		To convert an <abbr title="Internet Protocol">IP</abbr> address to a <abbr title="media access control">MAC</abbr> address, a host first checks its <abbr title="Address Resolution Protocol">ARP</abbr> table, which is essentially a cache of translated addresses.
+		If the address isn&apos;t available there, it broadcasts an <abbr title="Address Resolution Protocol">ARP</abbr> request to all nodes on the subnet, basically asking them if the <abbr title="Internet Protocol">IP</abbr> address belongs to them.
+		The <abbr title="Address Resolution Protocol">ARP</abbr> request contains the <abbr title="media access control">MAC</abbr> address of the node that sent the broadcast request, so if any node does in fact have that <abbr title="Internet Protocol">IP</abbr> address, it knows where to send its response to.
+		Assuming a node is using that <abbr title="Internet Protocol">IP</abbr> address, it sends a response containing its <abbr title="media access control">MAC</abbr> address to the host that performed the query.
+		If such a response arrives, the requester then puts that address pair - the <abbr title="media access control">MAC</abbr> address and <abbr title="Internet Protocol">IP</abbr> address - in its <abbr title="Address Resolution Protocol">ARP</abbr> table so the request won&apos;t have to be performed again until the entry expires (Marsic, 2013).
+	</p>
+	<div class="APA_references">
+		<h3>References:</h3>
+		<p>
+			Marsic, I. (2013, June 11). <a href="https://www.ece.rutgers.edu/~marsic/books/CN/book-CN_marsic.pdf">Computer Networks: Performance and Quality of Service</a>. Retrieved from <code>https://www.ece.rutgers.edu/~marsic/books/CN/book-CN_marsic.pdf</code>
+		</p>
+	</div>
+</section>
+<section id="Unit3">
+	<h2>Unit 3</h2>
+	<p>
+		Multimedia traffic is network traffic used to deliver video, audio, images, and other non-text data.
+		Honestly, it can be rather problematic.
+		It&apos;s bulkier than plain-text documents, such as <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>.
+		That means that it hogs bandwidth and can easily cause network congestion.
+		Special compression techniques have been developed to compress multimedia traffic because of how much of an impact it has (Rango, Tropea, &amp; Fazio, 2010), though in my experience, that&apos;s not even always enough, nor does it tackle multimedia&apos;s other problems.
+		It&apos;s also a pain to get information from.
+		When I&apos;m looking for information, I find it to be an absolute pain if I can&apos;t find a plain text version of the information and have to resort to watching a video.
+		You can&apos;t skim videos for the parts you need or use control + &quot;f&quot; to search through them.
+		You pretty much have to watch through them until you&apos;ve found the relevant part.
+		Even if you plan to read an entire article, listening to someone read said article is slower than reading it yourself.
+		Listening is slower than reading.
+		Furthermore, I often have trouble making out what people say, and it doesn&apos;t help that they sometimes mumble.
+		I sometimes have to replay the same few seconds of a video repeatedly before I can make out what&apos;s been said, and sometimes, I can&apos;t even make it out then and have to give up on that information entirely.
+	</p>
+	<div class="APA_references">
+		<h3>References:</h3>
+		<p>
+			Rango, F. D., Tropea, M., &amp; Fazio, P. (2010, February 1). <a href="https://www.intechopen.com/books/digital-video/multimedia-traffic-over-wireless-and-satellite-networks">Multimedia Traffic over Wireless and Satellite Networks | IntechOpen</a>. Retrieved from <code>https://www.intechopen.com/books/digital-video/multimedia-traffic-over-wireless-and-satellite-networks</code>
+		</p>
+	</div>
+</section>
+<section id="Unit4">
+	<h2>Unit 4</h2>
+	<p>
+		Policing is an interesting way to deal with network consistency, as seen by applications.
+		Each particular network flow is allowed only to send a certain number of packets within a certain time frame, regardless of what resources are available (Marsic, 2013).
+		Each data flow is given an allowable peak rate, an allowable average rate, and an allowable burst rate.
+		Its connection is throttled to the point where it is not allowed to exceed any of these.
+		What this means is that while network conditions will appear more stable to applications, the traffic flow will be artificially limited, and the network will often times be underutilised.
+	</p>
+	<p>
+		I&apos;m not sure I understand the leaky bucket analogy, as told by the textbook.
+		In the textbook&apos;s analogy, permission for packets to be sent on the network is represented by tokens placed in a leaky bucket.
+		The packets wait, and they each receive a token as it drips out.
+		There&apos;s also a separate queue that packets wait in to receive the tokens, and if the queue is full, the packets are simply dropped (Marsic, 2013).
+		Assuming I understand the idea of policing correctly, I think a better analogy would be to say the packets would go into the bucket, not permission tokens.
+		The steady dripping out of the bucket would represent packets getting their turn to be sent over the network.
+		On the other hand, if the bucket - which now represents the queue - is full, newly-arriving packets spill out, and are dropped instead of being sent.
+		Perhaps this analogy is equally flawed though; liquid doesn&apos;t work that way.
+		The newly-arriving liquid wouldn&apos;t be guaranteed to be the liquid to be dropped, and it&apos;d usually be a mix of new and old liquid that spills.
+		Still, it seems like the permission tokens were not only an unnecessary abstraction shoehorned into the analogy, but also don&apos;t really add to it in any way.
+	</p>
+	<p>
+		The textbook specifically discussed using this sort of technique for dealing with jitter in multimedia applications (Marsic, 2013).
+		What this example shows us is that such applications need consistency more than they need throughput, which I find to be incredibly bizarre.
+		These applications perform better with less resources!
+		I would think that they&apos;d make the most of what they have when they have it, but the problem is they don&apos;t seem to be able to adapt properly to changing network conditions.
+		A better option for them is to throttle the connection and let data simply drip through at an even rate.
+	</p>
+	<div class="APA_references">
+		<h3>References:</h3>
+		<p>
+			Marsic, I. (2013, June 11). <a href="https://www.ece.rutgers.edu/~marsic/books/CN/book-CN_marsic.pdf">Computer Networks: Performance and Quality of Service</a>. Retrieved from <code>https://www.ece.rutgers.edu/~marsic/books/CN/book-CN_marsic.pdf</code>
+		</p>
+	</div>
+</section>
+<section id="Unit5">
+	<h2>Unit 5</h2>
+	<p>
+		The learning journal assignment for the week is to discus an application for virtual reality that we see beneficial.
+		That assumes that we <strong>*do*</strong> see virtual reality as useful though.
+		Personally, I really didn&apos;t.
+		As far as I can tell, virtual reality is just an enhanced version of audio/video technology.
+		It&apos;s a novelty, and I strongly suspect it&apos;ll become very widespread, given time.
+		Don&apos;t get me wrong, audio/video technology in all its forms, including virtual reality, can still serve useful functions.
+		Those functions just aren&apos;t specific to virtual reality.
+	</p>
+	<p>
+		Surprisingly, when I did some research, I found some niche uses for which virtual reality actually does seem to be an improvement over other technology.
+		The one that really stood out to me was its use in medicine.
+		Doctors are using virtual reality to distract patients from pain!
+		For example, during a tooth extraction, a patient may be equipped with a virtual reality headset, and while they focus on what they&apos;re seeing and hearing, they&apos;re not focusing on the pain (Garbade, 2018).
+		The human brain is incredibly limited.
+		Much more limited than most people seem to realise.
+		It can&apos;t process too much input at once.
+		If there&apos;s too much to take in, the brain will discard a bunch of it.
+		It&apos;s a proven medical fact that you feel less pain when you&apos;re thinking about something other than the pain, because feeling pain takes effort from the brain.
+		It&apos;s like giving a computer too many tasks.
+		Maybe a game you&apos;re playing will drop a bunch of frames while you&apos;re also running a Bitcoin miner on the same machine.
+		An in the brain, it can be pain signals that get dropped instead of graphical frames.
+	</p>
+	<div class="APA_references">
+		<h3>References:</h3>
+		<p>
+			Garbade, M. (2018, November 8). <a href="https://readwrite.com/2018/11/08/10-amazing-uses-of-virtual-reality/">10 Amazing Uses of Virtual Reality</a>. Retrieved from <code>https://readwrite.com/2018/11/08/10-amazing-uses-of-virtual-reality/</code>
+		</p>
+	</div>
+</section>
+<section id="Unit6">
+	<h2>Unit 6</h2>
+	<p>
+		This week&apos;s learning journal assignment says to do a Google search on Vint Cerf.
+		I&apos;d understand if it said to do a Web search - y&apos;know, using any search engine of choice - but it specifically says to use the Google search engine.
+		This is an absolutely asinine stipulation.
+		It&apos;s not something I can do, either.
+		As shown in the screenshot below, the Google search engine blocks me:
+	</p>
+	<img src="/img/CC_BY-SA_4.0/y.st./coursework/CS4404/Google.png" alt="Google blocks me" class="framed-centred-image" width="442" height="380"/>
+	<p>
+		Maybe try loosening up the requirements next time and not require use of a specific search engine?
+		That said, the search has nothing to do with the writing of the assignment, as we&apos;re supposed to write about a speech of his that was uploaded to the university&apos;s server, so I&apos;m not sure why we were asked to run that search anyway.
+	</p>
+	<p>
+		I was sceptical as to what Cerf would have to say, given that we were told that he&apos;s an evangelist for Google, the evil corporation that tries to eliminate user privacy so they can sell our data to their real customers, the advertisers.
+		However, in his comments on cloud computing, he makes some interesting points.
+		He first discusses how the layered system of the Internet allows any layer to be swapped out as long as the interfaces between the layers stays the same (Cerf, 2009).
+		Clearly, what he&apos;s referencing here is the power of <abbr title="application programming interface">API</abbr>s.
+		The implementations can change, as long as the interfaces don&apos;t.
+		The <abbr title="application programming interface">API</abbr>s of the Internet&apos;s layered architecture have allowed for updates to the implementations that would otherwise be incredibly difficult.
+		Next, he discusses the proprietary networks of old, and how they unconnected.
+		Like islands in a vast sea, they were separate.
+		As they had no way to even express the idea of another network, they had no hope of doing something such as <strong>*connecting*</strong> to another network.
+		Such thoughts would probably have been thought ludicrous, back in the days before the Internet.
+		And then, he took the concept somewhere I didn&apos;t expect: applying that same logic to clouds.
+		Clouds are proprietary and disjointed.
+		He proposed that perhaps, they could be connected, just like the proprietary networks merge to form the Internet as a whole these days.
+		He discussed some obvious concerns, such as how authorisation and data retrieval between clouds would work.
+		The idea was to get people thinking, not to yet propose any solutions.
+		This seems rather useful.
+		If you haven&apos;t picked up on it already, I distrust the proprietary clouds entirely, but solutions such as ownCloud exist, which I do trust, and it could be useful to connect to data people on proprietary clouds want to share, or share data with said people on proprietary clouds.
+		Furthermore, even without trustworthy, non-proprietary solutions, interconnecting the clouds would greatly reduce vendor lock-in, which is always a good thing.
+		It&apos;d mean not being permanently chained to a single cloud provider based on who you need to share data with, and having multiple cloud accounts to share data with everyone you need to.
+		From one cloud account, hosted with any provider, you could share with anyone you need to.
+		Evangelist for Google or not, Vint Cerf&apos;s idea here would reduce the need for anyone to have a Google account and use Google&apos;s cloud.
+		Though that said, it&apos;d also allow people to use Google cloud accounts in more places.
+		It wouldn&apos;t push people away from Google cloud storage by any means, it&apos;d just eliminate one reason people might feel forced to use Google.
+		Imagine being able to download a shared file from Google&apos;s Drive cloud to your own ownCloud instance instead of needing to download it to your local machine then re-upload it to your ownCloud instance, for example.
+		The possibilities are interesting, to say the least.
+	</p>
+	<div class="APA_references">
+		<h3>References:</h3>
+		<p>
+			Cerf, V. (2009, April 28). <a href="https://my.uopeople.edu/pluginfile.php/590938/mod_book/chapter/208650/6%20-%20Vint%20Cerf%20Cloud%20Comments.docx">Cloud Computing and the Internet</a>. Retrieved from <code>https://my.uopeople.edu/pluginfile.php/590938/mod_book/chapter/208650/6%20-%20Vint%20Cerf%20Cloud%20Comments.docx</code>
+		</p>
+	</div>
+</section>
+<section id="Unit7">
+	<h2>Unit 7</h2>
+	<p>
+		...
+	</p>
+</section>
+<section id="Unit8">
+	<h2>Unit 8</h2>
+	<p>
+		...
+	</p>
+</section>
 		<hr/>
 		<p>
-			Copyright © 2019 Alex Yst;
+			Copyright © 2019-2020 Alex Yst;
 			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
 			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
 			My address is in the source comments near the top of this document.
