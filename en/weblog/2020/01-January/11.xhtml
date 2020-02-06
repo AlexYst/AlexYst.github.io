@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2020 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2020/01-January/11.xhtml"/>
+		<title>Their answer is to try a VPN. Seriously? &lt;https://y.st./en/weblog/2020/01-January/11.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+<nav>
+	<p>
+		<a href="/en/coursework/">Coursework</a> |
+		<a href="/en/take-down/">Take-down requests</a> |
+		<a href="/en/">Home</a> |
+		<a href="/en/a/about.xhtml">About</a> |
+		<a href="/en/a/contact.xhtml">Contact</a> |
+		<a href="/a/canary.txt">Canary</a> |
+		<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+		<a href="/en/opinion/">Opinions</a> |
+		<a href="/en/law/">Law</a> |
+		<a href="/en/recipe/">Recipes</a> |
+		<a href="/en/a/links.xhtml">Links</a> |
+		<a href="/en/weblog/2020/01-January/11.xhtml.asc">{this page}.asc</a>
+	</p>
+	<hr/>
+	<p>
+		Weblog index:
+		<a href="/en/weblog/memories">Memories</a> |
+		<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+		<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+		<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+	</p>
+	<hr/>
+	<p>
+		Jump to entry:
+		<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+		<a rel="prev" href="/en/weblog/2020/01-January/10.xhtml">&lt;Previous</a>
+		<a rel="next" href="/en/weblog/2020/01-January/12.xhtml">Next&gt;</a>
+		<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+</nav>
+		<header>
+			<h1>Their answer is to try a <abbr title="virtual private network">VPN</abbr>. Seriously?</h1>
+			<p>Day 01771: <time>Saturday, 2020 January 11</time></p>
+		</header>
+<img src="/img/CC_BY-SA_4.0/y.st./weblog/2020/01/11.jpg" alt="The stump of a recently-cut tree" class="framed-centred-image" width="649" height="480"/>
+<section id="drudgery">
+	<h2>Drudgery</h2>
+	<p>
+		My academic advisor wrote back asking if I&apos;d taken my exams, asking if I&apos;d been able to log into the self-service student portal that&apos;s been blocking me, and saying I should try logging into the website using a <abbr title="virtual private network">VPN</abbr>.
+		An interesting suggestion, seeing as their site seems to be configured to be opposed to proxies.
+		They also said that if there&apos;s a <code>403</code> error from their side, it would affect more than one person, but the fact that they&apos;re qualifying &quot;<code>403</code> error&quot; with &quot;from their side&quot; makes me suspect their tech team doesn&apos;t know what a <code>403</code> error even is.
+		A <code>403</code> error is always on the server&apos;s side.
+		It&apos;s not a client-side error.
+		<code>403</code> is an error code sent from the server to the client, reporting that the server understands but refuses to fulfil the request.
+	</p>
+	<p>
+		First things first, I tried loading the portal website.
+		Quite shockingly, all the images loaded correctly.
+		I&apos;ve been blocked from loading them, just like I&apos;ve been blocked from loading the JavaScript needed to log into the site, I just haven&apos;t complained about the blocked images because they&apos;re not impeding my ability to get in and get out.
+		If the images are loading, I figured the JavaScript would be loading too.
+		Of course, I immediately tried loading the same website from my other laptop.
+		Nope.
+		They still haven&apos;t fixed the problem.
+		So I tried resetting <abbr title="The Onion Router">Tor</abbr> to get a new exit node.
+		I could still load the images.
+		So I reset again.
+		They still loaded, even after resetting the browser, clearing the cache.
+		I tried resetting <abbr title="The Onion Router">Tor</abbr> on the machine still being blocked, and that didn&apos;t resolve the issue.
+	</p>
+	<p>
+		Let me be clear here: I didn&apos;t mention it before because it was irrelevant, but I secretly tried removing my firewall restrictions that force me to use <abbr title="The Onion Router">Tor</abbr> to reach the Internet, and tried loading the website previously.
+		Just for my own knowledge.
+		Then I immediately set my firewall back to the secure state I have it in on a day-to-day basis.
+		I found that <abbr title="The Onion Router">Tor</abbr> nodes were definitely being blocked.
+		The site blocked me, then didn&apos;t block me when I accessed it without <abbr title="The Onion Router">Tor</abbr>, then immediately went back to blocking me when I used <abbr title="The Onion Router">Tor</abbr>.
+		A block on <abbr title="The Onion Router">Tor</abbr> exits is definitely a part of the equation.
+		I just couldn&apos;t say anything to my academic advisor because I felt I would be blamed, and if I could drop the proxy for a moment for testing purposes, I&apos;d be backed into a corner if they insisted I drop the proxy permanently.
+		They seem to be on a high horse, and would do just that, not to mention that it&apos;d save them a lot of trouble debugging if they could simply insist the problem is on my end, even though the <abbr title="The Onion Router">Tor</abbr> block is on their end and not mine.
+		And the lack of concern they&apos;ve shown in the past tells me they&apos;re not going to work with me on this if they don&apos;t have to.
+		So I said nothing of <abbr title="The Onion Router">Tor</abbr>, and kept explaining how <code>403</code> errors are server-side blocks, not client-side problems.
+		But now, I&apos;m finding something else to be a part of the equation as well.
+		Both laptops are running Debian 10 now.
+		Both are using vanilla Firefox now that I installed Debian 10 on the second machine.
+		Both laptops have been using <abbr title="The Onion Router">Tor</abbr> all along.
+		So what&apos;s different between the two?
+		Why is one blocked and the other not?
+	</p>
+	<p>
+		I considered updating my Web browser on the blocked machine to see if Web browser version has anything to do with the blocking criteria.
+		However, I wouldn&apos;t be able to downgrade again, so I wouldn&apos;t be able to check to see if the block had actually been fixed and get the school to actually fix it if upgrading the browser actually changed anything.
+		I&apos;d have to continue on without an update for now.
+		Should the problem persist and I&apos;m still able to get in on the one laptop when I need to register for courses next term, I will use that laptop and not complain.
+		It&apos;s the one I&apos;m doing my work on anyway.
+		but until then, while I&apos;ve got the technical team actually looking at the problem, I&apos;m going to do my best to keep them looking at the problem until they&apos;ve actually fixed their website.
+		I can honestly say the website is still blocking me and my machine, without mentioning that it&apos;s no longer blocking the other machine.
+	</p>
+	<p>
+		Anyway, it was time to try to set up a connection via <abbr title="virtual private network">VPN</abbr>.
+		I was morbidly curious as to how I&apos;d configure a connection to a <abbr title="virtual private network">VPN</abbr> over my existing <abbr title="The Onion Router">Tor</abbr> connection, and this would surely be made more complicated by the fact that I&apos;ve never used a <abbr title="virtual private network">VPN</abbr> before and am unsure how to use one at all.
+	</p>
+	<p>
+		The first site I tried to get a <abbr title="virtual private network">VPN</abbr> account from insisted that I verify a mobile telephone number via <abbr title="Short Message Service">SMS</abbr> before i could register.
+		I don&apos;t have telephone service, let alone mobile telephone service.
+		That wasn&apos;t going to work.
+		The second <abbr title="virtual private network">VPN</abbr> site sent me so many <code>403</code> errors that their page appeared to be completely blank.
+		I couldn&apos;t even find the websites of the other <abbr title="virtual private network">VPN</abbr>s on the list I&apos;d found, and some of them looked like they might be Android applications instead of service providers anyway, and shouldn&apos;t have been on the list.
+		I started the search again, and this time, I found a site giving credentials to get onto their <abbr title="virtual private network">VPN</abbr> with no registration needed.
+		Perfect.
+		One of the options the site listed was for the OpenVPN client, so I told the package manager to install that, and when it didn&apos;t add anything to my menu, I installed <a href="apt:kvpnc"><code>kvpnc</code></a>, which appeared to be a front end for it.
+		Other front ends were available, but this one had the advantage of looking like it had nothing to do with <abbr title="GNU Network Object Model Environment">GNOME</abbr>, making it less likely to bring the ghost of <abbr title="GNU Network Object Model Environment">GNOME</abbr> back to haunt me.
+		I tried to start <code>kvpnc</code>, but it immediately died.
+		As far as I can see, the only real error message is a complaint about being unable to find an internal debugger to deal with a crash that just happened.
+		I&apos;ll have to try more later.
+	</p>
+	<p>
+		My response to my academic advisor:
+	</p>
+	<blockquote>
+		<p>
+			Hello <span clsss="redacted">[REDACTED]</span>,
+		</p>
+		<p>
+			Yes, I&apos;ve completed the final exams.
+		</p>
+		<p>
+			I just checked again, and the self-serve portal is still blocking me.
+			You say that a 403 error from your side would affect more than one person, but that depends.
+			A 403 error is when the browser submits a valid request that the server understands, but the server refuses to fullfil the request.
+			This can happen for any number of reasons.
+			The file might have the wrong permissions set, for example, which would affect everyone.
+			However, the site may instead be blocking the request based on other criteria, such as IP address or User-Agent string, in which case, no, it wouldn&apos;t necessarily affect everyone.
+			This is not an error on the client&apos;s side though, but rather the server discriminating against the client for one reason or another.
+			To fix it, the blocking criteria would need to be removed, or to work around the issue without fixing it, the blocking criteria would need to be known so the client evade the block.
+			403 is a server-side error, and one that can only be present when there&apos;s nothing wrong on the client side.
+			To be clear, a 403 error occurs when the server understands the client&apos;s request, but refuses to fulfil it.
+			A 403 error, which is defined by the HTTP specification, is *always* on the server&apos;s side, never the client&apos;s side.
+			Given the nature of what the 403 error code means, it wouldn&apos;t make any sense for it to happen on the client&apos;s side, anyway.
+		</p>
+		<p>
+			I&apos;m trying to set up a VPN connection as you&apos;ve requested.
+			It&apos;s going to take a bit more time though, as I&apos;ve never used a VPN before, and don&apos;t know how to use VPN software.
+			I tried doing some research to learn, but I&apos;ve got to head to work now, so it&apos;ll have to wait.
+			I&apos;ll try again tomorrow, and I&apos;ll let you know when I have more information.
+		</p>
+		<p>
+			Thank you,<br/>
+			~ Alex Yst
+		</p>
+	</blockquote>
+	<p>
+		The fact that they&apos;re telling me to try a <abbr title="virtual private network">VPN</abbr> tells me that they&apos;re not looking for a solution where the problem actually is.
+		Either they&apos;re trying to get out of fixing the problem on their end, or they&apos;re failing to understand what a <code>403</code> error even is and failing to understand that the problem even is on their end.
+		Either way, the fact that they&apos;re denying the problem being on their end reeks of incompetence.
+	</p>
+</section>
+<section id="Minetest">
+	<h2>Minetest</h2>
+	<img src="/img/CC_BY-SA_3.0/minetest.net./weblog/2020/01/11.png" alt="The floor of the ground floor of the second pagoda" class="framed-centred-image" width="1024" height="600"/>
+	<img src="/img/CC_BY-SA_4.0/y.st./weblog_map/2020/01/11.png" alt="The world map" class="framed-centred-image" width="921" height="912"/>
+	<p>
+		I got a little more ocean-filling done, and I&apos;ve set up the floor of the ground floor of the second pagoda.
+		I want to focus on emptying my inventory of all this dirt so I don&apos;t need to make more chests for a while.
+		Next, I&apos;m going to work on clearing the area around the pagoda and setting up the main planting beds in the area.
+		I&apos;ll work on filling the ocean in further with the excess dirt I collect while doing that, too.
+		With the area set up properly and my chests mostly clear, I&apos;ll clear further space by building up the pagoda with the apple wood and straw.
+		I&apos;ll probably use the pine pagoda&apos;s planting beds only for mushrooms for the time being, to make sure I can meet my daily mushroom quota, but use the apple pagoda&apos;s planting beds for cotton and straw, both of which I&apos;ll need more of for that pagoda.
+		I&apos;m not sure I&apos;ll have enough apple logs even after clearing the apple forest though, so I may need to grow more before I finish.
+		I won&apos;t do that until I run out of apple trees that actually need to be removed though, to avoid building up excess logs to store for no reason.
+	</p>
+	<p>
+		I also want to build a mod to help me make sure I&apos;m staying ahead of my mushroom quota.
+		I&apos;m not sure how I&apos;ll pull that off though, given the time-based nature of the quota.
+		Does Minetest offer access to the server&apos;s system clock through it&apos;s Lua <abbr title="application programming interface">API</abbr>?
+		I feel like there&apos;s a good chance it does, but also a good chance it doesn&apos;t.
+	</p>
+	<p>
+		I forgot to bring my mouse to work today, making it impossible to place nodes to work on filling the ocean more on my breaks.
+		I also couldn&apos;t rename files easily, though it was still possible through the command line.
+		I also couldn&apos;t figure out how to use spell check, which I normally do by right clicking.
+		This laptop without proper mouse buttons is rather aggravating.
+	</p>
+</section>
+		<hr/>
+		<p>
+			Copyright © 2020 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2020%2F01-January%2F11.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.2</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2020%2F01-January%2F11.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+
