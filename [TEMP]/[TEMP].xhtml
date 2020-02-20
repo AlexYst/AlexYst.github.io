@@ -40,111 +40,198 @@
 </nav>
 		<header>
 			<h1>Learning Journal</h1>
-			<p>MATH 1302: Discrete Mathematics</p>
+			<p>CS 3304: Analysis of Algorithms</p>
 		</header>
 <section id="Unit1">
 	<h2>Unit 1</h2>
 	<p>
-		The reading assignment for the week was Chapters 0.1 through 0.3 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>.
+		The reading assignment for the seek was as follows:
+	</p>
+	<ul>
+		<li>
+			<a href="https://discrete.gr/complexity/">A Gentle Introduction to Algorithm Complexity Analysis</a>
+		</li>
+		<li>
+			Chapters Three, Seven, Nine, and Fourteen from <a href="https://people.cs.vt.edu/~shaffer/Book/C++3e20100119.pdf">C++3e20100119.pdf</a>
+		</li>
+		<li>
+			<a href="https://jeffe.cs.illinois.edu/teaching/algorithms/notes/99-recurrences.pdf">99-recurrences.pdf</a>
+		</li>
+		<li>
+			<a href="https://my.uopeople.edu/pluginfile.php/644416/mod_book/chapter/219106/algo_ch4_recurrences.pdf">Microsoft PowerPoint - algo_ch4_recurrences - algo_ch4_recurrences.pdf</a>
+		</li>
+		<li>
+			<a href="https://users.cs.duke.edu/~reif/courses/alglectures/skiena.lectures/lecture3.pdf">lecture3.dvi - lecture3.pdf</a>
+		</li>
+		<li>
+			<a href="https://my.uopeople.edu/pluginfile.php/644416/mod_book/chapter/219106/chapter03-algointro.pdf">chapter03-algointro.pdf</a>
+		</li>
+		<li>
+			<a href="https://cgi.csc.liv.ac.uk/~ped/teachadmin/algor/algor.html">Algorithm Design Paradigms - Overview</a>
+		</li>
+		<li>
+			<a href="https://www.cs.auckland.ac.nz/software/AlgAnim/alg_anim.html">Animated Algorithms</a>
+		</li>
+	</ul>
+	<p>
+		I was quite shocked to read that there will be group projects in this course.
+		I&apos;m not looking forward to that.
+		As of late, I&apos;ve barely had the time to get my assignments completed and submitted at all.
+		Adding group work to the mix is going to make this immensely more difficult.
+		How are we to coordinate with our group members in a timely fashion?
+		The only way I can think to reach group members is via email, but many people don&apos;t check their email often enough to substitute for real-time conversation.
+		Personally, I&apos;d be fine with using <abbr title="Internet Relay Chat">IRC</abbr> for real-time communication, but I&apos;m not sure everyone in the course is even familiar with <abbr title="Internet Relay Chat">IRC</abbr>.
+		I imagine some students will want to use the web chat feature of certain social media sites, but most of the big ones won&apos;t even let me register an account, so that won&apos;t work.
+		This doesn&apos;t bode well, and I&apos;m not looking forward to trying to make this work.
+		It&apos;d be easier if we were an in-person class, y&apos;know?
+		Then we could work on group projects face-to-face.
 	</p>
 	<p>
-		This week was pretty much review for me.
-		We didn&apos;t cover much that I didn&apos;t already know from past maths courses (not necessarily ones from this school) or from basic intuition.
-		I guess the main thing I learned was terminology.
-		For example, I&apos;d never heard of a powerset.
-		I don&apos;t think I&apos;ve encountered powersets in other courses, either.
-		However, I <strong>*have*</strong> worked with them in my code and in problems I&apos;ve solved.
-		A great example of this was an alchemy plugin I started building for a game I enjoy.
-		The alchemy idea got scrapped and re-planned several times before ultimately being deemed unnecessary, but at one point, it was decided that any number of ingredients from a certain set would be meldable to form new items.
-		This included single-item refinements, though didn&apos;t include the empty set.
-		Basically, the set of recipes that needed to be defined was the powerset of the list of ingredients minus the empty set.
-		I never knew there was a term for this set of sets though.
+		Aside from the reading assignment and this learning journal assignment, the only work for the week was the discussion assignment.
+		There, we brute force, branch-and-bounds algorithms, and asymptotic complexities.
+		I think I might have read about branch-and-bounds algorithms in another course, but I&apos;m not sure.
+		If I did, I don&apos;t really remember them well, so this was good review for me.
+		Brut force is so simple that there&apos;s really no forgetting it.
+		I usually try to do things without resorting to brute force, but it&apos;s a tool that I do use against problems when I can&apos;t think of a better way.
+		Often, when I use brute force as a last resort, it takes so long to finish that in the hours it&apos;s running, I come up with something much faster, then interrupt the brute force script and write the better script to run instead.
+		As for asymptotic complexities, I know I learned big oh, big theta, and big omega notation, but I don&apos;t recall small oh and small omega notation.
+		Also, I feel like the textbook from this course explained all the notations better than the one in the other course, so I understand the differences better than before.
 	</p>
 	<p>
-		We were asked what information learned was contrary to what we previously believed.
-		For me, none of it.
-		Maths aren&apos;t exactly a controversial topic.
-		I either know something or I don&apos;t.
-		Maths are a form of logical thinking.
-		I don&apos;t form incorrect opinions on maths because I don&apos;t form opinions on maths.
-		When I do maths incorrectly, it&apos;s because I made a mistake, not because I learned some alternate form of maths that are somehow incorrect.
+		I still don&apos;t really get why asymptotic complexities are done the way they are though.
+		You throw out less-significant information such as constants.
+		In other words, you throw out perfectly-good information that is known about run times.
+		That gives you less accurate information with which to estimate how long it&apos;ll take for algorithms to run.
+		This information is less impactful than the information you keep, but it&apos;s still useful in, for example, as a tie-breaker between algorithms with similar run times.
+		2x + 4 and 2x + 504 both have an asymptotic complexity of Θ(x), for example, even though the second one has much more overhead, even if that overhead isn&apos;t changed based on input size.
 	</p>
 	<p>
-		One question specifically asked by the learning journal instructions is how the class discussion helped in learning the new information.
-		It didn&apos;t.
-		Every course I&apos;ve been in at this school has had discussion assignments, and for some students, I&apos;m sure they really help them grasp the information.
-		For me though, discussion assignments never do anything for me.
-		I complete them just to complete them.
-		Every student has a different learning style and has different things that work better or worse for getting down the material.
-		For me though, the discussion assignments just seem like echo chambers, where everyone repeats the same information over and over.
-		I don&apos;t find that useful.
-		This is compounded by the fact that we&apos;re not allowed to read the other posts until we&apos;ve completed our own.
-		On the rare occasion that I&apos;m struggling with something a discussion assignment covers, I can&apos;t get help from other students until I&apos;ve already figured out the material, written up my post, and no longer need any help.
-		Discussion assignments do absolutely zero for me in terms of learning new material.
-		It&apos;s the long written assignments, such as essays, that help me the most when learning.
-	</p>
-	<p>
-		Three questions sort of follow the same line of thought, so I&apos;ll cover them all in one paragraph: what material made us want to learn more, what was challenging, and what do we realise about our learning styles.
-		Due to behaviours and actions of staff at this school (not any professors, but people in other departments; mostly the censorship the school now imposes on me), I&apos;m afraid the joy of learning has been drained right out of me.
-		I don&apos;t do well when censored.
-		I wilt.
-		I whither.
-		I do my best to get down the material, but serious damage has been done, and it eliminates the sort of enthusiasm I would otherwise have - enthusiasm that I had in every course when I first got to this school.
-		As for what was challenging, nothing really was this week, which surprised me.
-		The material was mostly review, and the new terminology I learned didn&apos;t come with any new concepts; I could just attach the terms to concepts I was already familiar with but didn&apos;t previously know how to convey concisely.
-		I&apos;ve learned nothing new about my learning style, but could see what I&apos;ve already known for a long time: I learn best when I write.
-		While the written assignment for the week was incredibly short, it reinforced the material covered this week.
-	</p>
-	<p>
-		Finally, we were asked what we feel about the feedback from our peers.
-		When we get feedback, it&apos;s from the assignments we completed two weeks ago.
-		Two weeks ago, we submit an assignment, one week ago, the grading is done, then this week, we see the feedback.
-		The course started this week, so there was no feedback yet.
-		This question is moot.
+		The reading assignment also covered several terms I&apos;m already well familiar with.
+		Recursion was one of the main themes.
+		Recursion is one of those things that&apos;s really powerful, but that I almost always think is the wrong tool for the job.
+		At times, it makes the functionality of written code more obvious to the reader.
+		Other times (often with huge overlap with the previous cases), it makes seemingly-unsolvable problems a piece of cake to deal with.
+		But when used unnecessarily, it seems like a rather heavy hammer for a small nail.
+		I&apos;ve gotten a pretty good feel for when using it&apos;s right though.
+		If I can&apos;t come up with  non-recursive solution and it feels like I should be able to, I&apos;ve usually overlooked something big, and my code is needlessly complex.
+		I suppose recursive programming functions are bit more touchy than recursive mathematical functions, and we&apos;re dealing with the latter so far in this course.
+		Still, the idea of recursion is the same in both cases, and it&apos;s just as powerful in both.
 	</p>
 </section>
 <section id="Unit2">
 	<h2>Unit 2</h2>
 	<p>
-		The reading assignment for the week was Chapters 1.1 through 1.3 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>.
+		The reading assignment for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			Chapter fifteen of <a href="https://people.cs.vt.edu/~shaffer/Book/C++3e20100119.pdf">C++3e20100119.pdf</a>
+		</li>
+		<li>
+			<a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap2.pdf">chap2.pdf</a>
+		</li>
+		<li>
+			<a href="http://videolectures.net/mit6046jf05_leiserson_lec13/">Lecture 13: Amortized Algorithms, Table Doubling, Potential Method - VideoLectures.NET</a>
+		</li>
+	</ul>
+	<p>
+		This week was rather frustrating.
+		First, the the discussion assignment.
+		I work weekends.
+		My days off from work are near the end of the unit each week.
+		If I&apos;m lucky, I can get the reading assignment done before then, but often times, I have to get the reading finished in the last couple days of the unit.
+		The discussion assignment, of course, needs to be done long before that.
+		We&apos;re also not allowed to know what the reading assignment for the next week will be, meaning that I can&apos;t simply read ahead when I can.
+		This was one of those weeks that I had to complete the discussion assignment practically blind.
+		Oddly enough, the written assignment for the week was a breeze, even if I had to only rely on prior knowledge.
+		If the discussion assignment and written assignment had been flipped, I&apos;d&apos;ve done quite well this week.
+		Secondly, there was the video lecture.
+		The website hosting the video relies on Adobe Flash to provide video playback, which means I couldn&apos;t watch the lecture.
+		All I could see was an error message.
+		It&apos;d&apos;ve been nice to have a transcript instead of just a video.
+		Even if they didn&apos;t think about people without Flash, some people, myself included, learn better when able to read instead of listen.
 	</p>
 	<p>
-		Like last week, this week&apos;s learning journal assignment asks about the feedback we received this week.
-		We won&apos;t receive our first feedback until next week though.
-		Instead, I guess I&apos;ll discuss the submissions I graded this week.
-		The third was mostly very good, though the Venn diagram was a bit incorrectly labelled.
-		The other two mistook <var>U</var> - a specific, five-element set described by the assignment instructions - for being the universal set.
-		I think <a href="https://en.wikipedia.org/wiki/Universal_set">Wikipedia</a> explains pretty well why this is incorrect.
-		The universal set is an infinite set that includes all possible elements.
-		The universal set even includes itself, making it a recursive set.
-		A simple set containing only five integers isn&apos;t the universal set.
-		Perhaps it was misleading for the set described by the instructions to be named <var>U</var>, as this is the same name typically used to refer to the universal set.
-		Another common problem seemed to be thinking that the inverse of <var>A</var> was a finite set and not an infinite set containing all but three possible elements.
+		I&apos;m having some trouble grasping what the master theorem is trying to convey to us.
+		I ended up having to write up my discussion post before I&apos;d even gotten a chance to read about the master theorem, which resulted in an incredibly-ill-informed submission, but even after reading about it, I didn&apos;t really understand how to use it.
+		I would have done better, but probably not by much.
+		I should read up on it more when I have time, and see if I can find any examples of how to put it into practice.
+		Only one student replied to my post, and they were rather rude about it, pretty much telling me that they expected a better post from me.
+		That&apos;s what happens when I&apos;ve got less than a week to complete a discussion post on a topic I&apos;m not familiar with and haven&apos;t had a single day off to actually sit down with the material though.
 	</p>
 	<p>
-		I wouldn&apos;t exactly say I learned something new this week, but I did relearn something I&apos;d forgotten.
-		I&apos;d forgotten how to use one equation to prove another one true.
-		It&apos;s really a simple matter of setting an expression equal to itself, making substitutions on one side, then simplifying the resulting equation.
-		I&apos;d forgotten that first, critical step though.
-		Normally, discussion assignments are of zero benefit to me because they&apos;re just an echo chamber of everyone repeating what they read, and the fact that this week&apos;s work was a discussion assignment wasn&apos;t beneficial over the alternative of that same assignment being issued as a written assignment instead, but the assignment itself was helpful in reminding me of that simple option when working with equations.
-	</p>
-	<p>
-		I guess the main challenge for the week was just figuring out how to use one equation to prove another.
-		I&apos;m not sure I would have remembered how to do that on my own.
-		I&apos;m glad I asked for help on that though.
-		One of my fellow <abbr title="Linux User Group">LUG</abbr> members wrote up a step-by-step explanation of how to solve the problem, which pointed me in the right direction.
-		I ended up not using their steps, so the work I submitted was my own, but it got me past that initial hurdle of not even knowing where to start.
-		In actuality, they didn&apos;t read that carefully, and got the initial problem incorrect, making their steps incorrect as well, but that worked out just fine anyway because all I needed was a spark of remembering how to get started on such a problem.
-		I was worried going into this course that it might be one of those maths courses that&apos;s a bit over my head, but things seem to be going well so far.
-		I could probably due with a bit more difficulty, to be honest, though as I&apos;ve been overworked lately at my day job, I really won&apos;t complain about easy coursework.
-		I do need to remember to reach out when I don&apos;t get something though.
-		It&apos;s not something I typically do, and it was only odd circumstances that led me to get help this time.
+		For the written assignment, we focused on justifying a divide-and-conquer approach to solving our choice of one of three situations.
+		One of them was binary search, which is a classic divide-and-conquer situation.
+		I&apos;m sort of surprised the assignment didn&apos;t tell us to justify a divide-and-conquer approach to searching in general and have us come up with binary search as a way to implement it.
+		I mean, if you refer to binary search specifically, there&apos;s no way to solve the problem <strong>*without*</strong> a divide-and-conquer approach.
+		I mean, the problem&apos;s definition then <strong>*necessarily involves*</strong> division.
+		There&apos;s really no dispute over whether this problem is well-suited to a divide-and-conquer approach.
+		I guess that means I chose the low-hanging fruit.
+		I really needed an easy assignment though, given my rough week - not only rough in terms of school assignments, but other life matters as well.
 	</p>
 </section>
 <section id="Unit3">
 	<h2>Unit 3</h2>
 	<p>
-		...
+		The reading assignment for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			Sections 11.1 through 11.3 of <a href="https://people.cs.vt.edu/~shaffer/Book/C++3e20100119.pdf">C++3e20100119.pdf</a>
+		</li>
+		<li>
+			<a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap3.pdf">chap3.pdf</a>
+		</li>
+		<li>
+			<a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap4.pdf">chap4.pdf</a>
+		</li>
+		<li>
+			<a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap5.pdf">chap5.pdf</a>
+		</li>
+		<li>
+			<a href="https://www.cse.ust.hk/~dekai/271/notes/L14/L14.pdf">L14.dvi - L14.pdf</a>
+		</li>
+	</ul>
+	<p>
+		The discussion assignment was about breadth-first and depth-first searching, which is a very simple concept.
+		So that was easy.
+		That is, aside from the part that asked about greedy algorithms.
+		As usual, I had to write up my post days before I had a day off to sit down and go through the material thoroughly.
+		I didn&apos;t think there was a meaning for the term &quot;greedy&quot; in computer science other than the one I&apos;d already known, which is used in places such as greedy matching of regular expressions.
+		It turns out that greediness in this context is an attempt to try the believed best solution first.
+		So I got that wrong in the discussion assignment.
+	</p>
+	<p>
+		The written assignment was easy this week as well; even more so because it was due later, so I actually had time to read the course material for the week before completing it.
+		However, the assignment asked if the example graph was &quot;simple&quot;.
+		The reading material didn&apos;t cover &quot;simple&quot; graphs, though one of the diagrams was labelled as one - it was never mentioned what simple graphs even are.
+		Wikipedia came to the rescue when I tried a Web search, which surprised me.
+		&quot;Simple&quot; is such a generic word that I would have thought I&apos;d need a lot more context to get any relevant information.
+		I worry though about which graders I&apos;ll get.
+		Some students mark you down for citing Wikipedia.
+		It&apos;s ridiculous, seeing as a good many of the courses I&apos;ve taken here at this university have included Wikipedia pages <strong>*as a part of the reading assignments*</strong>.
+		Clearly, this school does understand that Wikipedia is a decent source to learn from.
+		But then, even in those classes, some students get weird when you try to cite the assigned reading material, just because that material was a part of Wikipedia.
+		I get that some schools don&apos;t think Wikipedia is a reliable resource, but this school isn&apos;t one of them, so that shouldn&apos;t be held against those of us that make use of it.
+	</p>
+	<p>
+		The concept of &quot;connected directional graphs&quot; is a bit oddly defined.
+		If the connections are not bidirectional, they for some reason don&apos;t count.
+		It&apos;s rather unintuitive.
+		It&apos;s easy enough to understand, but it seems like maybe a more-accurate word than &quot;connected&quot; should have been used.
+	</p>
+	<p>
+		The written assignment this week specifically said we don&apos;t have to work with actual code this week.
+		It makes me wonder if we&apos;re going to be writing actual code for things like this in the future though.
+		The data structure we built stored edges separately from vertices.
+		That seems rather odd from a problem-solving perspective.
+		When you&apos;re at a certain vertex, treating that vertex as a sort of node for the problem you&apos;re working with, you&apos;d then need to walk the entire list of edges to see which ones come from your current vertex.
+		That doesn&apos;t seen efficient.
+		Rather, you&apos;d want vertices with paths leading away from them to be parent nodes to the children the paths lead to.
+		Or at the very least, you&apos;d want the nodes representing the vertices to contain a list of the nodes their paths lead to.
+		I wonder what possible advantage this sort of representation could have.
+		Serialisation, perhaps?
+		Maybe you&apos;d have your application translate this into something more useful before using it, and translate back to this representation when storing it on disk.
 	</p>
 </section>
 <section id="Unit4">
