@@ -237,7 +237,104 @@
 <section id="Unit4">
 	<h2>Unit 4</h2>
 	<p>
-		...
+		The reading assignment for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			<a href="https://en.wikipedia.org/wiki/Kruskal&apos;s_algorithm">Kruskal&apos;s algorithm - Wikipedia</a>
+		</li>
+		<li>
+			Sections 11.1 through 11.3 of <a href="https://people.cs.vt.edu/~shaffer/Book/C++3e20100119.pdf">C++3e20100119.pdf</a>
+		</li>
+		<li>
+			<a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap4.pdf">chap4.pdf</a>
+		</li>
+		<li>
+			<a href="https://www.cse.ust.hk/~dekai/271/notes/L07/L07.pdf">L07.dvi - L07.pdf</a>
+		</li>
+		<li>
+			<a href="https://www.cse.ust.hk/~dekai/271/notes/L08/L08.pdf">L08.dvi - L08.pdf</a>
+		</li>
+	</ul>
+	<p>
+		Minimum cost spanning trees are an interesting concept.
+		You cut down the cost of the graph by removing all technically-unnecessary connections.
+		It reminds me a lot of a tunnel network I used to build in a game called Minetest.
+		I used to tunnel out to everyone&apos;s various builds, connecting them with a flat, underground road, making it not only easy to walk to these distant places, but also easy to even <strong>*find*</strong> them.
+		I was getting requests for tunnel exits so rapidly though that there was no way I could create the web of tunnels necessary to connect everywhere to everywhere else directly.
+		There was too much of a backlog!
+		Instead, I just connected each location to the nearest existing or future tunnel exit.
+		I didn&apos;t do any formal analysis or anything, but basically, distance was my measure of cost and I attempted to connect all vertices (requested tunnel exits) while keeping that cost as low as possible.
+		The road wasn&apos;t always as direct as would be desirable because of this though.
+	</p>
+	<p>
+		That brings me to my other major thought on minimum spanning trees.
+		I see very much why one would want to minimise costs by reducing the edges by creating one of these trees from a graph.
+		However, I think we need to be careful about using these trees as well.
+		Imagine if the real world road network were structured like my old tunnel network.
+		Travel from one location to another would incur a high cost for travellers.
+		There would be exactly one route to get from a given place to a given other place, and usually, it&apos;d require going several steps in the wrong direction for every step in the right direction.
+		There are also other things to think of in many cases.
+		For example, the one road connecting two places could suffer damage and need repair, or perhaps there&apos;s even just routine road maintenance.
+		As another example, we have the Internet.
+		Many places are connected and the connections are often quite fast.
+		Having extra stops on the route might not even be noticeable by users, especially as with the reduced number of connections, the remaining connections and the routers themselves would be bolstered to handle the increased load.
+		However, if any node or link become incapacitated, the network breaks into separate islands that can&apos;t speak to one another.
+		We actually see that sort of thing in the <abbr title="Internet Relay Chat">IRC</abbr> protocol sometimes.
+		We cal it a net split.
+		Having redundant edges isn&apos;t always a bad thing, even if it&apos;s a bit more expensive.
+	</p>
+	<p>
+		The quiz had a rather confusing question on it.
+		It asked
+	</p>
+	<blockquote>
+		<p>
+			What is the big-o complexity of the purple line?
+		</p>
+	</blockquote>
+	<p>
+		That seems like a straightforward question.
+		I mean, aside from the fact that absolutely no image was included, and there was no hint as to what purple line was even meant.
+		Luckily, five questions down was another question, this time with a graphic:
+	</p>
+	<blockquote>
+		<p>
+			What is the big-o complexity of the green line?
+		</p>
+	</blockquote>
+	<p>
+		After another unrelated question, two more questions came up, both with the same graphic as the green line question:
+	</p>
+	<blockquote>
+		<p>
+			What is the big-o complexity of the red line?
+		</p>
+		<p>
+			What is the big-o complexity of the blue line?
+		</p>
+	</blockquote>
+	<p>
+		I have to assume the purple line question was based on this same graph.
+		Someone forgot to include the graphic in the question though, which is problematic because of the way these quizzes seem to work.
+		As best I can tell from past quizzes, the questions seem to be randomised.
+		That means that the purple line question could have come up without the graphic showing up anywhere on the quiz.
+		Hopefully someone fixes that for next term.
+	</p>
+	<p>
+		This month has been exhausting, and it&apos;s really starting to take its toll on me.
+		The head manager has been out for the past two months, and the franchise owner has been intentionally under-staffing us to try to squeeze more profit out of us.
+		I - along with one of the other shift leaders and one of the assistant managers - have been having to skip most of our breaks just to get everything done.
+		It&apos;s been wearing me down.
+		There&apos;s not been the energy left for school, and I&apos;ve been having to skim things a bit to stay on top of the work.
+		Unfortunately, that led to a mistake this week.
+		I mentioned last week that I wondered if we&apos;d be doing anything programmatically with that graph from last week&apos;s work.
+		We did.
+		We were supposed to implement Prim&apos;s algorithm to build a minimum spanning tree from it.
+		However, I got the instructions wrong, and instead implemented Kruskal&apos;s algorithm.
+		By the time I noticed, I didn&apos;t have time to go back and correct the error.
+		I had to submit it as-is.
+		That&apos;s how things go sometimes though.
 	</p>
 </section>
 <section id="Unit5">
