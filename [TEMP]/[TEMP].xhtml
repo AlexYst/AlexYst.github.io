@@ -340,7 +340,72 @@
 <section id="Unit5">
 	<h2>Unit 5</h2>
 	<p>
-		...
+		The reading assignment for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			Sections 16.1 through 16.2 of <a href="https://people.cs.vt.edu/~shaffer/Book/C++3e20100119.pdf">C++3e20100119.pdf</a>
+		</li>
+		<li>
+			<a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap6.pdf">chap6.pdf</a>
+		</li>
+		<li>
+			<a href="http://videolectures.net/mit6046jf05_leiserson_lec15/">Lecture 15: Dynamic Programming, Longest Common Subsequence - VideoLectures.NET</a>
+		</li>
+	</ul>
+	<p>
+		As with last time we were assigned a video to watch on this website, the video won&apos;t play.
+		It says it requires Adobe Flash, which of course, isn&apos;t something I can install on my system.
+		It&apos;d be really nice if they provided a transcript.
+		Even if the video relied on Web standards instead of Adobe Flash and was therefore able to play, a transcript would make it much easier to learn from.
+		I learn much better by reading than by watching videos.
+	</p>
+	<p>
+		The assignment instructions this week and last week have asked that we either use a Cloud9 instance or our own <abbr title="integrated development environment">IDE</abbr>s.
+		I&apos;m not sure why Cloud9 was specifically mentioned separate from other <abbr title="integrated development environment">IDE</abbr>s.
+		It&apos;s not like we have been given access to a Cloud9 instance for use with the class.
+		I couldn&apos;t really find a public instance available either.
+		I think last time I used a Java <abbr title="integrated development environment">IDE</abbr> for a course, I used Eclipse.
+		Another time, I used NetBeans, I&apos;m pretty sure.
+		However, neither of these <abbr title="integrated development environment">IDE</abbr>s are available in the Debian 10 repositories.
+		I tried using Geany too, but Geany refuses to run Java code for some reason.
+		It just keeps complaining that it can&apos;t find the class that shares a name with the file, even when it&apos;s the only class the file contains.
+		I&apos;m really confused as to what the issue is.
+		I&apos;ve been running my code in an online <abbr title="integrated development environment">IDE</abbr> before submitting it, so I know my code runs and does what I intend it to, but it&apos;s frustrating not to be able to run it locally for the time being.
+	</p>
+	<p>
+		It seems that the solution to this week&apos;s assignment is supposed to find 45 valid knapsacks.
+		I&apos;m confused as to where that number comes from.
+		At first, I thought it to be the number of knapsack configurations that isn&apos;t over capacity.
+		In other words, even if a knapsack is underpacked, it&apos;s count toward that number, but if it&apos;s overpacked and cannot be carried, it doesn&apos;t count toward it.
+		However, my code solution found 3571 of such configurations.
+		So I figured this was the number of knapsacks that solved the problem.
+		In other words, those that were packed the best.
+		I rewrote my code to count those instead.
+		However, my code solution found only two of such configurations.
+		I&apos;m not sure where the number 45 comes in.
+		To top it off, the best solution found by my code matched the example weight and example value perfectly.
+		That means my code didn&apos;t fail to find the correct solution(s).
+		If my code failed to find the correct solution, I could at least expect the accompanying statistics to turn out wrong.
+	</p>
+	<p>
+		One of the students I graded work for this week came up with some interesting code.
+		In my code, I encoded edges as a list of pairs of vertices along with weights.
+		That allowed every edge to be represented and nothing that wasn&apos;t an edge to be represented.
+		This student instead used a two-dimensional array with the first dimension being the points lead from and the second being the points led to.
+		All vertices then had an edge connecting them represented in the data structure.
+		Any non-existent edge was given the value 999, a value so much higher than any real edge that it&apos;d never be chosen as an edge to keep in the tree.
+		It required a bunch of this filler data to be stored, but in exchange, it allowed the representation of references to valid edges to be made quite a bit more intuitive.
+	</p>
+	<p>
+		Another student added a bunch of headers and footers to their work, even in the middle of their code segment.
+		It made running the code fail, as the headers and footers were interpreted by the <abbr title="integrated development environment">IDE</abbr> to be malformed code.
+		I&apos;m not sure why people think they have to up upload attached word processing documents containing code instead of simply pasting their code into the submission form, which would make it easy to copy the code and easy to submit it even.
+		It&apos;s annoying to have to download the attacked files, open them, then copy the code.
+		Or at the very least, they could try uploading <code>.java</code> files.
+		That&apos;d at least make sense.
+		But to additionally break up the code with inserted headers and footers so even copying and pasting the code into a <code>.java</code> file doesn&apos;t let the code run?
+		I&apos;m really not sure what they were thinking.
 	</p>
 </section>
 <section id="Unit6">
