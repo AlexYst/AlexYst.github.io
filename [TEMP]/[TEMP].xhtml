@@ -411,7 +411,48 @@
 <section id="Unit6">
 	<h2>Unit 6</h2>
 	<p>
-		...
+		The reading assignment for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			<a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap7.pdf">chap7.pdf</a>
+		</li>
+		<li>
+			<a href="https://www.google.com/sorry/index?continue=https://www.youtube.com/user/patrickJMT/videos%3Fquery%3Dsimplex&amp;q=EgS53GUxGOO1p_MFIhkA8aeDS5CN04R6br7LJSpNti33CNzjaJ8LMgFy">patrickJMT - YouTube</a>
+		</li>
+	</ul>
+	<p>
+		The section explaining the maximum profits line confused me at first.
+		The two axes were on the same side of the equation and the <var>c</var> was on its own side, so I thought <var>c</var> was its own dimension.
+		It turns out the problem was that the equation just wasn&apos;t in the format I was used to for graphing: <var>y</var> = <var>m</var><var>x</var> + <var>b</var>.
+		Moving things around a bit, the equation made perfect sense as describing a line in two-dimensional space.
+	</p>
+	<p>
+		Optimising for such linear expressions is surprisingly easy.
+		Due to the expression you want to optimise representing a line, the optimal values will always be found at one of the vertices formed by the boundary conditions.
+		I would have never figured out how to do that on my own.
+		What this really means is that optimising the expression involves setting your control variable to their absolute allowable extremes.
+		The meeting of these extremes is what the vertices represent.
+		Once you&apos;ve found these vertices, it&apos;s simply a matter of comparing them to find the best result so you know which extremes to choose.
+		That&apos;s a huge improvement over trying to tweak the control variables incrementally and trying to move the result to ever-better values.
+		Not only is this method faster, but it also guarantees that you&apos;ll find the actual optimal result, as you&apos;re searching a finite set of solutions instead of an infinite set.
+	</p>
+	<p>
+		The matrix-based solution to the problem is a bit above my skill level though.
+		I&apos;ve never been very good with matrix manipulation.
+		Every time I try to use matrices, I have to relearn how they work.
+		When I&apos;m done, I end up forgetting again.
+		I feel like if you&apos;re going to do a lot of this sort of optimisation though, the matrix method is the way to go.
+		I mean, once I relearn the rules of matrix manipulation for the umpteenth time, I could program a small matrix manipulation library.
+		From there, I could build a wrapper specific to the type of problem I&apos;m frequently having to optimise.
+		Finally, I&apos;d be able to enter the basic linear expressions using whatever <abbr title="application programming interface">API</abbr> I&apos;d come up with for expressing them.
+		The computer could do all the matrix work for me, if I had a job that required this sort of thing.
+		I&apos;d only need to understand matrices long enough to get the code written, then make sure it had enough comments that I could upgrade and debug when necessary.
+		The easier method, finding the vertices, would be much harder to program.
+		I&apos;m not sure how I&apos;d do it.
+		I&apos;d end up needing to perform all the calculations by hand every time, and that would add up to a lot of time spent calculating.
+		While working with matrices by hand is a challenge for me, it&apos;s so well-defined of a problem that it could easily be programmed where finding vertices would be harder, especially if a variable number of variables is to be used.
+		I feel like if I were to program something to find vertices from the equations, I&apos;d end up having to program a different solution for each number of variables, where the matrix-based solution would be able to work with matrices of any size through iteration.
 	</p>
 </section>
 <section id="Unit7">
