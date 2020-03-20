@@ -458,7 +458,59 @@
 <section id="Unit7">
 	<h2>Unit 7</h2>
 	<p>
-		...
+		The reading assignment for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			Chapter 17 of <a href="https://people.cs.vt.edu/~shaffer/Book/C++3e20100119.pdf">C++3e20100119.pdf</a>
+		</li>
+		<li>
+			<a href="https://courses.engr.illinois.edu/cs473/sp2010/notes/21-nphard.pdf">21-nphard.pdf</a>
+		</li>
+		<li>
+			<a href="https://my.uopeople.edu/pluginfile.php/644803/mod_book/chapter/219384/jeff_nphard.pdf">jeff_nphard.pdf</a>
+		</li>
+		<li>
+			<a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/lecture-videos/lecture-16-complexity-p-np-np-completeness-reductions/">Lecture 16: Complexity: P, NP, NP-completeness, Reductions | Lecture Videos | Design and Analysis of Algorithms | Electrical Engineering and Computer Science | MIT OpenCourseWare</a>
+		</li>
+		<li>
+			<a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap8.pdf">chap8.pdf</a>
+		</li>
+	</ul>
+	<p>
+		This week&apos;s unit was about the theory of <abbr title="nondeterministic polynomial time">NP</abbr> problems and the benefits of proving that even a single <abbr title="nondeterministic polynomial time">NP</abbr> problem can be solved in polynomial time.
+		By proving one such problem was solvable with so few resources, we&apos;d prove them all to be solvable with such few resources
+		We could get a whole lot of tricky problems solved for sure.
+	</p>
+	<p>
+		However, one thing I kept thinking about was problems that we <strong>*depend on*</strong> being nearly impossible to solve.
+		Encryption, for example, if easily broken, wouldn&apos;t be of any help to any of us.
+		If encryption could be broken in polynomial time, it&apos;d be highly problematic.
+		Don&apos;t get me wrong.
+		I do think study should go into this area.
+		The fact that we don&apos;t know that our encryption can be broken so easily doesn&apos;t mean it can&apos;t.
+		If there&apos;s a polynomial-time way to break our best encryption methods, we should find it, so we know in what way we&apos;re not secure.
+		When we know what the problem is, we can begin working on newer, tougher-to-break encryption algorithms.
+		That said, decryption can be easily verified.
+		It has to be that way.
+		So it has to be an <abbr title="nondeterministic polynomial time">NP</abbr> problem.
+		With that in mind, if we find a polynomial-time way to solve <abbr title="nondeterministic polynomial time">NP</abbr> problems, does that mean that no encryption method will ever be effective?
+		We may need to look into alternative methods of keeping our transmissions and stored data away from prying eyes.
+	</p>
+	<p>
+		The concept of <abbr title="nondeterministic polynomial time">NP</abbr> problems got me thinking about some code I wrote a while back.
+		It needs to check to see if there could exist a string that matches a set of patterns.
+		It basically needs to take several <abbr title="regular expression">regexp</abbr> patterns and decide whether it would be possible for a string to match all of them.
+		I never could figure out how to solve the problem programmatically, and the best I could come up with was to use brute force to try every possible string.
+		With no known string length limit in the environment I was working in, that would be impossible, not to mention that even if it <strong>*were*</strong> possible, it&apos;d be highly inefficient.
+		Letters, digits, underscores, and colons were allowed in the hypothetical strings that could be matched against.
+		That&apos;s sixty-four characters, making the run time O(64<sup>n</sup>) at first glance, but you also need to account for shorter-length strings down to and including the empty string, so the run time would be more like O(∑<sup>n</sup><sub>i=0</sub> 64<sup>i</sup>).
+		It&apos;d be huge.
+		Of course, if a solution were magically guessed, it&apos;d be quick to check it against all the patterns.
+		If I had a way to find a solution in polynomial time, it&apos;d make that code work just fine.
+		In the end though, I had to dummy out the function that checked for the existence of such a string, making it return <code>true</code> for every set of expressions.
+		It wasn&apos;t technically correct, and I don&apos;t like that, but it keeps the code at least practical until an actual solution is found to the problem.
+		It&apos;s possible though that this problem of reverse-<abbr title="regular expression">regexp</abbr>-matching is an <abbr title="nondeterministic polynomial time">NP</abbr>-complete problem and I&apos;m simply not able to solve it.
 	</p>
 </section>
 <section id="Unit8">
