@@ -40,483 +40,443 @@
 </nav>
 		<header>
 			<h1>Learning Journal</h1>
-			<p>CS 3304: Analysis of Algorithms</p>
+			<p>MATH 1302: Discrete Mathematics</p>
 		</header>
 <section id="Unit1">
 	<h2>Unit 1</h2>
 	<p>
-		The reading assignment for the seek was as follows:
-	</p>
-	<ul>
-		<li>
-			<a href="https://discrete.gr/complexity/">A Gentle Introduction to Algorithm Complexity Analysis</a>
-		</li>
-		<li>
-			Chapters Three, Seven, Nine, and Fourteen from <a href="https://people.cs.vt.edu/~shaffer/Book/C++3e20100119.pdf">C++3e20100119.pdf</a>
-		</li>
-		<li>
-			<a href="https://jeffe.cs.illinois.edu/teaching/algorithms/notes/99-recurrences.pdf">99-recurrences.pdf</a>
-		</li>
-		<li>
-			<a href="https://my.uopeople.edu/pluginfile.php/644416/mod_book/chapter/219106/algo_ch4_recurrences.pdf">Microsoft PowerPoint - algo_ch4_recurrences - algo_ch4_recurrences.pdf</a>
-		</li>
-		<li>
-			<a href="https://users.cs.duke.edu/~reif/courses/alglectures/skiena.lectures/lecture3.pdf">lecture3.dvi - lecture3.pdf</a>
-		</li>
-		<li>
-			<a href="https://my.uopeople.edu/pluginfile.php/644416/mod_book/chapter/219106/chapter03-algointro.pdf">chapter03-algointro.pdf</a>
-		</li>
-		<li>
-			<a href="https://cgi.csc.liv.ac.uk/~ped/teachadmin/algor/algor.html">Algorithm Design Paradigms - Overview</a>
-		</li>
-		<li>
-			<a href="https://www.cs.auckland.ac.nz/software/AlgAnim/alg_anim.html">Animated Algorithms</a>
-		</li>
-	</ul>
-	<p>
-		I was quite shocked to read that there will be group projects in this course.
-		I&apos;m not looking forward to that.
-		As of late, I&apos;ve barely had the time to get my assignments completed and submitted at all.
-		Adding group work to the mix is going to make this immensely more difficult.
-		How are we to coordinate with our group members in a timely fashion?
-		The only way I can think to reach group members is via email, but many people don&apos;t check their email often enough to substitute for real-time conversation.
-		Personally, I&apos;d be fine with using <abbr title="Internet Relay Chat">IRC</abbr> for real-time communication, but I&apos;m not sure everyone in the course is even familiar with <abbr title="Internet Relay Chat">IRC</abbr>.
-		I imagine some students will want to use the web chat feature of certain social media sites, but most of the big ones won&apos;t even let me register an account, so that won&apos;t work.
-		This doesn&apos;t bode well, and I&apos;m not looking forward to trying to make this work.
-		It&apos;d be easier if we were an in-person class, y&apos;know?
-		Then we could work on group projects face-to-face.
+		The reading assignment for the week was Chapters 0.1 through 0.3 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>.
 	</p>
 	<p>
-		Aside from the reading assignment and this learning journal assignment, the only work for the week was the discussion assignment.
-		There, we brute force, branch-and-bounds algorithms, and asymptotic complexities.
-		I think I might have read about branch-and-bounds algorithms in another course, but I&apos;m not sure.
-		If I did, I don&apos;t really remember them well, so this was good review for me.
-		Brut force is so simple that there&apos;s really no forgetting it.
-		I usually try to do things without resorting to brute force, but it&apos;s a tool that I do use against problems when I can&apos;t think of a better way.
-		Often, when I use brute force as a last resort, it takes so long to finish that in the hours it&apos;s running, I come up with something much faster, then interrupt the brute force script and write the better script to run instead.
-		As for asymptotic complexities, I know I learned big oh, big theta, and big omega notation, but I don&apos;t recall small oh and small omega notation.
-		Also, I feel like the textbook from this course explained all the notations better than the one in the other course, so I understand the differences better than before.
+		This week was pretty much review for me.
+		We didn&apos;t cover much that I didn&apos;t already know from past maths courses (not necessarily ones from this school) or from basic intuition.
+		I guess the main thing I learned was terminology.
+		For example, I&apos;d never heard of a powerset.
+		I don&apos;t think I&apos;ve encountered powersets in other courses, either.
+		However, I <strong>*have*</strong> worked with them in my code and in problems I&apos;ve solved.
+		A great example of this was an alchemy plugin I started building for a game I enjoy.
+		The alchemy idea got scrapped and re-planned several times before ultimately being deemed unnecessary, but at one point, it was decided that any number of ingredients from a certain set would be meldable to form new items.
+		This included single-item refinements, though didn&apos;t include the empty set.
+		Basically, the set of recipes that needed to be defined was the powerset of the list of ingredients minus the empty set.
+		I never knew there was a term for this set of sets though.
 	</p>
 	<p>
-		I still don&apos;t really get why asymptotic complexities are done the way they are though.
-		You throw out less-significant information such as constants.
-		In other words, you throw out perfectly-good information that is known about run times.
-		That gives you less accurate information with which to estimate how long it&apos;ll take for algorithms to run.
-		This information is less impactful than the information you keep, but it&apos;s still useful in, for example, as a tie-breaker between algorithms with similar run times.
-		2x + 4 and 2x + 504 both have an asymptotic complexity of Θ(x), for example, even though the second one has much more overhead, even if that overhead isn&apos;t changed based on input size.
+		We were asked what information learned was contrary to what we previously believed.
+		For me, none of it.
+		Maths aren&apos;t exactly a controversial topic.
+		I either know something or I don&apos;t.
+		Maths are a form of logical thinking.
+		I don&apos;t form incorrect opinions on maths because I don&apos;t form opinions on maths.
+		When I do maths incorrectly, it&apos;s because I made a mistake, not because I learned some alternate form of maths that are somehow incorrect.
 	</p>
 	<p>
-		The reading assignment also covered several terms I&apos;m already well familiar with.
-		Recursion was one of the main themes.
-		Recursion is one of those things that&apos;s really powerful, but that I almost always think is the wrong tool for the job.
-		At times, it makes the functionality of written code more obvious to the reader.
-		Other times (often with huge overlap with the previous cases), it makes seemingly-unsolvable problems a piece of cake to deal with.
-		But when used unnecessarily, it seems like a rather heavy hammer for a small nail.
-		I&apos;ve gotten a pretty good feel for when using it&apos;s right though.
-		If I can&apos;t come up with  non-recursive solution and it feels like I should be able to, I&apos;ve usually overlooked something big, and my code is needlessly complex.
-		I suppose recursive programming functions are bit more touchy than recursive mathematical functions, and we&apos;re dealing with the latter so far in this course.
-		Still, the idea of recursion is the same in both cases, and it&apos;s just as powerful in both.
+		One question specifically asked by the learning journal instructions is how the class discussion helped in learning the new information.
+		It didn&apos;t.
+		Every course I&apos;ve been in at this school has had discussion assignments, and for some students, I&apos;m sure they really help them grasp the information.
+		For me though, discussion assignments never do anything for me.
+		I complete them just to complete them.
+		Every student has a different learning style and has different things that work better or worse for getting down the material.
+		For me though, the discussion assignments just seem like echo chambers, where everyone repeats the same information over and over.
+		I don&apos;t find that useful.
+		This is compounded by the fact that we&apos;re not allowed to read the other posts until we&apos;ve completed our own.
+		On the rare occasion that I&apos;m struggling with something a discussion assignment covers, I can&apos;t get help from other students until I&apos;ve already figured out the material, written up my post, and no longer need any help.
+		Discussion assignments do absolutely zero for me in terms of learning new material.
+		It&apos;s the long written assignments, such as essays, that help me the most when learning.
+	</p>
+	<p>
+		Three questions sort of follow the same line of thought, so I&apos;ll cover them all in one paragraph: what material made us want to learn more, what was challenging, and what do we realise about our learning styles.
+		Due to behaviours and actions of staff at this school (not any professors, but people in other departments; mostly the censorship the school now imposes on me), I&apos;m afraid the joy of learning has been drained right out of me.
+		I don&apos;t do well when censored.
+		I wilt.
+		I whither.
+		I do my best to get down the material, but serious damage has been done, and it eliminates the sort of enthusiasm I would otherwise have - enthusiasm that I had in every course when I first got to this school.
+		As for what was challenging, nothing really was this week, which surprised me.
+		The material was mostly review, and the new terminology I learned didn&apos;t come with any new concepts; I could just attach the terms to concepts I was already familiar with but didn&apos;t previously know how to convey concisely.
+		I&apos;ve learned nothing new about my learning style, but could see what I&apos;ve already known for a long time: I learn best when I write.
+		While the written assignment for the week was incredibly short, it reinforced the material covered this week.
+	</p>
+	<p>
+		Finally, we were asked what we feel about the feedback from our peers.
+		When we get feedback, it&apos;s from the assignments we completed two weeks ago.
+		Two weeks ago, we submit an assignment, one week ago, the grading is done, then this week, we see the feedback.
+		The course started this week, so there was no feedback yet.
+		This question is moot.
 	</p>
 </section>
 <section id="Unit2">
 	<h2>Unit 2</h2>
 	<p>
-		The reading assignment for the week was as follows:
-	</p>
-	<ul>
-		<li>
-			Chapter fifteen of <a href="https://people.cs.vt.edu/~shaffer/Book/C++3e20100119.pdf">C++3e20100119.pdf</a>
-		</li>
-		<li>
-			<a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap2.pdf">chap2.pdf</a>
-		</li>
-		<li>
-			<a href="http://videolectures.net/mit6046jf05_leiserson_lec13/">Lecture 13: Amortized Algorithms, Table Doubling, Potential Method - VideoLectures.NET</a>
-		</li>
-	</ul>
-	<p>
-		This week was rather frustrating.
-		First, the the discussion assignment.
-		I work weekends.
-		My days off from work are near the end of the unit each week.
-		If I&apos;m lucky, I can get the reading assignment done before then, but often times, I have to get the reading finished in the last couple days of the unit.
-		The discussion assignment, of course, needs to be done long before that.
-		We&apos;re also not allowed to know what the reading assignment for the next week will be, meaning that I can&apos;t simply read ahead when I can.
-		This was one of those weeks that I had to complete the discussion assignment practically blind.
-		Oddly enough, the written assignment for the week was a breeze, even if I had to only rely on prior knowledge.
-		If the discussion assignment and written assignment had been flipped, I&apos;d&apos;ve done quite well this week.
-		Secondly, there was the video lecture.
-		The website hosting the video relies on Adobe Flash to provide video playback, which means I couldn&apos;t watch the lecture.
-		All I could see was an error message.
-		It&apos;d&apos;ve been nice to have a transcript instead of just a video.
-		Even if they didn&apos;t think about people without Flash, some people, myself included, learn better when able to read instead of listen.
+		The reading assignment for the week was Chapters 1.1 through 1.3 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>.
 	</p>
 	<p>
-		I&apos;m having some trouble grasping what the master theorem is trying to convey to us.
-		I ended up having to write up my discussion post before I&apos;d even gotten a chance to read about the master theorem, which resulted in an incredibly-ill-informed submission, but even after reading about it, I didn&apos;t really understand how to use it.
-		I would have done better, but probably not by much.
-		I should read up on it more when I have time, and see if I can find any examples of how to put it into practice.
-		Only one student replied to my post, and they were rather rude about it, pretty much telling me that they expected a better post from me.
-		That&apos;s what happens when I&apos;ve got less than a week to complete a discussion post on a topic I&apos;m not familiar with and haven&apos;t had a single day off to actually sit down with the material though.
+		Like last week, this week&apos;s learning journal assignment asks about the feedback we received this week.
+		We won&apos;t receive our first feedback until next week though.
+		Instead, I guess I&apos;ll discuss the submissions I graded this week.
+		The third was mostly very good, though the Venn diagram was a bit incorrectly labelled.
+		The other two mistook <var>U</var> - a specific, five-element set described by the assignment instructions - for being the universal set.
+		I think <a href="https://en.wikipedia.org/wiki/Universal_set">Wikipedia</a> explains pretty well why this is incorrect.
+		The universal set is an infinite set that includes all possible elements.
+		The universal set even includes itself, making it a recursive set.
+		A simple set containing only five integers isn&apos;t the universal set.
+		Perhaps it was misleading for the set described by the instructions to be named <var>U</var>, as this is the same name typically used to refer to the universal set.
+		Another common problem seemed to be thinking that the inverse of <var>A</var> was a finite set and not an infinite set containing all but three possible elements.
 	</p>
 	<p>
-		For the written assignment, we focused on justifying a divide-and-conquer approach to solving our choice of one of three situations.
-		One of them was binary search, which is a classic divide-and-conquer situation.
-		I&apos;m sort of surprised the assignment didn&apos;t tell us to justify a divide-and-conquer approach to searching in general and have us come up with binary search as a way to implement it.
-		I mean, if you refer to binary search specifically, there&apos;s no way to solve the problem <strong>*without*</strong> a divide-and-conquer approach.
-		I mean, the problem&apos;s definition then <strong>*necessarily involves*</strong> division.
-		There&apos;s really no dispute over whether this problem is well-suited to a divide-and-conquer approach.
-		I guess that means I chose the low-hanging fruit.
-		I really needed an easy assignment though, given my rough week - not only rough in terms of school assignments, but other life matters as well.
+		I wouldn&apos;t exactly say I learned something new this week, but I did relearn something I&apos;d forgotten.
+		I&apos;d forgotten how to use one equation to prove another one true.
+		It&apos;s really a simple matter of setting an expression equal to itself, making substitutions on one side, then simplifying the resulting equation.
+		I&apos;d forgotten that first, critical step though.
+		Normally, discussion assignments are of zero benefit to me because they&apos;re just an echo chamber of everyone repeating what they read, and the fact that this week&apos;s work was a discussion assignment wasn&apos;t beneficial over the alternative of that same assignment being issued as a written assignment instead, but the assignment itself was helpful in reminding me of that simple option when working with equations.
+	</p>
+	<p>
+		I guess the main challenge for the week was just figuring out how to use one equation to prove another.
+		I&apos;m not sure I would have remembered how to do that on my own.
+		I&apos;m glad I asked for help on that though.
+		One of my fellow <abbr title="Linux User Group">LUG</abbr> members wrote up a step-by-step explanation of how to solve the problem, which pointed me in the right direction.
+		I ended up not using their steps, so the work I submitted was my own, but it got me past that initial hurdle of not even knowing where to start.
+		In actuality, they didn&apos;t read that carefully, and got the initial problem incorrect, making their steps incorrect as well, but that worked out just fine anyway because all I needed was a spark of remembering how to get started on such a problem.
+		I was worried going into this course that it might be one of those maths courses that&apos;s a bit over my head, but things seem to be going well so far.
+		I could probably due with a bit more difficulty, to be honest, though as I&apos;ve been overworked lately at my day job, I really won&apos;t complain about easy coursework.
+		I do need to remember to reach out when I don&apos;t get something though.
+		It&apos;s not something I typically do, and it was only odd circumstances that led me to get help this time.
 	</p>
 </section>
 <section id="Unit3">
 	<h2>Unit 3</h2>
 	<p>
-		The reading assignment for the week was as follows:
-	</p>
-	<ul>
-		<li>
-			Sections 11.1 through 11.3 of <a href="https://people.cs.vt.edu/~shaffer/Book/C++3e20100119.pdf">C++3e20100119.pdf</a>
-		</li>
-		<li>
-			<a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap3.pdf">chap3.pdf</a>
-		</li>
-		<li>
-			<a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap4.pdf">chap4.pdf</a>
-		</li>
-		<li>
-			<a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap5.pdf">chap5.pdf</a>
-		</li>
-		<li>
-			<a href="https://www.cse.ust.hk/~dekai/271/notes/L14/L14.pdf">L14.dvi - L14.pdf</a>
-		</li>
-	</ul>
-	<p>
-		The discussion assignment was about breadth-first and depth-first searching, which is a very simple concept.
-		So that was easy.
-		That is, aside from the part that asked about greedy algorithms.
-		As usual, I had to write up my post days before I had a day off to sit down and go through the material thoroughly.
-		I didn&apos;t think there was a meaning for the term &quot;greedy&quot; in computer science other than the one I&apos;d already known, which is used in places such as greedy matching of regular expressions.
-		It turns out that greediness in this context is an attempt to try the believed best solution first.
-		So I got that wrong in the discussion assignment.
+		The reading assignment for the week was Chapter 3.1 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>
 	</p>
 	<p>
-		The written assignment was easy this week as well; even more so because it was due later, so I actually had time to read the course material for the week before completing it.
-		However, the assignment asked if the example graph was &quot;simple&quot;.
-		The reading material didn&apos;t cover &quot;simple&quot; graphs, though one of the diagrams was labelled as one - it was never mentioned what simple graphs even are.
-		Wikipedia came to the rescue when I tried a Web search, which surprised me.
-		&quot;Simple&quot; is such a generic word that I would have thought I&apos;d need a lot more context to get any relevant information.
-		I worry though about which graders I&apos;ll get.
-		Some students mark you down for citing Wikipedia.
-		It&apos;s ridiculous, seeing as a good many of the courses I&apos;ve taken here at this university have included Wikipedia pages <strong>*as a part of the reading assignments*</strong>.
-		Clearly, this school does understand that Wikipedia is a decent source to learn from.
-		But then, even in those classes, some students get weird when you try to cite the assigned reading material, just because that material was a part of Wikipedia.
-		I get that some schools don&apos;t think Wikipedia is a reliable resource, but this school isn&apos;t one of them, so that shouldn&apos;t be held against those of us that make use of it.
+		The assignment for the week was a simple truth table exercise.
+		Still, I got it wrong at first.
+		The assignment was to use truth tables to prove that two provided expressions were equivalent.
+		That seems like the least-mathematical way to prove it.
+		Rather than setting both expressions as equal to one another and reducing the equation to its simplest form, we just plug both possible values into each and every variable, then solve both expressions for each configuration.
+		It&apos;s a brute force attack on the problem.
+		The goal wasn&apos;t actually to prove the expressions were equivalent though, but instead, it was to prove that we know how to use truth tables.
+		Given that context, the problem makes perfect sense.
+		I set up my initial true/false values, then went to solve the expressions.
+		The first expression went well with my initial configuration - all values set to false - but then the second expression evaluated to the opposite value as the first.
+		At first, I thought I&apos;d proved the expressions <strong>*not*</strong> to be equivalent.
+		I thought there was a mistake in the assignment, but it didn&apos;t quite feel right, so I recalculated.
+		It turns out I&apos;d forgotten one of the negation operators because it was outside the parentheses.
+		With that mistake cleared up, I had no further issues.
+		As I worked though, I started noticing patterns rather quickly.
+		In particular, whenever <var>q</var> or <var>r</var> was false, it automatically caused both expressions to be true.
+		The rest of the expression then didn&apos;t even need to be looked at because of the way the expressions are constructed.
+		It took me longer to figure out how <var>p</var> worked, and I had to deliberately look for it because not understanding the logic was eating at me.
+		In the second expression, if <var>p</var> is true, it very obviously causes the whole expression to be true, but that feature of <var>p</var> is obfuscated in the first expression, (<var>p</var> ∧ ¬<var>q</var>) ∨ ¬(<var>q</var> ∧ <var>r</var>) ∨ (<var>r</var> ∧ <var>p</var>).
+		It&apos;s actually rather simple though.
+		In order for <var>p</var> to even be relevant, ¬(<var>q</var> ∧ <var>r</var>) has to be false, meaning that both <var>q</var> and <var>r</var> have to be true.
+		The (<var>r</var> ∧ <var>p</var>) part is therefore irrelevant and can be safely ignored.
+		The (<var>p</var> ∧ ¬<var>q</var>) part becomes relevant whenever <var>q</var> and <var>r</var> are both false - as that&apos;s when ¬(<var>q</var> ∧ <var>r</var>) doesn&apos;t automatically make the whole expression true - and that part only includes a reference to <var>p</var> and a requirement that <var>q</var> be false, which it already has to be before we even take the time to look at that part of the expression.
 	</p>
 	<p>
-		The concept of &quot;connected directional graphs&quot; is a bit oddly defined.
-		If the connections are not bidirectional, they for some reason don&apos;t count.
-		It&apos;s rather unintuitive.
-		It&apos;s easy enough to understand, but it seems like maybe a more-accurate word than &quot;connected&quot; should have been used.
+		I know the assignment was to prove the expressions to be equivalent using truth tables, but I felt a lot better also being able to prove the expressions equivalent logically as well.
 	</p>
 	<p>
-		The written assignment this week specifically said we don&apos;t have to work with actual code this week.
-		It makes me wonder if we&apos;re going to be writing actual code for things like this in the future though.
-		The data structure we built stored edges separately from vertices.
-		That seems rather odd from a problem-solving perspective.
-		When you&apos;re at a certain vertex, treating that vertex as a sort of node for the problem you&apos;re working with, you&apos;d then need to walk the entire list of edges to see which ones come from your current vertex.
-		That doesn&apos;t seen efficient.
-		Rather, you&apos;d want vertices with paths leading away from them to be parent nodes to the children the paths lead to.
-		Or at the very least, you&apos;d want the nodes representing the vertices to contain a list of the nodes their paths lead to.
-		I wonder what possible advantage this sort of representation could have.
-		Serialisation, perhaps?
-		Maybe you&apos;d have your application translate this into something more useful before using it, and translate back to this representation when storing it on disk.
+		The discussion assignment for the week was to use propositional logic.
+		I phrased my logical statements in plain English, but after seeing the other students&apos; responses, I think maybe we were intended to use variables to represent things and use mathematical symbols instead of actually writing out what we mean.
+	</p>
+	<p>
+		The quiz for the week had an odd question thrown in:
+	</p>
+	<blockquote>
+		<p>
+			Which one of the following is the correct way to add parentheses to the statement <var>p</var> ∧ ¬<var>q</var> ∨ <var>p</var> ∧ ¬<var>r</var> ∨ <var>q</var> ∧ ¬<var>r</var>?
+		</p>
+	</blockquote>
+	<p>
+		Um.
+		It depends on what you want the meaning of the statement to be, doesn&apos;t it?
+		None of the provided options added parentheses in such a way as to not change the meaning, so it wasn&apos;t asking us to us to use parentheses to denote the order in which you&apos;d apply the operations.
+		For the order, you&apos;d perform the negations, then compute the rest left to right.
+		I pretty much had to just guess on that one, and went with the one that looked the nicest: pairing all the variables up.
+	</p>
+	<p>
+		As for feedback on the assignment, I barely got any.
+		Most comment fields were left blank by the graders.
+		I did get two comments though.
+		One said that the <var>S</var> set was missing in my Venn diagram.
+		It was not.
+		It was the section that was highlighted, just as the instructions had said to do.
+		I guess they wanted me to throw an &quot;S&quot; label on there too?
+		Though if I did that, it&apos;d&apos;ve looked like the circle representing the &quot;B&quot; set was the &quot;S&quot; set.
+		That&apos;d be incorrect, so the label would be confusing.
+		The other comment said that I needed to describe more about the sets included in the powerset of <var>U</var>.
+		This is what I&apos;d said about them:
+	</p>
+	<blockquote>
+		<p>
+			ℙ(<var>U</var>) is the powerset of <var>U</var>, meaning that it&apos;s the set of all subsets of <var>U</var>.
+			[...]
+			This powerset includes the empty set, <var>U</var> itself, and everything in between.
+		</p>
+	</blockquote>
+	<p>
+		I guess I was pretty brief with that.
+		I&apos;ll give them that.
+		I did explain how to easily calculate how many there are, but I didn&apos;t really say much about the sets themselves.
+		I do have to wonder what details they were looking for though.
+		I&apos;m not sure what further to say about the sets contained in this set.
+		I used to embellish like there was no tomorrow though.
+		There has to be a lot more I could have said.
 	</p>
 </section>
 <section id="Unit4">
 	<h2>Unit 4</h2>
 	<p>
-		The reading assignment for the week was as follows:
-	</p>
-	<ul>
-		<li>
-			<a href="https://en.wikipedia.org/wiki/Kruskal&apos;s_algorithm">Kruskal&apos;s algorithm - Wikipedia</a>
-		</li>
-		<li>
-			Sections 11.1 through 11.3 of <a href="https://people.cs.vt.edu/~shaffer/Book/C++3e20100119.pdf">C++3e20100119.pdf</a>
-		</li>
-		<li>
-			<a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap4.pdf">chap4.pdf</a>
-		</li>
-		<li>
-			<a href="https://www.cse.ust.hk/~dekai/271/notes/L07/L07.pdf">L07.dvi - L07.pdf</a>
-		</li>
-		<li>
-			<a href="https://www.cse.ust.hk/~dekai/271/notes/L08/L08.pdf">L08.dvi - L08.pdf</a>
-		</li>
-	</ul>
-	<p>
-		Minimum cost spanning trees are an interesting concept.
-		You cut down the cost of the graph by removing all technically-unnecessary connections.
-		It reminds me a lot of a tunnel network I used to build in a game called Minetest.
-		I used to tunnel out to everyone&apos;s various builds, connecting them with a flat, underground road, making it not only easy to walk to these distant places, but also easy to even <strong>*find*</strong> them.
-		I was getting requests for tunnel exits so rapidly though that there was no way I could create the web of tunnels necessary to connect everywhere to everywhere else directly.
-		There was too much of a backlog!
-		Instead, I just connected each location to the nearest existing or future tunnel exit.
-		I didn&apos;t do any formal analysis or anything, but basically, distance was my measure of cost and I attempted to connect all vertices (requested tunnel exits) while keeping that cost as low as possible.
-		The road wasn&apos;t always as direct as would be desirable because of this though.
+		The reading assignment for the week was Chapters 2.1 and 2.2 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>.
 	</p>
 	<p>
-		That brings me to my other major thought on minimum spanning trees.
-		I see very much why one would want to minimise costs by reducing the edges by creating one of these trees from a graph.
-		However, I think we need to be careful about using these trees as well.
-		Imagine if the real world road network were structured like my old tunnel network.
-		Travel from one location to another would incur a high cost for travellers.
-		There would be exactly one route to get from a given place to a given other place, and usually, it&apos;d require going several steps in the wrong direction for every step in the right direction.
-		There are also other things to think of in many cases.
-		For example, the one road connecting two places could suffer damage and need repair, or perhaps there&apos;s even just routine road maintenance.
-		As another example, we have the Internet.
-		Many places are connected and the connections are often quite fast.
-		Having extra stops on the route might not even be noticeable by users, especially as with the reduced number of connections, the remaining connections and the routers themselves would be bolstered to handle the increased load.
-		However, if any node or link become incapacitated, the network breaks into separate islands that can&apos;t speak to one another.
-		We actually see that sort of thing in the <abbr title="Internet Relay Chat">IRC</abbr> protocol sometimes.
-		We cal it a net split.
-		Having redundant edges isn&apos;t always a bad thing, even if it&apos;s a bit more expensive.
+		The grading rubric for last week&apos;s assignment isn&apos;t very fair.
+		It expects us to include extra, unnecessary columns, and we get marked down for not including them.
+		I included a column for (p ∧ ¬q) ∨ ¬(q ∧ r) ∨ (r ∧ p), but because I didn&apos;t include one for (p ∧ ¬q), ¬(q ∧ r), or (r ∧ p), I get docked six points.
+		I might lose another eight points due to not including the second expression as a second truth table; instead, I put all the values into a single truth table because they operated using the same variables.
+		This is ridiculous.
 	</p>
 	<p>
-		The quiz had a rather confusing question on it.
-		It asked
-	</p>
-	<blockquote>
-		<p>
-			What is the big-o complexity of the purple line?
-		</p>
-	</blockquote>
-	<p>
-		That seems like a straightforward question.
-		I mean, aside from the fact that absolutely no image was included, and there was no hint as to what purple line was even meant.
-		Luckily, five questions down was another question, this time with a graphic:
-	</p>
-	<blockquote>
-		<p>
-			What is the big-o complexity of the green line?
-		</p>
-	</blockquote>
-	<p>
-		After another unrelated question, two more questions came up, both with the same graphic as the green line question:
-	</p>
-	<blockquote>
-		<p>
-			What is the big-o complexity of the red line?
-		</p>
-		<p>
-			What is the big-o complexity of the blue line?
-		</p>
-	</blockquote>
-	<p>
-		I have to assume the purple line question was based on this same graph.
-		Someone forgot to include the graphic in the question though, which is problematic because of the way these quizzes seem to work.
-		As best I can tell from past quizzes, the questions seem to be randomised.
-		That means that the purple line question could have come up without the graphic showing up anywhere on the quiz.
-		Hopefully someone fixes that for next term.
+		Another student included a table column for (p ∧ ¬q) ∨ ¬(q ∧ r) ∨ (r ∧ p) ⇔ p ∨ ¬q ∨ ¬r as a whole.
+		That was interesting.
+		I guess it made the point more concise, but they also thought it was a decent substitute for an explanation.
 	</p>
 	<p>
-		This month has been exhausting, and it&apos;s really starting to take its toll on me.
-		The head manager has been out for the past two months, and the franchise owner has been intentionally under-staffing us to try to squeeze more profit out of us.
-		I - along with one of the other shift leaders and one of the assistant managers - have been having to skip most of our breaks just to get everything done.
-		It&apos;s been wearing me down.
-		There&apos;s not been the energy left for school, and I&apos;ve been having to skim things a bit to stay on top of the work.
-		Unfortunately, that led to a mistake this week.
-		I mentioned last week that I wondered if we&apos;d be doing anything programmatically with that graph from last week&apos;s work.
-		We did.
-		We were supposed to implement Prim&apos;s algorithm to build a minimum spanning tree from it.
-		However, I got the instructions wrong, and instead implemented Kruskal&apos;s algorithm.
-		By the time I noticed, I didn&apos;t have time to go back and correct the error.
-		I had to submit it as-is.
-		That&apos;s how things go sometimes though.
+		The discussion assignment was an interesting exercise.
+		Summations really aren&apos;t my strong suit, especially when combined with proofs.
+		Throw in variables, and I&apos;m a right mess.
+		It&apos;s odd too, as I&apos;m actually very good with variables, and summations when not written in sigma form are a breeze.
+		For some reason, the sigma syntax just muddles up my brain.
+		I could write out what is the same concept as summation in a programming language though and understand it perfectly.
+		Proofs add an extra layer of complexity, too.
+		I can solve a summation, even in sigma notation.
+		It&apos;ll take me a bit to re-figure-out how the notation works for the thousandth time, but once I understand again what each part of the notation means, I can run through the maths just fine.
+		However, if I can&apos;t substitute the variables out for actual numbers, I can&apos;t do that.
+		With a proof, you have to keep the variables intact so you can show that the equation works in all cases.
+		Trying to get a summation involving variables to convert to an expression without a summation so I can make both sides of the equation identical is something I don&apos;t get how to do.
+		Other students approached the issue in various ways, and as far as I&apos;m concerned, those ways were just fine for getting the point across.
+		However, they didn&apos;t seem like very mathematical ways of doing things.
+		There was always an unexplained jump between syntax that if you hadn&apos;t tried composing a proof yourself, you just wouldn&apos;t get.
+		I&apos;d be fearful of making such jumps in my own proofs, as they wouldn&apos;t seem like valid proofs to someone who hadn&apos;t also tried to do the work and hit the same wall.
+		To be clear, I worked the mathematics as far as I could go, and I got to the point where I could see exactly how the two sides of the refined version of the equation were equal.
+		I just couldn&apos;t figure out how to reduce and refine the equation further in a strictly-mathematical way.
+	</p>
+	<p>
+		I&apos;m not sure if I&apos;ve encountered the concept of mathematical induction before and forgotten or if it&apos;s an entirely new concept to me, but it&apos;s a rather interesting way to prove things.
+		Normally, you try to prove without actually substituting any of the variables.
+		With induction though, you do prove a single case with a substitution, then prove that if one case is correct, the next case is correct.
+		That second proof then recursively proves all cases, as it can simply be applied to the newly-proven case.
+		I&apos;m not sure how useful this specific method of proving mathematical properties is to me, but it definitely got me thinking in a new way, which is always helpful.
+		Being stuck in a rut can make you think there&apos;s only one way to solve problems, and sometimes, it helps to be able to approach problems from new angles, especially when you&apos;re not making any headway with the angle you&apos;ve been trying.
+		I don&apos;t consider myself to be the type of person that solves incredibly complex maths problems, but I do work with a lot more maths than most people, especially algebra.
+		As a programmer (even if only as a hobby), algebra is a lot of what I work with at times.
+		I&apos;ve been known to get stuck on a mathematical problem for months at a time because I don&apos;t know how to properly think about the situation.
+		The issue is often that I have the desired solution and I need to deconstruct it to create the desired equation, and that can be difficult at times.
+		Finding new ways to approach mathematics in general certainly couldn&apos;t hurt.
 	</p>
 </section>
 <section id="Unit5">
 	<h2>Unit 5</h2>
 	<p>
-		The reading assignment for the week was as follows:
-	</p>
-	<ul>
-		<li>
-			Sections 16.1 through 16.2 of <a href="https://people.cs.vt.edu/~shaffer/Book/C++3e20100119.pdf">C++3e20100119.pdf</a>
-		</li>
-		<li>
-			<a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap6.pdf">chap6.pdf</a>
-		</li>
-		<li>
-			<a href="http://videolectures.net/mit6046jf05_leiserson_lec15/">Lecture 15: Dynamic Programming, Longest Common Subsequence - VideoLectures.NET</a>
-		</li>
-	</ul>
-	<p>
-		As with last time we were assigned a video to watch on this website, the video won&apos;t play.
-		It says it requires Adobe Flash, which of course, isn&apos;t something I can install on my system.
-		It&apos;d be really nice if they provided a transcript.
-		Even if the video relied on Web standards instead of Adobe Flash and was therefore able to play, a transcript would make it much easier to learn from.
-		I learn much better by reading than by watching videos.
+		The reading assignment for the week was Chapter 2.4 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>.
 	</p>
 	<p>
-		The assignment instructions this week and last week have asked that we either use a Cloud9 instance or our own <abbr title="integrated development environment">IDE</abbr>s.
-		I&apos;m not sure why Cloud9 was specifically mentioned separate from other <abbr title="integrated development environment">IDE</abbr>s.
-		It&apos;s not like we have been given access to a Cloud9 instance for use with the class.
-		I couldn&apos;t really find a public instance available either.
-		I think last time I used a Java <abbr title="integrated development environment">IDE</abbr> for a course, I used Eclipse.
-		Another time, I used NetBeans, I&apos;m pretty sure.
-		However, neither of these <abbr title="integrated development environment">IDE</abbr>s are available in the Debian 10 repositories.
-		I tried using Geany too, but Geany refuses to run Java code for some reason.
-		It just keeps complaining that it can&apos;t find the class that shares a name with the file, even when it&apos;s the only class the file contains.
-		I&apos;m really confused as to what the issue is.
-		I&apos;ve been running my code in an online <abbr title="integrated development environment">IDE</abbr> before submitting it, so I know my code runs and does what I intend it to, but it&apos;s frustrating not to be able to run it locally for the time being.
+		Unfortunately, I didn&apos;t do so well on the assignment this week.
+		I wasn&apos;t able to figure out how to use the characteristic root technique properly, and I&apos;m pretty sure that&apos;s what I was supposed to use to solve the final problem of the assignment.
+		I ended up needing to skip that problem, which is going to cost me a lot of points.
 	</p>
 	<p>
-		It seems that the solution to this week&apos;s assignment is supposed to find 45 valid knapsacks.
-		I&apos;m confused as to where that number comes from.
-		At first, I thought it to be the number of knapsack configurations that isn&apos;t over capacity.
-		In other words, even if a knapsack is underpacked, it&apos;s count toward that number, but if it&apos;s overpacked and cannot be carried, it doesn&apos;t count toward it.
-		However, my code solution found 3571 of such configurations.
-		So I figured this was the number of knapsacks that solved the problem.
-		In other words, those that were packed the best.
-		I rewrote my code to count those instead.
-		However, my code solution found only two of such configurations.
-		I&apos;m not sure where the number 45 comes in.
-		To top it off, the best solution found by my code matched the example weight and example value perfectly.
-		That means my code didn&apos;t fail to find the correct solution(s).
-		If my code failed to find the correct solution, I could at least expect the accompanying statistics to turn out wrong.
+		Solving recurrence relations at all is pretty awkward for me too though.
+		I don&apos;t feel like I&apos;m doing it correctly, and I have to make intuitive, rather un-mathematical leaps of logic in order to get from a recursive definition to a straight-up equation.
+		I don&apos;t like it because it feels like I&apos;m doing it wrong.
+		That may be why I&apos;m struggling with the characteristic root technique too: I&apos;m failing to properly understand the base technique of solving recurrence relations, so I&apos;m not able to move on to concepts that build off the concepts I haven&apos;t properly understood.
 	</p>
 	<p>
-		One of the students I graded work for this week came up with some interesting code.
-		In my code, I encoded edges as a list of pairs of vertices along with weights.
-		That allowed every edge to be represented and nothing that wasn&apos;t an edge to be represented.
-		This student instead used a two-dimensional array with the first dimension being the points lead from and the second being the points led to.
-		All vertices then had an edge connecting them represented in the data structure.
-		Any non-existent edge was given the value 999, a value so much higher than any real edge that it&apos;d never be chosen as an edge to keep in the tree.
-		It required a bunch of this filler data to be stored, but in exchange, it allowed the representation of references to valid edges to be made quite a bit more intuitive.
+		The concept of derangements is rather odd.
+		It&apos;s an easy concept to understand the meaning of, but not so much to understand the purpose of.
+		In what practical cases is it useful to calculate the number of ways you can mix something up to the point where nothing in the set retains its original position?
+		I suppose not everything in mathematics can be useful to everyone though.
+		Mathematics is such a broad field that provides support for just about every other field of study.
+		While I find the concept bizarre and unhelpful - though admittedly a bit interesting - someone else probably immediately sees immense value in the concept as soon as they learn it.
+		They may have even been working with the concept without having a name for it, as I&apos;ve found myself doing with other mathematical concepts.
 	</p>
 	<p>
-		Another student added a bunch of headers and footers to their work, even in the middle of their code segment.
-		It made running the code fail, as the headers and footers were interpreted by the <abbr title="integrated development environment">IDE</abbr> to be malformed code.
-		I&apos;m not sure why people think they have to up upload attached word processing documents containing code instead of simply pasting their code into the submission form, which would make it easy to copy the code and easy to submit it even.
-		It&apos;s annoying to have to download the attacked files, open them, then copy the code.
-		Or at the very least, they could try uploading <code>.java</code> files.
-		That&apos;d at least make sense.
-		But to additionally break up the code with inserted headers and footers so even copying and pasting the code into a <code>.java</code> file doesn&apos;t let the code run?
-		I&apos;m really not sure what they were thinking.
+		The discussion assignment this week was an interesting exercise.
+		I&apos;m not at all sure what we were supposed to learn from it though.
+		I needed up greatly speeding up the completion of my submission with a little script to run the repeated calculations for me so I didn&apos;t have to enter them into a calculator by hand.
+		I guess the assignment was related to recurrence relations because each element in the sequence was derived from the element that came prior.
+		Maybe the assignment was just to show us a specific recurrence relation to apply what we&apos;d read about.
+		Or maybe we were supposed to notice the convergence.
+		The sequence always seemed to fall into a loop of values eventually, no matter what the initial value was set to.
+		If the initial value was positive, the values in the loop would be four, two, and one.
+		If the value was zero, the loop would be only the value zero, and you&apos;d start already in the loop.
+		If negative, some loop of negative values would be found in the end, but not always the same loop of values, or even a loop of the same number of values.
 	</p>
 </section>
 <section id="Unit6">
 	<h2>Unit 6</h2>
 	<p>
-		The reading assignment for the week was as follows:
-	</p>
-	<ul>
-		<li>
-			<a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap7.pdf">chap7.pdf</a>
-		</li>
-		<li>
-			<a href="https://www.google.com/sorry/index?continue=https://www.youtube.com/user/patrickJMT/videos%3Fquery%3Dsimplex&amp;q=EgS53GUxGOO1p_MFIhkA8aeDS5CN04R6br7LJSpNti33CNzjaJ8LMgFy">patrickJMT - YouTube</a>
-		</li>
-	</ul>
-	<p>
-		The section explaining the maximum profits line confused me at first.
-		The two axes were on the same side of the equation and the <var>c</var> was on its own side, so I thought <var>c</var> was its own dimension.
-		It turns out the problem was that the equation just wasn&apos;t in the format I was used to for graphing: <var>y</var> = <var>m</var><var>x</var> + <var>b</var>.
-		Moving things around a bit, the equation made perfect sense as describing a line in two-dimensional space.
+		The reading assignment for the week was chapter 0.4 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>.
 	</p>
 	<p>
-		Optimising for such linear expressions is surprisingly easy.
-		Due to the expression you want to optimise representing a line, the optimal values will always be found at one of the vertices formed by the boundary conditions.
-		I would have never figured out how to do that on my own.
-		What this really means is that optimising the expression involves setting your control variable to their absolute allowable extremes.
-		The meeting of these extremes is what the vertices represent.
-		Once you&apos;ve found these vertices, it&apos;s simply a matter of comparing them to find the best result so you know which extremes to choose.
-		That&apos;s a huge improvement over trying to tweak the control variables incrementally and trying to move the result to ever-better values.
-		Not only is this method faster, but it also guarantees that you&apos;ll find the actual optimal result, as you&apos;re searching a finite set of solutions instead of an infinite set.
+		Students seemed to have different ideas about what the discussion assignment meant this week.
+		We were given a &quot;function&quot;, and among other things, we were asked if it even qualified as a function.
+		It returned the result of a square root operation, which means that it obviously was not a function.
+		The problem is that a square root operation returns two values: one positive and one negative.
+		A function is only allowed to return one value.
+		In computer science, it can be possible for a function to return multiple values, depending on the language the program is written in.
+		However, this isn&apos;t the case in mathematics.
+		Anyway, I wrote up my post and pointed out the fact that multiple values are returned and that that means that it can&apos;t be a function.
+		One response I received was that the process was actually a function.
+		However, no explanation was given, while I <strong>*had*</strong> justified the process not being a function.
+		With no justification to the contrary, I sort of have to write that reply off.
+		If you&apos;re going to make a claim that someone else&apos;s statement is wrong after that person backed up their statement, you need to back up your claim with at least as good of justification.
+		Otherwise, your claim doesn&apos;t have a leg to stand on.
+		However, other students seemed to only look at the positive roots and not the negative roots.
+		That makes me wonder.
+		Did I mis-remember something?
+		I was sure that square root operations, when used literally, have two possible return values.
+		The square root of four would be ±2, for example.
+		Or does that only apply to some specific branch of mathematics that I studies a while back?
 	</p>
 	<p>
-		The matrix-based solution to the problem is a bit above my skill level though.
-		I&apos;ve never been very good with matrix manipulation.
-		Every time I try to use matrices, I have to relearn how they work.
-		When I&apos;m done, I end up forgetting again.
-		I feel like if you&apos;re going to do a lot of this sort of optimisation though, the matrix method is the way to go.
-		I mean, once I relearn the rules of matrix manipulation for the umpteenth time, I could program a small matrix manipulation library.
-		From there, I could build a wrapper specific to the type of problem I&apos;m frequently having to optimise.
-		Finally, I&apos;d be able to enter the basic linear expressions using whatever <abbr title="application programming interface">API</abbr> I&apos;d come up with for expressing them.
-		The computer could do all the matrix work for me, if I had a job that required this sort of thing.
-		I&apos;d only need to understand matrices long enough to get the code written, then make sure it had enough comments that I could upgrade and debug when necessary.
-		The easier method, finding the vertices, would be much harder to program.
-		I&apos;m not sure how I&apos;d do it.
-		I&apos;d end up needing to perform all the calculations by hand every time, and that would add up to a lot of time spent calculating.
-		While working with matrices by hand is a challenge for me, it&apos;s so well-defined of a problem that it could easily be programmed where finding vertices would be harder, especially if a variable number of variables is to be used.
-		I feel like if I were to program something to find vertices from the equations, I&apos;d end up having to program a different solution for each number of variables, where the matrix-based solution would be able to work with matrices of any size through iteration.
+		The assignment also asked us what would happen if we changed the &quot;function&quot;.
+		That was a rather vague question though.
+		If we changed <strong>*what*</strong> about the function?
+		And what would happen in what regard if we changed the function?
+		With a question so vague, I really wasn&apos;t sure what to make of it.
+		I decided to try making changes that would turn it into a function.
+		Other students made other changes, thinking the &quot;function&quot; to already be a function.
+		As I&apos;m not sure what the actual goal of changing the &quot;function&quot; was, I can&apos;t really form an opinion on most students&apos; take on changing it.
+		One student did use absolute values in an interesting way though.
+		I&apos;d thought of taking the absolute value of the square root.
+		That&apos;d obviously fix the multiple outputs issue.
+		However, they decided to square root the absolute value instead.
+		That fixed the imaginary numbers issue.
+		If we combined those techniques, we&apos;d take the absolute value of the square root of the absolute value, and fix both problems.
+		However, in the end, I fixed the imaginary number issue by changing the domain the &quot;function&quot; operated on, which allowed me to make the modified function bijective.
+		Is that useful?
+		Without context for the function, we can&apos;t say.
+		Both options could have their uses though.
 	</p>
 </section>
 <section id="Unit7">
 	<h2>Unit 7</h2>
 	<p>
-		The reading assignment for the week was as follows:
-	</p>
-	<ul>
-		<li>
-			Chapter 17 of <a href="https://people.cs.vt.edu/~shaffer/Book/C++3e20100119.pdf">C++3e20100119.pdf</a>
-		</li>
-		<li>
-			<a href="https://courses.engr.illinois.edu/cs473/sp2010/notes/21-nphard.pdf">21-nphard.pdf</a>
-		</li>
-		<li>
-			<a href="https://my.uopeople.edu/pluginfile.php/644803/mod_book/chapter/219384/jeff_nphard.pdf">jeff_nphard.pdf</a>
-		</li>
-		<li>
-			<a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/lecture-videos/lecture-16-complexity-p-np-np-completeness-reductions/">Lecture 16: Complexity: P, NP, NP-completeness, Reductions | Lecture Videos | Design and Analysis of Algorithms | Electrical Engineering and Computer Science | MIT OpenCourseWare</a>
-		</li>
-		<li>
-			<a href="https://people.eecs.berkeley.edu/~vazirani/algorithms/chap8.pdf">chap8.pdf</a>
-		</li>
-	</ul>
-	<p>
-		This week&apos;s unit was about the theory of <abbr title="nondeterministic polynomial time">NP</abbr> problems and the benefits of proving that even a single <abbr title="nondeterministic polynomial time">NP</abbr> problem can be solved in polynomial time.
-		By proving one such problem was solvable with so few resources, we&apos;d prove them all to be solvable with such few resources
-		We could get a whole lot of tricky problems solved for sure.
+		The reading assignment for the week was chapter 4 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>.
 	</p>
 	<p>
-		However, one thing I kept thinking about was problems that we <strong>*depend on*</strong> being nearly impossible to solve.
-		Encryption, for example, if easily broken, wouldn&apos;t be of any help to any of us.
-		If encryption could be broken in polynomial time, it&apos;d be highly problematic.
-		Don&apos;t get me wrong.
-		I do think study should go into this area.
-		The fact that we don&apos;t know that our encryption can be broken so easily doesn&apos;t mean it can&apos;t.
-		If there&apos;s a polynomial-time way to break our best encryption methods, we should find it, so we know in what way we&apos;re not secure.
-		When we know what the problem is, we can begin working on newer, tougher-to-break encryption algorithms.
-		That said, decryption can be easily verified.
-		It has to be that way.
-		So it has to be an <abbr title="nondeterministic polynomial time">NP</abbr> problem.
-		With that in mind, if we find a polynomial-time way to solve <abbr title="nondeterministic polynomial time">NP</abbr> problems, does that mean that no encryption method will ever be effective?
-		We may need to look into alternative methods of keeping our transmissions and stored data away from prying eyes.
+		The assignment for the week was pretty easy.
+		We dealt with a simplified mapping problem, in  which distances really didn&apos;t matter, but the number of stops did.
+		In the end, it seemed that the first stop made was much less important to optimising the trip the assignment was about than the starting location was.
+		However, our starting location was fixed and we couldn&apos;t change it.
+		It made sense.
+		The airport&apos;s going to be in a particular place; you don&apos;t get to magically place airports before your trip so you can arrive where you want to.
+		However, when we were given two different first stops to try after the starting location, it sort of made optimisation look a bit more fruitless than it actually was.
+		As long as only the first stop was chosen for us, and not multiple stops, we could still create an optimal route aside from optimising the starting location.
+		That said, the first stop did have a huge impact on the rest of the route.
 	</p>
 	<p>
-		The concept of <abbr title="nondeterministic polynomial time">NP</abbr> problems got me thinking about some code I wrote a while back.
-		It needs to check to see if there could exist a string that matches a set of patterns.
-		It basically needs to take several <abbr title="regular expression">regexp</abbr> patterns and decide whether it would be possible for a string to match all of them.
-		I never could figure out how to solve the problem programmatically, and the best I could come up with was to use brute force to try every possible string.
-		With no known string length limit in the environment I was working in, that would be impossible, not to mention that even if it <strong>*were*</strong> possible, it&apos;d be highly inefficient.
-		Letters, digits, underscores, and colons were allowed in the hypothetical strings that could be matched against.
-		That&apos;s sixty-four characters, making the run time O(64<sup>n</sup>) at first glance, but you also need to account for shorter-length strings down to and including the empty string, so the run time would be more like O(∑<sup>n</sup><sub>i=0</sub> 64<sup>i</sup>).
-		It&apos;d be huge.
-		Of course, if a solution were magically guessed, it&apos;d be quick to check it against all the patterns.
-		If I had a way to find a solution in polynomial time, it&apos;d make that code work just fine.
-		In the end though, I had to dummy out the function that checked for the existence of such a string, making it return <code>true</code> for every set of expressions.
-		It wasn&apos;t technically correct, and I don&apos;t like that, but it keeps the code at least practical until an actual solution is found to the problem.
-		It&apos;s possible though that this problem of reverse-<abbr title="regular expression">regexp</abbr>-matching is an <abbr title="nondeterministic polynomial time">NP</abbr>-complete problem and I&apos;m simply not able to solve it.
+		At one point, we were required to find the fewest number of colours it would take to colour the map without assigning the same colour to any two adjacent provinces.
+		In my first attempt, I ended up with one province needing a fourth colour, which was kind of bothering me.
+		I found I&apos;d made a mistake though, and that it could take on one of the three main colours I was working with, which I&apos;d already proven necessary.
+		With that fix, I was able to know for sure that I&apos;d achieved an optimum colour set.
+	</p>
+	<p>
+		One thing that bothered me about the assignment was that we were asked if our graph was planar and to provide a graphical representation of our graph to prove the graph was planar if it was.
+		We&apos;d taken a two-dimensional map and turned it into a graph.
+		There was no possible way for the graph <strong>*not*</strong> to be planar.
+		I don&apos;t mind drawing the graph as part of the assignment, but under the guise of it being to prove the graph was planar, it really felt like whoever had crafted the assignment was accusing us of being idiots.
+		The map itself was the perfect visualisation for proving the graph was planar.
+		Then again, I shouldn&apos;t take it personally.
+		It wouldn&apos;t be the first time I&apos;ve graded easy assignments from students that somehow didn&apos;t get it.
+		I shouldn&apos;t complain about the final assignment of the term giving me a break.
+		And this will be the final assignment.
+		The only time I&apos;ve ever seen an assignment given in Unit 8 of a course at this school, I found out the next week that it was an ungraded assignment.
+		It could happen again, but I doubt there are many ungraded assignments floating around at the school.
+	</p>
+	<p>
+		On the discussion assignment, we were to draw non-planar graphs.
+		I could have drawn one of mine with fewer edges crossing, but  was lazy about it and drew it the easy way.
+		I&apos;m kind of regretting that a bit.
+		Some of the edges would have to cross, just because it couldn&apos;t be avoided in two-dimensional space, but I could have made the graph look a bit nicer if I&apos;d made fewer crossings.
+		Part of the issue was that I just didn&apos;t know what software to use.
+		I ended up using Dia, which is a bit of a pain, so I just wanted to be done with it.
+		I don&apos;t know offhand what other software would be able to represent vertices and edges in some way and automatically reposition the edges as I drag the vertices into better locations.
+		It&apos;s s simple feature, but really helps in arranging graphs in a visually-pleasant way.
 	</p>
 </section>
 <section id="Unit8">
 	<h2>Unit 8</h2>
 	<p>
-		...
+		The reading assignment for the week was chapter 5.2 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>.
+	</p>
+	<p>
+		This week&apos;s material covered concept such as numbers dividing one another, meaning that they are evenly divisible by one another.
+		For example, four divides two because four is divisible by two, but three does not divide two because three is not divisible by two.
+		It was a really odd way of phrasing it, if you ask me, but it&apos;s an easy concept that we learned way back in grade school.
+		We now have symbols for it though.
+		If <var>a</var> divides <var>b</var>, it&apos;s <var>a</var> ∣ <var>b</var>.
+		It&apos;s similar to the pipe character, used for absolute values and a few other types of mathematical expression, but with a different Unicode code point.
+		On the other hand, if <var>a</var> does not divide <var>b</var>, it&apos;s <var>a</var> ∤ <var>b</var>.
+	</p>
+	<p>
+		I didn&apos;t agree with the explanation on modulo division though.
+		It claims that the result of modulo division is the &quot;remainder&quot; left when dividing.
+		There is no &quot;remainder&quot; though.
+		There&apos;s never a remainder.
+		As mentioned above, three does not divide two, because three is not evenly divisible by two.
+		However, if you divide three by two anyway, you have one point five.
+		There is no remainder.
+		A better way to think about modulo division is that it&apos;s a cycle.
+		You have a set cycle size, and if you go above that, you cycle around until you reach something.
+		I tend to think of integer sizes in regards to this.
+		If you have a four-bit integer, the highest integer you can represent is fifteen.
+		If you try to represent seventeen, for example, you cycle around two past fifteen, which is one.
+		Not everyone gets binary integer representations though, so I have another example I often use: motor vehicle odometers.
+		On an odometer, instead of binary digits, you tend to have decimal digits, but the concept is the same: there&apos;s a maximum integer size, and if you pass it, you roll back to zero and start again.
+		This is what modulo division is.
+		If your odometer&apos;s maximum reading is 9999, then the number of distance units modulo 10000 (one more than the maximum, as it&apos;s the number of representable integers including zero) is the number displayed.
+	</p>
+	<p>
+		For the discussion assignment, we worked with encryption, but a vital step was left out.
+		We weren&apos;t told what we were doing, and we were told to guess, but it seemed fairly obvious to me because I&apos;m vaguely aware of some of the concepts used in <abbr title="Rivest-Shamir-Adleman">RSA</abbr>; namely that prime numbers and modulo division are used.
+		I pointed out that it was asymmetric encryption, but didn&apos;t name an algorithm because I&apos;m not familiar enough with any encryption algorithm to be sure which one is used, but anothe student pointed out that it was in fact <abbr title="Rivest-Shamir-Adleman">RSA</abbr> that we were implementing.
+		It figures that the discussion assignment would be on an algorithm that sees pretty widespread use right now.
+		It wouldn&apos;t surprise me if other encryption algorithms use these concepts as well though.
+		Anyway, my chosen integers didn&apos;t work.
+		At first, I figured it was because I&apos;d chosen such small ones.
+		We weren&apos;t given a lower limit though.
+		However, I later realised the real issue: message length.
+		For real <abbr title="Rivest-Shamir-Adleman">RSA</abbr>-encrypted messages, the message has to be broken down into manageable chunks before being encrypted.
+		With how small my keys were, only very tiny messages could be encrypted without data loss and without first breaking the message up.
+		Because we weren&apos;t told to break the message-representing number up into parts and weren&apos;t given any sort of limits that would have kept the keys large and the messages small, there were bound to be setups that simply didn&apos;t work because they lost data.
+	</p>
+	<h3>Epilogue (Unit 9)</h3>
+	<p>
+		The final exam was easier than I anticipated.
+		Some of the questions, I wasn&apos;t quite sure the most efficient way to solve the right way, but being multiple-choice, I just sort of checked to see what answers made sense.
+		For example, one question asked us to find the union of two sets that we generated by statements, instead of giving us the sets themselves.
+		So I just ruled out all the sets that were missing elements I knew to be in the union, narrowing the answers down to two, then looked for an element that didn&apos;t belong, ruling out one of them.
+		One of the questions said to let f(<var>x</var>) = ⌊<var>x</var>⌋, and I thought to myself, &quot;Oh, so basically the floor function.&quot;.
+		Then the next sentence said &quot;This function is known as the floor function.&quot;.
+		I kind of chuckled a bit there.
+	</p>
+	<p>
+		One problem that gave me trouble was about wine-mixing.
+		We were to make pink wine by mixing combinations of red, white, and yellow.
+		We were told that red and white wine make pink wine, but were given no other rules.
+		With nothing else to go on, I guessed that red mixed with anything would be pink enough, resulting in three pink combinations.
+		It&apos;s likely I got that wrong though.
+	</p>
+	<p>
+		I wasn&apos;t sure what was going on when it came to the questions on propositions.
+		Quantified propositions were even more confusing.
+		I guess that shows me what I failed to learn this term.
+		That&apos;s what I need to go back and work on at some point.
+	</p>
+	<p>
+		There was a recurrence problem, and I had to pull out a scrap text file to solve that one.
+		I&apos;m not sure if we&apos;re expected to keep all that in our heads at once, but I can&apos;t do it, even for simple recurrence problems.
 	</p>
 </section>
 		<hr/>
