@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./[TEMP]/[TEMP].xhtml"/>
-		<title>Learning Journal &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
+		<title>Functions &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
@@ -39,446 +39,69 @@
 <nav>
 </nav>
 		<header>
-			<h1>Learning Journal</h1>
-			<p>MATH 1302: Discrete Mathematics</p>
+			<h1>Functions</h1>
+			<p>Written in <span title="Calculus">MATH 1211</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised and <a href="https://y.st./en/coursework/MATH1211/Functions.xhtml">archived</a> on 2020-04-15</p>
 		</header>
-<section id="Unit1">
-	<h2>Unit 1</h2>
+<h2>What linear function has f(0) = 5 and f(7) = 12?</h2>
+<p>
+	To fine the linear function that passes through these points, we need to find the slope and the y-intercept.
+	Because the y-intercept is simply the output of the function when the input is zero, the y-intercept was already given to us.
+	It&apos;s five.
+	To find the slope, we take the output gotten from any non-zero input, subtract the y-intercept, and divide by the non-zero input used to produce the output we used in our calculation.
+	In our case, seven is the only other input we have, and its output is twelve.
+	Twelve minus five is seven, and seven divided by seven is one, so the slope is one.
+	Our final linear function comes out to be:
+</p>
+<p>
+	f(<var>x</var>) = <var>x</var> + 5
+</p>
+<h2>If f(<var>t</var>) = 2<var>t</var> - <var>t</var><sup>2</sup>, what is (f(<var>t</var> + <var>h</var>) - f(<var>t</var>)) / <var>h</var>?</h2>
+<p>
+	To solve this, we just substitute &quot;(f(<var>t</var> + <var>h</var>)&quot; for the equation provided for f(<var>t</var>), but with all instances of <var>t</var> replaced with &quot;(<var>t</var> + <var>h</var>)&quot;, as well as substitute &quot;f(<var>t</var>)&quot; for the equation verbatim.
+	With that, the equation is technically completely solved, though to make it make more sense, we should simplify it with a series of reductions.
+</p>
+<ol start="0">
+	<li>
+		(f(<var>t</var> + <var>h</var>) - f(<var>t</var>)) / <var>h</var> [original equation]
+	</li>
+	<li>
+		((2(<var>t</var> + <var>h</var>) - (<var>t</var> + <var>h</var>)<sup>2</sup>) - (2<var>t</var> - <var>t</var><sup>2</sup>)) / <var>h</var> [substitute as described above]
+	</li>
+	<li>
+		(((2<var>t</var> + 2<var>h</var>) - (<var>t</var><sup>2</sup> + <var>h</var><sup>2</sup> + 2<var>t</var><var>h</var>)) - (2<var>t</var> - <var>t</var><sup>2</sup>)) / <var>h</var> [apply the distributive property]
+	</li>
+	<li>
+		(2<var>t</var> + 2<var>h</var> - <var>t</var><sup>2</sup> - <var>h</var><sup>2</sup> - 2<var>t</var><var>h</var> - 2<var>t</var> + <var>t</var><sup>2</sup>) / <var>h</var> [remove unnecessary parentheses, flipping positive/negative signs when necessary]
+	</li>
+	<li>
+		(2<var>h</var> - <var>h</var><sup>2</sup> - 2<var>t</var><var>h</var>) / <var>h</var> [combine like terms]
+	</li>
+	<li>
+		2 - <var>h</var> - 2<var>t</var> [factor <var>h</var> out of everything to cancel out the denominator]
+	</li>
 	<p>
-		The reading assignment for the week was Chapters 0.1 through 0.3 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>.
+		Our final reduced solution, &quot;2 - <var>h</var> - 2<var>t</var>&quot;, is much more manageable.
 	</p>
-	<p>
-		This week was pretty much review for me.
-		We didn&apos;t cover much that I didn&apos;t already know from past maths courses (not necessarily ones from this school) or from basic intuition.
-		I guess the main thing I learned was terminology.
-		For example, I&apos;d never heard of a powerset.
-		I don&apos;t think I&apos;ve encountered powersets in other courses, either.
-		However, I <strong>*have*</strong> worked with them in my code and in problems I&apos;ve solved.
-		A great example of this was an alchemy plugin I started building for a game I enjoy.
-		The alchemy idea got scrapped and re-planned several times before ultimately being deemed unnecessary, but at one point, it was decided that any number of ingredients from a certain set would be meldable to form new items.
-		This included single-item refinements, though didn&apos;t include the empty set.
-		Basically, the set of recipes that needed to be defined was the powerset of the list of ingredients minus the empty set.
-		I never knew there was a term for this set of sets though.
-	</p>
-	<p>
-		We were asked what information learned was contrary to what we previously believed.
-		For me, none of it.
-		Maths aren&apos;t exactly a controversial topic.
-		I either know something or I don&apos;t.
-		Maths are a form of logical thinking.
-		I don&apos;t form incorrect opinions on maths because I don&apos;t form opinions on maths.
-		When I do maths incorrectly, it&apos;s because I made a mistake, not because I learned some alternate form of maths that are somehow incorrect.
-	</p>
-	<p>
-		One question specifically asked by the learning journal instructions is how the class discussion helped in learning the new information.
-		It didn&apos;t.
-		Every course I&apos;ve been in at this school has had discussion assignments, and for some students, I&apos;m sure they really help them grasp the information.
-		For me though, discussion assignments never do anything for me.
-		I complete them just to complete them.
-		Every student has a different learning style and has different things that work better or worse for getting down the material.
-		For me though, the discussion assignments just seem like echo chambers, where everyone repeats the same information over and over.
-		I don&apos;t find that useful.
-		This is compounded by the fact that we&apos;re not allowed to read the other posts until we&apos;ve completed our own.
-		On the rare occasion that I&apos;m struggling with something a discussion assignment covers, I can&apos;t get help from other students until I&apos;ve already figured out the material, written up my post, and no longer need any help.
-		Discussion assignments do absolutely zero for me in terms of learning new material.
-		It&apos;s the long written assignments, such as essays, that help me the most when learning.
-	</p>
-	<p>
-		Three questions sort of follow the same line of thought, so I&apos;ll cover them all in one paragraph: what material made us want to learn more, what was challenging, and what do we realise about our learning styles.
-		Due to behaviours and actions of staff at this school (not any professors, but people in other departments; mostly the censorship the school now imposes on me), I&apos;m afraid the joy of learning has been drained right out of me.
-		I don&apos;t do well when censored.
-		I wilt.
-		I whither.
-		I do my best to get down the material, but serious damage has been done, and it eliminates the sort of enthusiasm I would otherwise have - enthusiasm that I had in every course when I first got to this school.
-		As for what was challenging, nothing really was this week, which surprised me.
-		The material was mostly review, and the new terminology I learned didn&apos;t come with any new concepts; I could just attach the terms to concepts I was already familiar with but didn&apos;t previously know how to convey concisely.
-		I&apos;ve learned nothing new about my learning style, but could see what I&apos;ve already known for a long time: I learn best when I write.
-		While the written assignment for the week was incredibly short, it reinforced the material covered this week.
-	</p>
-	<p>
-		Finally, we were asked what we feel about the feedback from our peers.
-		When we get feedback, it&apos;s from the assignments we completed two weeks ago.
-		Two weeks ago, we submit an assignment, one week ago, the grading is done, then this week, we see the feedback.
-		The course started this week, so there was no feedback yet.
-		This question is moot.
-	</p>
-</section>
-<section id="Unit2">
-	<h2>Unit 2</h2>
-	<p>
-		The reading assignment for the week was Chapters 1.1 through 1.3 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>.
-	</p>
-	<p>
-		Like last week, this week&apos;s learning journal assignment asks about the feedback we received this week.
-		We won&apos;t receive our first feedback until next week though.
-		Instead, I guess I&apos;ll discuss the submissions I graded this week.
-		The third was mostly very good, though the Venn diagram was a bit incorrectly labelled.
-		The other two mistook <var>U</var> - a specific, five-element set described by the assignment instructions - for being the universal set.
-		I think <a href="https://en.wikipedia.org/wiki/Universal_set">Wikipedia</a> explains pretty well why this is incorrect.
-		The universal set is an infinite set that includes all possible elements.
-		The universal set even includes itself, making it a recursive set.
-		A simple set containing only five integers isn&apos;t the universal set.
-		Perhaps it was misleading for the set described by the instructions to be named <var>U</var>, as this is the same name typically used to refer to the universal set.
-		Another common problem seemed to be thinking that the inverse of <var>A</var> was a finite set and not an infinite set containing all but three possible elements.
-	</p>
-	<p>
-		I wouldn&apos;t exactly say I learned something new this week, but I did relearn something I&apos;d forgotten.
-		I&apos;d forgotten how to use one equation to prove another one true.
-		It&apos;s really a simple matter of setting an expression equal to itself, making substitutions on one side, then simplifying the resulting equation.
-		I&apos;d forgotten that first, critical step though.
-		Normally, discussion assignments are of zero benefit to me because they&apos;re just an echo chamber of everyone repeating what they read, and the fact that this week&apos;s work was a discussion assignment wasn&apos;t beneficial over the alternative of that same assignment being issued as a written assignment instead, but the assignment itself was helpful in reminding me of that simple option when working with equations.
-	</p>
-	<p>
-		I guess the main challenge for the week was just figuring out how to use one equation to prove another.
-		I&apos;m not sure I would have remembered how to do that on my own.
-		I&apos;m glad I asked for help on that though.
-		One of my fellow <abbr title="Linux User Group">LUG</abbr> members wrote up a step-by-step explanation of how to solve the problem, which pointed me in the right direction.
-		I ended up not using their steps, so the work I submitted was my own, but it got me past that initial hurdle of not even knowing where to start.
-		In actuality, they didn&apos;t read that carefully, and got the initial problem incorrect, making their steps incorrect as well, but that worked out just fine anyway because all I needed was a spark of remembering how to get started on such a problem.
-		I was worried going into this course that it might be one of those maths courses that&apos;s a bit over my head, but things seem to be going well so far.
-		I could probably due with a bit more difficulty, to be honest, though as I&apos;ve been overworked lately at my day job, I really won&apos;t complain about easy coursework.
-		I do need to remember to reach out when I don&apos;t get something though.
-		It&apos;s not something I typically do, and it was only odd circumstances that led me to get help this time.
-	</p>
-</section>
-<section id="Unit3">
-	<h2>Unit 3</h2>
-	<p>
-		The reading assignment for the week was Chapter 3.1 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>
-	</p>
-	<p>
-		The assignment for the week was a simple truth table exercise.
-		Still, I got it wrong at first.
-		The assignment was to use truth tables to prove that two provided expressions were equivalent.
-		That seems like the least-mathematical way to prove it.
-		Rather than setting both expressions as equal to one another and reducing the equation to its simplest form, we just plug both possible values into each and every variable, then solve both expressions for each configuration.
-		It&apos;s a brute force attack on the problem.
-		The goal wasn&apos;t actually to prove the expressions were equivalent though, but instead, it was to prove that we know how to use truth tables.
-		Given that context, the problem makes perfect sense.
-		I set up my initial true/false values, then went to solve the expressions.
-		The first expression went well with my initial configuration - all values set to false - but then the second expression evaluated to the opposite value as the first.
-		At first, I thought I&apos;d proved the expressions <strong>*not*</strong> to be equivalent.
-		I thought there was a mistake in the assignment, but it didn&apos;t quite feel right, so I recalculated.
-		It turns out I&apos;d forgotten one of the negation operators because it was outside the parentheses.
-		With that mistake cleared up, I had no further issues.
-		As I worked though, I started noticing patterns rather quickly.
-		In particular, whenever <var>q</var> or <var>r</var> was false, it automatically caused both expressions to be true.
-		The rest of the expression then didn&apos;t even need to be looked at because of the way the expressions are constructed.
-		It took me longer to figure out how <var>p</var> worked, and I had to deliberately look for it because not understanding the logic was eating at me.
-		In the second expression, if <var>p</var> is true, it very obviously causes the whole expression to be true, but that feature of <var>p</var> is obfuscated in the first expression, (<var>p</var> ∧ ¬<var>q</var>) ∨ ¬(<var>q</var> ∧ <var>r</var>) ∨ (<var>r</var> ∧ <var>p</var>).
-		It&apos;s actually rather simple though.
-		In order for <var>p</var> to even be relevant, ¬(<var>q</var> ∧ <var>r</var>) has to be false, meaning that both <var>q</var> and <var>r</var> have to be true.
-		The (<var>r</var> ∧ <var>p</var>) part is therefore irrelevant and can be safely ignored.
-		The (<var>p</var> ∧ ¬<var>q</var>) part becomes relevant whenever <var>q</var> and <var>r</var> are both false - as that&apos;s when ¬(<var>q</var> ∧ <var>r</var>) doesn&apos;t automatically make the whole expression true - and that part only includes a reference to <var>p</var> and a requirement that <var>q</var> be false, which it already has to be before we even take the time to look at that part of the expression.
-	</p>
-	<p>
-		I know the assignment was to prove the expressions to be equivalent using truth tables, but I felt a lot better also being able to prove the expressions equivalent logically as well.
-	</p>
-	<p>
-		The discussion assignment for the week was to use propositional logic.
-		I phrased my logical statements in plain English, but after seeing the other students&apos; responses, I think maybe we were intended to use variables to represent things and use mathematical symbols instead of actually writing out what we mean.
-	</p>
-	<p>
-		The quiz for the week had an odd question thrown in:
-	</p>
-	<blockquote>
-		<p>
-			Which one of the following is the correct way to add parentheses to the statement <var>p</var> ∧ ¬<var>q</var> ∨ <var>p</var> ∧ ¬<var>r</var> ∨ <var>q</var> ∧ ¬<var>r</var>?
-		</p>
-	</blockquote>
-	<p>
-		Um.
-		It depends on what you want the meaning of the statement to be, doesn&apos;t it?
-		None of the provided options added parentheses in such a way as to not change the meaning, so it wasn&apos;t asking us to us to use parentheses to denote the order in which you&apos;d apply the operations.
-		For the order, you&apos;d perform the negations, then compute the rest left to right.
-		I pretty much had to just guess on that one, and went with the one that looked the nicest: pairing all the variables up.
-	</p>
-	<p>
-		As for feedback on the assignment, I barely got any.
-		Most comment fields were left blank by the graders.
-		I did get two comments though.
-		One said that the <var>S</var> set was missing in my Venn diagram.
-		It was not.
-		It was the section that was highlighted, just as the instructions had said to do.
-		I guess they wanted me to throw an &quot;S&quot; label on there too?
-		Though if I did that, it&apos;d&apos;ve looked like the circle representing the &quot;B&quot; set was the &quot;S&quot; set.
-		That&apos;d be incorrect, so the label would be confusing.
-		The other comment said that I needed to describe more about the sets included in the powerset of <var>U</var>.
-		This is what I&apos;d said about them:
-	</p>
-	<blockquote>
-		<p>
-			ℙ(<var>U</var>) is the powerset of <var>U</var>, meaning that it&apos;s the set of all subsets of <var>U</var>.
-			[...]
-			This powerset includes the empty set, <var>U</var> itself, and everything in between.
-		</p>
-	</blockquote>
-	<p>
-		I guess I was pretty brief with that.
-		I&apos;ll give them that.
-		I did explain how to easily calculate how many there are, but I didn&apos;t really say much about the sets themselves.
-		I do have to wonder what details they were looking for though.
-		I&apos;m not sure what further to say about the sets contained in this set.
-		I used to embellish like there was no tomorrow though.
-		There has to be a lot more I could have said.
-	</p>
-</section>
-<section id="Unit4">
-	<h2>Unit 4</h2>
-	<p>
-		The reading assignment for the week was Chapters 2.1 and 2.2 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>.
-	</p>
-	<p>
-		The grading rubric for last week&apos;s assignment isn&apos;t very fair.
-		It expects us to include extra, unnecessary columns, and we get marked down for not including them.
-		I included a column for (p ∧ ¬q) ∨ ¬(q ∧ r) ∨ (r ∧ p), but because I didn&apos;t include one for (p ∧ ¬q), ¬(q ∧ r), or (r ∧ p), I get docked six points.
-		I might lose another eight points due to not including the second expression as a second truth table; instead, I put all the values into a single truth table because they operated using the same variables.
-		This is ridiculous.
-	</p>
-	<p>
-		Another student included a table column for (p ∧ ¬q) ∨ ¬(q ∧ r) ∨ (r ∧ p) ⇔ p ∨ ¬q ∨ ¬r as a whole.
-		That was interesting.
-		I guess it made the point more concise, but they also thought it was a decent substitute for an explanation.
-	</p>
-	<p>
-		The discussion assignment was an interesting exercise.
-		Summations really aren&apos;t my strong suit, especially when combined with proofs.
-		Throw in variables, and I&apos;m a right mess.
-		It&apos;s odd too, as I&apos;m actually very good with variables, and summations when not written in sigma form are a breeze.
-		For some reason, the sigma syntax just muddles up my brain.
-		I could write out what is the same concept as summation in a programming language though and understand it perfectly.
-		Proofs add an extra layer of complexity, too.
-		I can solve a summation, even in sigma notation.
-		It&apos;ll take me a bit to re-figure-out how the notation works for the thousandth time, but once I understand again what each part of the notation means, I can run through the maths just fine.
-		However, if I can&apos;t substitute the variables out for actual numbers, I can&apos;t do that.
-		With a proof, you have to keep the variables intact so you can show that the equation works in all cases.
-		Trying to get a summation involving variables to convert to an expression without a summation so I can make both sides of the equation identical is something I don&apos;t get how to do.
-		Other students approached the issue in various ways, and as far as I&apos;m concerned, those ways were just fine for getting the point across.
-		However, they didn&apos;t seem like very mathematical ways of doing things.
-		There was always an unexplained jump between syntax that if you hadn&apos;t tried composing a proof yourself, you just wouldn&apos;t get.
-		I&apos;d be fearful of making such jumps in my own proofs, as they wouldn&apos;t seem like valid proofs to someone who hadn&apos;t also tried to do the work and hit the same wall.
-		To be clear, I worked the mathematics as far as I could go, and I got to the point where I could see exactly how the two sides of the refined version of the equation were equal.
-		I just couldn&apos;t figure out how to reduce and refine the equation further in a strictly-mathematical way.
-	</p>
-	<p>
-		I&apos;m not sure if I&apos;ve encountered the concept of mathematical induction before and forgotten or if it&apos;s an entirely new concept to me, but it&apos;s a rather interesting way to prove things.
-		Normally, you try to prove without actually substituting any of the variables.
-		With induction though, you do prove a single case with a substitution, then prove that if one case is correct, the next case is correct.
-		That second proof then recursively proves all cases, as it can simply be applied to the newly-proven case.
-		I&apos;m not sure how useful this specific method of proving mathematical properties is to me, but it definitely got me thinking in a new way, which is always helpful.
-		Being stuck in a rut can make you think there&apos;s only one way to solve problems, and sometimes, it helps to be able to approach problems from new angles, especially when you&apos;re not making any headway with the angle you&apos;ve been trying.
-		I don&apos;t consider myself to be the type of person that solves incredibly complex maths problems, but I do work with a lot more maths than most people, especially algebra.
-		As a programmer (even if only as a hobby), algebra is a lot of what I work with at times.
-		I&apos;ve been known to get stuck on a mathematical problem for months at a time because I don&apos;t know how to properly think about the situation.
-		The issue is often that I have the desired solution and I need to deconstruct it to create the desired equation, and that can be difficult at times.
-		Finding new ways to approach mathematics in general certainly couldn&apos;t hurt.
-	</p>
-</section>
-<section id="Unit5">
-	<h2>Unit 5</h2>
-	<p>
-		The reading assignment for the week was Chapter 2.4 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>.
-	</p>
-	<p>
-		Unfortunately, I didn&apos;t do so well on the assignment this week.
-		I wasn&apos;t able to figure out how to use the characteristic root technique properly, and I&apos;m pretty sure that&apos;s what I was supposed to use to solve the final problem of the assignment.
-		I ended up needing to skip that problem, which is going to cost me a lot of points.
-	</p>
-	<p>
-		Solving recurrence relations at all is pretty awkward for me too though.
-		I don&apos;t feel like I&apos;m doing it correctly, and I have to make intuitive, rather un-mathematical leaps of logic in order to get from a recursive definition to a straight-up equation.
-		I don&apos;t like it because it feels like I&apos;m doing it wrong.
-		That may be why I&apos;m struggling with the characteristic root technique too: I&apos;m failing to properly understand the base technique of solving recurrence relations, so I&apos;m not able to move on to concepts that build off the concepts I haven&apos;t properly understood.
-	</p>
-	<p>
-		The concept of derangements is rather odd.
-		It&apos;s an easy concept to understand the meaning of, but not so much to understand the purpose of.
-		In what practical cases is it useful to calculate the number of ways you can mix something up to the point where nothing in the set retains its original position?
-		I suppose not everything in mathematics can be useful to everyone though.
-		Mathematics is such a broad field that provides support for just about every other field of study.
-		While I find the concept bizarre and unhelpful - though admittedly a bit interesting - someone else probably immediately sees immense value in the concept as soon as they learn it.
-		They may have even been working with the concept without having a name for it, as I&apos;ve found myself doing with other mathematical concepts.
-	</p>
-	<p>
-		The discussion assignment this week was an interesting exercise.
-		I&apos;m not at all sure what we were supposed to learn from it though.
-		I needed up greatly speeding up the completion of my submission with a little script to run the repeated calculations for me so I didn&apos;t have to enter them into a calculator by hand.
-		I guess the assignment was related to recurrence relations because each element in the sequence was derived from the element that came prior.
-		Maybe the assignment was just to show us a specific recurrence relation to apply what we&apos;d read about.
-		Or maybe we were supposed to notice the convergence.
-		The sequence always seemed to fall into a loop of values eventually, no matter what the initial value was set to.
-		If the initial value was positive, the values in the loop would be four, two, and one.
-		If the value was zero, the loop would be only the value zero, and you&apos;d start already in the loop.
-		If negative, some loop of negative values would be found in the end, but not always the same loop of values, or even a loop of the same number of values.
-	</p>
-</section>
-<section id="Unit6">
-	<h2>Unit 6</h2>
-	<p>
-		The reading assignment for the week was chapter 0.4 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>.
-	</p>
-	<p>
-		Students seemed to have different ideas about what the discussion assignment meant this week.
-		We were given a &quot;function&quot;, and among other things, we were asked if it even qualified as a function.
-		It returned the result of a square root operation, which means that it obviously was not a function.
-		The problem is that a square root operation returns two values: one positive and one negative.
-		A function is only allowed to return one value.
-		In computer science, it can be possible for a function to return multiple values, depending on the language the program is written in.
-		However, this isn&apos;t the case in mathematics.
-		Anyway, I wrote up my post and pointed out the fact that multiple values are returned and that that means that it can&apos;t be a function.
-		One response I received was that the process was actually a function.
-		However, no explanation was given, while I <strong>*had*</strong> justified the process not being a function.
-		With no justification to the contrary, I sort of have to write that reply off.
-		If you&apos;re going to make a claim that someone else&apos;s statement is wrong after that person backed up their statement, you need to back up your claim with at least as good of justification.
-		Otherwise, your claim doesn&apos;t have a leg to stand on.
-		However, other students seemed to only look at the positive roots and not the negative roots.
-		That makes me wonder.
-		Did I mis-remember something?
-		I was sure that square root operations, when used literally, have two possible return values.
-		The square root of four would be ±2, for example.
-		Or does that only apply to some specific branch of mathematics that I studies a while back?
-	</p>
-	<p>
-		The assignment also asked us what would happen if we changed the &quot;function&quot;.
-		That was a rather vague question though.
-		If we changed <strong>*what*</strong> about the function?
-		And what would happen in what regard if we changed the function?
-		With a question so vague, I really wasn&apos;t sure what to make of it.
-		I decided to try making changes that would turn it into a function.
-		Other students made other changes, thinking the &quot;function&quot; to already be a function.
-		As I&apos;m not sure what the actual goal of changing the &quot;function&quot; was, I can&apos;t really form an opinion on most students&apos; take on changing it.
-		One student did use absolute values in an interesting way though.
-		I&apos;d thought of taking the absolute value of the square root.
-		That&apos;d obviously fix the multiple outputs issue.
-		However, they decided to square root the absolute value instead.
-		That fixed the imaginary numbers issue.
-		If we combined those techniques, we&apos;d take the absolute value of the square root of the absolute value, and fix both problems.
-		However, in the end, I fixed the imaginary number issue by changing the domain the &quot;function&quot; operated on, which allowed me to make the modified function bijective.
-		Is that useful?
-		Without context for the function, we can&apos;t say.
-		Both options could have their uses though.
-	</p>
-</section>
-<section id="Unit7">
-	<h2>Unit 7</h2>
-	<p>
-		The reading assignment for the week was chapter 4 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>.
-	</p>
-	<p>
-		The assignment for the week was pretty easy.
-		We dealt with a simplified mapping problem, in  which distances really didn&apos;t matter, but the number of stops did.
-		In the end, it seemed that the first stop made was much less important to optimising the trip the assignment was about than the starting location was.
-		However, our starting location was fixed and we couldn&apos;t change it.
-		It made sense.
-		The airport&apos;s going to be in a particular place; you don&apos;t get to magically place airports before your trip so you can arrive where you want to.
-		However, when we were given two different first stops to try after the starting location, it sort of made optimisation look a bit more fruitless than it actually was.
-		As long as only the first stop was chosen for us, and not multiple stops, we could still create an optimal route aside from optimising the starting location.
-		That said, the first stop did have a huge impact on the rest of the route.
-	</p>
-	<p>
-		At one point, we were required to find the fewest number of colours it would take to colour the map without assigning the same colour to any two adjacent provinces.
-		In my first attempt, I ended up with one province needing a fourth colour, which was kind of bothering me.
-		I found I&apos;d made a mistake though, and that it could take on one of the three main colours I was working with, which I&apos;d already proven necessary.
-		With that fix, I was able to know for sure that I&apos;d achieved an optimum colour set.
-	</p>
-	<p>
-		One thing that bothered me about the assignment was that we were asked if our graph was planar and to provide a graphical representation of our graph to prove the graph was planar if it was.
-		We&apos;d taken a two-dimensional map and turned it into a graph.
-		There was no possible way for the graph <strong>*not*</strong> to be planar.
-		I don&apos;t mind drawing the graph as part of the assignment, but under the guise of it being to prove the graph was planar, it really felt like whoever had crafted the assignment was accusing us of being idiots.
-		The map itself was the perfect visualisation for proving the graph was planar.
-		Then again, I shouldn&apos;t take it personally.
-		It wouldn&apos;t be the first time I&apos;ve graded easy assignments from students that somehow didn&apos;t get it.
-		I shouldn&apos;t complain about the final assignment of the term giving me a break.
-		And this will be the final assignment.
-		The only time I&apos;ve ever seen an assignment given in Unit 8 of a course at this school, I found out the next week that it was an ungraded assignment.
-		It could happen again, but I doubt there are many ungraded assignments floating around at the school.
-	</p>
-	<p>
-		On the discussion assignment, we were to draw non-planar graphs.
-		I could have drawn one of mine with fewer edges crossing, but  was lazy about it and drew it the easy way.
-		I&apos;m kind of regretting that a bit.
-		Some of the edges would have to cross, just because it couldn&apos;t be avoided in two-dimensional space, but I could have made the graph look a bit nicer if I&apos;d made fewer crossings.
-		Part of the issue was that I just didn&apos;t know what software to use.
-		I ended up using Dia, which is a bit of a pain, so I just wanted to be done with it.
-		I don&apos;t know offhand what other software would be able to represent vertices and edges in some way and automatically reposition the edges as I drag the vertices into better locations.
-		It&apos;s s simple feature, but really helps in arranging graphs in a visually-pleasant way.
-	</p>
-</section>
-<section id="Unit8">
-	<h2>Unit 8</h2>
-	<p>
-		The reading assignment for the week was chapter 5.2 of <a href="https://my.uopeople.edu/pluginfile.php/646638/mod_resource/content/2/dmoi-tablet.pdf">Discrete Mathematics - dmoi-tablet.pdf</a>.
-	</p>
-	<p>
-		This week&apos;s material covered concept such as numbers dividing one another, meaning that they are evenly divisible by one another.
-		For example, four divides two because four is divisible by two, but three does not divide two because three is not divisible by two.
-		It was a really odd way of phrasing it, if you ask me, but it&apos;s an easy concept that we learned way back in grade school.
-		We now have symbols for it though.
-		If <var>a</var> divides <var>b</var>, it&apos;s <var>a</var> ∣ <var>b</var>.
-		It&apos;s similar to the pipe character, used for absolute values and a few other types of mathematical expression, but with a different Unicode code point.
-		On the other hand, if <var>a</var> does not divide <var>b</var>, it&apos;s <var>a</var> ∤ <var>b</var>.
-	</p>
-	<p>
-		I didn&apos;t agree with the explanation on modulo division though.
-		It claims that the result of modulo division is the &quot;remainder&quot; left when dividing.
-		There is no &quot;remainder&quot; though.
-		There&apos;s never a remainder.
-		As mentioned above, three does not divide two, because three is not evenly divisible by two.
-		However, if you divide three by two anyway, you have one point five.
-		There is no remainder.
-		A better way to think about modulo division is that it&apos;s a cycle.
-		You have a set cycle size, and if you go above that, you cycle around until you reach something.
-		I tend to think of integer sizes in regards to this.
-		If you have a four-bit integer, the highest integer you can represent is fifteen.
-		If you try to represent seventeen, for example, you cycle around two past fifteen, which is one.
-		Not everyone gets binary integer representations though, so I have another example I often use: motor vehicle odometers.
-		On an odometer, instead of binary digits, you tend to have decimal digits, but the concept is the same: there&apos;s a maximum integer size, and if you pass it, you roll back to zero and start again.
-		This is what modulo division is.
-		If your odometer&apos;s maximum reading is 9999, then the number of distance units modulo 10000 (one more than the maximum, as it&apos;s the number of representable integers including zero) is the number displayed.
-	</p>
-	<p>
-		For the discussion assignment, we worked with encryption, but a vital step was left out.
-		We weren&apos;t told what we were doing, and we were told to guess, but it seemed fairly obvious to me because I&apos;m vaguely aware of some of the concepts used in <abbr title="Rivest-Shamir-Adleman">RSA</abbr>; namely that prime numbers and modulo division are used.
-		I pointed out that it was asymmetric encryption, but didn&apos;t name an algorithm because I&apos;m not familiar enough with any encryption algorithm to be sure which one is used, but anothe student pointed out that it was in fact <abbr title="Rivest-Shamir-Adleman">RSA</abbr> that we were implementing.
-		It figures that the discussion assignment would be on an algorithm that sees pretty widespread use right now.
-		It wouldn&apos;t surprise me if other encryption algorithms use these concepts as well though.
-		Anyway, my chosen integers didn&apos;t work.
-		At first, I figured it was because I&apos;d chosen such small ones.
-		We weren&apos;t given a lower limit though.
-		However, I later realised the real issue: message length.
-		For real <abbr title="Rivest-Shamir-Adleman">RSA</abbr>-encrypted messages, the message has to be broken down into manageable chunks before being encrypted.
-		With how small my keys were, only very tiny messages could be encrypted without data loss and without first breaking the message up.
-		Because we weren&apos;t told to break the message-representing number up into parts and weren&apos;t given any sort of limits that would have kept the keys large and the messages small, there were bound to be setups that simply didn&apos;t work because they lost data.
-	</p>
-	<h3>Epilogue (Unit 9)</h3>
-	<p>
-		The final exam was easier than I anticipated.
-		Some of the questions, I wasn&apos;t quite sure the most efficient way to solve the right way, but being multiple-choice, I just sort of checked to see what answers made sense.
-		For example, one question asked us to find the union of two sets that we generated by statements, instead of giving us the sets themselves.
-		So I just ruled out all the sets that were missing elements I knew to be in the union, narrowing the answers down to two, then looked for an element that didn&apos;t belong, ruling out one of them.
-		One of the questions said to let f(<var>x</var>) = ⌊<var>x</var>⌋, and I thought to myself, &quot;Oh, so basically the floor function.&quot;.
-		Then the next sentence said &quot;This function is known as the floor function.&quot;.
-		I kind of chuckled a bit there.
-	</p>
-	<p>
-		One problem that gave me trouble was about wine-mixing.
-		We were to make pink wine by mixing combinations of red, white, and yellow.
-		We were told that red and white wine make pink wine, but were given no other rules.
-		With nothing else to go on, I guessed that red mixed with anything would be pink enough, resulting in three pink combinations.
-		It&apos;s likely I got that wrong though.
-	</p>
-	<p>
-		I wasn&apos;t sure what was going on when it came to the questions on propositions.
-		Quantified propositions were even more confusing.
-		I guess that shows me what I failed to learn this term.
-		That&apos;s what I need to go back and work on at some point.
-	</p>
-	<p>
-		There was a recurrence problem, and I had to pull out a scrap text file to solve that one.
-		I&apos;m not sure if we&apos;re expected to keep all that in our heads at once, but I can&apos;t do it, even for simple recurrence problems.
-	</p>
-</section>
+</ol>
+<h2>For what <var>x</var> does sin 2<var>x</var> = cos 2<var>x</var>?</h2>
+<p>
+	I don&apos;t think I solved this one in the most mathematically-efficient way, but I used mathematical concepts the entire way none the less, and my solution is mathematically checkable.
+	Anyway, the first thing I did was assign a new variable.
+	We&apos;re working with 2<var>x</var> in both cases, so we&apos;re going to need to divide our solution in half when we find it, but we&apos;re basically just looking for the place where the sine of a value is the same as the cosine of the same value.
+	So I assigned <var>y</var> to be equal to 2<var>x</var>, and looked instead for the value of <var>y</var> in sin(<var>y</var>) = cos(<var>y</var>).
+	As odd as it sounds, having the doubling in there had confused me enough that I&apos;d forgotten basic trigonometric concepts that I&apos;ve known for years.
+	With it gone, I remembered that this equality occurs at a 45° angle on the unit circle, as well as at a 225° angle.
+	Sine and cosine work with radians, and a circle measures 2π radians around, measured from the central point.
+	To reach a forty-five degree angle, I&apos;d need to travel one eighth of the way, which would be 0.25π radians.
+	Using this guess, I used a calculator to find sin(0.25π) and cos(0.25π), and found them to be equal.
+	This means <var>y</var> can be 0.25π, meaning that <var>x</var> can be half of that, making it 0.125π.
+	Using a calculator, we can&apos;t get an exact value for sin(2<var>x</var>) and cos(2<var>x</var>), but if you know the trigonometric unit circle, you know this value to be (√(2)/2).
+</p>
+<p>
+	As a side note, sine and cosine are cyclical in their outputs.
+	Another working value I found for <var>x</var> was -0.375π.
+	An infinite number of other values will work for this equation as well.
+</p>
 		<hr/>
 		<p>
 			Copyright © 2020 Alex Yst;
