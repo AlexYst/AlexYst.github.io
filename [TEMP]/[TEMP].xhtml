@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./[TEMP]/[TEMP].xhtml"/>
-		<title>Functions &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
+		<title>Learning Journal &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
@@ -39,69 +39,247 @@
 <nav>
 </nav>
 		<header>
-			<h1>Functions</h1>
-			<p>Written in <span title="Calculus">MATH 1211</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised and <a href="https://y.st./en/coursework/MATH1211/Functions.xhtml">archived</a> on 2020-04-15</p>
+			<h1>Learning Journal</h1>
+			<p>CS 4408: Artificial Intelligence</p>
 		</header>
-<h2>What linear function has f(0) = 5 and f(7) = 12?</h2>
-<p>
-	To fine the linear function that passes through these points, we need to find the slope and the y-intercept.
-	Because the y-intercept is simply the output of the function when the input is zero, the y-intercept was already given to us.
-	It&apos;s five.
-	To find the slope, we take the output gotten from any non-zero input, subtract the y-intercept, and divide by the non-zero input used to produce the output we used in our calculation.
-	In our case, seven is the only other input we have, and its output is twelve.
-	Twelve minus five is seven, and seven divided by seven is one, so the slope is one.
-	Our final linear function comes out to be:
-</p>
-<p>
-	f(<var>x</var>) = <var>x</var> + 5
-</p>
-<h2>If f(<var>t</var>) = 2<var>t</var> - <var>t</var><sup>2</sup>, what is (f(<var>t</var> + <var>h</var>) - f(<var>t</var>)) / <var>h</var>?</h2>
-<p>
-	To solve this, we just substitute &quot;(f(<var>t</var> + <var>h</var>)&quot; for the equation provided for f(<var>t</var>), but with all instances of <var>t</var> replaced with &quot;(<var>t</var> + <var>h</var>)&quot;, as well as substitute &quot;f(<var>t</var>)&quot; for the equation verbatim.
-	With that, the equation is technically completely solved, though to make it make more sense, we should simplify it with a series of reductions.
-</p>
-<ol start="0">
-	<li>
-		(f(<var>t</var> + <var>h</var>) - f(<var>t</var>)) / <var>h</var> [original equation]
-	</li>
-	<li>
-		((2(<var>t</var> + <var>h</var>) - (<var>t</var> + <var>h</var>)<sup>2</sup>) - (2<var>t</var> - <var>t</var><sup>2</sup>)) / <var>h</var> [substitute as described above]
-	</li>
-	<li>
-		(((2<var>t</var> + 2<var>h</var>) - (<var>t</var><sup>2</sup> + <var>h</var><sup>2</sup> + 2<var>t</var><var>h</var>)) - (2<var>t</var> - <var>t</var><sup>2</sup>)) / <var>h</var> [apply the distributive property]
-	</li>
-	<li>
-		(2<var>t</var> + 2<var>h</var> - <var>t</var><sup>2</sup> - <var>h</var><sup>2</sup> - 2<var>t</var><var>h</var> - 2<var>t</var> + <var>t</var><sup>2</sup>) / <var>h</var> [remove unnecessary parentheses, flipping positive/negative signs when necessary]
-	</li>
-	<li>
-		(2<var>h</var> - <var>h</var><sup>2</sup> - 2<var>t</var><var>h</var>) / <var>h</var> [combine like terms]
-	</li>
-	<li>
-		2 - <var>h</var> - 2<var>t</var> [factor <var>h</var> out of everything to cancel out the denominator]
-	</li>
+<section id="Unit1">
+	<h2>Unit 1</h2>
 	<p>
-		Our final reduced solution, &quot;2 - <var>h</var> - 2<var>t</var>&quot;, is much more manageable.
+		The reading material for the week was as follows:
 	</p>
-</ol>
-<h2>For what <var>x</var> does sin 2<var>x</var> = cos 2<var>x</var>?</h2>
-<p>
-	I don&apos;t think I solved this one in the most mathematically-efficient way, but I used mathematical concepts the entire way none the less, and my solution is mathematically checkable.
-	Anyway, the first thing I did was assign a new variable.
-	We&apos;re working with 2<var>x</var> in both cases, so we&apos;re going to need to divide our solution in half when we find it, but we&apos;re basically just looking for the place where the sine of a value is the same as the cosine of the same value.
-	So I assigned <var>y</var> to be equal to 2<var>x</var>, and looked instead for the value of <var>y</var> in sin(<var>y</var>) = cos(<var>y</var>).
-	As odd as it sounds, having the doubling in there had confused me enough that I&apos;d forgotten basic trigonometric concepts that I&apos;ve known for years.
-	With it gone, I remembered that this equality occurs at a 45° angle on the unit circle, as well as at a 225° angle.
-	Sine and cosine work with radians, and a circle measures 2π radians around, measured from the central point.
-	To reach a forty-five degree angle, I&apos;d need to travel one eighth of the way, which would be 0.25π radians.
-	Using this guess, I used a calculator to find sin(0.25π) and cos(0.25π), and found them to be equal.
-	This means <var>y</var> can be 0.25π, meaning that <var>x</var> can be half of that, making it 0.125π.
-	Using a calculator, we can&apos;t get an exact value for sin(2<var>x</var>) and cos(2<var>x</var>), but if you know the trigonometric unit circle, you know this value to be (√(2)/2).
-</p>
-<p>
-	As a side note, sine and cosine are cyclical in their outputs.
-	Another working value I found for <var>x</var> was -0.375π.
-	An infinite number of other values will work for this equation as well.
-</p>
+	<ul>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S1.html">1.1 What is Artificial Intelligence? ‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S2.html">1.2 A Brief History of Artificial Intelligence‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S3.html">1.3 Agents Situated in Environments‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S4.html">1.4 Designing Agents‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S5.html">1.5 Agent Design Space‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S6.html">1.6 Prototypical Applications‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S7.html">1.7 Overview of the Book‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S8.html">1.8 Review‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S9.html">1.9 References and Further Reading ‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S10.html">1.10 Exercises‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch16.S1.html">16.1 Dimensions of Complexity Revisited‣ Chapter 16 Retrospect and Prospect ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch16.S2.html">16.2 Social and Ethical Consequences‣ Chapter 16 Retrospect and Prospect ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch16.S3.html">16.3 References and Further Reading‣ Chapter 16 Retrospect and Prospect ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch16.S4.html">16.4 Exercises‣ Chapter 16 Retrospect and Prospect ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+	</ul>
+	<p>
+		The only assignment for the week was the discussion assignment.
+		I&apos;m not sure what to make of it.
+		We were to argue that a dog is smarter than a worm, that a human is smarter than a dog, and that an organisation is smarter than an individual.
+		I&apos;m not sure what we were supposed to be getting at, but this is a course on artificial intelligence, so maybe the goal was just to start thinking about what intelligence even entails.
+		It did get me thinking, too.
+		While we intuitively think we&apos;re more intelligent than dogs and intuitively think dogs are smarter than worms, I found it difficult to put into words just why that is.
+		As for my argument as to why organisations are more intelligent than individuals, I had even more difficulty.
+		The simple fact is that many of the individuals I speak with seem to be far more intelligent than the organisations I deal with.
+		I ended up listing a bunch of reasons why organisations <strong>*should*</strong> be more intelligent than individuals.
+		There&apos;s great potential when you pool mental resources like that.
+		The sad fact though is that there&apos;s often so much red tape in the way of organisations that they can&apos;t even process the most basic of concepts.
+	</p>
+	<p>
+		Take, for example, the time my credit card was stolen and the thief ran up my credit card bill on me.
+		Credit card companies are legally required to cover that sort of thing, I&apos;m pretty sure, and mine claims that they do.
+		When I reported the theft, they kept telling me to telephone some support number.
+		They wouldn&apos;t help me via their non-telephone support channels that they use to help with every other problem I&apos;ve ever had with the account.
+		I explained that I couldn&apos;t telephone them, as I have no telephone service, and asked if it meant that I was simply out the money.
+		They replied time after time that I&apos;m not out the money, I just need to telephone them.
+		I had to argue with several representatives before I got one that would even actually give me a straight answer.
+		And that&apos;s all I was asking for: a straight answer.
+		Either tell me straight-up that you&apos;re not going to help me and I&apos;m out the money because I don&apos;t have a telephone or tell me straight-up how to deal with the issue without a telephone.
+		I needed to know if I should give up on getting the money back and just pay the bill the thief ran up on me or if I should continue to try to resolve the situation.
+		They wasted hours of my time spanning multiple days because, as an organisation, they couldn&apos;t grasp the concept that if I have no telephone, claims that I&apos;m not out the money and all I have to do is telephone them contradict one another and make no sense.
+		As individuals, I&apos;m sure every one of the representatives I dealt with could understand the issue, but they were bound.
+		They weren&apos;t allowed to admit to me I was out the money because of their company&apos;s policies, but also not allowed to actually help me because of those same policies.
+		And this is only a recent example of the idiocy of large organisations; one that&apos;s fresh on my mind because it happened so recently.
+	</p>
+	<p>
+		I think one problem with the intelligence of an organisation is how slow-moving organisations are.
+		With so many people, organisations have to have a lot of communication occur when anything unexpected happens.
+		For example, many organisations assume everyone has telephone service and assume everyone is perfectly fine handing over their telephone numbers to said organisations.
+		When they hit an anomaly that violates their assumptions and doesn&apos;t allow their predefined protocols to function as planned, they sort of hit a dead end and can&apos;t function.
+		meanwhile, a human or even a dog is able to think on its feet and adapt to changing/unexpected circumstances.
+		The bigger the organisation, the more coordination is required to keep it functioning, and the slower-moving it must become.
+		This slowness and inability to adapt is itself a great example of great stupidity.
+		Organisations are very smart in some ways, but they&apos;re completely idiotic in others.
+		It&apos;s a trade-off.
+	</p>
+	<p>
+		I think much of the stupidity of organisations applies to artificial intelligence as well though.
+		A single human can often make a somewhat decent choice on the spot when encountering a situation that&apos;s slightly out of what they assume is ordinary.
+		As discussed above, an organisation cannot if proper planning was not done to deal with the unexpected beforehand.
+		There&apos;s no valid reason why only one communication medium should be allowed when customers have one type of problem, for example, while five or six communication methods are available for every other type of problem.
+		That sort of poor planning and arbitrary constraints leads to problems when encountering the unexpected.
+		And decisions cannot be made on the spot by the individual human you deal with because they need to go consult the rest of the organisation first.
+		Artificial intelligence depends on human programmers defining thing according to the specifications handed to them.
+		Again, on-the-spot decision-making then doesn&apos;t function properly when encountering unexpected situations.
+		Pre-programmed responses, similar to the scripts the organisation members have to read from, are the name of the game.
+		At the most-advanced level of artificial intelligence, you have machine learning.
+		But even that requires a decent data set.
+		If situations not represented in the training set are encountered, you&apos;re likely to encounter bizarre output from the machine.
+		Maybe that&apos;s what we were supposed to see from the discussion assignment.
+		A machine can think and act so much faster than a human.
+		In that way, it can be programmed to be more intelligent than one.
+		However, along with the gift of higher intelligence in some ways, it also receives the curse of idiocy in others.
+		It&apos;s our job as the programmers to try to make the most of the intelligent side of machines while trying to compensate for and reduce the stupidity of them.
+	</p>
+	<p>
+		I&apos;m not sure what the discussion assignment was supposed to be about.
+		Nothing related to robots in mazes was presented by the reading material, and there was supposedly some &quot;current robot&quot;, but no robot behaviours or features were mentioned.
+		We can&apos;t talk about the current design when there is no design to begin with.
+	</p>
+</section>
+<section id="Unit2">
+	<h2>Unit 2</h2>
+	<p>
+		The reading material for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S1.html">2.1 Agents‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S2.html">2.2 Agent Systems‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S3.html">2.3 Hierarchical Control‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S4.SS1.html">2.4.1 Agents Modeling the World‣ 2.4 Acting with Reasoning ‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S4.SS2.html">2.4.2 Knowledge and Acting‣ 2.4 Acting with Reasoning ‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S4.SS3.html">2.4.3 Design Time and Offline Computation‣ 2.4 Acting with Reasoning ‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S4.SS4.html">2.4.4 Online Computation‣ 2.4 Acting with Reasoning ‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S5.html">2.5 Review‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S6.html">2.6 References and Further Reading‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S7.html">2.7 Exercises‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+	</ul>
+	<p>
+		I found it odd that the material referred to lamps as agents.
+		It defined agents as being things that act upon their environment, then listed several examples, with one of them being lamps.
+		All the other examples made sense.
+		Three of the examples are animals: humans, dogs, and worms.
+		Two are automatons: a robot and a computer program that acts in the marketplace market.
+		And one was a corporation, which is a collection of humans, making it a collection of agents.
+		Combining multiple agents to form another agent makes sense because the capabilities that the individual agents posses that make them agents in the first place would be inherited by their collective form.
+		But a lamp?
+		Calling a lamp an agent is like calling a rock an agent.
+		It can be acted upon, but it doesn&apos;t really act itself.
+		Then again, maybe the author considers things that can be used by an agent to act upon things as being agents themselves.
+	</p>
+	<p>
+		Section 2.3 seemed to be the most complex.
+		I feel like I about half of it was over my head.
+		I caught most of the high-level stuff, but not so much the details of how these things work at a lower level.
+	</p>
+	<p>
+		I can see the value of dead reckoning in an ideal world.
+		If there&apos;s no noise and no flaws in the data, it should work.
+		The material also presented the opposite though, which is a purely reactive system.
+		I&apos;m not really sure what such a system could accomplish.
+		Without some model of the world, the machine is only able to react to what it directly senses.
+		That limits its capabilities, even in an ideal world.
+		It can&apos;t, for example, be sent to perform a task elsewhere in the room.
+		If it can&apos;t directly sense something, that thing essentially does not exist to the robot.
+		It sort of makes me think of a lack of object permanence, though the idea of object permanence isn&apos;t quite the one relevant here.
+	</p>
+	<p>
+		I didn&apos;t really understand the programming assignment for the week.
+		We were to program a robot controller, but weren&apos;t given any sort of idea as to how the robot was supposed to behave.
+		The instructions said to follow an example in which the robot moved toward and away from light, but then we were also told that our robots would only have a <abbr title="Global Positioning System receiver">GPSr</abbr>, a compass, and a whisker as its environmental sensors.
+		No light-based sensors.
+		That entirely ruled out the only goal we&apos;d been given for the robot.
+		The only thing I could think to do was to have it navigate to coordinates.
+		First, we were to program a high-level layer for the robot.
+		Given what little information we had, it seemed like the way to do that would be to take arbitrary coordinates, try to reach them, and navigate around obstacles.
+		To navigate around obstacles, it&apos;d need to stop when it detected something with its whisker, record the position in a learned map, and somehow use the map to avoid hitting the same obstacles repeatedly.
+		I have no idea how to build a proper map from whisker data.
+		And if I did, I think I&apos;d need to know the size of the robot in order to not have to collide with the obstacle continuously around its entire perimeter to record every point in which it could be collided with.
+		That way, the robot could see when two collision points were too close in proximity to try to squeeze between.
+		I have no idea how to do any of that, so I moved on to the lower-level layer, intending to come back to the upper-level later after having thought about the problem more.
+		My lower-level layer was more complex than I intended it to be, but basically took an arbitrary set of coordinates, compared them to the robot&apos;s own coordinates and rotation, then pointed the robot at the input coordinates.
+		The high-level layer would then be able to simply specify a destination, and the lower-level layer would figure out how to turn to go there.
+		But then I had to go back to the upper layer.
+		How do I deal with obstacles (which is clearly necessary, given the presence of the whisker sensor in the problem&apos;s description)?
+		Different destination points can be chosen along the path to the final destination to navigate around the obstacles if I could figure out how to deal with obstacles at all, but I was at a loss.
+		I ended up having to hand in my work without an upper layer, which I found thoroughly frustrating.
+	</p>
+</section>
+<section id="Unit3">
+	<h2>Unit 3</h2>
+	<p>
+		...
+	</p>
+</section>
+<section id="Unit4">
+	<h2>Unit 4</h2>
+	<p>
+		...
+	</p>
+</section>
+<section id="Unit5">
+	<h2>Unit 5</h2>
+	<p>
+		...
+	</p>
+</section>
+<section id="Unit6">
+	<h2>Unit 6</h2>
+	<p>
+		...
+	</p>
+</section>
+<section id="Unit7">
+	<h2>Unit 7</h2>
+	<p>
+		...
+	</p>
+</section>
+<section id="Unit8">
+	<h2>Unit 8</h2>
+	<p>
+		...
+	</p>
+</section>
 		<hr/>
 		<p>
 			Copyright © 2020 Alex Yst;
