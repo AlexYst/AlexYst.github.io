@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<base href="https://y.st./[TEMP]/[TEMP].xhtml"/>
-		<title>Practice Exercises 6.A, 6.B, 6.C, 6.D, and 6.E &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
+		<title>Learning Journal &lt;https://y.st./[TEMP]/[TEMP].xhtml&gt;</title>
 		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
 		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
 		<script type="text/javascript" src="/script/javascript.js"/>
@@ -39,130 +39,817 @@
 <nav>
 </nav>
 		<header>
-			<h1>Practice Exercises 6.A, 6.B, 6.C, 6.D, and 6.E</h1>
-			<p>Written in <span title="Artificial Intelligence">CS 4408</span> by <a href="https://y.st./">Alexand(er|ra) Yst</a>, finalised and <a href="https://y.st./en/coursework/CS4408/Practice_Exercises_6.A~_6.B~_6.C~_6.D~_and_6.E.xhtml">archived</a> on 2020-05-13</p>
+			<h1>Learning Journal</h1>
+			<p>CS 4408: Artificial Intelligence</p>
 		</header>
-<h2>Part A: <a href="http://aispace.org/exercises/exercise6-a-1.shtml">Questions and answers</a></h2>
-<h3>Describe the difference between marginal independence and conditional independence.</h3>
-<p>
-	If the probability of an even given <var>x</var> and <var>y</var> is equal to the probability given just <var>x</var>, the event is marginally independent on <var>y</var>.
-	On the other hand, if the probability of the even given <var>x</var> and <var>y</var> is only equal the probability of the even given only <var>x</var> for a specific result, but not for other results, the event is conditionally independent on <var>y</var>.
-</p>
-<h3>Why are we more often interested in conditional independence?</h3>
-<p>
-	Conditional independence is occurs more often, so it&apos;s more relevant.
-</p>
-<h3>What are the three key components of a belief network?</h3>
-<p>
-	A directed acyclic graph of the variables, the domains of each of the variables, and a set of probability distributions.
-</p>
-<h3>What is the independence assumption in a belief network?</h3>
-<p>
-	Each variable is conditionally independent of non-child variables given the values of its parents.
-</p>
-<h3>Is cardholderContacted conditionally independent of internationalActivity given fraudAlert? How can you tell from the belief network?</h3>
-<p>
-	The required Java applet isn&apos;t loading, and the belief network is shown only in the applet.
-	It&apos;s not possible to answer the question.
-</p>
-<h3>Is fraudAlert conditionally independent of newVendor given internationalActivity? How can you tell from the belief network?</h3>
-<p>
-	The required Java applet isn&apos;t loading, and the belief network is shown only in the applet.
-	It&apos;s not possible to answer the question.
-</p>
-<h3>Use the embedded Java applet to examine the probability tables for this problem (right click on nodes). Let&apos;s say you are travelling in Europe and have used your card there several times, and then the card stops working. You check your (perfectly reliable) voicemail and there is no message from the bank. What is the most likely cause for the card being disabled? In other words, what are the probabilities P(overLimit = true), P(fraudAlert = true) and P(cardExpired = true) given the observations?</h3>
-<p>
-	The required Java applet isn&apos;t loading, and the belief network is shown only in the applet.
-	It&apos;s not possible to answer the question.
-</p>
-<h3>Consider a separate scenario. You are preparing for an overseas trip where you plan to use your credit card, and you want to know how likely it is that using your card abroad will lead to your card being disabled. If it&apos;s a high probability, you should inform your credit card company of your travel plans in advance. Calculate the probability of your card being disabled.</h3>
-<p>
-	The required Java applet isn&apos;t loading, and required information is shown only in the applet.
-	It&apos;s not possible to answer the question.
-</p>
-<h2>Part B: <a href="http://aispace.org/exercises/exercise6-b-1.shtml">Questions and answers</a></h2>
-<h3>This Bayes net represents a bicycle squeak diagnostic for determining what might be causing a bicycle to squeak. Right-clicking on a node allows you to examine the probability tables for that node. Do the probabilities seem sensible? In plain English, describe the relationships between the nodes in this Bayes net.</h3>
-<p>
-	The required Java applet isn&apos;t loading, and required information is shown only in the applet.
-	It&apos;s not possible to answer the question.
-</p>
-<h3>What are the priors for MouseInSeat? What is the probability of the bike squeaking if MouseInSeat=T?</h3>
-<p>
-	The required Java applet isn&apos;t loading, and required information is shown only in the applet.
-	It&apos;s not possible to answer the question.
-</p>
-<h2>Part C: <a href="http://aispace.org/exercises/exercise6-c-1.shtml">Questions and answers</a></h2>
-<h3>What is a factor?</h3>
-<p>
-	A factor is a set of values that represents the output of a function given the possible inputs.
-</p>
-<h3>What are the operations applied to factors in the variable elimination algorithm?</h3>
-<p>
-	Assigning, adding, and multiplying.
-</p>
-<h3>What do we mean by the term belief network inference problem?</h3>
-<p>
-	It&apos;s a type of problem in which you calculate the posterior probability distribution based on the evidence you have.
-</p>
-<h3>Define elimination ordering.</h3>
-<p>
-	It&apos;s the order in which variables are eliminated from the problem.
-</p>
-<h3>What are the three main steps of variable elimination?</h3>
-<p>
-	Create a factor representing the variable, ignore the non-query variables.
-	If the variable is seen, set it to the visible value.
-	Otherwise, sum it out.
-	Finally, multiply the remaining factors, then normalise the result.
-</p>
-<h2>Part D: <a href="http://aispace.org/exercises/exercise6-d-1.shtml">Questions and answers</a></h2>
-<h3>How does the time complexity of exact inference in a Markov chain depend on the number of time steps?</h3>
-<p>
-	The time complexity is always linear.
-	Markov models, including Markov chains, don&apos;t allow past states besides the most recent to influence the results, keeping the time complexity simple.
-</p>
-<h3>Open the localization applet and read the decription (sic) of the model. Draw a time-slice of the hidden markov model in the Belief network tool.</h3>
-<p>
-	The required Java applet isn&apos;t loading, and required information is shown only in the applet.
-	It&apos;s not possible to answer the question.
-</p>
-<h3>Write the conditional probability tables for the sensing model. Also provide the state probability distribution according to the dynamics model, given that the previous state was position 0 and the previous action was to move right.</h3>
-<p>
-	The required Java applet isn&apos;t loading, and required information is shown only in the applet.
-	It&apos;s not possible to answer the question.
-</p>
-<h3>Click &quot;Know Location&quot; to set the prior distribution to a point mass at a random location. Next, &quot;Observe Door&quot; and &quot;No Light&quot;. What happens? Give an intuitive reason for your observation. How might this be a problem in real applications, and how might we solve it?</h3>
-<p>
-	The required Java applet isn&apos;t loading, and required information is shown only in the applet.
-	It&apos;s not possible to answer the question.
-</p>
-<h3>Still using the &quot;Know Location&quot; prior, move the robot right twice, then left once. Which locations have a belief probability above the smallest value in the distribution? Why?</h3>
-<p>
-	The required Java applet isn&apos;t loading, and required information is shown only in the applet.
-	It&apos;s not possible to answer the question.
-</p>
-<h3>Suppose the robot is randomly placed into the world, so that it can be at any location with equal probability (that is, we set a uniform prior). If we now observe a door, what is the probability that we really are at a location with a door? Try solving this both by hand and with the applet, then compare the results.</h3>
-<p>
-	The required Java applet isn&apos;t loading, and required information is shown only in the applet.
-	It&apos;s not possible to answer the question.
-</p>
-<h2>Part E: <a href="http://aispace.org/exercises/exercise6-e-1.shtml">Questions and answers</a></h2>
-<h3>When would approximate inference be preferable to exact inference techniques such as variable elimination?</h3>
-<p>
-	Approximate inference is preferable when variable elimination is infeasible due to the complexity of the network.
-</p>
-<h3>You randomly throw 200 darts at a dartboard (the probability of hitting any spot on the dartboard is uniform). The dartboard has two types of regions: red and black. 57 of the darts you threw hit a red region. Approximately what percentage of the dartboard is black?</h3>
-<p>
-	The percent that is black is equal to the percentage that&apos;s not red.
-	To get the red percentage, we divide 57 by two (because two hundred darts were thrown, not one hundred).
-	28.5% is red, so 71.5% would have to be black to add up to the full 100%.
-</p>
-<h3>Suppose you are sampling from a single variable and trying to estimate the probability of a particular value of that variable. Using Hoeffding&apos;s inequality, how many samples would you need in order to get an error of less than 0.05 in 90% of cases?</h3>
-<p>
-	Plugging in the numbers, we get (-ln(0.1 / 2)) / (2 * 0.05 * 0.05)
-	A calculator tells us this is about 599.146454711, and we can&apos;t take only part of a sample, so we need to round up.
-	We need 600 samples.
-</p>
+<section id="Unit1">
+	<h2>Unit 1</h2>
+	<p>
+		The reading material for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S1.html">1.1 What is Artificial Intelligence? ‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S2.html">1.2 A Brief History of Artificial Intelligence‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S3.html">1.3 Agents Situated in Environments‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S4.html">1.4 Designing Agents‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S5.html">1.5 Agent Design Space‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S6.html">1.6 Prototypical Applications‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S7.html">1.7 Overview of the Book‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S8.html">1.8 Review‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S9.html">1.9 References and Further Reading ‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch1.S10.html">1.10 Exercises‣ Chapter 1 Artificial Intelligence and Agents ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch16.S1.html">16.1 Dimensions of Complexity Revisited‣ Chapter 16 Retrospect and Prospect ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch16.S2.html">16.2 Social and Ethical Consequences‣ Chapter 16 Retrospect and Prospect ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch16.S3.html">16.3 References and Further Reading‣ Chapter 16 Retrospect and Prospect ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch16.S4.html">16.4 Exercises‣ Chapter 16 Retrospect and Prospect ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+	</ul>
+	<p>
+		The only assignment for the week was the discussion assignment.
+		I&apos;m not sure what to make of it.
+		We were to argue that a dog is smarter than a worm, that a human is smarter than a dog, and that an organisation is smarter than an individual.
+		I&apos;m not sure what we were supposed to be getting at, but this is a course on artificial intelligence, so maybe the goal was just to start thinking about what intelligence even entails.
+		It did get me thinking, too.
+		While we intuitively think we&apos;re more intelligent than dogs and intuitively think dogs are smarter than worms, I found it difficult to put into words just why that is.
+		As for my argument as to why organisations are more intelligent than individuals, I had even more difficulty.
+		The simple fact is that many of the individuals I speak with seem to be far more intelligent than the organisations I deal with.
+		I ended up listing a bunch of reasons why organisations <strong>*should*</strong> be more intelligent than individuals.
+		There&apos;s great potential when you pool mental resources like that.
+		The sad fact though is that there&apos;s often so much red tape in the way of organisations that they can&apos;t even process the most basic of concepts.
+	</p>
+	<p>
+		Take, for example, the time my credit card was stolen and the thief ran up my credit card bill on me.
+		Credit card companies are legally required to cover that sort of thing, I&apos;m pretty sure, and mine claims that they do.
+		When I reported the theft, they kept telling me to telephone some support number.
+		They wouldn&apos;t help me via their non-telephone support channels that they use to help with every other problem I&apos;ve ever had with the account.
+		I explained that I couldn&apos;t telephone them, as I have no telephone service, and asked if it meant that I was simply out the money.
+		They replied time after time that I&apos;m not out the money, I just need to telephone them.
+		I had to argue with several representatives before I got one that would even actually give me a straight answer.
+		And that&apos;s all I was asking for: a straight answer.
+		Either tell me straight-up that you&apos;re not going to help me and I&apos;m out the money because I don&apos;t have a telephone or tell me straight-up how to deal with the issue without a telephone.
+		I needed to know if I should give up on getting the money back and just pay the bill the thief ran up on me or if I should continue to try to resolve the situation.
+		They wasted hours of my time spanning multiple days because, as an organisation, they couldn&apos;t grasp the concept that if I have no telephone, claims that I&apos;m not out the money and all I have to do is telephone them contradict one another and make no sense.
+		As individuals, I&apos;m sure every one of the representatives I dealt with could understand the issue, but they were bound.
+		They weren&apos;t allowed to admit to me I was out the money because of their company&apos;s policies, but also not allowed to actually help me because of those same policies.
+		And this is only a recent example of the idiocy of large organisations; one that&apos;s fresh on my mind because it happened so recently.
+	</p>
+	<p>
+		I think one problem with the intelligence of an organisation is how slow-moving organisations are.
+		With so many people, organisations have to have a lot of communication occur when anything unexpected happens.
+		For example, many organisations assume everyone has telephone service and assume everyone is perfectly fine handing over their telephone numbers to said organisations.
+		When they hit an anomaly that violates their assumptions and doesn&apos;t allow their predefined protocols to function as planned, they sort of hit a dead end and can&apos;t function.
+		meanwhile, a human or even a dog is able to think on its feet and adapt to changing/unexpected circumstances.
+		The bigger the organisation, the more coordination is required to keep it functioning, and the slower-moving it must become.
+		This slowness and inability to adapt is itself a great example of great stupidity.
+		Organisations are very smart in some ways, but they&apos;re completely idiotic in others.
+		It&apos;s a trade-off.
+	</p>
+	<p>
+		I think much of the stupidity of organisations applies to artificial intelligence as well though.
+		A single human can often make a somewhat decent choice on the spot when encountering a situation that&apos;s slightly out of what they assume is ordinary.
+		As discussed above, an organisation cannot if proper planning was not done to deal with the unexpected beforehand.
+		There&apos;s no valid reason why only one communication medium should be allowed when customers have one type of problem, for example, while five or six communication methods are available for every other type of problem.
+		That sort of poor planning and arbitrary constraints leads to problems when encountering the unexpected.
+		And decisions cannot be made on the spot by the individual human you deal with because they need to go consult the rest of the organisation first.
+		Artificial intelligence depends on human programmers defining thing according to the specifications handed to them.
+		Again, on-the-spot decision-making then doesn&apos;t function properly when encountering unexpected situations.
+		Pre-programmed responses, similar to the scripts the organisation members have to read from, are the name of the game.
+		At the most-advanced level of artificial intelligence, you have machine learning.
+		But even that requires a decent data set.
+		If situations not represented in the training set are encountered, you&apos;re likely to encounter bizarre output from the machine.
+		Maybe that&apos;s what we were supposed to see from the discussion assignment.
+		A machine can think and act so much faster than a human.
+		In that way, it can be programmed to be more intelligent than one.
+		However, along with the gift of higher intelligence in some ways, it also receives the curse of idiocy in others.
+		It&apos;s our job as the programmers to try to make the most of the intelligent side of machines while trying to compensate for and reduce the stupidity of them.
+	</p>
+	<p>
+		I&apos;m not sure what the discussion assignment was supposed to be about.
+		Nothing related to robots in mazes was presented by the reading material, and there was supposedly some &quot;current robot&quot;, but no robot behaviours or features were mentioned.
+		We can&apos;t talk about the current design when there is no design to begin with.
+	</p>
+</section>
+<section id="Unit2">
+	<h2>Unit 2</h2>
+	<p>
+		The reading material for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S1.html">2.1 Agents‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S2.html">2.2 Agent Systems‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S3.html">2.3 Hierarchical Control‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S4.SS1.html">2.4.1 Agents Modeling the World‣ 2.4 Acting with Reasoning ‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S4.SS2.html">2.4.2 Knowledge and Acting‣ 2.4 Acting with Reasoning ‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S4.SS3.html">2.4.3 Design Time and Offline Computation‣ 2.4 Acting with Reasoning ‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S4.SS4.html">2.4.4 Online Computation‣ 2.4 Acting with Reasoning ‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S5.html">2.5 Review‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S6.html">2.6 References and Further Reading‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch2.S7.html">2.7 Exercises‣ Chapter 2 Agent Architectures and Hierarchical Control ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+	</ul>
+	<p>
+		I found it odd that the material referred to lamps as agents.
+		It defined agents as being things that act upon their environment, then listed several examples, with one of them being lamps.
+		All the other examples made sense.
+		Three of the examples are animals: humans, dogs, and worms.
+		Two are automatons: a robot and a computer program that acts in the marketplace market.
+		And one was a corporation, which is a collection of humans, making it a collection of agents.
+		Combining multiple agents to form another agent makes sense because the capabilities that the individual agents posses that make them agents in the first place would be inherited by their collective form.
+		But a lamp?
+		Calling a lamp an agent is like calling a rock an agent.
+		It can be acted upon, but it doesn&apos;t really act itself.
+		Then again, maybe the author considers things that can be used by an agent to act upon things as being agents themselves.
+	</p>
+	<p>
+		Section 2.3 seemed to be the most complex.
+		I feel like I about half of it was over my head.
+		I caught most of the high-level stuff, but not so much the details of how these things work at a lower level.
+	</p>
+	<p>
+		I can see the value of dead reckoning in an ideal world.
+		If there&apos;s no noise and no flaws in the data, it should work.
+		The material also presented the opposite though, which is a purely reactive system.
+		I&apos;m not really sure what such a system could accomplish.
+		Without some model of the world, the machine is only able to react to what it directly senses.
+		That limits its capabilities, even in an ideal world.
+		It can&apos;t, for example, be sent to perform a task elsewhere in the room.
+		If it can&apos;t directly sense something, that thing essentially does not exist to the robot.
+		It sort of makes me think of a lack of object permanence, though the idea of object permanence isn&apos;t quite the one relevant here.
+	</p>
+	<p>
+		I didn&apos;t really understand the programming assignment for the week.
+		We were to program a robot controller, but weren&apos;t given any sort of idea as to how the robot was supposed to behave.
+		The instructions said to follow an example in which the robot moved toward and away from light, but then we were also told that our robots would only have a <abbr title="Global Positioning System receiver">GPSr</abbr>, a compass, and a whisker as its environmental sensors.
+		No light-based sensors.
+		That entirely ruled out the only goal we&apos;d been given for the robot.
+		The only thing I could think to do was to have it navigate to coordinates.
+		First, we were to program a high-level layer for the robot.
+		Given what little information we had, it seemed like the way to do that would be to take arbitrary coordinates, try to reach them, and navigate around obstacles.
+		To navigate around obstacles, it&apos;d need to stop when it detected something with its whisker, record the position in a learned map, and somehow use the map to avoid hitting the same obstacles repeatedly.
+		I have no idea how to build a proper map from whisker data.
+		And if I did, I think I&apos;d need to know the size of the robot in order to not have to collide with the obstacle continuously around its entire perimeter to record every point in which it could be collided with.
+		That way, the robot could see when two collision points were too close in proximity to try to squeeze between.
+		I have no idea how to do any of that, so I moved on to the lower-level layer, intending to come back to the upper-level later after having thought about the problem more.
+		My lower-level layer was more complex than I intended it to be, but basically took an arbitrary set of coordinates, compared them to the robot&apos;s own coordinates and rotation, then pointed the robot at the input coordinates.
+		The high-level layer would then be able to simply specify a destination, and the lower-level layer would figure out how to turn to go there.
+		But then I had to go back to the upper layer.
+		How do I deal with obstacles (which is clearly necessary, given the presence of the whisker sensor in the problem&apos;s description)?
+		Different destination points can be chosen along the path to the final destination to navigate around the obstacles if I could figure out how to deal with obstacles at all, but I was at a loss.
+		I ended up having to hand in my work without an upper layer, which I found thoroughly frustrating.
+	</p>
+</section>
+<section id="Unit3">
+	<h2>Unit 3</h2>
+	<p>
+		The reading material for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S1.html">3.1 Problem Solving as Search‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S2.html">3.2 State Spaces‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S3.html">3.3 Graph Searching‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S4.html">3.4 A Generic Searching Algorithm‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S5.SS1.html">3.5.1 Breadth-First Search‣ 3.5 Uninformed Search Strategies ‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S5.SS2.html">3.5.2 Depth-First Search‣ 3.5 Uninformed Search Strategies ‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S5.SS2.html">3.5.2 Depth-First Search‣ 3.5 Uninformed Search Strategies ‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S5.SS3.html">3.5.3 Iterative Deepening‣ 3.5 Uninformed Search Strategies ‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S5.SS4.html">3.5.4 Lowest-Cost-First Search‣ 3.5 Uninformed Search Strategies ‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S6.html">3.6 Heuristic Search‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S6.SS1.html">3.6.1 A^* Search‣ 3.6 Heuristic Search ‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S6.SS2.html">3.6.2 Designing a Heuristic Function‣ 3.6 Heuristic Search ‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S7.SS1.html">3.7.1 Cycle Pruning‣ 3.7 Pruning the Search Space ‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S7.SS2.html">3.7.2 Multiple-Path Pruning‣ 3.7 Pruning the Search Space ‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S7.SS3.html">3.7.3 Summary of Search Strategies‣ 3.7 Pruning the Search Space ‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S8.SS1.html">3.8.1 Branch and Bound‣ 3.8 More Sophisticated Search ‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S8.SS2.html">3.8.2 Direction of Search‣ 3.8 More Sophisticated Search ‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S8.SS3.html">3.8.3 Dynamic Programming‣ 3.8 More Sophisticated Search ‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S9.html">3.9 Review‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S10.html">3.10 References and Further Reading‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch3.S11.html">3.11 Exercises‣ Chapter 3 Searching for Solutions ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+	</ul>
+	<p>
+		I admit that I was totally lost when it came to last week&apos;s assignment.
+		I didn&apos;t understand what it was that I was supposed to program the robot controller to do.
+		This week, when we did the grading, at first glance, I saw that other students seemed to know what they were doing.
+		Except, I hadn&apos;t noticed that none of the students had used Java or Python as the instructions had requested.
+		That made me doubt their solutions, as they weren&apos;t following basic instructions.
+		Their code was all rather similar as well.
+		I might be reading too much into it, but it makes me wonder if they all found the solution elsewhere and didn&apos;t even bother to translate it into Java or Python.
+		Huh.
+	</p>
+	<p>
+		For this week&apos;s assignment, we were required to run a <code>.jnlp</code> file for part D.
+		From the sounds of it, it&apos;s supposed to run in the Web browser, but Firefox instead tried to download it.
+		I can&apos;t find any software fro running <code>.jnlp</code> files locally, either.
+		I wasn&apos;t able to figure out what to do with the file, so I ended up having to just guess as to the results I would have gotten from the file.
+		That was frustrating.
+		Hopefully, we don&apos;t have to deal with that kind of file again in future units though.
+	</p>
+	<p>
+		I didn&apos;t do as well on the quiz as I&apos;d like to have.
+		I really need more study time and more energy, but that&apos;s not going to happen any time soon.
+		At least this unit was somewhat familiar to me.
+		I didn&apos;t remember all the material from the last time I studies search strategies, but at least I had a good leg up on some of it.
+		Depth-first and breadth-first searching was something I remembered.
+		Lowest-cost searching is just the intuitive way to search if you&apos;re performing any sort of optimisation as to which nodes to expand in the search next.
+		I remembered the name of A*, though not what it did.
+		I had to relearn that, and that knowledge didn&apos;t seem all that familiar, though it was easy enough to understand.
+		Best-first searching was new to me, I&apos;m pretty sure.
+		It&apos;s kind of funny that I probably learned about A* before best-first searching, even though A* combines best-first and lowest-cost searching.
+	</p>
+	<p>
+		I think I understand heuristic functions better than I did last time I looked at this sort of thing.
+		It&apos;s interesting that it&apos;s okay for a good heuristic function to underestimate costs, but not overestimate.
+		It makes sense though, if you think about how the heuristic function is actually used in regards to pruning though.
+		If overestimations are made, wrong branches of the search tree will be pruned before they can be proven to hold better solutions.
+		You&apos;ll reach a solution, but it won&apos;t be guaranteed to be the best solution, as the best solution might be in a pruned branch.
+		On the other hand, if the estimate made by the heuristic function is too low, some branches that should be pruned will instead be searched, but you at least won&apos;t be pruning away the best solution.
+		You&apos;ll just do extra work searching in the wrong locations.
+		That&apos;s much more tolerable.
+	</p>
+</section>
+<section id="Unit4">
+	<h2>Unit 4</h2>
+	<p>
+		The reading material for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S1.SS1.html">4.1.1 Variables and Worlds‣ 4.1 Possible Worlds, Variables, and Constraints ‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S1.SS2.html">4.1.2 Constraints‣ 4.1 Possible Worlds, Variables, and Constraints ‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S1.SS3.html">4.1.3 Constraint Satisfaction Problems‣ 4.1 Possible Worlds, Variables, and Constraints ‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S2.html">4.2 Generate-and-Test Algorithms‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S3.html">4.3 Solving CSPs Using Search‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S4.html">4.4 Consistency Algorithms‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S5.html">4.5 Domain Splitting‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S6.html">4.6 Variable Elimination‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S7.html">4.7 Local Search‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S7.SS1.html">4.7.1 Iterative Best Improvement‣ 4.7 Local Search ‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S7.SS2.html">4.7.2 Randomized Algorithms‣ 4.7 Local Search ‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S7.SS3.html">4.7.3 Local Search Variants‣ 4.7 Local Search ‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S7.SS4.html">4.7.4 Evaluating Randomized Algorithms‣ 4.7 Local Search ‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S7.SS5.html">4.7.5 Random Restart‣ 4.7 Local Search ‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S8.html">4.8 Population-Based Methods‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S9.html">4.9 Optimization‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S10.html">4.10 Review‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S11.html">4.11 References and Further Reading‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch4.S12.html">4.12 Exercises‣ Chapter 4 Reasoning with Constraints ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-1-introduction/">Minimax Algorithm in Game Theory | Set 1 (Introduction) - GeeksforGeeks</a>
+		</li>
+	</ul>
+	<p>
+		It&apos;d be nice if people could actually spell out what they mean, especially when writing for educational literature.
+		For example, the term &quot;CSP&quot; kept coming up.
+		While I could vaguely remember the gist of what that was supposed to mean, I had to keep going back and looking up what it meant to fully understand what I was reading.
+		It&apos;s not that hard to spell out &quot;constraint satisfaction problem&quot;, and it goes a long way in making the writing more clear, especially to people who are new to the material.
+	</p>
+	<p>
+		Speaking of constraint satisfaction problems, they&apos;re an interesting topic.
+		They&apos;re basically a formalisation of a process we go through multiple times each day as we go about our daily lives just making things run smoothly.
+		Even simple errands are often run to satisfy constraints.
+		I can only make my favourite salad if I have canned corn, canned beans, and fresh produce.
+		Fresh produce doesn&apos;t keep fresh as long as I&apos;d like it to, though once the salad is made, the vinegar preserves the salad and keeps it good.
+		So while I can stock up on corn and beans to my heart&apos;s content, I should only buy the produce soon before I have time to make the salad; preferably within a couple days.
+		As simple as the concept is, it&apos;s very much a constraint problem relating when I make salad and when I go buy ingredients for it.
+	</p>
+	<p>
+		Many of the representations we were introduced to for these problems aren&apos;t as useful in my opinion as I&apos;d think they should be.
+		To be fair, different people understand information better in different representations, so perhaps these representations work better for other people than they do me.
+		Personally, I like the table format.
+		When reading the solution, everything is presented clear as day, with no fancy formatting getting in the way of interpretation.
+		Furthermore, adding rows as you work through the problem doesn&apos;t take too much effort, deleting rows that turn out not to be useful to the final solution is near instantaneous, and no special software is needed to render the tables.
+		Just a basic Web browser.
+		Tables are a minimal-effort, maximal-readability option for displaying the problem.
+		The other formats seem to be the reverse though.
+		They&apos;re a pain to format well visually, and they&apos;re harder to read when you&apos;re done.
+		They don&apos;t seem to be of much benefit.
+		If you had software that&apos;d automatically format these graphs, they could potentially provide a little value, but when producing them by hand, the cost of production outweighs the benefit of having them.
+		As usual, simplicity seems to be the best way to go.
+	</p>
+	<p>
+		The concept of the random restart seems interesting.
+		A neighbour-based search is an intuitive option, but a random restart search instead puts you somewhere unrelated entirely each time.
+		I can see it having its uses.
+		While a random restart doesn&apos;t make much sense in the context of, say, navigating the real world, not all problems take place directly in the real world.
+		Arbitrarily jumping to another place in the problem domain can make sense given the right context.
+		Penetration testing comes to mind, but even something as simple as testing a website&apos;s functionality would require random restarts to be done correctly.
+		A user could enter from any page with their cookies completely cleared, or having been linked to the page from another website entirely.
+	</p>
+	<p>
+		The assignment for the week required us to run more of those <code>.jnlp</code> files, which I still can&apos;t get working.
+		At this point, I&apos;ve gotten <a href="apt:icedtea-webx"><code>icedtea-webx</code></a> installed which seems to be capable of running the files.
+		However, it&apos;s refusing to play nicely with the network proxy.
+		It tells me that it sees Firefox&apos;s proxy settings, but is refusing to use them.
+		Because it&apos;s not using the network&apos;s proxy, its <abbr title="Hypertext Transfer Protocol">HTTP</abbr> requests are getting blocked by the network&apos;s firewall.
+		I&apos;ve been trying to figure out how to configure <code>icedtea-webx</code> to use the proper proxy, but it doesn&apos;t seem to want to use it.
+		I&apos;m not sure what to do about this, but I suppose I&apos;ll just have to keep trying.
+		Still, it&apos;s rather frustrating that we&apos;re required to use this software.
+	</p>
+</section>
+<section id="Unit5">
+	<h2>Unit 5</h2>
+	<p>
+		The reading material for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S1.html">5.1 Propositions‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S1.SS1.html">5.1.1 Syntax of Propositional Calculus‣ 5.1 Propositions ‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S1.SS2.html">5.1.2 Semantics of the Propositional Calculus‣ 5.1 Propositions ‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S2.html">5.2 Propositional Constraints‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S3.html">5.3 Propositional Definite Clauses‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S3.SS1.html">5.3.1 Questions and Answers‣ 5.3 Propositional Definite Clauses ‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S3.SS2.html">5.3.2 Proofs‣ 5.3 Propositional Definite Clauses ‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S4.SS1.html">5.4.1 Background Knowledge and Observations‣ 5.4 Knowledge Representation Issues ‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S4.SS2.html">5.4.2 Querying the User‣ 5.4 Knowledge Representation Issues ‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S4.SS3.html">5.4.3 Knowledge-Level Explanation‣ 5.4 Knowledge Representation Issues ‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S4.SS4.html">5.4.4 Knowledge-Level Debugging‣ 5.4 Knowledge Representation Issues ‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S5.SS1.html">5.5.1 Horn Clauses‣ 5.5 Proving by Contradiction ‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S5.SS2.html">5.5.2 Assumables and Conflicts‣ 5.5 Proving by Contradiction ‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S5.SS3.html">5.5.3 Consistency-Based Diagnosis‣ 5.5 Proving by Contradiction ‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S5.SS4.html">5.5.4 Reasoning with Assumptions and Horn Clauses‣ 5.5 Proving by Contradiction ‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S6.html">5.6 Complete Knowledge Assumption‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S6.SS1.html">5.6.1 Non-monotonic Reasoning‣ 5.6 Complete Knowledge Assumption ‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S6.SS2.html">5.6.2 Proof Procedures for Negation as Failure‣ 5.6 Complete Knowledge Assumption ‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S7.html">5.7 Abduction‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S8.html">5.8 Causal Models‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S9.html">5.9 Review‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S10.html">5.10 References and Further Reading‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch5.S11.html">5.11 Exercises‣ Chapter 5 Propositions and Inference ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+	</ul>
+	<p>
+		This week has been rather frustrating.
+		The material on propositional logic wasn&apos;t too difficult to understand, but working with AIlog/Prolog is an entirely foreign concept to me.
+		When giving instructions to computers, I&apos;m used to providing instructions, not lists of conditional statements with no actual declaration of the state of things and no instructions as to what to do based on the conditions.
+		It shouldn&apos;t be hard, but yet I have trouble wrapping my head around it as soon as it is stated to be a computer language, as it just doesn&apos;t feel like one.
+		At all.
+		That&apos;s my own issue, and one I need to work past.
+	</p>
+	<p>
+		More frustrating though was an antagonising post from one of the students.
+		Last week, I expressed concern over technical difficulties that I was, and still am, experiencing.
+		I&apos;ve yet to figure out how to get the <code>.jnlp</code> files to run.
+		This other student blames me for refusing to do something, I&apos;m not even sure what, and thinks that if I&apos;d just break down and do it, I&apos;d be fine.
+		I&apos;m trying my best though.
+		I don&apos;t know how to get the software to run!
+		This week, we were told to use a <abbr title="Java Archive">JAR</abbr> file.
+		Unlike most of the software the school asks us to run, this <abbr title="Java Archive">JAR</abbr> file is proprietary and sourceless, so I don&apos;t feel safe running it on my machine.
+		While the <code>.jnlp</code>-based programs are also proprietary and sourceless, the environment in which they get run in is also sandboxed, so the software can&apos;t touch anything on my machine.
+		This doens&apos;t apply to <abbr title="Java Archive">JAR</abbr> files though, so without a sandbox to keep my machine safe, I can&apos;t even try to run them.
+		I offhandedly mentioned that I couldn&apos;t run it and continued with my post as best I could.
+		This other student responded with a long post attacking me and blaming me again for the inability to run the software of the course, claiming my issue this week to be the same as last week.
+		Last week was technical problems that I&apos;m still trying to work through.
+		This week is a refusal to run unsafe software on a machine I need to remain secure.
+		Entirely different problems, and last week&apos;s can&apos;t in any way be reasonably claimed to be my own fault.
+		They also attacked my use of a truth table.
+		I wasn&apos;t the only student that thought using one was a good idea even.
+		Furthermore, the reading material for the week uses truth tables as well.
+		It&apos;s like they were just <strong>*looking*</strong> for something to pick at.
+		They also told me off for using negations in my Prolog code.
+		That&apos;s the thing though: I didn&apos;t even <strong>*use*</strong> negations!
+		Clearly, they hadn&apos;t actually read my code, despite it only being two lines long.
+	</p>
+	<p>
+		This student did have one piece of helpful advice on Prolog statements that&apos;ll help me on similar assignments in the future.
+		I think they meant to attack me with that too, but that backfired, as it was actually a useful comment.
+		They taught me that I don&apos;t have to use the function-looking syntax in some cases and can directly assign the result of the body to another atom.
+		If I&apos;d understood that previously, it would have saved me from having to come up with a way to use that syntax anyway, even though it felt really clunky given the situation and I really had to force it to make it work at all.
+		It turns out it was clunky and had to be forced because I was doing it wrong, and I&apos;m happy to have learned a much better way of doing it.
+		It&apos;s very frustrating though that they think it&apos;s okay to attack someone just because they don&apos;t understand their situation.
+		I don&apos;t know how to get <code>.jnlp</code> files to run.
+		The protocol they&apos;re supposed to run over was deprecated and removed from modern versions of Java.
+		I&apos;m having to use a workaround to even get as close as I managed to to running them, and even then, the workaround is failing.
+		And to top it off, none of that was relevant to this week&apos;s discussion and they still want to attack me with it.
+	</p>
+</section>
+<section id="Unit6">
+	<h2>Unit 6</h2>
+	<p>
+		The reading material for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch6.S1.html">6.1 Representing States, Actions, and Goals‣ Chapter 6 Planning with Certainty ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch6.S1.SS1.html">6.1.1 Explicit State-Space Representation‣ 6.1 Representing States, Actions, and Goals ‣ Chapter 6 Planning with Certainty ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch6.S1.SS2.html">6.1.2 The STRIPS Representation‣ 6.1 Representing States, Actions, and Goals ‣ Chapter 6 Planning with Certainty ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch6.S1.SS3.html">6.1.3 Feature-Based Representation of Actions‣ 6.1 Representing States, Actions, and Goals ‣ Chapter 6 Planning with Certainty ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch6.S1.SS4.html">6.1.4 Initial States and Goals‣ 6.1 Representing States, Actions, and Goals ‣ Chapter 6 Planning with Certainty ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch6.S2.html">6.2 Forward Planning‣ Chapter 6 Planning with Certainty ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch6.S3.html">6.3 Regression Planning‣ Chapter 6 Planning with Certainty ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch6.S4.html">6.4 Planning as a CSP‣ Chapter 6 Planning with Certainty ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch6.S5.html">6.5 Partial-Order Planning‣ Chapter 6 Planning with Certainty ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch6.S6.html">6.6 Review‣ Chapter 6 Planning with Certainty ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch6.S7.html">6.7 References and Further Reading‣ Chapter 6 Planning with Certainty ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch6.S8.html">6.8 Exercises ‣ Chapter 6 Planning with Certainty ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S1.html">7.1 Learning Issues‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S2.html">7.2 Supervised Learning‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S2.SS1.html">7.2.1 Evaluating Predictions‣ 7.2 Supervised Learning ‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S2.SS2.html">7.2.2 Types of Errors‣ 7.2 Supervised Learning ‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S2.SS3.html">7.2.3 Point Estimates with No Input Features‣ 7.2 Supervised Learning ‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S3.html">7.3 Basic Models for Supervised Learning‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S3.SS1.html">7.3.1 Learning Decision Trees‣ 7.3 Basic Models for Supervised Learning ‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S3.SS2.html">7.3.2 Linear Regression and Classification‣ 7.3 Basic Models for Supervised Learning ‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S4.html">7.4 Overfitting‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S4.SS1.html">7.4.1 Pseudocounts‣ 7.4 Overfitting ‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S4.SS2.html">7.4.2 Regularization‣ 7.4 Overfitting ‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S4.SS3.html">7.4.3 Cross Validation‣ 7.4 Overfitting ‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S5.html">7.5 Neural Networks and Deep Learning‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S6.html">7.6 Composite Models‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S6.SS1.html">7.6.1 Random Forests‣ 7.6 Composite Models ‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S6.SS2.html">7.6.2 Ensemble Learning‣ 7.6 Composite Models ‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S7.html">7.7 Case-Based Reasoning‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S8.html">7.8 Learning as Refining the Hypothesis Space‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S8.SS1.html">7.8.1 Version-Space Learning‣ 7.8 Learning as Refining the Hypothesis Space ‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S8.SS2.html">7.8.2 Probably Approximately Correct Learning‣ 7.8 Learning as Refining the Hypothesis Space ‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S9.html">7.9 Review‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S10.html">7.10 References and Further Reading‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="https://artint.info/2e/html/ArtInt2e.Ch7.S11.html">7.11 Exercises‣ Chapter 7 Supervised Machine Learning ‣ Artificial Intelligence: Foundations of Computational Agents, 2nd Edition</a>
+		</li>
+		<li>
+			<a href="http://faculty.washington.edu/tamre/BayesTheorem.pdf">Microsoft Word - Bayes.doc - BayesTheorem.pdf</a>
+		</li>
+	</ul>
+	<p>
+		Or at least, that&apos;s what I thought the reading material was.
+		The material wasn&apos;t relevant to what we were actually doing this week.
+		Another student informed me that we&apos;re supposed to be using the first edition of the textbook, while I&apos;ve been using the more-recent second edition.
+		The pages telling us what to read haven&apos;t been specific about what version of the book to use.
+		(And believe me, I double checked the page after hearing I was reading the wrong version.)
+		In fact, they haven&apos;t even been linking directly to the textbook at all.
+		Instead, they&apos;ve been linking to the textbook&apos;s website and telling us to find the chapters ourselves.
+		That&apos;d be fine, except that there&apos;s two versions of the book and apparently, the chapters are in a different order between the two, so if you guess wrong as to which version of the textbook to use as I&apos;ve done, you read entirely the wrong material.
+	</p>
+	<p>
+		The assignment for the week was frustrating.
+		To begin with, what I read didn&apos;t cover what was asked, as I&apos;d read the wrong material and there wasn&apos;t time to go back and read the right material; I didn&apos;t have time for a double reading list.
+		I ended up just Web searching what I needed to answer the questions.
+		Additionally, several of the questions were on material provided only through applet and <code>.jnlp</code> files.
+		I still haven&apos;t managed to get <code>.jnlp</code> files running correctly.
+		And in my defence, they shouldn&apos;t be used at all these days, as they&apos;re a feature that has been deprecated and removed from modern Java.
+		There&apos;s a <strong>*reason*</strong> they&apos;re being so difficult to run!
+		I&apos;m having to use some third-party software that emulated the old <code>.jnlp</code> feature from Java, and it&apos;s not doing very well at that and is throwing errors.
+		As for the applets, they aren&apos;t running either.
+		I&apos;m really not sure why not.
+		Are the applets broken?
+		Do they not run on modern Java?
+		Is my Firefox instance not correctly configured to run Java applets?
+		I really don&apos;t know.
+		I can&apos;t remember the last time I even even thought about running a Java applet.
+		It had to have been at least a couple of system versions ago.
+		For me, that means at least two complete wipes of my hard drive and clean installations, so if there&apos;s special configurations or special software installations I need beyond just the OpenJDK runtime, it&apos;s long been gone from my machine.
+		In any case, I had no hope of answering several of the questions as there&apos;s nowhere outside the applets and <code>.jnlp</code> files to track down the information I need because the questions weren&apos;t about the subject matter, but about those applets and <code>.jnlp</code> files.
+	</p>
+	<p>
+		On the topic of the material I should have read but ended up reading other material instead, Markov models are interesting.
+		Their main property seems to be that they&apos;re ... well, not exactly stateless, but they don&apos;t keep continual record of their past states.
+		If a state is reached form multiple methods, the paths converge.
+		From there, there&apos;s no differentiation between having reached the state from one method versus another, as the model isn&apos;t allowed to take the history into account.
+		It only takes into account its current state when deciding what next state to move on to.
+		Probabilistic transitions are allowed, but the probabilities aren&apos;t affected by states you&apos;ve passed through.
+		This seems like a rather simplistic view of a situation in some ways, but it also seems like it could save in terms of both memory and processing power.
+		I don&apos;t think these models are right for every situation, but they do seem optimised for some situations.
+	</p>
+</section>
+<section id="Unit7">
+	<h2>Unit 7</h2>
+	<p>
+		The reading material for the week was as follows:
+	</p>
+	<ul>
+		<li>
+			<a href="https://artint.info/html/ArtInt_200.html">Artificial Intelligence - foundations of computational agents -- 8 Planning with Certainty</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_201.html">Artificial Intelligence - foundations of computational agents -- 8.1 Representing States, Actions, and Goals</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_206.html">Artificial Intelligence - foundations of computational agents -- 8.2 Forward Planning</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_207.html">Artificial Intelligence - foundations of computational agents -- 8.3 Regression Planning</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_208.html">Artificial Intelligence - foundations of computational agents -- 8.4 Planning as a CSP</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_209.html">Artificial Intelligence - foundations of computational agents -- 8.5 Partial-Order Planning</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_210.html">Artificial Intelligence - foundations of computational agents -- 8.6 Review</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_211.html">Artificial Intelligence - foundations of computational agents -- 8.7 References and Further Reading</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_212.html">Artificial Intelligence - foundations of computational agents -- 8.8 Exercises</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_213.html">Artificial Intelligence - foundations of computational agents -- 9 Planning Under Uncertainty</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_214.html">Artificial Intelligence - foundations of computational agents -- 9.1 Preferences and Utility</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_216.html">Artificial Intelligence - foundations of computational agents -- 9.2 One-Off Decisions</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_218.html">Artificial Intelligence - foundations of computational agents -- 9.3 Sequential Decisions</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_223.html">Artificial Intelligence - foundations of computational agents -- 9.4 The Value of Information and Control</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_224.html">Artificial Intelligence - foundations of computational agents -- 9.5 Decision Processes</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_231.html">Artificial Intelligence - foundations of computational agents -- 9.6 Review</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_232.html">Artificial Intelligence - foundations of computational agents -- 9.7 References and Further Reading</a>
+		</li>
+		<li>
+			<a href="https://artint.info/html/ArtInt_233.html">Artificial Intelligence - foundations of computational agents -- 9.8 Exercises</a>
+		</li>
+	</ul>
+	<p>
+		This week was sort of frustrating.
+		I was really lost as to what we were meant to be doing in the discussion assignment.
+		It sounded like we were supposed to design an <abbr title="artificial intelligence">AI</abbr> for a computerised opponent, but there&apos;s no way that could be the case.
+		It&apos;d take far longer than a week to do that, yet we only had a week to write up our posts.
+		I ended up sort of discussing an approach to how such an <abbr title="artificial intelligence">AI</abbr> might work.
+		Based on the large variation in the posts written by other students, I don&apos;t think I was the only one that was lost.
+		Some people were less lost than me though, and showed me some pretty big flaws in what I&apos;d put together.
+		I designed what was basically a one-off approach, but that had a plan for every outcome as the game progressed.
+		Everything the <abbr title="artificial intelligence">AI</abbr> would do would be planned before the battle begins, but based on observations of probabilistic outcomes and player actions, a different branch of the plan would be executed.
+		That&apos;s a bit excessive.
+		A decide-as-you-go approach would have been more efficient than planning for every scenario when most scenarios won&apos;t even play out.
+	</p>
+	<p>
+		For the written assignment, we again needed to run one of those <code>.jnlp</code> files that I still can&apos;t get running.
+		Trying to run the software for this course has been a nightmare.
+		I hate to say it, but I&apos;m glad the course is just about over so I can be done with <code>.jnlp</code> files and broken Java applets.
+		There&apos;s almost never a written assignment at this school during the eighth week; only once have I ever had one, so I&apos;m probably done with having to try to get this obnoxious software running.
+		It&apos;s a shame I could never solve the errors the <code>.jnlp</code> files were throwing though, and I never did figure out why the embedded Java applets wouldn&apos;t run.
+		I don&apos;t think any of that software is necessary for learning the material though.
+		It just poorly impacts my grades when we&apos;re asked questions such as &quot;Clicking this button in the applet, what do you see?&quot; and I can&apos;t answer them.
+		It&apos;d be nice if technical problems that didn&apos;t negatively affect learning also didn&apos;t make assignments impossible and didn&apos;t negatively impact grades.
+	</p>
+	<p>
+		The final exam is at the end of next week.
+		I&apos;m not so sure how well I&apos;ll do on that.
+		I feel like I&apos;ve been spending more time trying to debug Java issues than actually studying the material.
+		And the discussion assignment this week showed me that I&apos;m really not thinking about the subject in the right way.
+		I came up with an over-complicated and inefficient plan.
+		I think the results of the <abbr title="artificial intelligence">AI</abbr>&apos;s actions would be fine, but takes too much effort from the <abbr title="artificial intelligence">AI</abbr> to arrive at its results.
+		Not good.
+		And I&apos;ve been struggling with the material mostly the whole term.
+		It&apos;s unfortunate that I&apos;ve been rather bogged down this term, and unable to dedicate the time to studying that this material deserves.
+	</p>
+</section>
+<section id="Unit8">
+	<h2>Unit 8</h2>
+	<p>
+		...
+	</p>
+</section>
 		<hr/>
 		<p>
 			Copyright © 2020 Alex Yst;
