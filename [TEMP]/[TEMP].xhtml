@@ -770,43 +770,223 @@
 	<h2>Unit 7</h2>
 	<h3>Describe what you did.</h3>
 	<p>
-		
+		I read <a href="https://nlp.stanford.edu/IR-book/pdf/19web.pdf">Introduction to Information Retrieval - 19web.pdf</a>, participated in the discussion on creating a Web crawler and the differences between static and dynamic content, and built a Web spider.
 	</p>
 	<h3>Describe your reactions to what you did.</h3>
 	<p>
-		
+		The assignment instructions said we could use BeautifulSoup and that it is included as a module in this unit&apos;s resources section, but it&apos;s not.
+		It also said the resources section includes instructions for installing the module on your system (those instructions are of course also absent), and that both made me weary and gave me slight hope at the same time.
+		I don&apos;t install code from random places such as this school on my system.
+		I don&apos;t feel safe doing that.
+		I don&apos;t want to break my system.
+		There also shouldn&apos;t be a need to install a Python module.
+		You can just put it in the same directory as your own script and use the same <code>import</code> statement you&apos;d need to use to import the module into your script&apos;s namespace so you can access its functions.
+		Installing a random Python module downloaded from some website system-wide is just asinine and asking fro trouble.
+		The hopefulness came in though in that perhaps the writer of the assignment was ... how do I put it gently ... ill-versed in the topic?
+		There have been repeated instances of assignments at this school in which very bad practices are being taught to students as being the right way to do things.
+		It&apos;s as if the assignment authors sometimes aren&apos;t the people that actually know what they&apos;re doing.
+		I&apos;m distinctly under the impression that the professors aren&apos;t the ones writing the assignments.
+		If the assignment author indeed didn&apos;t know what they were talking about as well as perhaps they should have, they might have thought BeautifulSoup had to be installed even though we&apos;re only using it literally one time for one assignment because information they saw online talked about installing it.
+		Perhaps this is the sort of thing that often gets installed and used repeatedly in certain fields.
+		If that was the case, BeautifulSoup might very well be in my system&apos;s software repository and I could install it by running a single command on the command line.
+		And because it came from the system repository, it&apos;d be a much safer installation than if it came from some random site on the Internet.
+		It&apos;s not that I think that software from the school is likely malicious, as long as the source code is available (and as a script and not a compiled binary, the source code would of course be available).
+		It&apos;s just that you don&apos;t put files in your system directories (for example, by installing them) except through careful and often system-specific methods.
+		Doing so is just bad practice and can lead to problems.
+	</p>
+	<p>
+		Thankfully, I found the necessary module in the repository after some Web searching.
+		Oddly, it looks like the package name has been changed in Debian a couple times.
+		At one point, there was a package called <code>beautifulsoup</code>.
+		At another, there was <code>python-beautifulsoup</code>.
+		Neither package still exists.
+		Now, there&apos;s <a href="apt:python-bs4"><code>python-bs4</code></a>.
+		That&apos;s a harder to recognise name, but whatever.
+		At least the assignment is completable without reinventing the functionality of the module myself.
+		I&apos;m ... unsure of the module&apos;s ... correctness.
+		I&apos;ve dealt with <abbr title="Hypertext Markup Language">HTML</abbr>-processing modules in other languages that don&apos;t behave as they should.
+		<abbr title="Hypertext Markup Language">HTML</abbr> is very messy, unlike <abbr title="Extensible Hypertext Markup Language">XHTML</abbr>, and often, people building parsing modules don&apos;t code the sort of robustness necessary to deal with that mess.
+		I don&apos;t really care right now, because it&apos;s what the assignment said to use and because any lack of robustness and any incorrect behaviour of BeautifulSoup isn&apos;t my fault.
+		However, if I wasn&apos;t able to get this installed, it&apos;d spell bad news for me.
+		I&apos;d have to reinvent this functionality.
+		And worse, I&apos;d have to do it <strong>*right*</strong>.
+		There&apos;s just not enough time this week to do that.
+		This is the sort of code I care enough about that I couldn&apos;t just throw something together unless the instructions specifically said to do something otherwise unacceptable.
+		I&apos;d have to build a robust parser that tokenized the page, used the tokens to understand the structure of the document, located the <code>&lt;a/&gt;</code> elements, extracted their targets regardless of the order in which the attributes were specified in, and removed all tags for parsing.
+		I&apos;m just not up for that kind and scale of project right now in addition to the actual assignment I was supposed to be working on.
+	</p>
+	<p>
+		It seems that to work with Debian&apos;s BeautifulSoup, I have to use <code>import bs4</code> instead of the <code>import BeautifulSoup</code> that the example code uses.
+		I thought this may be a Debian-specific name for the module, which would be unfortunate.
+		It&apos;d make my script not cross-platform compatible.
+		I figured hopefully this was just a newer name for BeautifulSoup&apos;s module, but as I wrote that, I figured it&apos;d sound lazy of me, as I clearly hadn&apos;t actually looked it up.
+		I hadn&apos;t looked it up because it was irrelevant; the school&apos;s BeautifulSoup module was nowhere to be found and this was what I had to work with.
+		Regardless of any cross-platform issues, that was the import line I&apos;d need to use.
+		But now, to appear less lazy, I&apos;ve looked into the matter.
+		It seems that in the official BeautifulSoup documentation, <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">the module is indeed called <code>bs4</code> at the time of writing</a>.
+	</p>
+	<p>
+		I tried for days to get Python to play nicely with my network proxy.
+		It just kept refusing.
+		In what I think was my closest set of attempts, I tried telling my script to use SOCKS5 and SOCKS4, both with and without remote resolution.
+		None of those options worked though, as Python kept trying to bypass the proxy for name resolution.
+		That doesn&apos;t work though.
+		My firewall doesn&apos;t allow network traffic to pass through outside the proxy.
+		Both SOCKS5 and SOCKS4a are able to resolve host names on their own and don&apos;t need names to be resolved beforehand, so all my applications are able to handle this just fine.
+		Python just refuses to play nicely though.
+		I even tried working with both <code>urllib</code> and <code>urllib2</code>, as well as (reluctantly) installing a couple new SOCKS-related Python modules.
+		On the final day, with only hours left, I finally had to give up.
+		I wanted to do this right.
+		Really, I did.
+		But I ran out of time and had to use an external command outside the Python script to <strong>*force*</strong> python to use the proxy.
+		For some software, this works, while other software is still too stubborn and simply fails to operate at all.
+		Thankfully, Python accepted the coercion, but I feel defeated.
+		If I were working in my native language, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, I&apos;d&apos;ve been able to get the script to do its job instead of using outside force.
+		In fact, I <strong>*did*</strong> get one of my previous spiders, one that was written in <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, to do just that with no trouble whatsoever.
+		Python just does what it can to make itself a thorn in my side just enough to make coding anything complex highly difficult, but not enough that most people will take me seriously about Python being a screwy language.
+	</p>
+	<p>
+		I wouldn&apos;t normally complain about this, but while I&apos;m being a baby and grumbling about Python anyway, I might as well bring up how often it messes me up that you can&apos;t iterate over a Python list&apos;s indices.
+		You literally have to read the length of the list, use it to create a new list of consecutive integers where the index is equal to the value, then iterate over this new list&apos;s values.
+		It&apos;s short to write (<code>for i in range(len(list_var)):</code>, but those steps that shouldn&apos;t be necessary are exactly what that line means.
+		It&apos;s such an idiotic requirement that I can never remember to do it, and my code ends up buggy and I end up confused for a bit until I figure out the problem.
+		I&apos;m told Python was specifically constructed to be an easy language to work with, which means these sorts of bizarre quirks shouldn&apos;t be present in such commonly-used functionalities as simply iterating over a list in which you need access to the indices.
+		Most languages I know give you both the key and the value as you iterate, though it&apos;d also be fine to just give you the key and expect you to use the key to look up the value.
+		Just the value with no way to iterate over the keys is ... sort of dumb.
+		Also of note, Python does return the keys, not the values, when working with dictionaries, which makes this list behaviour not only asinine, but also not internally consistent with how Python handles other types.
+		So much for the &quot;duck typing&quot; paradigm Python pretends to promote.
+		When working with collections in Python, you do have to know exactly what type of collection you&apos;re dealing with, or you don&apos;t know whether you&apos;ve been handed keys and can thus look up values or whether you&apos;ve instead been handed values and have no access to keys.
+		&quot;If it quacks&quot; clearly isn&apos;t enough, when it comes to Python.
 	</p>
 	<h3>Describe any feedback you received or any specific interactions you had.</h3>
+	<h3>On the Unit 5 assignment</h3>
 	<p>
-		
+		One student marked me down without specifying why.
+		Another marked me down for including too many comments.
+	</p>
+	<img src="/img/CC_BY-SA_4.0/y.st./coursework/CS3308/marked_down_again.png" alt="&quot;the code was more of comment&quot; (sic)" class="framed-centred-image" width="806" height="325"/>
+	<p>
+		Um.
+		What?
+		Why would comments be a bad thing?
+		Also, the phrasing makes it sound like the code doesn&apos;t do anything, it&apos;s all just comments.
+		While the comments describe what the code is going for, the code does run and does do what the comments say it does.
+	</p>
+	<p>
+		No further feedback was present.
+	</p>
+	<h3>On the Unit 6 learning journal</h3>
+	<p>
+		You asked me to email an example of what I meant about getting marked down because a student didn&apos;t like that I&apos;d posted the code in the submission form instead of attaching it as a separate upload that graders would have had to download.
+		I&apos;ve done so, and for archival purposed, I&apos;m including it here too:
+	</p>
+	<img src="/img/CC_BY-SA_4.0/y.st./coursework/CS3308/marked_down.png" alt="&quot;User pasted but regret that they were not able to attach, please keep it up, you will do better as you practice.&quot;" class="framed-centred-image" width="804" height="324"/>
+	<p>
+		If you mean a smartphone-type device, &quot;smartphone&quot; is a misnomer, and those things are just pocket computers capable of telephony.
+		(To make my point, I actually set my laptop up to place and take calls at one point too, so laptops are as much phones as so-called &quot;smartphones&quot;.
+		In any case, my mobile broke down probably over two years ago by now, and I simply haven&apos;t been able to justify paying the high cost of getting a new one.
+		The only ones that I are open enough for me to trust them (or at least, to wipe and install a trustworthy operating system, at which point I trust them) are pretty old by now.
+		My last one deteriorated quickly because of just that.
+		I&apos;d had a brand new one before that one, but the new one got stolen, and when it came time to replace it, those devices were no longer being manufactured.
+		I had a nice calendar on both of those devices, and my alarms were synced between my three computers at the time (my home server, my laptop, and my mobile), but I getting another that could very well stop working on me a few months after I buy it doesn&apos;t seem like a good use of money.
+	</p>
+	<p>
+		Oh, wow.
+		I&apos;d hate to be stuck unable to clear my Web browser for fear of losing access to accounts I didn&apos;t have the password to.
+		I actually have my Web browser set to clear the cache, history, and cookies every time it closes, and not being able to set it that way would be a pain.
+	</p>
+	<p>
+		I understand not wanting to get worked up about one art piece getting censored in the Facebook group.
+		The thing you have to understand though is that the school is censoring my own website, not theirs.
+		This website is my home.
+		It&apos;s where I express myself within my own walls.
+		It may not be my physical home, but we don&apos;t live purely physical lives any more.
+		People may come to visit, but they&apos;re coming to my place, I&apos;m not going to theirs, and the university decided to barge in, threaten to expel me and/or retroactively fail me from my courses, and demanded that I take down what I had there.
+		Again, <em>in my own home</em>.
+		It&apos;s not that I can&apos;t speak freely in school, on the school&apos;s website.
+		I&apos;m not even free of this garbage <em>in my own home</em>.
+		And they didn&apos;t even try asking nicely first.
+		They just jumped to the threats.
+		Also of note, as of the time of writing this, there are 1019 redacted pages.
+		This isn&apos;t just one item.
+		I mean, I agree that there was no reason to time you out over your art piece and have it removed.
+		But a huge chunk of my own website is stuck behind take-down notices.
+		And given that much of the site is dedicated to my daily journal and school is a daily occurrence for me, that number usually grows by at least seven pages per week.
+		This isn&apos;t some small thing I can brush off.
+		It hurts.
+		It causes me <em>physical pain</em>.
+		I still get headaches from this, though not like the killer migraine I had for a few days when the censorship started.
+		It still drains away my vitality, though.
+		It leaves me as a lethargic lump, barely able to function as a human being.
+	</p>
+	<p>
+		The only thing I used to torrent is Debian <abbr title="International Organisation for Standardisation">ISO</abbr>s.
+		Those are completely legal.
+		I don&apos;t really torrent even those though any more for technical reasons related to my network connection.
+		It&apos;s a shame, really, but I guess it doesn&apos;t impact much.
+	</p>
+	<p>
+		Like you said though, not getting along with the school doesn&apos;t mean the future won&apos;t be good.
+		And indeed, I do have hope.
+		I&apos;ll be in a very good place, once I manage to get into vocal therapy (I&apos;ve been on the waiting list for over a year and was theoretically about to get in until this pandemic shut everything down) and get out of the school.
+		I&apos;m not overly worried.
+		The future will be fine.
+		In the mean time though, knowing that keeps me from doing anything overly stupid, but it doesn&apos;t make the present not highly difficult.
 	</p>
 	<h3>Describe your feelings and attitudes.</h3>
 	<p>
-		
+		Lethargic and exasperated.
+		I think those two words sum up exactly how I feel and what my attitude is.
 	</p>
 	<h3>Describe what you learned.</h3>
 	<p>
-		
+		I learned how to build a spider that uses document <abbr title="identification">ID</abbr>s and term <abbr title="identification">ID</abbr>s.
+		I guess maybe I also learned how to have a spider deal with terms at all, but that wasn&apos;t a far leap from what we&apos;d already covered paired with what I knew from the spiders I&apos;d built in the past.
+		Working with document <abbr title="identification">ID</abbr>s and term <abbr title="identification">ID</abbr>s in a single pass is a bit of a pain though, if you want the terms/document names sorted so the <abbr title="identification">ID</abbr>s will be sequential.
 	</p>
 	<h3>What surprised me or caused me to wonder?</h3>
 	<p>
-		
+		We kind of put together concepts I knew before this course and concepts I&apos;d learned in this course this week, so there wasn&apos;t anything surprising or wondrously new.
+		It was an important unit, and I do feel I&apos;ve gained more from it than other units (though I couldn&apos;t have gained what I did without first understanding the material form past units, so I wouldn&apos;t say this unit was more important by any means), but the material was pretty much almost an inevitability.
 	</p>
 	<h3>What happened that felt particularly challenging? Why was it challenging to me?</h3>
 	<p>
-		As discussed in <a href="#Unit1">my Unit 1 learning journal entry</a>, motivation is my only real challenge so far.
+		As discussed in <a href="#Unit1">my Unit 1 learning journal entry</a>, motivation is my main challenge so far.
+	</p>
+	<p>
+		Also of note though, network issues were a huge problem, took most of my time, and in the end, coulnd&apos;t even be solved in time.
+		I got the work done, but I had to cheat and not do it the right way.
+		To be fair, doing it the right way would involve extra work that other students didn&apos;t even have to bother with, so my cheating only got me out of solving a problem the school didn&apos;t intend to be a part of the assignment.
+		Still, I&apos;m a person of principle.
+		I didn&apos;t solve the problem, and instead bypassed the problem, so in my eyes, it&apos;s cheating.
+		I&apos;m not as bothered by it now as I was while it was going on, but it&apos;s still irritating that I can&apos;t get Python to respect the network proxy.
 	</p>
 	<h3>What skills and knowledge do I recognise that I am gaining?</h3>
 	<p>
-		
+		I can now build a reasonable search engine spider, complete with an index.
+		Were I to do it outside this course, I&apos;d almost certainly not bother with document <abbr title="identification">ID</abbr>s and term <abbr title="identification">ID</abbr>s.
+		I&apos;d also definitely write it in a language that allowed me to have my script actually use the network proxy properly.
+		That aside, this was the most effective spider I&apos;ve built yet.
+		The first spider I built was for a different course.
+		It only crawled, and didn&apos;t do anything with what it saw besides find new places to crawl to.
+		The second, I built on my own time, and it didn&apos;t build an index.
+		It only made a list of websites.
+		This one actually creates a searchable database though.
+		The script is rather short and the spider it encodes is rather simple, but even so, it&apos;s the most-advanced spider I&apos;ve actually built to date.
+		That seems like a step up.
 	</p>
 	<h3>What am I realising about myself as a learner?</h3>
 	<p>
-		
+		Nothing new, but I don&apos;t do well when I&apos;m under censorship in my own home.
 	</p>
 	<h3>In what ways am I able to apply the ideas and concepts gained to my own experience?</h3>
 	<p>
-		
+		I&apos;d like to re-attempt my spider project.
+		Not now, but some time when I have the energy to even get out of bed.
+		I&apos;ll need more resources though.
+		At the moment, I don&apos;t even have a home Internet connection, and in addition to an Internet connection, I&apos;ll need a headless desktop with a decent amount of hard drive space.
+		All I&apos;ve got for the moment is my laptop, and I can&apos;t run a long-running spider on it, even if it had the drive space.
+		It overheats too quickly, not to mention that it disconnects to the network so I can bring it with me, so it wouldn&apos;t be accessible to others most of the time.
 	</p>
 </section>
 <section id="Unit8">
