@@ -993,43 +993,268 @@
 	<h2>Unit 8</h2>
 	<h3>Describe what you did.</h3>
 	<p>
-		
+		I read <a href="https://nlp.stanford.edu/IR-book/pdf/20crawl.pdf">Introduction to Information Retrieval - 20crawl.pdf</a> and <a href="https://nlp.stanford.edu/IR-book/pdf/21link.pdf">Introduction to Information Retrieval - 21link.pdf</a>, participated in the discussion assignment, graded work from last week, and took the final exam.
 	</p>
 	<h3>Describe your reactions to what you did.</h3>
 	<p>
-		
+		When grading, I found that one student got stuck because they&apos;d perfectly imitated how the example code had made use of BeautifulSoup.
+		They were getting a type error, which halted the script.
+		The example code used BeautifulSoup incorrectly though, and the example wouldn&apos;t run as-is.
+		So the student had imitated the example code&apos;s fatal error as well.
+		I ran into the same problem, though I was able to solve it with some research.
+		Hopefully, my description of how to resolve the issue - which I left as feedback - is enough.
+		That assumes they ever get around to reading it before they lose access to it, but at least I tried.
+	</p>
+	<p>
+		Another student uploaded part of their work in the form of a RAR file.
+		A RAR file?
+		Seriously?
+		Thankfully for them, they included the script&apos;s output in the main submission form and they&apos;d uploaded their script itself as a file separate form the contents of the RAR file.
+		My feedback to them was a warning that they got away with it this time because the archive contained nothing I needed to grade (I&apos;m guessing it contained the generated index files, but can&apos;t be sure), but next time, they should use a more open archive format that everyone can open.
+		I cannot open RAR files - the technology for me to do so simply does not exist for my system.
+		I recommended ZIP files, which I think just about everyone can open.
+		It&apos;s probably not the best format ever, but at least it&apos;s accessible to most graders.
+		Both Linux and Windows have the software for reading those files preinstalled, and I think OS X does too, though I can&apos;t be sure.
+	</p>
+	<p>
+		The final exam was pretty easy.
+		I constantly see examples of the school&apos;s lack of understanding of a subject in the quizzes and exams the school employs though.
+		For example, take a look at the following question that is present in this course&apos;s final exam:
+	</p>
+	<blockquote>
+		<p>
+			In order to access a particular website on the internet, the URL must be converted into an IP address.
+			Which service does this conversion?
+		</p>
+	</blockquote>
+	<p>
+		I&apos;m going to ignore the fact that &quot;<abbr title="Uniform Resource Locator">URL</abbr>&quot; is a deprecated term and that the modern term is &quot;<abbr title="Uniform Resource Identifier">URI</abbr>&quot;.
+		While <abbr title="Request for Comments">RFC</abbr>s from the <abbr title="Internet Engineering Task Force">IETF</abbr> have clearly deprecated both the terms &quot;<abbr title="Uniform Resource Locator">URL</abbr>&quot; and &quot;<abbr title="Uniform Resource Name">URN</abbr>&quot; in favour of the unified term &quot;<abbr title="Uniform Resource Identifier">URI</abbr>&quot;, the vast majority of people seem to be behind the times and get this wrong, so it&apos;d make sense that the school would get it wrong too.
+		It&apos;s just sad because it means the school is perpetuating this state of being behind the times by teaching the next generation to use the outdated term.
+		Sorry, I went off on a bit of a tangent here.
+		Anyway, what the school <strong>*really*</strong> gets outright wrong here is that <abbr title="Domain Name System">DNS</abbr> <strong>*does not operate on <abbr title="Uniform Resource Identifier">URI</abbr>s at all*</strong>.
+		<abbr title="Uniform Resource Identifier">URI</abbr>s are <strong>*not*</strong> converted into <abbr title="Internet Protocol">IP</abbr> addresses.
+		<abbr title="Domain Name System">DNS</abbr> host names - more commonly known as domain names - are translated into <abbr title="Internet Protocol">IP</abbr> addresses.
+		A <abbr title="Uniform Resource Identifier">URI</abbr> is made up of several parts in the form
+	</p>
+	<p>
+		{scheme}:[{host name}[:{port}]]{path}[?{query}][#{fragment}]
+	</p>
+	<p>
+		where curly braces denote a component name which is replaced by actual text from the <abbr title="Uniform Resource Identifier">URI</abbr> and square brackets indicate components that might not be present in a given <abbr title="Uniform Resource Identifier">URI</abbr>.
+		(As a side note, the path component cannot be omitted from any <abbr title="Uniform Resource Identifier">URI</abbr>, though in many cases, it can be set to an empty string.
+		It&apos;s a small technicality, but it&apos;s why the path isn&apos;t put in square brackets.
+		That&apos;s not a mistake on my part.
+		Also of note, if a host component is present, the path <strong>*must*</strong> either be an empty string or begin with a slash, and that slash is a part of the path.)
+		Of the <abbr title="Uniform Resource Identifier">URI</abbr>, only the host name gets translated into an <abbr title="Internet Protocol">IP</abbr> address.
+		The rest of the <abbr title="Uniform Resource Identifier">URI</abbr> has absolutely no relevance in <abbr title="Domain Name System">DNS</abbr>, and if you were to run a <abbr title="Domain Name System">DNS</abbr> query on the entire <abbr title="Uniform Resource Identifier">URI</abbr>, you won&apos;t be able to get any sort of <abbr title="Internet Protocol">IP</abbr> address out of it and in most cases, you wouldn&apos;t even be able to track down the <abbr title="Top Level Domain">TLD</abbr>&apos;s name server.
+		Take, for example, the <abbr title="Uniform Resource Identifier">URI</abbr> <code>https://example.com/</code>.
+		The first step in <abbr title="Domain Name System">DNS</abbr> resolution would be to find the <code>com/</code> <abbr title="Top Level Domain">TLD</abbr> server.
+		No <abbr title="Top Level Domain">TLD</abbr> ends in a slash, so the root name server (there are multiple root name servers, but you only ask one of them in a given <abbr title="Domain Name System">DNS</abbr> request, if you even ask one at all instead of relying on the cache, but you&apos;d definitely need to ask the root server if you were using an invalid <abbr title="Top Level Domain">TLD</abbr>, as it wouldn&apos;t be in the cache) would reply that no such name server exists.
+		You could also extend that to other cases.
+		Say, for example, you want to download the file located using the <abbr title="Uniform Resource Identifier">URI</abbr> <code>https://example.com/directory/file.zip</code>.
+		In this case, if you feed the whole <abbr title="Uniform Resource Identifier">URI</abbr> into the <abbr title="Domain Name System">DNS</abbr> resolution process, <code>zip</code> is now the <abbr title="Top Level Domain">TLD</abbr>.
+		<a href="https://data.iana.org/TLD/tlds-alpha-by-domain.txt"><code>zip</code> is on the list of in-use <abbr title="Top Level Domain">TLD</abbr>s provided by <abbr title="Internet Assigned Numbers Authority">IANA</abbr></a>, meaning that you would manage to get the address of a name server for the <abbr title="Top Level Domain">TLD</abbr>.
+		It&apos;d just be the <strong>*wrong*</strong> <abbr title="Top Level Domain">TLD</abbr>.
+		You and I both know we want the <code>com</code> <abbr title="Top Level Domain">TLD</abbr>&apos;s name server, not the <code>zip</code> <abbr title="Top Level Domain">TLD</abbr>&apos;s server.
+		From there, we&apos;d then try to look up the second-level domain, which having fed the full <abbr title="Uniform Resource Identifier">URI</abbr> into the name-resolution protocol, would be <code>com/directory/file</code>.
+		That&apos;s obviously invalid, so we&apos;d then get a response from the <code>zip</code> name server stating as much.
+		I could go on and on, but the point is that when you feed full <abbr title="Uniform Resource Identifier">URI</abbr>s into <abbr title="Domain Name System">DNS</abbr> resolution, you don&apos;t get the results you&apos;re after.
+		You don&apos;t convert <abbr title="Uniform Resource Identifier">URI</abbr>s into <abbr title="Internet Protocol">IP</abbr> addresses using <abbr title="Domain Name System">DNS</abbr>.
+		That&apos;s not how <abbr title="Domain Name System">DNS</abbr> works, and the question posed by the school shows that whoever wrote the final exam didn&apos;t understand that.
 	</p>
 	<h3>Describe any feedback you received or any specific interactions you had.</h3>
 	<p>
-		
+		No worries on the delayed feedback.
+		It works out anyway, as I have a long-time habit of including the final exam as part of my discussion in my final learning journal entry, when relevant.
+		(That is, when the learning journal questions are open-ended enough to allow it.)
+		I got most of my learning journal entry done the day before yesterday, but I did have to wait until today to submit anyway to make sure I could include the final exam, so after the exam, I just finished up my writing, then checked to see if your feedback had arrived, after which I could really finalise the entry.
+	</p>
+	<p>
+		Yeah, I do tend to write entries that are a bit long.
+		When I take the time to write about something at all, I tend to go into details more than others do.
+	</p>
+	<p>
+		Exactly like you said, you can put all files in one directory and import them.
+		There&apos;s no need for a system-wide install.
+		Except that the BeautifulSoup module, which the school claimed was made available in the unit&apos;s resources section, which it wasn&apos;t.
+		As far as I could find, there was no file to put in the same directory as our own code file.
+	</p>
+	<p>
+		I wouldn&apos;t be opposed to learning Node.js, though I&apos;m not familiar with it at the moment.
+		I&apos;ve been known to struggle with JavaScript in the past, though to be fair, I use it so rarely that it&apos;s no wonder I struggle; I simply haven&apos;t had the practice I need with it yet!
+		Most JavaScript on Web pages these days is either pointless and unnecessary or (such as is the case on this university&apos;s own website) is an outright hindrance to the site&apos;s accessibility.
+		In most cases, JavaScript on Web pages can and often should be left out.
+		One thing about me is that I don&apos;t do &quot;hello world&quot; scripts and the like.
+		If there&apos;s not a purpose in building something, I don&apos;t build it.
+		I need an actual project, not a toy script, if I&apos;m to be able to retain interest enough to learn something.
+		Hence the lack of practice.
+		Node.js changes things up a bit though.
+		It uses JavaScript, but not for troublesome client-side scripting garbage.
+		Working on Node.js projects would give me a situation in which I could actually make use of - and thus learn to use - JavaScript.
+		It&apos;s definitely something I should look into.
+		Also on my list of languages I want to learn is Perl.
+	</p>
+	<p>
+		Who issued a take-down notice against my website?
+		Who is it that&apos;s censoring me, you ask?
+		The school!
+		This school.
+		University of the People is censoring me, as I&apos;ve been saying all along.
+		This is why I feel most lethargic when I&apos;m working on anything school-related.
+		I used to <strong>*love*</strong> working on my coursework here.
+		I loved to learn, and I loved to put everything I had into my submissions.
+		Through the threatening take-down letter though, the school has drained all that from me.
+		I can&apos;t stand being here now, and getting my coursework done is now such a chore.
+		I often spend hours at a time just staring at my monitor, trying to force myself to actually start the work.
+		You know the nights I mentioned in past units in which I had to stay up all night, literally not getting any sleep?
+		And I&apos;m not sure I&apos;ve mentioned it, but there are even more nights in which I do get a few hours of sleep, but not enough.
+		This is all because I can&apos;t even work up the motivation to get started, then have to pull more time out of nowhere by working on coursework instead of getting the rest I need.
+		I don&apos;t do well under censorship.
+		I&apos;m not even functional as a human being when under censorship.
+		And the school is the one doing this to me.
+	</p>
+	<p>
+		As for the <abbr title="virtual private network">VPN</abbr> idea, it doesn&apos;t really work against threatening take-down letters.
+		The school knows who I am and can - as they threatened to do - expel me and/or retroactively fail me from my past courses.
+		And my website is public, so they can see if I&apos;m not in compliance with their threats.
+		The worst part is that the school jumped right to threatening me.
+		They didn&apos;t even try asking nicely first, then when I declined, they started threatening me.
+		If they had asked nicely, I would have taken down what they found objectionable, and no one would have gotten hurt.
+		But they don&apos;t care about student well-being, so they just forced their way from the beginning regardless of what damage they might cause and what they might break.
+		And what they broke was me.
+	</p>
+	<p>
+		Also on the note of <abbr title="virtual private network">VPN</abbr>s, I use <abbr title="The Onion Router">Tor</abbr>, myself.
+		It&apos;s not exactly a <abbr title="virtual private network">VPN</abbr>, but I feel it gives me more privacy than a <abbr title="virtual private network">VPN</abbr> could.
+		With a <abbr title="virtual private network">VPN</abbr>, the <abbr title="virtual private network">VPN</abbr> provider can track you.
+		With <abbr title="The Onion Router">Tor</abbr>, no one party knows both where you are and who you&apos;re speaking with.
+		My firewall is set up to block all non-<abbr title="The Onion Router">Tor</abbr> traffic aside from traffic only passing through the intranet and not the Internet, so I can avoid all leaks from misbehaving software such as Python.
+		As for crazies in the family, I know how that feels.
+		My mother has always been bipolar, condescending, over-controlling, and toxic.
+		She disowned two of her children because, after the divorce, they wanted to continue a relationship with both parents.
+		If they wouldn&apos;t exclusively side with her, she wanted nothing to do with them.
+		As for me, she&apos;s been avoiding me for over two years now because she can&apos;t accept that I&apos;m an enby.
+		She&apos;d rather not have a queer in the family, I guess.
+		I don&apos;t know if she technically is disowning me, as she won&apos;t say it to my face (or say <strong>*anything*</strong> to my face, really), but I might as well be.
+	</p>
+	<p>
+		When you said you can&apos;t just let spiders go wandering, I got the mental image of a tarantula on a leash.
+		Don&apos;t let it go too far!
+	</p>
+	<p>
+		How do I complete the assignments without a home Internet connection?
+		Very painfully.
+		Sometimes I take my laptop over to the local library, where they offer an Internet connection.
+		Other times, I use my neighbour&apos;s Wi-Fi, as they gave me the password to it.
+		Their connection has the advantage of allowing me to work from home, but it&apos;s an unreliable connection and frequently drops or runs slowly.
+		It is what it is though.
+		I tried to set up a home Internet connection, but the local <abbr title="Internet service provider">ISP</abbr> was deliberately making things difficult and pissing me off.
+		I got fed up and gave up.
+		I&apos;ll no doubt go crawling back to them at some point, but for now, I don&apos;t have the time or the energy to deal with their garbage, considering my lethargy from the school&apos;s censorship of me and all.
+		Once school is over and I have more of my energy and patience back, I can probably get something worked out.
+		In the mean time, that&apos;s money they&apos;re not making all because they want to make themselves a thorn in my side.
+		It&apos;s not just me, either.
+		They have one of the lowest customer satisfaction ratings of any company in my country.
+		The fact is though that they have a monopoly in the areas they service, so you either choose to give them your money or you choose not to have service.
+		Gotta&apos; love monopolies, no?
 	</p>
 	<h3>Describe your feelings and attitudes.</h3>
 	<p>
-		
+		My mental state has been progressively deteriorating for quite a while now.
+		Memory loss and inability to concentrate have been getting worse, but I&apos;ve mostly been able to manage.
+		Until now.
+		It&apos;s gotten to the point that I&apos;m not even remembering important appointments until the day after I was supposed to go to them.
+		And yet, I&apos;m trapped.
+		There&apos;s nothing I can do about the decline, as far as I can tell.
+		I do what I can to relax in an attempt to lessen the damage, but it&apos;s no longer enough.
+		The stress is just more than I can handle.
+		This stupid pandemic isn&apos;t helping, either.
+		It&apos;s put my life on hold to the point where I can&apos;t even make progress in anything worthwhile.
+		I was already at a bottleneck, with everything having to wait on my vocal therapy, and now I can&apos;t get into that because the only local clinic I could find offering such services has closed down for the foreseeable future.
+	</p>
+	<p>
+		For a few months, I&apos;ve been thinking that if I could get ahead in my studies, I could use my free time to try yet again to find an online therapist.
+		Getting ahead has proven impossible in my current mental state though.
+		The term has now ended, and I can work on recovery a bit, but the last two breaks between terms have proven not to have been restful or allowed me to recover, despite being my least-active breaks yet due to the pandemic.
+		These breaks have actually left me even more tired, unlike previous breaks, which allowed me to recover at least part of my energy and motivation.
+		Chances are, this break isn&apos;t going to be restful either.
+	</p>
+	<p>
+		I feel like I&apos;m losing my sanity, and I&apos;ve already lost much of my mental clarity.
+		I guess this doesn&apos;t have to do with the material at all.
+		But the learning journal asks a question completely unrelated to the material, such as &quot;what are your feelings and attitudes&quot;, the answer is going to be completely unrelated to the material in most cases.
 	</p>
 	<h3>Describe what you learned.</h3>
 	<p>
-		
+		I don&apos;t feel like I learned much this week.
+		Partly, it was due to the material covering things I&apos;ve already dealt with, but part of it was that I was in no state to take in much information.
+	</p>
+	<p>
+		I guess I learned about spider traps though, and the need to be prepared for them.
 	</p>
 	<h3>What surprised me or caused me to wonder?</h3>
 	<p>
-		
+		The fact that spider traps are actually a thing surprised me.
+	</p>
+	<p>
+		When I was much younger and had no idea what I was doing, I set up a Web forum using a now-defunct forum-hosting company called InvisionPlus.
+		They&apos;d sort of locked themselves into using a particular out-dated version of a forum-running software called Invision Power Board, and they couldn&apos;t updated it because of the noxious terms of the license agreement.
+		New features pretty much never came due to the lack of updates, though they did add some mods and bug patches from third parties sometimes.
+		As such, the sort of slowly descended into obscurity as their bills overtook them and they had to close up shop.
+		They could have survived, I think, had they used freely-licensed software instead, such as competing software phpBB.
+	</p>
+	<p>
+		Anyway, I&apos;d seen other hosted forum there suffer from spam bot problems sometimes, so when I set up my own forum, I built what I called a robot trap.
+		It was a loop of subforums with no actual posting options, if I recall, where I intended robots searching for places to post to get trapped and not actually get to post anywhere.
+		I pictured robots as entities that moved from page to page, existing on one page at a time and unable to leave if there were no outbound links.
+		So as these subforums were looped - think of something along the lines of a symbolic link directory loop on a file system - the spiders should be trapped forever.
+		Later in life, I considered this view of robots to be completely and utterly ridiculous.
+		I doubt very much that my &quot;robot trap&quot; did anything productive whatsoever.
+	</p>
+	<p>
+		Still, it was interesting to hear that other means could have been used to trap robots, to an extent, though probably not using the software I had access to at the time.
+		For example, if dynamically-generated <abbr title="Uniform Resource Identifier">URI</abbr>s were used, it could appear like there were an infinite number of pages to crawl looking for places to post, without discreet page data actually existing on the server.
+		Any intelligently-programmed robot shouldn&apos;t fall for even these better traps though.
 	</p>
 	<h3>What happened that felt particularly challenging? Why was it challenging to me?</h3>
 	<p>
-		As discussed in <a href="#Unit1">my Unit 1 learning journal entry</a>, motivation is my only real challenge so far.
+		As discussed in <a href="#Unit1">my Unit 1 learning journal entry</a>, motivation has been my biggest obstacle.
+		My continued metal decline made this week especially challenging though, which is really sad, considering that there was almost no work to be done this week.
+		This should have been one of the easiest weeks for me.
 	</p>
 	<h3>What skills and knowledge do I recognise that I am gaining?</h3>
 	<p>
-		
+		I didn&apos;t really gain any skills this week, as I didn&apos;t do anything.
+		I learn by doing or writing, not by reading, and this especially applies to me in my reduced mental state.
+		Especially in this state, reading alone doesn&apos;t teach me much, and I quickly forget.
+	</p>
+	<p>
+		As for knowledge, I think I&apos;ve learned I need to take more care in building spiders.
+		Various pitfalls exist, such as the aforementioned robot traps, but even things such as distribution, scalibility, and extensbility need to be taken into account.
+		Even if the spider is only running on a single machine, if you plan to keep it for long, it should probably be designed as a single-instance distributed system.
+		That way, it&apos;s not hard to add more instances as needed and actually distribute the load when the time comes.
+		As fore extensibility, the old trick of modularity is ever useful.
+		We built such simple spiders in this course.
+		It&apos;s easy to forget that a robust spider should be more complicated than what we did, sand should actually be built as a series of interchangeable pieces that can be added, removed, and swapped as the spider needs to be changed.
+		Modularity is almost always something that should be built into a project from the very beginning.
 	</p>
 	<h3>What am I realising about myself as a learner?</h3>
 	<p>
-		
+		First, I don&apos;t do well under censorship.
+		That applies to all areas of my life, learning included.
+		Second, my mental decline, caused by said censorship, is continuing even after two years.
+		I thought I&apos;d had this kind of under control and I could last out my final year.
+		And I&apos;m still going to try to do that.
+		I don&apos;t have this under control though.
+		I&apos;m getting worse.
 	</p>
 	<h3>In what ways am I able to apply the ideas and concepts gained to my own experience?</h3>
 	<p>
-		
+		I don&apos;t know.
+		I guess the ideas of extensibility and modularity are something that I apply to most of my more-complex projects.
+		This isn&apos;t new, it&apos;s just something I need to remember to keep doing.
+		I don&apos;t think anything specific to information retrieval this week is likely to apply to my life at the moment though.
 	</p>
 </section>
 		<hr/>
