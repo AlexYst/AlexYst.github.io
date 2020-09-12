@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                                                                                     
+ h       t     t                ::       /     /                     t             / 
+ h       t     t                ::      //    //                     t            // 
+ h     ttttt ttttt ppppp sssss         //    //  y   y       sssss ttttt         //  
+ hhhh    t     t   p   p s            //    //   y   y       s       t          //   
+ h  hh   t     t   ppppp sssss       //    //    yyyyy       sssss   t         //    
+ h   h   t     t   p         s  ::   /     /         y  ..       s   t    ..   /     
+ h   h   t     t   p     sssss  ::   /     /     yyyyy  ..   sssss   t    ..   /     
+                                                                                     
+	<https://y.st./>
+	Copyright © 2020 Alex Yst <mailto:copyright@y.st>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <https://www.gnu.org./licenses/>.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="https://y.st./en/weblog/2020/08-August/22.xhtml"/>
+		<title>Planning to build an inverse to MurmurHash &lt;https://y.st./en/weblog/2020/08-August/22.xhtml&gt;</title>
+		<link rel="icon" type="image/png" href="/link/CC_BY-SA_4.0/y.st./icon.png"/>
+		<link rel="stylesheet" type="text/css" href="/link/main.css"/>
+		<script type="text/javascript" src="/script/javascript.js"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+<nav>
+	<p>
+		<a href="/en/coursework/">Coursework</a> |
+		<a href="/en/take-down/">Take-down requests</a> |
+		<a href="/en/">Home</a> |
+		<a href="/en/a/about.xhtml">About</a> |
+		<a href="/en/a/contact.xhtml">Contact</a> |
+		<a href="/a/canary.txt">Canary</a> |
+		<a href="/en/URI_research/"><abbr title="Uniform Resource Identifier">URI</abbr> research</a> |
+		<a href="/en/opinion/">Opinions</a> |
+		<a href="/en/law/">Law</a> |
+		<a href="/en/recipe/">Recipes</a> |
+		<a href="/en/a/links.xhtml">Links</a> |
+		<a href="/en/weblog/2020/08-August/22.xhtml.asc">{this page}.asc</a>
+	</p>
+	<hr/>
+	<p>
+		Weblog index:
+		<a href="/en/weblog/memories">Memories</a> |
+		<a href="/en/weblog/"><abbr title="American Standard Code for Information Interchange">ASCII</abbr> calendars</a> |
+		<a href="/en/weblog/index_ol_ascending.xhtml">Ascending list</a> |
+		<a href="/en/weblog/index_ol_descending.xhtml">Descending list</a>
+	</p>
+	<hr/>
+	<p>
+		Jump to entry:
+		<a href="/en/weblog/2015/03-March/07.xhtml">&lt;&lt;First</a>
+		<a rel="prev" href="/en/weblog/2020/08-August/21.xhtml">&lt;Previous</a>
+		<a rel="next" href="/en/weblog/2020/08-August/23.xhtml">Next&gt;</a>
+		<a href="/en/weblog/latest.xhtml">Latest&gt;&gt;</a>
+			</p>
+			<hr/>
+</nav>
+		<header>
+			<h1>Planning to build an inverse to MurmurHash</h1>
+			<p>Day 01995: <time>Saturday, 2020 August 22</time></p>
+		</header>
+<img src="/img/CC_BY-SA_4.0/y.st./weblog/2020/08/22.jpg" alt="Strange, lumpy seedpods hanging in a tree" class="framed-centred-image" width="649" height="480"/>
+<section id="headset">
+	<h2>Headset</h2>
+	<p>
+		Tonight, the head manager was in a bit of a rush to get out of the store, but they were a bit disorganised in their orders, leading to some slight distraction.
+		In the midst of that, I ended up forgetting that I was still wearing the drive-through headset until we&apos;d left the building.
+		I went to get my bike, and realised I was still wearing it.
+		I felt odd going back in after the boss had closed up shop.
+		Sure, I have the key and the alarm code too, but it still felt odd.
+		So I just brought it home with me.
+		There are other headsets in the store morning crew can use, and we only use one at a time anyway, while the others charge.
+		I&apos;ll just bring it back to work tomorrow when I head in for my shift.
+	</p>
+</section>
+<section id="Minetest">
+	<h2>Minetest</h2>
+	<img src="/img/CC_BY-SA_3.0/minetest.net./weblog/2020/08/22.png" alt="A partly-excavated ice dungeon" class="framed-centred-image" width="1024" height="600"/>
+	<img src="/img/CC_BY-SA_4.0/y.st./weblog_map/2020/08/22.png" alt="The world map" class="framed-centred-image" width="921" height="912"/>
+	<p>
+		I just cleared a bit more ice and snow today.
+		Nothing major to speak of.
+		I did consider moving my operations into a nearby dungeon and building a permanent railway to it, but for now, it&apos;s not a good idea.
+		I&apos;m not sure how deep the water will be here.
+		Depending on how things connect up, I might be able to fully drain the water, but I might have to leave it at its current level, which isn&apos;t too far below sea level.
+		Well, I mean, I&apos;m going to have to drain it all at first, it&apos;s just a matter of whether I&apos;ll have to put it back, as that&apos;ll determine where permanent infrastructure will need to be.
+	</p>
+	<p>
+		I think I&apos;m going to start a more in-depth search for a string version of my Minetest seed.
+		If I understand the seed-determination algorithm correctly, this is how it works.
+		First, the algorithm checks to see if the first character of the string is zero and the second character is a lower-case ex.
+		If both checked characters are a match, the game tries to interpret the seed as a hexadecimal value.
+		Otherwise, it tries to interpret it as a decimal value.
+		In either case, if there&apos;s an error in the interpretation (which would be caused if the string wasn&apos;t actually a number or was a number in some other format, such as binary prefixed with a <code>0b</code> - though an octal value will still be interpreted, just interpreted incorrectly as a decimal value), the string is then hashed into a number using a version of the public domain MurmurHash with a seed value (which I think is more like a salt and less like a seed in this case) of <code>4919</code>.
+	</p>
+	<p>
+		I&apos;ve seen several statements online claiming MurmurHash to be easily breakable.
+		It can be reversed.
+		I&apos;ve also seen a few code snippets specifically showing how to break it.
+		The problem with these snippets is that they work with versions of MurmurHash that output the wrong integer size (the ones I saw work with 32-bit MurmurHash, while Minetest uses 64-bit MurmurHash) and/or are written in languages I&apos;m not familiar with.
+		So I can&apos;t use these code snippets without better understanding MurmurHash, at which point it&apos;d be easier to build my own code from scratch anyway.
+		So one thing I need to do is learn the inner workings of MurmurHash.
+		It doesn&apos;t look too complex, given how short the code is, I just need to sit down and study it and figure out exactly what the inverse of each step would be.
+		Modulo in particular seems difficult to reverse, and I think I understand there&apos;s overflow in some operations, which is basically modulo division.
+		The other think I need to do is understand where the initial &quot;input number&quot; is coming from.
+		It&apos;s hashing strings, not numbers, so it&apos;s converting the strings into numbers.
+		I need to know how.
+		My best guess is that the bits in the encoding of the string are used as bits in the number to be hashed, but I&apos;ll need to experiment with this.
+		If I can do all that, I should be able to put in whatever number I like and get a sequence of starting bits back that can be converted into a short string.
+		The only issue from there, assuming the string bits are indeed used directly by Minetest&apos;s MurmurHash implementation is that the string will likely be invalid Unicode.
+		I&apos;ll need to figure out how to work multiple chunks through the reverse Murmur implementation I come up with such that I can restrict the output to a specific, 66-character alphabet I&apos;m working with.
+		Specifically, the 52 <abbr title="American Standard Code for Information Interchange">ASCII</abbr> letters, the ten <abbr title="American Standard Code for Information Interchange">ASCII</abbr> digits, and the dash, full stop, underscore, and tilde characters.
+		Other characters are of course valid in strings, including multibyte characters when formatted correctly, but they&apos;re outside the scope of what I&apos;m looking for.
+		If this is in fact the right encoding, I&apos;m basically looking for an 88-bit sequence that both hashes to the 64-bit sequence <code>7906433434172987656</code> and in which each 8-bit segment is one of the bytes corresponding to one of the 66 characters in my desired alphabet.
+		It should be an educational adventure, if nothing else.
+	</p>
+</section>
+		<hr/>
+		<p>
+			Copyright © 2020 Alex Yst;
+			You may modify and/or redistribute this document under the terms of the <a rel="license" href="/license/gpl-3.0-standalone.xhtml"><abbr title="GNU&apos;s Not Unix">GNU</abbr> <abbr title="General Public License version Three or later">GPLv3+</abbr></a>.
+			If for some reason you would prefer to modify and/or distribute this document under other free copyleft terms, please ask me via email.
+			My address is in the source comments near the top of this document.
+			This license also applies to embedded content such as images.
+			For more information on that, see <a href="/en/a/licensing.xhtml">licensing</a>.
+		</p>
+		<p>
+			<abbr title="World Wide Web Consortium">W3C</abbr> standards are important.
+			This document conforms to the <a href="https://validator.w3.org./nu/?doc=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2020%2F08-August%2F22.xhtml"><abbr title="Extensible Hypertext Markup Language">XHTML</abbr> 5.2</a> specification and uses style sheets that conform to the <a href="http://jigsaw.w3.org./css-validator/validator?uri=https%3A%2F%2Fy.st.%2Fen%2Fweblog%2F2020%2F08-August%2F22.xhtml"><abbr title="Cascading Style Sheets">CSS</abbr>3</a> specification.
+		</p>
+	</body>
+</html>
+
