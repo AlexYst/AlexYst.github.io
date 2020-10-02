@@ -18,7 +18,7 @@ just fine.
 My PGP key ID is 0xE7464A03 and my PGP fingerprint is
 D135 B061 DBED 690B 479F E2E3 7D83 E1E5 E746 4A03.
 
-As of today, Wednesday, 2020 September 23,
+As of today, Wednesday, 2020 September 30,
 I have not been legally required to withhold information.
 University of the People has issued me a take-down request for
 some pages on this website, but I have not been asked to keep
@@ -45,17 +45,17 @@ This canary has gone down in the past due to technical issues:
   '- Various life circumstances made website updates difficult.
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEE0TWwYdvtaQtHn+LjfYPh5edGSgMFAl9r8D4ACgkQfYPh5edG
-SgOk6g/9ETWWyH6cYy3uzYZayImGpAkK4TJOl36W9XjNRN1fOJQ91DMhAWtiDCYt
-vSA0dUoeCQnNaYMHbBeMukJIk93ScmE+oKCSfw9e8BbdtkWNGoOjO3I9kC/dg1FH
-1d7T8TlVkXLRFO1vK3EeEqGBr+U7sGupPYHeNUzhdRVxaTpvwqt+RexttPf24ICy
-eyxXJikeId9mJg/RskYis689RvWIahyL1JGm3GAiACyeUC2TtDCyoh4t9+BaMx/j
-g2vPaKglFT8hcgJcTWIPtVg0mhPwpriNjLxkb5dVxIxvMQnV5qTTPohV5d/GYj8A
-nsIoSAA8WGhYtOt3QhR3MILAixdT/NRdfe5Ayw+QaUksRXriLnOQ9VmaoThNxirT
-tsETi+7L/toAsuvrXtPSEUsg0ph6ctFOgxfe7y4HQi78BduDquvUef7mNPCuS3Ck
-dL/w17V0Uj9MZHPgRQrDOX7kDmMaEoXyOk9tXl7IBbx0hfiZQwzUvk9oOuCmb5Yw
-aUW1uvcGdkfmzSCmJQPrAKFvBJ+0SHtpsNZvdEt9PFbakP5/gzlKKGTiGy2b8/6V
-JE3Dk6o7jqlpD6h74LlRU0zkNAqcEroQEQQsvEshOD8GpmGky1MUvtrwxR7epjGQ
-1ZTE4LHE9kBTSn3C9Qx+8jcG4QoF1PI2Anfo0bNLiBwA8YwvMzE=
-=Vmtf
+iQIzBAEBCgAdFiEE0TWwYdvtaQtHn+LjfYPh5edGSgMFAl91REcACgkQfYPh5edG
+SgPlKg//VpBQujQ9r8HRpAzZfND9IDF9pLoQkdcLWLYxWEeWyK1NmL6wGUFFSHg8
+sjhOLwt6LMKW2c8mXS0sINirn+BohQBbbuGca9GnroL+ID3m2J02+v1ikD84h0Tt
+ja3+cJe95ZwRL0LEUR9JR9//aJKO9FtoPqZRrS8IONVIWMBX0mLiIBx1jCMg+xk3
+3nxN/xbbRU72QRzA5k5YXUsLiZHPnoNI/56J4SW/GIvWMZljBmpKLA7pd0VbfbCG
+p3e93kuI33cBttAYlAL22P3IARHZFvy53u4pS8inxtpiz7IZyhhU+g450fFPOb1X
+e5pJRNZm9WiHWKySCAIyup8Lc58sVq8T1ZQHu9nEg6cDIXVD+YAWKdt/D+WpDykD
+nXNARE8YbkrCSuyrEEJZqrP9sAFrkoq3dpBGzVEe/zJb0McKzkALpCS5h/87ojCT
+iuBgmiH+f5Y0hwxbzmWiubkUTwGiTpK3ZEtTxem0lVyuZx+nxaExri6RRijt0Qnb
+j3oemFi7WcgjFn6kRHY2f1/dYqMvlu9cnfpbxgNCWbj3LNgG3GxKsn0i7cWwz66X
+aT1CMKwwy2gHiTHTTmQjiA8lQVNRYE/T4Y/ubTbNWy5Nku2C75ew6As1giOlCCOw
+yl+szct2niCgZwLq4qkdTgZjPYwgkiBPtYH6fQqrU5dorDN8GVI=
+=CFoN
 -----END PGP SIGNATURE-----
